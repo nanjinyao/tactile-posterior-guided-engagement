@@ -45,6 +45,16 @@ See `VALIDATION_20261027.md` for checks actually completed during this upload.
 Native-library/full-physics limitations in the previous audit remain applicable
 unless explicitly superseded by a recorded check. No robot was connected.
 
+## Documentation follow-up — 2026-10-27
+
+The main branch now also includes `AI_ASSISTED_RESEARCH.md` and README sections
+on documented AI assistance, a proposed repeat-project workflow, and learning
+through derivations, small examples, counterexamples and evidence tracing.
+Historical attribution is distinguished from new prompt/workflow suggestions.
+The current main-branch manifest is updated for these documentation files.
+The original Release tag remains fixed at the initial upload commit and its
+initial manifest; the six scientific archives and their hashes are unchanged.
+
 ## Rebuild packaging
 
 From the source workspace with Python 3.10+:

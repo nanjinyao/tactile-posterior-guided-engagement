@@ -49,5 +49,16 @@ Additional completed checks:
   confirmed `private=true`.
 
 The private Release tag is `research-snapshot-2026-10-27`. The release is tied to
-the final documentation commit after upload checks. These checks establish the
-uploaded snapshot's integrity, not fresh numerical/physical reproducibility.
+the final documentation commit of the initial upload. These checks establish
+the uploaded snapshot's integrity, not fresh numerical/physical reproducibility.
+
+## Documentation follow-up — AI-assisted research and learning
+
+Added a detailed AI-assistance/learning retrospective and two README sections.
+Documented history is supported by project decisions and trace records; proposed
+prompts and future workflows are explicitly labelled as suggestions. Fifty local
+links, including the knowledge-map heading link, resolved without errors; code
+fences and UTF-8 text checks passed. This follow-up changes documentation only,
+so physics, inference and controller tests were not rerun. The main-branch
+manifest includes the new document and updated documentation hashes; the initial
+tag and all six scientific archives retain their original content.
