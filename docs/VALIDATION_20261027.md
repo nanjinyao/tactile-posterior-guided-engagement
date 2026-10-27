@@ -29,4 +29,25 @@ Additional completed checks:
   SHA-256 checks. No common credential token/private-key patterns were found in
   the selected text scan. This is a scoped scan, not binary privacy certification.
 
-Restoration and remote-upload checks will be recorded after they complete.
+## Completed snapshot and network checks
+
+- All six archives were restored into the independent upload checkout using
+  `restore_artifacts.py --all --local-assets ...`. A subsequent full `--verify`
+  checked **22,249 files, zero missing and zero hash/size mismatches**.
+- The same selected tests in that restored checkout passed: **26 passed,
+  29 subtests passed**. The stored-paper evidence verifier also passed there.
+- `git ls-files` matched all 7,707 manifest-designated Git files plus the
+  generated manifest and ignore file exactly (7,709 tracked files). No gitlink
+  entries or nested Git histories were committed. Restored files were ignored,
+  leaving the working tree clean before the final documentation update.
+- The source commit was pushed to `main`. The remote README and manifest were
+  retrieved through GitHub's raw contents API and matched the local bytes.
+- The actual private GitHub hardware archive was downloaded using the documented
+  restore command and its archive/member SHA-256 checks passed.
+- All six ZIPs and `SHA256SUMS.txt` were uploaded. GitHub-reported SHA-256 digests
+  and archive sizes matched local values for every asset. The repository API
+  confirmed `private=true`.
+
+The private Release tag is `research-snapshot-2026-10-27`. The release is tied to
+the final documentation commit after upload checks. These checks establish the
+uploaded snapshot's integrity, not fresh numerical/physical reproducibility.
