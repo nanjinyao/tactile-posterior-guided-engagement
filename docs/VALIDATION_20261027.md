@@ -62,3 +62,32 @@ fences and UTF-8 text checks passed. This follow-up changes documentation only,
 so physics, inference and controller tests were not rerun. The main-branch
 manifest includes the new document and updated documentation hashes; the initial
 tag and all six scientific archives retain their original content.
+
+## Illustrated English narrative follow-up
+
+Rewrote the README and AI-assisted research workbook in English. The README
+now follows problem selection, literature review, formalization, simulation,
+CAD/printing, hardware interfaces, failure analysis, contribution, and a proposed
+repeat-project learning plan. It uses seven existing project images and four
+Mermaid diagrams; no scientific image or experimental result was modified.
+
+Completed documentation checks:
+
+- All 67 Markdown links across the README and workbook resolve locally where
+  applicable, including local heading anchors and the seven image paths.
+- Both documents are valid UTF-8, contain no Chinese text, have balanced code
+  fences, and contain no trailing whitespace.
+- GitHub's Markdown API successfully rendered both documents. The README output
+  contains seven image elements, four Mermaid code blocks, and two expandable
+  details sections. This checks Markdown structure; it does not assert a separate
+  browser-based verification of client-side Mermaid rendering.
+- All seven literature anchors named in the README exist in the bibliography.
+- Claims were cross-checked against the manuscript, design decisions, tooling
+  notes, runtime contract, and M12 debugging record. Proposed prompts, exercises,
+  and the read-only assistant adapter are explicitly labelled as future work.
+- Background correspondence was used only for context and was not copied into
+  the repository or quoted in the research narrative.
+
+This follow-up changes documentation and its manifest entries only. Existing
+simulation/controller tests were not repeated, and no hardware was accessed.
+The initial Release tag and scientific archives remain fixed.

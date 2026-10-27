@@ -1,251 +1,413 @@
 # Tactile Posterior-Guided Hex-Socket Engagement
 
-**Learning-Based Tactile Posterior-Guided Search for Robotic Hex-Socket Engagement**
+**An illustrated research record: from a physical problem to an uncertainty-aware controller, with an honest account of AI assistance and learning.**
 
-通过一次低力锥形探索，把触觉信号转化为方向后验，再用受限捷径和局部搜索完成机器人内六角接合。
-本仓库保存核心仿真代码、实机控制与离线学习代码、原始记录、模型、论文和展示材料。
-研究终点是**经独立验证的几何接合**，尚未覆盖旋转拧松、螺纹释放和螺钉取出。
+A robot can see where a screw is approximately, yet still miss its hexagonal socket by a few millimetres. This project investigates whether a gentle contact probe can tell the robot which way to search, while preserving uncertainty about how far to move. The resulting system combines tactile inference, a bounded initial movement, local search, compliant control, and independent engagement verification.
 
-这是作者的**私有研究快照**；论文为双匿名工作稿，尚未指定项目级开源许可证。
-本次上传范围、验证结果与历史审计的区别见 [GITHUB_SNAPSHOT.md](docs/GITHUB_SNAPSHOT.md)。
+This private repository supplements a research progress report. It preserves code, data, CAD, experiment records, and presentation materials. The demonstrated task is **geometric socket engagement**; rotation, thread release, and screw extraction remain outside the evaluated endpoint. The manuscript is a working draft, and no project-wide open-source license has been assigned.
 
-![触觉观测、后验与控制路由](overleaf_unscrewing/figures/fig3_action_observation_routing.png)
+![Robot, force/torque sensor, tool, socket fixture, and coordinate frames](overleaf_unscrewing/figures/fig1_hardware_coordinate_frames.png)
 
-## 阅读入口
+*The physical setup makes the central difficulty concrete: a small alignment error at the tool tip can change the contact state, even when the robot is already close to the target.*
 
-| 内容 | 入口 |
-|---|---|
-| 研究动机与算法 | 下方“研究问题”和“核心思路” |
-| 论文全文 | [LaTeX](overleaf_unscrewing/main.tex)、[PDF](overleaf_unscrewing/main.pdf) |
-| 每张图、每个结果的来源 | [REPRODUCIBILITY.md](REPRODUCIBILITY.md) |
-| 仿真算法 | [后验搜索规划](mujoco_unscrewing_probe_new/src/posterior_search_plan.py)、[搜索执行器](mujoco_unscrewing_probe_new/src/render_m8_search_comparison.py) |
-| 实机执行和部署 | [实机说明](real_device/README.md)、[推理运行时](real_device/model_runtime/README.md) |
-| 数据与模型获取 | 下方“数据下载与校验” |
-| AI 如何参与研究、如何重做并建立知识体系 | [AI 辅助研究与学习复盘](docs/AI_ASSISTED_RESEARCH.md) |
-| 汇报材料 | [39 页精简版](outputs/Learning_Based_Tactile_Posterior_Guided_Search_Compact_39_Slides.pptx)、[讨论版](outputs/Learning_Based_Tactile_Posterior_Guided_Search_Group_Review.pptx) |
+**AI-assistance disclosure.** This README and its companion workbook were prepared with Codex assistance from project code, design decisions, and recorded results. Earlier records explicitly mention ChatGPT roadmap discussions and Claude-assisted formalization reviews. They do not provide a complete prompt history or reliable per-person/per-model authorship attribution. Historical facts, interpretations, and proposed improvements are therefore distinguished below. A written explanation is not evidence that the author has independently mastered every concept in it.
 
-## 研究问题
+## Reading guide
 
-视觉和 CAD 能把工具带到螺钉附近，但剩余的毫米级平面误差仍可能超过倒角捕获范围。
-直接下压容易顶在螺钉表面；从头执行全局外扩螺旋又会重复走过已有接触信息排除的位置。
+- [The research idea in plain language](#the-research-idea-in-plain-language)
+- [1. Find a question worth answering](#1-find-a-question-worth-answering)
+- [2. Turn reading into a literature review](#2-turn-reading-into-a-literature-review)
+- [3. Formalize the problem and the solution](#3-formalize-the-problem-and-the-solution)
+- [4. Use simulation to test mechanisms](#4-use-simulation-to-test-mechanisms)
+- [5. Turn CAD into a physical experiment](#5-turn-cad-into-a-physical-experiment)
+- [6. Connect models, software, and hardware](#6-connect-models-software-and-hardware)
+- [7. Learn from failures](#7-learn-from-failures)
+- [8. Make the contribution and learning explicit](#8-make-the-contribution-and-learning-explicit)
+- [If I repeated this project](#if-i-repeated-this-project)
+- [Repository, data, and reproduction](#repository-data-and-reproduction)
 
-一次锥形接触通常能较好指示“孔心在哪个方向”，却不足以稳定确定“还差多远”。
-直接把学习结果当作准确孔心，会把径向不确定性隐藏进动作。
-本项目保留这部分不确定性：模型提供方向和接触支持，规划器分配移动预算，物理控制器判断是否真正接合。
+For a reusable context template, suggested prompts, interface contracts, derivation exercises, and contribution logs, see the [AI-assisted research workbook](docs/AI_ASSISTED_RESEARCH.md). Its prompts are newly proposed examples, not reconstructed quotations from past conversations.
 
-## 核心思路
+## The research idea in plain language
+
+Imagine trying to place a key into a partly hidden keyhole. A small, controlled touch may reveal that the opening lies to the left. It does not necessarily reveal the exact distance. Moving straight to a guessed point can therefore fail, even when the directional prediction is useful.
+
+The same distinction motivates this project:
+
+1. **Touch deliberately.** A low-force conical probe produces a structured force/torque fingerprint.
+2. **Estimate a distribution.** Infer likely directions and retain multiple possible hole centres.
+3. **Move conservatively.** Use that uncertainty to limit an initial shortcut.
+4. **Search what remains.** Continue with a local outward search or a task-aware grid policy.
+5. **Verify physically.** A separate controller checks capture, insertion, and dwell conditions.
 
 ```mermaid
-flowchart TD
-    A[视觉/CAD 粗定位与稳定接触] --> B[低力锥形探索]
-    B --> C[按相位组织触觉指纹]
-    C --> D[方向分布与接触支持估计]
-    D --> E[重加权 CAD 孔心候选]
-    E --> F[质量自适应的受限捷径]
-    F --> G{传感器侧捕获检测}
-    G -->|尚未捕获且观测有效| H[负证据更新与局部搜索]
-    H --> G
-    G -->|捕获| I[柔顺插入与有限恢复]
-    I --> J{深度、持续时间及力约束验证}
-    J -->|通过| K[Verified engagement]
-    J -->|预算内可恢复| I
-    J -->|保护或预算终止| L[记录失败类别与轨迹]
+flowchart LR
+    A[Coarse visual and CAD prior] --> B[Gentle conical contact probe]
+    B --> C[Tactile direction distribution]
+    A --> D[Possible socket centres]
+    C --> D
+    D --> E[Bounded shortcut]
+    E --> F[Residual local search]
+    F --> G[Independent engagement checks]
+    G --> H[Verified engagement or recorded failure]
 ```
 
-### 1. 主动探索与触觉指纹
+The useful design principle is to give learning a compact job: turn contact into information that a controller can use. Confidence from a model does not replace a physical success check.
 
-工具在稳定接触后进行约 15° 的低力锥形运动。仿真观测为轴向力、两个弯矩与工具尖端高度：
+![Contact actions, a simulated tactile fingerprint and posterior, and control routing](overleaf_unscrewing/figures/fig3_action_observation_routing.png)
 
-$$y(\phi)=[F_z(\phi),\tau_x(\phi),\tau_y(\phi),z_{tip}(\phi)]^T.$$
+*This figure combines real apparatus/action photographs with a held-out simulation fingerprint and inference illustration. The simulation uses a four-channel CNN; the later real-device runtime uses a different seven-channel Fourier-based interface. The panels should not be read as evidence that the simulation CNN was deployed unchanged on the robot.*
 
-各通道按圆周相位周期插值为 360 个点，形成 `4 × 360` 输入。
-探索相位 $\phi$ 与工具到孔心的方向角 $\theta$ 是不同变量；高度通道不单独承担插入成功判定。
-对应代码：[观测](mujoco_unscrewing_probe_new/src/wrench_observation.py)、[训练](mujoco_unscrewing_probe_new/src/train_m8_direction_models.py)、[推理](mujoco_unscrewing_probe_new/src/m8_direction_runtime.py)。
+## 1. Find a question worth answering
 
-### 2. 预测方向分布与观测质量
+The initial application, robotic unscrewing, was too broad to diagnose in one experiment. It includes perception, alignment, contact, torque transmission, thread release, and extraction. A useful research question emerged by isolating the engagement bottleneck:
 
-仿真使用三个独立训练的圆周 CNN，在 48 个方向区间上输出经温度标定的概率并取平均。
-圆周均值给出方向；集中度、成员分歧、预测集合和熵描述不确定性；另一个输出估计接触支持状态。
+> When contact provides useful direction but uncertain distance, can a bounded, posterior-guided search reduce unnecessary motion while preserving independently verified engagement?
 
-实机采用单独构建的真实数据接口：七通道输入、选定的 `REAL_FOURIER_LINEAR_V1` 模型与 TOP1 路由。
-七通道为六维力/力矩及相对指令高度，不能当作上述四通道 CNN 的直接部署。
-见 [common.py](real_device/offline_learning/common.py) 与[实机模型说明](real_device/model_runtime/bundles/real_multisize_direction_v1/README.md)。
+**How AI helped.** The [design decisions](mujoco_unscrewing_probe_new/DESIGN_DECISIONS.md), including the entry dated `2026-07-09 23:23`, record a ChatGPT roadmap covering multiple sizes, geometry, contact reasoning, conical exploration, and information gain. The immediate implementation was narrowed to an M8-first chain: sampling, labels, model, evidence, and action. AI was useful for enumerating possibilities and exposing missing links between them.
 
-### 3. 将触觉信息融合进孔心后验
+**Where the researcher has to think.** A list of plausible ideas does not determine which one deserves an experiment. The researcher must identify the physical bottleneck, decide what the robot can actually observe, choose an endpoint, and explain what result would contradict the idea. Here, the critical distinction is direction versus distance: treating a direction estimate as a precise centre would hide the unresolved part of the problem.
 
-从视觉/CAD 的有限先验区域采样孔心候选，结合候选方位、方向概率及接触支持相关的径向似然重加权。
-论文 M8 使用 4096 个候选，视觉标准差 2 mm，截断半径 4.895 mm。
-这种表示保留同一方向上的距离歧义；小的均匀似然项避免一次模糊观测完全抹去几何支持。
+**What I would improve.** Before requesting a broad roadmap, write a one-page problem note with a photograph, a failure trace, the available signals, and two competing explanations. Ask AI to challenge that note. Commit to one falsifiable question and one small experiment before adding sizes, planners, or neural architectures.
 
-实际移动终点有效、接触状态满足条件但没有捕获时，使用 miss 观测降低相关区域的权重并重新规划。
-未执行或没有有效终点的指令不能作为排除某区域的证据。
+## 2. Turn reading into a literature review
 
-### 4. 用后验分位数限制捷径长度
+A useful review is an argument about assumptions and evidence. For this project, the reading should connect four layers: the assembly/disassembly task, contact-based sensing, decision-making under uncertainty, and compliant control.
 
-将候选孔心相对当前位置的位移投影到预测方向得到 $z_j$，以质量 $q$ 决定允许消耗的后验低分位数和径向预算：
+The following are reading anchors already present in the [project bibliography](overleaf_unscrewing/references.bib), rather than a claim of an exhaustive or current state-of-the-art survey.
 
-$$L^*=\min\{[Q_{\alpha(q)}(z)-0.25r_{eff}]_+,\;\lambda(q)Q_\rho(\|C-x_0\|),\;L_c\}.$$
-
-其中 $\alpha(q)=0.10+0.15q$、$\lambda(q)=0.35+0.30q$。
-方向分散、成员不一致或反向质量较大时，捷径缩短；投影非正的后验质量达到 0.20 时不执行捷径。
-论文使用 $\rho=0.99$，通用规划函数默认 0.95，实验以调用参数和冻结任务合同为准。
-后验预算约束只涉及候选集，不构成物理捕获保证。
-实现：[plan_posterior_guided_search](mujoco_unscrewing_probe_new/src/posterior_search_plan.py)。
-
-![捷径预算与残余搜索](overleaf_unscrewing/figures/posterior_shortcut_geometry.png)
-
-### 5. 搜索剩余区域
-
-| 策略 | 行为 | 冻结记录标识 |
+| Reading role | Bibliography anchors | Question to answer while reading |
 |---|---|---|
-| PGS-O | 后验捷径 + 有限局部外扩螺旋 | `proposed` |
-| PGS-G | 后验捷径 + 信息增益、捕获概率与移动代价驱动的网格搜索 | `proposed_plus` |
-| Outward | 从初始点执行全局外扩螺旋 | `outward` |
-| Direct-4C | 四通道预测 + 最多三次同一 rollout 内的直接尝试 | `improved_direct_retry3` |
-| Direct-3C | Jin 风格三通道工程代理 + 有限重试 | `jin_direct_retry3` |
+| Application and task boundaries | `diaz2025unscrewing` | Which stage fails: locating, engaging, turning, or extracting? |
+| Contact-based pose information | `jin2021contact`, `kim2022active` | What is sensed, what motion creates information, and which ambiguities remain? |
+| Partial observability and action selection | `wirnshofer2020partial` | What belief is maintained, and how does it affect the next action? |
+| Force-guided exploration and learned representations | `noseworthy2025forge`, `lee2019visiontouch` | What data and interventions support the learned policy or representation? |
+| Physical interaction control | `hogan1985impedance` | How are force, motion, compliance, and stability related? |
 
-PGS-G 结合 hit/miss 的期望信息增益、可能覆盖的捕获区域与移动成本；信息价值不足时回到覆盖搜索。
-有限螺旋的节距约束不是整个有限边界区域的覆盖证书。
-三次直接尝试属于同一试验内的重试；Direct-3C 是工程代理，不能据此声称复现原论文。
-实现：[网格策略](mujoco_unscrewing_probe_new/src/entropy_grid_baseline.py)、[统一评估](mujoco_unscrewing_probe_new/src/run_m8_five_method_retry3_audit.py)。
+**A concrete AI-assisted review workflow.** Start with a narrow question, search terms, and inclusion criteria. Read the primary paper and annotate its equations, sensing assumptions, evaluation conditions, and limitations. Give AI those source passages and ask it to populate a comparison matrix with page/section evidence. Check every important cell against the paper. Finally, write the synthesis yourself: which assumption differs from this apparatus, and what experiment would expose the difference?
 
-### 6. 用共享物理闭环验证接合
+The most useful output is a table such as **sensors → observation → hidden variables → permitted actions → success definition → comparison conditions**. This makes it harder to compare a method with ground-truth information against one using noisy contact alone.
 
-所有搜索方法共享导纳/RCC 控制、力和倾角约束、捕获检测、恢复和终止验证。
-捕获只触发插入尝试；达到注册深度并持续满足驻留时间及保护条件后，才记录 verified engagement。
-停滞或姿态不合适时可卸载、回撤、回正、重新接触，最多恢复三次。
-实现：[导纳](mujoco_unscrewing_probe_new/src/cartesian_admittance.py)、[物理执行](mujoco_unscrewing_probe_new/src/mujoco_admittance_rollout.py)、[恢复保护](mujoco_unscrewing_probe_new/src/funnel_guard.py)、[终止验证](mujoco_unscrewing_probe_new/src/terminal_completion_verifier.py)。
+**What I would improve.** Keep a literature ledger containing the exact source, a short independently written explanation, one derivation or toy example, and a design consequence. Ask AI for counterarguments and missing references after forming my own view. A fluent summary should never substitute for being able to explain a central equation or reproduce a small result.
 
-## 当前结果
+## 3. Formalize the problem and the solution
 
-来源：[冻结报告](mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_five_method_retry3_r3_closed_loop/report.json)及同目录逐试验 `trials/sobol_*.json`。
-24 个配对 M8 初始任务，共享 130 s 预算。时间、路径和接触功代理为**各自成功子集**的中位数。
+### What is known, observed, and hidden?
 
-| 方法 | 验证接合 | 时间 / s | 路径 / mm | 接触功代理 / mJ |
+| Quantity | Plain-language meaning | Role in this project |
+|---|---|---|
+| Tool position and coordinate conventions | Where the controller believes it is moving | Motion reference; commanded and measured quantities must be distinguished |
+| Coarse prior over socket centre | Where the opening might be before touching | Initial uncertainty from the task setup |
+| Probe fingerprint | How force, torque, and tip height change during a controlled probe | Input to tactile inference |
+| Direction distribution | Which angular sectors are compatible with the contact | Learned information, with uncertainty |
+| Socket centre and contact state | Where the opening really is and how contact is occurring | Partly hidden; simulation truth is for labels/evaluation only |
+| Shortcut and residual search | The next physical motions | Chosen under action and control limits |
+| Engagement verification | Whether the tool has actually entered and remained engaged | Independent terminal evidence |
+
+The simulation observation contains 360 phase samples of four channels: axial force, two bending moments, and tip height. A roughly 15-degree conical probe supplies the excitation. Three CNN seeds produce distributions over 48 direction bins, with temperature calibration and disagreement/quality information. Probe phase and target direction are different quantities and require explicit frame conventions.
+
+### From a direction estimate to possible centres
+
+Rather than select one exact centre, the planner represents alternatives with particles. In the documented M8 setting, 4,096 particles start from a Gaussian prior with a 2 mm scale, truncated at a radius of approximately 4.895 mm. The angular estimate and a soft, CAD-related contact-support factor update their relative weights.
+
+In simplified form:
+
+$$
+b(c\mid o) \propto b_0(c)\,L_{\mathrm{direction}}(o,c)\,L_{\mathrm{support}}(o,c).
+$$
+
+Here, $b_0$ is the prior, $o$ is the probe observation, and $c$ is a candidate centre. The support factor has a floor, so uncertain contact evidence does not automatically eliminate every alternative. This is an engineering inference model with assumptions to test; it is not a complete, experimentally identified model of all contact dynamics.
+
+**How AI can help with formalization.** It can check dimensions, separate coordinate frames, expand a Bayes update, and produce counterexamples to an overstrong claim. The recorded early Claude-assisted review included notation/frame separation, a general joint Bayesian transition, and the need for a predictive observation distribution when claiming information gain. Those reviews do not establish that every discussed formulation became part of the final implementation; the [workbook](docs/AI_ASSISTED_RESEARCH.md#what-the-records-establish) explains the provenance limits.
+
+### Convert uncertainty into a bounded action
+
+The shortcut uses the lower tail of forward progress, a distance cap, and a controller limit. In plain language: move less when the posterior is ambiguous, and do not command a forward shortcut when substantial probability lies behind the tool.
+
+![Shortcut geometry for clear, ambiguous, and reverse-direction posteriors](overleaf_unscrewing/figures/posterior_shortcut_geometry.png)
+
+*A direction estimate narrows the search, but the remaining spread still matters. The residual region is retained for subsequent search rather than treated as an already solved localization problem.*
+
+<details>
+<summary>Mathematical detail: the documented shortcut rule and its limits</summary>
+
+Let $x_0$ be the starting position, $d$ the selected unit direction, and $z=d^\top(c-x_0)$ the forward projection of a candidate centre. The documented form is
+
+$$
+L^*=\min\left(\left[Q_\alpha(z)-0.25r_{\mathrm{eff}}\right]_+,\;\lambda(q)Q_\rho(\|c-x_0\|),\;L_c\right),
+$$
+
+where $q$ is a direction-quality score, $r_{\mathrm{eff}}$ an effective capture radius, and $L_c$ a controller limit. The scheduled parameters are $\alpha=0.10+0.15q$ and $\lambda(q)=0.35+0.30q$. Reverse probability mass of at least 0.20 suppresses the shortcut. The manuscript setting uses $\rho=0.99$; the generic function default is 0.95, so reproduction must use the experiment configuration rather than assume the default.
+
+This is a bounded action heuristic supported by the recorded experiments. Posterior support is not a guarantee of physical capture. Similarly, a finite spiral pitch alone does not prove complete coverage of a finite search boundary. Calibration, model mismatch, contact mechanics, and boundary geometry still matter.
+
+Implementation: [posterior_search_plan.py](mujoco_unscrewing_probe_new/src/posterior_search_plan.py).
+
+</details>
+
+### Keep inference and verification separate
+
+The outward variant, **PGS-O**, follows the shortcut with local outward search. **PGS-G** uses a task-aware grid policy combining information, capture, and motion cost. Both operate with compliant control, force/tilt limits, and distinct capture, insertion, and dwell checks. Recovery can be enabled, with up to three recoveries in the documented comparison.
+
+**What I would improve.** Derive a minimal two-dimensional version on paper, implement it without a neural model, and test a clear posterior, a bimodal posterior, a reversed posterior, and a deliberately wrong prior. Only then add learned likelihoods. I should be able to explain which assumption makes each action reasonable and construct a case in which it fails.
+
+## 4. Use simulation to test mechanisms
+
+Simulation is useful because hidden geometry and repeatable starts are available for evaluation. It becomes misleading if those hidden variables accidentally enter the online policy or if methods receive different information, budgets, or success definitions.
+
+**How AI can help.** It can scaffold data generation, inspect tensor shapes, write analysis scripts, trace configuration differences, and propose ablations. The researcher must still define the split, keep ground truth out of policy inputs, freeze comparison conditions, and inspect trajectories rather than trust a summary table.
+
+The recorded benchmark contains 24 paired M8 cases with a 130 s budget:
+
+| Method | Verified successes | Median time (s) | Median path (mm) | Median contact-work proxy |
 |---|---:|---:|---:|---:|
-| PGS-O | 20/24 | 13.87 | 14.52 | 28.48 |
-| PGS-G | 19/24 | 13.74 | 6.76 | 9.54 |
-| Outward | 19/24 | 34.63 | 71.27 | 120.38 |
-| Direct-4C | 17/24 | 9.22 | 6.07 | 13.67 |
-| Direct-3C | 16/24 | 8.96 | 5.67 | 13.22 |
+| PGS-O: shortcut + outward search | 20/24 | 13.87 | 14.52 | 28.48 |
+| PGS-G: shortcut + task-aware grid | 19/24 | 13.74 | 6.76 | 9.54 |
+| Outward search without the probe | 19/24 | 34.63 | 71.27 | 120.38 |
+| Direct four-channel cue, retry-3 | 17/24 | 9.22 | 6.07 | 13.67 |
+| Jin-style three-channel proxy, retry-3 | 16/24 | 8.96 | 5.67 | 13.22 |
 
-- PGS-O 与 Outward 共同成功的 19 例中，PGS-O 路径全部更短，配对路径差中位数为 **−41.14 mm**。
-- PGS-G 与 PGS-O 的配对结果未显示网格策略的明确额外优势，不能把收益单独归因于信息增益。
-- 独立的 12 例恢复压力集中，相同 RCC/保护下关闭恢复为 **0/12**，允许三次恢复为 **9/12**。
-- M10/M12 跨尺寸结果混合：微调在未触及测试集上未稳定优于零样本或仅标定，M10 硬停止门槛未通过。
-- 实机包括三种尺寸各 26 次、共 78 次锥形采集，以及命名 M12 方法运行与两个 M10 固定起点 pilot。采集次数不是任务成功次数；命名运行不是随机总体成功率基准。
+**Read the table carefully:** time, path, and contact-work proxy medians are computed on each method's own successful cases. They do not establish unconditional superiority. The Jin-style comparator is an engineering proxy, not a claim of reproducing every detail of the original paper.
 
-实机记录可能同时有 `task_completed=true`、`success=false`，应结合事件、深度及预算解释。
-当前实机代码与部分命名运行的源代码哈希未完全对应；完整限制见审计。
+Across the 19 cases where both PGS-O and Outward succeeded, every PGS-O path was shorter; the median paired difference was approximately -41.14 mm. The evidence does **not** show a clear additional paired advantage for PGS-G over PGS-O. In a separate fixed 12-case recovery comparison, R0 succeeded in 0 cases and R3 in 9; that selected comparison is not a population success-rate estimate.
 
-## AI 如何辅助这个项目
+![M8 budgeted engagement profiles across offset groups](overleaf_unscrewing/figures/m8_budgeted_engagement_profiles.png)
 
-这里需要区分两种 AI：**开发阶段的大语言模型助手**参与讨论、实现、审查与表达；**机器人运行时的学习模型**从触觉指纹输出方向与接触支持。两者的输入、职责和验证方式不同，运行时模型接口见上文。
+*These profiles show how completion depends on available time and travel, rather than reducing the experiment to one success-conditioned median. The underlying evidence and figure inputs are indexed in [REPRODUCIBILITY.md](REPRODUCIBILITY.md).*
 
-现有记录明确保存了 ChatGPT 参与早期研究路线讨论，以及对 Claude 形式化建议的选择性采纳；本次仓库整理和文档更新由 Codex 辅助完成。历史记录未逐文件标注生成者，不能据此把全部代码或实验设计归因于某个模型。
+Cross-size fine-tuning also did not provide a stable held-out improvement over zero-shot/calibration-only alternatives, and the M10 hard-stop gate failed. These negative results limit the scope of the learned model and belong in the research story.
 
-| 环节 | AI 辅助的具体方式 | 研究者需要掌握和验证的内容 |
+**What I would improve.** Use a small mechanism ladder: classical direction cue → learned direction → bounded shortcut → residual search → recovery. Add one component at a time, retain identical starts and budgets, and declare the primary outcome before examining the results. Keep a development set for debugging and an untouched test set for the final comparison. Ask AI to look for leakage and unfair advantages before asking it to improve performance.
+
+## 5. Turn CAD into a physical experiment
+
+The hardware stage required more than transferring code. Printed geometry, assembly alignment, force calibration, and deployment environments all changed the meaning of the observations.
+
+### Parametric CAD and 3D printing
+
+The checked-in tooling uses CadQuery to generate an integrated flange/tool family and a multi-socket fixture from explicit parameters. The current documented design is v1.5, with its yaw datum frozen on 2026-07-24. The generator reads the source flange STEP and geometry configurations; it exports STEP, STL, and 3MF artifacts with a manifest.
+
+```mermaid
+flowchart LR
+    A[Measured interface and CAD source] --> B[Named dimensions and datums]
+    B --> C[CadQuery generator]
+    C --> D[STEP and print meshes]
+    D --> E[Geometry and mesh checks]
+    E --> F[Print fit coupons]
+    F --> G[Measure fit and assembled alignment]
+    G --> H[Freeze geometry for experiments]
+    G --> B
+```
+
+**How AI fits into this loop.** An assistant can help translate a dimension table into parametric code, inspect boolean/loft errors, and generate validation scripts. It cannot establish a printed fit or a mechanically sound load path from a plausible rendering. Those require inspection, measurements, and physical trials. The repository establishes the CAD workflow; it does not preserve enough prompt history to attribute every modeling operation to a particular assistant.
+
+The flange mating plane is the shared zero-height datum and the nominal tool tip lies 42 mm below it. The M8/M10/M12 tool shaft across-flats dimensions are 6/8/10 mm. The hardware chamfers are deliberately larger and more printable than the original simulation tip geometry.
+
+![M8, M10, and M12 printed-tool tip profiles compared with simulation geometry](real_device/model/parametric_tooling/generated/preview_peg_tip_profiles.png)
+
+*Solid hardware profiles and dashed simulation profiles expose a real experimental difference. A wider physical entry geometry can improve capture; it must not be presented as evidence that the learned model itself improved.*
+
+An early quick-change design encountered a printing problem at an unsupported shoulder and concerns about fit/hysteresis. The design moved to a solid integrated flange/tool. A separate mesh issue appeared when generic loft construction produced self-intersections for rotated variants; explicit planar faces provided a more inspectable construction. These examples show why rendering, mesh validity, printability, and installed mechanical behavior are separate checks.
+
+| Artifact | What it lets a reader inspect |
+|---|---|
+| [Tooling design notes](real_device/model/parametric_tooling/README.md) | Datums, dimensions, print variants, and design history |
+| [Parameters](real_device/model/parametric_tooling/design_parameters.json) and [generator](real_device/model/parametric_tooling/generate_models.py) | How geometry is specified and constructed |
+| [M8 STEP](real_device/model/parametric_tooling/generated/integrated_flange_peg_m8.step), [M10 STEP](real_device/model/parametric_tooling/generated/integrated_flange_peg_m10.step), [M12 STEP](real_device/model/parametric_tooling/generated/integrated_flange_peg_m12.step) | The integrated tools |
+| [Socket fixture STEP](real_device/model/parametric_tooling/generated/socket_base_hardware_easy_v2.step) | The easier hardware fixture geometry |
+| [Mesh checker](real_device/model/parametric_tooling/verify_print_meshes.py) and [validation output](real_device/model/parametric_tooling/generated/mesh_validation.json) | Stored mesh-level checks |
+| [CAD manifest](real_device/model/parametric_tooling/generated/manifest.json) | Generated artifact and geometry provenance |
+
+<details>
+<summary>Coordinate-frame lesson: a CAD rotation must not be compensated twice</summary>
+
+![Tool-flange yaw construction and installed alignment conventions](real_device/model/parametric_tooling/generated/preview_peg_flange_yaw_alignment.png)
+
+The documented -15-degree CAD construction rotation is already part of the geometry. Applying another correction at runtime would change the intended alignment. CAD datums, fixture alignment, robot TCP, and force/torque sensor axes must be related explicitly. A geometric drawing does not itself calibrate the installed sensor or establish the measured tool pose.
+
+</details>
+
+**What I would improve.** Print fit coupons before full tools; record measured dimensions, insertion clearance, runout, installed yaw, and TCP uncertainty. Freeze the geometry version before collecting a comparison dataset. To regenerate, use an isolated copy and the environment instructions in the tooling README: the generator also manages retired outputs. A watertight mesh is a file-quality result, not a certificate of fit, strength, or experimental equivalence.
+
+## 6. Connect models, software, and hardware
+
+### What actually runs on the robot
+
+The apparatus uses a KUKA LBR iiwa 14 R820, KST/Sunrise communication, and a Bota force/torque sensing path through ROS. MATLAB owns online motion commands and the engagement state machine. The Python runtime performs a phase-boundary inference job after a completed probe; it does not connect to ROS, Bota, KST, or the robot.
+
+```mermaid
+flowchart TB
+    O[Operator and experiment configuration] --> M[MATLAB state machine and command owner]
+    M --> K[KST / Sunrise / DirectServo]
+    K --> R[Robot]
+    B[Bota wrench stream through ROS] --> M
+    M --> C[Completed cone CSV after stopping the stream]
+    C --> P[Frozen Python inference process]
+    P --> J[Posterior JSON with status]
+    J --> M
+    M --> L[Run logs and verification results]
+    A[ChatGPT / Claude / Codex during development] -. inspect and propose edits .-> W[Source files, contracts, and saved traces]
+    L --> W
+```
+
+During the documented DirectServo stream, synchronous KST pose feedback is unavailable. Commanded or interpolated pose samples must not be called continuously measured robot trajectories. Fresh state checks before and after a stream, wrench timestamps, and explicit signal labels are necessary to interpret a run.
+
+The real-device model uses seven channels across 360 phase samples: six world-frame relative wrench channels plus commanded relative vertical displacement. Five context values encode size, target force, and bit ratio. The documented runtime is `REAL_FOURIER_LINEAR_V1`, with three seeds trained on 48 clean runs selected from 78 acquired cones. This is different from the four-channel simulation CNN. Runtime authority remains limited: the M12 shortcut is capped, and narrow M10 pilot exceptions do not establish general deployment across sizes.
+
+Implementation and contracts: [MATLAB policy](real_device/execute_m12_contact_engagement_policy.m), [runtime README](real_device/model_runtime/README.md), and [hardware README](real_device/README.md).
+
+### How ChatGPT or Claude can help read a hardware interface
+
+There are two distinct activities: an assistant inspecting a workstation's source/docs/logs, and a controller communicating with hardware. The repository documents the second activity in code and logs. It does **not** establish a verified, product-specific live ChatGPT or Claude robot bridge.
+
+A useful development workflow is still concrete:
+
+1. Give the assistant the driver/interface documentation, the relevant source, and a saved trace. Ask for inputs, outputs, units, frames, timestamps, blocking behavior, and failure states.
+2. Ask it to trace one signal end to end: for example, sensor wrench → frame transformation → probe CSV → model features → posterior JSON → bounded command.
+3. Compare its explanation with a known static reading and an offline replay. Inspect the actual executable path, dependencies, and loaded model before motion starts.
+4. Make one reviewed software change and assess it with the existing controller and operator procedure. Record what changed and whether the predicted symptom changed.
+
+For a future integration, a small **read-only tool adapter** could expose `read_interface_contract`, `get_cached_status`, `read_run_trace`, and `replay_saved_cone`. Each response should include provenance, freshness, units, frames, and error status. This is a proposed interface, not a checked-in functioning bridge. It would let an assistant explain evidence without turning conversational suggestions into robot commands. The [workbook](docs/AI_ASSISTED_RESEARCH.md#proposed-read-only-hardware-tools) gives example contracts.
+
+### What the hardware evidence currently supports
+
+The hardware records include three groups of 26 conical acquisitions, named M12 method runs, and two M10 fixed-start pilots. They support mechanism inspection and reveal deployment failures; they do not establish randomized population success rates or seamless simulation-to-real transfer. Some records distinguish `success=false` from `task_completed=true`, so endpoint definitions and time limits must be read before classifying a run.
+
+![Named M12 same-start hardware runs showing different search mechanisms](overleaf_unscrewing/figures/hardware_m12_same_start_mechanism_pair.png)
+
+*This named same-start mechanism example uses extended runs, with terminal times around 204.8 s and 180.3 s. It is not the 130 s simulation benchmark and should not be used to claim success within that budget.*
+
+**What I would improve.** Establish sensor bias/gravity compensation, moment reference points, installed frames, timestamps, and command ownership before judging model quality. Validate a saved cone in the exact deployment environment. Use a small, fixed set of hardware starts and change one component at a time. Save the controller revision, model/configuration hashes, environment information, and geometry identifier before every run.
+
+## 7. Learn from failures
+
+The most useful AI-assisted debugging is a loop: state competing explanations, find a discriminating measurement, make one change, and check whether the predicted effect occurs. Repeatedly asking for a patch can produce progress in code while leaving the physical cause unexplained.
+
+| Recorded problem | What the evidence changed | Lesson and a better next experiment |
 |---|---|---|
-| 问题收敛 | 将广泛的探索路线拆成任务、观测、标签、动作和实验 | 为什么先做 M8 接合，证据能支持到哪一步 |
-| 形式化与阅读 | 对照物理意义检查坐标、符号、Bayes 更新与规划假设 | 亲自推导关键公式，回到原始来源核对假设 |
-| 实现与诊断 | 将窄接口落到代码，读取报错、轨迹和失败类别 | 检查单位、真实反馈、真值泄漏及模块间契约 |
-| 实验与写作 | 整理配对结果、消融、图表来源与结论边界 | 公平预算、独立测试集、失败记录和统计含义 |
-| 交付与复现 | 建立文件清单、校验、数据还原脚本与使用文档 | 实际执行还原和验证，区分静态检查与物理复现 |
+| An early direct/Jin-style comparison used injected direction errors and true offset distance | The comparison did not match the information available to competing methods; a corrected selected case could favor Direct | Freeze an information-access table and paired starts before making a superiority claim |
+| A more elaborate information-driven planner looked attractive | The final paired evidence did not establish a clear extra benefit over PGS-O | Require an ablation that shows when the added term changes an action and improves an outcome |
+| A recoverable low-force event during RAMP invalidated a whole probe | A non-SCAN event could suppress the shortcut | Define validity per acquisition phase and replay the recorded state transitions |
+| A hardware run invoked `/usr/bin/python3`, where the required model dependency failed | The apparent learned-policy run actually used a classical cue fallback | Check interpreter and model loading before deployment; log model identity and avoid silent fallback |
+| A direct ray missed the target | The logged ray already travelled about 4.218 mm; direction error was more relevant than insufficient length | Reconstruct direction and coordinate conventions before increasing the motion limit |
+| Broad stability and reachability checks distorted behavior | A force-stable window could return too early; an old grid veto could report false exhaustion | Test each state transition against a trace and keep diagnostic cues separate from terminal verification |
+| Offline replay exposed inconsistent model direction | Recorded force differed from training context; gravity/CoM and moment-origin effects remained plausible nuisance causes | Measure the sensing chain and use same-pose air/contact checks before tuning thresholds |
+| A printed quick-change part and some generated meshes failed | CAD appearance had hidden print-support, fit, and topology problems | Use coupons, physical inspection, and independent mesh checks before freezing the tooling |
 
-具体案例、可复用提示词和每次协作的交付标准见[详细文档](docs/AI_ASSISTED_RESEARCH.md)。其中历史事实均标出记录来源；提示词是为下一次项目编写的模板，不是历史对话原文。
+The hardware examples are documented in [M12 three-run debugging](real_device/docs/M12_20260727_THREE_RUN_DEBUG.md). Simulation comparison changes and reasoning constraints are recorded in [design decisions](mujoco_unscrewing_probe_new/DESIGN_DECISIONS.md) and [project rules and lessons](mujoco_unscrewing_probe_new/PROJECT_RULES_AND_LESSONS.md). A recorded corrective action does not imply that all later runs or all sizes were validated.
 
-## 如果重做，怎样做得更好、学得更深
+For every failure, I would now preserve a short **prediction → observation → explanation → discriminating test → result** note. AI can suggest alternatives and inspect logs. The researcher should select the test, predict its outcome before running it, and explain why the result changes the conclusion.
 
-建议保留“触觉方向与距离不确定性分离、学习接口窄、物理验证独立”的主线，把过程组织为下面的研究阶梯：
+## 8. Make the contribution and learning explicit
 
-1. **先证明问题与信息来源。** 画出接触几何，找出静态观测混淆的状态，用小实验检验锥形指纹是否提供方向信息；先解释径向歧义，再决定模型。
-2. **先打通最小闭环。** 复用一个可测的控制执行核心，先完成 Outward 基线，再加入一次观测和有限捷径。每次只改变一个能被实验否定的假设。
-3. **先冻结评估规则。** 按物理位置、采集批次和对称关系划分训练/验证/标定/测试，记录相同预算、动作成本和全部失败；看过的测试集转为已消耗证据。
-4. **先隔离机制，再扩展系统。** 用匹配探测成本和残余策略的消融拆分方向、CAD 径向似然、捷径、网格和恢复。没有独立收益的复杂模块暂缓扩展。
-5. **从第一天保存复现信息。** 每次运行自动记录代码快照、配置、依赖、模型和数据哈希，避免最后才发现实机源文件与结果对应不上。
-6. **每一步留下自己的解释。** 对每个关键概念完成“闭卷解释 → 手算例子 → 最小实现 → 反例 → 实际证据定位”，再请 AI 查错。
+### What this project contributes at the system level
 
-最值得建立的知识链是：**接触几何 → 主动可观测性 → 概率与标定 → 决策与覆盖 → 柔顺控制 → 实验推断 → 可复现计算**。
-理解的检查标准是：能预测一个改动将造成什么失败，能设计区分两种解释的实验，并能从原始记录追到论文结论。
-详细文档提供了[知识地图、手算练习与验收标准](docs/AI_ASSISTED_RESEARCH.md#四把项目变成知识体系)，以及一套按成果推进的重做计划。
+The concrete work is a connected research system: an informative contact probe; a direction-to-centre inference interface that retains radial ambiguity; a bounded shortcut with residual search; independent engagement checks; paired simulation evidence; and printed tooling plus hardware deployment records. The repository also preserves counterexamples and negative findings that limit the claims.
 
-## 数据下载与校验
+These are demonstrable project outputs. A broader claim of scientific novelty requires a careful comparison with prior work. Neither the presence of many files nor the use of a sophisticated model establishes novelty by itself.
 
-普通克隆包括代码、JSON/CSV 报告、实机原始 CSV、论文、图与两份选定 PPTX。
-仿真 NPZ、PT 权重、视频和大型 CSV 按类别放在同仓库的
-[research-snapshot-2026-10-27 私有 Release](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/tag/research-snapshot-2026-10-27)。
+### What should count as my own contribution?
+
+The most defensible personal contribution is the intellectual and experimental responsibility I can demonstrate: why this question matters, which assumptions I accepted, why I chose a particular experiment, what I measured, what failed, and how the evidence changed my view. The repository alone cannot allocate each historical idea or code block between the author and assistants. I should therefore describe specific decisions and artifacts rather than claim an unsupported percentage of original work.
+
+| Area of ownership | Evidence that would make the contribution clear |
+|---|---|
+| Problem selection | A dated problem note with alternatives considered and a falsifiable question |
+| Theoretical reasoning | An independently worked derivation, assumptions, and a counterexample |
+| Method design | A decision record explaining why this interface or action rule was chosen |
+| Engineering | Measurements, interface contracts, CAD revisions, and a diagnosed failure |
+| Experimental design | Frozen splits, matched baselines, declared metrics, and a plan for failures |
+| Interpretation | A claim linked to an artifact, with uncertainty and contrary evidence retained |
+| AI collaboration | The suggestion received, my checks, changes or rejection, and resulting evidence |
+
+AI assistance can accelerate implementation and broaden the options considered. My contribution increases when I can independently test, reject, improve, and explain those options. Merely retyping generated code or withholding useful tools would not create stronger research ownership.
+
+### What still needs deeper understanding?
+
+**Theory.** I need a clearer account of observability: which contact features identify direction, which might identify distance, and which are confounded by geometry or gravity? I also need to distinguish a classifier posterior from a calibrated centre belief, heuristic action bounds from guarantees, and useful compliance from a justified stability argument.
+
+**Engineering.** I need stronger metrology and interface discipline: consistent wrench reference points, installed coordinate frames, timing, commanded-versus-measured state, reproducible deployment, and geometry versioning. Debugging should reduce uncertainty about a physical mechanism rather than just produce a successful retry.
+
+**Evidence and communication.** I need fairer comparisons from the start, cleaner separation of exploratory and held-out results, explicit treatment of failures and budgets, and source-to-figure traceability. I should be able to present a failed hypothesis clearly, without making a more complex method sound more effective than the data supports.
+
+## If I repeated this project
+
+I would keep the physical question narrow and make learning deliverables part of the experiment plan. Each stage would end with something I can explain and reproduce independently.
+
+| Stage | What I would do first myself | How I would then use AI | Evidence of understanding before moving on |
+|---|---|---|---|
+| 1. Define the task | Draw the contact geometry and write failure hypotheses | Challenge the framing and identify missing variables | Explain the endpoint and a result that would refute the hypothesis |
+| 2. Read the foundations | Read a small set of primary papers and derive one central result | Compare assumptions and critique my synthesis | Reproduce a toy result and explain how this apparatus differs |
+| 3. Build a minimal model | Implement a small geometry/posterior example without a network | Review dimensions, edge cases, and numerical behavior | Predict outcomes for ambiguous, reversed, and mismatched inputs |
+| 4. Design the experiment | Freeze baselines, information access, splits, and metrics | Audit leakage and propose discriminating ablations | Explain what each ablation could prove and what it could not |
+| 5. Establish the hardware chain | Measure frames, bias, geometry, timing, and fit | Inspect contracts and automate bounded checks | Trace one physical wrench reading all the way to a bounded command |
+| 6. Add learning | State exactly what the classical method cannot resolve | Help implement and evaluate the smallest useful model | Show an improvement attributable to learning under matched conditions |
+| 7. Analyze failure | Predict competing causes and choose one measurement | Generate alternatives and review the evidence | Explain why a test supports one cause over another |
+| 8. Write the claim | Draft the argument from figures and counterexamples | Critique clarity, scope, and missing support | Defend each claim from a concrete artifact without relying on AI prose |
+
+### Build a connected knowledge system
+
+```mermaid
+flowchart LR
+    G[Geometry and coordinate frames] --> W[Wrenches and contact mechanics]
+    W --> O[Observability and informative probing]
+    O --> B[Bayesian inference and calibration]
+    B --> D[Decision-making under uncertainty]
+    D --> C[Compliant control and verification]
+    C --> E[Experimental design and evidence]
+    E --> G
+```
+
+For each connection, I would write one page containing an intuition, a derivation, a small executable example, a measured or simulated counterexample, and a link to the project component it explains. For example, changing the moment reference point connects rigid-body mechanics directly to feature distribution shift; a bimodal direction estimate connects calibration directly to a shorter action; finite search boundaries connect geometry directly to limits on coverage claims.
+
+Three especially useful independent exercises would be:
+
+1. **Wrench exercise:** derive and numerically check a force/torque frame and reference-point transformation, then predict the effect of a sign or origin error on a probe fingerprint.
+2. **Belief exercise:** build a tiny particle posterior with synthetic observations, compare its predicted mass with empirical coverage, and show why direction confidence alone does not determine distance.
+3. **Control/evidence exercise:** replay a failed run, distinguish commanded state, observed wrench, inference output, and verification events, and propose one test whose result would change the diagnosis.
+
+I would revisit these exercises later without an assistant or the earlier solution. Being able to transfer the idea to a new geometry, sensor condition, or failure is a stronger learning check than recognizing a familiar explanation. The [workbook](docs/AI_ASSISTED_RESEARCH.md) turns this plan into practical prompts and templates.
+
+## Repository, data, and reproduction
+
+### Where to start
+
+| Content | Entry point |
+|---|---|
+| Paper and source | [Manuscript PDF](overleaf_unscrewing/main.pdf), [LaTeX](overleaf_unscrewing/main.tex), [bibliography](overleaf_unscrewing/references.bib) |
+| Figure/result provenance | [REPRODUCIBILITY.md](REPRODUCIBILITY.md) |
+| Simulation and planning | [Simulation workspace](mujoco_unscrewing_probe_new), [posterior planner](mujoco_unscrewing_probe_new/src/posterior_search_plan.py), [comparison executor](mujoco_unscrewing_probe_new/src/render_m8_search_comparison.py) |
+| Hardware and inference | [Real-device workspace](real_device), [runtime contract](real_device/model_runtime/README.md) |
+| CAD and print files | [Parametric tooling](real_device/model/parametric_tooling/README.md) |
+| Research reflection | [AI-assisted research workbook](docs/AI_ASSISTED_RESEARCH.md) |
+| Presentation materials | [Compact 39-slide deck](outputs/Learning_Based_Tactile_Posterior_Guided_Search_Compact_39_Slides.pptx), [group-review deck](outputs/Learning_Based_Tactile_Posterior_Guided_Search_Group_Review.pptx) |
+| Snapshot scope and checks | [Snapshot notes](docs/GITHUB_SNAPSHOT.md), [upload validation](docs/VALIDATION_20261027.md), [historical audit](PUBLICATION_AUDIT.md) |
+
+### Download the data and models
+
+Code, documentation, figures, and smaller artifacts are tracked in Git. Larger/binary scientific artifacts are stored in six private Release archives: datasets, diagnostics, evaluations, hardware, models, and videos. The [manifest](docs/SNAPSHOT_MANIFEST.json) records their paths, sizes, and SHA-256 hashes. Repository access is required for both cloning and Release downloads.
+
+With GitHub CLI authenticated and Python 3.10+ available:
 
 ```bash
-git clone https://github.com/nanjinyao/tactile-posterior-guided-engagement.git
+gh repo clone nanjinyao/tactile-posterior-guided-engagement
 cd tactile-posterior-guided-engagement
-gh auth login
-python tools/restore_artifacts.py --group models datasets
-# 恢复全部材料，包括评估样本、大型诊断轨迹与视频
 python tools/restore_artifacts.py --all
-# 检查主仓库文件与已还原数据
 python tools/restore_artifacts.py --verify
 ```
 
-| 数据分组 | 内容 |
-|---|---|
-| `models` | 仿真模型权重与归一化参数 |
-| `datasets` | 仿真训练、标定及适配数据 |
-| `evaluations` | 冻结评估中的二进制样本与权重 |
-| `diagnostics` | 诊断样本和大型接触轨迹 |
-| `hardware` | 实机离线学习与部署的二进制数据/权重 |
-| `videos` | 保留的演示视频 |
-
-仅准备实机离线推理时可先执行 `python tools/restore_artifacts.py --group hardware`。
-下载需要该私有仓库的访问权限及已登录的 GitHub CLI。
-还原脚本核对压缩包和逐文件 SHA-256，保留原始相对路径，默认拒绝覆盖内容不同的现有文件。
-完整清单见 [SNAPSHOT_MANIFEST.json](docs/SNAPSHOT_MANIFEST.json)，大文件不通过 Git LFS 分发。
-原始数据、合同和权重不作内容改写。
-
-主仓库可直接执行关键记录验证，不需要安装仿真依赖或下载大数据：
+To restore selected groups only:
 
 ```bash
-python tools/verify_paper_evidence.py
+python tools/restore_artifacts.py --group models datasets
 ```
 
-这只检查已存记录和部分数值，不重新执行实验。
+`--verify` checks the entire manifest and will report missing files after a partial restore. The original scientific Release is [research-snapshot-2026-10-27](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/tag/research-snapshot-2026-10-27); its tag and six archives remain fixed while the main branch receives documentation improvements.
 
-## 目录与复现路径
+### What has and has not been verified
 
-| 路径 | 内容 |
-|---|---|
-| `mujoco_unscrewing_probe_new/src/` | 仿真、学习、规划、控制、评估、渲染 |
-| `mujoco_unscrewing_probe_new/configs/`、`models/` | 三尺寸几何与 MuJoCo 模型 |
-| `mujoco_unscrewing_probe_new/outputs/current/` | 冻结数据、权重、报告、逐试验记录和媒体 |
-| `real_device/` | MATLAB 控制器、任务入口、安装配置、CAD 与原始实机 CSV |
-| `real_device/offline_learning/`、`offline_analysis/` | 真实数据构建、训练、标定与保留结果 |
-| `real_device/model_runtime/` | 推理接口、模型包及部署合同 |
-| `overleaf_unscrewing/` | 当前论文、10 张图、参考文献及构图代码 |
-| `outputs/` | 精简版与讨论版汇报 PPTX |
-| `docs/`、`tools/` | 清单、验证记录、下载还原及证据检查工具 |
+The initial upload included archive/member integrity checks, a full restored-snapshot hash check, selected tests (**26 passed plus 29 subtests**), and the stored-paper evidence verifier. The documentation revision does not constitute a new simulation benchmark, model-training run, CAD fabrication, or hardware experiment. See the [dated validation record](docs/VALIDATION_20261027.md) for the exact scope.
 
-论文以当前文件快照导入，原独立 `.git` 保留在本机。第三方论文 PDF、独立参考项目、重复的 1.32 GB 演示文件、同步冲突、本机环境与临时目录未纳入上传。
-仿真历史依赖锁未完整找到；根 `requirements.txt` 是直接依赖列表，实机保留自己的 Python 3.8 锁文件。
+Full reproduction still has limitations: the original environment lock is incomplete; KST is an external dependency; some hardware source hashes do not match the later available source; installed metrology is incomplete; historical native-library issues remain; and some composite figures require manual assembly. The stored results should be read with those limits. For environment and evidence-specific instructions, begin with [REPRODUCIBILITY.md](REPRODUCIBILITY.md) and the relevant subsystem README.
 
-```bash
-python -m venv .venv
-# Linux/macOS；PowerShell 改用 .\.venv\Scripts\Activate.ps1
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-cd mujoco_unscrewing_probe_new
-python -m pytest -q -p no:cacheprovider tests/test_posterior_search_plan.py tests/test_cartesian_admittance.py tests/test_terminal_completion_verifier.py tests/test_checkpoint_relocation.py
-```
-
-还原模型和数据后，在合格的 MuJoCo/PyTorch 环境中运行完整五方法实验：
-
-```bash
-python -m src.run_m8_five_method_retry3_audit --help
-python -m src.run_m8_five_method_retry3_audit --poses 24 --workers 1 --no-resume --output outputs/reproduction/m8_five_method
-```
-
-S4 跨尺寸执行需要 Unix `fcntl`，视频依赖 FFmpeg。部分训练/消融默认写入保留结果目录，应在独立副本运行。
-本次上传未连接机器人、重训模型或重跑完整物理基准。
-逐图逐表来源、实机依赖、论文编译、已知 Windows 原生依赖问题与命令限制详见 [REPRODUCIBILITY.md](REPRODUCIBILITY.md)。
-项目尚无最终出版元数据和项目级许可证，不生成虚构的 DOI/正式引用；私有上传不授予公开再分发许可。
-
-
-历史英文仓库准备说明保存在 [REPOSITORY_PREPARATION_20260917.md](docs/REPOSITORY_PREPARATION_20260917.md)。
+For a research report, cite the repository together with the commit used for the narrative and the frozen scientific Release tag. This preserves the distinction between an evolving explanation and the original experimental snapshot.

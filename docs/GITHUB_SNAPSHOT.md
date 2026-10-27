@@ -29,8 +29,10 @@ addresses and original provenance paths may remain in scientific records.
 
 ## Documentation and validation
 
-The root README adds a Chinese research explanation, Mermaid workflow,
-implementation links, method/result table, limitations, and download commands.
+The root README now provides an illustrated English research narrative,
+Mermaid workflows, implementation links, method/result tables, limitations,
+and download commands. It also explains AI-assisted research, physical CAD
+development, hardware interfaces, failed hypotheses, and a proposed learning plan.
 The earlier README is preserved in `REPOSITORY_PREPARATION_20260917.md`.
 `PUBLICATION_AUDIT.md` describes the historical 2026-09-17 audit and its then
 unresolved issues; its statements about no commits/uploads are historical.
@@ -47,10 +49,14 @@ unless explicitly superseded by a recorded check. No robot was connected.
 
 ## Documentation follow-up — 2026-10-27
 
-The main branch now also includes `AI_ASSISTED_RESEARCH.md` and README sections
-on documented AI assistance, a proposed repeat-project workflow, and learning
-through derivations, small examples, counterexamples and evidence tracing.
+The main branch includes an English `AI_ASSISTED_RESEARCH.md` workbook and an
+English README tracing the full research cycle. Seven existing project images
+and four Mermaid diagrams connect the physical apparatus, inference, simulation,
+CAD, hardware integration, and learning plan. The workbook supplies suggested
+prompts, a proposed read-only hardware interface, independent exercises, and
+a contribution ledger. Existing scientific files retain their original languages.
 Historical attribution is distinguished from new prompt/workflow suggestions.
+Background correspondence supplied for context is not part of this upload.
 The current main-branch manifest is updated for these documentation files.
 The original Release tag remains fixed at the initial upload commit and its
 initial manifest; the six scientific archives and their hashes are unchanged.
