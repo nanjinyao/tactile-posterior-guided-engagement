@@ -1,0 +1,189 @@
+{
+  "updated_utc": "2026-07-11T06:27:39.874711+00:00",
+  "paper_source": {
+    "path": "reference/\u9525\u5f62\u63a2\u7d22.pdf",
+    "title": "Contact Pose Identification for Peg-in-Hole Assembly under Uncertainties",
+    "implemented_contract": "Section III-A/C/D: tilt-then-rotate, direction-class output, direct admittance guidance, and shifted re-initialization with a repeated full probe after failed insertion",
+    "reported_boundary": "the paper reports wrong direction/admittance compensation as failure causes and declares failure after more than three attempts"
+  },
+  "claim_boundary": "Scripted recovery diagnostic, not an active baseline and not an exact reproduction: the original square/pentagonal CNN, training data, controller gains, and geometry are unavailable here. Direction errors are scripted class-boundary stress values selected to visualize the paper's documented recovery path.",
+  "fairness": {
+    "same_initial_xy_mm": [
+      4.0,
+      0.0
+    ],
+    "same_probe_alpha_deg": 14.999999999999998,
+    "same_target_down_force_n": 3.0,
+    "same_direct_or_spiral_xy_speed_mm_s": 2.25,
+    "same_capture_evaluator": "below-rim inner-wall/inserted gate + 50 ms dwell + privileged M8 CAD capture region",
+    "proposed_probe_cost_included": true,
+    "paper_retry_probe_cost_included": true
+  },
+  "scripted_stress": {
+    "direction_errors_deg": [
+      22.5,
+      -22.5,
+      0.0
+    ],
+    "reset_offsets_mm": [
+      [
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.25
+      ],
+      [
+        0.0,
+        -0.25
+      ]
+    ],
+    "selection_boundary": "selected recovery illustration; not a random draw and not evidence of the paper method's failure rate"
+  },
+  "proposed": {
+    "method": "proposed",
+    "result": "inner_wall_gate_confirmed",
+    "inner_wall_confirmed": true,
+    "time_to_inner_wall_s": 15.90750000000795,
+    "candidate_attempts": 1,
+    "total_active_time_s": 15.90750000000795,
+    "actual_xy_path_mm": 21.702473990299914,
+    "contact_xy_path_mm": 21.702473990299914,
+    "lateral_work_mj": 34.58546371278972,
+    "orientation_work_mj": 8.660384494144195,
+    "wear_proxy_mj": 43.24584820693392,
+    "max_force_n": 6.051527476951285,
+    "max_torque_mnm": 20.68664134885545,
+    "stage_time_s": {
+      "probe": 5.7995,
+      "transport": 0.978,
+      "spiral": 9.08,
+      "progress_dwell": 0.05
+    },
+    "event_xy_mm": [
+      0.1888021224288933,
+      -0.02238039251881556
+    ],
+    "baseline_depth_mm": -0.05000066419313942,
+    "min_tip_z_mm": -2.752224644051459,
+    "hard_stop": false,
+    "video_path": "outputs/current/media/videos/comparisons/m8_outer_partial_proposed_probe_to_inner_wall.mp4",
+    "frame_count": 289,
+    "initial_xy_mm": [
+      4.0,
+      0.0
+    ],
+    "direction_source": "assumed_profile",
+    "predicted_direction_deg": null,
+    "true_direction_deg": 180.0,
+    "direction_error_deg": null,
+    "direction_confidence": null,
+    "aps_set_size": null,
+    "transport_allowed": null,
+    "transport_distance_mm": 2.2,
+    "transport_target_xy_mm": [
+      1.8,
+      0.0
+    ],
+    "spiral_max_radius_mm": 2.0,
+    "capture_mode": "inner_wall_guided",
+    "display_fast_forward_after_s": null,
+    "display_fast_forward_speed": 1.0,
+    "display_fast_forward_start_frame": null,
+    "control_direction_deg": null,
+    "aps_direction_angles_deg": null,
+    "circular_concentration": null,
+    "ensemble_top1_span_deg": null,
+    "bottom_reached": false,
+    "time_to_bottom_s": null,
+    "bottom_depth_error_mm": null
+  },
+  "paper_inspired": {
+    "method": "paper_direct_retry",
+    "result": "capture_confirmed",
+    "capture_confirmed": true,
+    "successful_attempt": 3,
+    "time_to_capture_s": 28.848999999978115,
+    "total_active_time_s": 28.848999999978115,
+    "actual_xy_path_mm": 26.55560780139841,
+    "contact_xy_path_mm": 19.066890475846748,
+    "wear_proxy_mj": 46.98548443263073,
+    "max_force_n": 10.77912975492709,
+    "max_torque_mnm": 20.254707092678544,
+    "min_tip_z_mm": -2.761177438333951,
+    "hard_stop": false,
+    "attempts": [
+      {
+        "attempt": 1,
+        "reset_xy_mm": [
+          4.0,
+          0.0
+        ],
+        "true_direction_deg": 180.0,
+        "direction_error_deg": 22.5,
+        "predicted_direction_deg": 202.5,
+        "commanded_travel_mm": 4.12,
+        "outcome": "failed_no_capture",
+        "end_xy_mm": [
+          0.2026717609024244,
+          -1.5834979594094376
+        ],
+        "active_time_end_s": 8.630499999999056
+      },
+      {
+        "attempt": 2,
+        "reset_xy_mm": [
+          4.0,
+          0.25
+        ],
+        "true_direction_deg": 183.57633437499734,
+        "direction_error_deg": -22.5,
+        "predicted_direction_deg": 161.07633437499734,
+        "commanded_travel_mm": 4.12780488547035,
+        "outcome": "failed_no_capture",
+        "end_xy_mm": [
+          0.08583424987641894,
+          1.5957835421930113
+        ],
+        "active_time_end_s": 19.27000000000044
+      },
+      {
+        "attempt": 3,
+        "reset_xy_mm": [
+          4.0,
+          -0.25
+        ],
+        "true_direction_deg": 176.42366562500266,
+        "direction_error_deg": 0.0,
+        "predicted_direction_deg": 176.42366562500266,
+        "commanded_travel_mm": 4.12780488547035,
+        "outcome": "capture_confirmed",
+        "end_xy_mm": [
+          0.03463532647110832,
+          -0.0029696327616979467
+        ],
+        "active_time_end_s": 28.848999999978115
+      }
+    ],
+    "frame_count": 483,
+    "active_frame_count": 453,
+    "video_path": "outputs/current/diagnostics/paper_direct_scripted_stress/scripted_direct_retry_to_inner_wall.mp4"
+  },
+  "comparison": {
+    "proposed_faster": true,
+    "proposed_has_bounded_residual_coverage": true,
+    "paper_direct_has_residual_coverage": false,
+    "comparison_video": "outputs/current/diagnostics/paper_direct_scripted_stress/scripted_stress_vs_assumed_proposed.mp4",
+    "comparison_frames": 498
+  },
+  "videos": {
+    "proposed": "outputs/current/media/videos/comparisons/m8_outer_partial_proposed_probe_to_inner_wall.mp4",
+    "paper_inspired": "outputs/current/diagnostics/paper_direct_scripted_stress/scripted_direct_retry_to_inner_wall.mp4",
+    "side_by_side": "outputs/current/diagnostics/paper_direct_scripted_stress/scripted_stress_vs_assumed_proposed.mp4"
+  },
+  "keyframes": {
+    "paper_inspired": "outputs/current/diagnostics/paper_direct_scripted_stress/scripted_direct_retry_keyframe.png",
+    "side_by_side": "outputs/current/diagnostics/paper_direct_scripted_stress/scripted_stress_comparison_keyframe.png"
+  }
+}

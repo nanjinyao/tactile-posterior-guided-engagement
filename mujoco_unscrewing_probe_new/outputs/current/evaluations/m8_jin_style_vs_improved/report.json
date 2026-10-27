@@ -1,0 +1,227 @@
+{
+  "claim_boundary": "Fresh paired MuJoCo M8 evidence only. The Jin-style arm is a frozen engineering proxy, not a faithful paper reproduction. Because the M8 geometry, labels, data distribution, and controller differ, these numbers cannot be compared directly with the paper's reported 97.4% square classification accuracy. No hardware or universal superiority claim is licensed.",
+  "derived_rebuild": {
+    "contract_amendment_sha256": "0b75f693b555377e464d26e4e592ffe51b5f291acd0ab1e2e13cb67b32538f29",
+    "frozen_trial_record_set_sha256": "4be92296c47ed0a4d7791fd852943c4106759536495f4fe949e90fea7d53077a",
+    "frozen_trials_read": 48,
+    "performed": true,
+    "previous_manifest_sha256": "ed36b93c7b37d8c459321ea0b387ca7616edec79bb5569137580eddbc7956077",
+    "reason": "Corrected the derived strict-48 operational direction summary to use the actually executed RunResult.control_direction_deg rather than the ensemble-top-class RunResult.direction_error_deg; rebuilt CSVs/report/summary/figure/manifest from unchanged frozen evidence.",
+    "rebuild_count": 9,
+    "rebuilt_utc": "2026-07-24T06:20:56.523323+00:00",
+    "simulation_rerun": false,
+    "trial_files_overwritten": 0
+  },
+  "direction_layer": {
+    "evaluation_role": "Fresh structured P1v6 radial/sector direction stress; separate from the strict-48 operational task distribution.",
+    "methods": {
+      "improved_fingerprint": {
+        "angle_error_median_deg": 10.74399367549816,
+        "angle_error_p90_deg": 32.74371631502452,
+        "angle_within_15_count": 144,
+        "angle_within_15_rate": 0.8,
+        "angle_within_7p5_count": 49,
+        "angle_within_7p5_rate": 0.2722222222222222,
+        "catastrophic_gt90_count": 7,
+        "catastrophic_gt90_rate": 0.03888888888888889,
+        "common_12_sector_accuracy": 0.3,
+        "common_12_sector_correct": 54,
+        "samples": 180
+      },
+      "jin_2021_style_proxy": {
+        "angle_error_median_deg": 13.0,
+        "angle_error_p90_deg": 17.0,
+        "angle_within_15_count": 125,
+        "angle_within_15_rate": 0.6944444444444444,
+        "angle_within_7p5_count": 89,
+        "angle_within_7p5_rate": 0.49444444444444446,
+        "catastrophic_gt90_count": 2,
+        "catastrophic_gt90_rate": 0.011111111111111112,
+        "common_12_sector_accuracy": 0.6944444444444444,
+        "common_12_sector_correct": 125,
+        "samples": 180
+      }
+    },
+    "paired_base_pose_cluster_bootstrap": {
+      "ci_excludes_zero": false,
+      "ci_percentile_high_deg": 0.6630402718051869,
+      "ci_percentile_low_deg": -2.139499588914134,
+      "cluster_count": 60,
+      "cluster_size_counts": {
+        "3": 60
+      },
+      "cluster_unit": "base_pose_id = state/radius/local-angle/physical-sector; all nuisance repeats remain together",
+      "confidence_level": 0.95,
+      "estimand": "median over paired scans of abs_error_improved_deg - abs_error_jin_proxy_deg",
+      "implementation_note": "The cluster interval was preregistered; deterministic seed and resample count were fixed during the post-run consistency repair.",
+      "interval_interpretation": "The 95% interval includes zero; this paired-median P1v6 contrast does not establish a direction-error advantage.",
+      "method": "paired base-pose cluster bootstrap, percentile interval",
+      "negative_favors": "improved_fingerprint",
+      "point_estimate_deg": -0.8054252120748657,
+      "resamples": 20000,
+      "samples": 180,
+      "seed": 20260734
+    },
+    "paired_improved_minus_jin_absolute_error_median_deg": -0.8054252120748657,
+    "result_characterization": "mixed: improved has lower median and better within-15 rate, while the proxy has better p90, within-7.5, >90 tail, and common 12-sector accuracy; the paired base-pose cluster-bootstrap interval for the median absolute-error difference includes zero",
+    "shared_raw_scan_for_both_estimators": true,
+    "source": "outputs/current/evaluations/p1v6_m8_jin_comparison_direction_audit"
+  },
+  "experiment": "M8_Jin_2021_style_proxy_vs_improved_fingerprint",
+  "interpretation_rule": "Report the measured paired differences and exact McNemar p-values. For strict-48 direction, use the executed control_direction_deg rather than the ensemble top class. Do not infer superiority merely from a higher point estimate.",
+  "post_completion_contract_amendment": {
+    "amendment_id": "M8_JIN_VS_IMPROVED_POST_COMPLETION_DERIVED_REBUILD_V1",
+    "path": "outputs/current/evaluations/m8_jin_style_vs_improved/contract_amendment_derived_rebuild.json",
+    "post_completion_protocol_correction": true,
+    "preregistered": false,
+    "sha256": "0b75f693b555377e464d26e4e592ffe51b5f291acd0ab1e2e13cb67b32538f29"
+  },
+  "schema_version": 1,
+  "task_layer": {
+    "active_time_budget_s": 130.0,
+    "direction_metric_schema_version": 2,
+    "fingerprint_available_pair_count": 48,
+    "fingerprint_sha_mismatch_count": 0,
+    "fingerprint_unavailable_pair_count": 0,
+    "methods": {
+      "improved_fingerprint": {
+        "active_time_budget_s": 130.0,
+        "budget_violation_count": 0,
+        "control_direction_error_median_deg": 3.3408331774659956,
+        "control_direction_error_p90_deg": 20.553935618712543,
+        "control_direction_error_samples": 48,
+        "control_direction_gt90_count": 0,
+        "control_direction_gt90_rate": 0.0,
+        "control_direction_within_15_count": 42,
+        "control_direction_within_15_rate": 0.875,
+        "control_direction_within_7p5_count": 38,
+        "control_direction_within_7p5_rate": 0.7916666666666666,
+        "executed_control_direction_definition": "circular absolute error between frozen RunResult.control_direction_deg (the direction actually executed by direct-first) and RunResult.true_direction_deg",
+        "failure_categories": {
+          "cad_bottom_verified": 32,
+          "capture_without_bottom": 5,
+          "hard_stop": 1,
+          "search_radius_exhausted": 10
+        },
+        "fallback_budget_extension_nonzero_count": 0,
+        "first_ray_capture_count": 37,
+        "first_ray_capture_rate": 0.7708333333333334,
+        "hard_stop_count": 1,
+        "hard_stop_rate": 0.020833333333333332,
+        "safe_termination_count": 47,
+        "safe_termination_rate": 0.9791666666666666,
+        "strict_cad_bottom_count": 32,
+        "strict_cad_bottom_rate": 0.6666666666666666,
+        "top_class_direction_diagnostic": {
+          "error_median_deg": 3.8706918619573116,
+          "error_p90_deg": 12.161717534065247,
+          "gt90_count": 1,
+          "gt90_rate": 0.020833333333333332,
+          "role": "diagnostic only; this is not the direct-first ray that was executed",
+          "samples": 48,
+          "source": "frozen RunResult.direction_error_deg = circular absolute error of RunResult.predicted_direction_deg (ensemble top class / top_direction_deg)",
+          "within_15_count": 45,
+          "within_15_rate": 0.9375,
+          "within_7p5_count": 35,
+          "within_7p5_rate": 0.7291666666666666
+        },
+        "total_active_time_median_s": 9.115499999999649,
+        "trials": 48
+      },
+      "jin_2021_style_proxy": {
+        "active_time_budget_s": 130.0,
+        "budget_violation_count": 0,
+        "control_direction_error_median_deg": 8.175838384777308,
+        "control_direction_error_p90_deg": 17.356161475181576,
+        "control_direction_error_samples": 48,
+        "control_direction_gt90_count": 3,
+        "control_direction_gt90_rate": 0.0625,
+        "control_direction_within_15_count": 40,
+        "control_direction_within_15_rate": 0.8333333333333334,
+        "control_direction_within_7p5_count": 22,
+        "control_direction_within_7p5_rate": 0.4583333333333333,
+        "executed_control_direction_definition": "circular absolute error between frozen RunResult.control_direction_deg (the direction actually executed by direct-first) and RunResult.true_direction_deg",
+        "failure_categories": {
+          "cad_bottom_verified": 18,
+          "capture_without_bottom": 6,
+          "search_radius_exhausted": 22,
+          "sensor_capture_false_positive": 2
+        },
+        "fallback_budget_extension_nonzero_count": 0,
+        "first_ray_capture_count": 24,
+        "first_ray_capture_rate": 0.5,
+        "hard_stop_count": 0,
+        "hard_stop_rate": 0.0,
+        "safe_termination_count": 48,
+        "safe_termination_rate": 1.0,
+        "strict_cad_bottom_count": 18,
+        "strict_cad_bottom_rate": 0.375,
+        "top_class_direction_diagnostic": {
+          "error_median_deg": 8.175838384777308,
+          "error_p90_deg": 17.356161475181576,
+          "gt90_count": 3,
+          "gt90_rate": 0.0625,
+          "role": "diagnostic only; this is not the direct-first ray that was executed",
+          "samples": 48,
+          "source": "frozen RunResult.direction_error_deg = circular absolute error of RunResult.predicted_direction_deg (ensemble top class / top_direction_deg)",
+          "within_15_count": 40,
+          "within_15_rate": 0.8333333333333334,
+          "within_7p5_count": 22,
+          "within_7p5_rate": 0.4583333333333333
+        },
+        "total_active_time_median_s": 8.310499999998665,
+        "trials": 48
+      }
+    },
+    "only_direction_estimator_changes": true,
+    "operational_direction_scope": "Fresh strict-48 executed-control distribution: circular absolute error of frozen RunResult.control_direction_deg against RunResult.true_direction_deg on the same noisy paired direct-first poses. This is the direction actually used by the controller and is distinct from the structured P1v6 direction stress set.",
+    "paired": {
+      "first_ray_capture": {
+        "both_event": 21,
+        "discordant_pairs": 19,
+        "improved_only_event": 16,
+        "jin_proxy_only_event": 3,
+        "mcnemar_exact_two_sided_p": 0.004425048828125,
+        "neither_event": 8
+      },
+      "hard_stop": {
+        "both_event": 0,
+        "discordant_pairs": 1,
+        "improved_only_event": 1,
+        "jin_proxy_only_event": 0,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "neither_event": 47
+      },
+      "safe_termination": {
+        "both_event": 47,
+        "discordant_pairs": 1,
+        "improved_only_event": 0,
+        "jin_proxy_only_event": 1,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "neither_event": 0
+      },
+      "strict_cad_bottom": {
+        "both_event": 16,
+        "discordant_pairs": 18,
+        "improved_only_event": 16,
+        "jin_proxy_only_event": 2,
+        "mcnemar_exact_two_sided_p": 0.001312255859375,
+        "neither_event": 14
+      }
+    },
+    "poses": 48,
+    "post_completion_derived_metric_correction": {
+      "correct_operational_source": "RunResult.control_direction_deg",
+      "frozen_trial_files_modified": 0,
+      "previous_incorrect_operational_source": "RunResult.direction_error_deg",
+      "simulator_rerun": false,
+      "status": "non-preregistered derived-only semantic correction",
+      "truth_source": "RunResult.true_direction_deg"
+    },
+    "same_strict_controller_for_both": true,
+    "seed": 20260733,
+    "top_class_direction_diagnostic_scope": "Frozen RunResult.direction_error_deg measures predicted_direction_deg (ensemble top class / top_direction_deg) against true_direction_deg. It is retained inside each method only as a non-operational diagnostic.",
+    "wrench_noise": true
+  },
+  "updated_utc": "2026-07-24T06:20:58.092026+00:00"
+}

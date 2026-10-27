@@ -1,0 +1,412 @@
+{
+  "adaptation_necessity_supported_for_all_sizes": false,
+  "all_adapted_size_gates_pass": false,
+  "claim_boundary": "Fresh paired MuJoCo S3 pilot only. This pilot has no fine-tuned full-loop gate pass: direction-head calibration improvements did not recover either size's registered full-loop gate. Under this contract, a future fine-tuned pass could show sufficiency for that simulated gate; necessity would additionally require both zero-shot and calibration-only to fail the same frozen gate. This cannot establish that real-robot data fine-tuning is necessary: no real F/T sample, manufacturing tolerance, passivity, motor coupling, threading, or extraction is represented. The privileged straight-to-center arm is an execution gate, not a guaranteed performance upper bound: its direct path can itself hard-stop. Strict success also includes offline true-center/contact-tag capture validation; that scorer is not available to non-oracle controllers and is not a deployable terminal signal. Hyperparameter/model selection was not independently preregistered, so a future positive necessity claim would require a frozen or nested model-selection protocol.",
+  "execution_bundle_sha256": "3b59570cd6f46cd8ca2c1f8f69b6b62d17d90ace675a5d87d6a37e1c6d3fcc8f",
+  "experiment": "cross_size_S3_fresh_adaptation_untouched_full_loop_pilot",
+  "sizes": {
+    "m10": {
+      "adaptation_interpretation": "oracle_execution_feasibility_gate_failed",
+      "cal_only_same_gate_pass": false,
+      "cal_only_task_metrics_gate_pass": false,
+      "fine_tuned_full_loop_gate_pass": false,
+      "fine_tuned_task_metrics_gate_pass": false,
+      "gate_contract": {
+        "adapted_bottom_rate_min": 0.8,
+        "adapted_gt90_control_errors_max": 0,
+        "adapted_hard_stops_max": 0,
+        "frozen_before_rollout": true,
+        "oracle_bottom_rate_min": 0.9
+      },
+      "methods": {
+        "cal_only": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 1,
+          "control_direction_error_median_deg": 5.729415465621614,
+          "control_direction_error_p90_deg": 31.33617901988891,
+          "failure_categories": {
+            "cad_bottom_verified": 10,
+            "hard_stop": 1,
+            "time_budget_exhausted": 1
+          },
+          "hard_stops": 1,
+          "label": "size calibration only",
+          "median_success_bottom_time_s": 39.56050000000687,
+          "median_success_wear_mj": 121.27940749863868,
+          "median_success_xy_path_mm": 72.04050975800484,
+          "offline_capture_successes": 11,
+          "post_capture_recoveries": 2,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.8333333333333334,
+          "strict_bottom_successes": 10,
+          "terminal_rejections": 1,
+          "trials": 12
+        },
+        "fine_tuned": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 2,
+          "control_direction_error_median_deg": 8.365567571489038,
+          "control_direction_error_p90_deg": 83.75356296881588,
+          "failure_categories": {
+            "cad_bottom_verified": 10,
+            "hard_stop": 1,
+            "time_budget_exhausted": 1
+          },
+          "hard_stops": 1,
+          "label": "direction-head fine-tuned",
+          "median_success_bottom_time_s": 30.424499999977897,
+          "median_success_wear_mj": 69.95628835329933,
+          "median_success_xy_path_mm": 48.43636700887848,
+          "offline_capture_successes": 11,
+          "post_capture_recoveries": 2,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.8333333333333334,
+          "strict_bottom_successes": 10,
+          "terminal_rejections": 1,
+          "trials": 12
+        },
+        "oracle": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 0,
+          "control_direction_error_median_deg": null,
+          "control_direction_error_p90_deg": null,
+          "failure_categories": {
+            "cad_bottom_verified": 9,
+            "hard_stop": 3
+          },
+          "hard_stops": 3,
+          "label": "privileged straight-to-center",
+          "median_success_bottom_time_s": 4.055000000000472,
+          "median_success_wear_mj": 7.153216122522008,
+          "median_success_xy_path_mm": 4.73877630604168,
+          "offline_capture_successes": 11,
+          "post_capture_recoveries": 2,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.75,
+          "strict_bottom_successes": 9,
+          "terminal_rejections": 2,
+          "trials": 12
+        },
+        "outward": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 0,
+          "control_direction_error_median_deg": null,
+          "control_direction_error_p90_deg": null,
+          "failure_categories": {
+            "cad_bottom_verified": 9,
+            "funnel_safe_abort:terminal_dwell_rejected": 1,
+            "hard_stop": 1,
+            "search_radius_exhausted": 1
+          },
+          "hard_stops": 1,
+          "label": "pure outward",
+          "median_success_bottom_time_s": 34.200499999981275,
+          "median_success_wear_mj": 124.83165827895517,
+          "median_success_xy_path_mm": 69.60339656867184,
+          "offline_capture_successes": 10,
+          "post_capture_recoveries": 6,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.75,
+          "strict_bottom_successes": 9,
+          "terminal_rejections": 5,
+          "trials": 12
+        },
+        "zero_shot": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 1,
+          "control_direction_error_median_deg": 4.886753096402117,
+          "control_direction_error_p90_deg": 47.30475369926224,
+          "failure_categories": {
+            "cad_bottom_verified": 10,
+            "hard_stop": 1,
+            "time_budget_exhausted": 1
+          },
+          "hard_stops": 1,
+          "label": "M8 zero-shot",
+          "median_success_bottom_time_s": 22.812749999992185,
+          "median_success_wear_mj": 51.948859866069334,
+          "median_success_xy_path_mm": 33.93898416427896,
+          "offline_capture_successes": 11,
+          "post_capture_recoveries": 2,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.8333333333333334,
+          "strict_bottom_successes": 10,
+          "terminal_rejections": 1,
+          "trials": 12
+        }
+      },
+      "oracle_execution_feasibility_gate_pass": false,
+      "paired": {
+        "fine_tuned_vs_cal_only": {
+          "both_failed": 2,
+          "both_success": 10,
+          "common_success_left_minus_right_time_median_s": -7.424999999998477,
+          "left_only_success": 0,
+          "right_only_success": 0
+        },
+        "fine_tuned_vs_outward": {
+          "both_failed": 2,
+          "both_success": 9,
+          "common_success_left_minus_right_time_median_s": -8.26200000003945,
+          "left_only_success": 1,
+          "right_only_success": 0
+        },
+        "fine_tuned_vs_zero_shot": {
+          "both_failed": 2,
+          "both_success": 10,
+          "common_success_left_minus_right_time_median_s": 0.2810000000003434,
+          "left_only_success": 0,
+          "right_only_success": 0
+        }
+      },
+      "scale_contract": {
+        "active_time_budget_s": 130.0,
+        "baseline_max_radius_m": 0.0057,
+        "bit_radius_m": 0.004618802153517006,
+        "capture_radius_m": 0.00030000000000000003,
+        "fallback_budget_extension_s": 0.0,
+        "max_transport_m": 0.002,
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m10_source.xml",
+        "post_capture_funnel": {
+          "cad_bottom_overshoot_margin_m": 0.00025,
+          "deep_tilt_damping_nm_s_rad": 0.5,
+          "deep_tilt_stiffness_nm_rad": 3.0,
+          "enabled": true,
+          "force_floor_n": 0.2,
+          "injected_power_limit_w": 0.5,
+          "max_recoveries": 3,
+          "max_tilt_deg": 0.75,
+          "min_window_progress_m": 2e-05,
+          "moment_lever_m": 0.003,
+          "no_progress_energy_j": 0.0015,
+          "planar_damping_n_s_m": 100.0,
+          "planar_stiffness_n_m": 1500.0,
+          "power_dwell_s": 0.01,
+          "recovery_force_n": 0.2,
+          "recovery_retouch_s": 0.2,
+          "recovery_retract_m": 0.00035,
+          "recovery_retract_s": 0.15,
+          "recovery_unload_s": 0.1,
+          "retry_on_terminal_rejection": true,
+          "shallow_tilt_damping_nm_s_rad": 0.35,
+          "shallow_tilt_stiffness_nm_rad": 1.8,
+          "tilt_dwell_s": 0.02,
+          "window_s": 0.15,
+          "yaw_damping_nm_s_rad": 0.25,
+          "yaw_stiffness_nm_rad": 1.5
+        },
+        "radius_min_m": 0.0012000000000000001,
+        "size": "m10",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m10_source.json",
+        "spiral_pitch_m": 0.00048000000000000007,
+        "visual_bound_m": 0.006,
+        "visual_sigma_m": 0.0024513289294340775,
+        "xy_speed_m_s": 0.00225
+      },
+      "size": "m10",
+      "zero_shot_same_gate_pass": false,
+      "zero_shot_task_metrics_gate_pass": false
+    },
+    "m12": {
+      "adaptation_interpretation": "direction_head_finetuning_not_sufficient_to_pass_this_pilot_gate",
+      "cal_only_same_gate_pass": false,
+      "cal_only_task_metrics_gate_pass": false,
+      "fine_tuned_full_loop_gate_pass": false,
+      "fine_tuned_task_metrics_gate_pass": false,
+      "gate_contract": {
+        "adapted_bottom_rate_min": 0.8,
+        "adapted_gt90_control_errors_max": 0,
+        "adapted_hard_stops_max": 0,
+        "frozen_before_rollout": true,
+        "oracle_bottom_rate_min": 0.9
+      },
+      "methods": {
+        "cal_only": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 0,
+          "control_direction_error_median_deg": 5.062023634300118,
+          "control_direction_error_p90_deg": 18.98497209555583,
+          "failure_categories": {
+            "cad_bottom_verified": 8,
+            "hard_stop": 3,
+            "time_budget_exhausted": 1
+          },
+          "hard_stops": 3,
+          "label": "size calibration only",
+          "median_success_bottom_time_s": 34.87399999998975,
+          "median_success_wear_mj": 101.59555738109296,
+          "median_success_xy_path_mm": 58.03436990025847,
+          "offline_capture_successes": 10,
+          "post_capture_recoveries": 3,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.6666666666666666,
+          "strict_bottom_successes": 8,
+          "terminal_rejections": 1,
+          "trials": 12
+        },
+        "fine_tuned": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 1,
+          "control_direction_error_median_deg": 4.920636201198747,
+          "control_direction_error_p90_deg": 36.82620123306352,
+          "failure_categories": {
+            "cad_bottom_verified": 9,
+            "hard_stop": 3
+          },
+          "hard_stops": 3,
+          "label": "direction-head fine-tuned",
+          "median_success_bottom_time_s": 43.71650000002671,
+          "median_success_wear_mj": 96.34519628432527,
+          "median_success_xy_path_mm": 69.84426030900042,
+          "offline_capture_successes": 10,
+          "post_capture_recoveries": 5,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.75,
+          "strict_bottom_successes": 9,
+          "terminal_rejections": 1,
+          "trials": 12
+        },
+        "oracle": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 0,
+          "control_direction_error_median_deg": null,
+          "control_direction_error_p90_deg": null,
+          "failure_categories": {
+            "cad_bottom_verified": 12
+          },
+          "hard_stops": 0,
+          "label": "privileged straight-to-center",
+          "median_success_bottom_time_s": 5.283999999999791,
+          "median_success_wear_mj": 8.574655826527376,
+          "median_success_xy_path_mm": 5.9094447165147335,
+          "offline_capture_successes": 12,
+          "post_capture_recoveries": 1,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 1.0,
+          "strict_bottom_successes": 12,
+          "terminal_rejections": 1,
+          "trials": 12
+        },
+        "outward": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 0,
+          "control_direction_error_median_deg": null,
+          "control_direction_error_p90_deg": null,
+          "failure_categories": {
+            "cad_bottom_verified": 7,
+            "hard_stop": 4,
+            "time_budget_exhausted": 1
+          },
+          "hard_stops": 4,
+          "label": "pure outward",
+          "median_success_bottom_time_s": 47.18550000004328,
+          "median_success_wear_mj": 164.5146507739253,
+          "median_success_xy_path_mm": 95.89359828540586,
+          "offline_capture_successes": 8,
+          "post_capture_recoveries": 3,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.5833333333333334,
+          "strict_bottom_successes": 7,
+          "terminal_rejections": 1,
+          "trials": 12
+        },
+        "zero_shot": {
+          "budget_violations": 0,
+          "control_direction_error_gt90_count": 0,
+          "control_direction_error_median_deg": 2.68878325665753,
+          "control_direction_error_p90_deg": 32.82540577707611,
+          "failure_categories": {
+            "cad_bottom_verified": 9,
+            "hard_stop": 1,
+            "time_budget_exhausted": 2
+          },
+          "hard_stops": 1,
+          "label": "M8 zero-shot",
+          "median_success_bottom_time_s": 30.487499999974297,
+          "median_success_wear_mj": 96.38769504920036,
+          "median_success_xy_path_mm": 48.68134994064017,
+          "offline_capture_successes": 10,
+          "post_capture_recoveries": 3,
+          "simulator_resets": 0,
+          "strict_bottom_rate": 0.75,
+          "strict_bottom_successes": 9,
+          "terminal_rejections": 0,
+          "trials": 12
+        }
+      },
+      "oracle_execution_feasibility_gate_pass": true,
+      "paired": {
+        "fine_tuned_vs_cal_only": {
+          "both_failed": 2,
+          "both_success": 7,
+          "common_success_left_minus_right_time_median_s": -4.391999999999536,
+          "left_only_success": 2,
+          "right_only_success": 1
+        },
+        "fine_tuned_vs_outward": {
+          "both_failed": 3,
+          "both_success": 7,
+          "common_success_left_minus_right_time_median_s": -9.206999999978542,
+          "left_only_success": 2,
+          "right_only_success": 0
+        },
+        "fine_tuned_vs_zero_shot": {
+          "both_failed": 1,
+          "both_success": 7,
+          "common_success_left_minus_right_time_median_s": -0.0680000000000831,
+          "left_only_success": 2,
+          "right_only_success": 2
+        }
+      },
+      "scale_contract": {
+        "active_time_budget_s": 130.0,
+        "baseline_max_radius_m": 0.0076300000000000005,
+        "bit_radius_m": 0.005773502691896258,
+        "capture_radius_m": 0.00037,
+        "fallback_budget_extension_s": 0.0,
+        "max_transport_m": 0.0025,
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m12_source.xml",
+        "post_capture_funnel": {
+          "cad_bottom_overshoot_margin_m": 0.00025,
+          "deep_tilt_damping_nm_s_rad": 0.5,
+          "deep_tilt_stiffness_nm_rad": 3.0,
+          "enabled": true,
+          "force_floor_n": 0.2,
+          "injected_power_limit_w": 0.5,
+          "max_recoveries": 3,
+          "max_tilt_deg": 0.75,
+          "min_window_progress_m": 2e-05,
+          "moment_lever_m": 0.003,
+          "no_progress_energy_j": 0.0015,
+          "planar_damping_n_s_m": 100.0,
+          "planar_stiffness_n_m": 1500.0,
+          "power_dwell_s": 0.01,
+          "recovery_force_n": 0.2,
+          "recovery_retouch_s": 0.2,
+          "recovery_retract_m": 0.00035,
+          "recovery_retract_s": 0.15,
+          "recovery_unload_s": 0.1,
+          "retry_on_terminal_rejection": true,
+          "shallow_tilt_damping_nm_s_rad": 0.35,
+          "shallow_tilt_stiffness_nm_rad": 1.8,
+          "tilt_dwell_s": 0.02,
+          "window_s": 0.15,
+          "yaw_damping_nm_s_rad": 0.25,
+          "yaw_stiffness_nm_rad": 1.5
+        },
+        "radius_min_m": 0.00148,
+        "size": "m12",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m12_source.json",
+        "spiral_pitch_m": 0.0005920000000000001,
+        "visual_bound_m": 0.008,
+        "visual_sigma_m": 0.00326843857257877,
+        "xy_speed_m_s": 0.00225
+      },
+      "size": "m12",
+      "zero_shot_same_gate_pass": false,
+      "zero_shot_task_metrics_gate_pass": false
+    }
+  },
+  "task_contract_sha256": "23ee5c758f468c280c5b933991ba10c43e8b7befc02654910dbfe70e57f204ce",
+  "updated_utc": "2026-07-15T14:43:00+00:00"
+}

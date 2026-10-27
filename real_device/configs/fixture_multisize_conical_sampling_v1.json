@@ -1,0 +1,2355 @@
+{
+  "schema_version": 1,
+  "name": "fixture_multisize_conical_sampling_v1",
+  "status": "offline_cad_plan_requires_fixture_transform_teach_and_preflight",
+  "claim_boundary": {
+    "purpose": "minimum structured conical-probe acquisition using CAD-seeded offsets rebased to measured M12/M10/M8 as-built centres",
+    "not_a_robot_pose_plan": "local offsets must first be rebased to the measured as-built socket centre, then transformed by a separately measured and qualified fixture-to-WORLD transform",
+    "no_centre_attempt": true,
+    "label_policy": "CAD centres are initial guesses only; measured touchdown and measured as-built centre define labels; centre samples carry no direction label and are not included",
+    "data_governance": "only clean candidates may become training data after complete cone/force/frame/label quality gates; holdout, quarantine, and sentinel attempts are never independent training samples"
+  },
+  "coordinate_contract": {
+    "fixture_frame": {
+      "name": "F",
+      "angle_definition": "degrees counter-clockwise from +X_F toward +Y_F",
+      "socket_centres_mm": {
+        "m8": [
+          -45.0,
+          0.0
+        ],
+        "m10": [
+          0.0,
+          0.0
+        ],
+        "m12": [
+          45.0,
+          0.0
+        ]
+      }
+    },
+    "photo_top_view": {
+      "left_to_right": [
+        "m12",
+        "m10",
+        "m8"
+      ],
+      "view_direction": "viewer is on +Z_F looking along -Z_F; +Z_F points out of the fixture top plane toward the viewer",
+      "mapping": "u_photo_mm = -x_fixture_mm; v_photo_up_mm = -y_fixture_mm",
+      "display_axis_mapping": "u_right_mm = -x_fixture_mm; v_up_mm = -y_fixture_mm",
+      "image_pixel_mapping": "u_pixel_right is proportional to -x_fixture; v_pixel_down is proportional to +y_fixture",
+      "plus_x_fixture_points": "left",
+      "plus_y_fixture_points": "down",
+      "qualification": "the displayed-axis mapping fixes handedness for the schematic only; it is not a calibrated camera homography"
+    }
+  },
+  "source_files": {
+    "real_tooling_profile": {
+      "path_from_group_meeting": "mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+      "sha256": "03878ec282b8e9284b8733062d9ecf9132834069a83cad573755b0120617b356"
+    },
+    "m12_hardware_easy_v2": {
+      "path_from_group_meeting": "mujoco_unscrewing_probe_new/configs/allen_m12_hardware_easy_v2.json",
+      "sha256": "d8661d650c9ce39377099904ed32f1e279e150dcbd991e8888dfbe9c3996467e"
+    },
+    "m10_hardware_easy_v2": {
+      "path_from_group_meeting": "mujoco_unscrewing_probe_new/configs/allen_m10_hardware_easy_v2.json",
+      "sha256": "68b652c1cd22001086b426b10ca7eb6d56055277b293b5486fdbd993b4f733cf"
+    },
+    "m8_hardware_easy_v2": {
+      "path_from_group_meeting": "mujoco_unscrewing_probe_new/configs/allen_m8_hardware_easy_v2.json",
+      "sha256": "d041f867a4f63867c955ca789e53767077342b53530011b88729a592d05495d2"
+    }
+  },
+  "sampling_design": {
+    "attempts_per_size": 26,
+    "total_attempts": 78,
+    "clean_candidate": {
+      "rings": [
+        "RS",
+        "RO"
+      ],
+      "angles_deg": [
+        3.75,
+        41.25,
+        86.25,
+        131.25,
+        176.25,
+        228.75,
+        273.75,
+        318.75
+      ],
+      "count_per_size": 16
+    },
+    "holdout": {
+      "angles_deg_by_ring": {
+        "RS": [
+          16.0,
+          196.0
+        ],
+        "RO": [
+          46.0,
+          226.0
+        ]
+      },
+      "count_per_size": 4
+    },
+    "quarantine": {
+      "angles_deg_by_ring": {
+        "QI": [
+          24.5,
+          204.5
+        ],
+        "QO": [
+          54.5,
+          234.5
+        ]
+      },
+      "count_per_size": 4
+    },
+    "sentinel": {
+      "ring_angle_pairs": [
+        {
+          "ring": "RS",
+          "angle_deg": 3.75
+        },
+        {
+          "ring": "RO",
+          "angle_deg": 176.25
+        }
+      ],
+      "count_per_size": 2,
+      "semantics": "exact repeats of two clean-candidate coordinates for drift/repeatability monitoring"
+    },
+    "radius_equations": {
+      "R_support": "head_radius - bit_circumradius",
+      "RS": "0.85 * R_support",
+      "RO": "R_support + 0.70 * (visual_bound - R_support)",
+      "QI": "R_support - 0.15 mm",
+      "QO": "R_support + 0.30 * (visual_bound - R_support)"
+    }
+  },
+  "sizes": [
+    {
+      "size": "m12",
+      "photo_order_index": 1,
+      "fixture_centre_xy_mm": [
+        45.0,
+        0.0
+      ],
+      "photo_centre_uv_mm": [
+        -45.0,
+        -0.0
+      ],
+      "geometry_mm": {
+        "head_radius": 10.6375,
+        "bit_circumradius": 5.773502692,
+        "full_support_radius": 4.863997308,
+        "socket_mouth_af": 13.0,
+        "configured_visual_offset_default": 5.0,
+        "sampling_visual_bound": 8.0,
+        "sampling_visual_bound_source": "max(visual_offset_sweep_m); the reviewed 5/6/8 mm values are not visual_offset_default_m"
+      },
+      "sampling_radii_mm": {
+        "RS": 4.134397712,
+        "RO": 7.059199192,
+        "QI": 4.713997308,
+        "QO": 5.804798116
+      },
+      "attempt_count": 26,
+      "partition_counts": {
+        "clean_candidate": 16,
+        "holdout": 4,
+        "quarantine": 4,
+        "sentinel": 2
+      },
+      "points": [
+        {
+          "attempt_index": 1,
+          "sample_id": "M12-CLEAN_CANDIDATE-RS-A003p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            4.125545649,
+            0.270402548
+          ],
+          "fixture_xy_mm": [
+            49.125545649,
+            0.270402548
+          ],
+          "photo_uv_mm": [
+            -49.125545649,
+            -0.270402548
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 2,
+          "sample_id": "M12-CLEAN_CANDIDATE-RS-A041p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 41.25,
+          "local_offset_fixture_mm": [
+            3.10840478,
+            2.725997829
+          ],
+          "fixture_xy_mm": [
+            48.10840478,
+            2.725997829
+          ],
+          "photo_uv_mm": [
+            -48.10840478,
+            -2.725997829
+          ],
+          "true_direction_to_centre_fixture_deg": 221.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            -0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 3,
+          "sample_id": "M12-CLEAN_CANDIDATE-RS-A086p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 86.25,
+          "local_offset_fixture_mm": [
+            0.270402548,
+            4.125545649
+          ],
+          "fixture_xy_mm": [
+            45.270402548,
+            4.125545649
+          ],
+          "photo_uv_mm": [
+            -45.270402548,
+            -4.125545649
+          ],
+          "true_direction_to_centre_fixture_deg": 266.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            -0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 4,
+          "sample_id": "M12-CLEAN_CANDIDATE-RS-A131p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 131.25,
+          "local_offset_fixture_mm": [
+            -2.725997829,
+            3.10840478
+          ],
+          "fixture_xy_mm": [
+            42.274002171,
+            3.10840478
+          ],
+          "photo_uv_mm": [
+            -42.274002171,
+            -3.10840478
+          ],
+          "true_direction_to_centre_fixture_deg": 311.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            -0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 5,
+          "sample_id": "M12-CLEAN_CANDIDATE-RS-A176p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -4.125545649,
+            0.270402548
+          ],
+          "fixture_xy_mm": [
+            40.874454351,
+            0.270402548
+          ],
+          "photo_uv_mm": [
+            -40.874454351,
+            -0.270402548
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 6,
+          "sample_id": "M12-CLEAN_CANDIDATE-RS-A228p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 228.75,
+          "local_offset_fixture_mm": [
+            -2.725997829,
+            -3.10840478
+          ],
+          "fixture_xy_mm": [
+            42.274002171,
+            -3.10840478
+          ],
+          "photo_uv_mm": [
+            -42.274002171,
+            3.10840478
+          ],
+          "true_direction_to_centre_fixture_deg": 48.75,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 7,
+          "sample_id": "M12-CLEAN_CANDIDATE-RS-A273p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 273.75,
+          "local_offset_fixture_mm": [
+            0.270402548,
+            -4.125545649
+          ],
+          "fixture_xy_mm": [
+            45.270402548,
+            -4.125545649
+          ],
+          "photo_uv_mm": [
+            -45.270402548,
+            4.125545649
+          ],
+          "true_direction_to_centre_fixture_deg": 93.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 8,
+          "sample_id": "M12-CLEAN_CANDIDATE-RS-A318p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 318.75,
+          "local_offset_fixture_mm": [
+            3.10840478,
+            -2.725997829
+          ],
+          "fixture_xy_mm": [
+            48.10840478,
+            -2.725997829
+          ],
+          "photo_uv_mm": [
+            -48.10840478,
+            2.725997829
+          ],
+          "true_direction_to_centre_fixture_deg": 138.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 9,
+          "sample_id": "M12-CLEAN_CANDIDATE-RO-A003p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            7.044084905,
+            0.461693717
+          ],
+          "fixture_xy_mm": [
+            52.044084905,
+            0.461693717
+          ],
+          "photo_uv_mm": [
+            -52.044084905,
+            -0.461693717
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 10,
+          "sample_id": "M12-CLEAN_CANDIDATE-RO-A041p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 41.25,
+          "local_offset_fixture_mm": [
+            5.307386962,
+            4.654453445
+          ],
+          "fixture_xy_mm": [
+            50.307386962,
+            4.654453445
+          ],
+          "photo_uv_mm": [
+            -50.307386962,
+            -4.654453445
+          ],
+          "true_direction_to_centre_fixture_deg": 221.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            -0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 11,
+          "sample_id": "M12-CLEAN_CANDIDATE-RO-A086p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 86.25,
+          "local_offset_fixture_mm": [
+            0.461693717,
+            7.044084905
+          ],
+          "fixture_xy_mm": [
+            45.461693717,
+            7.044084905
+          ],
+          "photo_uv_mm": [
+            -45.461693717,
+            -7.044084905
+          ],
+          "true_direction_to_centre_fixture_deg": 266.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            -0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 12,
+          "sample_id": "M12-CLEAN_CANDIDATE-RO-A131p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 131.25,
+          "local_offset_fixture_mm": [
+            -4.654453445,
+            5.307386962
+          ],
+          "fixture_xy_mm": [
+            40.345546555,
+            5.307386962
+          ],
+          "photo_uv_mm": [
+            -40.345546555,
+            -5.307386962
+          ],
+          "true_direction_to_centre_fixture_deg": 311.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            -0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 13,
+          "sample_id": "M12-CLEAN_CANDIDATE-RO-A176p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -7.044084905,
+            0.461693717
+          ],
+          "fixture_xy_mm": [
+            37.955915095,
+            0.461693717
+          ],
+          "photo_uv_mm": [
+            -37.955915095,
+            -0.461693717
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 14,
+          "sample_id": "M12-CLEAN_CANDIDATE-RO-A228p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 228.75,
+          "local_offset_fixture_mm": [
+            -4.654453445,
+            -5.307386962
+          ],
+          "fixture_xy_mm": [
+            40.345546555,
+            -5.307386962
+          ],
+          "photo_uv_mm": [
+            -40.345546555,
+            5.307386962
+          ],
+          "true_direction_to_centre_fixture_deg": 48.75,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 15,
+          "sample_id": "M12-CLEAN_CANDIDATE-RO-A273p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 273.75,
+          "local_offset_fixture_mm": [
+            0.461693717,
+            -7.044084905
+          ],
+          "fixture_xy_mm": [
+            45.461693717,
+            -7.044084905
+          ],
+          "photo_uv_mm": [
+            -45.461693717,
+            7.044084905
+          ],
+          "true_direction_to_centre_fixture_deg": 93.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 16,
+          "sample_id": "M12-CLEAN_CANDIDATE-RO-A318p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 318.75,
+          "local_offset_fixture_mm": [
+            5.307386962,
+            -4.654453445
+          ],
+          "fixture_xy_mm": [
+            50.307386962,
+            -4.654453445
+          ],
+          "photo_uv_mm": [
+            -50.307386962,
+            4.654453445
+          ],
+          "true_direction_to_centre_fixture_deg": 138.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 17,
+          "sample_id": "M12-HOLDOUT-RS-A016p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 16.0,
+          "local_offset_fixture_mm": [
+            3.974238156,
+            1.139594453
+          ],
+          "fixture_xy_mm": [
+            48.974238156,
+            1.139594453
+          ],
+          "photo_uv_mm": [
+            -48.974238156,
+            -1.139594453
+          ],
+          "true_direction_to_centre_fixture_deg": 196.0,
+          "true_direction_to_centre_fixture_unit": [
+            -0.961261696,
+            -0.275637356
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 18,
+          "sample_id": "M12-HOLDOUT-RS-A196p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 196.0,
+          "local_offset_fixture_mm": [
+            -3.974238156,
+            -1.139594453
+          ],
+          "fixture_xy_mm": [
+            41.025761844,
+            -1.139594453
+          ],
+          "photo_uv_mm": [
+            -41.025761844,
+            1.139594453
+          ],
+          "true_direction_to_centre_fixture_deg": 16.0,
+          "true_direction_to_centre_fixture_unit": [
+            0.961261696,
+            0.275637356
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 19,
+          "sample_id": "M12-HOLDOUT-RO-A046p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 46.0,
+          "local_offset_fixture_mm": [
+            4.903731808,
+            5.077962938
+          ],
+          "fixture_xy_mm": [
+            49.903731808,
+            5.077962938
+          ],
+          "photo_uv_mm": [
+            -49.903731808,
+            -5.077962938
+          ],
+          "true_direction_to_centre_fixture_deg": 226.0,
+          "true_direction_to_centre_fixture_unit": [
+            -0.69465837,
+            -0.7193398
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 20,
+          "sample_id": "M12-HOLDOUT-RO-A226p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 226.0,
+          "local_offset_fixture_mm": [
+            -4.903731808,
+            -5.077962938
+          ],
+          "fixture_xy_mm": [
+            40.096268192,
+            -5.077962938
+          ],
+          "photo_uv_mm": [
+            -40.096268192,
+            5.077962938
+          ],
+          "true_direction_to_centre_fixture_deg": 46.0,
+          "true_direction_to_centre_fixture_unit": [
+            0.69465837,
+            0.7193398
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 21,
+          "sample_id": "M12-QUARANTINE-QI-A024p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QI",
+          "radius_mm": 4.713997308,
+          "angle_fixture_deg": 24.5,
+          "local_offset_fixture_mm": [
+            4.289554981,
+            1.95486283
+          ],
+          "fixture_xy_mm": [
+            49.289554981,
+            1.95486283
+          ],
+          "photo_uv_mm": [
+            -49.289554981,
+            -1.95486283
+          ],
+          "true_direction_to_centre_fixture_deg": 204.5,
+          "true_direction_to_centre_fixture_unit": [
+            -0.909961271,
+            -0.414693243
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 22,
+          "sample_id": "M12-QUARANTINE-QI-A204p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QI",
+          "radius_mm": 4.713997308,
+          "angle_fixture_deg": 204.5,
+          "local_offset_fixture_mm": [
+            -4.289554981,
+            -1.95486283
+          ],
+          "fixture_xy_mm": [
+            40.710445019,
+            -1.95486283
+          ],
+          "photo_uv_mm": [
+            -40.710445019,
+            1.95486283
+          ],
+          "true_direction_to_centre_fixture_deg": 24.5,
+          "true_direction_to_centre_fixture_unit": [
+            0.909961271,
+            0.414693243
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 23,
+          "sample_id": "M12-QUARANTINE-QO-A054p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QO",
+          "radius_mm": 5.804798116,
+          "angle_fixture_deg": 54.5,
+          "local_offset_fixture_mm": [
+            3.370863423,
+            4.725776227
+          ],
+          "fixture_xy_mm": [
+            48.370863423,
+            4.725776227
+          ],
+          "photo_uv_mm": [
+            -48.370863423,
+            -4.725776227
+          ],
+          "true_direction_to_centre_fixture_deg": 234.5,
+          "true_direction_to_centre_fixture_unit": [
+            -0.580702956,
+            -0.814115518
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 24,
+          "sample_id": "M12-QUARANTINE-QO-A234p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QO",
+          "radius_mm": 5.804798116,
+          "angle_fixture_deg": 234.5,
+          "local_offset_fixture_mm": [
+            -3.370863423,
+            -4.725776227
+          ],
+          "fixture_xy_mm": [
+            41.629136577,
+            -4.725776227
+          ],
+          "photo_uv_mm": [
+            -41.629136577,
+            4.725776227
+          ],
+          "true_direction_to_centre_fixture_deg": 54.5,
+          "true_direction_to_centre_fixture_unit": [
+            0.580702956,
+            0.814115518
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 25,
+          "sample_id": "M12-SENTINEL-RS-A003p75",
+          "partition": "sentinel",
+          "training_use": "repeatability_monitor_not_an_independent_training_sample",
+          "ring": "RS",
+          "radius_mm": 4.134397712,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            4.125545649,
+            0.270402548
+          ],
+          "fixture_xy_mm": [
+            49.125545649,
+            0.270402548
+          ],
+          "photo_uv_mm": [
+            -49.125545649,
+            -0.270402548
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": "M12-CLEAN_CANDIDATE-RS-A003p75"
+        },
+        {
+          "attempt_index": 26,
+          "sample_id": "M12-SENTINEL-RO-A176p25",
+          "partition": "sentinel",
+          "training_use": "repeatability_monitor_not_an_independent_training_sample",
+          "ring": "RO",
+          "radius_mm": 7.059199192,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -7.044084905,
+            0.461693717
+          ],
+          "fixture_xy_mm": [
+            37.955915095,
+            0.461693717
+          ],
+          "photo_uv_mm": [
+            -37.955915095,
+            -0.461693717
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": "M12-CLEAN_CANDIDATE-RO-A176p25"
+        }
+      ]
+    },
+    {
+      "size": "m10",
+      "photo_order_index": 2,
+      "fixture_centre_xy_mm": [
+        0.0,
+        0.0
+      ],
+      "photo_centre_uv_mm": [
+        -0.0,
+        -0.0
+      ],
+      "geometry_mm": {
+        "head_radius": 9.4875,
+        "bit_circumradius": 4.618802154,
+        "full_support_radius": 4.868697846,
+        "socket_mouth_af": 10.54,
+        "configured_visual_offset_default": 4.0,
+        "sampling_visual_bound": 6.0,
+        "sampling_visual_bound_source": "max(visual_offset_sweep_m); the reviewed 5/6/8 mm values are not visual_offset_default_m"
+      },
+      "sampling_radii_mm": {
+        "RS": 4.13839317,
+        "RO": 5.660609354,
+        "QI": 4.718697846,
+        "QO": 5.208088493
+      },
+      "attempt_count": 26,
+      "partition_counts": {
+        "clean_candidate": 16,
+        "holdout": 4,
+        "quarantine": 4,
+        "sentinel": 2
+      },
+      "points": [
+        {
+          "attempt_index": 1,
+          "sample_id": "M10-CLEAN_CANDIDATE-RS-A003p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            4.129532552,
+            0.270663863
+          ],
+          "fixture_xy_mm": [
+            4.129532552,
+            0.270663863
+          ],
+          "photo_uv_mm": [
+            -4.129532552,
+            -0.270663863
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 2,
+          "sample_id": "M10-CLEAN_CANDIDATE-RS-A041p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 41.25,
+          "local_offset_fixture_mm": [
+            3.111408724,
+            2.728632218
+          ],
+          "fixture_xy_mm": [
+            3.111408724,
+            2.728632218
+          ],
+          "photo_uv_mm": [
+            -3.111408724,
+            -2.728632218
+          ],
+          "true_direction_to_centre_fixture_deg": 221.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            -0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 3,
+          "sample_id": "M10-CLEAN_CANDIDATE-RS-A086p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 86.25,
+          "local_offset_fixture_mm": [
+            0.270663863,
+            4.129532552
+          ],
+          "fixture_xy_mm": [
+            0.270663863,
+            4.129532552
+          ],
+          "photo_uv_mm": [
+            -0.270663863,
+            -4.129532552
+          ],
+          "true_direction_to_centre_fixture_deg": 266.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            -0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 4,
+          "sample_id": "M10-CLEAN_CANDIDATE-RS-A131p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 131.25,
+          "local_offset_fixture_mm": [
+            -2.728632218,
+            3.111408724
+          ],
+          "fixture_xy_mm": [
+            -2.728632218,
+            3.111408724
+          ],
+          "photo_uv_mm": [
+            2.728632218,
+            -3.111408724
+          ],
+          "true_direction_to_centre_fixture_deg": 311.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            -0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 5,
+          "sample_id": "M10-CLEAN_CANDIDATE-RS-A176p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -4.129532552,
+            0.270663863
+          ],
+          "fixture_xy_mm": [
+            -4.129532552,
+            0.270663863
+          ],
+          "photo_uv_mm": [
+            4.129532552,
+            -0.270663863
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 6,
+          "sample_id": "M10-CLEAN_CANDIDATE-RS-A228p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 228.75,
+          "local_offset_fixture_mm": [
+            -2.728632218,
+            -3.111408724
+          ],
+          "fixture_xy_mm": [
+            -2.728632218,
+            -3.111408724
+          ],
+          "photo_uv_mm": [
+            2.728632218,
+            3.111408724
+          ],
+          "true_direction_to_centre_fixture_deg": 48.75,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 7,
+          "sample_id": "M10-CLEAN_CANDIDATE-RS-A273p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 273.75,
+          "local_offset_fixture_mm": [
+            0.270663863,
+            -4.129532552
+          ],
+          "fixture_xy_mm": [
+            0.270663863,
+            -4.129532552
+          ],
+          "photo_uv_mm": [
+            -0.270663863,
+            4.129532552
+          ],
+          "true_direction_to_centre_fixture_deg": 93.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 8,
+          "sample_id": "M10-CLEAN_CANDIDATE-RS-A318p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 318.75,
+          "local_offset_fixture_mm": [
+            3.111408724,
+            -2.728632218
+          ],
+          "fixture_xy_mm": [
+            3.111408724,
+            -2.728632218
+          ],
+          "photo_uv_mm": [
+            -3.111408724,
+            2.728632218
+          ],
+          "true_direction_to_centre_fixture_deg": 138.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 9,
+          "sample_id": "M10-CLEAN_CANDIDATE-RO-A003p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            5.648489555,
+            0.370221565
+          ],
+          "fixture_xy_mm": [
+            5.648489555,
+            0.370221565
+          ],
+          "photo_uv_mm": [
+            -5.648489555,
+            -0.370221565
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 10,
+          "sample_id": "M10-CLEAN_CANDIDATE-RO-A041p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 41.25,
+          "local_offset_fixture_mm": [
+            4.255871447,
+            3.732299088
+          ],
+          "fixture_xy_mm": [
+            4.255871447,
+            3.732299088
+          ],
+          "photo_uv_mm": [
+            -4.255871447,
+            -3.732299088
+          ],
+          "true_direction_to_centre_fixture_deg": 221.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            -0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 11,
+          "sample_id": "M10-CLEAN_CANDIDATE-RO-A086p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 86.25,
+          "local_offset_fixture_mm": [
+            0.370221565,
+            5.648489555
+          ],
+          "fixture_xy_mm": [
+            0.370221565,
+            5.648489555
+          ],
+          "photo_uv_mm": [
+            -0.370221565,
+            -5.648489555
+          ],
+          "true_direction_to_centre_fixture_deg": 266.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            -0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 12,
+          "sample_id": "M10-CLEAN_CANDIDATE-RO-A131p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 131.25,
+          "local_offset_fixture_mm": [
+            -3.732299088,
+            4.255871447
+          ],
+          "fixture_xy_mm": [
+            -3.732299088,
+            4.255871447
+          ],
+          "photo_uv_mm": [
+            3.732299088,
+            -4.255871447
+          ],
+          "true_direction_to_centre_fixture_deg": 311.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            -0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 13,
+          "sample_id": "M10-CLEAN_CANDIDATE-RO-A176p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -5.648489555,
+            0.370221565
+          ],
+          "fixture_xy_mm": [
+            -5.648489555,
+            0.370221565
+          ],
+          "photo_uv_mm": [
+            5.648489555,
+            -0.370221565
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 14,
+          "sample_id": "M10-CLEAN_CANDIDATE-RO-A228p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 228.75,
+          "local_offset_fixture_mm": [
+            -3.732299088,
+            -4.255871447
+          ],
+          "fixture_xy_mm": [
+            -3.732299088,
+            -4.255871447
+          ],
+          "photo_uv_mm": [
+            3.732299088,
+            4.255871447
+          ],
+          "true_direction_to_centre_fixture_deg": 48.75,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 15,
+          "sample_id": "M10-CLEAN_CANDIDATE-RO-A273p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 273.75,
+          "local_offset_fixture_mm": [
+            0.370221565,
+            -5.648489555
+          ],
+          "fixture_xy_mm": [
+            0.370221565,
+            -5.648489555
+          ],
+          "photo_uv_mm": [
+            -0.370221565,
+            5.648489555
+          ],
+          "true_direction_to_centre_fixture_deg": 93.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 16,
+          "sample_id": "M10-CLEAN_CANDIDATE-RO-A318p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 318.75,
+          "local_offset_fixture_mm": [
+            4.255871447,
+            -3.732299088
+          ],
+          "fixture_xy_mm": [
+            4.255871447,
+            -3.732299088
+          ],
+          "photo_uv_mm": [
+            -4.255871447,
+            3.732299088
+          ],
+          "true_direction_to_centre_fixture_deg": 138.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 17,
+          "sample_id": "M10-HOLDOUT-RS-A016p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 16.0,
+          "local_offset_fixture_mm": [
+            3.978078837,
+            1.140695751
+          ],
+          "fixture_xy_mm": [
+            3.978078837,
+            1.140695751
+          ],
+          "photo_uv_mm": [
+            -3.978078837,
+            -1.140695751
+          ],
+          "true_direction_to_centre_fixture_deg": 196.0,
+          "true_direction_to_centre_fixture_unit": [
+            -0.961261696,
+            -0.275637356
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 18,
+          "sample_id": "M10-HOLDOUT-RS-A196p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 196.0,
+          "local_offset_fixture_mm": [
+            -3.978078837,
+            -1.140695751
+          ],
+          "fixture_xy_mm": [
+            -3.978078837,
+            -1.140695751
+          ],
+          "photo_uv_mm": [
+            3.978078837,
+            1.140695751
+          ],
+          "true_direction_to_centre_fixture_deg": 16.0,
+          "true_direction_to_centre_fixture_unit": [
+            0.961261696,
+            0.275637356
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 19,
+          "sample_id": "M10-HOLDOUT-RO-A046p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 46.0,
+          "local_offset_fixture_mm": [
+            3.93218967,
+            4.071901602
+          ],
+          "fixture_xy_mm": [
+            3.93218967,
+            4.071901602
+          ],
+          "photo_uv_mm": [
+            -3.93218967,
+            -4.071901602
+          ],
+          "true_direction_to_centre_fixture_deg": 226.0,
+          "true_direction_to_centre_fixture_unit": [
+            -0.69465837,
+            -0.7193398
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 20,
+          "sample_id": "M10-HOLDOUT-RO-A226p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 226.0,
+          "local_offset_fixture_mm": [
+            -3.93218967,
+            -4.071901602
+          ],
+          "fixture_xy_mm": [
+            -3.93218967,
+            -4.071901602
+          ],
+          "photo_uv_mm": [
+            3.93218967,
+            4.071901602
+          ],
+          "true_direction_to_centre_fixture_deg": 46.0,
+          "true_direction_to_centre_fixture_unit": [
+            0.69465837,
+            0.7193398
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 21,
+          "sample_id": "M10-QUARANTINE-QI-A024p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QI",
+          "radius_mm": 4.718697846,
+          "angle_fixture_deg": 24.5,
+          "local_offset_fixture_mm": [
+            4.293832289,
+            1.956812111
+          ],
+          "fixture_xy_mm": [
+            4.293832289,
+            1.956812111
+          ],
+          "photo_uv_mm": [
+            -4.293832289,
+            -1.956812111
+          ],
+          "true_direction_to_centre_fixture_deg": 204.5,
+          "true_direction_to_centre_fixture_unit": [
+            -0.909961271,
+            -0.414693243
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 22,
+          "sample_id": "M10-QUARANTINE-QI-A204p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QI",
+          "radius_mm": 4.718697846,
+          "angle_fixture_deg": 204.5,
+          "local_offset_fixture_mm": [
+            -4.293832289,
+            -1.956812111
+          ],
+          "fixture_xy_mm": [
+            -4.293832289,
+            -1.956812111
+          ],
+          "photo_uv_mm": [
+            4.293832289,
+            1.956812111
+          ],
+          "true_direction_to_centre_fixture_deg": 24.5,
+          "true_direction_to_centre_fixture_unit": [
+            0.909961271,
+            0.414693243
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 23,
+          "sample_id": "M10-QUARANTINE-QO-A054p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QO",
+          "radius_mm": 5.208088493,
+          "angle_fixture_deg": 54.5,
+          "local_offset_fixture_mm": [
+            3.024352381,
+            4.239985663
+          ],
+          "fixture_xy_mm": [
+            3.024352381,
+            4.239985663
+          ],
+          "photo_uv_mm": [
+            -3.024352381,
+            -4.239985663
+          ],
+          "true_direction_to_centre_fixture_deg": 234.5,
+          "true_direction_to_centre_fixture_unit": [
+            -0.580702956,
+            -0.814115518
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 24,
+          "sample_id": "M10-QUARANTINE-QO-A234p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QO",
+          "radius_mm": 5.208088493,
+          "angle_fixture_deg": 234.5,
+          "local_offset_fixture_mm": [
+            -3.024352381,
+            -4.239985663
+          ],
+          "fixture_xy_mm": [
+            -3.024352381,
+            -4.239985663
+          ],
+          "photo_uv_mm": [
+            3.024352381,
+            4.239985663
+          ],
+          "true_direction_to_centre_fixture_deg": 54.5,
+          "true_direction_to_centre_fixture_unit": [
+            0.580702956,
+            0.814115518
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 25,
+          "sample_id": "M10-SENTINEL-RS-A003p75",
+          "partition": "sentinel",
+          "training_use": "repeatability_monitor_not_an_independent_training_sample",
+          "ring": "RS",
+          "radius_mm": 4.13839317,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            4.129532552,
+            0.270663863
+          ],
+          "fixture_xy_mm": [
+            4.129532552,
+            0.270663863
+          ],
+          "photo_uv_mm": [
+            -4.129532552,
+            -0.270663863
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": "M10-CLEAN_CANDIDATE-RS-A003p75"
+        },
+        {
+          "attempt_index": 26,
+          "sample_id": "M10-SENTINEL-RO-A176p25",
+          "partition": "sentinel",
+          "training_use": "repeatability_monitor_not_an_independent_training_sample",
+          "ring": "RO",
+          "radius_mm": 5.660609354,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -5.648489555,
+            0.370221565
+          ],
+          "fixture_xy_mm": [
+            -5.648489555,
+            0.370221565
+          ],
+          "photo_uv_mm": [
+            5.648489555,
+            -0.370221565
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": "M10-CLEAN_CANDIDATE-RO-A176p25"
+        }
+      ]
+    },
+    {
+      "size": "m8",
+      "photo_order_index": 3,
+      "fixture_centre_xy_mm": [
+        -45.0,
+        0.0
+      ],
+      "photo_centre_uv_mm": [
+        45.0,
+        -0.0
+      ],
+      "geometry_mm": {
+        "head_radius": 7.475,
+        "bit_circumradius": 3.464101615,
+        "full_support_radius": 4.010898385,
+        "socket_mouth_af": 8.1,
+        "configured_visual_offset_default": 3.0,
+        "sampling_visual_bound": 5.0,
+        "sampling_visual_bound_source": "max(visual_offset_sweep_m); the reviewed 5/6/8 mm values are not visual_offset_default_m"
+      },
+      "sampling_radii_mm": {
+        "RS": 3.409263627,
+        "RO": 4.703269515,
+        "QI": 3.860898385,
+        "QO": 4.307628869
+      },
+      "attempt_count": 26,
+      "partition_counts": {
+        "clean_candidate": 16,
+        "holdout": 4,
+        "quarantine": 4,
+        "sentinel": 2
+      },
+      "points": [
+        {
+          "attempt_index": 1,
+          "sample_id": "M8-CLEAN_CANDIDATE-RS-A003p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            3.401964132,
+            0.22297651
+          ],
+          "fixture_xy_mm": [
+            -41.598035868,
+            0.22297651
+          ],
+          "photo_uv_mm": [
+            41.598035868,
+            -0.22297651
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 2,
+          "sample_id": "M8-CLEAN_CANDIDATE-RS-A041p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 41.25,
+          "local_offset_fixture_mm": [
+            2.563220109,
+            2.247883705
+          ],
+          "fixture_xy_mm": [
+            -42.436779891,
+            2.247883705
+          ],
+          "photo_uv_mm": [
+            42.436779891,
+            -2.247883705
+          ],
+          "true_direction_to_centre_fixture_deg": 221.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            -0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 3,
+          "sample_id": "M8-CLEAN_CANDIDATE-RS-A086p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 86.25,
+          "local_offset_fixture_mm": [
+            0.22297651,
+            3.401964132
+          ],
+          "fixture_xy_mm": [
+            -44.77702349,
+            3.401964132
+          ],
+          "photo_uv_mm": [
+            44.77702349,
+            -3.401964132
+          ],
+          "true_direction_to_centre_fixture_deg": 266.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            -0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 4,
+          "sample_id": "M8-CLEAN_CANDIDATE-RS-A131p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 131.25,
+          "local_offset_fixture_mm": [
+            -2.247883705,
+            2.563220109
+          ],
+          "fixture_xy_mm": [
+            -47.247883705,
+            2.563220109
+          ],
+          "photo_uv_mm": [
+            47.247883705,
+            -2.563220109
+          ],
+          "true_direction_to_centre_fixture_deg": 311.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            -0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 5,
+          "sample_id": "M8-CLEAN_CANDIDATE-RS-A176p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -3.401964132,
+            0.22297651
+          ],
+          "fixture_xy_mm": [
+            -48.401964132,
+            0.22297651
+          ],
+          "photo_uv_mm": [
+            48.401964132,
+            -0.22297651
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 6,
+          "sample_id": "M8-CLEAN_CANDIDATE-RS-A228p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 228.75,
+          "local_offset_fixture_mm": [
+            -2.247883705,
+            -2.563220109
+          ],
+          "fixture_xy_mm": [
+            -47.247883705,
+            -2.563220109
+          ],
+          "photo_uv_mm": [
+            47.247883705,
+            2.563220109
+          ],
+          "true_direction_to_centre_fixture_deg": 48.75,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 7,
+          "sample_id": "M8-CLEAN_CANDIDATE-RS-A273p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 273.75,
+          "local_offset_fixture_mm": [
+            0.22297651,
+            -3.401964132
+          ],
+          "fixture_xy_mm": [
+            -44.77702349,
+            -3.401964132
+          ],
+          "photo_uv_mm": [
+            44.77702349,
+            3.401964132
+          ],
+          "true_direction_to_centre_fixture_deg": 93.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 8,
+          "sample_id": "M8-CLEAN_CANDIDATE-RS-A318p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 318.75,
+          "local_offset_fixture_mm": [
+            2.563220109,
+            -2.247883705
+          ],
+          "fixture_xy_mm": [
+            -42.436779891,
+            -2.247883705
+          ],
+          "photo_uv_mm": [
+            42.436779891,
+            2.247883705
+          ],
+          "true_direction_to_centre_fixture_deg": 138.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 9,
+          "sample_id": "M8-CLEAN_CANDIDATE-RO-A003p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            4.693199454,
+            0.307608544
+          ],
+          "fixture_xy_mm": [
+            -40.306800546,
+            0.307608544
+          ],
+          "photo_uv_mm": [
+            40.306800546,
+            -0.307608544
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 10,
+          "sample_id": "M8-CLEAN_CANDIDATE-RO-A041p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 41.25,
+          "local_offset_fixture_mm": [
+            3.536105247,
+            3.101081072
+          ],
+          "fixture_xy_mm": [
+            -41.463894753,
+            3.101081072
+          ],
+          "photo_uv_mm": [
+            41.463894753,
+            -3.101081072
+          ],
+          "true_direction_to_centre_fixture_deg": 221.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            -0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 11,
+          "sample_id": "M8-CLEAN_CANDIDATE-RO-A086p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 86.25,
+          "local_offset_fixture_mm": [
+            0.307608544,
+            4.693199454
+          ],
+          "fixture_xy_mm": [
+            -44.692391456,
+            4.693199454
+          ],
+          "photo_uv_mm": [
+            44.692391456,
+            -4.693199454
+          ],
+          "true_direction_to_centre_fixture_deg": 266.25,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            -0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 12,
+          "sample_id": "M8-CLEAN_CANDIDATE-RO-A131p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 131.25,
+          "local_offset_fixture_mm": [
+            -3.101081072,
+            3.536105247
+          ],
+          "fixture_xy_mm": [
+            -48.101081072,
+            3.536105247
+          ],
+          "photo_uv_mm": [
+            48.101081072,
+            -3.536105247
+          ],
+          "true_direction_to_centre_fixture_deg": 311.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            -0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 13,
+          "sample_id": "M8-CLEAN_CANDIDATE-RO-A176p25",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -4.693199454,
+            0.307608544
+          ],
+          "fixture_xy_mm": [
+            -49.693199454,
+            0.307608544
+          ],
+          "photo_uv_mm": [
+            49.693199454,
+            -0.307608544
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 14,
+          "sample_id": "M8-CLEAN_CANDIDATE-RO-A228p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 228.75,
+          "local_offset_fixture_mm": [
+            -3.101081072,
+            -3.536105247
+          ],
+          "fixture_xy_mm": [
+            -48.101081072,
+            -3.536105247
+          ],
+          "photo_uv_mm": [
+            48.101081072,
+            3.536105247
+          ],
+          "true_direction_to_centre_fixture_deg": 48.75,
+          "true_direction_to_centre_fixture_unit": [
+            0.659345815,
+            0.751839807
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 15,
+          "sample_id": "M8-CLEAN_CANDIDATE-RO-A273p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 273.75,
+          "local_offset_fixture_mm": [
+            0.307608544,
+            -4.693199454
+          ],
+          "fixture_xy_mm": [
+            -44.692391456,
+            -4.693199454
+          ],
+          "photo_uv_mm": [
+            44.692391456,
+            4.693199454
+          ],
+          "true_direction_to_centre_fixture_deg": 93.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.065403129,
+            0.997858923
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 16,
+          "sample_id": "M8-CLEAN_CANDIDATE-RO-A318p75",
+          "partition": "clean_candidate",
+          "training_use": "eligible_only_after_complete_trace_and_quality_gates",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 318.75,
+          "local_offset_fixture_mm": [
+            3.536105247,
+            -3.101081072
+          ],
+          "fixture_xy_mm": [
+            -41.463894753,
+            -3.101081072
+          ],
+          "photo_uv_mm": [
+            41.463894753,
+            3.101081072
+          ],
+          "true_direction_to_centre_fixture_deg": 138.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.751839807,
+            0.659345815
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 17,
+          "sample_id": "M8-HOLDOUT-RS-A016p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 16.0,
+          "local_offset_fixture_mm": [
+            3.277194536,
+            0.939720411
+          ],
+          "fixture_xy_mm": [
+            -41.722805464,
+            0.939720411
+          ],
+          "photo_uv_mm": [
+            41.722805464,
+            -0.939720411
+          ],
+          "true_direction_to_centre_fixture_deg": 196.0,
+          "true_direction_to_centre_fixture_unit": [
+            -0.961261696,
+            -0.275637356
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 18,
+          "sample_id": "M8-HOLDOUT-RS-A196p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 196.0,
+          "local_offset_fixture_mm": [
+            -3.277194536,
+            -0.939720411
+          ],
+          "fixture_xy_mm": [
+            -48.277194536,
+            -0.939720411
+          ],
+          "photo_uv_mm": [
+            48.277194536,
+            0.939720411
+          ],
+          "true_direction_to_centre_fixture_deg": 16.0,
+          "true_direction_to_centre_fixture_unit": [
+            0.961261696,
+            0.275637356
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 19,
+          "sample_id": "M8-HOLDOUT-RO-A046p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 46.0,
+          "local_offset_fixture_mm": [
+            3.267165537,
+            3.383248954
+          ],
+          "fixture_xy_mm": [
+            -41.732834463,
+            3.383248954
+          ],
+          "photo_uv_mm": [
+            41.732834463,
+            -3.383248954
+          ],
+          "true_direction_to_centre_fixture_deg": 226.0,
+          "true_direction_to_centre_fixture_unit": [
+            -0.69465837,
+            -0.7193398
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 20,
+          "sample_id": "M8-HOLDOUT-RO-A226p00",
+          "partition": "holdout",
+          "training_use": "never_train_reserved_for_final_real_alignment_audit",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 226.0,
+          "local_offset_fixture_mm": [
+            -3.267165537,
+            -3.383248954
+          ],
+          "fixture_xy_mm": [
+            -48.267165537,
+            -3.383248954
+          ],
+          "photo_uv_mm": [
+            48.267165537,
+            3.383248954
+          ],
+          "true_direction_to_centre_fixture_deg": 46.0,
+          "true_direction_to_centre_fixture_unit": [
+            0.69465837,
+            0.7193398
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 21,
+          "sample_id": "M8-QUARANTINE-QI-A024p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QI",
+          "radius_mm": 3.860898385,
+          "angle_fixture_deg": 24.5,
+          "local_offset_fixture_mm": [
+            3.513268001,
+            1.601088471
+          ],
+          "fixture_xy_mm": [
+            -41.486731999,
+            1.601088471
+          ],
+          "photo_uv_mm": [
+            41.486731999,
+            -1.601088471
+          ],
+          "true_direction_to_centre_fixture_deg": 204.5,
+          "true_direction_to_centre_fixture_unit": [
+            -0.909961271,
+            -0.414693243
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 22,
+          "sample_id": "M8-QUARANTINE-QI-A204p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QI",
+          "radius_mm": 3.860898385,
+          "angle_fixture_deg": 204.5,
+          "local_offset_fixture_mm": [
+            -3.513268001,
+            -1.601088471
+          ],
+          "fixture_xy_mm": [
+            -48.513268001,
+            -1.601088471
+          ],
+          "photo_uv_mm": [
+            48.513268001,
+            1.601088471
+          ],
+          "true_direction_to_centre_fixture_deg": 24.5,
+          "true_direction_to_centre_fixture_unit": [
+            0.909961271,
+            0.414693243
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 23,
+          "sample_id": "M8-QUARANTINE-QO-A054p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QO",
+          "radius_mm": 4.307628869,
+          "angle_fixture_deg": 54.5,
+          "local_offset_fixture_mm": [
+            2.501452817,
+            3.50690751
+          ],
+          "fixture_xy_mm": [
+            -42.498547183,
+            3.50690751
+          ],
+          "photo_uv_mm": [
+            42.498547183,
+            -3.50690751
+          ],
+          "true_direction_to_centre_fixture_deg": 234.5,
+          "true_direction_to_centre_fixture_unit": [
+            -0.580702956,
+            -0.814115518
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 24,
+          "sample_id": "M8-QUARANTINE-QO-A234p50",
+          "partition": "quarantine",
+          "training_use": "forbidden_boundary_diagnostic_only",
+          "ring": "QO",
+          "radius_mm": 4.307628869,
+          "angle_fixture_deg": 234.5,
+          "local_offset_fixture_mm": [
+            -2.501452817,
+            -3.50690751
+          ],
+          "fixture_xy_mm": [
+            -47.501452817,
+            -3.50690751
+          ],
+          "photo_uv_mm": [
+            47.501452817,
+            3.50690751
+          ],
+          "true_direction_to_centre_fixture_deg": 54.5,
+          "true_direction_to_centre_fixture_unit": [
+            0.580702956,
+            0.814115518
+          ],
+          "duplicate_of": null
+        },
+        {
+          "attempt_index": 25,
+          "sample_id": "M8-SENTINEL-RS-A003p75",
+          "partition": "sentinel",
+          "training_use": "repeatability_monitor_not_an_independent_training_sample",
+          "ring": "RS",
+          "radius_mm": 3.409263627,
+          "angle_fixture_deg": 3.75,
+          "local_offset_fixture_mm": [
+            3.401964132,
+            0.22297651
+          ],
+          "fixture_xy_mm": [
+            -41.598035868,
+            0.22297651
+          ],
+          "photo_uv_mm": [
+            41.598035868,
+            -0.22297651
+          ],
+          "true_direction_to_centre_fixture_deg": 183.75,
+          "true_direction_to_centre_fixture_unit": [
+            -0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": "M8-CLEAN_CANDIDATE-RS-A003p75"
+        },
+        {
+          "attempt_index": 26,
+          "sample_id": "M8-SENTINEL-RO-A176p25",
+          "partition": "sentinel",
+          "training_use": "repeatability_monitor_not_an_independent_training_sample",
+          "ring": "RO",
+          "radius_mm": 4.703269515,
+          "angle_fixture_deg": 176.25,
+          "local_offset_fixture_mm": [
+            -4.693199454,
+            0.307608544
+          ],
+          "fixture_xy_mm": [
+            -49.693199454,
+            0.307608544
+          ],
+          "photo_uv_mm": [
+            49.693199454,
+            -0.307608544
+          ],
+          "true_direction_to_centre_fixture_deg": 356.25,
+          "true_direction_to_centre_fixture_unit": [
+            0.997858923,
+            -0.065403129
+          ],
+          "duplicate_of": "M8-CLEAN_CANDIDATE-RO-A176p25"
+        }
+      ]
+    }
+  ],
+  "validation": {
+    "fixture_centres_match_profile": true,
+    "photo_order_is_m12_m10_m8": true,
+    "per_size_counts_are_16_4_4_2": true,
+    "total_attempts": 78,
+    "centre_attempts": 0
+  }
+}

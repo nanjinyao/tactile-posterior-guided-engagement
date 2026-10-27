@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "stage": "H0_5_AIR_MOTION",
+  "status": "CONDITIONAL_TRANSLATION_ONLY_AIR_EXCEPTION_STRICT_MOTION_BLOCKED",
+  "motion_qualified": false,
+  "bounded_translation_only_air_exception": {
+    "eligible": true,
+    "scope": "Fixed-orientation, no-contact, no-human-contact, no-force-control WORLD translations from the freshly verified folded start.",
+    "maximum_linear_speed_mm_s": 5.0,
+    "maximum_segment_mm": 5.0,
+    "maximum_radius_from_live_start_mm": 7.0,
+    "maximum_downward_below_live_start_mm": 0.0,
+    "requires_rotation_commanded_false": true,
+    "requires_same_run_root_status_bota_preflight_anchor_and_stationarity": true,
+    "basis": [
+      "The operator previously observed the same Bota/mounting stack complete a 50 mm WORLD-Z MATLAB/KST excursion and return.",
+      "The guarded 5 mm/s MATLAB/KST segmented path subsequently completed and demonstrated Bota-triggered return under the same command lane.",
+      "This exception is materially smaller, remains above the fresh start, fixes orientation, keeps Bota observation-only, and retains KUKA internal servo and site stop chain."
+    ],
+    "unverified_items_preserved": [
+      "Complete installed payload mass, center of mass, and inertia are not measured.",
+      "The active deployed Sunrise LoadData/source hash is not verified and audited source uses zero load.",
+      "Cartesian acceleration and jerk use the deployed Sunrise defaults rather than a recorded explicit setting."
+    ],
+    "forbidden_promotions": [
+      "contact",
+      "force_control",
+      "orientation_or_conical_motion",
+      "motion_below_live_start",
+      "physical_capture_or_insertion_claim",
+      "larger_or_faster_motion"
+    ]
+  },
+  "observed_installed_stack": {
+    "operator_photo_local_date": "2026-07-21",
+    "bota_sensor_installed": true,
+    "sensor_identity": "Bota BFT-SENS-CAT2-B4 / SN001349",
+    "mounting_adapters_installed": true,
+    "sensor_cable_installed": true,
+    "printed_experiment_tool_installed": false,
+    "claim": "No printed experiment tool is installed, but the robot is not a bare zero-payload flange."
+  },
+  "measured_complete_robot_payload": {
+    "scope": "Everything mechanically carried by the robot flange, including Bota, both mounting sides/adapters, distal plate, fasteners, and the carried portion of the cable.",
+    "mass_kg": null,
+    "center_of_mass_in_flange_mm": null,
+    "inertia_at_com_kg_m2": null,
+    "measurement_record": null
+  },
+  "active_kst_sunrise_source_audit": {
+    "matlab_toolbox_server_source": "../../../reference/KST-Kuka-Sunrise-Toolbox-master/KUKA_Sunrise_server_source_code/KST_1.7_iiwa_universal_noFlange_LTS/MatlabToolboxServer.java",
+    "matlab_toolbox_server_source_sha256": "016850f6a10c20d4c755d11aaf79414c1392f5b912cf57d42ee93856c28214ca",
+    "attach_tool_lines": "544-566",
+    "configured_mass_kg": 0.0,
+    "configured_center_of_mass_mm": [0.0, 0.0, 0.0],
+    "load_matches_observed_installed_stack": false,
+    "deployed_payload_aware_source_sha256": null,
+    "deployment_evidence": null
+  },
+  "active_kst_linear_motion_source_audit": {
+    "ptp_motion_source": "../../../reference/KST-Kuka-Sunrise-Toolbox-master/KUKA_Sunrise_server_source_code/KST_1.7_iiwa_universal_noFlange_LTS/PTPmotionClass.java",
+    "ptp_motion_source_sha256": "d02d958c01531d16e8c3adaed3ae47d0261aadc25e85e95a8e1057493d1649bf",
+    "relative_world_motion_lines": "496-513",
+    "explicit_cartesian_velocity": true,
+    "explicit_cartesian_acceleration": false,
+    "explicit_cartesian_jerk": false,
+    "commissioned_cartesian_acceleration_mm_s2": null,
+    "commissioned_cartesian_jerk_mm_s3": null,
+    "deployed_bounded_motion_source_sha256": null,
+    "deployment_evidence": null,
+    "blocking_behavior": "The MATLAB client waits for a server acknowledgment after the blocking Sunrise lin() move; an outer MATLAB timer is not a certified interrupt."
+  },
+  "latest_observation_only_wrench_snapshot": {
+    "captured_local": "2026-07-21T20:31:33+08:00",
+    "topic": "/bota_ft_sensor/wrench",
+    "frame": "bota_ft_frame",
+    "approximate_samples_force_n": [
+      [-1.9935, 0.2362, -16.6719],
+      [-1.9521, 0.2946, -16.6575],
+      [-1.9603, 0.2764, -16.6523],
+      [-1.9529, 0.2593, -16.6302],
+      [-1.9703, 0.2371, -16.6335]
+    ],
+    "interpretation": "The distal sensor-side load is visibly nonzero. These raw values are not a complete robot-payload mass or CoM estimate because they exclude the sensor body/robot-side hardware and include bias, cable load, and an unqualified measurement origin."
+  },
+  "motion_blockers": [
+    "Measure the complete currently installed robot-side payload mass and flange-frame center of mass; inertia is also required before dynamic/contact stages.",
+    "Configure and deploy matching Sunrise LoadData instead of MASS=0 / CoM=[0,0,0], then record the deployed project/source hash.",
+    "Add and deploy an explicit reviewed Cartesian acceleration bound for KST relative WORLD lin() motion; record the applied default/jerk behavior.",
+    "Run a no-motion connect/read/end lifecycle check and verify SmartPAD Selected before the first displacement.",
+    "Operator must confirm the photographed platform, cable, and full declared 1.5 mm envelope are clear at execution time."
+  ],
+  "closure_rule": "motion_qualified may become true only after every blocker has evidence and an independent static review confirms that the live Sunrise project matches this record. Historical successful motion is connectivity evidence, not payload or acceleration qualification."
+}

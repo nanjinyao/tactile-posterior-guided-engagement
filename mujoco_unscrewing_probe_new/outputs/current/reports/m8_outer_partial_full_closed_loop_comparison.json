@@ -1,0 +1,207 @@
+{
+  "updated_utc": "2026-07-11T06:32:22.100187+00:00",
+  "claim_boundary": "Same-start M8 simulation comparison with continuous probe/search/insertion-to-CAD-bottom dynamics. The frozen P1v3 branch uses measured simulated F/T and tip-z, a synthetic visual prior, CAD feasibility, and the conservative posterior planner. Capture still uses privileged MuJoCo contact tags; bottom uses CAD depth plus Fz. This is not hardware, random-distribution, or general-superiority evidence.",
+  "preserved_originals": [
+    "outputs/current/media/videos/comparisons/m8_outer_partial_proposed_probe_to_inner_wall.mp4",
+    "outputs/current/media/videos/comparisons/m8_outer_partial_source_outward_to_inner_wall.mp4",
+    "outputs/current/media/videos/comparisons/m8_outer_partial_proposed_vs_source_side_by_side.mp4"
+  ],
+  "model_root": "outputs/current/models/p1v3_m8_direction_models",
+  "visual_prior": {
+    "sigma_mm": 2.0,
+    "truncated_radius_mm": 4.895,
+    "source": "synthetic current simulation assumption; real covariance not yet measured"
+  },
+  "methods": {
+    "assumed": {
+      "method": "proposed",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 15.90750000000795,
+      "candidate_attempts": 1,
+      "total_active_time_s": 20.78499999999691,
+      "actual_xy_path_mm": 22.18007503522478,
+      "contact_xy_path_mm": 21.931785048732777,
+      "lateral_work_mj": 34.69358946727238,
+      "orientation_work_mj": 8.668817832233147,
+      "wear_proxy_mj": 43.36240729950553,
+      "max_force_n": 10.430494826730419,
+      "max_torque_mnm": 69.66272530691172,
+      "stage_time_s": {
+        "probe": 5.7995,
+        "transport": 0.978,
+        "spiral": 9.08,
+        "progress_dwell": 0.05,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 3.8775
+      },
+      "event_xy_mm": [
+        0.1888021224288933,
+        -0.02238039251881556
+      ],
+      "baseline_depth_mm": -0.05000066419313942,
+      "min_tip_z_mm": -4.099188103365592,
+      "hard_stop": false,
+      "video_path": "outputs/current/media/videos/comparisons/m8_outer_partial_assumed_posterior_full_to_bottom.mp4",
+      "frame_count": 362,
+      "initial_xy_mm": [
+        4.0,
+        0.0
+      ],
+      "direction_source": "assumed_profile",
+      "predicted_direction_deg": null,
+      "true_direction_deg": 180.0,
+      "direction_error_deg": null,
+      "direction_confidence": null,
+      "aps_set_size": null,
+      "transport_allowed": null,
+      "transport_distance_mm": 2.2,
+      "transport_target_xy_mm": [
+        1.8,
+        0.0
+      ],
+      "spiral_max_radius_mm": 2.0,
+      "capture_mode": "inner_wall_guided",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": null,
+      "aps_direction_angles_deg": null,
+      "circular_concentration": null,
+      "ensemble_top1_span_deg": null,
+      "bottom_reached": true,
+      "time_to_bottom_s": 20.78499999999691,
+      "bottom_depth_error_mm": 0.09280287976805475
+    },
+    "learned": {
+      "method": "learned",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 42.06100000001881,
+      "candidate_attempts": 1,
+      "total_active_time_s": 44.665500000031244,
+      "actual_xy_path_mm": 79.76661842716659,
+      "contact_xy_path_mm": 79.63303887298504,
+      "lateral_work_mj": 131.11592789509052,
+      "orientation_work_mj": 9.045414821643902,
+      "wear_proxy_mj": 140.16134271673442,
+      "max_force_n": 7.540004111430462,
+      "max_torque_mnm": 20.840085506987315,
+      "stage_time_s": {
+        "probe": 5.7995,
+        "transport": 0.3215,
+        "spiral": 35.84,
+        "progress_dwell": 0.1,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 1.6045
+      },
+      "event_xy_mm": [
+        0.08805837950674199,
+        0.06061289334015596
+      ],
+      "baseline_depth_mm": -0.05000066419313942,
+      "min_tip_z_mm": -4.104516076573403,
+      "hard_stop": false,
+      "video_path": "outputs/current/media/videos/comparisons/m8_outer_partial_p1v3_learned_full_to_bottom.mp4",
+      "frame_count": 720,
+      "initial_xy_mm": [
+        4.0,
+        0.0
+      ],
+      "direction_source": "three_seed_ensemble",
+      "predicted_direction_deg": 176.25,
+      "true_direction_deg": 180.0,
+      "direction_error_deg": 3.75,
+      "direction_confidence": 0.5303472876548767,
+      "aps_set_size": 2,
+      "transport_allowed": true,
+      "transport_distance_mm": 0.7235224758734695,
+      "transport_target_xy_mm": [
+        3.2764957780667805,
+        0.005139449278095337
+      ],
+      "spiral_max_radius_mm": 3.4336204478749464,
+      "capture_mode": "centered_free_insertion",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": 179.59300334279737,
+      "aps_direction_angles_deg": [
+        176.25,
+        183.75
+      ],
+      "circular_concentration": 0.9976015550552187,
+      "ensemble_top1_span_deg": 7.5,
+      "bottom_reached": true,
+      "time_to_bottom_s": 44.665500000031244,
+      "bottom_depth_error_mm": 0.10161817670669565
+    },
+    "baseline": {
+      "method": "baseline",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 50.59300000005955,
+      "candidate_attempts": 5,
+      "total_active_time_s": 54.39300000007769,
+      "actual_xy_path_mm": 110.24139358545744,
+      "contact_xy_path_mm": 109.8895406373495,
+      "lateral_work_mj": 181.0601238094338,
+      "orientation_work_mj": 1.687460747150443,
+      "wear_proxy_mj": 182.74758455658426,
+      "max_force_n": 6.116626862234266,
+      "max_torque_mnm": 19.423596371708772,
+      "stage_time_s": {
+        "spiral": 50.593,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 2.8
+      },
+      "event_xy_mm": [
+        0.09052660945357255,
+        -0.07606241210360494
+      ],
+      "baseline_depth_mm": -0.02061783072812573,
+      "min_tip_z_mm": -4.102301694207801,
+      "hard_stop": false,
+      "video_path": "outputs/current/media/videos/comparisons/m8_outer_partial_source_outward_full_to_bottom.mp4",
+      "frame_count": 866,
+      "initial_xy_mm": [
+        4.0,
+        0.0
+      ],
+      "direction_source": "none",
+      "predicted_direction_deg": null,
+      "true_direction_deg": 180.0,
+      "direction_error_deg": null,
+      "direction_confidence": null,
+      "aps_set_size": null,
+      "transport_allowed": null,
+      "transport_distance_mm": null,
+      "transport_target_xy_mm": null,
+      "spiral_max_radius_mm": null,
+      "capture_mode": "inner_wall_guided",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": null,
+      "aps_direction_angles_deg": null,
+      "circular_concentration": null,
+      "ensemble_top1_span_deg": null,
+      "bottom_reached": true,
+      "time_to_bottom_s": 54.39300000007769,
+      "bottom_depth_error_mm": 0.09766745972638637
+    }
+  },
+  "videos": {
+    "assumed": "outputs/current/media/videos/comparisons/m8_outer_partial_assumed_posterior_full_to_bottom.mp4",
+    "learned": "outputs/current/media/videos/comparisons/m8_outer_partial_p1v3_learned_full_to_bottom.mp4",
+    "baseline": "outputs/current/media/videos/comparisons/m8_outer_partial_source_outward_full_to_bottom.mp4"
+  },
+  "triple_video": "outputs/current/media/videos/comparisons/m8_outer_partial_assumed_vs_learned_vs_source_full.mp4",
+  "triple_frames": 881,
+  "keyframes": {
+    "assumed": "outputs/current/media/keyframes/comparisons/m8_outer_partial_assumed_full_keyframe.png",
+    "learned": "outputs/current/media/keyframes/comparisons/m8_outer_partial_p1v3_learned_full_keyframe.png",
+    "baseline": "outputs/current/media/keyframes/comparisons/m8_outer_partial_source_full_keyframe.png",
+    "triptych": "outputs/current/media/keyframes/comparisons/m8_outer_partial_full_triptych_keyframe.png"
+  }
+}

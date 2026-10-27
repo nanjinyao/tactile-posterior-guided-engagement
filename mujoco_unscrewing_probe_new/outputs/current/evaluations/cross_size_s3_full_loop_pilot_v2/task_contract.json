@@ -1,0 +1,847 @@
+{
+  "active_time_budget_s": 130.0,
+  "adaptation_data_contracts": {
+    "m10": {
+      "path": "outputs/current/datasets/cross_size_s3_adaptation_pilot/m10/dataset_contract.json",
+      "sha256": "ad8976e4db03c833ccaabe019d90e1e7c439a6264709b3036bf545874333abe4"
+    },
+    "m12": {
+      "path": "outputs/current/datasets/cross_size_s3_adaptation_pilot/m12/dataset_contract.json",
+      "sha256": "f5a990963735db9229a7e73c28f099f7b2c2618d5a06da783d7d2e91f45ba21c"
+    }
+  },
+  "created_utc": "2026-07-15T14:02:08.175514+00:00",
+  "evaluation_seeds": {
+    "m10": 20260941,
+    "m12": 20260942
+  },
+  "evaluation_set_role": "untouched_test_forbidden_for_training_calibration_or_gate_selection",
+  "execution_bundle_frozen_before_rollout": {
+    "sizes": {
+      "m10": {
+        "adaptation_data_contract": {
+          "path": "outputs/current/datasets/cross_size_s3_adaptation_pilot/m10/dataset_contract.json",
+          "sha256": "ad8976e4db03c833ccaabe019d90e1e7c439a6264709b3036bf545874333abe4"
+        },
+        "adaptation_data_manifest": {
+          "path": "outputs/current/datasets/cross_size_s3_adaptation_pilot/m10/dataset_manifest.json",
+          "sha256": "f808c98bd2031c75e06f0eeb674b5ad16af7cb45d302152de88436a3c1f45329"
+        },
+        "cad_spec": {
+          "path": "configs/allen_m10_source.json",
+          "sha256": "1dd2801c151e0697e13b909ff3449f9e25f69034d3c7a443aee559b562c36504"
+        },
+        "ensembles": {
+          "cal_only": {
+            "contract": {
+              "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/ensemble_interface_contract.json",
+              "sha256": "c464d305ffcb7c5817c61b04465720c30f81738b598a2191eb923828841978c5"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260720/metrics.json",
+                  "sha256": "35dd0f82a1b788d81ae2dcf4f07ec4714b28f6586b22c29397e0df2992a0de41"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260721/metrics.json",
+                  "sha256": "7a1964fee20524d59c988822bd271790b66dbfba9a9a7f697e1abee10b280df8"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260722/metrics.json",
+                  "sha256": "865904296b0297cdbd847312022b0302bb981d0971f040f3282768dd35f3a3bd"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          },
+          "fine_tuned": {
+            "contract": {
+              "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/ensemble_interface_contract.json",
+              "sha256": "ae219387985352d7fdc912f27fcad3096bd3a8086ea1339ebfe15ecf027516a4"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "bf52bb4b5d8c3466062aad2a3a9693cf0ee02fb43d796083a568532010db1eda"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260720/metrics.json",
+                  "sha256": "a4578b785497ce635cb9f15696ca8c78bc5b8ef993e0a6a82f39219688258c65"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "bc08600fbc22706490c31460af59bfa6c01e2a830c3f34320ef9377bf91f5cd4"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260721/metrics.json",
+                  "sha256": "99ba6483a412ea6521112b530346f0211e9b28e99e30f3f1021d44e894693a1b"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "37c64b216162f62ca4617bb98cf0ad7ae766c4af28d0d2ae6c6d3488275e114f"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260722/metrics.json",
+                  "sha256": "663612bd5a3c6377215113899bea07a1b77ea036fba0b2fca360d0b57f1eeaa7"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          },
+          "zero_shot": {
+            "contract": {
+              "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+              "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+                  "sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+                  "sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+                  "sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          }
+        },
+        "model_manifest": {
+          "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/model_manifest.json",
+          "sha256": "8b9b739e95c89d0447d982f56aa4eb2022561e99fb601028bb46b5fde2117ab0"
+        },
+        "mujoco_model": {
+          "path": "models/allen_m10_source.xml",
+          "sha256": "baa84b8df605b96459df63ada5ac9fe50c5a817f37fa3665252a59b96acbbfe9"
+        }
+      },
+      "m12": {
+        "adaptation_data_contract": {
+          "path": "outputs/current/datasets/cross_size_s3_adaptation_pilot/m12/dataset_contract.json",
+          "sha256": "f5a990963735db9229a7e73c28f099f7b2c2618d5a06da783d7d2e91f45ba21c"
+        },
+        "adaptation_data_manifest": {
+          "path": "outputs/current/datasets/cross_size_s3_adaptation_pilot/m12/dataset_manifest.json",
+          "sha256": "28dd77225ac86e8c17e40e1306c5d871811a15ab3ebee9c49b68b3171dd687a3"
+        },
+        "cad_spec": {
+          "path": "configs/allen_m12_source.json",
+          "sha256": "5fc817c6126cd858584279e62c3cba08874d647eb230ebd1a79ef935b05cac60"
+        },
+        "ensembles": {
+          "cal_only": {
+            "contract": {
+              "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/ensemble_interface_contract.json",
+              "sha256": "8aa4caab4c88e49b6ccbeec9f5452f0248ed2ac14e3fbab04fcb05de262479ec"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260720/metrics.json",
+                  "sha256": "637a437a9fb3bb9228ec18d3e675038e56cddd909137cfa78e045ab56ed44560"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260721/metrics.json",
+                  "sha256": "976ba2e9635d5cba971fd4b093526f8c356221992ca03ae14c42c240353f320c"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260722/metrics.json",
+                  "sha256": "d5af0b9bd35e6cf002dded42117e73dfd5b441d17f43b85cdf267d5497db952b"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          },
+          "fine_tuned": {
+            "contract": {
+              "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/ensemble_interface_contract.json",
+              "sha256": "a5fad85cdc0078acb0b7bfc26b5bdcc942fa3fb0b8fbc2e7e177ef61c05fe0a7"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "87be86fc1c70a573902c8e541097980f68a854e953668963e23918ef7da48293"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260720/metrics.json",
+                  "sha256": "c3e5ff1582fb29dd070e77c9a24ee73611e6b770b88ffe39fcd8e66870eb95b3"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "c1a1724d307f22192fc5fe30a9d30ac0f1494160598a5f9727c6e354c474944b"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260721/metrics.json",
+                  "sha256": "90680f94165b6d4be34d6f8b4afc28cd67cb80df8036edec25aeac443852c19e"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "fbb0d8c5c376d7fe562b2a35c8d6a53ccde24e620bcbf8c18d7998ac5d03506f"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260722/metrics.json",
+                  "sha256": "b0337a8f14f8f8aeeaffd27a38b5b29f5117e34fdeb155f3c456094a69e46ff5"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          },
+          "zero_shot": {
+            "contract": {
+              "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+              "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+                  "sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+                  "sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+                  "sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          }
+        },
+        "model_manifest": {
+          "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/model_manifest.json",
+          "sha256": "b7b560ccaf945759f010b0bb149c4311961c69ea5a61cbd0c5f8d29bf5792ff4"
+        },
+        "mujoco_model": {
+          "path": "models/allen_m12_source.xml",
+          "sha256": "e78a2158f62e31f03ce6c9660f5d8fb6bcb58f2e2893d3400c39e58fe8451e8f"
+        }
+      }
+    },
+    "sources": {
+      "cross_size_task_builder": {
+        "path": "src/run_cross_size_closed_loop_audit.py",
+        "sha256": "062f75c117eb654fd5c786710433fa919f4e22626e510b393150ff641efd8c6f"
+      },
+      "direction_architecture": {
+        "path": "src/train_m8_direction_models.py",
+        "sha256": "a17901047708712e4761a5eae15d878b615d00c53d98e50df207022da1f20325"
+      },
+      "direction_runtime": {
+        "path": "src/m8_direction_runtime.py",
+        "sha256": "4edddd9fdc01968a333a5fdcff040d3ef527f4b00e5853a5439cdca59077f3c2"
+      },
+      "funnel_guard": {
+        "path": "src/funnel_guard.py",
+        "sha256": "95e9773e69fd272124134b07b1aa879d8cbc6aff6ecbaa662d1a3eb5171d7310"
+      },
+      "rollout_core": {
+        "path": "src/render_m8_search_comparison.py",
+        "sha256": "b2a4853ef6fcd3ebf177681ce9d5d7b77ac6af8b0e439f2205d28deac45be2db"
+      },
+      "runner": {
+        "path": "src/run_cross_size_s3_full_loop_pilot.py",
+        "sha256": "a396122840c07f6991f0f7fa03c1dccef215b29b7b45b10ac51f2c80f39abfda"
+      },
+      "strict_success_helper": {
+        "path": "src/run_m8_strict_complete_loop_audit.py",
+        "sha256": "8574dd1e9c7c7400910513042ab1dc80e11957c015c4733c641d3cafaf4164c7"
+      },
+      "wrench_observation": {
+        "path": "src/wrench_observation.py",
+        "sha256": "9be0d4c3f8a0884dd11dbad6ea83eefbd56bf3368534ba8d136c7591c9d5eabf"
+      }
+    }
+  },
+  "execution_bundle_sha256_frozen_before_rollout": "688f39698c1b865dbdfd01622d7f1fd4422fae47426986d0177bffa7f90c3e62",
+  "experiment": "cross_size_S3_fresh_adaptation_untouched_full_loop_pilot",
+  "gates_frozen_before_rollout": {
+    "maximum_adapted_gt90_control_errors": 0,
+    "maximum_adapted_hard_stops": 0,
+    "minimum_adapted_bottom_rate": 0.8,
+    "minimum_oracle_bottom_rate": 0.9
+  },
+  "methods": [
+    "zero_shot",
+    "cal_only",
+    "fine_tuned",
+    "outward",
+    "oracle"
+  ],
+  "model_contracts": {
+    "m10": {
+      "cal_only": {
+        "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/ensemble_interface_contract.json",
+        "sha256": "c464d305ffcb7c5817c61b04465720c30f81738b598a2191eb923828841978c5"
+      },
+      "fine_tuned": {
+        "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m10/fine_tuned/ensemble_interface_contract.json",
+        "sha256": "ae219387985352d7fdc912f27fcad3096bd3a8086ea1339ebfe15ecf027516a4"
+      },
+      "zero_shot": {
+        "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+        "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+      }
+    },
+    "m12": {
+      "cal_only": {
+        "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/cal_only/ensemble_interface_contract.json",
+        "sha256": "8aa4caab4c88e49b6ccbeec9f5452f0248ed2ac14e3fbab04fcb05de262479ec"
+      },
+      "fine_tuned": {
+        "path": "outputs/current/models/cross_size_s3_direction_head_pilot/m12/fine_tuned/ensemble_interface_contract.json",
+        "sha256": "a5fad85cdc0078acb0b7bfc26b5bdcc942fa3fb0b8fbc2e7e177ef61c05fe0a7"
+      },
+      "zero_shot": {
+        "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+        "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+      }
+    }
+  },
+  "old_S1_S2_rollouts_loaded": false,
+  "post_capture_funnel": {
+    "cad_bottom_overshoot_margin_m": 0.00025,
+    "deep_tilt_damping_nm_s_rad": 0.5,
+    "deep_tilt_stiffness_nm_rad": 3.0,
+    "enabled": true,
+    "force_floor_n": 0.2,
+    "injected_power_limit_w": 0.5,
+    "max_recoveries": 3,
+    "max_tilt_deg": 0.75,
+    "min_window_progress_m": 2e-05,
+    "moment_lever_m": 0.003,
+    "no_progress_energy_j": 0.0015,
+    "planar_damping_n_s_m": 100.0,
+    "planar_stiffness_n_m": 1500.0,
+    "power_dwell_s": 0.01,
+    "recovery_force_n": 0.2,
+    "recovery_retouch_s": 0.2,
+    "recovery_retract_m": 0.00035,
+    "recovery_retract_s": 0.15,
+    "recovery_unload_s": 0.1,
+    "retry_on_terminal_rejection": true,
+    "shallow_tilt_damping_nm_s_rad": 0.35,
+    "shallow_tilt_stiffness_nm_rad": 1.8,
+    "tilt_dwell_s": 0.02,
+    "window_s": 0.15,
+    "yaw_damping_nm_s_rad": 0.25,
+    "yaw_stiffness_nm_rad": 1.5
+  },
+  "tasks": {
+    "m10": [
+      {
+        "angle_rad": 2.243665801640787,
+        "baseline_phase_rad": 6.111924507102695,
+        "contact_timeconst_s": 0.06696160919032991,
+        "friction_slide": 0.8625429414212704,
+        "pose_id": "m10_s3test_000",
+        "posterior_seed": 20260941000,
+        "radius_m": 0.001835544454504391,
+        "sensor_delay_s": 0.007248703459277749,
+        "sensor_noise_seed": 202609410000,
+        "size": "m10",
+        "target_down_force_n": 2.9122773548588157,
+        "x_m": -0.0011439711133208058,
+        "y_m": 0.001435462830013156
+      },
+      {
+        "angle_rad": 5.916882276662345,
+        "baseline_phase_rad": 1.940497282986524,
+        "contact_timeconst_s": 0.040664418237283825,
+        "friction_slide": 0.574476719275117,
+        "pose_id": "m10_s3test_001",
+        "posterior_seed": 20260941001,
+        "radius_m": 0.0049349658911839395,
+        "sensor_delay_s": 0.0042701042629778386,
+        "sensor_noise_seed": 202609410001,
+        "size": "m10",
+        "target_down_force_n": 3.0049623288214207,
+        "x_m": 0.004607569655894483,
+        "y_m": -0.0017675378958396585
+      },
+      {
+        "angle_rad": 0.07927790064277579,
+        "baseline_phase_rad": 1.484699993199877,
+        "contact_timeconst_s": 0.06035006228834391,
+        "friction_slide": 0.838265858218074,
+        "pose_id": "m10_s3test_002",
+        "posterior_seed": 20260941002,
+        "radius_m": 0.005289825943429679,
+        "sensor_delay_s": 0.006378207532688976,
+        "sensor_noise_seed": 202609410002,
+        "size": "m10",
+        "target_down_force_n": 3.3573522167280316,
+        "x_m": 0.005273211408251475,
+        "y_m": 0.00041892714840194024
+      },
+      {
+        "angle_rad": 4.15440221068174,
+        "baseline_phase_rad": 3.397028168292846,
+        "contact_timeconst_s": 0.04915463434532285,
+        "friction_slide": 0.749708352982998,
+        "pose_id": "m10_s3test_003",
+        "posterior_seed": 20260941003,
+        "radius_m": 0.003854990026093728,
+        "sensor_delay_s": 0.002138422928750515,
+        "sensor_noise_seed": 202609410003,
+        "size": "m10",
+        "target_down_force_n": 2.7019860427826643,
+        "x_m": -0.002041137817356831,
+        "y_m": -0.003270275907601362
+      },
+      {
+        "angle_rad": 0.987888057114297,
+        "baseline_phase_rad": 4.949145582544631,
+        "contact_timeconst_s": 0.0537771525233984,
+        "friction_slide": 0.6010686367750169,
+        "pose_id": "m10_s3test_004",
+        "posterior_seed": 20260941004,
+        "radius_m": 0.003228078908858974,
+        "sensor_delay_s": 0.00555685767158866,
+        "sensor_noise_seed": 202609410004,
+        "size": "m10",
+        "target_down_force_n": 2.5616269381716847,
+        "x_m": 0.001776909834533669,
+        "y_m": 0.002695011109765166
+      },
+      {
+        "angle_rad": 3.1961513816769545,
+        "baseline_phase_rad": 3.1339974872091987,
+        "contact_timeconst_s": 0.057597063239663834,
+        "friction_slide": 0.910951828584075,
+        "pose_id": "m10_s3test_005",
+        "posterior_seed": 20260941005,
+        "radius_m": 0.005693533504172264,
+        "sensor_delay_s": 0.00295875165052712,
+        "sensor_noise_seed": 202609410005,
+        "size": "m10",
+        "target_down_force_n": 3.40248086117208,
+        "x_m": -0.0056850617639919755,
+        "y_m": -0.0003104778618976577
+      },
+      {
+        "angle_rad": 2.750489463372069,
+        "baseline_phase_rad": 0.3157255052460145,
+        "contact_timeconst_s": 0.0472827001940459,
+        "friction_slide": 0.6763024944812059,
+        "pose_id": "m10_s3test_006",
+        "posterior_seed": 20260941006,
+        "radius_m": 0.004454705066840284,
+        "sensor_delay_s": 0.007695150807499886,
+        "sensor_noise_seed": 202609410006,
+        "size": "m10",
+        "target_down_force_n": 3.239115065895021,
+        "x_m": -0.004118326175468312,
+        "y_m": 0.0016981715887933832
+      },
+      {
+        "angle_rad": 5.360663619008359,
+        "baseline_phase_rad": 4.584356777569533,
+        "contact_timeconst_s": 0.06597017058171331,
+        "friction_slide": 0.7866709597408772,
+        "pose_id": "m10_s3test_007",
+        "posterior_seed": 20260941007,
+        "radius_m": 0.0028057884359227892,
+        "sensor_delay_s": 0.0038241406287997963,
+        "sensor_noise_seed": 202609410007,
+        "size": "m10",
+        "target_down_force_n": 2.8358240835368633,
+        "x_m": 0.001694168652432385,
+        "y_m": -0.0022365690966910656
+      },
+      {
+        "angle_rad": 0.7710213067150887,
+        "baseline_phase_rad": 3.6263952669474486,
+        "contact_timeconst_s": 0.05505977224558592,
+        "friction_slide": 0.662446877360344,
+        "pose_id": "m10_s3test_008",
+        "posterior_seed": 20260941008,
+        "radius_m": 0.002934612722182439,
+        "sensor_delay_s": 0.005067491872236133,
+        "sensor_noise_seed": 202609410008,
+        "size": "m10",
+        "target_down_force_n": 3.1188862901180983,
+        "x_m": 0.0021047022714858338,
+        "y_m": 0.0020450379403809103
+      },
+      {
+        "angle_rad": 4.444236658215562,
+        "baseline_phase_rad": 0.9285486648875708,
+        "contact_timeconst_s": 0.05162876049056649,
+        "friction_slide": 0.7505494829267264,
+        "pose_id": "m10_s3test_009",
+        "posterior_seed": 20260941009,
+        "radius_m": 0.004610923354574111,
+        "sensor_delay_s": 0.0034483134523034097,
+        "sensor_noise_seed": 202609410009,
+        "size": "m10",
+        "target_down_force_n": 2.9633999364450574,
+        "x_m": -0.0012216652691688016,
+        "y_m": -0.004446138566426343
+      },
+      {
+        "angle_rad": 1.7482249357857855,
+        "baseline_phase_rad": 2.128491326264445,
+        "contact_timeconst_s": 0.0638144542183727,
+        "friction_slide": 0.6367994446307421,
+        "pose_id": "m10_s3test_010",
+        "posterior_seed": 20260941010,
+        "radius_m": 0.005999372518034012,
+        "sensor_delay_s": 0.007434326404705644,
+        "sensor_noise_seed": 202609410010,
+        "size": "m10",
+        "target_down_force_n": 2.6743045784533024,
+        "x_m": -0.0010588840750441395,
+        "y_m": 0.00590518713723449
+      },
+      {
+        "angle_rad": 5.823350369345834,
+        "baseline_phase_rad": 5.514400966054522,
+        "contact_timeconst_s": 0.04475273353047669,
+        "friction_slide": 0.9251981146633625,
+        "pose_id": "m10_s3test_011",
+        "posterior_seed": 20260941011,
+        "radius_m": 0.0036496835607374655,
+        "sensor_delay_s": 0.0040851210243999965,
+        "sensor_noise_seed": 202609410011,
+        "size": "m10",
+        "target_down_force_n": 3.2668617805466056,
+        "x_m": 0.003270575470518726,
+        "y_m": -0.0016197302816081814
+      }
+    ],
+    "m12": [
+      {
+        "angle_rad": 1.5408187303133902,
+        "baseline_phase_rad": 0.09455484400592994,
+        "contact_timeconst_s": 0.0641732191760093,
+        "friction_slide": 0.5592443995177746,
+        "pose_id": "m12_s3test_000",
+        "posterior_seed": 20260942000,
+        "radius_m": 0.006715121716359649,
+        "sensor_delay_s": 0.004769750969484449,
+        "sensor_noise_seed": 202609420000,
+        "size": "m12",
+        "target_down_force_n": 2.912265014834702,
+        "x_m": 0.00020127306009273496,
+        "y_m": 0.0067121046491250315
+      },
+      {
+        "angle_rad": 4.2652443009797105,
+        "baseline_phase_rad": 5.280290021982574,
+        "contact_timeconst_s": 0.04359278254210949,
+        "friction_slide": 0.8067271653562784,
+        "pose_id": "m12_s3test_001",
+        "posterior_seed": 20260942001,
+        "radius_m": 0.0044547783742031385,
+        "sensor_delay_s": 0.007474154448136688,
+        "sensor_noise_seed": 202609420001,
+        "size": "m12",
+        "target_down_force_n": 3.012207384221256,
+        "x_m": -0.0019262136462024375,
+        "y_m": -0.0040168086029149395
+      },
+      {
+        "angle_rad": 2.5217382415254934,
+        "baseline_phase_rad": 3.9725587606978596,
+        "contact_timeconst_s": 0.05746125726960599,
+        "friction_slide": 0.72286924906075,
+        "pose_id": "m12_s3test_002",
+        "posterior_seed": 20260942002,
+        "radius_m": 0.00355968860250607,
+        "sensor_delay_s": 0.0021817139834165574,
+        "sensor_noise_seed": 202609420002,
+        "size": "m12",
+        "target_down_force_n": 3.3956972621381283,
+        "x_m": -0.0028974549554464744,
+        "y_m": 0.0020678824260509316
+      },
+      {
+        "angle_rad": 6.030258702834149,
+        "baseline_phase_rad": 2.8748808844083364,
+        "contact_timeconst_s": 0.04819536542519927,
+        "friction_slide": 0.873476079851389,
+        "pose_id": "m12_s3test_003",
+        "posterior_seed": 20260942003,
+        "radius_m": 0.007302249270551239,
+        "sensor_delay_s": 0.005573990371078252,
+        "sensor_noise_seed": 202609420003,
+        "size": "m12",
+        "target_down_force_n": 2.5621087942272425,
+        "x_m": 0.007069922513313835,
+        "y_m": -0.0018273040428468063
+      },
+      {
+        "angle_rad": 1.6569968903772279,
+        "baseline_phase_rad": 0.9222634597235475,
+        "contact_timeconst_s": 0.05167456672526896,
+        "friction_slide": 0.7671918392181397,
+        "pose_id": "m12_s3test_004",
+        "posterior_seed": 20260942004,
+        "radius_m": 0.007940909327369168,
+        "sensor_delay_s": 0.0031385814435780047,
+        "sensor_noise_seed": 202609420004,
+        "size": "m12",
+        "target_down_force_n": 2.672829356044531,
+        "x_m": -0.0006836634603717927,
+        "y_m": 0.007911424980270691
+      },
+      {
+        "angle_rad": 5.118542186113112,
+        "baseline_phase_rad": 5.925275160568219,
+        "contact_timeconst_s": 0.06102818373590708,
+        "friction_slide": 0.6166260238736868,
+        "pose_id": "m12_s3test_005",
+        "posterior_seed": 20260942005,
+        "radius_m": 0.0018244268758609917,
+        "sensor_delay_s": 0.006105323381721974,
+        "sensor_noise_seed": 202609420005,
+        "size": "m12",
+        "target_down_force_n": 3.2757071051746607,
+        "x_m": 0.0007207916734466776,
+        "y_m": -0.0016760050086004625
+      },
+      {
+        "angle_rad": 0.686734795889309,
+        "baseline_phase_rad": 3.327490025121492,
+        "contact_timeconst_s": 0.046661827145144344,
+        "friction_slide": 0.9004442673176527,
+        "pose_id": "m12_s3test_006",
+        "posterior_seed": 20260942006,
+        "radius_m": 0.0051961591575720315,
+        "sensor_delay_s": 0.0035345627050846814,
+        "sensor_noise_seed": 202609420006,
+        "size": "m12",
+        "target_down_force_n": 3.1287967087700963,
+        "x_m": 0.004018295482195578,
+        "y_m": 0.0032944455388708885
+      },
+      {
+        "angle_rad": 3.361494742491605,
+        "baseline_phase_rad": 2.047448198447158,
+        "contact_timeconst_s": 0.06721280144527554,
+        "friction_slide": 0.6530059352517128,
+        "pose_id": "m12_s3test_007",
+        "posterior_seed": 20260942007,
+        "radius_m": 0.006359466803371837,
+        "sensor_delay_s": 0.007221140900626779,
+        "sensor_noise_seed": 202609420007,
+        "size": "m12",
+        "target_down_force_n": 2.7903273655101657,
+        "x_m": -0.006206323286141143,
+        "y_m": -0.0013872163822167835
+      },
+      {
+        "angle_rad": 2.7736222300075095,
+        "baseline_phase_rad": 2.6465031221407083,
+        "contact_timeconst_s": 0.05953788495622575,
+        "friction_slide": 0.9387500487267972,
+        "pose_id": "m12_s3test_008",
+        "posterior_seed": 20260942008,
+        "radius_m": 0.006069674556971293,
+        "sensor_delay_s": 0.0030564872846007346,
+        "sensor_noise_seed": 202609420008,
+        "size": "m12",
+        "target_down_force_n": 3.0977624896913767,
+        "x_m": -0.005663366603173175,
+        "y_m": 0.0021833982562985137
+      },
+      {
+        "angle_rad": 5.548278087709761,
+        "baseline_phase_rad": 4.69219161154035,
+        "contact_timeconst_s": 0.05386776341125369,
+        "friction_slide": 0.6897001538425684,
+        "pose_id": "m12_s3test_009",
+        "posterior_seed": 20260942009,
+        "radius_m": 0.005564539910133041,
+        "sensor_delay_s": 0.006187887016683817,
+        "sensor_noise_seed": 202609420009,
+        "size": "m12",
+        "target_down_force_n": 2.95185474678874,
+        "x_m": 0.004128293027486184,
+        "y_m": -0.0037311259816136455
+      },
+      {
+        "angle_rad": 1.0178024204247451,
+        "baseline_phase_rad": 4.953746477458943,
+        "contact_timeconst_s": 0.06976501007564366,
+        "friction_slide": 0.7804973889142275,
+        "pose_id": "m12_s3test_010",
+        "posterior_seed": 20260942010,
+        "radius_m": 0.0027105739243542116,
+        "sensor_delay_s": 0.004179546141996979,
+        "sensor_noise_seed": 202609420010,
+        "size": "m12",
+        "target_down_force_n": 2.584971378557384,
+        "x_m": 0.0014236944242256423,
+        "y_m": 0.0023065786754016882
+      },
+      {
+        "angle_rad": 4.576571145106691,
+        "baseline_phase_rad": 0.7159979441426075,
+        "contact_timeconst_s": 0.045281259268522264,
+        "friction_slide": 0.628320474177599,
+        "pose_id": "m12_s3test_011",
+        "posterior_seed": 20260942011,
+        "radius_m": 0.007722886296357958,
+        "sensor_delay_s": 0.006576466901227832,
+        "sensor_noise_seed": 202609420011,
+        "size": "m12",
+        "target_down_force_n": 3.4977203579619527,
+        "x_m": -0.0010456839014157107,
+        "y_m": -0.007651765673672552
+      }
+    ]
+  },
+  "terminal_verifier": "strict CAD-bottom with force/wrench dwell",
+  "zero_budget_extension": true
+}

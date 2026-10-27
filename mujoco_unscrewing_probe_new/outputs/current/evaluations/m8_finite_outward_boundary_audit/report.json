@@ -1,0 +1,79 @@
+{
+  "audit_type": "read_only_derived_geometry",
+  "boundary_nearest_distance": {
+    "at_or_within_r_eff_count": 1,
+    "beyond_r_eff_count": 65535,
+    "endpoint_aligned_sample_distance_m": 0.00025000000000000553,
+    "fraction_beyond_r_eff": 0.9999847412109375,
+    "median_m": 0.00044505936359602724,
+    "minimum_m": 0.00025000000000000553,
+    "minimum_mm": 0.25000000000000555,
+    "p90_m": 0.0006026304477149554,
+    "p95_m": 0.0006223421615243845,
+    "p99_m": 0.0006381112114509073,
+    "worst_endpoint_relative_angle_deg": 7.113647460937495,
+    "worst_endpoint_relative_angle_rad": 0.12415657001949398,
+    "worst_m": 0.0006420530819360968,
+    "worst_mm": 0.6420530819360968,
+    "worst_nearest_segment_fraction": 0.5273061497959606,
+    "worst_nearest_segment_index": 10986,
+    "worst_sample_index": 1295
+  },
+  "claim_boundary": "The current strict Outward method remains an empirical search comparator. The adjacent-turn pitch bound is satisfied, but this finite-path audit is not a complete-domain coverage certificate and does not certify capture, insertion, finite-time success, or hardware behavior.",
+  "conclusions": {
+    "adjacent_turn_pitch_bound_satisfied": true,
+    "analytic_outer_boundary_contact_set": "one endpoint-tangent point only; zero boundary-arc measure",
+    "complete_visual_disk_coverage_certificate": false,
+    "full_outer_boundary_within_r_eff": false,
+    "interpretation": "The pitch bound controls spacing between adjacent turns, but the finite spiral has no padded outer closing turn. Its r_eff tube therefore does not cover the outer boundary of the declared visual-support disk."
+  },
+  "experiment": "M8_finite_strict_Outward_outer_boundary_audit",
+  "finite_path": {
+    "arc_length_m": 0.1696541494106597,
+    "endpoint_angle_rad_wrapped": -2.429961095063607,
+    "evaluated_suffix_first_segment_index": 10965,
+    "evaluated_suffix_segment_count": 1034,
+    "omitted_inner_boundary_distance_lower_bound_m": 0.0006503037089532933,
+    "omitted_inner_radius_upper_bound_m": 0.00424500016312656,
+    "revolutions": 11.613259680199631,
+    "segment_count": 11999,
+    "suffix_globality_margin_m": 8.25062701719653e-06,
+    "suffix_is_proven_global_for_boundary_samples": true
+  },
+  "geometry": {
+    "adjacent_turn_pitch_bound_m_per_rev": 0.0005,
+    "adjacent_turn_pitch_bound_mm_per_rev": 0.5,
+    "effective_capture_radius_m": 0.00025,
+    "effective_capture_radius_mm": 0.25,
+    "finite_path_max_radius_definition": "R - r_eff",
+    "finite_path_max_radius_m": 0.004645303872079853,
+    "finite_path_max_radius_mm": 4.645303872079853,
+    "last_turn_inner_radius_m": 0.0042453038720798525,
+    "pitch_to_adjacent_turn_bound_ratio": 0.8,
+    "strict_outward_pitch_m_per_rev": 0.0004,
+    "strict_outward_pitch_mm_per_rev": 0.4,
+    "visual_support_radius_m": 0.004895303872079853,
+    "visual_support_radius_mm": 4.895303872079853
+  },
+  "inputs": {
+    "boundary_phase_alignment": "sample_0_aligned_with_finite_path_endpoint",
+    "boundary_sample_count": 65536,
+    "m8_spec": "configs/allen_m8_source.json",
+    "numerical_capture_tolerance_m": 1e-12,
+    "path_center_m": [
+      0.0,
+      0.0
+    ],
+    "path_generator": "src.render_m8_search_comparison.archimedean_path",
+    "path_phase_rad": 0.0,
+    "path_sample_count": 12000,
+    "strict_constant_source": "src.run_m8_p2b_coverage_benchmark"
+  },
+  "provenance_and_change_boundary": {
+    "derived_from_declared_geometry_and_current_path_generator": true,
+    "policy_changed": false,
+    "simulation_rerun": false,
+    "trial_files_changed": false
+  },
+  "schema_version": "m8-finite-outward-boundary-audit-v1"
+}

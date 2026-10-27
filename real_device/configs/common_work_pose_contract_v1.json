@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "record_kind": "operator_designated_common_work_pose_contract",
+  "semantic_name": "common_m8_m10_m12_socket_surface_center_hover_approx",
+  "status": "NUMERIC_KST_CAPTURE_REQUIRED",
+  "operator_reported_local": "2026-07-21T22:10:00+08:00",
+  "operator_statement": "The current robot pose is the common approximate M8/M10/M12 socket top-surface center or a small positive clearance above it. The lift table is manually repositioned to a marked pose for the selected size.",
+  "robot_model": "KUKA LBR iiwa 14 R820",
+  "robot_ip": "192.168.1.147",
+  "pose_frame": "KUKA base / SmartPAD WORLD",
+  "pose_entity": "KST media-flange identity",
+  "operator_aligned_entity": "installed physical peg tip",
+  "supported_sizes": ["M8", "M10", "M12"],
+  "down_axis": "WORLD_-Z",
+  "fixture_handling": {
+    "method": "operator_repositions_lift_table_to_size_specific_table_mark",
+    "height_and_pose_must_be_locked_before_running": true,
+    "same_robot_work_pose_is_reused_across_sizes": true,
+    "table_mark_is_an_explicit_engineering_bias": true
+  },
+  "use_boundary": {
+    "replaces_folded_start_anchor": false,
+    "recovery_target": false,
+    "fixture_to_world_calibration": false,
+    "bounded_demo_live_start_gate_after_stable_numeric_capture": true,
+    "fresh_surface_z_must_be_found_by_guarded_touch_each_run": true
+  },
+  "invalidated_by": [
+    "wrong_size_or_wrong_table_mark",
+    "lift_table_not_locked",
+    "unrecorded_tool_or_sensor_stack_change",
+    "robot_pose_outside_numeric_capture_tolerance"
+  ]
+}

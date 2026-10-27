@@ -1,0 +1,30 @@
+{
+  "updated_utc": "2026-07-11T20:38:23.050525+00:00",
+  "design": {
+    "source": "outputs/current/evaluations/p1v5_m8_final_untouched_direction_audit",
+    "samples": 180,
+    "same_frozen_direction_and_visual_prior": true,
+    "only_difference": "soft support-state x approximate-CAD radial likelihood",
+    "true_center_used_by_planner": false,
+    "true_center_used_offline_for_coverage_scoring": true
+  },
+  "methods": {
+    "direction_visual": {
+      "samples": 180,
+      "coverage_rate": 0.9944444444444445,
+      "reverse_move_rate": 0.0,
+      "transport_median_mm": 1.4034521183877284,
+      "local_radius_median_mm": 3.084816216259198,
+      "post_transport_true_residual_median_mm": 1.3987639744634988
+    },
+    "state_cad_soft": {
+      "samples": 180,
+      "coverage_rate": 1.0,
+      "reverse_move_rate": 0.0,
+      "transport_median_mm": 1.2247884812167695,
+      "local_radius_median_mm": 2.3104514867913952,
+      "post_transport_true_residual_median_mm": 0.8051825159049121
+    }
+  },
+  "claim_boundary": "Offline action-interface audit on the frozen simulation P1v5 set. It tests whether the soft state-CAD likelihood changes posterior transport/coverage without using true center online. It is not dynamic insertion, hardware, or scale-transfer evidence."
+}

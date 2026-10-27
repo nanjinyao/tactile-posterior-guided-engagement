@@ -1,0 +1,84 @@
+{
+  "schema": "M12_PROPOSED_VS_DIRECT_DEMO_CAMPAIGN_V1",
+  "campaign_id": "M12_PVD_DEMO_20260730_010745_037",
+  "status": "ACTIVE",
+  "created_local": "2026-07-30 01:07:45.041",
+  "updated_local": "2026-07-30 01:21:38.823",
+  "offset_distribution": "ONE_FIXED_DELIBERATELY_DISCRIMINATING_POINT_NOT_A_RANDOM_DRAW",
+  "offset_selection_rationale": "DELIBERATELY_DISCRIMINATING_NOT_RANDOM_RADIUS_AT_PROPOSED_GRID_COVERAGE_LIMIT_ANGLE_ON_TRAINED_DIRECTION_LOBE_SHOULDER_DIRECT_RETRY_RECOVERY_IS_EMPIRICAL_NOT_CONSTRUCTED",
+  "demo_design_id": "M12_DISCRIMINATING_OFFSET_PROPOSED_VS_DIRECT_R6P000_A29P000_V1",
+  "demo_seed_token": "M12_PROPOSED_VS_DIRECT_20260729_A29P000",
+  "source_sample_id": "M12-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+  "source_sample_offset_fixture_mm": [
+    5.657069292,
+    0.370783911
+  ],
+  "demo_radius_mm": 6,
+  "demo_angle_fixture_deg": 29,
+  "proposed_grid_reach_mm": 4.8,
+  "direct_ray_limit_mm": 5.7,
+  "conservative_capture_radius_mm": 0.75,
+  "touchdown_xy_lock_bound_mm": 0.25,
+  "proposed_post_shortcut_distance_mm": 3.526983805412601,
+  "true_direction_to_hole_deg": 209,
+  "physical_capture_radius_mm": 2.5,
+  "predicted_direction_error_deg": 25.25,
+  "predicted_attempt_lateral_miss_mm": [
+    2.5594124394087503,
+    2.3094124394087503,
+    2.8094124394087503
+  ],
+  "offsets_fixture_mm": [
+    5.247718242836374,
+    2.9088577214780225
+  ],
+  "method_modes": [
+    "FULL_LOOP_PROPOSED_PLUS_LEARNED_ENTROPY",
+    "FULL_LOOP_BASELINE_IMPROVED_DIRECT_X3_LEARNED"
+  ],
+  "method_order": [
+    1,
+    2
+  ],
+  "campaign_center_world_xy_mm": [
+    472.71773080385645,
+    1.8511878497382956
+  ],
+  "campaign_center_source_public_trial_token": "94ddc777-61cc-4163-9a45-1e0a754cd12f",
+  "next_trial_index": 2,
+  "completed_trial_count": 0,
+  "trials": [
+    {
+      "trial_index": 1,
+      "offset_index": 1,
+      "order_position": 1,
+      "method_index": 1,
+      "method_mode": "FULL_LOOP_PROPOSED_PLUS_LEARNED_ENTROPY",
+      "status": "PENDING",
+      "attempt_count": 0,
+      "current_public_trial_token": "",
+      "last_started_local": "",
+      "last_finished_local": "",
+      "run_directory": "",
+      "outcome_kind": "PENDING",
+      "last_error_identifier": "",
+      "last_error_message": ""
+    },
+    {
+      "trial_index": 2,
+      "offset_index": 1,
+      "order_position": 2,
+      "method_index": 2,
+      "method_mode": "FULL_LOOP_BASELINE_IMPROVED_DIRECT_X3_LEARNED",
+      "status": "RETRY_PENDING",
+      "attempt_count": 2,
+      "current_public_trial_token": "bacbca44-f302-4ebe-a70d-ee568cd10b69",
+      "last_started_local": "2026-07-30 01:18:34.872",
+      "last_finished_local": "2026-07-30 01:21:38.819",
+      "run_directory": "",
+      "outcome_kind": "HARD_STATE_OR_IMPLEMENTATION_RETRY_REQUIRED",
+      "last_error_identifier": "M12Demo:WrenchStale",
+      "last_error_message": "Bota wrench age 3.478 s is invalid."
+    }
+  ]
+}

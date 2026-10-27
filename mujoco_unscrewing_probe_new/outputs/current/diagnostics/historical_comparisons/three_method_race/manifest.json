@@ -1,0 +1,879 @@
+{
+  "updated_utc": "2026-07-12T08:37:03.399783+00:00",
+  "selected_audit_trial": "sobol_002",
+  "selection_rule": "frozen same-start six-method case; all three reach CAD-bottom; video is mechanism evidence",
+  "task": {
+    "angle_rad": 5.202507059769984,
+    "baseline_phase_rad": 2.535687463846594,
+    "contact_timeconst_s": 0.04654498780146241,
+    "friction_slide": 0.7106278911232948,
+    "pose_id": "sobol_002",
+    "posterior_seed": 20260721002,
+    "radius_m": 0.003054946238693921,
+    "sensor_delay_s": 0.0034164078650000007,
+    "sensor_noise_seed": 202607210002,
+    "target_down_force_n": 3.00086797401309,
+    "x_m": 0.0014380550574329863,
+    "y_m": -0.002695309661820242
+  },
+  "method_order": [
+    "hybrid",
+    "proposed",
+    "entropy"
+  ],
+  "proposed_plus_execution_order": [
+    "conical_fingerprint",
+    "bounded_posterior_shortcut",
+    "capture_probability_plus_information_grid_nodes",
+    "direction_consistent_sensor_capture_or_full_visual_support_last_resort",
+    "shared_post_capture_funnel"
+  ],
+  "archived_component_video_keys": [
+    "hybrid",
+    "proposed",
+    "entropy"
+  ],
+  "video_retention_manifest": "outputs/current/VIDEO_RETENTION.json",
+  "results": {
+    "hybrid": {
+      "method": "hybrid",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 9.82800000000052,
+      "candidate_attempts": 1,
+      "total_active_time_s": 11.696000000002803,
+      "actual_xy_path_mm": 5.334161277035335,
+      "contact_xy_path_mm": 4.794663714384565,
+      "lateral_work_mj": 2.1244911163207547,
+      "orientation_work_mj": 9.18349377226896,
+      "wear_proxy_mj": 11.307984888589713,
+      "max_force_n": 5.873056963267504,
+      "max_torque_mnm": 15.390206596965804,
+      "stage_time_s": {
+        "probe": 5.7995,
+        "hybrid_entropy_probe": 4.0285,
+        "capture_force_release": 0.3,
+        "funnel_recovery": 0.45,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 0.118
+      },
+      "event_xy_mm": [
+        -0.04097412172158463,
+        -0.07120528470088222
+      ],
+      "baseline_depth_mm": -0.019886288831431204,
+      "min_tip_z_mm": -4.115923371896838,
+      "hard_stop": false,
+      "video_path": "outputs/current/active_comparison/six_methods/01_proposed_plus_joint_funnel.mp4",
+      "frame_count": 225,
+      "initial_xy_mm": [
+        1.4380550574329862,
+        -2.695309661820242
+      ],
+      "direction_source": "three_seed_ensemble_plus_task_aware_grid",
+      "predicted_direction_deg": 123.75,
+      "true_direction_deg": 118.08169741183522,
+      "direction_error_deg": 5.668302588164778,
+      "direction_confidence": 0.23420073091983795,
+      "aps_set_size": 8,
+      "transport_allowed": false,
+      "legacy_transport_gate": false,
+      "transport_distance_mm": 0.0,
+      "transport_target_xy_mm": [
+        0.09455217317854586,
+        -0.008303893311361384
+      ],
+      "spiral_max_radius_mm": 7.247169978404439,
+      "capture_mode": "centered_free_insertion",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": 99.10002413546242,
+      "aps_direction_angles_deg": [
+        123.75,
+        101.25,
+        93.75,
+        86.25,
+        116.25,
+        56.25,
+        78.75,
+        108.75
+      ],
+      "circular_concentration": 0.9319085880024153,
+      "ensemble_top1_span_deg": 30.0,
+      "bottom_reached": true,
+      "time_to_bottom_s": 11.696000000002803,
+      "bottom_depth_error_mm": 0.10619247996863403,
+      "terminal_verification_mode": "bottom_force_dwell",
+      "top_state": "supported_search",
+      "state_probabilities": {
+        "supported_search": 0.9898483157157898,
+        "double_overhang": 0.0003178527404088527,
+        "outer_partial": 0.009833832271397114
+      },
+      "posterior_model": "visual_x_soft_cad_x_conical_fingerprint_x_signed_ft_entropy_updates",
+      "cad_radial_boundaries_mm": {
+        "full_outer_support": 3.0358983848622447,
+        "inner_opening_overlap_limit": 6.714101615137755,
+        "transition_sigma": 0.35
+      },
+      "posterior_radial_quantiles_mm": {
+        "q10": 0.6756473793471737,
+        "q50": 1.7906545917788423,
+        "q95": 3.100509039326001
+      },
+      "transport_policy": "hybrid_reverse_mass_fallback",
+      "transport_direction_quality": 0.3907409254399841,
+      "transport_quantile": 0.15861113881599762,
+      "transport_reverse_probability": 0.282958984375,
+      "transport_projected_quantiles_mm": {
+        "q10": -0.6943185631786042,
+        "q50": 1.313058465677071,
+        "q90": 6.372071343193489
+      },
+      "transport_raw_distance_mm": 0.0,
+      "transport_distance_cap_mm": 3.5028448331043385,
+      "max_filtered_force_n": 4.338178919252853,
+      "max_filtered_torque_mnm": 13.207753292473747,
+      "stage_max_force_n": {
+        "probe": 4.719420099265509,
+        "hybrid_entropy_probe": 3.080715381192947,
+        "capture_force_release": 0.29488768474408084,
+        "funnel_recovery": 0.2582288506577627,
+        "insertion_handoff": 5.873056963267504,
+        "upright_insertion": 0.9006824149160775
+      },
+      "stage_max_torque_mnm": {
+        "probe": 15.390206596965804,
+        "hybrid_entropy_probe": 12.970528718540272,
+        "capture_force_release": 1.201649452483706,
+        "funnel_recovery": 1.165117541489803,
+        "insertion_handoff": 7.066772115453506,
+        "upright_insertion": 1.687996918571908
+      },
+      "stage_max_filtered_force_n": {
+        "probe": 3.4775079253456154,
+        "hybrid_entropy_probe": 3.023691315488009,
+        "capture_force_release": 0.2451276216495576,
+        "funnel_recovery": 0.22061845557949541,
+        "insertion_handoff": 4.338178919252853,
+        "upright_insertion": 0.8417738943740659
+      },
+      "fingerprint_sha256": "f37e23fa4fdd34a665a06e7ff08cfe81f2d16e1a3b882aaad8cf9e08ec89c87a",
+      "global_outward_fallback_used": false,
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "capture_yaw_assist_aborted": false,
+      "max_abs_tau_z_mnm": 2.5682311985019335,
+      "capture_handoff_used": false,
+      "sensor_progress_candidate_count": 0,
+      "search_recovery_count": 0,
+      "fallback_physical_reset_used": false,
+      "fallback_budget_extension_s": 0.0,
+      "funnel_guard_enabled": true,
+      "funnel_tip_rcc_used": true,
+      "funnel_recovery_count": 1,
+      "funnel_injected_energy_mj": 0.27324255151247495,
+      "funnel_peak_injected_power_w": 0.03022582582109086,
+      "funnel_min_health": -38.59724171062591,
+      "funnel_abort_reason": null,
+      "insertion_command_bias_mm": [
+        0.0,
+        0.0
+      ],
+      "online_capture_sensor_only": true,
+      "offline_capture_validated": true,
+      "offline_capture_tags": [
+        "bottom"
+      ],
+      "random_search_seed": null,
+      "random_search_path_budget_mm": null,
+      "random_search_waypoints": null,
+      "entropy_grid_probe_count": 3,
+      "entropy_grid_initial_nats": 5.842921474183234,
+      "entropy_grid_final_nats": 6.131430569389098,
+      "entropy_grid_credible_radius_mm": 6.788021606124734,
+      "entropy_grid_map_xy_mm": [
+        -0.06194494256701378,
+        0.3046903381797579
+      ],
+      "entropy_grid_mean_xy_mm": [
+        1.3436248708046492,
+        -1.7980790163274105
+      ],
+      "entropy_grid_observations": [
+        {
+          "probe": 1,
+          "action_xy_mm": [
+            1.1021793363693762,
+            -0.6800553354385815
+          ],
+          "observation": "torque_direction_bin_5",
+          "torque_category": 6,
+          "normalized_torque_lever_xy_mm": [
+            -2.734837382759072,
+            -2.2060458438308492
+          ],
+          "expected_information_gain_nats": 0.6594267159354394,
+          "net_utility_nats": 0.3045110544585201,
+          "segment_capture_probability": 0.11650948548035708,
+          "no_capture_probability_mass_soft_excluded": 0.11650948548035708,
+          "predictive_observation_probability": 0.09158496060401262,
+          "likelihood_temperature": 0.6105664040267509,
+          "realized_entropy_change_nats": 0.2700148717949862,
+          "posterior_entropy_nats": 5.685856101528966,
+          "posterior_credible_radius_95_mm": 4.357538322002859,
+          "posterior_mean_xy_mm": [
+            0.9117283806303009,
+            -1.0716384769853524
+          ]
+        },
+        {
+          "probe": 2,
+          "action_xy_mm": [
+            0.09455217317854586,
+            -0.008303893311361384
+          ],
+          "observation": "torque_direction_bin_5",
+          "torque_category": 6,
+          "normalized_torque_lever_xy_mm": [
+            -3.2821283272365833,
+            -2.2718488862323136
+          ],
+          "expected_information_gain_nats": 0.6075784160886611,
+          "net_utility_nats": 0.4213536966402726,
+          "segment_capture_probability": 0.20861439579920463,
+          "no_capture_probability_mass_soft_excluded": 0.20861439579920463,
+          "predictive_observation_probability": 0.0865799280688101,
+          "likelihood_temperature": 0.577199520458734,
+          "realized_entropy_change_nats": -0.21196713041322557,
+          "posterior_entropy_nats": 6.131430569389098,
+          "posterior_credible_radius_95_mm": 6.788021606124734,
+          "posterior_mean_xy_mm": [
+            1.3436248708046492,
+            -1.7980790163274105
+          ]
+        },
+        {
+          "probe": 3,
+          "action_xy_mm": [
+            -0.9130749900122844,
+            0.999323269879469
+          ],
+          "observation": "capture_during_smooth_segment",
+          "expected_information_gain_nats": 0.5465123703651362,
+          "net_utility_nats": 0.23954909852133807
+        }
+      ],
+      "entropy_grid_used_spiral": false,
+      "hybrid_spiral_fallback_reason": null,
+      "entropy_grid_config": {
+        "belief_spacing_m": 0.00025,
+        "action_spacing_m": 0.0003358757210636101,
+        "likelihood_floor": 0.01,
+        "max_probes": 64,
+        "credible_radius_stop_m": 0.00025,
+        "min_information_gain_nats": 0.005,
+        "torque_direction_bins": 8,
+        "low_lever_threshold_m": 0.00025,
+        "support_centroid_scale": 0.75,
+        "quadrature_points": 81,
+        "radial_lookup_points": 256
+      },
+      "entropy_grid_geometry_mm": {
+        "socket_top_apothem": 3.25,
+        "head_outer_radius": 6.5,
+        "probe_circumradius": 3.464101615137755,
+        "capture_radius": 0.25
+      },
+      "hybrid_probe_gate_records": [
+        {
+          "stage": "posterior_shortcut_before_entropy_grid",
+          "executed": true,
+          "outcome": "arrived_at_task_aware_grid_anchor",
+          "transport_distance_mm": 0.9904644672325014,
+          "no_capture_probability_mass_soft_excluded": 0.08921424687683265
+        },
+        {
+          "probe": 1,
+          "expected_information_gain_nats": 0.6594267159354394,
+          "travel_distance_mm": 1.052626216970961,
+          "net_utility_nats": 0.3045110544585201,
+          "segment_capture_probability": 0.11650948548035708,
+          "action_mode": "capture_plus_information",
+          "information_gain_weight": 0.35,
+          "capture_probability_reward_nats": 1.5,
+          "entropy_before_nats": 5.8809426859044995,
+          "credible_radius_before_mm": 3.4844385151383026,
+          "spiral_radius_before_mm": 2.5893806002555264,
+          "executed": true,
+          "reason": "positive_task_value",
+          "outcome": "belief_update",
+          "observation_category": 6,
+          "no_capture_probability_mass_soft_excluded": 0.11650948548035708,
+          "predictive_observation_probability": 0.09158496060401262,
+          "likelihood_temperature": 0.6105664040267509,
+          "entropy_after_nats": 5.685856101528966,
+          "credible_radius_after_mm": 4.357538322002859,
+          "posterior_contracting": false,
+          "consecutive_noncontracting_updates": 1,
+          "replanned_transport_mm": 0.0,
+          "replanned_spiral_radius_mm": 5.834575272613534
+        },
+        {
+          "probe": 2,
+          "expected_information_gain_nats": 0.6075784160886611,
+          "travel_distance_mm": 1.2110171344782865,
+          "net_utility_nats": 0.4213536966402726,
+          "segment_capture_probability": 0.20861439579920463,
+          "action_mode": "capture_plus_information",
+          "information_gain_weight": 0.35,
+          "capture_probability_reward_nats": 1.5,
+          "entropy_before_nats": 5.685856101528966,
+          "credible_radius_before_mm": 4.357538322002859,
+          "spiral_radius_before_mm": 5.834575272613534,
+          "executed": true,
+          "reason": "positive_task_value",
+          "outcome": "belief_update",
+          "observation_category": 6,
+          "no_capture_probability_mass_soft_excluded": 0.20861439579920463,
+          "predictive_observation_probability": 0.0865799280688101,
+          "likelihood_temperature": 0.577199520458734,
+          "entropy_after_nats": 6.131430569389098,
+          "credible_radius_after_mm": 6.788021606124734,
+          "posterior_contracting": false,
+          "consecutive_noncontracting_updates": 2,
+          "replanned_transport_mm": 0.0,
+          "replanned_spiral_radius_mm": 7.247169978404439,
+          "mode_switch_after_update": "downweight_ft_and_continue_capture_weighted_grid_coverage"
+        },
+        {
+          "probe": 3,
+          "expected_information_gain_nats": 0.5465123703651362,
+          "travel_distance_mm": 1.425,
+          "net_utility_nats": 0.23954909852133807,
+          "segment_capture_probability": 0.14254376889025833,
+          "action_mode": "capture_weighted_coverage",
+          "information_gain_weight": 0.05,
+          "capture_probability_reward_nats": 2.25,
+          "entropy_before_nats": 6.131430569389098,
+          "credible_radius_before_mm": 6.788021606124734,
+          "spiral_radius_before_mm": 7.247169978404439,
+          "executed": true,
+          "reason": "positive_task_value",
+          "outcome": "capture_during_smooth_segment"
+        }
+      ],
+      "hybrid_probe_config": {
+        "safety_probe_ceiling": 64,
+        "fixed_contact_cost_nats": 0.08,
+        "travel_cost_nats_per_m": 20.0,
+        "minimum_net_utility_nats": 0.05,
+        "minimum_coverage_utility_nats": 0.0,
+        "posterior_kernel_bandwidth_m": 0.00035,
+        "residual_spiral_trigger_m": 0.0012,
+        "posterior_sample_count": 4096,
+        "minimum_credible_radius_reduction_fraction": 0.05,
+        "maximum_residual_radius_ratio": 1.1,
+        "maximum_consecutive_noncontracting_updates": 2,
+        "continuous_contact_path": true,
+        "minimum_learned_prior_weight": 0.15,
+        "maximum_learned_prior_weight": 0.75,
+        "information_gain_weight": 0.35,
+        "capture_probability_reward_nats": 1.5,
+        "coverage_information_gain_weight": 0.05,
+        "coverage_capture_probability_reward_nats": 2.25,
+        "capture_miss_inside_likelihood": 0.2,
+        "capture_miss_outside_likelihood": 0.995,
+        "predictive_probability_reference": 0.15,
+        "minimum_likelihood_temperature": 0.2,
+        "local_spiral_fallback_enabled": false
+      },
+      "capture_direction_consistency_gate_enabled": true,
+      "capture_reverse_projection_tolerance_mm": 0.25
+    },
+    "proposed": {
+      "method": "learned",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 20.929499999996573,
+      "candidate_attempts": 1,
+      "total_active_time_s": 22.279499999993426,
+      "actual_xy_path_mm": 32.61405042797101,
+      "contact_xy_path_mm": 32.43798250117159,
+      "lateral_work_mj": 52.9920355841029,
+      "orientation_work_mj": 10.577635008448778,
+      "wear_proxy_mj": 63.56967059255167,
+      "max_force_n": 5.925032157413166,
+      "max_torque_mnm": 18.46836894771962,
+      "stage_time_s": {
+        "probe": 5.7995,
+        "transport": 0.44,
+        "spiral": 14.49,
+        "capture_handoff": 0.15,
+        "progress_dwell": 0.05,
+        "capture_force_release": 0.3,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 0.05
+      },
+      "event_xy_mm": [
+        0.041189668907993436,
+        -0.09128261973101302
+      ],
+      "baseline_depth_mm": -0.02482882304557718,
+      "min_tip_z_mm": -4.121909493198591,
+      "hard_stop": false,
+      "video_path": "outputs/current/diagnostics/historical_comparisons/robustness_noise/01_proposed_shared_noise.mp4",
+      "frame_count": 384,
+      "initial_xy_mm": [
+        1.4380550574329862,
+        -2.695309661820242
+      ],
+      "direction_source": "three_seed_ensemble",
+      "predicted_direction_deg": 123.75,
+      "true_direction_deg": 118.08169741183522,
+      "direction_error_deg": 5.668302588164778,
+      "direction_confidence": 0.23420073091983795,
+      "aps_set_size": 8,
+      "transport_allowed": true,
+      "legacy_transport_gate": false,
+      "transport_distance_mm": 0.9904644672325014,
+      "transport_target_xy_mm": [
+        1.2814046996360529,
+        -1.7173114377665093
+      ],
+      "spiral_max_radius_mm": 2.5893806002555264,
+      "capture_mode": "safe_downward_progress",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": 99.10002413546242,
+      "aps_direction_angles_deg": [
+        123.75,
+        101.25,
+        93.75,
+        86.25,
+        116.25,
+        56.25,
+        78.75,
+        108.75
+      ],
+      "circular_concentration": 0.9319085880024153,
+      "ensemble_top1_span_deg": 30.0,
+      "bottom_reached": true,
+      "time_to_bottom_s": 22.279499999993426,
+      "bottom_depth_error_mm": 0.10300388004551818,
+      "terminal_verification_mode": null,
+      "top_state": "supported_search",
+      "state_probabilities": {
+        "supported_search": 0.9898483157157898,
+        "double_overhang": 0.0003178527404088527,
+        "outer_partial": 0.009833832271397114
+      },
+      "posterior_model": "synthetic_visual_gaussian_x_ft_direction_and_state_x_soft_cad_radial_annuli",
+      "cad_radial_boundaries_mm": {
+        "full_outer_support": 3.0358983848622447,
+        "inner_opening_overlap_limit": 6.714101615137755,
+        "transition_sigma": 0.35
+      },
+      "posterior_radial_quantiles_mm": {
+        "q10": 0.6756473793471737,
+        "q50": 1.7906545917788423,
+        "q95": 3.100509039326001
+      },
+      "transport_policy": "continuous_risk_bounded",
+      "transport_direction_quality": 0.8970778726917971,
+      "transport_quantile": 0.23456168090376955,
+      "transport_reverse_probability": 0.001708984375,
+      "transport_projected_quantiles_mm": {
+        "q10": 0.6167039435512475,
+        "q50": 1.6232560399450515,
+        "q90": 2.6875179548120225
+      },
+      "transport_raw_distance_mm": 0.9904644672325014,
+      "transport_distance_cap_mm": 2.2969533355565175,
+      "max_filtered_force_n": 4.580184302819054,
+      "max_filtered_torque_mnm": 18.197191080740147,
+      "stage_max_force_n": {
+        "probe": 4.719420099265509,
+        "transport": 3.7909093129181763,
+        "spiral": 4.6137516150141415,
+        "capture_handoff": 4.262498139144113,
+        "progress_dwell": 2.626873585270524,
+        "capture_force_release": 0.2958943909240641,
+        "insertion_handoff": 5.925032157413166,
+        "upright_insertion": 0.8841694147938528
+      },
+      "stage_max_torque_mnm": {
+        "probe": 15.390206596965804,
+        "transport": 13.725051023892073,
+        "spiral": 18.46836894771962,
+        "capture_handoff": 12.498443077288226,
+        "progress_dwell": 6.355863115482878,
+        "capture_force_release": 1.022956947448318,
+        "insertion_handoff": 7.944608364640558,
+        "upright_insertion": 1.7342620760255265
+      },
+      "stage_max_filtered_force_n": {
+        "probe": 3.4775079253456154,
+        "transport": 3.6408010965809403,
+        "spiral": 4.580184302819054,
+        "capture_handoff": 3.1938608303622544,
+        "progress_dwell": 1.0848190676855882,
+        "capture_force_release": 0.6084127413605765,
+        "insertion_handoff": 4.400321071428618,
+        "upright_insertion": 0.8115811312709171
+      },
+      "fingerprint_sha256": "f37e23fa4fdd34a665a06e7ff08cfe81f2d16e1a3b882aaad8cf9e08ec89c87a",
+      "global_outward_fallback_used": false,
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "capture_yaw_assist_aborted": false,
+      "max_abs_tau_z_mnm": 4.5034385205355845,
+      "capture_handoff_used": true,
+      "sensor_progress_candidate_count": 1,
+      "search_recovery_count": 0,
+      "fallback_physical_reset_used": false,
+      "fallback_budget_extension_s": 0.0,
+      "funnel_guard_enabled": true,
+      "funnel_tip_rcc_used": true,
+      "funnel_recovery_count": 0,
+      "funnel_injected_energy_mj": 0.13655146709650673,
+      "funnel_peak_injected_power_w": 0.030579085365701798,
+      "funnel_min_health": -1.6753519743400704,
+      "funnel_abort_reason": null,
+      "insertion_command_bias_mm": [
+        0.0,
+        0.0
+      ],
+      "online_capture_sensor_only": true,
+      "offline_capture_validated": null,
+      "offline_capture_tags": null,
+      "random_search_seed": null,
+      "random_search_path_budget_mm": null,
+      "random_search_waypoints": null,
+      "entropy_grid_probe_count": null,
+      "entropy_grid_initial_nats": null,
+      "entropy_grid_final_nats": null,
+      "entropy_grid_credible_radius_mm": null,
+      "entropy_grid_map_xy_mm": null,
+      "entropy_grid_mean_xy_mm": null,
+      "entropy_grid_observations": null,
+      "entropy_grid_used_spiral": null,
+      "hybrid_spiral_fallback_reason": null,
+      "entropy_grid_config": null,
+      "entropy_grid_geometry_mm": null,
+      "hybrid_probe_gate_records": null,
+      "hybrid_probe_config": null,
+      "capture_direction_consistency_gate_enabled": false,
+      "capture_reverse_projection_tolerance_mm": null
+    },
+    "entropy": {
+      "method": "entropy_grid",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 10.210500000000987,
+      "candidate_attempts": 1,
+      "total_active_time_s": 11.560500000002637,
+      "actual_xy_path_mm": 4.510545146774258,
+      "contact_xy_path_mm": 3.2908269355377793,
+      "lateral_work_mj": 0.3842468142312769,
+      "orientation_work_mj": 0.030388775348049377,
+      "wear_proxy_mj": 0.4146355895793263,
+      "max_force_n": 3.0662023606327993,
+      "max_torque_mnm": 8.832312763301866,
+      "stage_time_s": {
+        "entropy_probe_dwell": 1.5,
+        "fallback_reset": 8.7105,
+        "capture_force_release": 0.3,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 0.05
+      },
+      "event_xy_mm": [
+        -0.014874182694314274,
+        0.14168176503133045
+      ],
+      "baseline_depth_mm": -0.03851097518231886,
+      "min_tip_z_mm": -4.064617906893774,
+      "hard_stop": false,
+      "video_path": "outputs/current/active_comparison/six_methods/05_baseline_c_cad_scaled_entropy_grid.mp4",
+      "frame_count": 223,
+      "initial_xy_mm": [
+        1.4380550574329862,
+        -2.695309661820242
+      ],
+      "direction_source": "none",
+      "predicted_direction_deg": null,
+      "true_direction_deg": 118.08169741183522,
+      "direction_error_deg": null,
+      "direction_confidence": null,
+      "aps_set_size": null,
+      "transport_allowed": null,
+      "legacy_transport_gate": null,
+      "transport_distance_mm": null,
+      "transport_target_xy_mm": null,
+      "spiral_max_radius_mm": null,
+      "capture_mode": "centered_free_insertion",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": null,
+      "aps_direction_angles_deg": null,
+      "circular_concentration": null,
+      "ensemble_top1_span_deg": null,
+      "bottom_reached": true,
+      "time_to_bottom_s": 11.560500000002637,
+      "bottom_depth_error_mm": 0.0025873961068869494,
+      "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+      "top_state": null,
+      "state_probabilities": null,
+      "posterior_model": "visual_grid_x_soft_cad_edge_load_likelihood",
+      "cad_radial_boundaries_mm": null,
+      "posterior_radial_quantiles_mm": null,
+      "transport_policy": null,
+      "transport_direction_quality": null,
+      "transport_quantile": null,
+      "transport_reverse_probability": null,
+      "transport_projected_quantiles_mm": null,
+      "transport_raw_distance_mm": null,
+      "transport_distance_cap_mm": null,
+      "max_filtered_force_n": 3.0125464373322375,
+      "max_filtered_torque_mnm": 5.120987376105966,
+      "stage_max_force_n": {
+        "entropy_probe_dwell": 3.049072986211676,
+        "fallback_reset": 2.801198271845474,
+        "capture_force_release": 3.0662023606327993,
+        "insertion_handoff": 3.0558023588619565,
+        "upright_insertion": 0.19727124268678448
+      },
+      "stage_max_torque_mnm": {
+        "entropy_probe_dwell": 2.995362779520384,
+        "fallback_reset": 4.761083493224014,
+        "capture_force_release": 7.915784025915591,
+        "insertion_handoff": 8.832312763301866,
+        "upright_insertion": 1.2239260154922076
+      },
+      "stage_max_filtered_force_n": {
+        "entropy_probe_dwell": 3.0125464373322375,
+        "fallback_reset": 1.5159381637040366,
+        "capture_force_release": 1.816968824297304,
+        "insertion_handoff": 1.7969631440106366,
+        "upright_insertion": 0.15788223448679514
+      },
+      "fingerprint_sha256": null,
+      "global_outward_fallback_used": false,
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "capture_yaw_assist_aborted": false,
+      "max_abs_tau_z_mnm": 1.3811503739017374,
+      "capture_handoff_used": false,
+      "sensor_progress_candidate_count": 0,
+      "search_recovery_count": 0,
+      "fallback_physical_reset_used": false,
+      "fallback_budget_extension_s": 0.0,
+      "funnel_guard_enabled": true,
+      "funnel_tip_rcc_used": true,
+      "funnel_recovery_count": 0,
+      "funnel_injected_energy_mj": 0.11615554968606702,
+      "funnel_peak_injected_power_w": 0.010682600072470738,
+      "funnel_min_health": -2.983765763102466,
+      "funnel_abort_reason": null,
+      "insertion_command_bias_mm": [
+        0.0,
+        0.0
+      ],
+      "online_capture_sensor_only": true,
+      "offline_capture_validated": true,
+      "offline_capture_tags": [
+        "bottom",
+        "chamfer",
+        "wall"
+      ],
+      "random_search_seed": null,
+      "random_search_path_budget_mm": null,
+      "random_search_waypoints": null,
+      "entropy_grid_probe_count": 6,
+      "entropy_grid_initial_nats": 6.786400087135039,
+      "entropy_grid_final_nats": 3.919365013297228,
+      "entropy_grid_credible_radius_mm": 2.736643188094266,
+      "entropy_grid_map_xy_mm": [
+        -0.06194494256701378,
+        0.3046903381797579
+      ],
+      "entropy_grid_mean_xy_mm": [
+        0.3253930734323313,
+        0.3148051525516794
+      ],
+      "entropy_grid_observations": [
+        {
+          "probe": 1,
+          "action_xy_mm": [
+            1.4380550574329862,
+            -2.695309661820242
+          ],
+          "observation": "torque_direction_bin_5",
+          "torque_category": 6,
+          "normalized_torque_lever_xy_mm": [
+            -1.1060444688501112,
+            -1.020642164406964
+          ],
+          "expected_information_gain_nats": 0.692869658389929,
+          "realized_entropy_change_nats": 0.833134782749779,
+          "posterior_entropy_nats": 5.95326530438526,
+          "posterior_credible_radius_95_mm": 3.555815187328661,
+          "posterior_mean_xy_mm": [
+            0.35223565457183875,
+            -1.609490258959095
+          ]
+        },
+        {
+          "probe": 2,
+          "action_xy_mm": [
+            0.09455217317854586,
+            -1.3518067775658018
+          ],
+          "observation": "torque_direction_bin_5",
+          "torque_category": 6,
+          "normalized_torque_lever_xy_mm": [
+            -2.746592650318897,
+            -1.5662477307914255
+          ],
+          "expected_information_gain_nats": 0.6858584489787177,
+          "realized_entropy_change_nats": 0.6867173916617633,
+          "posterior_entropy_nats": 5.266547912723497,
+          "posterior_credible_radius_95_mm": 4.713690375840085,
+          "posterior_mean_xy_mm": [
+            -0.17857941053129248,
+            -1.0786751938559616
+          ]
+        },
+        {
+          "probe": 3,
+          "action_xy_mm": [
+            -0.5771992689486743,
+            -0.6800553354385815
+          ],
+          "observation": "torque_direction_bin_4",
+          "torque_category": 5,
+          "normalized_torque_lever_xy_mm": [
+            -1.6885062716894825,
+            0.06422127250465912
+          ],
+          "expected_information_gain_nats": 0.6767214426772675,
+          "realized_entropy_change_nats": 0.7298648924841622,
+          "posterior_entropy_nats": 4.536683020239335,
+          "posterior_credible_radius_95_mm": 5.375196854255901,
+          "posterior_mean_xy_mm": [
+            -0.21085834330964817,
+            -0.7053047260813785
+          ]
+        },
+        {
+          "probe": 4,
+          "action_xy_mm": [
+            -0.5771992689486743,
+            -0.008303893311361384
+          ],
+          "observation": "torque_direction_bin_3",
+          "torque_category": 4,
+          "normalized_torque_lever_xy_mm": [
+            -2.210242289338887,
+            1.1800706362424052
+          ],
+          "expected_information_gain_nats": 0.6485590257660417,
+          "realized_entropy_change_nats": 0.32006329879106854,
+          "posterior_entropy_nats": 4.216619721448266,
+          "posterior_credible_radius_95_mm": 4.854412030696155,
+          "posterior_mean_xy_mm": [
+            -0.10186591757303155,
+            -0.20626265245889536
+          ]
+        },
+        {
+          "probe": 5,
+          "action_xy_mm": [
+            -0.24132354788506424,
+            0.3275718277522487
+          ],
+          "observation": "torque_direction_bin_2",
+          "torque_category": 3,
+          "normalized_torque_lever_xy_mm": [
+            -1.1772185890231173,
+            2.925757443608265
+          ],
+          "expected_information_gain_nats": 0.6345343602091503,
+          "realized_entropy_change_nats": 0.29725470815103794,
+          "posterior_entropy_nats": 3.919365013297228,
+          "posterior_credible_radius_95_mm": 2.736643188094266,
+          "posterior_mean_xy_mm": [
+            0.3253930734323313,
+            0.3148051525516794
+          ]
+        },
+        {
+          "probe": 6,
+          "action_xy_mm": [
+            0.09455217317854586,
+            0.3275718277522487
+          ],
+          "observation": "direct_capture",
+          "expected_information_gain_nats": 0.6301159741359802
+        }
+      ],
+      "entropy_grid_used_spiral": false,
+      "hybrid_spiral_fallback_reason": null,
+      "entropy_grid_config": {
+        "belief_spacing_m": 0.00025,
+        "action_spacing_m": 0.0003358757210636101,
+        "likelihood_floor": 0.01,
+        "max_probes": 64,
+        "credible_radius_stop_m": 0.00025,
+        "min_information_gain_nats": 0.005,
+        "torque_direction_bins": 8,
+        "low_lever_threshold_m": 0.00025,
+        "support_centroid_scale": 0.75,
+        "quadrature_points": 81,
+        "radial_lookup_points": 256
+      },
+      "entropy_grid_geometry_mm": {
+        "socket_top_apothem": 3.25,
+        "head_outer_radius": 6.5,
+        "probe_circumradius": 3.464101615137755,
+        "capture_radius": 0.25
+      },
+      "hybrid_probe_gate_records": null,
+      "hybrid_probe_config": null,
+      "capture_direction_consistency_gate_enabled": false,
+      "capture_reverse_projection_tolerance_mm": null
+    }
+  },
+  "comparison": "outputs/current/active_comparison/three_method_race/comparison_proposed_plus_proposed_entropy_race_1x3.mp4",
+  "keyframe": "outputs/current/active_comparison/three_method_race/comparison_proposed_plus_proposed_entropy_race_keyframe.png",
+  "frames": 279,
+  "display_fast_forward": {
+    "factor": 4,
+    "start_frame": 193,
+    "first_finished_method": "entropy",
+    "changes_simulation_or_metrics": false
+  },
+  "fairness": {
+    "same_initial_pose_contact_nuisance_and_sensor_prior": true,
+    "proposed_plus_and_proposed_identical_conical_fingerprint": true,
+    "same_cad_effective_capture_scale": true,
+    "same_capture_guard_and_terminal_verifier": true,
+    "true_center_online": false
+  },
+  "claim_boundary": "Selected conditional mechanism race. Display acceleration begins only after the first physical completion and never changes rollout metrics. Fresh frozen 24-pose strict capture is Proposed+/Proposed/C=21/23/23 with zero hard stops; Proposed+ remains an experimental tradeoff. Component MP4 files are externally archived."
+}

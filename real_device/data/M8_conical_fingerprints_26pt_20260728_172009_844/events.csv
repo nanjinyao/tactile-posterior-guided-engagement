@@ -1,0 +1,31 @@
+wall_time,event,detail
+2026-07-28 17:20:10.108,RUN_LOCAL_SAMPLING_GEOMETRY_READY_NO_MOTION,M8 acquisition uses the installed 92 mm axial TCP and a fresh per-point Bota baseline; the confirmed start will define the run-local M8 centre.  No simulation model is loaded.
+2026-07-28 17:20:10.113,CONICAL_QUALIFICATION_BOUNDARY,The stored SN001349 qualification covers fixed-orientation relative binary events.  It supplies identity/range/unit/hard-limit evidence only; it does not certify this orientation-changing cone.
+2026-07-28 17:20:10.202,KST_CLIENT_ALREADY_LOADED_NO_MOTION,KST class was already available; maintained state-reader functions were pinned to the front of the MATLAB path.
+2026-07-28 17:20:10.232,KST_CLIENT_PROVENANCE_PINNED_NO_MOTION,class /home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/KST.m; EEF/state readers /home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client; vector parser hash f48beb8e737510bb4c4f91c372b724eca6f7730e67bb13c16672b7ec50f86c3a; no controller command sent
+2026-07-28 17:20:10.234,KST_CLIENT_READY_NO_MOTION,KST class is available; no controller connection has been attempted.
+2026-07-28 17:20:10.236,ROOT_STATUS_BEGIN_NO_MOTION,Running bounded read-only PC/ROS/Bota status checks (timeout 30 s).
+2026-07-28 17:20:21.233,ROOT_STATUS_PASS_NO_MOTION,Root preparation status passed.
+2026-07-28 17:20:21.234,COMMAND_OWNER_CHECK_BEGIN_NO_MOTION,Checking ROS nodes and OS processes for a second command owner.
+2026-07-28 17:20:21.761,COMMAND_OWNER_CHECK_PASS_NO_MOTION,No responsive ROS/OS robot command owner conflict found.
+2026-07-28 17:20:21.779,MATLAB_ROS_RESTART_BEGIN_NO_MOTION,Restarting only this MATLAB ROS global node.
+2026-07-28 17:20:23.110,MATLAB_ROS_RESTART_PASS_NO_MOTION,MATLAB ROS global node is initialized; no robot command sent.
+2026-07-28 17:20:23.762,BOTA_DIAGNOSTIC_OK,wait 0.296 s; attempts 1; source receive
+2026-07-28 17:20:24.066,BOTA_WRENCH_RX_OK,frame bota_ft_frame; wait 0.243 s; attempts 1
+2026-07-28 17:20:24.121,CONNECTING_KST,192.168.1.147:30001; active tip TCP [+0.000 +0.000 +92.000] mm; status OPERATOR_INSTALLED_92MM_AXIAL_TCP_RUN_LOCAL_SAMPLING; stated uncertainty 4.000 mm
+2026-07-28 17:20:26.086,CONNECTED_KST_NO_MOTION_YET,Capturing fresh stationary task-local near-hole start.
+2026-07-28 17:20:29.173,LIVE_UPRIGHT_POSE_RECORDED_COMPATIBILITY_NO_MOTION,current stationary orientation is this run's upright reference; +TCP-Z to WORLD -Z diagnostic error 0.471 deg; not a commissioning authorization gate
+2026-07-28 17:20:29.181,SAMPLING_ENTRYPOINT_AUTHORIZED_AUTOMATIC_CONTINUE_NO_MOTION,confirmed run-local M8 centre WORLD XY [+472.675 +1.761] mm; start Z 296.098 mm; +TCP-Z to WORLD -Z diagnostic error 0.471 deg; dedicated entrypoint invocation authorized motion; no typed phrase
+2026-07-28 17:20:29.194,RUN_LOCAL_M8_CENTER_BOUND_NO_MOTION,confirmed TCP XY [+472.675 +1.761] mm is this run's hole centre; 26 local offsets use WORLD-aligned X/Y; route 75.823 mm
+2026-07-28 17:20:29.195,TASK_LOCAL_MANUAL_START_CAPTURED,xyz [472.675 1.761 296.098] mm; translation span 0.000 mm; orientation span 0.000000 rad; joint span 0.000000 rad
+2026-07-28 17:20:29.897,START_UNLOADED_BASELINE_COMPLETE,sustained/average receive 50.0/45.7 Hz; p95/max gap 0.0350/0.0499 s; max force std 0.0236 N; max torque std 0.00054 Nm
+2026-07-28 17:20:29.899,DATA_DERIVED_CONTACT_POLICY,touchdown 2.00 N for 3 consecutive fresh samples; contact target 3.50 N; capture requires at least 0.25 mm total and 0.04 mm recent downward progress inside the 10.0 N soft envelope
+2026-07-28 17:20:29.901,SAMPLING_PASSIVE_CONTACT_OBSERVATION_POLICY,after confirmed touchdown; issue no settle motion and observe fresh Bota data for at least 0.60 s / 20 samples (bounded by 1.50 s); 3.50 +/- 0.50 N with std <= 0.20 N is the preferred quality grade; while every other fresh load remains nonblocking and continues to the 40 Hz cone with explicit offline-QC metadata
+2026-07-28 17:20:29.902,DASHBOARD_INITIALIZING_NO_MOTION,Baseline is complete.  Creating the visualization before the first robot command; no blocking full-render drawnow is used.
+2026-07-28 17:20:31.679,SAMPLING_TOPVIEW_READY_NO_MOTION,Single lightweight top view created; it refreshes at no more than 2 Hz outside DirectServo and freezes during each cone.
+2026-07-28 17:20:31.826,M12_SAMPLING_CAMPAIGN_ARMED,Real-device raw signal and per-point baseline are authoritative.  No learned inference; simulation validity gate; online normalization update; or automatic training admission is executed.
+2026-07-28 17:20:31.857,FIRST_MOTION_USING_FRESH_STATIONARY_PREPOSE,The first microsegment reuses the final stationary pose; the redundant pre-command Eef_pos request is intentionally skipped.
+2026-07-28 17:20:34.275,SAMPLING_CAMPAIGN_ABORTED_NO_BLIND_RETURN,KST:MotionAcknowledgmentUnavailable: CARTESIAN_RELATIVE_TARGET did not receive an exact done acknowledgment within 2.00 s and 2 bounded reads (EMPTY_OR_NONCHAR_REPLY).
+2026-07-28 17:20:34.281,KST_END_REQUEST,Sending end through active KST object.
+2026-07-28 17:20:35.229,KST_END_WRITTEN,KST_OBJECT_NET_TURNOFFSERVER; SmartPAD Selected remains human-observed.
+2026-07-28 17:20:35.240,EXCEPTION_NO_BLIND_RETURN,KST:MotionAcknowledgmentUnavailable: CARTESIAN_RELATIVE_TARGET did not receive an exact done acknowledgment within 2.00 s and 2 bounded reads (EMPTY_OR_NONCHAR_REPLY).

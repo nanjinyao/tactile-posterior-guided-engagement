@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "authorization_id": "M10_FIXED_PROPOSED_PLUS_DEMO_20260730_V1",
+  "status": "EXPERIMENTAL_FIXED_DEMO_PILOT_AUTHORIZED_BY_OPERATOR_REQUEST",
+  "created_local": "2026-07-30T04:09:49+08:00",
+  "model_id": "real_multisize_direction_v1",
+  "size": "m10",
+  "execution_mode": "FULL_LOOP_PROPOSED_PLUS_LEARNED_ENTROPY_M10",
+  "public_entrypoint": "run_m10_proposed_plus_entropy_trial",
+  "authorization": {
+    "fixed_demo_only": true,
+    "capped_shortcut_hardware_control": true,
+    "residual_entropy_target_selection": true,
+    "capture_control": false,
+    "insertion_control": false,
+    "terminal_verification": false,
+    "online_weight_update": false,
+    "maximum_launcher_attempts": 3
+  },
+  "fixed_demo": {
+    "fresh_operator_taught_m10_center_required_each_attempt": true,
+    "historical_absolute_world_center_forbidden": true,
+    "offset_fixture_mm": [
+      4.590151046897575,
+      0.3008543944586581
+    ],
+    "radius_mm": 4.6,
+    "angle_fixture_deg": 3.75,
+    "source_sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+    "source_sample_offset_fixture_mm": [
+      5.5214491,
+      0.361894894
+    ],
+    "source_sample_radius_mm": 5.533296312,
+    "inward_shift_from_source_sample_mm": 0.933296312,
+    "selection_rationale": "INWARD_SAME_RAY_NEAR_TWICE_COMPLETED_REAL_M10_SAMPLE_FOR_HEAD_SUPPORT_AND_FINITE_RESIDUAL_REACH",
+    "conservative_capture_radius_mm": 0.635,
+    "residual_action_reach_mm": 4.8,
+    "touchdown_xy_lock_bound_mm": 0.25,
+    "worst_case_residual_capture_margin_mm": 0.585,
+    "head_support_margin_after_touchdown_lock_mm": 0.9424582771863959,
+    "fresh_center_support_envelope_required": true,
+    "support_envelope_role": "SAFETY_FAIL_STOP_ONLY_NEVER_POSTERIOR_INPUT_NEVER_TARGET_RANKING_NEVER_STEERING",
+    "maximum_physical_tip_center_radius_from_fresh_center_mm": 5.792458277186394,
+    "endpoint_tracking_allowance_mm": 0.6,
+    "maximum_commanded_tip_center_radius_from_fresh_center_mm": 5.192458277186394
+  },
+  "real_source_evidence": {
+    "run_directory": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877",
+    "clean_attempt_json": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877/sampling_attempts/26_M10-CLEAN_CANDIDATE-SUPPORTED-A003p75/attempt.json",
+    "clean_conical_trace_csv": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877/sampling_attempts/26_M10-CLEAN_CANDIDATE-SUPPORTED-A003p75/conical_trace_raw.csv",
+    "clean_conical_trace_sha256": "15851bf5d483a8accd77b54ade0a8d763f2cb4b7d9e1b45e028fe03fa2a5a919",
+    "clean_cone_completed": true,
+    "clean_safe_retract_completed": true,
+    "clean_phase_coverage_fraction": 0.9958333333333333,
+    "clean_measured_sampling_error_mm": 0.05555395878896395,
+    "sentinel_repeat_completed": true,
+    "sentinel_safe_retract_completed": true,
+    "sentinel_measured_sampling_error_mm": 0.025269176
+  },
+  "geometry_contract": {
+    "peg_tip_face_af_mm": 6.4,
+    "peg_shaft_af_mm": 8.0,
+    "socket_mouth_af_mm": 10.54,
+    "socket_deep_wall_af_mm": 8.54,
+    "socket_chamfer_depth_mm": 1.0,
+    "socket_head_outer_diameter_mm": 18.975,
+    "socket_depth_mm": 5.0,
+    "grid_pitch_mm": 0.42333333333333334,
+    "grid_node_count": 405,
+    "success_depth_band_mm": [
+      4.7,
+      5.2
+    ]
+  },
+  "control_boundary": {
+    "model_role": "M10 state and direction posterior, bounded shortcut, corridor and residual entropy ordering only",
+    "matlab_kst_role": "sole robot command owner",
+    "independent_guards_retained": [
+      "fresh robot and Bota state",
+      "single command owner",
+      "25 N relative force hard limit",
+      "0.75 Nm relative torque hard limit",
+      "finite workspace and joint-margin limits",
+      "fresh-center M10 head-support command envelope with no steering authority",
+      "finite motion progress and tracking limits",
+      "5.0 mm size-correct insertion datum and terminal verifier",
+      "KST end request on hard or unknown state"
+    ],
+    "claim_limit": "One fixed, in-sample-adjacent M10 demo pilot only; not general M10 full-loop promotion, success-rate evidence, unseen-position evidence, or production authority."
+  }
+}

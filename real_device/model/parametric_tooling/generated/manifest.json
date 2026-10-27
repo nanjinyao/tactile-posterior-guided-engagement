@@ -1,0 +1,1277 @@
+{
+  "generator": "generate_models.py",
+  "cadquery_version": "2.5.2",
+  "design_revision": "v1.5-integrated-flange-tools-yaw-datum",
+  "design_parameters_sha256": "89bff458e7415f04274c216d36c91dbe80c754216bd3de9b50aa6630c14eab43",
+  "source_step": {
+    "path": "/home/njy/njy_ws/group_meeting/real_device/model/fast_mount_ATI_ft_1.STEP",
+    "sha256": "60347cce064f7ae7dc2ddfe1a9d6466f3b880a409ac6e23493fc1c42dd337df4"
+  },
+  "source_geometry_validation": {
+    "source_flange_volume_mm3": 37658.20862215173,
+    "clean_replica_volume_mm3": 37658.24758558535,
+    "clean_minus_source_volume_mm3": 0.038963433617027476,
+    "clean_replica_reason": "avoids self-intersecting STL triangles created by the source STEP's split tangent faces"
+  },
+  "source_configs": {
+    "m8": {
+      "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m8_source.json",
+      "sha256": "d203d504848819b59d62b034d73f83658c2cd50aa415b4c7f371d0ec59d7d7ce"
+    },
+    "m10": {
+      "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m10_source.json",
+      "sha256": "1dd2801c151e0697e13b909ff3449f9e25f69034d3c7a443aee559b562c36504"
+    },
+    "m12": {
+      "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m12_source.json",
+      "sha256": "5fc817c6126cd858584279e62c3cba08874d647eb230ebd1a79ef935b05cac60"
+    }
+  },
+  "coordinate_system": {
+    "sensor_mating_plane_z_mm": 0.0,
+    "tool_axis": "-Z",
+    "socket_base_axis": "+Z",
+    "socket_selected_hex_flat_normal_deg": 0.0,
+    "integrated_peg_selected_hex_flat_normal_deg": 45.0,
+    "flange_reference_tangent_normal_deg": 45.0,
+    "positive_yaw_definition": "right-handed rotation about canonical +Z",
+    "view_note": "When viewed from the peg tip toward the flange (looking along +Z), positive right-handed yaw appears clockwise.",
+    "hex_equivalent_period_deg": 60.0
+  },
+  "peg_flange_yaw_contract": {
+    "shape_rotation_about_positive_z_deg": -15.0,
+    "selected_peg_flat_normal_in_flange_deg": 45.0,
+    "flange_reference_tangent_normal_deg": 45.0,
+    "socket_selected_flat_normal_deg": 0.0,
+    "equivalent_hex_period_deg": 60.0,
+    "cad_tolerance_deg": 0.05,
+    "physical_acceptance_deg": 1.0,
+    "reference": "Rotate the complete hex peg from the legacy +X-flat construction so that one selected flat normal is +45 deg in the pink-flange CAD frame, parallel to the B/C tangent datum on the central R36 outer cylindrical surface.",
+    "scope": "The complete peg hex is clocked relative to the flange; socket geometry is intentionally unchanged."
+  },
+  "tool_reference": {
+    "blue_sensor_plane_to_tip_mm": 42.0,
+    "blue_flange_thickness_mm": 8.0,
+    "blue_tool_face_to_tip_mm": 34.0,
+    "note": "The ATI measurement origin is above this plane and must be measured after the white flange is included."
+  },
+  "tool_architecture": {
+    "architecture": "one-piece blue flange, short rigid root, and size-specific hex peg",
+    "swap_method": "manually unbolt and replace the complete flange-tool",
+    "separate_receiver": false,
+    "separate_cartridge": false,
+    "separate_retaining_clip": false,
+    "root_flange_diameter_mm": 44.0,
+    "root_boss_diameter_mm": 36.0,
+    "root_first_taper_length_mm": 3.0,
+    "root_boss_length_mm": 7.0,
+    "load_cone_lower_diameter_mm": 16.2,
+    "load_cone_length_mm": 6.5,
+    "lower_collar_length_mm": 0.5,
+    "note": "The root is solid and self-supporting when the sensor-side flange face is placed on the build plate. All three tools keep the same Z=-42 mm tip datum."
+  },
+  "retired_quick_change": {
+    "status": "retired_after_first_physical_print_2026-07-21",
+    "archive": "archive/v1_3_quick_change_2026-07-21",
+    "reason": "The split cartridge shoulders required support and printed poorly; manual whole-flange exchange is simpler and removes receiver, fit, and clip uncertainty.",
+    "legacy_quick_change_radial_clearances_mm": [
+      0.05,
+      0.075,
+      0.1,
+      0.125,
+      0.15
+    ],
+    "legacy_receiver_parameters": {
+      "boss_outer_diameter_mm": 40.0,
+      "boss_length_below_blue_flange_mm": 10.0,
+      "root_gusset_outer_diameter_mm": 44.0,
+      "root_gusset_height_mm": 2.0,
+      "female_hex_working_af_mm": 16.2,
+      "female_hex_entry_af_mm": 16.7,
+      "female_hex_total_depth_mm": 8.3,
+      "female_hex_entry_depth_mm": 2.0,
+      "male_hex_working_af_mm": 16.0,
+      "male_hex_lead_af_mm": 15.5,
+      "male_hex_length_mm": 8.0,
+      "male_hex_lead_length_mm": 2.0,
+      "shoulder_diameter_mm": 36.0,
+      "shoulder_thickness_mm": 4.0,
+      "local_interference_ribs": {
+        "count": 3,
+        "protrusion_mm": 0.15,
+        "tangential_width_mm": 1.0,
+        "axial_length_mm": 1.8,
+        "end_ramp_mm": 0.2,
+        "effective_nominal_interference_per_rib_mm": 0.05,
+        "note": "Three short sacrificial FDM ribs remove play; they are not the positive retention feature."
+      },
+      "tool_free_retaining_clip": {
+        "groove_center_above_seat_mm": 4.2,
+        "groove_axial_height_mm": 3.4,
+        "groove_neck_diameter_mm": 13.0,
+        "clip_thickness_mm": 3.0,
+        "clip_prong_inner_gap_mm": 13.4,
+        "clip_prong_width_mm": 5.0,
+        "clip_tip_x_mm": -14.0,
+        "clip_bridge_start_x_mm": 12.0,
+        "clip_bridge_end_x_mm": 20.5,
+        "clip_handle_end_x_mm": 31.0,
+        "clip_handle_width_mm": 16.0,
+        "clip_tether_hole_diameter_mm": 4.0,
+        "receiver_channel_xy_clearance_per_side_mm": 0.2,
+        "receiver_channel_axial_clearance_per_side_mm": 0.25,
+        "detent_x_mm": -11.0,
+        "detent_bump_radius_mm": 0.35,
+        "detent_pocket_radius_mm": 0.7,
+        "detent_nominal_snap_mm": 0.15,
+        "recommended_material": "PETG or unfilled PA; print the clip flat and keep spare clips",
+        "note": "The U-clip is a positive pull-out stop. The rigid shoulder remains the only Z/tilt datum."
+      }
+    }
+  },
+  "recommended_hardware_socket_profile": "hardware_easy_v2",
+  "recommended_hardware_peg_tip_profile": "hardware_easy_v2",
+  "socket_fit_coupon_profile": "hardware_easy_v2",
+  "socket_fit_coupon_total_wall_af_offsets_mm": [
+    -0.1,
+    0.0,
+    0.1,
+    0.2,
+    0.3
+  ],
+  "parts": [
+    {
+      "name": "integrated_flange_peg_m8",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 53058.159605499925,
+      "bounding_box_mm": {
+        "x": [
+          -51.00000010000001,
+          51.00000010000001
+        ],
+        "y": [
+          -51.00000010000001,
+          51.00000010000001
+        ],
+        "z": [
+          -42.000000100000015,
+          0.0068515043203207495
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 53058.15960550405,
+      "files": {
+        "step": {
+          "path": "integrated_flange_peg_m8.step",
+          "sha256": "22303873354eeb02d82c2492cb3a5d6b8ba73860b31a67804ca501347692f24b"
+        },
+        "stl": {
+          "path": "integrated_flange_peg_m8.stl",
+          "sha256": "0b7aa0ce8dc710a5db232f58e1a857acf435fb06f68e1390e48af36fcf5152a6"
+        },
+        "3mf": {
+          "path": "integrated_flange_peg_m8.3mf",
+          "sha256": "65963ad4c561ba213b3158857c3bbf26813321407f4e8cf4f99daaff5540835d"
+        },
+        "svg": {
+          "path": "integrated_flange_peg_m8.svg",
+          "sha256": "00eec9ff5a0f58f14f7e69ab2070bc3bf3674f9c4fdd93beb7c63f9cf2193e83"
+        }
+      }
+    },
+    {
+      "name": "integrated_flange_peg_m10",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 53433.5112463098,
+      "bounding_box_mm": {
+        "x": [
+          -51.00000010000001,
+          51.00000010000001
+        ],
+        "y": [
+          -51.00000010000001,
+          51.00000010000001
+        ],
+        "z": [
+          -42.00000010000001,
+          0.0068515043203207495
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 53433.51124631409,
+      "files": {
+        "step": {
+          "path": "integrated_flange_peg_m10.step",
+          "sha256": "17381968212daa2b7758dcf3795df32b3a4e687b42c482d3550111e03ae8daa2"
+        },
+        "stl": {
+          "path": "integrated_flange_peg_m10.stl",
+          "sha256": "216855fc906be3dcfadce1c1b199acb9bd90d0cb6fb2484c80299a764c986a25"
+        },
+        "3mf": {
+          "path": "integrated_flange_peg_m10.3mf",
+          "sha256": "3ab289bae05d4229749794b467e659d5f717484d163cde60c1ec1639e014187e"
+        },
+        "svg": {
+          "path": "integrated_flange_peg_m10.svg",
+          "sha256": "d7d67d9504181aa38eebd6f34cad8637a7934be7d14d226fcb5e1709a3103bfd"
+        }
+      }
+    },
+    {
+      "name": "integrated_flange_peg_m12",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 53904.994012558054,
+      "bounding_box_mm": {
+        "x": [
+          -51.00000010000001,
+          51.00000010000001
+        ],
+        "y": [
+          -51.00000010000001,
+          51.00000010000001
+        ],
+        "z": [
+          -42.00000010000002,
+          0.0068515043203207495
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 53904.99401256221,
+      "files": {
+        "step": {
+          "path": "integrated_flange_peg_m12.step",
+          "sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe"
+        },
+        "stl": {
+          "path": "integrated_flange_peg_m12.stl",
+          "sha256": "3693811060f8eb99ec6ea6c7001187c3cd02c4d595c33be888bf2273939fb9f6"
+        },
+        "3mf": {
+          "path": "integrated_flange_peg_m12.3mf",
+          "sha256": "28e794b837c7c223ffc4acc89ccb3752946ef0ab888371826741cab3a504455e"
+        },
+        "svg": {
+          "path": "integrated_flange_peg_m12.svg",
+          "sha256": "05e139f3b86f66224ac93017bd101f6b89c81075a5ec2dff9b184e87704b3ed3"
+        }
+      }
+    },
+    {
+      "name": "socket_base_nominal",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 191171.94002849198,
+      "bounding_box_mm": {
+        "x": [
+          -75.00115665710763,
+          75.00115665710763
+        ],
+        "y": [
+          -35.00115665710762,
+          35.00115665710762
+        ],
+        "z": [
+          -30.00115665710762,
+          0.0033159145049034993
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 191171.9400281313,
+      "files": {
+        "step": {
+          "path": "socket_base_nominal.step",
+          "sha256": "6fe4ee9205b2b6a7eaad3ac1747b139927cf7a51a7f7fc90f3caef4a0a341745"
+        },
+        "stl": {
+          "path": "socket_base_nominal.stl",
+          "sha256": "1e0ea17928a657c7e2fcf4def40a9a08d9a767f98b14860e4253cdd6bf01ced4"
+        },
+        "3mf": {
+          "path": "socket_base_nominal.3mf",
+          "sha256": "638701e0c633257847bcc834d440f01fb3905e715ae8c72b1d38c7051030581d"
+        },
+        "svg": {
+          "path": "socket_base_nominal.svg",
+          "sha256": "afa3245c87fea951e17b9db33935eb1e66aaad1c273c1d5f3c7faef2ab3e772f"
+        }
+      }
+    },
+    {
+      "name": "socket_base_hardware_easy_v2",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 193312.85942905594,
+      "bounding_box_mm": {
+        "x": [
+          -75.00115665710763,
+          75.00115665710763
+        ],
+        "y": [
+          -35.00115665710762,
+          35.00115665710762
+        ],
+        "z": [
+          -30.00115665710762,
+          0.004178234647484498
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 193312.85942870443,
+      "files": {
+        "step": {
+          "path": "socket_base_hardware_easy_v2.step",
+          "sha256": "f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f"
+        },
+        "stl": {
+          "path": "socket_base_hardware_easy_v2.stl",
+          "sha256": "458f672612ccb953e362c56e81d1fbedd12a79523491c6816a56d6044d9abbf7"
+        },
+        "3mf": {
+          "path": "socket_base_hardware_easy_v2.3mf",
+          "sha256": "ab17f921e378cd77ed08a8e7425eebdd0eeb8315943433df70473ade318174ff"
+        },
+        "svg": {
+          "path": "socket_base_hardware_easy_v2.svg",
+          "sha256": "18260ae5d53bea5723a3011f982b6aabd557a791531d3059be8904397b1a3bd8"
+        }
+      }
+    },
+    {
+      "name": "socket_base_fdm_trial_p0p10mm_per_side",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 191127.1134104387,
+      "bounding_box_mm": {
+        "x": [
+          -75.00115665710763,
+          75.00115665710763
+        ],
+        "y": [
+          -35.00115665710762,
+          35.00115665710762
+        ],
+        "z": [
+          -30.00115665710762,
+          0.0033159145049034993
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 191127.1134100779,
+      "files": {
+        "step": {
+          "path": "socket_base_fdm_trial_p0p10mm_per_side.step",
+          "sha256": "85db6828db2631ad3698ff5ba86262c668b735b8f2519bcaed5e6fdaec847732"
+        },
+        "stl": {
+          "path": "socket_base_fdm_trial_p0p10mm_per_side.stl",
+          "sha256": "659edfe62ba2d1b334fc4b8cda4fa71b10bcbfdf7e31f9704765b844bcffb579"
+        },
+        "3mf": {
+          "path": "socket_base_fdm_trial_p0p10mm_per_side.3mf",
+          "sha256": "833875dbb62fa617c7f10cf46dab5df1009bab08f9660d3250f5e57936e5345a"
+        },
+        "svg": {
+          "path": "socket_base_fdm_trial_p0p10mm_per_side.svg",
+          "sha256": "45b1cd30720d7290353e2109e99ad4766977ba6c6d35974b42bcab8172befc22"
+        }
+      }
+    },
+    {
+      "name": "socket_fit_coupon_m8",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 9175.900794084799,
+      "bounding_box_mm": {
+        "x": [
+          -52.000385619035875,
+          52.000385619035875
+        ],
+        "y": [
+          -12.000385619035876,
+          12.000385619035876
+        ],
+        "z": [
+          -0.0003856190358767008,
+          4.000385619035876
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 9175.900794084793,
+      "files": {
+        "step": {
+          "path": "socket_fit_coupon_m8.step",
+          "sha256": "e8abd954fe008dba87e506e72211dae092c1ef92e91c6e8e7d14dd1405d97daf"
+        },
+        "stl": {
+          "path": "socket_fit_coupon_m8.stl",
+          "sha256": "be28fb912c860dfd13c271b46b31c3bbcab6341f069008679a8fcfc80f0519ff"
+        },
+        "3mf": {
+          "path": "socket_fit_coupon_m8.3mf",
+          "sha256": "0b6feb81a13bf50f48577548880e4542a02fb80b749e4c8854212ae8087b182d"
+        },
+        "svg": {
+          "path": "socket_fit_coupon_m8.svg",
+          "sha256": "e594d4ab1aab69a469b74d7458bac9bd465a8734279355485785370277aa20a4"
+        }
+      }
+    },
+    {
+      "name": "socket_fit_coupon_m10",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 8596.3519750701,
+      "bounding_box_mm": {
+        "x": [
+          -52.000385619035875,
+          52.000385619035875
+        ],
+        "y": [
+          -12.000385619035876,
+          12.000385619035876
+        ],
+        "z": [
+          -0.0003856190358767008,
+          4.000385619035876
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 8596.351975070158,
+      "files": {
+        "step": {
+          "path": "socket_fit_coupon_m10.step",
+          "sha256": "860b72b59b10f255d37f7d07ff5ccd6a4bb89d740e65cddf10bf113e1d70ffca"
+        },
+        "stl": {
+          "path": "socket_fit_coupon_m10.stl",
+          "sha256": "8c1f01161d0aa4aaf52cb7d0de8bc4269eec2f506c6743af5ae5ac6f54aaf23d"
+        },
+        "3mf": {
+          "path": "socket_fit_coupon_m10.3mf",
+          "sha256": "36b8bba099d2756ecc9483afc6485cc6300120f10aa5cad55f9f3524bbf77a1c"
+        },
+        "svg": {
+          "path": "socket_fit_coupon_m10.svg",
+          "sha256": "1e48a22f3565756c2afc043bd989da0b3dbf420e1646e168c1fa5b7ad7ccc9b3"
+        }
+      }
+    },
+    {
+      "name": "socket_fit_coupon_m12",
+      "is_valid": true,
+      "solid_count": 1,
+      "volume_mm3": 7843.480295843602,
+      "bounding_box_mm": {
+        "x": [
+          -52.000385619035875,
+          52.000385619035875
+        ],
+        "y": [
+          -12.000385619035876,
+          12.000385619035876
+        ],
+        "z": [
+          -0.0003856190358767008,
+          4.000385619035876
+        ]
+      },
+      "step_reimport_valid": true,
+      "step_reimport_volume_mm3": 7843.480295843653,
+      "files": {
+        "step": {
+          "path": "socket_fit_coupon_m12.step",
+          "sha256": "b4de91cb006142673a2dadb31a4ad401150fd0a2372ea7850797c94b7490ac06"
+        },
+        "stl": {
+          "path": "socket_fit_coupon_m12.stl",
+          "sha256": "dde684f46a956ddc41bdc8f7be0c5bdadaf2c72dad935f137fce6a3e94cb6ed2"
+        },
+        "3mf": {
+          "path": "socket_fit_coupon_m12.3mf",
+          "sha256": "a2652864df436079cc17959d216a161d3abc0435309ea074013dbd1c5ce2e3a6"
+        },
+        "svg": {
+          "path": "socket_fit_coupon_m12.svg",
+          "sha256": "62a92c60c92b34178adec18687239aadde419fb8c39d04bf1e4c3fc4940dce30"
+        }
+      }
+    }
+  ],
+  "integrated_tool_validation": {
+    "m8": {
+      "step_file": "integrated_flange_peg_m8.step",
+      "common_tip_z_mm": -42.0,
+      "sensor_mating_plane_z_mm": 0.0,
+      "uniform_contact_length_mm": 13.0,
+      "expected_contact_af_mm": 6.0,
+      "tip_profile_name": "hardware_easy_v2",
+      "target_tip_geometry_mm": {
+        "shaft_af_mm": 6.0,
+        "tip_face_af_mm": 4.8,
+        "tip_face_scale": 0.7999999999999999,
+        "tip_chamfer_radial_setback_mm": 0.6,
+        "tip_chamfer_axial_length_mm": 0.6,
+        "tip_chamfer_angle_from_axis_deg": 45.0,
+        "source_tip_face_af_mm": 5.88,
+        "source_tip_chamfer_axial_length_mm": 0.35,
+        "source_tip_chamfer_radial_setback_mm": 0.06000000000000005
+      },
+      "tip_sample_z_mm": -41.85,
+      "expected_tip_sample_af_mm": 5.1,
+      "measured_tip_section": {
+        "center_x_mm": -1.8918200339612667e-13,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 5.100000000000237,
+        "corner_span_mm": 5.888972745735825,
+        "selected_flat_normal_yaw_deg": 45.00000000000123,
+        "flat_normal_yaw_spread_deg": 1.0970779840135947e-11
+      },
+      "shaft_sample_z_mm": -41.199999999999996,
+      "measured_uniform_shaft_section": {
+        "center_x_mm": 0.0,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 5.999999999999581,
+        "corner_span_mm": 6.928203230275034,
+        "selected_flat_normal_yaw_deg": 45.0,
+        "flat_normal_yaw_spread_deg": 1.4210854715202004e-13
+      },
+      "transition_sample_z_mm": -27.0,
+      "measured_transition_section": {
+        "center_x_mm": 2.757793993168889e-13,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 10.000000000001323,
+        "corner_span_mm": 11.547005383797337,
+        "selected_flat_normal_yaw_deg": 45.00000000000433,
+        "flat_normal_yaw_spread_deg": 1.56035184772918e-11
+      },
+      "target_selected_flat_normal_yaw_deg": 45.0,
+      "target_flange_reference_tangent_normal_yaw_deg": 45.0,
+      "flat_normal_yaw_tolerance_deg": 0.05,
+      "clean_flange_volume_mm3": 37658.24758558535,
+      "clean_flange_overlap_volume_mm3": 37658.24758558653,
+      "errors": {
+        "zmax_error_mm": 0.0,
+        "tip_z_error_mm": 0.0,
+        "tip_sample_af_error_mm": 2.3714363805993344e-13,
+        "uniform_shaft_af_error_mm": 4.192202140984591e-13,
+        "tip_center_error_mm": 1.8918200339612667e-13,
+        "shaft_center_error_mm": 0.0,
+        "tip_flat_normal_yaw_error_deg": 1.2292389328649733e-12,
+        "shaft_flat_normal_yaw_error_deg": 0.0,
+        "transition_flat_normal_yaw_error_deg": 4.32720526077901e-12,
+        "selected_flat_to_flange_reference_error_deg": 0.0,
+        "clean_flange_overlap_volume_error_mm3": 1.178705133497715e-09
+      },
+      "pass": true
+    },
+    "m10": {
+      "step_file": "integrated_flange_peg_m10.step",
+      "common_tip_z_mm": -42.00000000000012,
+      "sensor_mating_plane_z_mm": 0.0,
+      "uniform_contact_length_mm": 13.0,
+      "expected_contact_af_mm": 8.0,
+      "tip_profile_name": "hardware_easy_v2",
+      "target_tip_geometry_mm": {
+        "shaft_af_mm": 8.0,
+        "tip_face_af_mm": 6.4,
+        "tip_face_scale": 0.8,
+        "tip_chamfer_radial_setback_mm": 0.8,
+        "tip_chamfer_axial_length_mm": 0.8,
+        "tip_chamfer_angle_from_axis_deg": 45.0,
+        "source_tip_face_af_mm": 7.84,
+        "source_tip_chamfer_axial_length_mm": 0.45,
+        "source_tip_chamfer_radial_setback_mm": 0.08000000000000007
+      },
+      "tip_sample_z_mm": -41.8,
+      "expected_tip_sample_af_mm": 6.800000000000001,
+      "measured_tip_section": {
+        "center_x_mm": 1.645350522494482e-13,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 6.80000000000022,
+        "corner_span_mm": 7.851963660980053,
+        "selected_flat_normal_yaw_deg": 44.999999999999034,
+        "flat_normal_yaw_spread_deg": 3.0127011996228248e-12
+      },
+      "shaft_sample_z_mm": -41.0,
+      "measured_uniform_shaft_section": {
+        "center_x_mm": 0.0,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 8.000000000000556,
+        "corner_span_mm": 9.23760430703484,
+        "selected_flat_normal_yaw_deg": 45.0,
+        "flat_normal_yaw_spread_deg": 1.9895196601282805e-12
+      },
+      "transition_sample_z_mm": -27.0,
+      "measured_transition_section": {
+        "center_x_mm": -1.4566126083082054e-13,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 11.000000000000353,
+        "corner_span_mm": 12.701705922173439,
+        "selected_flat_normal_yaw_deg": 45.000000000001414,
+        "flat_normal_yaw_spread_deg": 4.547473508864641e-12
+      },
+      "target_selected_flat_normal_yaw_deg": 45.0,
+      "target_flange_reference_tangent_normal_yaw_deg": 45.0,
+      "flat_normal_yaw_tolerance_deg": 0.05,
+      "clean_flange_volume_mm3": 37658.24758558535,
+      "clean_flange_overlap_volume_mm3": 37658.24758558653,
+      "errors": {
+        "zmax_error_mm": 0.0,
+        "tip_z_error_mm": 1.2079226507921703e-13,
+        "tip_sample_af_error_mm": 2.1938006966593093e-13,
+        "uniform_shaft_af_error_mm": 5.559996907322784e-13,
+        "tip_center_error_mm": 1.645350522494482e-13,
+        "shaft_center_error_mm": 0.0,
+        "tip_flat_normal_yaw_error_deg": 9.663381206337363e-13,
+        "shaft_flat_normal_yaw_error_deg": 0.0,
+        "transition_flat_normal_yaw_error_deg": 1.4139800441625994e-12,
+        "selected_flat_to_flange_reference_error_deg": 0.0,
+        "clean_flange_overlap_volume_error_mm3": 1.178705133497715e-09
+      },
+      "pass": true
+    },
+    "m12": {
+      "step_file": "integrated_flange_peg_m12.step",
+      "common_tip_z_mm": -42.0,
+      "sensor_mating_plane_z_mm": 0.0,
+      "uniform_contact_length_mm": 13.0,
+      "expected_contact_af_mm": 10.0,
+      "tip_profile_name": "hardware_easy_v2",
+      "target_tip_geometry_mm": {
+        "shaft_af_mm": 10.0,
+        "tip_face_af_mm": 8.0,
+        "tip_face_scale": 0.8,
+        "tip_chamfer_radial_setback_mm": 1.0,
+        "tip_chamfer_axial_length_mm": 1.0,
+        "tip_chamfer_angle_from_axis_deg": 45.0,
+        "source_tip_face_af_mm": 9.8,
+        "source_tip_chamfer_axial_length_mm": 0.55,
+        "source_tip_chamfer_radial_setback_mm": 0.09999999999999964
+      },
+      "tip_sample_z_mm": -41.75,
+      "expected_tip_sample_af_mm": 8.5,
+      "measured_tip_section": {
+        "center_x_mm": 1.865174681370263e-14,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 8.500000000000432,
+        "corner_span_mm": 9.81495457622473,
+        "selected_flat_normal_yaw_deg": 44.99999999999872,
+        "flat_normal_yaw_spread_deg": 3.922195901395753e-12
+      },
+      "shaft_sample_z_mm": -40.8,
+      "measured_uniform_shaft_section": {
+        "center_x_mm": 0.0,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 10.000000000000119,
+        "corner_span_mm": 11.547005383793561,
+        "selected_flat_normal_yaw_deg": 45.0,
+        "flat_normal_yaw_spread_deg": 3.907985046680551e-12
+      },
+      "transition_sample_z_mm": -27.0,
+      "measured_transition_section": {
+        "center_x_mm": 1.7896795156957523e-13,
+        "center_y_mm": 0.0,
+        "across_flats_mm": 12.000000000000176,
+        "corner_span_mm": 13.856406460552561,
+        "selected_flat_normal_yaw_deg": 44.99999999999825,
+        "flat_normal_yaw_spread_deg": 6.480149750132114e-12
+      },
+      "target_selected_flat_normal_yaw_deg": 45.0,
+      "target_flange_reference_tangent_normal_yaw_deg": 45.0,
+      "flat_normal_yaw_tolerance_deg": 0.05,
+      "clean_flange_volume_mm3": 37658.24758558535,
+      "clean_flange_overlap_volume_mm3": 37658.24758558653,
+      "errors": {
+        "zmax_error_mm": 0.0,
+        "tip_z_error_mm": 0.0,
+        "tip_sample_af_error_mm": 4.3165471197426086e-13,
+        "uniform_shaft_af_error_mm": 1.1901590823981678e-13,
+        "tip_center_error_mm": 1.865174681370263e-14,
+        "shaft_center_error_mm": 0.0,
+        "tip_flat_normal_yaw_error_deg": 1.2789769243681803e-12,
+        "shaft_flat_normal_yaw_error_deg": 0.0,
+        "transition_flat_normal_yaw_error_deg": 1.7479351299698465e-12,
+        "selected_flat_to_flange_reference_error_deg": 0.0,
+        "clean_flange_overlap_volume_error_mm3": 1.178705133497715e-09
+      },
+      "pass": true
+    }
+  },
+  "socket_profile_validation": {
+    "socket_base_nominal": {
+      "profile_name": "simulation_exact",
+      "printer_compensation_per_side_mm": 0.0,
+      "section_tolerance_mm": 0.001,
+      "sizes": {
+        "m8": {
+          "target_geometry_mm": {
+            "wall_af_mm": 6.2,
+            "top_af_mm": 6.5,
+            "entry_chamfer_width_mm": 0.15,
+            "entry_chamfer_depth_mm": 0.15,
+            "printer_compensation_per_side_mm": 0.0,
+            "source_wall_af_mm": 6.2,
+            "source_top_af_mm": 6.5,
+            "source_head_outer_diameter_mm": 13.0,
+            "head_outer_diameter_scale": 1.0,
+            "head_outer_diameter_mm": 13.0,
+            "support_neck_diameter_scale": 1.0
+          },
+          "wall_clearance_per_side_mm": 0.10000000000000009,
+          "mouth_capture_allowance_per_side_mm": 0.25,
+          "mouth_capture_allowance_vs_sim_ratio": 1.0,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 6.4998,
+              "measured_af_mm": 6.499800000002267,
+              "absolute_error_mm": 2.2675195054944197e-12
+            },
+            "chamfer_mid": {
+              "z_mm": -0.075,
+              "expected_af_mm": 6.35,
+              "measured_af_mm": 6.350000000002225,
+              "absolute_error_mm": 2.225775119768514e-12
+            },
+            "straight_wall": {
+              "z_mm": -0.151,
+              "expected_af_mm": 6.2,
+              "measured_af_mm": 6.200000000000017,
+              "absolute_error_mm": 1.687538997430238e-14
+            }
+          },
+          "maximum_section_error_mm": 2.2675195054944197e-12,
+          "pass": true
+        },
+        "m10": {
+          "target_geometry_mm": {
+            "wall_af_mm": 8.24,
+            "top_af_mm": 8.6,
+            "entry_chamfer_width_mm": 0.18,
+            "entry_chamfer_depth_mm": 0.18,
+            "printer_compensation_per_side_mm": 0.0,
+            "source_wall_af_mm": 8.24,
+            "source_top_af_mm": 8.6,
+            "source_head_outer_diameter_mm": 16.5,
+            "head_outer_diameter_scale": 1.0,
+            "head_outer_diameter_mm": 16.5,
+            "support_neck_diameter_scale": 1.0
+          },
+          "wall_clearance_per_side_mm": 0.1200000000000001,
+          "mouth_capture_allowance_per_side_mm": 0.2999999999999998,
+          "mouth_capture_allowance_vs_sim_ratio": 1.0,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 8.5998,
+              "measured_af_mm": 8.599800000001792,
+              "absolute_error_mm": 1.7923440509548527e-12
+            },
+            "chamfer_mid": {
+              "z_mm": -0.09,
+              "expected_af_mm": 8.42,
+              "measured_af_mm": 8.420000000001686,
+              "absolute_error_mm": 1.6857626405908377e-12
+            },
+            "straight_wall": {
+              "z_mm": -0.181,
+              "expected_af_mm": 8.24,
+              "measured_af_mm": 8.240000000000002,
+              "absolute_error_mm": 1.7763568394002505e-15
+            }
+          },
+          "maximum_section_error_mm": 1.7923440509548527e-12,
+          "pass": true
+        },
+        "m12": {
+          "target_geometry_mm": {
+            "wall_af_mm": 10.3,
+            "top_af_mm": 10.74,
+            "entry_chamfer_width_mm": 0.22,
+            "entry_chamfer_depth_mm": 0.22,
+            "printer_compensation_per_side_mm": 0.0,
+            "source_wall_af_mm": 10.3,
+            "source_top_af_mm": 10.74,
+            "source_head_outer_diameter_mm": 18.5,
+            "head_outer_diameter_scale": 1.0,
+            "head_outer_diameter_mm": 18.5,
+            "support_neck_diameter_scale": 1.0
+          },
+          "wall_clearance_per_side_mm": 0.15000000000000036,
+          "mouth_capture_allowance_per_side_mm": 0.3700000000000001,
+          "mouth_capture_allowance_vs_sim_ratio": 1.0,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 10.7398,
+              "measured_af_mm": 10.739800000000983,
+              "absolute_error_mm": 9.823253321883385e-13
+            },
+            "chamfer_mid": {
+              "z_mm": -0.11,
+              "expected_af_mm": 10.52,
+              "measured_af_mm": 10.520000000000856,
+              "absolute_error_mm": 8.562039965909207e-13
+            },
+            "straight_wall": {
+              "z_mm": -0.221,
+              "expected_af_mm": 10.3,
+              "measured_af_mm": 10.300000000000004,
+              "absolute_error_mm": 3.552713678800501e-15
+            }
+          },
+          "maximum_section_error_mm": 9.823253321883385e-13,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    "socket_base_hardware_easy_v2": {
+      "profile_name": "hardware_easy_v2",
+      "printer_compensation_per_side_mm": 0.0,
+      "section_tolerance_mm": 0.001,
+      "sizes": {
+        "m8": {
+          "target_geometry_mm": {
+            "wall_af_mm": 6.5,
+            "top_af_mm": 8.1,
+            "entry_chamfer_width_mm": 0.8,
+            "entry_chamfer_depth_mm": 0.8,
+            "printer_compensation_per_side_mm": 0.0,
+            "source_wall_af_mm": 6.2,
+            "source_top_af_mm": 6.5,
+            "source_head_outer_diameter_mm": 13.0,
+            "head_outer_diameter_scale": 1.15,
+            "head_outer_diameter_mm": 14.95,
+            "support_neck_diameter_scale": 1.15
+          },
+          "wall_clearance_per_side_mm": 0.25,
+          "mouth_capture_allowance_per_side_mm": 1.0499999999999998,
+          "mouth_capture_allowance_vs_sim_ratio": 4.199999999999999,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 8.0998,
+              "measured_af_mm": 8.099800000006574,
+              "absolute_error_mm": 6.574296662620327e-12
+            },
+            "chamfer_mid": {
+              "z_mm": -0.4,
+              "expected_af_mm": 7.3,
+              "measured_af_mm": 7.300000000006335,
+              "absolute_error_mm": 6.335376667720993e-12
+            },
+            "straight_wall": {
+              "z_mm": -0.801,
+              "expected_af_mm": 6.5,
+              "measured_af_mm": 6.5,
+              "absolute_error_mm": 0.0
+            }
+          },
+          "maximum_section_error_mm": 6.574296662620327e-12,
+          "pass": true
+        },
+        "m10": {
+          "target_geometry_mm": {
+            "wall_af_mm": 8.540000000000001,
+            "top_af_mm": 10.540000000000001,
+            "entry_chamfer_width_mm": 1.0,
+            "entry_chamfer_depth_mm": 1.0,
+            "printer_compensation_per_side_mm": 0.0,
+            "source_wall_af_mm": 8.24,
+            "source_top_af_mm": 8.6,
+            "source_head_outer_diameter_mm": 16.5,
+            "head_outer_diameter_scale": 1.15,
+            "head_outer_diameter_mm": 18.974999999999998,
+            "support_neck_diameter_scale": 1.15
+          },
+          "wall_clearance_per_side_mm": 0.27000000000000046,
+          "mouth_capture_allowance_per_side_mm": 1.2700000000000005,
+          "mouth_capture_allowance_vs_sim_ratio": 4.233333333333337,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 10.539800000000001,
+              "measured_af_mm": 10.53980000000254,
+              "absolute_error_mm": 2.538413923502958e-12
+            },
+            "chamfer_mid": {
+              "z_mm": -0.5,
+              "expected_af_mm": 9.540000000000001,
+              "measured_af_mm": 9.540000000001951,
+              "absolute_error_mm": 1.950439809661475e-12
+            },
+            "straight_wall": {
+              "z_mm": -1.001,
+              "expected_af_mm": 8.540000000000001,
+              "measured_af_mm": 8.540000000000001,
+              "absolute_error_mm": 0.0
+            }
+          },
+          "maximum_section_error_mm": 2.538413923502958e-12,
+          "pass": true
+        },
+        "m12": {
+          "target_geometry_mm": {
+            "wall_af_mm": 10.600000000000001,
+            "top_af_mm": 13.000000000000002,
+            "entry_chamfer_width_mm": 1.2,
+            "entry_chamfer_depth_mm": 1.2,
+            "printer_compensation_per_side_mm": 0.0,
+            "source_wall_af_mm": 10.3,
+            "source_top_af_mm": 10.74,
+            "source_head_outer_diameter_mm": 18.5,
+            "head_outer_diameter_scale": 1.15,
+            "head_outer_diameter_mm": 21.275,
+            "support_neck_diameter_scale": 1.15
+          },
+          "wall_clearance_per_side_mm": 0.3000000000000007,
+          "mouth_capture_allowance_per_side_mm": 1.5000000000000009,
+          "mouth_capture_allowance_vs_sim_ratio": 4.054054054054055,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 12.999800000000002,
+              "measured_af_mm": 12.999800000002182,
+              "absolute_error_mm": 2.1795898419441073e-12
+            },
+            "chamfer_mid": {
+              "z_mm": -0.6,
+              "expected_af_mm": 11.8,
+              "measured_af_mm": 11.800000000001475,
+              "absolute_error_mm": 1.4743761767022079e-12
+            },
+            "straight_wall": {
+              "z_mm": -1.2009999999999998,
+              "expected_af_mm": 10.600000000000001,
+              "measured_af_mm": 10.599999999999994,
+              "absolute_error_mm": 7.105427357601002e-15
+            }
+          },
+          "maximum_section_error_mm": 2.1795898419441073e-12,
+          "pass": true
+        }
+      },
+      "pass": true
+    },
+    "socket_base_fdm_trial_p0p10mm_per_side": {
+      "profile_name": "simulation_exact",
+      "printer_compensation_per_side_mm": 0.1,
+      "section_tolerance_mm": 0.001,
+      "sizes": {
+        "m8": {
+          "target_geometry_mm": {
+            "wall_af_mm": 6.4,
+            "top_af_mm": 6.7,
+            "entry_chamfer_width_mm": 0.15,
+            "entry_chamfer_depth_mm": 0.15,
+            "printer_compensation_per_side_mm": 0.1,
+            "source_wall_af_mm": 6.2,
+            "source_top_af_mm": 6.5,
+            "source_head_outer_diameter_mm": 13.0,
+            "head_outer_diameter_scale": 1.0,
+            "head_outer_diameter_mm": 13.0,
+            "support_neck_diameter_scale": 1.0
+          },
+          "wall_clearance_per_side_mm": 0.20000000000000018,
+          "mouth_capture_allowance_per_side_mm": 0.3500000000000001,
+          "mouth_capture_allowance_vs_sim_ratio": 1.4000000000000004,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 6.6998,
+              "measured_af_mm": 6.699800000002909,
+              "absolute_error_mm": 2.9096725029376103e-12
+            },
+            "chamfer_mid": {
+              "z_mm": -0.075,
+              "expected_af_mm": 6.550000000000001,
+              "measured_af_mm": 6.550000000002875,
+              "absolute_error_mm": 2.8741453661496053e-12
+            },
+            "straight_wall": {
+              "z_mm": -0.151,
+              "expected_af_mm": 6.4,
+              "measured_af_mm": 6.400000000000006,
+              "absolute_error_mm": 5.329070518200751e-15
+            }
+          },
+          "maximum_section_error_mm": 2.9096725029376103e-12,
+          "pass": true
+        },
+        "m10": {
+          "target_geometry_mm": {
+            "wall_af_mm": 8.44,
+            "top_af_mm": 8.799999999999999,
+            "entry_chamfer_width_mm": 0.18,
+            "entry_chamfer_depth_mm": 0.18,
+            "printer_compensation_per_side_mm": 0.1,
+            "source_wall_af_mm": 8.24,
+            "source_top_af_mm": 8.6,
+            "source_head_outer_diameter_mm": 16.5,
+            "head_outer_diameter_scale": 1.0,
+            "head_outer_diameter_mm": 16.5,
+            "support_neck_diameter_scale": 1.0
+          },
+          "wall_clearance_per_side_mm": 0.21999999999999975,
+          "mouth_capture_allowance_per_side_mm": 0.39999999999999947,
+          "mouth_capture_allowance_vs_sim_ratio": 1.3333333333333324,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 8.7998,
+              "measured_af_mm": 8.79980000000184,
+              "absolute_error_mm": 1.8403056856186595e-12
+            },
+            "chamfer_mid": {
+              "z_mm": -0.09,
+              "expected_af_mm": 8.62,
+              "measured_af_mm": 8.620000000001733,
+              "absolute_error_mm": 1.7337242752546445e-12
+            },
+            "straight_wall": {
+              "z_mm": -0.181,
+              "expected_af_mm": 8.44,
+              "measured_af_mm": 8.440000000000001,
+              "absolute_error_mm": 1.7763568394002505e-15
+            }
+          },
+          "maximum_section_error_mm": 1.8403056856186595e-12,
+          "pass": true
+        },
+        "m12": {
+          "target_geometry_mm": {
+            "wall_af_mm": 10.5,
+            "top_af_mm": 10.94,
+            "entry_chamfer_width_mm": 0.22,
+            "entry_chamfer_depth_mm": 0.22,
+            "printer_compensation_per_side_mm": 0.1,
+            "source_wall_af_mm": 10.3,
+            "source_top_af_mm": 10.74,
+            "source_head_outer_diameter_mm": 18.5,
+            "head_outer_diameter_scale": 1.0,
+            "head_outer_diameter_mm": 18.5,
+            "support_neck_diameter_scale": 1.0
+          },
+          "wall_clearance_per_side_mm": 0.25,
+          "mouth_capture_allowance_per_side_mm": 0.46999999999999975,
+          "mouth_capture_allowance_vs_sim_ratio": 1.2702702702702693,
+          "chamfer_angle_from_axis_deg": 45.0,
+          "step_section_samples": {
+            "mouth_z0_minus": {
+              "z_mm": -0.0001,
+              "expected_af_mm": 10.9398,
+              "measured_af_mm": 10.939800000001632,
+              "absolute_error_mm": 1.6324719354088302e-12
+            },
+            "chamfer_mid": {
+              "z_mm": -0.11,
+              "expected_af_mm": 10.719999999999999,
+              "measured_af_mm": 10.720000000001498,
+              "absolute_error_mm": 1.4992451724538114e-12
+            },
+            "straight_wall": {
+              "z_mm": -0.221,
+              "expected_af_mm": 10.5,
+              "measured_af_mm": 10.5,
+              "absolute_error_mm": 0.0
+            }
+          },
+          "maximum_section_error_mm": 1.6324719354088302e-12,
+          "pass": true
+        }
+      },
+      "pass": true
+    }
+  },
+  "combined_hardware_funnel_validation": {
+    "sizes": {
+      "m8": {
+        "socket_profile_name": "hardware_easy_v2",
+        "peg_tip_profile_name": "hardware_easy_v2",
+        "shaft_af_mm": 6.0,
+        "tip_face_af_mm": 4.8,
+        "tip_face_area_ratio_vs_shaft": 0.6399999999999999,
+        "socket_wall_af_mm": 6.5,
+        "socket_mouth_af_mm": 8.1,
+        "deep_wall_clearance_per_side_mm": 0.25,
+        "socket_chamfer_width_and_depth_mm": 0.8,
+        "peg_chamfer_width_and_depth_mm": 0.6,
+        "aligned_flat_normal_geometric_guiding_allowance_mm": 1.65,
+        "source_control_guiding_allowance_mm": 0.31000000000000016,
+        "guiding_allowance_vs_source_ratio": 5.322580645161287,
+        "centered_ideal_hex_yaw_free_play_each_side_deg": 9.750472040735598,
+        "working_length_from_tip_to_reinforcement_mm": 13.0,
+        "full_af_straight_length_mm": 12.4,
+        "socket_depth_mm": 4.0,
+        "full_af_length_beyond_socket_depth_mm": 8.4,
+        "centered_straight_wall_tilt_clearance_approx_deg": 3.576334374997351,
+        "pass": true
+      },
+      "m10": {
+        "socket_profile_name": "hardware_easy_v2",
+        "peg_tip_profile_name": "hardware_easy_v2",
+        "shaft_af_mm": 8.0,
+        "tip_face_af_mm": 6.4,
+        "tip_face_area_ratio_vs_shaft": 0.6400000000000001,
+        "socket_wall_af_mm": 8.540000000000001,
+        "socket_mouth_af_mm": 10.540000000000001,
+        "deep_wall_clearance_per_side_mm": 0.27000000000000046,
+        "socket_chamfer_width_and_depth_mm": 1.0,
+        "peg_chamfer_width_and_depth_mm": 0.8,
+        "aligned_flat_normal_geometric_guiding_allowance_mm": 2.0700000000000003,
+        "source_control_guiding_allowance_mm": 0.3800000000000002,
+        "guiding_allowance_vs_source_ratio": 5.447368421052629,
+        "centered_ideal_hex_yaw_free_play_each_side_deg": 7.590392013287211,
+        "working_length_from_tip_to_reinforcement_mm": 13.0,
+        "full_af_straight_length_mm": 12.2,
+        "socket_depth_mm": 5.0,
+        "full_af_length_beyond_socket_depth_mm": 7.199999999999999,
+        "centered_straight_wall_tilt_clearance_approx_deg": 3.0909700035405074,
+        "pass": true
+      },
+      "m12": {
+        "socket_profile_name": "hardware_easy_v2",
+        "peg_tip_profile_name": "hardware_easy_v2",
+        "shaft_af_mm": 10.0,
+        "tip_face_af_mm": 8.0,
+        "tip_face_area_ratio_vs_shaft": 0.6400000000000001,
+        "socket_wall_af_mm": 10.600000000000001,
+        "socket_mouth_af_mm": 13.000000000000002,
+        "deep_wall_clearance_per_side_mm": 0.3000000000000007,
+        "socket_chamfer_width_and_depth_mm": 1.2,
+        "peg_chamfer_width_and_depth_mm": 1.0,
+        "aligned_flat_normal_geometric_guiding_allowance_mm": 2.500000000000001,
+        "source_control_guiding_allowance_mm": 0.47,
+        "guiding_allowance_vs_source_ratio": 5.319148936170215,
+        "centered_ideal_hex_yaw_free_play_each_side_deg": 6.633536502700636,
+        "working_length_from_tip_to_reinforcement_mm": 13.0,
+        "full_af_straight_length_mm": 12.0,
+        "socket_depth_mm": 6.0,
+        "full_af_length_beyond_socket_depth_mm": 6.0,
+        "centered_straight_wall_tilt_clearance_approx_deg": 2.862405226111754,
+        "pass": true
+      }
+    },
+    "interpretation": "The allowance is a flat-normal, yaw-aligned geometric estimate for first contact with the guiding region; it is not a guaranteed capture radius.",
+    "unmodeled_failure_causes": [
+      "friction and FDM layer ridges",
+      "tip/socket yaw mismatch",
+      "tool tilt and multi-point edge contact",
+      "burrs, elephant foot, and as-printed dimensional error",
+      "insufficient XY/tilt compliance or excessive axial force"
+    ]
+  },
+  "through_hole_validation": {
+    "socket_base_nominal": {
+      "m8": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      },
+      "m10": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      },
+      "m12": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      }
+    },
+    "socket_base_hardware_easy_v2": {
+      "m8": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      },
+      "m10": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      },
+      "m12": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      }
+    },
+    "socket_base_fdm_trial_p0p10mm_per_side": {
+      "m8": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      },
+      "m10": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      },
+      "m12": {
+        "nominal_diameter_mm": 0.5,
+        "axis_probe_diameter_mm": 0.4,
+        "axis_probe_solid_overlap_mm3": 0.0,
+        "pass": true
+      }
+    }
+  },
+  "active_contact_geometry_validation": {
+    "socket_base_nominal": {
+      "smooth_guard_band_z_mm": [
+        -2.0,
+        0.0
+      ],
+      "simulated_head_top_contact_thickness_mm": 0.08,
+      "minimum_vertical_separation_from_simulated_top_contact_mm": 1.92,
+      "rib_added_volume_inside_guard_band_mm3": 0.0,
+      "rib_removed_volume_inside_guard_band_mm3": 0.0,
+      "pass": true,
+      "claim_boundary": "Current MuJoCo screw_head_side_visual has collision disabled; this check preserves the physical top band but is not a future exterior-side collision validation."
+    },
+    "socket_base_hardware_easy_v2": {
+      "smooth_guard_band_z_mm": [
+        -2.0,
+        0.0
+      ],
+      "simulated_head_top_contact_thickness_mm": 0.08,
+      "minimum_vertical_separation_from_simulated_top_contact_mm": 1.92,
+      "rib_added_volume_inside_guard_band_mm3": 0.0,
+      "rib_removed_volume_inside_guard_band_mm3": 0.0,
+      "pass": true,
+      "claim_boundary": "Current MuJoCo screw_head_side_visual has collision disabled; this check preserves the physical top band but is not a future exterior-side collision validation."
+    }
+  },
+  "claim_boundary": [
+    "Nominal CAD geometry only; no as-printed dimensional validation has been performed.",
+    "The FDM trial compensation is a labeled trial, not a measured correction.",
+    "socket_base_nominal is the strict MuJoCo geometry control; socket_base_hardware_easy_v2 deliberately enlarges the wall clearance, 45-degree entry funnel, and outer head and requires hardware-specific MuJoCo geometry for matched reruns.",
+    "The one-piece flange tools eliminate the quick-change fit, cartridge shoulder, and retaining clip, but do not reduce the 42 mm blue-plane-to-tip moment arm.",
+    "The hardware-easy-v2 peg tips use visible 45-degree chamfers while retaining 80 percent of each shaft AF at the tip face; this enlarges the guiding region but does not guarantee capture.",
+    "The hardware-easy-v2 deep-wall clearance increases rotational free play before torque contact; terminal torque and dwell gates must be retuned on hardware.",
+    "The integrated peg is clocked -15 degrees about the flange +Z axis so a selected flat normal is parallel to the +45 degree B/C tangent datum; this mechanical datum does not itself calibrate sensor, robot, or fixture yaw.",
+    "The socket hexes remain at zero yaw. After printing, flange-datum-to-fixture teaching and measured peg/socket relative yaw are required before contact experiments.",
+    "The full Bota measurement-origin-to-tip transform remains pending the white-flange stack measurement.",
+    "The central through-holes are new hardware features and are not present in the current MuJoCo socket bottoms."
+  ]
+}

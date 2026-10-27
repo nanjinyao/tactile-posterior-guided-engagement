@@ -1,0 +1,226 @@
+{
+  "active_time_budget_s": 130.0,
+  "capture_thresholds_changed": false,
+  "claim_boundary": "Three preselected failed M12 development poses only. This is a mechanism regression, not untouched or confirmatory evidence.",
+  "commissioning": {
+    "admittance": {
+      "damping": [
+        139.42740046346702,
+        139.42740046346702,
+        73.58668357794092,
+        2.16,
+        2.16,
+        1.5
+      ],
+      "dt_s": 0.002,
+      "hard_wrench": [
+        20.0,
+        20.0,
+        20.0,
+        0.06,
+        0.06,
+        0.06
+      ],
+      "max_acceleration": [
+        0.12,
+        0.12,
+        0.072,
+        1.4399999999999997,
+        1.4399999999999997,
+        1.0799999999999998
+      ],
+      "max_offset": [
+        0.002,
+        0.002,
+        0.003,
+        0.1,
+        0.1,
+        0.08
+      ],
+      "max_velocity": [
+        0.007745966692414834,
+        0.007745966692414834,
+        0.0046475800154489,
+        0.20999999999999996,
+        0.20999999999999996,
+        0.15
+      ],
+      "stiffness": [
+        1320.0,
+        1320.0,
+        0.0,
+        6.4799999999999995,
+        6.4799999999999995,
+        3.5999999999999996
+      ],
+      "virtual_mass": [
+        4.0,
+        4.0,
+        2.0,
+        0.08,
+        0.08,
+        0.05
+      ],
+      "wrench_filter_hz": 25.0
+    },
+    "bit_radius_m": 0.005773502691896258,
+    "bit_radius_scale": 1.6666666666666667,
+    "claim_boundary": "v2 geometry/dynamics-scaled commissioning start only; independent size validation required",
+    "commissioning_version": "v2_sqrt_time_separate_rotation_lever_bumpless_terminal_hold_oracle_soft_escape_resume",
+    "funnel_guard": {
+      "axial_position_hold_in_terminal_set": true,
+      "bumpless_terminal_entry_rebase": true,
+      "cad_bottom_overshoot_margin_m": 0.00025,
+      "capture_force_release_s": 0.38729833462074165,
+      "deep_tilt_damping_nm_s_rad": 0.3,
+      "deep_tilt_stiffness_nm_rad": 1.0799999999999998,
+      "descent_speed_m_s": 0.0002711088342345192,
+      "enabled": true,
+      "force_floor_n": 0.2,
+      "hold_terminal_set_on_retry": true,
+      "injected_power_limit_w": 0.5,
+      "insertion_handoff_s": 1.2909944487358056,
+      "max_recoveries": 3,
+      "max_tilt_deg": 0.75,
+      "min_window_progress_m": 2e-05,
+      "moment_lever_m": 0.003,
+      "no_progress_energy_j": 0.0015,
+      "planar_damping_n_s_m": 77.45966692414834,
+      "planar_stiffness_n_m": 900.0,
+      "power_dwell_s": 0.01,
+      "recovery_force_n": 0.2,
+      "recovery_retouch_s": 0.25819888974716115,
+      "recovery_retract_m": 0.00035,
+      "recovery_retract_s": 0.19364916731037082,
+      "recovery_unload_s": 0.12909944487358058,
+      "retry_on_terminal_rejection": true,
+      "shallow_tilt_damping_nm_s_rad": 0.20999999999999996,
+      "shallow_tilt_stiffness_nm_rad": 0.6479999999999999,
+      "tilt_dwell_s": 0.02,
+      "window_s": 0.15,
+      "yaw_damping_nm_s_rad": 0.15,
+      "yaw_stiffness_nm_rad": 0.5399999999999999
+    },
+    "oracle_center_tolerance_capture_fraction": 0.25,
+    "oracle_transport_soft_escape_recovery": true,
+    "response_time_scale": 1.2909944487358056,
+    "size": "M12"
+  },
+  "created_utc": "2026-07-15T17:02:57.024754+00:00",
+  "execution_files": {
+    "cad_spec": {
+      "path": "configs/allen_m12_source.json",
+      "sha256": "5fc817c6126cd858584279e62c3cba08874d647eb230ebd1a79ef935b05cac60"
+    },
+    "commissioning": {
+      "path": "src/cross_size_commissioning.py",
+      "sha256": "c71676a03bb6970c496972b2f95ac64beed1a0018c87d6ae64c86d9385dcfa25"
+    },
+    "mujoco_model": {
+      "path": "models/allen_m12_source.xml",
+      "sha256": "e78a2158f62e31f03ce6c9660f5d8fb6bcb58f2e2893d3400c39e58fe8451e8f"
+    },
+    "rollout": {
+      "path": "src/render_m8_search_comparison.py",
+      "sha256": "085a3c64b5556a5af0bc45a4d0df86516230c63fee4475d1062e718a2d6a3f02"
+    },
+    "runner": {
+      "path": "src/run_m12_oracle_transport_recovery_targeted.py",
+      "sha256": "0c439d63262a096a7d346f390ab9ac163f03ce0c2720636e6076ef0cf41fcf1f"
+    },
+    "source_report": {
+      "path": "outputs/current/diagnostics/cross_size_s4b_full_loop_development_v3/report.json",
+      "sha256": "30229c6b6fc7d1c317b90c478113c5ecd3c88f4df8db024c7adb03427933a818"
+    },
+    "source_trials": {
+      "m12_s3test_005": {
+        "path": "outputs/current/diagnostics/cross_size_s4b_full_loop_development_v3/m12/trials/m12_s3test_005.json",
+        "sha256": "1230b34c9c5558d83d225810e01ee3f99467e2abc785d01a82e2f5a5083265fb"
+      },
+      "m12_s3test_007": {
+        "path": "outputs/current/diagnostics/cross_size_s4b_full_loop_development_v3/m12/trials/m12_s3test_007.json",
+        "sha256": "0822fe9dd4eea76f5d54e1eeb2ac1d73e4650f3685a94fa78492d232b4ddf66a"
+      },
+      "m12_s3test_011": {
+        "path": "outputs/current/diagnostics/cross_size_s4b_full_loop_development_v3/m12/trials/m12_s3test_011.json",
+        "sha256": "914e4cc44be64a2d73acaff239e2f5953f8eff67f9ab14c6ab1ba44b1d31cef1"
+      }
+    }
+  },
+  "experiment": "m12_oracle_transport_soft_escape_targeted_development",
+  "fallback_budget_extension_s": 0.0,
+  "intervention": "oracle-only unchanged-soft-guard recovery: measured-tip freeze, low-force unload, admittance rebase, resume remaining true-center ray, then require measured center-tolerance dwell before the shared guarded descent and terminal verifier",
+  "non_oracle_behavior_changed": false,
+  "phase": "development",
+  "pose_ids": [
+    "m12_s3test_005",
+    "m12_s3test_007",
+    "m12_s3test_011"
+  ],
+  "raw_hard_wrench_thresholds": [
+    20.0,
+    20.0,
+    20.0,
+    0.06,
+    0.06,
+    0.06
+  ],
+  "raw_hard_wrench_thresholds_relaxed": false,
+  "size": "m12",
+  "soft_wrench_thresholds_changed": false,
+  "source": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/diagnostics/cross_size_s4b_full_loop_development_v3",
+  "source_failure_classes": {
+    "m12_s3test_005": "raw_Tx_hard_stop_during_off_center_insertion_handoff",
+    "m12_s3test_007": "transport_soft_escape_then_search_radius_exhausted",
+    "m12_s3test_011": "transport_soft_escape_then_search_radius_exhausted"
+  },
+  "tasks": [
+    {
+      "angle_rad": 5.118542186113112,
+      "baseline_phase_rad": 5.925275160568219,
+      "contact_timeconst_s": 0.06102818373590708,
+      "friction_slide": 0.6166260238736868,
+      "pose_id": "m12_s3test_005",
+      "posterior_seed": 20260942005,
+      "radius_m": 0.0018244268758609917,
+      "sensor_delay_s": 0.006105323381721974,
+      "sensor_noise_seed": 202609420005,
+      "size": "m12",
+      "target_down_force_n": 3.2757071051746607,
+      "x_m": 0.0007207916734466776,
+      "y_m": -0.0016760050086004625
+    },
+    {
+      "angle_rad": 3.361494742491605,
+      "baseline_phase_rad": 2.047448198447158,
+      "contact_timeconst_s": 0.06721280144527554,
+      "friction_slide": 0.6530059352517128,
+      "pose_id": "m12_s3test_007",
+      "posterior_seed": 20260942007,
+      "radius_m": 0.006359466803371837,
+      "sensor_delay_s": 0.007221140900626779,
+      "sensor_noise_seed": 202609420007,
+      "size": "m12",
+      "target_down_force_n": 2.7903273655101657,
+      "x_m": -0.006206323286141143,
+      "y_m": -0.0013872163822167835
+    },
+    {
+      "angle_rad": 4.576571145106691,
+      "baseline_phase_rad": 0.7159979441426075,
+      "contact_timeconst_s": 0.045281259268522264,
+      "friction_slide": 0.628320474177599,
+      "pose_id": "m12_s3test_011",
+      "posterior_seed": 20260942011,
+      "radius_m": 0.007722886296357958,
+      "sensor_delay_s": 0.006576466901227832,
+      "sensor_noise_seed": 202609420011,
+      "size": "m12",
+      "target_down_force_n": 3.4977203579619527,
+      "x_m": -0.0010456839014157107,
+      "y_m": -0.007651765673672552
+    }
+  ],
+  "terminal_verifier_thresholds_changed": false,
+  "untouched_tasks_or_seeds_read": false
+}

@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "record_kind": "operator_designated_work_pose_observation",
+  "semantic_name": "m12_socket_top_surface_center_approx",
+  "status": "SEMANTIC_RECORDED_NUMERIC_KST_CAPTURE_PENDING",
+  "captured_local": null,
+  "operator_report": {
+    "reported_local": "2026-07-21T21:55:06+08:00",
+    "photo_watermark_local": "2026-07-21T21:49:00+08:00",
+    "statement": "The current position is approximately the M12 hole top-surface center; the fixture has been aligned on the table."
+  },
+  "robot": {
+    "model": "KUKA LBR iiwa 14 R820",
+    "ip": "192.168.1.147",
+    "command_owner_for_numeric_capture": "MATLAB_KST_MatlabToolboxServer"
+  },
+  "frames": {
+    "numeric_pose_frame": "KUKA base / SmartPAD WORLD",
+    "numeric_pose_entity": "KST media-flange identity",
+    "operator_aligned_entity": "physical installed printed peg tip",
+    "T_flange_to_tip": null
+  },
+  "state": {
+    "flange_pose_mm_rad": null,
+    "joints_rad": null,
+    "sample_count": null,
+    "stationarity_duration_s": null,
+    "max_translation_span_mm": null,
+    "max_orientation_span_rad": null,
+    "max_joint_span_rad": null
+  },
+  "fixture_feature": {
+    "fixture_id": null,
+    "fixture_revision": null,
+    "size": "M12",
+    "feature": "socket_top_surface_center",
+    "alignment_quality": "operator_reported_approximate",
+    "contact_state": "UNKNOWN",
+    "tip_to_surface_clearance_mm": null,
+    "cad_center_in_fixture_m": [0.045, 0.0, 0.0],
+    "cad_source_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/model/parametric_tooling/design_parameters.json",
+    "cad_source_sha256": "594a752fefc2b6cedd05334cf89a739ed1e28165b5a31f1be3f0858a2053021f"
+  },
+  "table_fixture_validity": {
+    "operator_reported_table_calibrated": true,
+    "calibration_record_path": null,
+    "calibration_sha256": null,
+    "platform_height_or_pose": null,
+    "height_lock_or_brakes": "UNVERIFIED",
+    "fixture_mount_state": "UNVERIFIED",
+    "invalidated_by": [
+      "table_or_lift_height_change",
+      "table_pose_change",
+      "fixture_remount",
+      "tool_or_sensor_stack_change"
+    ]
+  },
+  "derived_calibration": {
+    "T_world_from_fixture": null,
+    "socket_center_world_xyz_m": null,
+    "socket_axis_world": null,
+    "socket_surface_world_z_m": null,
+    "socket_bottom_world_z_m": null
+  },
+  "use_permissions": {
+    "replaces_folded_start_anchor": false,
+    "approved_as_recovery_target": false,
+    "approved_as_motion_target": false,
+    "approved_as_approach_pose": false,
+    "approved_as_fixture_to_world_calibration": false
+  },
+  "provenance": {
+    "capture_method": "operator photograph and statement; fresh stationary KST numeric read pending",
+    "tooling_profile_path": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+    "tooling_profile_sha256": "ae67b732dd2291d61f18acd317780c7c210b3440a4689a707a90c74d3ebb2db1",
+    "folded_anchor_path": "/home/ubuntu20/robot_ws/test_real_device/kst_default_folded_start.json",
+    "folded_anchor_sha256": "032a6456b7878f59256bb4d4f2b1f7dd3bc65c509ffe0498c067fd409eb2376b",
+    "note": "This observation does not overwrite or replace the folded start. A single approximate point cannot define a 6-DoF fixture transform, socket axis, yaw, or depth datum."
+  }
+}

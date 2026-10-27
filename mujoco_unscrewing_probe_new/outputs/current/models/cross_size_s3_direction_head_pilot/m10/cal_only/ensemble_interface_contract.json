@@ -1,0 +1,31 @@
+{
+  "adaptation_contract": {
+    "encoder_shared_state_head_frozen": true,
+    "size": "m10",
+    "temperature_and_APS_role": "calibration",
+    "test_samples_seen": 0,
+    "variant": "cal_only",
+    "weight_update_role": "none"
+  },
+  "aps_quantile": 0.9715631604194641,
+  "checkpoints": [
+    "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260720/circular_cnn_best.pt",
+    "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260721/circular_cnn_best.pt",
+    "outputs/current/models/cross_size_s3_direction_head_pilot/m10/cal_only/seeds/seed_20260722/circular_cnn_best.pt"
+  ],
+  "claim_boundary": "Simulation-only small-data cross-size adaptation pilot. Calibration-set metrics are descriptive, not untouched generalization evidence.",
+  "combiner": "mean size-calibrated class probabilities",
+  "confidence_gate": 0.0,
+  "direction_bin_width_deg": 7.5,
+  "direction_bins": 48,
+  "direction_role": "allow bounded transport only when all calibrated set/concentration/disagreement gates pass",
+  "fallback": "guarded local outward spiral or re-probe",
+  "state_role": "soft action-relevant radial likelihood only: combine calibrated support-state probabilities with approximate CAD using a nonzero likelihood floor; never use a hard state gate, direct distance command, capture trigger, or terminal verifier",
+  "structured_transport_gate": {
+    "max_aps_set_size": 3,
+    "max_ensemble_top1_span_deg": 7.5,
+    "min_circular_concentration": 0.0,
+    "min_max_probability": 0.0
+  },
+  "updated_utc": "2026-07-15T13:20:04.899486+00:00"
+}

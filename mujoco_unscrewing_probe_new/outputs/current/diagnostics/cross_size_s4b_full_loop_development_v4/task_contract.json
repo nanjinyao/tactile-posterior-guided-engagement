@@ -1,0 +1,1667 @@
+{
+  "active_time_budget_s": 130.0,
+  "adaptation_cohort": "S4b generic visual-boundary C6 with train-validation-selected base-anchored residual adapter",
+  "baseline_controller_mapping": {
+    "privileged_straight_to_center": "oracle",
+    "pure_outward": "baseline"
+  },
+  "cal_only_unavailable_policy": "report unavailable and keep necessity unsupported; never substitute an S3 model or an uncalibrated alias",
+  "capture_and_terminal_boundary": {
+    "non_oracle_online_handoff": "sensor-only measured-wrench cue",
+    "offline_terminal_scorer_is_deployable_online_signal": false,
+    "offline_true_center_or_contact_tags_available_to_non_oracle": false,
+    "oracle_online_information": "privileged true-center execution diagnostic",
+    "strict_success": "offline true-center/contact-tag capture audit plus shared CAD-bottom terminal verifier"
+  },
+  "contract_freeze_must_precede_execute": true,
+  "created_utc": "2026-07-15T17:22:20.510093+00:00",
+  "default_output": "outputs/current/diagnostics/cross_size_s4_full_loop_development",
+  "evaluation_seeds": {
+    "m10": 20260941,
+    "m12": 20260942
+  },
+  "evaluation_use": "development_diagnostics_and_tuning_allowed; no confirmatory claim",
+  "execution_bundle_frozen_before_rollout": {
+    "development_task_source": {
+      "path": "outputs/current/evaluations/cross_size_s3_full_loop_pilot_v3/task_contract.json",
+      "sha256": "23ee5c758f468c280c5b933991ba10c43e8b7befc02654910dbfe70e57f204ce"
+    },
+    "phase": "development",
+    "sizes": {
+      "m10": {
+        "adaptation_data_contract": {
+          "path": "outputs/current/datasets/cross_size_s4b_adaptation/m10/dataset_contract.json",
+          "sha256": "1316a04c2f156c937803cd4ac7a73dc6ada4eabf79ba4206f578e7884be8b7ee"
+        },
+        "adaptation_data_manifest": {
+          "path": "outputs/current/datasets/cross_size_s4b_adaptation/m10/dataset_manifest.json",
+          "sha256": "088b75e294d5bf3d935faafa2e2fa3ef178fd9821e6c1b43fc882ae5c416c8a6"
+        },
+        "cad_spec": {
+          "path": "configs/allen_m10_source.json",
+          "sha256": "1dd2801c151e0697e13b909ff3449f9e25f69034d3c7a443aee559b562c36504"
+        },
+        "ensembles": {
+          "cal_only": {
+            "contract": {
+              "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/ensemble_interface_contract.json",
+              "sha256": "9be412f1cd3cad435d5631e3723b818610a6cc818d072a1b96e4c8c4351e1bb0"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260720/metrics.json",
+                  "sha256": "ef00fd3caf15db68dff17539b635765da03107c97cfd116e508dd9604b0fcb37"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260721/metrics.json",
+                  "sha256": "1faadde81379d86073db6874b33099630dc43b11ad532ac6902ee30a0a65fa6c"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260722/metrics.json",
+                  "sha256": "2ef08142353636e463374b31ce2819718cb9b639e13453e5e267f684d8460f83"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          },
+          "s4_fine_tuned": {
+            "adapter_contract": {
+              "path": "outputs/current/models/cross_size_s4b_base_anchored_adapter/adapter_contract.json",
+              "sha256": "77f066785fb14cce33fe768512e3bfa33c9f9f27244ed2aa4004ed76964aa0cc"
+            },
+            "adapter_manifest": {
+              "path": "outputs/current/models/cross_size_s4b_base_anchored_adapter/manifest.json",
+              "sha256": "32ba2e42d81bb5c00fb6a9836af6f225ca2e8483d6f473b062491c4081f92f1f"
+            },
+            "base_parent": {
+              "contract": {
+                "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+                "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+              },
+              "seeds": [
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+                    "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+                    "sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                },
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+                    "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+                    "sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                },
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+                    "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+                    "sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                }
+              ]
+            },
+            "fine_tuned_parent": {
+              "contract": {
+                "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/ensemble_interface_contract.json",
+                "sha256": "c3a54b7d624d4bf28326522e4c70a08b0291dcfb0d579bc052e673be624789ae"
+              },
+              "seeds": [
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260720/circular_cnn_best.pt",
+                    "sha256": "b72ca47301012d1659e19195b8aa4a63f274fe2228d0220eb3d3e333bfbabe41"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260720/metrics.json",
+                    "sha256": "de9b2689f556ce2a85cfd96c4f22adeb069454f75cf9325faaa48ab33e184c36"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260720/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                },
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260721/circular_cnn_best.pt",
+                    "sha256": "5edead4ebd1239924eebd729991e72e843e55bba99c8f78aa42b60ad21256ec1"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260721/metrics.json",
+                    "sha256": "a924d3781de394c3a027edf942d6969413fbc71ffde919096aedb8229c1e843e"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260721/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                },
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260722/circular_cnn_best.pt",
+                    "sha256": "9f41f9d2d3bd880e3b1bb76b1e06c84d18e939ff598743b7c86d1f8b7a53ecd4"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260722/metrics.json",
+                    "sha256": "d020ec25c08b0311344d13ba0ff4a0e999920c42fc02c7d6a7faf21e79a1e05f"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260722/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                }
+              ]
+            },
+            "runtime": "base_anchored_residual_adapter",
+            "selection_readme": {
+              "path": "outputs/current/models/cross_size_s4b_base_anchored_adapter/SELECTION.md",
+              "sha256": "ad8fa3a3279a521c47cc9b4ab44886a721262b52d8b3c44954cb00966acb77cb"
+            },
+            "selection_report": {
+              "path": "outputs/current/models/cross_size_s4b_base_anchored_adapter/selection_report.json",
+              "sha256": "b47a9013a11c83551b5f02baabb34e507ea7c5ba66c8cf376cc54c21be31581e"
+            }
+          },
+          "zero_shot": {
+            "contract": {
+              "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+              "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+                  "sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+                  "sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+                  "sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          }
+        },
+        "model_manifest": {
+          "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/model_manifest.json",
+          "sha256": "279e8db42b6838535ba8eda548e3302138064209c049e6dcc47ad75be22216bd"
+        },
+        "mujoco_model": {
+          "path": "models/allen_m10_source.xml",
+          "sha256": "baa84b8df605b96459df63ada5ac9fe50c5a817f37fa3665252a59b96acbbfe9"
+        }
+      },
+      "m12": {
+        "adaptation_data_contract": {
+          "path": "outputs/current/datasets/cross_size_s4b_adaptation/m12/dataset_contract.json",
+          "sha256": "a7c7728bb06309575a60c476ca9a81f24b50bc1330ee27e056fa247d971e1ea0"
+        },
+        "adaptation_data_manifest": {
+          "path": "outputs/current/datasets/cross_size_s4b_adaptation/m12/dataset_manifest.json",
+          "sha256": "7677d853fe70cd18a6102a3ca94451849f79475cad2a6aa026d622f8fe7f2c0b"
+        },
+        "cad_spec": {
+          "path": "configs/allen_m12_source.json",
+          "sha256": "5fc817c6126cd858584279e62c3cba08874d647eb230ebd1a79ef935b05cac60"
+        },
+        "ensembles": {
+          "cal_only": {
+            "contract": {
+              "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/ensemble_interface_contract.json",
+              "sha256": "a82a2decbe7351729c1552e1611d000b42411ec660b3da82d0dd5c37a201d01b"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260720/metrics.json",
+                  "sha256": "776177e984b1f4ab2d43d9c4b3f5a041447583026d093510f8c66f08a70197c5"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260721/metrics.json",
+                  "sha256": "3bd0981e8f88cb6ce4a88282d6b6c6781c08a06247d5605725987977bb4970a8"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260722/metrics.json",
+                  "sha256": "01f0ff9d98aa5baa1f713e520c6dec9e3b06607118c9eeb01097163fa8a21c21"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          },
+          "s4_fine_tuned": {
+            "adapter_contract": {
+              "path": "outputs/current/models/cross_size_s4b_base_anchored_adapter/adapter_contract.json",
+              "sha256": "77f066785fb14cce33fe768512e3bfa33c9f9f27244ed2aa4004ed76964aa0cc"
+            },
+            "adapter_manifest": {
+              "path": "outputs/current/models/cross_size_s4b_base_anchored_adapter/manifest.json",
+              "sha256": "32ba2e42d81bb5c00fb6a9836af6f225ca2e8483d6f473b062491c4081f92f1f"
+            },
+            "base_parent": {
+              "contract": {
+                "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+                "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+              },
+              "seeds": [
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+                    "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+                    "sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                },
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+                    "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+                    "sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                },
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+                    "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+                    "sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                }
+              ]
+            },
+            "fine_tuned_parent": {
+              "contract": {
+                "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/ensemble_interface_contract.json",
+                "sha256": "26d10cdd5888ce190676d33c0cfc3a495fdc56cab715babe77a98c5836579702"
+              },
+              "seeds": [
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260720/circular_cnn_best.pt",
+                    "sha256": "5c2d2218ef7a60b74e609bfc33b03e02731b63f070b629028918846e5d7a610c"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260720/metrics.json",
+                    "sha256": "17ce13da729d5723f9002772357b03a8a5e36727261927a07c55c627982239c2"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260720/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                },
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260721/circular_cnn_best.pt",
+                    "sha256": "c616cc0c40419086009e93d3eadb853a2cd86372e6d16b2a887fad84cad15f24"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260721/metrics.json",
+                    "sha256": "c14926538572d278f8e1f1f433c88b83575a1b4ee19a8e30637eaf94338e84a8"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260721/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                },
+                {
+                  "checkpoint": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260722/circular_cnn_best.pt",
+                    "sha256": "76cfd6106b958ac7ed784a6979837a33c9c211408230cd93c71ee0142a8ae8d6"
+                  },
+                  "metrics": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260722/metrics.json",
+                    "sha256": "f2046220bae9484d605dd9321a44200ee39d2d9b0d294fdaf1dabadc6fa6a2d3"
+                  },
+                  "normalization": {
+                    "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260722/normalization.npz",
+                    "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                  }
+                }
+              ]
+            },
+            "runtime": "base_anchored_residual_adapter",
+            "selection_readme": {
+              "path": "outputs/current/models/cross_size_s4b_base_anchored_adapter/SELECTION.md",
+              "sha256": "ad8fa3a3279a521c47cc9b4ab44886a721262b52d8b3c44954cb00966acb77cb"
+            },
+            "selection_report": {
+              "path": "outputs/current/models/cross_size_s4b_base_anchored_adapter/selection_report.json",
+              "sha256": "b47a9013a11c83551b5f02baabb34e507ea7c5ba66c8cf376cc54c21be31581e"
+            }
+          },
+          "zero_shot": {
+            "contract": {
+              "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+              "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+            },
+            "seeds": [
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+                  "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+                  "sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+                  "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+                  "sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              },
+              {
+                "checkpoint": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+                  "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+                },
+                "metrics": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+                  "sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71"
+                },
+                "normalization": {
+                  "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+                  "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+                }
+              }
+            ]
+          }
+        },
+        "model_manifest": {
+          "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/model_manifest.json",
+          "sha256": "7e086de00d2b902ec331f91fb123ad68f821e4b458287dfdf5b3cf6e050ad24c"
+        },
+        "mujoco_model": {
+          "path": "models/allen_m12_source.xml",
+          "sha256": "e78a2158f62e31f03ce6c9660f5d8fb6bcb58f2e2893d3400c39e58fe8451e8f"
+        }
+      }
+    },
+    "sources": {
+      "src/__init__.py": {
+        "path": "src/__init__.py",
+        "sha256": "c3b4523caa8ec068f2f3c3ddddfde0f6f900d01f30647f28198edf0a6baa0904"
+      },
+      "src/allen_socket_model.py": {
+        "path": "src/allen_socket_model.py",
+        "sha256": "cde802cc81127bb530bc1268fc1ea3b36349fa39f067ed5887e16919a57f0be7"
+      },
+      "src/audit_m8_entropy_contact_cue.py": {
+        "path": "src/audit_m8_entropy_contact_cue.py",
+        "sha256": "6ee7bab8437a5fbb5aa8ee9b76d4407782587bd22af2f5ac524ff50445478deb"
+      },
+      "src/audit_m8_entropy_grid_coverage.py": {
+        "path": "src/audit_m8_entropy_grid_coverage.py",
+        "sha256": "bd8788dde01b362b91df99fac48038cea9186caa44ace8a111f3defc9770acc8"
+      },
+      "src/audit_m8_finite_outward_boundary.py": {
+        "path": "src/audit_m8_finite_outward_boundary.py",
+        "sha256": "a1c55db9cbd213e0944cd596e0d9625c51ba2dedc3fbfa2d23c95aee0911d027"
+      },
+      "src/audit_m8_model_cross_size_zero_shot.py": {
+        "path": "src/audit_m8_model_cross_size_zero_shot.py",
+        "sha256": "d3c5a454e5369b6b7ef78ead4ba51327e40cd754b898d76c1caa78e6152113c0"
+      },
+      "src/audit_m8_state_cad_fusion.py": {
+        "path": "src/audit_m8_state_cad_fusion.py",
+        "sha256": "9005cea76adb8511ccf278c599ddb848965529025cd1643313a9da48982cc6ca"
+      },
+      "src/build_closed_loop_audit_manifest.py": {
+        "path": "src/build_closed_loop_audit_manifest.py",
+        "sha256": "74575de595a7793dcc64f9b04f18cc58a4e6f49ed9f7ea19cfd86a0fb0528d1f"
+      },
+      "src/build_group_meeting_deck.py": {
+        "path": "src/build_group_meeting_deck.py",
+        "sha256": "cd10d259cb06bf8c32d5ef2fc074325e166b8425c2965433b9e12867e2f8aa0e"
+      },
+      "src/build_m8_strict24_fingerprint_quality_stratification.py": {
+        "path": "src/build_m8_strict24_fingerprint_quality_stratification.py",
+        "sha256": "ce5c90a8e8cdf9a003d2e5f20ee3c5373241873f32cf0d23b2bac500acf39f8e"
+      },
+      "src/capture_yaw_assist.py": {
+        "path": "src/capture_yaw_assist.py",
+        "sha256": "4e71d05f3b34f000b174c4f797567570ded1e8150c7bef06eaceecf15bc2c9e5"
+      },
+      "src/cartesian_admittance.py": {
+        "path": "src/cartesian_admittance.py",
+        "sha256": "1ae38b0b63073a4029e851418736bc194de485fee2b9ae8f3ef5b501b68d6cf1"
+      },
+      "src/check_m8_fresh_near_boundary_bottom.py": {
+        "path": "src/check_m8_fresh_near_boundary_bottom.py",
+        "sha256": "8bb8158f731e732f29711d8c48b27b95511a5db978bd50b51ffde818dfdd88d6"
+      },
+      "src/compact_physical_funnel_pptx.py": {
+        "path": "src/compact_physical_funnel_pptx.py",
+        "sha256": "398139093b46391574dab1181c914757e3c82b8a114be44cd12f8386e5f8ff53"
+      },
+      "src/cross_size_commissioning.py": {
+        "path": "src/cross_size_commissioning.py",
+        "sha256": "c71676a03bb6970c496972b2f95ac64beed1a0018c87d6ae64c86d9385dcfa25"
+      },
+      "src/cross_size_s4b_base_anchored_adapter.py": {
+        "path": "src/cross_size_s4b_base_anchored_adapter.py",
+        "sha256": "26c7e32f0a5dd1a12b1df362a8071a98e9f4c70512c5a7e774dbb3519de0adb9"
+      },
+      "src/embed_funnel_guard_pptx.py": {
+        "path": "src/embed_funnel_guard_pptx.py",
+        "sha256": "7939ff2f2f0723dba164863c1370c06bbef8fa54c63c9aecd3f9cfc4e05419df"
+      },
+      "src/entropy_grid_baseline.py": {
+        "path": "src/entropy_grid_baseline.py",
+        "sha256": "94937466ca4a92557fc7f550458ab021b8ca0b96ce266e5a07c72aacebee54bd"
+      },
+      "src/evaluate_m8_direction_ensemble.py": {
+        "path": "src/evaluate_m8_direction_ensemble.py",
+        "sha256": "45b8cfab4b2dc08dd7e03e212a4ad776f782226af34feb0bdd225cc7a7dd99dc"
+      },
+      "src/evaluate_m8_independent_direction_audit.py": {
+        "path": "src/evaluate_m8_independent_direction_audit.py",
+        "sha256": "376f45f20020edf9c2325a19aad34b18fb951e638fac7d23bcb2704169f5355c"
+      },
+      "src/extract_m8_video_keyframes.py": {
+        "path": "src/extract_m8_video_keyframes.py",
+        "sha256": "b2303051d8c61d6c26074c8681e2ea4caa559f532602ac1fd5ed336015a5ce0a"
+      },
+      "src/finetune_cross_size_s3_direction_head.py": {
+        "path": "src/finetune_cross_size_s3_direction_head.py",
+        "sha256": "30fb9744cbb05a83d325f24157155f205d2bb755a08046f5bb4557050cab0433"
+      },
+      "src/finetune_cross_size_s4_state_direction_heads.py": {
+        "path": "src/finetune_cross_size_s4_state_direction_heads.py",
+        "sha256": "6d490f78bea6c1550f381f04cc48102e06e8f596043e080a58abf459188a91bf"
+      },
+      "src/funnel_guard.py": {
+        "path": "src/funnel_guard.py",
+        "sha256": "22680d3641e6a48ba70ee210fcd0bc00f1c52c98cf04f9b6c06a8b22db0a7139"
+      },
+      "src/insert_entropy_grid_slides_pptx.py": {
+        "path": "src/insert_entropy_grid_slides_pptx.py",
+        "sha256": "09b8e0e5c0c88260e3686c9eae28a5fd1b5d29a86dcf8b587db60b89c74827e2"
+      },
+      "src/insert_extreme_funnel_slide_pptx.py": {
+        "path": "src/insert_extreme_funnel_slide_pptx.py",
+        "sha256": "f2c46c768273b0bd39d2265cc579dd98e8000499750405e73efb594e491f9e8d"
+      },
+      "src/m8_direction_runtime.py": {
+        "path": "src/m8_direction_runtime.py",
+        "sha256": "ae7cb3f1cd59db104d431e3035f0420e9f6a887b3e56cda4157af8ff8405be3f"
+      },
+      "src/m8_jin_style_direction.py": {
+        "path": "src/m8_jin_style_direction.py",
+        "sha256": "c0f37f8f0b54aca44d3016f61e6d6680c6792b9aa1ce0c8db0992d89c6776d28"
+      },
+      "src/mujoco_admittance_rollout.py": {
+        "path": "src/mujoco_admittance_rollout.py",
+        "sha256": "29a636be83aad53fbeeca45e3751e5843ae56b3a8e2c85c76310ac83c574ad8d"
+      },
+      "src/organize_current_outputs.py": {
+        "path": "src/organize_current_outputs.py",
+        "sha256": "f7809758f009cf1ca8f4626f93be9a8f89e7458bafeb6a141e44d282a36d72a8"
+      },
+      "src/plot_m8_bilingual_core_paper_assets.py": {
+        "path": "src/plot_m8_bilingual_core_paper_assets.py",
+        "sha256": "5e18b3c20797ba20f4416dd22242dc639d077ddeef1edcfc66b4a5847ea15580"
+      },
+      "src/plot_m8_entropy_grid_coverage_certificate.py": {
+        "path": "src/plot_m8_entropy_grid_coverage_certificate.py",
+        "sha256": "3a051fc311ab118019f60d7a35cb728c8600247a43c438d19db887d4e5598a1d"
+      },
+      "src/plot_m8_strict_complete_loop.py": {
+        "path": "src/plot_m8_strict_complete_loop.py",
+        "sha256": "c0e6a096456cf8292da3c7919b3c09ea64eecc6f381461d2811047506c2212a2"
+      },
+      "src/plot_m8_strict_complete_loop_compact.py": {
+        "path": "src/plot_m8_strict_complete_loop_compact.py",
+        "sha256": "ccea13e3434dc1a24a462a9e6e37d63bfbe3b9668aad8f18af4d8c807d2a7518"
+      },
+      "src/plot_sobol016_proposed_plus_audit.py": {
+        "path": "src/plot_sobol016_proposed_plus_audit.py",
+        "sha256": "1f8468ba59dfe223bf4578070fe29e1dcf5b703c1bdd6cbff25f7c5b22aa4ccb"
+      },
+      "src/plot_three_funnel_paper_assets.py": {
+        "path": "src/plot_three_funnel_paper_assets.py",
+        "sha256": "968f65d36b7d97bf6373c76acbbac79eb6ff2c21c94685d6bc20256a68e02140"
+      },
+      "src/plot_top_view_initial_positions.py": {
+        "path": "src/plot_top_view_initial_positions.py",
+        "sha256": "9f3c876ccce8882a37feae750f0d49e7d53601fffc8d904dda702792f57a17a5"
+      },
+      "src/posterior_search_plan.py": {
+        "path": "src/posterior_search_plan.py",
+        "sha256": "656e060bdbea6d28ee097c65a13fbefaee975761d30e809fbd5ab5732ce97b48"
+      },
+      "src/render_m8_clear_fingerprint_four_method_comparison.py": {
+        "path": "src/render_m8_clear_fingerprint_four_method_comparison.py",
+        "sha256": "b787de856ed80857bba978f95642bf234aa7ff4e6586cbe53a5cea483c7299f3"
+      },
+      "src/render_m8_dynamic_videos.py": {
+        "path": "src/render_m8_dynamic_videos.py",
+        "sha256": "6feb4d60d70f705a36b1ef3086ce158d7a8cf4bd916616772353ee61d19db14c"
+      },
+      "src/render_m8_entropy_grid_planar_explainer.py": {
+        "path": "src/render_m8_entropy_grid_planar_explainer.py",
+        "sha256": "4242d1cc80c7b744ae79f12da42ca0d1ea11acc575e5f4fd7904d1c95bebfdd6"
+      },
+      "src/render_m8_extreme_funnel_recovery.py": {
+        "path": "src/render_m8_extreme_funnel_recovery.py",
+        "sha256": "aa8357bad99c1322a05c259d1c1f58322fcab423fea39162e47376223fec7ba0"
+      },
+      "src/render_m8_fair_three_method_comparison.py": {
+        "path": "src/render_m8_fair_three_method_comparison.py",
+        "sha256": "2b357d4d5eb968d46a2b561dc8c6657f1ae47b6168e6f8a3b4981eede1579068"
+      },
+      "src/render_m8_four_method_comparison.py": {
+        "path": "src/render_m8_four_method_comparison.py",
+        "sha256": "b85d845f216ea6e331bdf51eac18e633d100d764bede93f06020ea47a6428c47"
+      },
+      "src/render_m8_frozen_learned_full_comparison.py": {
+        "path": "src/render_m8_frozen_learned_full_comparison.py",
+        "sha256": "736d01e74e8610e292dfaf7fc825f3c549b73449b2c931a0bd667666636ad969"
+      },
+      "src/render_m8_funnel_guard_ablation.py": {
+        "path": "src/render_m8_funnel_guard_ablation.py",
+        "sha256": "470c3aa2327f00504a46e73482521de65b5661770f3807ab9b62306cd2d5d049"
+      },
+      "src/render_m8_noisy_failure_comparison.py": {
+        "path": "src/render_m8_noisy_failure_comparison.py",
+        "sha256": "ff19b75d96d6480254e8bbcf68b1a3d88b5f1cef71b0b35a2fefb118264ca39c"
+      },
+      "src/render_m8_paper_direct_retry_comparison.py": {
+        "path": "src/render_m8_paper_direct_retry_comparison.py",
+        "sha256": "d2adfb964d17e8df1e5f9a1b2c9b66b85f15b4f4e0e5974d6916649f03e994ac"
+      },
+      "src/render_m8_paper_four_method_comparison.py": {
+        "path": "src/render_m8_paper_four_method_comparison.py",
+        "sha256": "96180312e7d512b9a55d20bf789654bf544979bd586d131c68fcade53c3eae32"
+      },
+      "src/render_m8_retry3_selected_media.py": {
+        "path": "src/render_m8_retry3_selected_media.py",
+        "sha256": "a0fa6560b55d24dd75b40a4aac3bd7b70c563c02326436ec7a631b7b4b7fc090"
+      },
+      "src/render_m8_sampling_position_map.py": {
+        "path": "src/render_m8_sampling_position_map.py",
+        "sha256": "e152fd7f859838136e4d16d4938552a37203c2ea4cead35dd7be4e4f661d138e"
+      },
+      "src/render_m8_sampling_videos.py": {
+        "path": "src/render_m8_sampling_videos.py",
+        "sha256": "636b42cb75950034f5ea5a4f2a8ca5d4febd68f897ed8ba03fd7799db72de987"
+      },
+      "src/render_m8_search_comparison.py": {
+        "path": "src/render_m8_search_comparison.py",
+        "sha256": "1f0f40cc879086fcecc67d35edfa04b076fde79b0d33d415a49728dad2c26420"
+      },
+      "src/render_m8_shortcut_residual_comparison.py": {
+        "path": "src/render_m8_shortcut_residual_comparison.py",
+        "sha256": "9f616678d2706e58a83c5f428a9fb80ac620ecf61c82540679dcede56a6479eb"
+      },
+      "src/render_m8_six_method_comparison.py": {
+        "path": "src/render_m8_six_method_comparison.py",
+        "sha256": "40505212d40ec7c6e8e6fbec9e3aa9d87a229cfcebc729c71fca66ef024a34e3"
+      },
+      "src/render_m8_smoke_states.py": {
+        "path": "src/render_m8_smoke_states.py",
+        "sha256": "935bf912b80329293489d4f8d0f74061748fc4f751e9f9a0494629fd5ad4703a"
+      },
+      "src/render_m8_strict_entropy_topview_explainer.py": {
+        "path": "src/render_m8_strict_entropy_topview_explainer.py",
+        "sha256": "f3a9ab2648b83cdaed29fa1fdc57f7585a4dcd22634f82578e1d3eca105fb1b6"
+      },
+      "src/render_m8_strict_fingerprint_direct_matrix.py": {
+        "path": "src/render_m8_strict_fingerprint_direct_matrix.py",
+        "sha256": "482e7b816a34b1334d816e992d053adeead44e63857e132d9958c62efb693cc2"
+      },
+      "src/render_m8_strict_four_method_matrix.py": {
+        "path": "src/render_m8_strict_four_method_matrix.py",
+        "sha256": "e62ef40d55ae54b7582fbd97a9beb0c30ca0344d9fce07c81d237c46452868a1"
+      },
+      "src/render_m8_strict_proposed_plus_explainer.py": {
+        "path": "src/render_m8_strict_proposed_plus_explainer.py",
+        "sha256": "b7d186ed4279706ecf983e9b1433d0ff76995319767eda4ac71c795c05e4a076"
+      },
+      "src/render_m8_three_method_race.py": {
+        "path": "src/render_m8_three_method_race.py",
+        "sha256": "6a7d08b7093953394d5c8b2522aa03383b2b46ee63af1d1c444b4dd4dd10ee05"
+      },
+      "src/run_cross_size_closed_loop_audit.py": {
+        "path": "src/run_cross_size_closed_loop_audit.py",
+        "sha256": "062f75c117eb654fd5c786710433fa919f4e22626e510b393150ff641efd8c6f"
+      },
+      "src/run_cross_size_commissioning_v2_targeted.py": {
+        "path": "src/run_cross_size_commissioning_v2_targeted.py",
+        "sha256": "30a506a2a0aee1efef5df47a26485ea2c7c7680815e5affc3b821cc8e648b5bf"
+      },
+      "src/run_cross_size_s3_full_loop_pilot.py": {
+        "path": "src/run_cross_size_s3_full_loop_pilot.py",
+        "sha256": "4b93ae26acdc4ecb75a04484a5dabe1dafaf49aba9b6f78fde5279586f4017de"
+      },
+      "src/run_cross_size_s4_full_loop_evaluation.py": {
+        "path": "src/run_cross_size_s4_full_loop_evaluation.py",
+        "sha256": "cf0880b061a18c3f0294119cc8756799a107c7459360486512f9855f3205d197"
+      },
+      "src/run_cross_size_s4_residual_corridor_diagnostic.py": {
+        "path": "src/run_cross_size_s4_residual_corridor_diagnostic.py",
+        "sha256": "33dca0bfb9a19eee9a362756c701a6bcd3ccbb2de822bffedfba4cb07177fb96"
+      },
+      "src/run_m10_global_fallback_gate_targeted.py": {
+        "path": "src/run_m10_global_fallback_gate_targeted.py",
+        "sha256": "80c38f1a7052a97505f727aff511b22454c828b67afdf84ea2920ba75968a73d"
+      },
+      "src/run_m12_oracle_transport_recovery_targeted.py": {
+        "path": "src/run_m12_oracle_transport_recovery_targeted.py",
+        "sha256": "85ac97351ff2cbdb553a5f5cf546783ca2d5a3a53514ea26dde10433ac21b85f"
+      },
+      "src/run_m8_admittance_smoke.py": {
+        "path": "src/run_m8_admittance_smoke.py",
+        "sha256": "952179dff3b9ad0fc1000170fe2b299106ec492232cb6618661bb0cdca116239"
+      },
+      "src/run_m8_fair_policy_benchmark.py": {
+        "path": "src/run_m8_fair_policy_benchmark.py",
+        "sha256": "f8d2eed7b1785c505ee1254d01f80b5a784b37fe7922403f91ef0abdbfd0d4ca"
+      },
+      "src/run_m8_five_method_retry3_audit.py": {
+        "path": "src/run_m8_five_method_retry3_audit.py",
+        "sha256": "3999b34fb11f259feddb8efd7de6f2831dd4889a7dffcf1a354af6584a3048d3"
+      },
+      "src/run_m8_funnel_guard_ablation.py": {
+        "path": "src/run_m8_funnel_guard_ablation.py",
+        "sha256": "995971382fc7f1dee45479e58bb205e4b0a6d9f65e5d2e3ae101801863e371a1"
+      },
+      "src/run_m8_jin_style_vs_improved_audit.py": {
+        "path": "src/run_m8_jin_style_vs_improved_audit.py",
+        "sha256": "de02be1618c417837d3c14c1b0b8cb69d71aa68e56df9b9e62563a2b8676ef92"
+      },
+      "src/run_m8_learned_search_benchmark.py": {
+        "path": "src/run_m8_learned_search_benchmark.py",
+        "sha256": "5a73db3769ac0dc32954bb79e2c15e82d72470b500373f0a95b842a61b6819e9"
+      },
+      "src/run_m8_nominal_failure_diagnostic.py": {
+        "path": "src/run_m8_nominal_failure_diagnostic.py",
+        "sha256": "0e3023e0e08890f9499f41ea3ea91f18a2c7f7fd42daa340390094b30f156aa7"
+      },
+      "src/run_m8_nominal_fsm_acceptance.py": {
+        "path": "src/run_m8_nominal_fsm_acceptance.py",
+        "sha256": "a5756027db89a80428fae21223cc7280c651f653def9d0a8e1c13197e5e1da4c"
+      },
+      "src/run_m8_p2b_coverage_benchmark.py": {
+        "path": "src/run_m8_p2b_coverage_benchmark.py",
+        "sha256": "1deabb3352291f6bc2a64334dfa31c06e1fa9ec516576e4c1cdffb4b4905d4a9"
+      },
+      "src/run_m8_recoverable_funnel_r3_ablation.py": {
+        "path": "src/run_m8_recoverable_funnel_r3_ablation.py",
+        "sha256": "10f009a2f0190a663f6ce527ec01e3a2ad957c09ef88cdeca9d7adab02ba95c9"
+      },
+      "src/run_m8_six_method_joint_funnel_audit.py": {
+        "path": "src/run_m8_six_method_joint_funnel_audit.py",
+        "sha256": "62e37736965c62fc0d9ac16262ef96266b84e7a9e5df7e7f01da58ed11c50b10"
+      },
+      "src/run_m8_strict_complete_loop_audit.py": {
+        "path": "src/run_m8_strict_complete_loop_audit.py",
+        "sha256": "8574dd1e9c7c7400910513042ab1dc80e11957c015c4733c641d3cafaf4164c7"
+      },
+      "src/run_m8_task_aware_fresh_validation.py": {
+        "path": "src/run_m8_task_aware_fresh_validation.py",
+        "sha256": "c19e1a683511fe371c482c039d7a5999f488e50b5cc31eee54042e46a3b95849"
+      },
+      "src/run_m8_transport_distance_ablation.py": {
+        "path": "src/run_m8_transport_distance_ablation.py",
+        "sha256": "f9b3bb6ad88cfbf42a623bee1d7b652888ef83080fc03361d93e2d13ab66762b"
+      },
+      "src/sample_cross_size_s3_adaptation.py": {
+        "path": "src/sample_cross_size_s3_adaptation.py",
+        "sha256": "25ace1c0801c3aab54772bf6e829a696cef819d22c4730b006a07dafd53f4d8d"
+      },
+      "src/sample_cross_size_s4_adaptation.py": {
+        "path": "src/sample_cross_size_s4_adaptation.py",
+        "sha256": "df1544dc28159ed13659d1c73b656516c21f6f68137ed1bee1923a80e6741f3a"
+      },
+      "src/sample_cross_size_s4b_adaptation.py": {
+        "path": "src/sample_cross_size_s4b_adaptation.py",
+        "sha256": "76683d5bfc6675fe24f9330d2dc92b01cfb05b9c26a01614dc8a1217784d1552"
+      },
+      "src/sample_m8_conical_pilot.py": {
+        "path": "src/sample_m8_conical_pilot.py",
+        "sha256": "9cbec16c04aab6b76695379650ccf8f460511cb02e7884689f2f144334f0aff4"
+      },
+      "src/sample_m8_final_untouched_direction_audit.py": {
+        "path": "src/sample_m8_final_untouched_direction_audit.py",
+        "sha256": "af6935317e676905fd72c29f530c307a9882086d540fe65f631d444da57a018f"
+      },
+      "src/sample_m8_independent_direction_audit.py": {
+        "path": "src/sample_m8_independent_direction_audit.py",
+        "sha256": "16e6a4c96f41b966b50ba94277544d208e1a4540f5d157e6a07c12f2e51d5314"
+      },
+      "src/sample_m8_jin_comparison_direction_audit.py": {
+        "path": "src/sample_m8_jin_comparison_direction_audit.py",
+        "sha256": "bd769007f1fc418624c7f41a66dcb12b2d43d3cee438294a2ed282bab6e16fee"
+      },
+      "src/sample_m8_targeted_direction_training.py": {
+        "path": "src/sample_m8_targeted_direction_training.py",
+        "sha256": "0fc42afd74470194c35860bfb502364da4fecd9d2843c7cc225853a56e262f03"
+      },
+      "src/sample_m8_untouched_direction_audit.py": {
+        "path": "src/sample_m8_untouched_direction_audit.py",
+        "sha256": "a385bafcf9de0cb17f285d1b98ed30f78a2e28980f9b285c88440c1f1af3758b"
+      },
+      "src/summarize_m8_task_aware_holdout.py": {
+        "path": "src/summarize_m8_task_aware_holdout.py",
+        "sha256": "645c659bcd46851428494cc4695dc91c49bc5d654c49c913535bae62a2b022eb"
+      },
+      "src/terminal_completion_verifier.py": {
+        "path": "src/terminal_completion_verifier.py",
+        "sha256": "3d6765bd2650cde4339e0e06cda20917cd744731e57d8b1b5c147d36aeeac33f"
+      },
+      "src/train_m8_direction_models.py": {
+        "path": "src/train_m8_direction_models.py",
+        "sha256": "a17901047708712e4761a5eae15d878b615d00c53d98e50df207022da1f20325"
+      },
+      "src/train_m8_jin_style_direction_proxy.py": {
+        "path": "src/train_m8_jin_style_direction_proxy.py",
+        "sha256": "193bb64f2128a7bfb9e619e0a7c20903b45cfc202acd6275c806883d3a5148f3"
+      },
+      "src/update_entropy_grid_context_slides_pptx.py": {
+        "path": "src/update_entropy_grid_context_slides_pptx.py",
+        "sha256": "ec98ea0f7391f1179bd1df84323b1becea056e6e116275fe873d4991c70e36a5"
+      },
+      "src/wrench_observation.py": {
+        "path": "src/wrench_observation.py",
+        "sha256": "9be0d4c3f8a0884dd11dbad6ea83eefbd56bf3368534ba8d136c7591c9d5eabf"
+      }
+    }
+  },
+  "execution_bundle_sha256_frozen_before_rollout": "7cc15c820421ba653e2d75a2d97eb4599dae21503019ac39816b825ba1b86836",
+  "experiment": "cross_size_S4b_development_full_loop_evaluation",
+  "fallback_budget_extension_s": 0.0,
+  "gates_frozen_before_rollout": {
+    "maximum_S4_fine_tuned_gt90_control_errors": 0,
+    "maximum_S4_fine_tuned_hard_stops": 0,
+    "minimum_S4_fine_tuned_bottom_rate": 0.8,
+    "minimum_oracle_bottom_rate": 0.9
+  },
+  "hybrid_residual_claim_boundary": "conditional predicted-direction-sector coverage only; no true-center read, no hard-limit relaxation, and no guarantee of tracking, sensor capture handoff, or terminal completion",
+  "hybrid_residual_coverage": {
+    "angular_half_width_deg": 12.0,
+    "corridor_path_speed_m_s": 0.0015,
+    "enabled": true,
+    "lane_spacing_capture_fraction": 1.0,
+    "maximum_reverse_probability": 0.35,
+    "measured_tip_outer_servo_enabled": true,
+    "minimum_direction_quality": 0.1,
+    "outer_servo_abort_dwell_s": 0.15,
+    "outer_servo_abort_tracking_error_m": 0.0012,
+    "outer_servo_gain": 1.5,
+    "outer_servo_max_correction_m": 0.001,
+    "outer_servo_max_correction_speed_m_s": 0.002,
+    "tracking_error_allowance_m": 0.00015,
+    "transition_overhead_s": 1.0
+  },
+  "hybrid_residual_worst_case_schedule_by_size": {
+    "m10": {
+      "assumed_shortcut_distance_mm": 0.0,
+      "bound_uses_true_center": false,
+      "corridor_path_mm": 86.96964173887869,
+      "corridor_plus_transition_s": 58.97976115925246,
+      "corridor_speed_mm_s": 1.5,
+      "fingerprint_s": 5.8,
+      "fits_130_s": true,
+      "lane_count": 11,
+      "lane_spacing_mm": 0.3000000000000001,
+      "terminal_reserve_s": 17.49627732679296,
+      "total_required_s": 82.92603848604543,
+      "zero_shortcut_s": 0.65
+    },
+    "m12": {
+      "assumed_shortcut_distance_mm": 0.0,
+      "bound_uses_true_center": false,
+      "corridor_path_mm": 96.63293526542074,
+      "corridor_plus_transition_s": 65.42195684361383,
+      "corridor_speed_mm_s": 1.5,
+      "fingerprint_s": 5.8,
+      "fits_130_s": true,
+      "lane_count": 9,
+      "lane_spacing_mm": 0.44,
+      "terminal_reserve_s": 23.2204797985778,
+      "total_required_s": 95.09243664219163,
+      "zero_shortcut_s": 0.65
+    }
+  },
+  "learned_controller_mapping": {
+    "cal_only": "hybrid",
+    "s4_fine_tuned": "hybrid",
+    "zero_shot": "hybrid"
+  },
+  "method_availability": {
+    "m10": {
+      "cal_only": {
+        "available": true,
+        "model_root": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/cal_only",
+        "reason": "available"
+      },
+      "privileged_straight_to_center": {
+        "available": true,
+        "model_root": null,
+        "reason": "privileged_execution_diagnostic"
+      },
+      "pure_outward": {
+        "available": true,
+        "model_root": null,
+        "reason": "nonlearned_baseline"
+      },
+      "s4_fine_tuned": {
+        "available": true,
+        "base_parent_root": "outputs/current/models/p1v3_m8_direction_models",
+        "fine_tuned_parent_root": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned",
+        "model_root": "outputs/current/models/cross_size_s4b_base_anchored_adapter",
+        "reason": "available"
+      },
+      "zero_shot": {
+        "available": true,
+        "model_root": "outputs/current/models/p1v3_m8_direction_models",
+        "reason": "available"
+      }
+    },
+    "m12": {
+      "cal_only": {
+        "available": true,
+        "model_root": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/cal_only",
+        "reason": "available"
+      },
+      "privileged_straight_to_center": {
+        "available": true,
+        "model_root": null,
+        "reason": "privileged_execution_diagnostic"
+      },
+      "pure_outward": {
+        "available": true,
+        "model_root": null,
+        "reason": "nonlearned_baseline"
+      },
+      "s4_fine_tuned": {
+        "available": true,
+        "base_parent_root": "outputs/current/models/p1v3_m8_direction_models",
+        "fine_tuned_parent_root": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned",
+        "model_root": "outputs/current/models/cross_size_s4b_base_anchored_adapter",
+        "reason": "available"
+      },
+      "zero_shot": {
+        "available": true,
+        "model_root": "outputs/current/models/p1v3_m8_direction_models",
+        "reason": "available"
+      }
+    }
+  },
+  "methods": [
+    "zero_shot",
+    "cal_only",
+    "s4_fine_tuned",
+    "pure_outward",
+    "privileged_straight_to_center"
+  ],
+  "necessity_rule_frozen_before_rollout": "untouched only: oracle and S4b fine-tuned pass; zero-shot and legal S4 calibration-only both fail the same task gate",
+  "phase": "development",
+  "poses_per_size": 12,
+  "probe_fairness_contract": {
+    "learned_first_probe_fingerprint_hashes_must_match_when_recorded": true,
+    "same_conical_probe_controller_and_observation_chain": true,
+    "same_pose_contact_sensor_nuisance": true
+  },
+  "required_methods": [
+    "zero_shot",
+    "s4_fine_tuned",
+    "pure_outward",
+    "privileged_straight_to_center"
+  ],
+  "shared_controller_contract": {
+    "S4_fine_tuned_runtime": "same-fingerprint base-anchored residual posterior; p_A=p_B+alpha(p_F-p_B); conservative confidence/span; failed adapter gate abstains from directed shortcut",
+    "active_time_budget_s": 130.0,
+    "fallback_budget_extension_s": 0.0,
+    "learned_estimator_variants_use_P_plus_hybrid": true,
+    "posterior_residual_coverage": {
+      "angular_half_width_deg": 12.0,
+      "corridor_path_speed_m_s": 0.0015,
+      "enabled": true,
+      "lane_spacing_capture_fraction": 1.0,
+      "maximum_reverse_probability": 0.35,
+      "measured_tip_outer_servo_enabled": true,
+      "minimum_direction_quality": 0.1,
+      "outer_servo_abort_dwell_s": 0.15,
+      "outer_servo_abort_tracking_error_m": 0.0012,
+      "outer_servo_gain": 1.5,
+      "outer_servo_max_correction_m": 0.001,
+      "outer_servo_max_correction_speed_m_s": 0.002,
+      "tracking_error_allowance_m": 0.00015,
+      "transition_overhead_s": 1.0
+    },
+    "posterior_residual_schedule_rule": "compare shortcut+corridor+terminal against global-outward+terminal as alternative schedules; never require both to fit",
+    "pure_outward_is_the_declared_nonlearned_baseline_exception": true,
+    "raw_hard_wrench_thresholds": [
+      20.0,
+      20.0,
+      20.0,
+      0.06,
+      0.06,
+      0.06
+    ],
+    "raw_hard_wrench_thresholds_relaxed": false,
+    "same_size_conditioned_admittance_and_R3_funnel_for_all_methods": true
+  },
+  "size_commissioning": {
+    "m10": {
+      "admittance": {
+        "damping": [
+          155.88457268119896,
+          155.88457268119896,
+          82.27241335952168,
+          2.7,
+          2.7,
+          1.875
+        ],
+        "dt_s": 0.002,
+        "hard_wrench": [
+          20.0,
+          20.0,
+          20.0,
+          0.06,
+          0.06,
+          0.06
+        ],
+        "max_acceleration": [
+          0.15000000000000002,
+          0.15000000000000002,
+          0.09,
+          2.25,
+          2.25,
+          1.6875
+        ],
+        "max_offset": [
+          0.002,
+          0.002,
+          0.003,
+          0.1,
+          0.1,
+          0.08
+        ],
+        "max_velocity": [
+          0.008660254037844387,
+          0.008660254037844387,
+          0.005196152422706633,
+          0.2625,
+          0.2625,
+          0.1875
+        ],
+        "stiffness": [
+          1650.0,
+          1650.0,
+          0.0,
+          10.125,
+          10.125,
+          5.625
+        ],
+        "virtual_mass": [
+          4.0,
+          4.0,
+          2.0,
+          0.08,
+          0.08,
+          0.05
+        ],
+        "wrench_filter_hz": 25.0
+      },
+      "bit_radius_m": 0.004618802153517006,
+      "bit_radius_scale": 1.3333333333333333,
+      "claim_boundary": "v2 geometry/dynamics-scaled commissioning start only; independent size validation required",
+      "commissioning_version": "v2_sqrt_time_separate_rotation_lever_bumpless_terminal_hold_oracle_soft_escape_resume",
+      "funnel_guard": {
+        "axial_position_hold_in_terminal_set": true,
+        "bumpless_terminal_entry_rebase": true,
+        "cad_bottom_overshoot_margin_m": 0.00025,
+        "capture_force_release_s": 0.3464101615137754,
+        "deep_tilt_damping_nm_s_rad": 0.375,
+        "deep_tilt_stiffness_nm_rad": 1.6875,
+        "descent_speed_m_s": 0.00030310889132455357,
+        "enabled": true,
+        "force_floor_n": 0.2,
+        "hold_terminal_set_on_retry": true,
+        "injected_power_limit_w": 0.5,
+        "insertion_handoff_s": 1.1547005383792515,
+        "max_recoveries": 3,
+        "max_tilt_deg": 0.75,
+        "min_window_progress_m": 2e-05,
+        "moment_lever_m": 0.003,
+        "no_progress_energy_j": 0.0015,
+        "planar_damping_n_s_m": 86.60254037844388,
+        "planar_stiffness_n_m": 1125.0,
+        "power_dwell_s": 0.01,
+        "recovery_force_n": 0.2,
+        "recovery_retouch_s": 0.2309401076758503,
+        "recovery_retract_m": 0.00035,
+        "recovery_retract_s": 0.1732050807568877,
+        "recovery_unload_s": 0.11547005383792515,
+        "retry_on_terminal_rejection": true,
+        "shallow_tilt_damping_nm_s_rad": 0.2625,
+        "shallow_tilt_stiffness_nm_rad": 1.0125000000000002,
+        "tilt_dwell_s": 0.02,
+        "window_s": 0.15,
+        "yaw_damping_nm_s_rad": 0.1875,
+        "yaw_stiffness_nm_rad": 0.84375
+      },
+      "oracle_center_tolerance_capture_fraction": 0.25,
+      "oracle_transport_soft_escape_recovery": true,
+      "response_time_scale": 1.1547005383792515,
+      "size": "M10"
+    },
+    "m12": {
+      "admittance": {
+        "damping": [
+          139.42740046346702,
+          139.42740046346702,
+          73.58668357794092,
+          2.16,
+          2.16,
+          1.5
+        ],
+        "dt_s": 0.002,
+        "hard_wrench": [
+          20.0,
+          20.0,
+          20.0,
+          0.06,
+          0.06,
+          0.06
+        ],
+        "max_acceleration": [
+          0.12,
+          0.12,
+          0.072,
+          1.4399999999999997,
+          1.4399999999999997,
+          1.0799999999999998
+        ],
+        "max_offset": [
+          0.002,
+          0.002,
+          0.003,
+          0.1,
+          0.1,
+          0.08
+        ],
+        "max_velocity": [
+          0.007745966692414834,
+          0.007745966692414834,
+          0.0046475800154489,
+          0.20999999999999996,
+          0.20999999999999996,
+          0.15
+        ],
+        "stiffness": [
+          1320.0,
+          1320.0,
+          0.0,
+          6.4799999999999995,
+          6.4799999999999995,
+          3.5999999999999996
+        ],
+        "virtual_mass": [
+          4.0,
+          4.0,
+          2.0,
+          0.08,
+          0.08,
+          0.05
+        ],
+        "wrench_filter_hz": 25.0
+      },
+      "bit_radius_m": 0.005773502691896258,
+      "bit_radius_scale": 1.6666666666666667,
+      "claim_boundary": "v2 geometry/dynamics-scaled commissioning start only; independent size validation required",
+      "commissioning_version": "v2_sqrt_time_separate_rotation_lever_bumpless_terminal_hold_oracle_soft_escape_resume",
+      "funnel_guard": {
+        "axial_position_hold_in_terminal_set": true,
+        "bumpless_terminal_entry_rebase": true,
+        "cad_bottom_overshoot_margin_m": 0.00025,
+        "capture_force_release_s": 0.38729833462074165,
+        "deep_tilt_damping_nm_s_rad": 0.3,
+        "deep_tilt_stiffness_nm_rad": 1.0799999999999998,
+        "descent_speed_m_s": 0.0002711088342345192,
+        "enabled": true,
+        "force_floor_n": 0.2,
+        "hold_terminal_set_on_retry": true,
+        "injected_power_limit_w": 0.5,
+        "insertion_handoff_s": 1.2909944487358056,
+        "max_recoveries": 3,
+        "max_tilt_deg": 0.75,
+        "min_window_progress_m": 2e-05,
+        "moment_lever_m": 0.003,
+        "no_progress_energy_j": 0.0015,
+        "planar_damping_n_s_m": 77.45966692414834,
+        "planar_stiffness_n_m": 900.0,
+        "power_dwell_s": 0.01,
+        "recovery_force_n": 0.2,
+        "recovery_retouch_s": 0.25819888974716115,
+        "recovery_retract_m": 0.00035,
+        "recovery_retract_s": 0.19364916731037082,
+        "recovery_unload_s": 0.12909944487358058,
+        "retry_on_terminal_rejection": true,
+        "shallow_tilt_damping_nm_s_rad": 0.20999999999999996,
+        "shallow_tilt_stiffness_nm_rad": 0.6479999999999999,
+        "tilt_dwell_s": 0.02,
+        "window_s": 0.15,
+        "yaw_damping_nm_s_rad": 0.15,
+        "yaw_stiffness_nm_rad": 0.5399999999999999
+      },
+      "oracle_center_tolerance_capture_fraction": 0.25,
+      "oracle_transport_soft_escape_recovery": true,
+      "response_time_scale": 1.2909944487358056,
+      "size": "M12"
+    }
+  },
+  "sizes": [
+    "m10",
+    "m12"
+  ],
+  "task_seed_source": "reused_S3_v3_tasks_for_development_diagnostics",
+  "tasks": {
+    "m10": [
+      {
+        "angle_rad": 2.243665801640787,
+        "baseline_phase_rad": 6.111924507102695,
+        "contact_timeconst_s": 0.06696160919032991,
+        "friction_slide": 0.8625429414212704,
+        "pose_id": "m10_s3test_000",
+        "posterior_seed": 20260941000,
+        "radius_m": 0.001835544454504391,
+        "sensor_delay_s": 0.007248703459277749,
+        "sensor_noise_seed": 202609410000,
+        "size": "m10",
+        "target_down_force_n": 2.9122773548588157,
+        "x_m": -0.0011439711133208058,
+        "y_m": 0.001435462830013156
+      },
+      {
+        "angle_rad": 5.916882276662345,
+        "baseline_phase_rad": 1.940497282986524,
+        "contact_timeconst_s": 0.040664418237283825,
+        "friction_slide": 0.574476719275117,
+        "pose_id": "m10_s3test_001",
+        "posterior_seed": 20260941001,
+        "radius_m": 0.0049349658911839395,
+        "sensor_delay_s": 0.0042701042629778386,
+        "sensor_noise_seed": 202609410001,
+        "size": "m10",
+        "target_down_force_n": 3.0049623288214207,
+        "x_m": 0.004607569655894483,
+        "y_m": -0.0017675378958396585
+      },
+      {
+        "angle_rad": 0.07927790064277579,
+        "baseline_phase_rad": 1.484699993199877,
+        "contact_timeconst_s": 0.06035006228834391,
+        "friction_slide": 0.838265858218074,
+        "pose_id": "m10_s3test_002",
+        "posterior_seed": 20260941002,
+        "radius_m": 0.005289825943429679,
+        "sensor_delay_s": 0.006378207532688976,
+        "sensor_noise_seed": 202609410002,
+        "size": "m10",
+        "target_down_force_n": 3.3573522167280316,
+        "x_m": 0.005273211408251475,
+        "y_m": 0.00041892714840194024
+      },
+      {
+        "angle_rad": 4.15440221068174,
+        "baseline_phase_rad": 3.397028168292846,
+        "contact_timeconst_s": 0.04915463434532285,
+        "friction_slide": 0.749708352982998,
+        "pose_id": "m10_s3test_003",
+        "posterior_seed": 20260941003,
+        "radius_m": 0.003854990026093728,
+        "sensor_delay_s": 0.002138422928750515,
+        "sensor_noise_seed": 202609410003,
+        "size": "m10",
+        "target_down_force_n": 2.7019860427826643,
+        "x_m": -0.002041137817356831,
+        "y_m": -0.003270275907601362
+      },
+      {
+        "angle_rad": 0.987888057114297,
+        "baseline_phase_rad": 4.949145582544631,
+        "contact_timeconst_s": 0.0537771525233984,
+        "friction_slide": 0.6010686367750169,
+        "pose_id": "m10_s3test_004",
+        "posterior_seed": 20260941004,
+        "radius_m": 0.003228078908858974,
+        "sensor_delay_s": 0.00555685767158866,
+        "sensor_noise_seed": 202609410004,
+        "size": "m10",
+        "target_down_force_n": 2.5616269381716847,
+        "x_m": 0.001776909834533669,
+        "y_m": 0.002695011109765166
+      },
+      {
+        "angle_rad": 3.1961513816769545,
+        "baseline_phase_rad": 3.1339974872091987,
+        "contact_timeconst_s": 0.057597063239663834,
+        "friction_slide": 0.910951828584075,
+        "pose_id": "m10_s3test_005",
+        "posterior_seed": 20260941005,
+        "radius_m": 0.005693533504172264,
+        "sensor_delay_s": 0.00295875165052712,
+        "sensor_noise_seed": 202609410005,
+        "size": "m10",
+        "target_down_force_n": 3.40248086117208,
+        "x_m": -0.0056850617639919755,
+        "y_m": -0.0003104778618976577
+      },
+      {
+        "angle_rad": 2.750489463372069,
+        "baseline_phase_rad": 0.3157255052460145,
+        "contact_timeconst_s": 0.0472827001940459,
+        "friction_slide": 0.6763024944812059,
+        "pose_id": "m10_s3test_006",
+        "posterior_seed": 20260941006,
+        "radius_m": 0.004454705066840284,
+        "sensor_delay_s": 0.007695150807499886,
+        "sensor_noise_seed": 202609410006,
+        "size": "m10",
+        "target_down_force_n": 3.239115065895021,
+        "x_m": -0.004118326175468312,
+        "y_m": 0.0016981715887933832
+      },
+      {
+        "angle_rad": 5.360663619008359,
+        "baseline_phase_rad": 4.584356777569533,
+        "contact_timeconst_s": 0.06597017058171331,
+        "friction_slide": 0.7866709597408772,
+        "pose_id": "m10_s3test_007",
+        "posterior_seed": 20260941007,
+        "radius_m": 0.0028057884359227892,
+        "sensor_delay_s": 0.0038241406287997963,
+        "sensor_noise_seed": 202609410007,
+        "size": "m10",
+        "target_down_force_n": 2.8358240835368633,
+        "x_m": 0.001694168652432385,
+        "y_m": -0.0022365690966910656
+      },
+      {
+        "angle_rad": 0.7710213067150887,
+        "baseline_phase_rad": 3.6263952669474486,
+        "contact_timeconst_s": 0.05505977224558592,
+        "friction_slide": 0.662446877360344,
+        "pose_id": "m10_s3test_008",
+        "posterior_seed": 20260941008,
+        "radius_m": 0.002934612722182439,
+        "sensor_delay_s": 0.005067491872236133,
+        "sensor_noise_seed": 202609410008,
+        "size": "m10",
+        "target_down_force_n": 3.1188862901180983,
+        "x_m": 0.0021047022714858338,
+        "y_m": 0.0020450379403809103
+      },
+      {
+        "angle_rad": 4.444236658215562,
+        "baseline_phase_rad": 0.9285486648875708,
+        "contact_timeconst_s": 0.05162876049056649,
+        "friction_slide": 0.7505494829267264,
+        "pose_id": "m10_s3test_009",
+        "posterior_seed": 20260941009,
+        "radius_m": 0.004610923354574111,
+        "sensor_delay_s": 0.0034483134523034097,
+        "sensor_noise_seed": 202609410009,
+        "size": "m10",
+        "target_down_force_n": 2.9633999364450574,
+        "x_m": -0.0012216652691688016,
+        "y_m": -0.004446138566426343
+      },
+      {
+        "angle_rad": 1.7482249357857855,
+        "baseline_phase_rad": 2.128491326264445,
+        "contact_timeconst_s": 0.0638144542183727,
+        "friction_slide": 0.6367994446307421,
+        "pose_id": "m10_s3test_010",
+        "posterior_seed": 20260941010,
+        "radius_m": 0.005999372518034012,
+        "sensor_delay_s": 0.007434326404705644,
+        "sensor_noise_seed": 202609410010,
+        "size": "m10",
+        "target_down_force_n": 2.6743045784533024,
+        "x_m": -0.0010588840750441395,
+        "y_m": 0.00590518713723449
+      },
+      {
+        "angle_rad": 5.823350369345834,
+        "baseline_phase_rad": 5.514400966054522,
+        "contact_timeconst_s": 0.04475273353047669,
+        "friction_slide": 0.9251981146633625,
+        "pose_id": "m10_s3test_011",
+        "posterior_seed": 20260941011,
+        "radius_m": 0.0036496835607374655,
+        "sensor_delay_s": 0.0040851210243999965,
+        "sensor_noise_seed": 202609410011,
+        "size": "m10",
+        "target_down_force_n": 3.2668617805466056,
+        "x_m": 0.003270575470518726,
+        "y_m": -0.0016197302816081814
+      }
+    ],
+    "m12": [
+      {
+        "angle_rad": 1.5408187303133902,
+        "baseline_phase_rad": 0.09455484400592994,
+        "contact_timeconst_s": 0.0641732191760093,
+        "friction_slide": 0.5592443995177746,
+        "pose_id": "m12_s3test_000",
+        "posterior_seed": 20260942000,
+        "radius_m": 0.006715121716359649,
+        "sensor_delay_s": 0.004769750969484449,
+        "sensor_noise_seed": 202609420000,
+        "size": "m12",
+        "target_down_force_n": 2.912265014834702,
+        "x_m": 0.00020127306009273496,
+        "y_m": 0.0067121046491250315
+      },
+      {
+        "angle_rad": 4.2652443009797105,
+        "baseline_phase_rad": 5.280290021982574,
+        "contact_timeconst_s": 0.04359278254210949,
+        "friction_slide": 0.8067271653562784,
+        "pose_id": "m12_s3test_001",
+        "posterior_seed": 20260942001,
+        "radius_m": 0.0044547783742031385,
+        "sensor_delay_s": 0.007474154448136688,
+        "sensor_noise_seed": 202609420001,
+        "size": "m12",
+        "target_down_force_n": 3.012207384221256,
+        "x_m": -0.0019262136462024375,
+        "y_m": -0.0040168086029149395
+      },
+      {
+        "angle_rad": 2.5217382415254934,
+        "baseline_phase_rad": 3.9725587606978596,
+        "contact_timeconst_s": 0.05746125726960599,
+        "friction_slide": 0.72286924906075,
+        "pose_id": "m12_s3test_002",
+        "posterior_seed": 20260942002,
+        "radius_m": 0.00355968860250607,
+        "sensor_delay_s": 0.0021817139834165574,
+        "sensor_noise_seed": 202609420002,
+        "size": "m12",
+        "target_down_force_n": 3.3956972621381283,
+        "x_m": -0.0028974549554464744,
+        "y_m": 0.0020678824260509316
+      },
+      {
+        "angle_rad": 6.030258702834149,
+        "baseline_phase_rad": 2.8748808844083364,
+        "contact_timeconst_s": 0.04819536542519927,
+        "friction_slide": 0.873476079851389,
+        "pose_id": "m12_s3test_003",
+        "posterior_seed": 20260942003,
+        "radius_m": 0.007302249270551239,
+        "sensor_delay_s": 0.005573990371078252,
+        "sensor_noise_seed": 202609420003,
+        "size": "m12",
+        "target_down_force_n": 2.5621087942272425,
+        "x_m": 0.007069922513313835,
+        "y_m": -0.0018273040428468063
+      },
+      {
+        "angle_rad": 1.6569968903772279,
+        "baseline_phase_rad": 0.9222634597235475,
+        "contact_timeconst_s": 0.05167456672526896,
+        "friction_slide": 0.7671918392181397,
+        "pose_id": "m12_s3test_004",
+        "posterior_seed": 20260942004,
+        "radius_m": 0.007940909327369168,
+        "sensor_delay_s": 0.0031385814435780047,
+        "sensor_noise_seed": 202609420004,
+        "size": "m12",
+        "target_down_force_n": 2.672829356044531,
+        "x_m": -0.0006836634603717927,
+        "y_m": 0.007911424980270691
+      },
+      {
+        "angle_rad": 5.118542186113112,
+        "baseline_phase_rad": 5.925275160568219,
+        "contact_timeconst_s": 0.06102818373590708,
+        "friction_slide": 0.6166260238736868,
+        "pose_id": "m12_s3test_005",
+        "posterior_seed": 20260942005,
+        "radius_m": 0.0018244268758609917,
+        "sensor_delay_s": 0.006105323381721974,
+        "sensor_noise_seed": 202609420005,
+        "size": "m12",
+        "target_down_force_n": 3.2757071051746607,
+        "x_m": 0.0007207916734466776,
+        "y_m": -0.0016760050086004625
+      },
+      {
+        "angle_rad": 0.686734795889309,
+        "baseline_phase_rad": 3.327490025121492,
+        "contact_timeconst_s": 0.046661827145144344,
+        "friction_slide": 0.9004442673176527,
+        "pose_id": "m12_s3test_006",
+        "posterior_seed": 20260942006,
+        "radius_m": 0.0051961591575720315,
+        "sensor_delay_s": 0.0035345627050846814,
+        "sensor_noise_seed": 202609420006,
+        "size": "m12",
+        "target_down_force_n": 3.1287967087700963,
+        "x_m": 0.004018295482195578,
+        "y_m": 0.0032944455388708885
+      },
+      {
+        "angle_rad": 3.361494742491605,
+        "baseline_phase_rad": 2.047448198447158,
+        "contact_timeconst_s": 0.06721280144527554,
+        "friction_slide": 0.6530059352517128,
+        "pose_id": "m12_s3test_007",
+        "posterior_seed": 20260942007,
+        "radius_m": 0.006359466803371837,
+        "sensor_delay_s": 0.007221140900626779,
+        "sensor_noise_seed": 202609420007,
+        "size": "m12",
+        "target_down_force_n": 2.7903273655101657,
+        "x_m": -0.006206323286141143,
+        "y_m": -0.0013872163822167835
+      },
+      {
+        "angle_rad": 2.7736222300075095,
+        "baseline_phase_rad": 2.6465031221407083,
+        "contact_timeconst_s": 0.05953788495622575,
+        "friction_slide": 0.9387500487267972,
+        "pose_id": "m12_s3test_008",
+        "posterior_seed": 20260942008,
+        "radius_m": 0.006069674556971293,
+        "sensor_delay_s": 0.0030564872846007346,
+        "sensor_noise_seed": 202609420008,
+        "size": "m12",
+        "target_down_force_n": 3.0977624896913767,
+        "x_m": -0.005663366603173175,
+        "y_m": 0.0021833982562985137
+      },
+      {
+        "angle_rad": 5.548278087709761,
+        "baseline_phase_rad": 4.69219161154035,
+        "contact_timeconst_s": 0.05386776341125369,
+        "friction_slide": 0.6897001538425684,
+        "pose_id": "m12_s3test_009",
+        "posterior_seed": 20260942009,
+        "radius_m": 0.005564539910133041,
+        "sensor_delay_s": 0.006187887016683817,
+        "sensor_noise_seed": 202609420009,
+        "size": "m12",
+        "target_down_force_n": 2.95185474678874,
+        "x_m": 0.004128293027486184,
+        "y_m": -0.0037311259816136455
+      },
+      {
+        "angle_rad": 1.0178024204247451,
+        "baseline_phase_rad": 4.953746477458943,
+        "contact_timeconst_s": 0.06976501007564366,
+        "friction_slide": 0.7804973889142275,
+        "pose_id": "m12_s3test_010",
+        "posterior_seed": 20260942010,
+        "radius_m": 0.0027105739243542116,
+        "sensor_delay_s": 0.004179546141996979,
+        "sensor_noise_seed": 202609420010,
+        "size": "m12",
+        "target_down_force_n": 2.584971378557384,
+        "x_m": 0.0014236944242256423,
+        "y_m": 0.0023065786754016882
+      },
+      {
+        "angle_rad": 4.576571145106691,
+        "baseline_phase_rad": 0.7159979441426075,
+        "contact_timeconst_s": 0.045281259268522264,
+        "friction_slide": 0.628320474177599,
+        "pose_id": "m12_s3test_011",
+        "posterior_seed": 20260942011,
+        "radius_m": 0.007722886296357958,
+        "sensor_delay_s": 0.006576466901227832,
+        "sensor_noise_seed": 202609420011,
+        "size": "m12",
+        "target_down_force_n": 3.4977203579619527,
+        "x_m": -0.0010456839014157107,
+        "y_m": -0.007651765673672552
+      }
+    ]
+  },
+  "untouched_after_freeze": false
+}

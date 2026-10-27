@@ -1,0 +1,51 @@
+{
+  "datasets": {
+    "m10": {
+      "contract_sha256": "ad8976e4db03c833ccaabe019d90e1e7c439a6264709b3036bf545874333abe4",
+      "manifest_sha256": "f808c98bd2031c75e06f0eeb674b5ad16af7cb45d302152de88436a3c1f45329"
+    },
+    "m12": {
+      "contract_sha256": "f5a990963735db9229a7e73c28f099f7b2c2618d5a06da783d7d2e91f45ba21c",
+      "manifest_sha256": "28dd77225ac86e8c17e40e1306c5d871811a15ab3ebee9c49b68b3171dd687a3"
+    }
+  },
+  "model_and_data_contracts_were_frozen_before_rollout": true,
+  "models": {
+    "m10": {
+      "cal_only_contract_sha256": "c464d305ffcb7c5817c61b04465720c30f81738b598a2191eb923828841978c5",
+      "fine_tuned_contract_sha256": "ae219387985352d7fdc912f27fcad3096bd3a8086ea1339ebfe15ecf027516a4",
+      "model_manifest_sha256": "8b9b739e95c89d0447d982f56aa4eb2022561e99fb601028bb46b5fde2117ab0"
+    },
+    "m12": {
+      "cal_only_contract_sha256": "8aa4caab4c88e49b6ccbeec9f5452f0248ed2ac14e3fbab04fcb05de262479ec",
+      "fine_tuned_contract_sha256": "a5fad85cdc0078acb0b7bfc26b5bdcc942fa3fb0b8fbc2e7e177ef61c05fe0a7",
+      "model_manifest_sha256": "b7b560ccaf945759f010b0bb149c4311961c69ea5a61cbd0c5f8d29bf5792ff4"
+    }
+  },
+  "old_S1_S2_artifacts_loaded_for_weight_or_gate_selection": false,
+  "source_hash_caveat": "These hashes support readback of the delivered implementation; they were not themselves a pre-registered gate.",
+  "source_hash_recording_time": "post_rollout_readback",
+  "sources": {
+    "S3_runner": {
+      "path": "src/run_cross_size_s3_full_loop_pilot.py",
+      "sha256": "367e79d288b88fd96a60645d22f5dbaf9a536c6b6bf1cd842ce12df8d28c12a2"
+    },
+    "direction_architecture": {
+      "path": "src/train_m8_direction_models.py",
+      "sha256": "a17901047708712e4761a5eae15d878b615d00c53d98e50df207022da1f20325"
+    },
+    "direction_runtime": {
+      "path": "src/m8_direction_runtime.py",
+      "sha256": "4edddd9fdc01968a333a5fdcff040d3ef527f4b00e5853a5439cdca59077f3c2"
+    },
+    "funnel_guard": {
+      "path": "src/funnel_guard.py",
+      "sha256": "95e9773e69fd272124134b07b1aa879d8cbc6aff6ecbaa662d1a3eb5171d7310"
+    },
+    "rollout_core": {
+      "path": "src/render_m8_search_comparison.py",
+      "sha256": "b2a4853ef6fcd3ebf177681ce9d5d7b77ac6af8b0e439f2205d28deac45be2db"
+    }
+  },
+  "updated_utc": "2026-07-15T13:55:25.076032+00:00"
+}

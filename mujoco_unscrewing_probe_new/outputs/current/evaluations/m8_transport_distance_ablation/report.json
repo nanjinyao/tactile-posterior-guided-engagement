@@ -1,0 +1,375 @@
+{
+  "updated_utc": "2026-07-11T13:29:57.384698+00:00",
+  "design": {
+    "same_initial_xy_mm": [
+      4.0,
+      0.0
+    ],
+    "same_fingerprint_and_frozen_model": true,
+    "same_visual_prior_and_soft_cad_likelihood": true,
+    "same_search_speed_force_pitch": true,
+    "varied_parameter": "absolute posterior-guided transport cap",
+    "caps_mm": {
+      "cap_1p5_mm": 1.5,
+      "cap_2p0_mm": 2.0,
+      "posterior_limited": null
+    }
+  },
+  "results": {
+    "cap_1p5_mm": {
+      "method": "learned",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 26.716499999983085,
+      "candidate_attempts": 1,
+      "total_active_time_s": 28.06649999997994,
+      "actual_xy_path_mm": 45.67819409404579,
+      "contact_xy_path_mm": 45.56397778171224,
+      "lateral_work_mj": 74.8510878079457,
+      "orientation_work_mj": 8.910864618086322,
+      "wear_proxy_mj": 83.76195242603202,
+      "max_force_n": 7.065596727519755,
+      "max_torque_mnm": 20.888457780124742,
+      "stage_time_s": {
+        "probe": 5.7995,
+        "transport": 0.6665,
+        "spiral": 20.2005,
+        "progress_dwell": 0.05,
+        "capture_force_release": 0.3,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 0.05
+      },
+      "event_xy_mm": [
+        0.10214114267662894,
+        0.06418201290936948
+      ],
+      "baseline_depth_mm": -0.05000066419313942,
+      "min_tip_z_mm": -4.206280583826664,
+      "hard_stop": false,
+      "video_path": null,
+      "frame_count": 0,
+      "initial_xy_mm": [
+        4.0,
+        0.0
+      ],
+      "direction_source": "three_seed_ensemble",
+      "predicted_direction_deg": 176.25,
+      "true_direction_deg": 180.0,
+      "direction_error_deg": 3.75,
+      "direction_confidence": 0.5303472876548767,
+      "aps_set_size": 2,
+      "transport_allowed": true,
+      "transport_distance_mm": 1.5,
+      "transport_target_xy_mm": [
+        2.5000378438974438,
+        0.010655057961863779
+      ],
+      "spiral_max_radius_mm": 2.944931869128974,
+      "capture_mode": "inner_wall_guided",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": 179.59300334279737,
+      "aps_direction_angles_deg": [
+        176.25,
+        183.75
+      ],
+      "circular_concentration": 0.9976015550552187,
+      "ensemble_top1_span_deg": 7.5,
+      "bottom_reached": true,
+      "time_to_bottom_s": 28.06649999997994,
+      "bottom_depth_error_mm": 0.12318027440372421,
+      "top_state": "double_overhang",
+      "state_probabilities": {
+        "supported_search": 1.283359973847098e-09,
+        "double_overhang": 1.0,
+        "outer_partial": 2.0447454840422097e-09
+      },
+      "posterior_model": "synthetic_visual_gaussian_x_ft_direction_and_state_x_soft_cad_radial_annuli",
+      "cad_radial_boundaries_mm": {
+        "full_outer_support": 3.0358983848622447,
+        "inner_opening_overlap_limit": 6.714101615137755,
+        "transition_sigma": 0.35
+      },
+      "posterior_radial_quantiles_mm": {
+        "q10": 2.510372883579621,
+        "q50": 3.5873951964860864,
+        "q95": 4.694819724521442
+      },
+      "max_filtered_force_n": 4.615380864319014,
+      "max_filtered_torque_mnm": 18.73784025221541,
+      "stage_max_force_n": {
+        "probe": 4.34881223470409,
+        "transport": 5.229127327902968,
+        "spiral": 7.065596727519755,
+        "progress_dwell": 4.866669632872999,
+        "capture_force_release": 3.355277806792203,
+        "insertion_handoff": 6.82199395299366,
+        "upright_insertion": 0.8022404743556534
+      },
+      "stage_max_torque_mnm": {
+        "probe": 15.700009442166571,
+        "transport": 13.221293613143958,
+        "spiral": 20.888457780124742,
+        "progress_dwell": 12.270897500772087,
+        "capture_force_release": 9.21921738228088,
+        "insertion_handoff": 9.884062791925157,
+        "upright_insertion": 1.1725408832996098
+      },
+      "stage_max_filtered_force_n": {
+        "probe": 3.6733032474483043,
+        "transport": 3.878515676945483,
+        "spiral": 4.615380864319014,
+        "progress_dwell": 1.4350998509936028,
+        "capture_force_release": 0.9722739129792006,
+        "insertion_handoff": 1.129453000948665,
+        "upright_insertion": 0.8019218166187595
+      },
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "capture_yaw_assist_aborted": false,
+      "max_abs_tau_z_mnm": 4.712256448030455
+    },
+    "cap_2p0_mm": {
+      "method": "learned",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 20.84049999999678,
+      "candidate_attempts": 1,
+      "total_active_time_s": 22.190499999993634,
+      "actual_xy_path_mm": 32.52870574008888,
+      "contact_xy_path_mm": 32.33780572506301,
+      "lateral_work_mj": 52.71604368434555,
+      "orientation_work_mj": 8.82886873437696,
+      "wear_proxy_mj": 61.54491241872251,
+      "max_force_n": 7.085875152750636,
+      "max_torque_mnm": 21.555258980550125,
+      "stage_time_s": {
+        "probe": 5.7995,
+        "transport": 0.889,
+        "spiral": 14.052,
+        "progress_dwell": 0.1,
+        "capture_force_release": 0.3,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 0.05
+      },
+      "event_xy_mm": [
+        0.02799926052969735,
+        0.07777663252389727
+      ],
+      "baseline_depth_mm": -0.05000066419313942,
+      "min_tip_z_mm": -4.208291201882942,
+      "hard_stop": false,
+      "video_path": null,
+      "frame_count": 0,
+      "initial_xy_mm": [
+        4.0,
+        0.0
+      ],
+      "direction_source": "three_seed_ensemble",
+      "predicted_direction_deg": 176.25,
+      "true_direction_deg": 180.0,
+      "direction_error_deg": 3.75,
+      "direction_confidence": 0.5303472876548767,
+      "aps_set_size": 2,
+      "transport_allowed": true,
+      "transport_distance_mm": 2.0,
+      "transport_target_xy_mm": [
+        2.000050458529925,
+        0.014206743949151706
+      ],
+      "spiral_max_radius_mm": 2.4449969912010565,
+      "capture_mode": "centered_free_insertion",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": 179.59300334279737,
+      "aps_direction_angles_deg": [
+        176.25,
+        183.75
+      ],
+      "circular_concentration": 0.9976015550552187,
+      "ensemble_top1_span_deg": 7.5,
+      "bottom_reached": true,
+      "time_to_bottom_s": 22.190499999993634,
+      "bottom_depth_error_mm": 0.12319667714529026,
+      "top_state": "double_overhang",
+      "state_probabilities": {
+        "supported_search": 1.283359973847098e-09,
+        "double_overhang": 1.0,
+        "outer_partial": 2.0447454840422097e-09
+      },
+      "posterior_model": "synthetic_visual_gaussian_x_ft_direction_and_state_x_soft_cad_radial_annuli",
+      "cad_radial_boundaries_mm": {
+        "full_outer_support": 3.0358983848622447,
+        "inner_opening_overlap_limit": 6.714101615137755,
+        "transition_sigma": 0.35
+      },
+      "posterior_radial_quantiles_mm": {
+        "q10": 2.510372883579621,
+        "q50": 3.5873951964860864,
+        "q95": 4.694819724521442
+      },
+      "max_filtered_force_n": 4.651156507792105,
+      "max_filtered_torque_mnm": 18.121147151297126,
+      "stage_max_force_n": {
+        "probe": 4.34881223470409,
+        "transport": 5.448147080090871,
+        "spiral": 7.085875152750636,
+        "progress_dwell": 5.863389413703225,
+        "capture_force_release": 0.0,
+        "insertion_handoff": 6.824597208855804,
+        "upright_insertion": 0.8021710599598869
+      },
+      "stage_max_torque_mnm": {
+        "probe": 15.700009442166571,
+        "transport": 14.291707708138816,
+        "spiral": 21.555258980550125,
+        "progress_dwell": 11.176710641141046,
+        "capture_force_release": 0.0,
+        "insertion_handoff": 9.86857308932045,
+        "upright_insertion": 1.1757335876122963
+      },
+      "stage_max_filtered_force_n": {
+        "probe": 3.6733032474483043,
+        "transport": 3.8950604446573482,
+        "spiral": 4.651156507792105,
+        "progress_dwell": 1.2767410028612713,
+        "capture_force_release": 3.230520801941953e-05,
+        "insertion_handoff": 1.135052696940341,
+        "upright_insertion": 0.8019340850053244
+      },
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "capture_yaw_assist_aborted": false,
+      "max_abs_tau_z_mnm": 4.89037238599027
+    },
+    "posterior_limited": {
+      "method": "learned",
+      "result": "cad_bottom_verified",
+      "inner_wall_confirmed": true,
+      "time_to_inner_wall_s": 15.913500000007957,
+      "candidate_attempts": 1,
+      "total_active_time_s": 17.263500000005116,
+      "actual_xy_path_mm": 22.003262673140277,
+      "contact_xy_path_mm": 21.818171308382006,
+      "lateral_work_mj": 34.5570353738416,
+      "orientation_work_mj": 8.655915211517604,
+      "wear_proxy_mj": 43.2129505853592,
+      "max_force_n": 7.012593389038845,
+      "max_torque_mnm": 22.599123756300624,
+      "stage_time_s": {
+        "probe": 5.7995,
+        "transport": 1.003,
+        "spiral": 9.061,
+        "progress_dwell": 0.05,
+        "capture_force_release": 0.3,
+        "insertion_handoff": 1.0,
+        "upright_insertion": 0.05
+      },
+      "event_xy_mm": [
+        0.12306538010920218,
+        0.023400354524610947
+      ],
+      "baseline_depth_mm": -0.05000066419313942,
+      "min_tip_z_mm": -4.204228598380981,
+      "hard_stop": false,
+      "video_path": null,
+      "frame_count": 0,
+      "initial_xy_mm": [
+        4.0,
+        0.0
+      ],
+      "direction_source": "three_seed_ensemble",
+      "predicted_direction_deg": 176.25,
+      "true_direction_deg": 180.0,
+      "direction_error_deg": 3.75,
+      "direction_confidence": 0.5303472876548767,
+      "aps_set_size": 2,
+      "transport_allowed": true,
+      "transport_distance_mm": 2.2566202123479675,
+      "transport_target_xy_mm": [
+        1.74343672052129,
+        0.01602961277365396
+      ],
+      "spiral_max_radius_mm": 2.1884205724261396,
+      "capture_mode": "inner_wall_guided",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "control_direction_deg": 179.59300334279737,
+      "aps_direction_angles_deg": [
+        176.25,
+        183.75
+      ],
+      "circular_concentration": 0.9976015550552187,
+      "ensemble_top1_span_deg": 7.5,
+      "bottom_reached": true,
+      "time_to_bottom_s": 17.263500000005116,
+      "bottom_depth_error_mm": 0.12319749565140037,
+      "top_state": "double_overhang",
+      "state_probabilities": {
+        "supported_search": 1.283359973847098e-09,
+        "double_overhang": 1.0,
+        "outer_partial": 2.0447454840422097e-09
+      },
+      "posterior_model": "synthetic_visual_gaussian_x_ft_direction_and_state_x_soft_cad_radial_annuli",
+      "cad_radial_boundaries_mm": {
+        "full_outer_support": 3.0358983848622447,
+        "inner_opening_overlap_limit": 6.714101615137755,
+        "transition_sigma": 0.35
+      },
+      "posterior_radial_quantiles_mm": {
+        "q10": 2.510372883579621,
+        "q50": 3.5873951964860864,
+        "q95": 4.694819724521442
+      },
+      "max_filtered_force_n": 4.522492389113535,
+      "max_filtered_torque_mnm": 19.5871306662388,
+      "stage_max_force_n": {
+        "probe": 4.34881223470409,
+        "transport": 5.628217640946563,
+        "spiral": 7.012593389038845,
+        "progress_dwell": 5.485247258797974,
+        "capture_force_release": 3.8461353324575747,
+        "insertion_handoff": 6.821576269728939,
+        "upright_insertion": 0.8021106924126374
+      },
+      "stage_max_torque_mnm": {
+        "probe": 15.700009442166571,
+        "transport": 15.362084136402924,
+        "spiral": 22.599123756300624,
+        "progress_dwell": 12.21646749880001,
+        "capture_force_release": 11.680249898775548,
+        "insertion_handoff": 9.87607794693946,
+        "upright_insertion": 1.1715722544462095
+      },
+      "stage_max_filtered_force_n": {
+        "probe": 3.6733032474483043,
+        "transport": 3.9154027386417893,
+        "spiral": 4.522492389113535,
+        "progress_dwell": 1.511740644648686,
+        "capture_force_release": 0.8299734510637304,
+        "insertion_handoff": 1.1251218751415257,
+        "upright_insertion": 0.8018244569243957
+      },
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "capture_yaw_assist_aborted": false,
+      "max_abs_tau_z_mnm": 4.3132734981549925
+    }
+  },
+  "claim_boundary": "Single deterministic M8 case used to choose a safe transport-cap policy. It is an ablation, not a distributional or hardware performance claim."
+}

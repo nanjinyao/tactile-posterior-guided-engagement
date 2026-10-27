@@ -1,0 +1,61 @@
+{
+  "updated_utc": "2026-07-11T20:02:08.371975+00:00",
+  "design": {
+    "paired_tasks": 12,
+    "initial_radius_mm": 1.0,
+    "post_capture_command_bias_mm": [
+      0.1,
+      0.25
+    ],
+    "friction_range": [
+      0.55,
+      0.95
+    ],
+    "contact_timeconst_range_s": [
+      0.04,
+      0.07
+    ],
+    "down_force_range_n": [
+      2.5,
+      3.5
+    ],
+    "search_policy": "identical ordinary outward search; ablation starts only after capture"
+  },
+  "methods": {
+    "legacy_insertion": {
+      "trials": 12,
+      "bottom_verified": 5,
+      "hard_stops": 1,
+      "safe_aborts": 0,
+      "bottom_not_verified": 6,
+      "recoveries": 0,
+      "cad_depth_safe_aborts": 0,
+      "median_success_time_s": 5.062999999999914,
+      "p90_max_force_n": 17.3065383924137,
+      "p90_max_torque_mnm": 24.316816214620978,
+      "median_cad_depth_overrun_mm": 0.21728620032365953,
+      "max_cad_depth_overrun_mm": 1.0003799052537774
+    },
+    "funnel_guard": {
+      "trials": 12,
+      "bottom_verified": 4,
+      "hard_stops": 0,
+      "safe_aborts": 6,
+      "bottom_not_verified": 2,
+      "recoveries": 0,
+      "cad_depth_safe_aborts": 6,
+      "median_success_time_s": 4.610000000000165,
+      "p90_max_force_n": 11.150641580871307,
+      "p90_max_torque_mnm": 25.608139265773563,
+      "median_cad_depth_overrun_mm": 0.24110064435798195,
+      "max_cad_depth_overrun_mm": 0.4938744012303147
+    }
+  },
+  "paired": {
+    "both_bottom": 4,
+    "guard_only_bottom": 0,
+    "legacy_only_bottom": 1,
+    "neither_bottom": 7
+  },
+  "claim_boundary": "Post-capture MuJoCo controller ablation with bounded synthetic TCP command bias and paired contact nuisance. It tests non-interference, safe recovery, and CAD-depth defense of an iiwa-style tip-frame impedance proxy. It is not hardware evidence, a search comparison, or a guarantee of M10/M12 parameter transfer."
+}

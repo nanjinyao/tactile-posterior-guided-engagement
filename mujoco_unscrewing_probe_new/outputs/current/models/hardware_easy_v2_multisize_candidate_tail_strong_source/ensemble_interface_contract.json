@@ -1,0 +1,103 @@
+{
+  "adaptation_contract": {
+    "aps_and_gate_policy": "single conservative gate selected on the worst of four calibration domains",
+    "base_model_contract_sha256": "e07e4c51f0dcc59d33cc477dbb4ee0f778a0de5bfb6393f031e71783e139c555",
+    "base_model_root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/m8_hardware_easy_v2_robust_direction_v5",
+    "batchnorm_running_statistics_frozen": true,
+    "captured_or_incomplete_traces_used_for_direction_supervision": 0,
+    "dataset_contracts": {
+      "m10": {
+        "bit_radius_m": 0.004618802153517006,
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m10_hardware_easy_v2.xml",
+        "model_sha256": "83dd467bd124ce7aac3b8ae68cd13124ec1ce8a09a1e67adf963e6d1b3ba57d1",
+        "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m10",
+        "sampling_contract": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m10/sampling_contract.json",
+        "sampling_contract_sha256": "dcc98303c334b7962b81c2c99802c9b448112ae91f63ee10194b4cabe3fc6e3d",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m10_hardware_easy_v2.json",
+        "spec_sha256": "a5f07c9f5f25a7fec4702a4086b7b3113d0ac39d12f938556beb567e1595dd33"
+      },
+      "m12": {
+        "bit_radius_m": 0.005773502691896258,
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m12_hardware_easy_v2.xml",
+        "model_sha256": "ffe7fe135c50d4e2c3a0b962a58772fc592037318595bd8edd871d466e5f3c4a",
+        "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m12",
+        "sampling_contract": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m12/sampling_contract.json",
+        "sampling_contract_sha256": "e64fd61e6d39e754ab97fbfe2411912c5ae475ba6ec19f94dd317d909deed7f9",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m12_hardware_easy_v2.json",
+        "spec_sha256": "cc5a1008c469797d5dd9cc82f25c7db1bba27efa2847e2be463a39489c5f5176"
+      },
+      "m8": {
+        "bit_radius_m": 0.0034641016151377548,
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m8_hardware_easy_v2.xml",
+        "model_sha256": "a306e30a5961278e3b29e9f58ea86ac20d703a6640cd21e14b032a41fc73f638",
+        "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/m8_hardware_easy_v2_direction_dense_training",
+        "sampling_contract": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/m8_hardware_easy_v2_direction_dense_training/sampling_contract.json",
+        "sampling_contract_sha256": "893239595a531a3cce0a5331c613b2b77ddf1235b58e36d80096543230726485",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m8_hardware_easy_v2.json",
+        "spec_sha256": "2ef19040271a695f55c2479ad67e812d7eee8f2667d94fa25eda51d38cf113cb"
+      }
+    },
+    "domain_balancing": "one independent batch per domain per optimizer step",
+    "domain_weights": {
+      "m10_easy": 0.11666666666666665,
+      "m12_easy": 0.11666666666666665,
+      "m8_easy": 0.11666666666666665,
+      "m8_source": 0.65
+    },
+    "easy_split_before_capture_filter": true,
+    "final_promotion_audit_samples_seen_during_fitting": 0,
+    "geometry_profile": "hardware_easy_v2",
+    "l2sp_anchored_to_m8_v5": true,
+    "max_aps_set_size_cap_inherited_from_base": 3,
+    "model_scope": "one shared M8/M10/M12 weight ensemble",
+    "per_seed_normalization_frozen_from_m8_v5": true,
+    "temperature_policy": "global equal-domain calibration for runtime compatibility",
+    "trainable_modules": [
+      "encoder.last_conv",
+      "shared",
+      "state_head",
+      "direction_head"
+    ]
+  },
+  "aps_quantile": 0.9386801719665527,
+  "checkpoints": [
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_candidate_tail_strong_source/seeds/seed_20260720/circular_cnn_best.pt",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_candidate_tail_strong_source/seeds/seed_20260721/circular_cnn_best.pt",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_candidate_tail_strong_source/seeds/seed_20260722/circular_cnn_best.pt"
+  ],
+  "claim_boundary": "Simulation-only shared M8/M10/M12 contact-geometry adaptation. It does not align the Bota measurement origin, common 42 mm hardware sensor-to-tip lever, printed mass/COM/inertia, FDM compliance/friction, or measured sensor noise, and it is not full-loop evidence.",
+  "combiner": "mean globally calibrated class probabilities",
+  "confidence_gate": 0.0,
+  "direction_bin_width_deg": 7.5,
+  "direction_bins": 48,
+  "direction_role": "allow bounded transport only when all calibrated set/concentration/disagreement gates pass",
+  "fallback": "guarded local outward spiral or re-probe",
+  "runtime_input_contract": {
+    "phase_bins": 360,
+    "phase_channels": [
+      "Fz_N",
+      "Tx_Nm",
+      "Ty_Nm",
+      "tip_z_m"
+    ],
+    "size_argument": "caller must pass key_af_m/sqrt(3) as bit_radius_m",
+    "size_bit_radius_m": {
+      "m10": 0.004618802153517006,
+      "m12": 0.005773502691896258,
+      "m8": 0.0034641016151377548
+    }
+  },
+  "state_role": "soft action-relevant radial likelihood only: combine calibrated support-state probabilities with approximate CAD using a nonzero likelihood floor; never use a hard state gate, direct distance command, capture trigger, or terminal verifier",
+  "structured_transport_gate": {
+    "max_aps_set_size": 3,
+    "max_ensemble_top1_span_deg": 7.5,
+    "min_circular_concentration": 0.0,
+    "min_max_probability": 0.0
+  },
+  "supported_sizes": [
+    "m8",
+    "m10",
+    "m12"
+  ],
+  "updated_utc": "2026-07-21T09:39:16.913397+00:00"
+}

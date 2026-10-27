@@ -1,0 +1,294 @@
+{
+  "contract_version": "m8_recoverable_funnel_r3_v1",
+  "selection": "fixed programmatic 12-case stress set; no outcome-based task filtering",
+  "task_count": 12,
+  "common": {
+    "search_policy": "ordinary outward spiral",
+    "initial_radius_mm": 1.0,
+    "baseline_max_radius_mm": 2.0,
+    "sensor_only_capture_handoff": true,
+    "active_time_budget_s": 60.0,
+    "cad_conditioned_insertion": true,
+    "persistent_post_capture_disturbance": true,
+    "insertion_command_bias_mm": [
+      0.0,
+      0.0
+    ],
+    "simulator_resets_allowed": 0
+  },
+  "stress_envelope": {
+    "tilt_deg": [
+      1.0,
+      2.5
+    ],
+    "lateral_mm": [
+      0.15,
+      0.3
+    ],
+    "friction_slide": [
+      0.65,
+      0.95
+    ],
+    "contact_timeconst_s": [
+      0.045,
+      0.075
+    ]
+  },
+  "arms": {
+    "no_funnel": {
+      "enabled": false,
+      "window_s": 0.15,
+      "min_window_progress_m": 2e-05,
+      "no_progress_energy_j": 0.0015,
+      "injected_power_limit_w": 0.5,
+      "power_dwell_s": 0.01,
+      "max_tilt_deg": 0.75,
+      "tilt_dwell_s": 0.02,
+      "force_floor_n": 0.2,
+      "moment_lever_m": 0.003,
+      "max_recoveries": 0,
+      "retry_on_terminal_rejection": false,
+      "recovery_force_n": 0.2,
+      "recovery_retract_m": 0.00035,
+      "recovery_unload_s": 0.1,
+      "recovery_retract_s": 0.15,
+      "recovery_retouch_s": 0.2,
+      "planar_stiffness_n_m": 1500.0,
+      "planar_damping_n_s_m": 100.0,
+      "shallow_tilt_stiffness_nm_rad": 1.8,
+      "shallow_tilt_damping_nm_s_rad": 0.35,
+      "deep_tilt_stiffness_nm_rad": 3.0,
+      "deep_tilt_damping_nm_s_rad": 0.5,
+      "yaw_stiffness_nm_rad": 1.5,
+      "yaw_damping_nm_s_rad": 0.25,
+      "cad_bottom_overshoot_margin_m": 0.00025
+    },
+    "rcc_shield_r0": {
+      "enabled": true,
+      "window_s": 0.15,
+      "min_window_progress_m": 2e-05,
+      "no_progress_energy_j": 0.0015,
+      "injected_power_limit_w": 0.5,
+      "power_dwell_s": 0.01,
+      "max_tilt_deg": 0.75,
+      "tilt_dwell_s": 0.02,
+      "force_floor_n": 0.2,
+      "moment_lever_m": 0.003,
+      "max_recoveries": 0,
+      "retry_on_terminal_rejection": true,
+      "recovery_force_n": 0.2,
+      "recovery_retract_m": 0.00035,
+      "recovery_unload_s": 0.1,
+      "recovery_retract_s": 0.15,
+      "recovery_retouch_s": 0.2,
+      "planar_stiffness_n_m": 1500.0,
+      "planar_damping_n_s_m": 100.0,
+      "shallow_tilt_stiffness_nm_rad": 1.8,
+      "shallow_tilt_damping_nm_s_rad": 0.35,
+      "deep_tilt_stiffness_nm_rad": 3.0,
+      "deep_tilt_damping_nm_s_rad": 0.5,
+      "yaw_stiffness_nm_rad": 1.5,
+      "yaw_damping_nm_s_rad": 0.25,
+      "cad_bottom_overshoot_margin_m": 0.00025
+    },
+    "rcc_shield_r3": {
+      "enabled": true,
+      "window_s": 0.15,
+      "min_window_progress_m": 2e-05,
+      "no_progress_energy_j": 0.0015,
+      "injected_power_limit_w": 0.5,
+      "power_dwell_s": 0.01,
+      "max_tilt_deg": 0.75,
+      "tilt_dwell_s": 0.02,
+      "force_floor_n": 0.2,
+      "moment_lever_m": 0.003,
+      "max_recoveries": 3,
+      "retry_on_terminal_rejection": true,
+      "recovery_force_n": 0.2,
+      "recovery_retract_m": 0.00035,
+      "recovery_unload_s": 0.1,
+      "recovery_retract_s": 0.15,
+      "recovery_retouch_s": 0.2,
+      "planar_stiffness_n_m": 1500.0,
+      "planar_damping_n_s_m": 100.0,
+      "shallow_tilt_stiffness_nm_rad": 1.8,
+      "shallow_tilt_damping_nm_s_rad": 0.35,
+      "deep_tilt_stiffness_nm_rad": 3.0,
+      "deep_tilt_damping_nm_s_rad": 0.5,
+      "yaw_stiffness_nm_rad": 1.5,
+      "yaw_damping_nm_s_rad": 0.25,
+      "cad_bottom_overshoot_margin_m": 0.00025
+    }
+  },
+  "recovery_xy_rebase_source": "measured snapshot.tip_position[:2] after unload/retract; no true socket center input",
+  "tasks": [
+    {
+      "task_id": "recoverable_00",
+      "initial_xy_m": [
+        0.001,
+        0.0
+      ],
+      "baseline_phase_rad": 1.3089969389957472,
+      "friction_slide": 0.65,
+      "contact_timeconst_s": 0.045,
+      "target_down_force_n": 2.75,
+      "post_capture_tilt_deg": 1.0,
+      "post_capture_axis_deg": 20.0,
+      "post_capture_lateral_m": 0.00015
+    },
+    {
+      "task_id": "recoverable_01",
+      "initial_xy_m": [
+        0.0008660254037844387,
+        0.0004999999999999999
+      ],
+      "baseline_phase_rad": 1.8325957145940461,
+      "friction_slide": 0.8,
+      "contact_timeconst_s": 0.045,
+      "target_down_force_n": 2.75,
+      "post_capture_tilt_deg": 1.5,
+      "post_capture_axis_deg": 10.0,
+      "post_capture_lateral_m": 0.0003
+    },
+    {
+      "task_id": "recoverable_02",
+      "initial_xy_m": [
+        0.0005000000000000001,
+        0.0008660254037844386
+      ],
+      "baseline_phase_rad": 2.356194490192345,
+      "friction_slide": 0.95,
+      "contact_timeconst_s": 0.06,
+      "target_down_force_n": 2.75,
+      "post_capture_tilt_deg": 2.0,
+      "post_capture_axis_deg": 80.0,
+      "post_capture_lateral_m": 0.00025
+    },
+    {
+      "task_id": "recoverable_03",
+      "initial_xy_m": [
+        6.123233995736766e-20,
+        0.001
+      ],
+      "baseline_phase_rad": 2.8797932657906435,
+      "friction_slide": 0.65,
+      "contact_timeconst_s": 0.06,
+      "target_down_force_n": 2.75,
+      "post_capture_tilt_deg": 2.5,
+      "post_capture_axis_deg": 70.0,
+      "post_capture_lateral_m": 0.0002
+    },
+    {
+      "task_id": "recoverable_04",
+      "initial_xy_m": [
+        -0.0004999999999999998,
+        0.0008660254037844387
+      ],
+      "baseline_phase_rad": 3.4033920413889427,
+      "friction_slide": 0.8,
+      "contact_timeconst_s": 0.075,
+      "target_down_force_n": 3.0,
+      "post_capture_tilt_deg": 1.0,
+      "post_capture_axis_deg": 140.0,
+      "post_capture_lateral_m": 0.00015
+    },
+    {
+      "task_id": "recoverable_05",
+      "initial_xy_m": [
+        -0.0008660254037844387,
+        0.0004999999999999999
+      ],
+      "baseline_phase_rad": 3.9269908169872414,
+      "friction_slide": 0.95,
+      "contact_timeconst_s": 0.075,
+      "target_down_force_n": 3.0,
+      "post_capture_tilt_deg": 1.5,
+      "post_capture_axis_deg": 130.0,
+      "post_capture_lateral_m": 0.0003
+    },
+    {
+      "task_id": "recoverable_06",
+      "initial_xy_m": [
+        -0.001,
+        1.2246467991473531e-19
+      ],
+      "baseline_phase_rad": 4.4505895925855405,
+      "friction_slide": 0.65,
+      "contact_timeconst_s": 0.045,
+      "target_down_force_n": 3.0,
+      "post_capture_tilt_deg": 2.0,
+      "post_capture_axis_deg": 200.0,
+      "post_capture_lateral_m": 0.00025
+    },
+    {
+      "task_id": "recoverable_07",
+      "initial_xy_m": [
+        -0.0008660254037844386,
+        -0.0005000000000000001
+      ],
+      "baseline_phase_rad": 4.974188368183839,
+      "friction_slide": 0.8,
+      "contact_timeconst_s": 0.045,
+      "target_down_force_n": 3.0,
+      "post_capture_tilt_deg": 2.5,
+      "post_capture_axis_deg": 190.0,
+      "post_capture_lateral_m": 0.0002
+    },
+    {
+      "task_id": "recoverable_08",
+      "initial_xy_m": [
+        -0.0005000000000000004,
+        -0.0008660254037844384
+      ],
+      "baseline_phase_rad": 5.497787143782138,
+      "friction_slide": 0.95,
+      "contact_timeconst_s": 0.06,
+      "target_down_force_n": 3.25,
+      "post_capture_tilt_deg": 1.0,
+      "post_capture_axis_deg": 260.0,
+      "post_capture_lateral_m": 0.00015
+    },
+    {
+      "task_id": "recoverable_09",
+      "initial_xy_m": [
+        -1.8369701987210298e-19,
+        -0.001
+      ],
+      "baseline_phase_rad": 6.021385919380437,
+      "friction_slide": 0.65,
+      "contact_timeconst_s": 0.06,
+      "target_down_force_n": 3.25,
+      "post_capture_tilt_deg": 1.5,
+      "post_capture_axis_deg": 250.0,
+      "post_capture_lateral_m": 0.0003
+    },
+    {
+      "task_id": "recoverable_10",
+      "initial_xy_m": [
+        0.0005000000000000001,
+        -0.0008660254037844386
+      ],
+      "baseline_phase_rad": 0.2617993877991494,
+      "friction_slide": 0.8,
+      "contact_timeconst_s": 0.075,
+      "target_down_force_n": 3.25,
+      "post_capture_tilt_deg": 2.0,
+      "post_capture_axis_deg": 320.0,
+      "post_capture_lateral_m": 0.00025
+    },
+    {
+      "task_id": "recoverable_11",
+      "initial_xy_m": [
+        0.0008660254037844384,
+        -0.0005000000000000004
+      ],
+      "baseline_phase_rad": 0.7853981633974483,
+      "friction_slide": 0.95,
+      "contact_timeconst_s": 0.075,
+      "target_down_force_n": 3.25,
+      "post_capture_tilt_deg": 2.5,
+      "post_capture_axis_deg": 310.0,
+      "post_capture_lateral_m": 0.0002
+    }
+  ]
+}

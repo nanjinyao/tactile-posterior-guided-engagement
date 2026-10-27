@@ -1,0 +1,1112 @@
+{
+  "candidate_order": [
+    "REAL_FOURIER_LINEAR_V1",
+    "REAL_FROZEN_SIM_ADAPTER_V1",
+    "REAL_SIM_ADAPTER_TAIL_L2SP_V1"
+  ],
+  "candidates": [
+    {
+      "aggregate": {
+        "direction": {
+          "catastrophic_gt90_count": 16,
+          "catastrophic_gt90_fraction": 0.3333333333333333,
+          "circular_soft_target_nll": 3.0964074911891726,
+          "count": 48,
+          "median_error_deg": 33.618614196777344,
+          "p90_error_deg": 165.22849655151367,
+          "within_15_fraction": 0.4791666666666667,
+          "within_30_fraction": 0.4791666666666667,
+          "within_7p5_fraction": 0.3958333333333333
+        },
+        "state": {
+          "accuracy": 0.5,
+          "class_f1": [
+            0.3783783783783784,
+            0.5405405405405406,
+            0.6363636363636364
+          ],
+          "confusion_matrix": [
+            [
+              7,
+              8,
+              3
+            ],
+            [
+              8,
+              10,
+              0
+            ],
+            [
+              4,
+              1,
+              7
+            ]
+          ],
+          "count": 48,
+          "macro_f1": 0.5184275184275184
+        }
+      },
+      "architecture_type": "REAL_FOURIER_LINEAR_V1",
+      "development_seed_policy": "one deterministic seed per LOSO fold",
+      "folds": [
+        {
+          "direction": {
+            "catastrophic_gt90_count": 4,
+            "catastrophic_gt90_fraction": 0.25,
+            "circular_soft_target_nll": 3.482940693256058,
+            "count": 16,
+            "median_error_deg": 59.63967704772949,
+            "p90_error_deg": 164.2403335571289,
+            "within_15_fraction": 0.25,
+            "within_30_fraction": 0.25,
+            "within_7p5_fraction": 0.125
+          },
+          "fit": {
+            "best_epoch": 120,
+            "best_validation_loss": 3.7934391498565674,
+            "calibrated_simulation_anchor_weight": 0.0,
+            "elapsed_s": 0.523173585999757,
+            "epochs_executed": 120,
+            "history_tail": [
+              {
+                "epoch": 116.0,
+                "train_loss": 2.4009456634521484,
+                "validation_loss": 3.795837640762329
+              },
+              {
+                "epoch": 117.0,
+                "train_loss": 2.3961565494537354,
+                "validation_loss": 3.7952098846435547
+              },
+              {
+                "epoch": 118.0,
+                "train_loss": 2.39141845703125,
+                "validation_loss": 3.7946012020111084
+              },
+              {
+                "epoch": 119.0,
+                "train_loss": 2.386730909347534,
+                "validation_loss": 3.794011116027832
+              },
+              {
+                "epoch": 120.0,
+                "train_loss": 2.3820924758911133,
+                "validation_loss": 3.7934391498565674
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [],
+              "anchor_source": "not_applicable",
+              "coefficient": 0.0,
+              "enabled": false,
+              "final_mean_square_drift": 0.0
+            },
+            "real_supervision_weight": 1.0,
+            "simulation_anchor_rows": 0
+          },
+          "fold_id": "holdout_m8",
+          "held_out_size": "m8",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.625,
+            "class_f1": [
+              0.5454545454545454,
+              0.6666666666666666,
+              0.6666666666666666
+            ],
+            "confusion_matrix": [
+              [
+                3,
+                3,
+                0
+              ],
+              [
+                1,
+                5,
+                0
+              ],
+              [
+                1,
+                1,
+                2
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.6262626262626262
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        },
+        {
+          "direction": {
+            "catastrophic_gt90_count": 5,
+            "catastrophic_gt90_fraction": 0.3125,
+            "circular_soft_target_nll": 2.6905518237123376,
+            "count": 16,
+            "median_error_deg": 0.9095954895019531,
+            "p90_error_deg": 165.28047561645508,
+            "within_15_fraction": 0.6875,
+            "within_30_fraction": 0.6875,
+            "within_7p5_fraction": 0.625
+          },
+          "fit": {
+            "best_epoch": 120,
+            "best_validation_loss": 3.0132787227630615,
+            "calibrated_simulation_anchor_weight": 0.0,
+            "elapsed_s": 0.47266363000380807,
+            "epochs_executed": 120,
+            "history_tail": [
+              {
+                "epoch": 116.0,
+                "train_loss": 2.696434259414673,
+                "validation_loss": 3.015848398208618
+              },
+              {
+                "epoch": 117.0,
+                "train_loss": 2.69130277633667,
+                "validation_loss": 3.0151398181915283
+              },
+              {
+                "epoch": 118.0,
+                "train_loss": 2.686215400695801,
+                "validation_loss": 3.014464855194092
+              },
+              {
+                "epoch": 119.0,
+                "train_loss": 2.6811716556549072,
+                "validation_loss": 3.013840436935425
+              },
+              {
+                "epoch": 120.0,
+                "train_loss": 2.6761703491210938,
+                "validation_loss": 3.0132787227630615
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [],
+              "anchor_source": "not_applicable",
+              "coefficient": 0.0,
+              "enabled": false,
+              "final_mean_square_drift": 0.0
+            },
+            "real_supervision_weight": 1.0,
+            "simulation_anchor_rows": 0
+          },
+          "fold_id": "holdout_m10",
+          "held_out_size": "m10",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.5,
+            "class_f1": [
+              0.2,
+              0.625,
+              0.6666666666666666
+            ],
+            "confusion_matrix": [
+              [
+                1,
+                5,
+                0
+              ],
+              [
+                1,
+                5,
+                0
+              ],
+              [
+                2,
+                0,
+                2
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.49722222222222223
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        },
+        {
+          "direction": {
+            "catastrophic_gt90_count": 7,
+            "catastrophic_gt90_fraction": 0.4375,
+            "circular_soft_target_nll": 3.1157299565991226,
+            "count": 16,
+            "median_error_deg": 26.2191162109375,
+            "p90_error_deg": 164.91765975952148,
+            "within_15_fraction": 0.5,
+            "within_30_fraction": 0.5,
+            "within_7p5_fraction": 0.4375
+          },
+          "fit": {
+            "best_epoch": 48,
+            "best_validation_loss": 3.5060675144195557,
+            "calibrated_simulation_anchor_weight": 0.0,
+            "elapsed_s": 0.29204240800754633,
+            "epochs_executed": 68,
+            "history_tail": [
+              {
+                "epoch": 64.0,
+                "train_loss": 3.0440750122070312,
+                "validation_loss": 3.5392942428588867
+              },
+              {
+                "epoch": 65.0,
+                "train_loss": 3.0342302322387695,
+                "validation_loss": 3.5428338050842285
+              },
+              {
+                "epoch": 66.0,
+                "train_loss": 3.024531364440918,
+                "validation_loss": 3.5466244220733643
+              },
+              {
+                "epoch": 67.0,
+                "train_loss": 3.0149753093719482,
+                "validation_loss": 3.5506253242492676
+              },
+              {
+                "epoch": 68.0,
+                "train_loss": 3.005558729171753,
+                "validation_loss": 3.5547847747802734
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [],
+              "anchor_source": "not_applicable",
+              "coefficient": 0.0,
+              "enabled": false,
+              "final_mean_square_drift": 0.0
+            },
+            "real_supervision_weight": 1.0,
+            "simulation_anchor_rows": 0
+          },
+          "fold_id": "holdout_m12",
+          "held_out_size": "m12",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.375,
+            "class_f1": [
+              0.375,
+              0.0,
+              0.6
+            ],
+            "confusion_matrix": [
+              [
+                3,
+                0,
+                3
+              ],
+              [
+                6,
+                0,
+                0
+              ],
+              [
+                1,
+                0,
+                3
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.325
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        }
+      ],
+      "selected": true,
+      "selection_key": [
+        16.0,
+        165.22849655151367,
+        3.0964074911891726,
+        -0.5184275184275184
+      ],
+      "simulation_anchor": null,
+      "status": "EVALUATED"
+    },
+    {
+      "aggregate": {
+        "direction": {
+          "catastrophic_gt90_count": 18,
+          "catastrophic_gt90_fraction": 0.375,
+          "circular_soft_target_nll": 3.7452320175324005,
+          "count": 48,
+          "median_error_deg": 59.61622619628906,
+          "p90_error_deg": 164.89073028564454,
+          "within_15_fraction": 0.375,
+          "within_30_fraction": 0.4791666666666667,
+          "within_7p5_fraction": 0.3125
+        },
+        "state": {
+          "accuracy": 0.3541666666666667,
+          "class_f1": [
+            0.30303030303030304,
+            0.35294117647058826,
+            0.41379310344827586
+          ],
+          "confusion_matrix": [
+            [
+              5,
+              7,
+              6
+            ],
+            [
+              7,
+              6,
+              5
+            ],
+            [
+              3,
+              3,
+              6
+            ]
+          ],
+          "count": 48,
+          "macro_f1": 0.35658819431638905
+        }
+      },
+      "architecture_type": "REAL_FROZEN_SIM_ADAPTER_V1",
+      "development_seed_policy": "one deterministic seed per LOSO fold",
+      "folds": [
+        {
+          "direction": {
+            "catastrophic_gt90_count": 6,
+            "catastrophic_gt90_fraction": 0.375,
+            "circular_soft_target_nll": 3.9274714976089347,
+            "count": 16,
+            "median_error_deg": 40.88967704772949,
+            "p90_error_deg": 158.00455856323242,
+            "within_15_fraction": 0.375,
+            "within_30_fraction": 0.5,
+            "within_7p5_fraction": 0.375
+          },
+          "fit": {
+            "best_epoch": 27,
+            "best_validation_loss": 4.433728218078613,
+            "calibrated_simulation_anchor_weight": 0.2,
+            "elapsed_s": 4.5765751720027765,
+            "epochs_executed": 30,
+            "history_tail": [
+              {
+                "epoch": 26.0,
+                "train_loss": 2.53201961517334,
+                "validation_loss": 4.4900312423706055
+              },
+              {
+                "epoch": 27.0,
+                "train_loss": 2.490529696146647,
+                "validation_loss": 4.433728218078613
+              },
+              {
+                "epoch": 28.0,
+                "train_loss": 2.4497488339742026,
+                "validation_loss": 4.45036506652832
+              },
+              {
+                "epoch": 29.0,
+                "train_loss": 2.4271300633748374,
+                "validation_loss": 4.459230899810791
+              },
+              {
+                "epoch": 30.0,
+                "train_loss": 2.3986972173055015,
+                "validation_loss": 4.456772327423096
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [],
+              "anchor_source": "not_applicable",
+              "coefficient": 0.0,
+              "enabled": false,
+              "final_mean_square_drift": 0.0
+            },
+            "real_supervision_weight": 0.8,
+            "simulation_anchor_rows": 96
+          },
+          "fold_id": "holdout_m8",
+          "held_out_size": "m8",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.3125,
+            "class_f1": [
+              0.0,
+              0.42105263157894735,
+              0.4
+            ],
+            "confusion_matrix": [
+              [
+                0,
+                6,
+                0
+              ],
+              [
+                2,
+                4,
+                0
+              ],
+              [
+                0,
+                3,
+                1
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.2736842105263158
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        },
+        {
+          "direction": {
+            "catastrophic_gt90_count": 7,
+            "catastrophic_gt90_fraction": 0.4375,
+            "circular_soft_target_nll": 3.036166636842097,
+            "count": 16,
+            "median_error_deg": 89.1343879699707,
+            "p90_error_deg": 168.93667221069336,
+            "within_15_fraction": 0.4375,
+            "within_30_fraction": 0.4375,
+            "within_7p5_fraction": 0.25
+          },
+          "fit": {
+            "best_epoch": 30,
+            "best_validation_loss": 3.455530881881714,
+            "calibrated_simulation_anchor_weight": 0.2,
+            "elapsed_s": 4.400382059000549,
+            "epochs_executed": 30,
+            "history_tail": [
+              {
+                "epoch": 26.0,
+                "train_loss": 2.86291241645813,
+                "validation_loss": 3.527339458465576
+              },
+              {
+                "epoch": 27.0,
+                "train_loss": 2.822080691655477,
+                "validation_loss": 3.475348472595215
+              },
+              {
+                "epoch": 28.0,
+                "train_loss": 2.7774537404378257,
+                "validation_loss": 3.502556800842285
+              },
+              {
+                "epoch": 29.0,
+                "train_loss": 2.7540257374445596,
+                "validation_loss": 3.526959180831909
+              },
+              {
+                "epoch": 30.0,
+                "train_loss": 2.7231664657592773,
+                "validation_loss": 3.455530881881714
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [],
+              "anchor_source": "not_applicable",
+              "coefficient": 0.0,
+              "enabled": false,
+              "final_mean_square_drift": 0.0
+            },
+            "real_supervision_weight": 0.8,
+            "simulation_anchor_rows": 96
+          },
+          "fold_id": "holdout_m10",
+          "held_out_size": "m10",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.4375,
+            "class_f1": [
+              0.5714285714285714,
+              0.4444444444444444,
+              0.2222222222222222
+            ],
+            "confusion_matrix": [
+              [
+                4,
+                1,
+                1
+              ],
+              [
+                1,
+                2,
+                3
+              ],
+              [
+                3,
+                0,
+                1
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.41269841269841273
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        },
+        {
+          "direction": {
+            "catastrophic_gt90_count": 5,
+            "catastrophic_gt90_fraction": 0.3125,
+            "circular_soft_target_nll": 4.272057918146171,
+            "count": 16,
+            "median_error_deg": 48.68708038330078,
+            "p90_error_deg": 157.83175313472748,
+            "within_15_fraction": 0.3125,
+            "within_30_fraction": 0.5,
+            "within_7p5_fraction": 0.3125
+          },
+          "fit": {
+            "best_epoch": 28,
+            "best_validation_loss": 4.687602996826172,
+            "calibrated_simulation_anchor_weight": 0.2,
+            "elapsed_s": 4.283333422004944,
+            "epochs_executed": 30,
+            "history_tail": [
+              {
+                "epoch": 26.0,
+                "train_loss": 3.1321318546930947,
+                "validation_loss": 4.715387344360352
+              },
+              {
+                "epoch": 27.0,
+                "train_loss": 3.1006623903910318,
+                "validation_loss": 4.715662002563477
+              },
+              {
+                "epoch": 28.0,
+                "train_loss": 3.072925011316935,
+                "validation_loss": 4.687602996826172
+              },
+              {
+                "epoch": 29.0,
+                "train_loss": 3.048367142677307,
+                "validation_loss": 4.707594871520996
+              },
+              {
+                "epoch": 30.0,
+                "train_loss": 3.002255161603292,
+                "validation_loss": 4.713857650756836
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [],
+              "anchor_source": "not_applicable",
+              "coefficient": 0.0,
+              "enabled": false,
+              "final_mean_square_drift": 0.0
+            },
+            "real_supervision_weight": 0.8,
+            "simulation_anchor_rows": 96
+          },
+          "fold_id": "holdout_m12",
+          "held_out_size": "m12",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.3125,
+            "class_f1": [
+              0.18181818181818182,
+              0.0,
+              0.5333333333333333
+            ],
+            "confusion_matrix": [
+              [
+                1,
+                0,
+                5
+              ],
+              [
+                4,
+                0,
+                2
+              ],
+              [
+                0,
+                0,
+                4
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.23838383838383836
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        }
+      ],
+      "selected": false,
+      "selection_key": [
+        18.0,
+        164.89073028564454,
+        3.7452320175324005,
+        -0.35658819431638905
+      ],
+      "simulation_anchor": {
+        "calibrated_replay_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/offline_analysis/real_multisize_learning_v1/sim_calibration_v1/calibrated_observation_replay_v1.npz",
+        "calibrated_replay_sha256": "1dd770006b6371ca17de0855294ef22b039d2e756e8bf085bf9e326feb823def",
+        "calibrated_simulation_anchor_weight": 0.2,
+        "eligible_partition": "clean_candidate",
+        "held_out_size_simulation_rows_in_fold": 0,
+        "l2sp": {
+          "anchor_source": "not_applicable",
+          "coefficient": 0.0,
+          "enabled": false
+        },
+        "mode": "frozen legacy simulation encoder/shared/teacher heads plus trainable real input/output adapter",
+        "real_calibrated_profile_path": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/configs/real_calibrated_v1.json",
+        "real_calibrated_profile_sha256": "3a890c63e66e6f1897ef7d67482222e5d720ab46ddc2b9a4e7578f4d0c40dccd",
+        "real_supervision_weight": 0.8,
+        "source_contract_sha256": "0fbb33d7dda8c6eeb3f133ccea8ed181a13855eb1d46414240150f2285087fea",
+        "source_root": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving",
+        "tail_unfreeze": []
+      },
+      "status": "EVALUATED"
+    },
+    {
+      "aggregate": {
+        "direction": {
+          "catastrophic_gt90_count": 21,
+          "catastrophic_gt90_fraction": 0.4375,
+          "circular_soft_target_nll": 3.207014081704163,
+          "count": 48,
+          "median_error_deg": 48.249176025390625,
+          "p90_error_deg": 165.18621826171875,
+          "within_15_fraction": 0.3125,
+          "within_30_fraction": 0.4166666666666667,
+          "within_7p5_fraction": 0.22916666666666666
+        },
+        "state": {
+          "accuracy": 0.4791666666666667,
+          "class_f1": [
+            0.3888888888888889,
+            0.6,
+            0.4
+          ],
+          "confusion_matrix": [
+            [
+              7,
+              8,
+              3
+            ],
+            [
+              5,
+              12,
+              1
+            ],
+            [
+              6,
+              2,
+              4
+            ]
+          ],
+          "count": 48,
+          "macro_f1": 0.46296296296296297
+        }
+      },
+      "architecture_type": "REAL_SIM_ADAPTER_TAIL_L2SP_V1",
+      "development_seed_policy": "one deterministic seed per LOSO fold",
+      "folds": [
+        {
+          "direction": {
+            "catastrophic_gt90_count": 7,
+            "catastrophic_gt90_fraction": 0.4375,
+            "circular_soft_target_nll": 3.452106952915589,
+            "count": 16,
+            "median_error_deg": 60.154598236083984,
+            "p90_error_deg": 164.86314964294434,
+            "within_15_fraction": 0.1875,
+            "within_30_fraction": 0.25,
+            "within_7p5_fraction": 0.125
+          },
+          "fit": {
+            "best_epoch": 9,
+            "best_validation_loss": 3.911346197128296,
+            "calibrated_simulation_anchor_weight": 0.2,
+            "elapsed_s": 2.832335852988763,
+            "epochs_executed": 17,
+            "history_tail": [
+              {
+                "epoch": 13.0,
+                "train_loss": 2.0693604151407876,
+                "validation_loss": 4.0106120109558105
+              },
+              {
+                "epoch": 14.0,
+                "train_loss": 1.9880540768305461,
+                "validation_loss": 4.124901294708252
+              },
+              {
+                "epoch": 15.0,
+                "train_loss": 1.968474288781484,
+                "validation_loss": 4.271361827850342
+              },
+              {
+                "epoch": 16.0,
+                "train_loss": 1.9251607259114583,
+                "validation_loss": 4.3120927810668945
+              },
+              {
+                "epoch": 17.0,
+                "train_loss": 1.8821667631467183,
+                "validation_loss": 4.4113311767578125
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [
+                "shared.0.bias",
+                "shared.0.weight"
+              ],
+              "anchor_source": "pretrained_simulation_checkpoint",
+              "coefficient": 0.005,
+              "enabled": true,
+              "final_mean_square_drift": 0.00020073003543075174
+            },
+            "real_supervision_weight": 0.8,
+            "simulation_anchor_rows": 96
+          },
+          "fold_id": "holdout_m8",
+          "held_out_size": "m8",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.5,
+            "class_f1": [
+              0.25,
+              0.631578947368421,
+              0.4
+            ],
+            "confusion_matrix": [
+              [
+                1,
+                5,
+                0
+              ],
+              [
+                0,
+                6,
+                0
+              ],
+              [
+                1,
+                2,
+                1
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.4271929824561404
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        },
+        {
+          "direction": {
+            "catastrophic_gt90_count": 7,
+            "catastrophic_gt90_fraction": 0.4375,
+            "circular_soft_target_nll": 2.913341998673406,
+            "count": 16,
+            "median_error_deg": 15.041488647460938,
+            "p90_error_deg": 165.63515853881836,
+            "within_15_fraction": 0.5,
+            "within_30_fraction": 0.5625,
+            "within_7p5_fraction": 0.375
+          },
+          "fit": {
+            "best_epoch": 23,
+            "best_validation_loss": 3.2069742679595947,
+            "calibrated_simulation_anchor_weight": 0.2,
+            "elapsed_s": 4.4784051929891575,
+            "epochs_executed": 30,
+            "history_tail": [
+              {
+                "epoch": 26.0,
+                "train_loss": 1.9695107539494832,
+                "validation_loss": 3.4228568077087402
+              },
+              {
+                "epoch": 27.0,
+                "train_loss": 1.9405688643455505,
+                "validation_loss": 3.3975584506988525
+              },
+              {
+                "epoch": 28.0,
+                "train_loss": 1.9409100810686748,
+                "validation_loss": 3.4169111251831055
+              },
+              {
+                "epoch": 29.0,
+                "train_loss": 1.8906468947728474,
+                "validation_loss": 3.2531375885009766
+              },
+              {
+                "epoch": 30.0,
+                "train_loss": 1.9286274711290996,
+                "validation_loss": 3.414893388748169
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [
+                "shared.0.bias",
+                "shared.0.weight"
+              ],
+              "anchor_source": "pretrained_simulation_checkpoint",
+              "coefficient": 0.005,
+              "enabled": true,
+              "final_mean_square_drift": 0.0003577204479370266
+            },
+            "real_supervision_weight": 0.8,
+            "simulation_anchor_rows": 96
+          },
+          "fold_id": "holdout_m10",
+          "held_out_size": "m10",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.5625,
+            "class_f1": [
+              0.46153846153846156,
+              0.8,
+              0.0
+            ],
+            "confusion_matrix": [
+              [
+                3,
+                3,
+                0
+              ],
+              [
+                0,
+                6,
+                0
+              ],
+              [
+                4,
+                0,
+                0
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.4205128205128205
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        },
+        {
+          "direction": {
+            "catastrophic_gt90_count": 7,
+            "catastrophic_gt90_fraction": 0.4375,
+            "circular_soft_target_nll": 3.255593293523495,
+            "count": 16,
+            "median_error_deg": 33.621612548828125,
+            "p90_error_deg": 158.15375173091888,
+            "within_15_fraction": 0.25,
+            "within_30_fraction": 0.4375,
+            "within_7p5_fraction": 0.1875
+          },
+          "fit": {
+            "best_epoch": 12,
+            "best_validation_loss": 3.7698049545288086,
+            "calibrated_simulation_anchor_weight": 0.2,
+            "elapsed_s": 2.9989567739976337,
+            "epochs_executed": 20,
+            "history_tail": [
+              {
+                "epoch": 16.0,
+                "train_loss": 2.4960574309031167,
+                "validation_loss": 4.113180160522461
+              },
+              {
+                "epoch": 17.0,
+                "train_loss": 2.418616851170858,
+                "validation_loss": 3.996342182159424
+              },
+              {
+                "epoch": 18.0,
+                "train_loss": 2.458913962046305,
+                "validation_loss": 3.9109418392181396
+              },
+              {
+                "epoch": 19.0,
+                "train_loss": 2.368899623552958,
+                "validation_loss": 4.491695880889893
+              },
+              {
+                "epoch": 20.0,
+                "train_loss": 2.3932068745295205,
+                "validation_loss": 4.287834167480469
+              }
+            ],
+            "l2sp": {
+              "anchor_parameter_names": [
+                "shared.0.bias",
+                "shared.0.weight"
+              ],
+              "anchor_source": "pretrained_simulation_checkpoint",
+              "coefficient": 0.005,
+              "enabled": true,
+              "final_mean_square_drift": 0.0002029000170296058
+            },
+            "real_supervision_weight": 0.8,
+            "simulation_anchor_rows": 96
+          },
+          "fold_id": "holdout_m12",
+          "held_out_size": "m12",
+          "rotation_ids_in_training": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "state": {
+            "accuracy": 0.375,
+            "class_f1": [
+              0.4,
+              0.0,
+              0.5454545454545454
+            ],
+            "confusion_matrix": [
+              [
+                3,
+                0,
+                3
+              ],
+              [
+                5,
+                0,
+                1
+              ],
+              [
+                1,
+                0,
+                3
+              ]
+            ],
+            "count": 16,
+            "macro_f1": 0.3151515151515151
+          },
+          "training_origins": 32,
+          "training_rows_after_c6": 192,
+          "validation_augmented": false,
+          "validation_origins": 16,
+          "validation_rows": 16
+        }
+      ],
+      "selected": false,
+      "selection_key": [
+        21.0,
+        165.18621826171875,
+        3.207014081704163,
+        -0.46296296296296297
+      ],
+      "simulation_anchor": {
+        "calibrated_replay_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/offline_analysis/real_multisize_learning_v1/sim_calibration_v1/calibrated_observation_replay_v1.npz",
+        "calibrated_replay_sha256": "1dd770006b6371ca17de0855294ef22b039d2e756e8bf085bf9e326feb823def",
+        "calibrated_simulation_anchor_weight": 0.2,
+        "eligible_partition": "clean_candidate",
+        "held_out_size_simulation_rows_in_fold": 0,
+        "l2sp": {
+          "anchor_source": "pretrained_simulation_checkpoint",
+          "coefficient": 0.005,
+          "enabled": true
+        },
+        "mode": "frozen legacy simulation encoder and teacher heads plus trainable real input/output adapter and shared.0 tail unfreeze with L2SP",
+        "real_calibrated_profile_path": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/configs/real_calibrated_v1.json",
+        "real_calibrated_profile_sha256": "3a890c63e66e6f1897ef7d67482222e5d720ab46ddc2b9a4e7578f4d0c40dccd",
+        "real_supervision_weight": 0.8,
+        "source_contract_sha256": "0fbb33d7dda8c6eeb3f133ccea8ed181a13855eb1d46414240150f2285087fea",
+        "source_root": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving",
+        "tail_unfreeze": [
+          "shared.0.weight",
+          "shared.0.bias"
+        ]
+      },
+      "status": "EVALUATED"
+    }
+  ],
+  "excluded_from_selection": [
+    "REAL_TINY_CIRCULAR_CNN_V1"
+  ],
+  "schema_version": 2,
+  "selected_architecture": "REAL_FOURIER_LINEAR_V1",
+  "selected_oof_aps_quantile_alpha_0p10": 0.8275126755800355,
+  "selection_data": "48 clean samples only; LOSO by size; validation unaugmented",
+  "selection_rule": "lexicographic: catastrophic >90 count, p90 direction error, circular soft-target NLL, then negative state macro-F1"
+}

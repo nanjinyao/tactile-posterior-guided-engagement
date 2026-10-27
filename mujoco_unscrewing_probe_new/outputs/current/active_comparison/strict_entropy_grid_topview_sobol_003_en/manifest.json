@@ -1,0 +1,253 @@
+{
+  "artifacts": {
+    "frozen_result_verification": {
+      "bytes": 594,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003_en/frozen_result_verification.json",
+      "sha256": "83bcee81f2cf067e147ebdca62b7afa43045ed5c9b3e632a6b39fff46e1912ae"
+    },
+    "mujoco_topview_base": {
+      "bytes": 97644,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003_en/m8_mujoco_topview_base.png",
+      "sha256": "8d6addec64bb0b46b2b323d4bc9f617764788937474ea14aca523bdc256e9a99"
+    },
+    "planar_map": {
+      "bytes": 237025,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003_en/planar_map.png",
+      "sha256": "5a89dfc9c91444381a2c004b12f62e6a028cc709ebd0bbc376f71d82de1e2e72"
+    },
+    "poster": {
+      "bytes": 237025,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003_en/poster.png",
+      "sha256": "5a89dfc9c91444381a2c004b12f62e6a028cc709ebd0bbc376f71d82de1e2e72"
+    },
+    "result": {
+      "bytes": 11913,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003_en/result.json",
+      "sha256": "67d9e6d33ccd593bbb0ac8247c9cc3270b2479d5c802062c9f9b8ee9de26b828"
+    },
+    "trace": {
+      "bytes": 20583548,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003_en/trace.csv",
+      "sha256": "ef944f679d1f86b59ec6a84c9aeb320d041f3771cf7c18964c8e4ed000bcec66"
+    },
+    "video": {
+      "bytes": 350526,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003_en/m8_strict_entropy_grid_topview_sobol_003_en.mp4",
+      "sha256": "4224d503e5c059896cb61d439e17a52668700ff6a8cde668e431129ab054d553"
+    }
+  },
+  "belief_progression": [
+    {
+      "action_xy_mm": [
+        -0.6154333590149471,
+        1.6279761844546594
+      ],
+      "observation": "torque_direction_bin_1",
+      "posterior_credible_radius_95_mm": 3.8393314209433544,
+      "posterior_entropy_nats": 5.95326530438526,
+      "probe": 1
+    },
+    {
+      "action_xy_mm": [
+        0.7280695252394933,
+        0.284473300200219
+      ],
+      "observation": "torque_direction_bin_6",
+      "posterior_credible_radius_95_mm": 2.8818838910297346,
+      "posterior_entropy_nats": 5.149168481423901,
+      "probe": 2
+    },
+    {
+      "action_xy_mm": [
+        -0.279557637951337,
+        0.284473300200219
+      ],
+      "observation": "torque_direction_bin_2",
+      "posterior_credible_radius_95_mm": 2.2605636975435703,
+      "posterior_entropy_nats": 3.7099121809492126,
+      "probe": 3
+    },
+    {
+      "action_xy_mm": [
+        0.39219380417588323,
+        0.284473300200219
+      ],
+      "observation": "torque_direction_bin_7",
+      "posterior_credible_radius_95_mm": 1.5919876582818269,
+      "posterior_entropy_nats": 2.242832471909397,
+      "probe": 4
+    },
+    {
+      "action_xy_mm": [
+        0.05631808311227311,
+        0.284473300200219
+      ],
+      "observation": "direct_capture",
+      "posterior_credible_radius_95_mm": null,
+      "posterior_entropy_nats": null,
+      "probe": 5
+    }
+  ],
+  "capture_sets": {
+    "chamfer_eligible_radius_mm": 0.25,
+    "direct_clearance_radius_mm": 0.1,
+    "interpretation": "The fifth commanded endpoint is outside the nominal CAD disks, while the measured compliant tip path reaches the direct-clearance disk before sensor handoff. Node eligibility is therefore not substituted for measured capture.",
+    "measured_capture_event_radius_mm": 0.07764603145381968,
+    "measured_capture_event_xy_mm": [
+      -0.03949430334707104,
+      0.06685137398481118
+    ],
+    "measured_capture_inside_chamfer_eligible": true,
+    "measured_capture_inside_direct_clearance": true,
+    "nominal_chamfer_only_action_nodes_mm": [],
+    "nominal_direct_clearance_action_nodes_mm": [
+      [
+        0.05631808311227311,
+        -0.0514024208633911
+      ]
+    ],
+    "nominal_selected_action_5_radius_mm": 0.289994456864687
+  },
+  "claim_boundary": "This selected strict MuJoCo replay explains the discrete Bayesian entropy-grid mechanism and its measured physical path. It demonstrates five adaptive actions, sensor capture, and shared-funnel CAD-bottom completion for sobol_003 only. It does not claim that 749 nodes were traversed, that 1201 belief hypotheses are actions, or that the offline geometric certificate guarantees hardware or finite-time success.",
+  "created_utc": "2026-07-15T15:07:02.213944+00:00",
+  "experiment": "M8_strict_entropy_grid_real_topview_selected_mechanism_explainer",
+  "finite_sets": {
+    "actions_inside_visual_support": 673,
+    "belief_hypotheses": 1201,
+    "belief_hypotheses_are_not_action_grid": true,
+    "boundary_padding_actions": 76,
+    "configured_radial_padding_mm": 0.25,
+    "controller_traversed_all_action_candidates": false,
+    "coverage_certificate_offline_audit": {
+      "action_node_count": 749,
+      "action_padding_m": 0.00024260669545633252,
+      "action_support_radius_m": 0.0051379105675361855,
+      "analytic_worst_case_gap_m": 0.0002375,
+      "boundary_sample_count": 8192,
+      "boundary_worst_gap_m": 0.00023609365612432852,
+      "certified": true,
+      "complete_required_lattice": true,
+      "dense_sample_count": 42689,
+      "dense_worst_gap_m": 0.00023750000000000003,
+      "effective_capture_radius_m": 0.00025,
+      "lattice_spacing_m": 0.0003358757210636101,
+      "observed_worst_gap_m": 0.00023750000000000003,
+      "required_lattice_node_count": 741,
+      "support_radius_m": 0.004895303872079853
+    },
+    "selected_action_count": 5,
+    "selected_actions_mm": [
+      [
+        -0.6154333590149471,
+        1.6279761844546594
+      ],
+      [
+        0.7280695252394933,
+        0.284473300200219
+      ],
+      [
+        -0.279557637951337,
+        0.284473300200219
+      ],
+      [
+        0.39219380417588323,
+        0.284473300200219
+      ],
+      [
+        0.05631808311227311,
+        0.284473300200219
+      ]
+    ],
+    "total_available_action_candidates": 749
+  },
+  "language": "en",
+  "method": "entropy_grid",
+  "offline_explanation_boundary": {
+    "capture_disks_and_node_eligibility_used_online": false,
+    "contact_tags_used_online": false,
+    "coverage_certificate_does_not_guarantee_tracking_capture_or_finite_time_success": true,
+    "mujoco_geometry_is_actual_allen_m8_source_model": true,
+    "selected_single_rollout_is_not_distribution_level_evidence": true,
+    "true_center_capture_disks_and_eligibility_are_offline_overlays": true,
+    "true_center_used_online": false
+  },
+  "pose_id": "sobol_003",
+  "replay_contract": {
+    "entry_point": "run_m8_strict_complete_loop_audit._run_with_runtime",
+    "frozen_result_verification": {
+      "compared_field_count": 132,
+      "exact_substantive_match": true,
+      "excluded_display_only_fields": [
+        "frame_count",
+        "video_path"
+      ],
+      "frozen_field_count": 134,
+      "mismatches": [],
+      "missing_fields": [],
+      "new_replay_only_fields": [
+        "direct_attempt_records",
+        "direct_attempts_completed",
+        "direct_max_attempts",
+        "direct_successful_attempt",
+        "fingerprint_sha256_attempts",
+        "funnel_recovery_reasons",
+        "funnel_recovery_xy_rebases_mm",
+        "simulator_reset_count",
+        "terminal_attempts",
+        "terminal_rejection_count"
+      ],
+      "replay_field_count": 144
+    },
+    "hard_active_time_budget_s": 130.0,
+    "physics_rollout_rerun_for_this_render": false,
+    "render_only_reuse": true,
+    "reused_replay_from": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003",
+    "same_frozen_task_and_runtime_arguments": true,
+    "source_result": {
+      "bytes": 11913,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003/result.json",
+      "sha256": "67d9e6d33ccd593bbb0ac8247c9cc3270b2479d5c802062c9f9b8ee9de26b828"
+    },
+    "source_trace": {
+      "bytes": 20583548,
+      "path": "outputs/current/active_comparison/strict_entropy_grid_topview_sobol_003/trace.csv",
+      "sha256": "ef944f679d1f86b59ec6a84c9aeb320d041f3771cf7c18964c8e4ed000bcec66"
+    },
+    "trace_is_measured_tip_xy_from_replayed_MuJoCo_rollout": true
+  },
+  "source_frozen_trial": "outputs/current/evaluations/m8_strict_24_complete_loop/trials/sobol_003.json",
+  "source_frozen_trial_sha256": "1828303d7fe3361c32f3c1f081cff55974d9caaf55762677d9b6ef587ece2cc0",
+  "task": {
+    "angle_rad": 1.9322259032046412,
+    "baseline_phase_rad": 3.5455810272928434,
+    "contact_timeconst_s": 0.04192627615295351,
+    "friction_slide": 0.5641469679772855,
+    "pose_id": "sobol_003",
+    "posterior_seed": 20260723003,
+    "radius_m": 0.0017404208331722453,
+    "sensor_delay_s": 0.0071246117975,
+    "sensor_noise_seed": 202607230003,
+    "target_down_force_n": 2.6537751564756036,
+    "x_m": -0.0006154333590149471,
+    "y_m": 0.0016279761844546594
+  },
+  "trajectory": {
+    "bottom_time_s": 12.745500000004085,
+    "capture_event_nearest_trace_distance_mm": 0.0,
+    "capture_time_s": 10.034000000000772,
+    "capture_trace_row": 21667,
+    "dashed_segments": "measured unload, lift, shift, and retouch motion",
+    "result": "cad_bottom_verified",
+    "samples": 28091,
+    "solid_segments": "measured contact/force-bearing motion",
+    "strict_bottom_success": true
+  },
+  "video": {
+    "display_compression_changes_simulation_or_metrics": false,
+    "display_time_is_compressed_from_active_simulation_time": true,
+    "duration_s": 10.0,
+    "fps": 20,
+    "frame_count": 200
+  },
+  "visible_text_language": "en"
+}

@@ -1,0 +1,470 @@
+{
+  "aps_alpha": 0.1,
+  "aps_quantile": 0.9757479429244995,
+  "best_epoch": 35,
+  "best_val_loss": 1.4946018382906914,
+  "calibration_examples": 192,
+  "circular_cnn": {
+    "p0a_full_angle": {
+      "angle_error_median_deg": 3.75,
+      "angle_error_p90_deg": 3.75,
+      "angle_within_7p5_rate": 0.9861111111111112,
+      "aps_coverage": 1.0,
+      "aps_mean_set_size": 2.6805555555555554,
+      "direction_top1_accuracy": 0.6666666666666666,
+      "gate_accept_rate": 1.0,
+      "gate_accepted_samples": 72,
+      "gate_catastrophic_gt90_rate": 0.013888888888888888,
+      "gate_threshold": 0.4451301097869873,
+      "gate_within_7p5_rate": 0.9861111111111112,
+      "samples": 72,
+      "state_accuracy": 1.0
+    },
+    "p0b_test": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 0.0,
+      "angle_within_7p5_rate": 1.0,
+      "aps_coverage": 1.0,
+      "aps_mean_set_size": 2.8194444444444446,
+      "direction_top1_accuracy": 0.9305555555555556,
+      "gate_accept_rate": 1.0,
+      "gate_accepted_samples": 72,
+      "gate_catastrophic_gt90_rate": 0.0,
+      "gate_threshold": 0.4451301097869873,
+      "gate_within_7p5_rate": 1.0,
+      "samples": 72,
+      "state_accuracy": 0.9861111111111112
+    },
+    "p0b_val": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 7.5,
+      "angle_within_7p5_rate": 1.0,
+      "aps_coverage": 1.0,
+      "aps_mean_set_size": 2.8055555555555554,
+      "direction_top1_accuracy": 0.8472222222222222,
+      "gate_accept_rate": 1.0,
+      "gate_accepted_samples": 72,
+      "gate_catastrophic_gt90_rate": 0.0,
+      "gate_threshold": 0.4451301097869873,
+      "gate_within_7p5_rate": 1.0,
+      "samples": 72,
+      "state_accuracy": 1.0
+    },
+    "p0c_hard": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 0.0,
+      "angle_within_7p5_rate": 1.0,
+      "aps_coverage": 1.0,
+      "aps_mean_set_size": 2.966666666666667,
+      "direction_top1_accuracy": 0.9777777777777777,
+      "gate_accept_rate": 1.0,
+      "gate_accepted_samples": 90,
+      "gate_catastrophic_gt90_rate": 0.0,
+      "gate_threshold": 0.4451301097869873,
+      "gate_within_7p5_rate": 1.0,
+      "samples": 90,
+      "state_accuracy": 1.0
+    },
+    "p0d_test": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 7.5,
+      "angle_within_7p5_rate": 1.0,
+      "aps_coverage": 1.0,
+      "aps_mean_set_size": 2.8055555555555554,
+      "direction_top1_accuracy": 0.8055555555555556,
+      "gate_accept_rate": 0.9861111111111112,
+      "gate_accepted_samples": 71,
+      "gate_catastrophic_gt90_rate": 0.0,
+      "gate_threshold": 0.4451301097869873,
+      "gate_within_7p5_rate": 1.0,
+      "samples": 72,
+      "state_accuracy": 0.9305555555555556
+    },
+    "p0d_val": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 7.5,
+      "angle_within_7p5_rate": 1.0,
+      "aps_coverage": 1.0,
+      "aps_mean_set_size": 2.7083333333333335,
+      "direction_top1_accuracy": 0.8333333333333334,
+      "gate_accept_rate": 1.0,
+      "gate_accepted_samples": 72,
+      "gate_catastrophic_gt90_rate": 0.0,
+      "gate_threshold": 0.4451301097869873,
+      "gate_within_7p5_rate": 1.0,
+      "samples": 72,
+      "state_accuracy": 0.9861111111111112
+    },
+    "targeted_val": {
+      "angle_error_median_deg": 3.1923980712890625,
+      "angle_error_p90_deg": 4.3076019287109375,
+      "angle_within_7p5_rate": 1.0,
+      "aps_coverage": 1.0,
+      "aps_mean_set_size": 2.75,
+      "direction_top1_accuracy": 0.7708333333333334,
+      "gate_accept_rate": 1.0,
+      "gate_accepted_samples": 48,
+      "gate_catastrophic_gt90_rate": 0.0,
+      "gate_threshold": 0.4451301097869873,
+      "gate_within_7p5_rate": 1.0,
+      "samples": 48,
+      "state_accuracy": 1.0
+    }
+  },
+  "claim_boundary": "Simulation-only grouped direction model. P0b C6 augmentation is supplemented by physical P0d sector anchors and optional targeted off-grid training/calibration data split by base pose. P0c and P0a remain independent diagnostics. P1v2 is never loaded. Not hardware validation or closed-loop gain.",
+  "confidence_gate": 0.4451301097869873,
+  "confidence_gate_selection": {
+    "minimum_accepted_samples": 24,
+    "split": "combined P0b validation plus P0d spatial-orbit validation",
+    "target_within_7p5_rate": 0.98
+  },
+  "device": "cuda",
+  "fourier_logistic": {
+    "p0a_full_angle": {
+      "angle_error_median_deg": 3.75,
+      "angle_error_p90_deg": 11.25,
+      "angle_within_7p5_rate": 0.8194444444444444,
+      "direction_top1_accuracy": 0.4305555555555556,
+      "samples": 72,
+      "state_accuracy": 1.0
+    },
+    "p0b_test": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 7.5,
+      "angle_within_7p5_rate": 0.9722222222222222,
+      "direction_top1_accuracy": 0.8333333333333334,
+      "samples": 72,
+      "state_accuracy": 1.0
+    },
+    "p0b_val": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 7.5,
+      "angle_within_7p5_rate": 0.9722222222222222,
+      "direction_top1_accuracy": 0.6666666666666666,
+      "samples": 72,
+      "state_accuracy": 0.9861111111111112
+    },
+    "p0c_hard": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 0.750000000000064,
+      "angle_within_7p5_rate": 0.9777777777777777,
+      "direction_top1_accuracy": 0.9,
+      "samples": 90,
+      "state_accuracy": 1.0
+    },
+    "p0d_test": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 37.5,
+      "angle_within_7p5_rate": 0.7222222222222222,
+      "direction_top1_accuracy": 0.5277777777777778,
+      "samples": 72,
+      "state_accuracy": 0.9722222222222222
+    },
+    "p0d_val": {
+      "angle_error_median_deg": 0.0,
+      "angle_error_p90_deg": 172.5,
+      "angle_within_7p5_rate": 0.7777777777777778,
+      "direction_top1_accuracy": 0.5555555555555556,
+      "samples": 72,
+      "state_accuracy": 0.9722222222222222
+    }
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 3.952697268238774,
+      "val_angle_p90_deg": 165.0,
+      "val_loss": 2.961573839187622,
+      "val_state_accuracy": 0.8697916666666666
+    },
+    {
+      "epoch": 2,
+      "train_loss": 2.4148674894262245,
+      "val_angle_p90_deg": 7.921295166015625,
+      "val_loss": 2.040212467312813,
+      "val_state_accuracy": 0.9583333333333334
+    },
+    {
+      "epoch": 3,
+      "train_loss": 2.02802985685843,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.8532290533185005,
+      "val_state_accuracy": 0.96875
+    },
+    {
+      "epoch": 4,
+      "train_loss": 1.8679218689600627,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.7612720429897308,
+      "val_state_accuracy": 0.9479166666666666
+    },
+    {
+      "epoch": 5,
+      "train_loss": 1.7844092625158805,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.7222281321883202,
+      "val_state_accuracy": 0.9635416666666666
+    },
+    {
+      "epoch": 6,
+      "train_loss": 1.7137401148124978,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.6473193764686584,
+      "val_state_accuracy": 0.9791666666666666
+    },
+    {
+      "epoch": 7,
+      "train_loss": 1.685806464265894,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.6663999930024147,
+      "val_state_accuracy": 0.953125
+    },
+    {
+      "epoch": 8,
+      "train_loss": 1.659995436668396,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.598924357444048,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 9,
+      "train_loss": 1.6534750947245844,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5869776643812656,
+      "val_state_accuracy": 0.984375
+    },
+    {
+      "epoch": 10,
+      "train_loss": 1.6152011774204396,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5690893698483706,
+      "val_state_accuracy": 0.9947916666666666
+    },
+    {
+      "epoch": 11,
+      "train_loss": 1.5819410836255108,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5844706259667873,
+      "val_state_accuracy": 0.984375
+    },
+    {
+      "epoch": 12,
+      "train_loss": 1.5713416028905798,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5579521097242832,
+      "val_state_accuracy": 0.9739583333333334
+    },
+    {
+      "epoch": 13,
+      "train_loss": 1.564350719805117,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5751411654055119,
+      "val_state_accuracy": 0.984375
+    },
+    {
+      "epoch": 14,
+      "train_loss": 1.5403501413486622,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5541173107922077,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 15,
+      "train_loss": 1.5321671741980094,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.537686450406909,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 16,
+      "train_loss": 1.5230116755874068,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5644804425537586,
+      "val_state_accuracy": 0.9791666666666666
+    },
+    {
+      "epoch": 17,
+      "train_loss": 1.5092509896666915,
+      "val_angle_p90_deg": 7.180761718750018,
+      "val_loss": 1.5246856566518545,
+      "val_state_accuracy": 1.0
+    },
+    {
+      "epoch": 18,
+      "train_loss": 1.5154723502971508,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5170851964503527,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 19,
+      "train_loss": 1.5565703709920247,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5824800245463848,
+      "val_state_accuracy": 0.9739583333333334
+    },
+    {
+      "epoch": 20,
+      "train_loss": 1.5278406540552776,
+      "val_angle_p90_deg": 4.3076019287109375,
+      "val_loss": 1.5450555235147476,
+      "val_state_accuracy": 0.9739583333333334
+    },
+    {
+      "epoch": 21,
+      "train_loss": 1.5274962186813354,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5457245223224163,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 22,
+      "train_loss": 1.5305217813562464,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.548673614859581,
+      "val_state_accuracy": 0.9739583333333334
+    },
+    {
+      "epoch": 23,
+      "train_loss": 1.505121937504521,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.532810539007187,
+      "val_state_accuracy": 0.984375
+    },
+    {
+      "epoch": 24,
+      "train_loss": 1.4936038255691528,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5214395318180323,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 25,
+      "train_loss": 1.4806056508311518,
+      "val_angle_p90_deg": 4.3076019287109375,
+      "val_loss": 1.511524835601449,
+      "val_state_accuracy": 0.9947916666666666
+    },
+    {
+      "epoch": 26,
+      "train_loss": 1.4828302418744121,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.544935841113329,
+      "val_state_accuracy": 0.9791666666666666
+    },
+    {
+      "epoch": 27,
+      "train_loss": 1.5010523001352947,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5418131351470947,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 28,
+      "train_loss": 1.4852254390716553,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5177190583199263,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 29,
+      "train_loss": 1.475199235810174,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.502585917711258,
+      "val_state_accuracy": 1.0
+    },
+    {
+      "epoch": 30,
+      "train_loss": 1.4687588038267914,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5118146315217018,
+      "val_state_accuracy": 0.9947916666666666
+    },
+    {
+      "epoch": 31,
+      "train_loss": 1.4647808957982946,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5016090255230665,
+      "val_state_accuracy": 1.0
+    },
+    {
+      "epoch": 32,
+      "train_loss": 1.4659350668942486,
+      "val_angle_p90_deg": 4.3076019287109375,
+      "val_loss": 1.4999978002160788,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 33,
+      "train_loss": 1.4705748204831723,
+      "val_angle_p90_deg": 4.7549255371093775,
+      "val_loss": 1.5023451372981071,
+      "val_state_accuracy": 0.9895833333333334
+    },
+    {
+      "epoch": 34,
+      "train_loss": 1.4617377784517076,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5394399873912334,
+      "val_state_accuracy": 0.9739583333333334
+    },
+    {
+      "epoch": 35,
+      "train_loss": 1.4634449702722054,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.4946018382906914,
+      "val_state_accuracy": 0.9947916666666666
+    },
+    {
+      "epoch": 36,
+      "train_loss": 1.4601552221510146,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5080099161714315,
+      "val_state_accuracy": 0.984375
+    },
+    {
+      "epoch": 37,
+      "train_loss": 1.456994851430257,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5026503708213568,
+      "val_state_accuracy": 0.9947916666666666
+    },
+    {
+      "epoch": 38,
+      "train_loss": 1.4569408319614552,
+      "val_angle_p90_deg": 4.3076019287109375,
+      "val_loss": 1.5131554193794727,
+      "val_state_accuracy": 0.984375
+    },
+    {
+      "epoch": 39,
+      "train_loss": 1.455154056902285,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.4948103409260511,
+      "val_state_accuracy": 0.9947916666666666
+    },
+    {
+      "epoch": 40,
+      "train_loss": 1.4600782526863947,
+      "val_angle_p90_deg": 7.5,
+      "val_loss": 1.5212574303150177,
+      "val_state_accuracy": 0.9739583333333334
+    }
+  ],
+  "p0a_full_angle_examples": 72,
+  "p0b_train_examples_after_C6": 1296,
+  "p0c_hard_examples": 90,
+  "p0d_test_examples": 72,
+  "p0d_train_examples": 180,
+  "p0d_val_examples": 72,
+  "seed": 20260722,
+  "soft_direction_sigma_deg": 7.5,
+  "split_seed": 20260720,
+  "targeted_train_examples": 240,
+  "targeted_val_examples": 48,
+  "temperature": 0.25,
+  "test_examples": 72,
+  "train_examples_after_C6": 1716,
+  "updated_utc": "2026-07-11T05:04:26.395841+00:00",
+  "val_examples": 72
+}

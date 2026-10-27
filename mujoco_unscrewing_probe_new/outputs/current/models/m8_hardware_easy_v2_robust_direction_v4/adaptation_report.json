@@ -1,0 +1,816 @@
+{
+  "aps_quantile": 0.9786980152130127,
+  "base_contract_sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a",
+  "base_model_root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/p1v3_m8_direction_models",
+  "calibration_metrics": {
+    "easy_calibration": {
+      "angle_error_median_deg": 1.7051212194350853,
+      "angle_error_p90_deg": 4.016265414647944,
+      "angle_within_7p5_rate": 0.9770114942528736,
+      "aps_coverage": 0.9885057471264368,
+      "aps_mean_set_size": 2.689655172413793,
+      "samples": 87,
+      "transport_accept_rate": 0.9540229885057471,
+      "transport_accepted_catastrophic_gt90_count": 0,
+      "transport_accepted_count": 83,
+      "transport_accepted_within_7p5_rate": 0.9759036144578314
+    },
+    "strict_calibration": {
+      "angle_error_median_deg": 0.9697410584792578,
+      "angle_error_p90_deg": 3.175411010850665,
+      "angle_within_7p5_rate": 0.9919354838709677,
+      "aps_coverage": 1.0,
+      "aps_mean_set_size": 2.7016129032258065,
+      "samples": 248,
+      "transport_accept_rate": 0.9516129032258065,
+      "transport_accepted_catastrophic_gt90_count": 0,
+      "transport_accepted_count": 236,
+      "transport_accepted_within_7p5_rate": 1.0
+    }
+  },
+  "claim_boundary": "Simulation-only hardware-easy-v2 contact-geometry adaptation with frozen strict replay. It is not real-hardware fine-tuning, calibrated Bota sensing, FDM compliance, or full-loop evidence.",
+  "device": "cuda",
+  "easy_dataset": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/m8_hardware_easy_v2_direction_training",
+  "easy_sampling_contract_sha256": "6672d9f415a6f4263b2066a6f896337ad6ebad7d00c3696d9ef3572e34b68b2d",
+  "previously_untouched_development_datasets_consumed": [
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_hardware_easy_v2_fresh_strict_untouched",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_hardware_easy_v2_fresh2_strict_untouched",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_hardware_easy_v2_fresh_easy_untouched",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_hardware_easy_v2_fresh2_easy_untouched"
+  ],
+  "seeds": [
+    {
+      "adaptation_mode": "tail",
+      "base_checkpoint": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+      "base_checkpoint_sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92",
+      "best_epoch": 10,
+      "checkpoint_sha256": "5b57f3905d5bea354ca32b3da51768b0cd6d8043603bb76e18159b35fa03567b",
+      "easy_weight": 0.6,
+      "encoder_and_shared_frozen": false,
+      "history": [
+        {
+          "easy_calibration_loss": 1.836463212966919,
+          "epoch": 1,
+          "strict_calibration_loss": 1.6192666292190552,
+          "train_loss": 2.056797089676062,
+          "worst_domain_loss": 1.836463212966919
+        },
+        {
+          "easy_calibration_loss": 1.7419335842132568,
+          "epoch": 2,
+          "strict_calibration_loss": 1.4878000020980835,
+          "train_loss": 1.5030171101291974,
+          "worst_domain_loss": 1.7419335842132568
+        },
+        {
+          "easy_calibration_loss": 1.710087537765503,
+          "epoch": 3,
+          "strict_calibration_loss": 1.4501025676727295,
+          "train_loss": 1.3894045402606328,
+          "worst_domain_loss": 1.710087537765503
+        },
+        {
+          "easy_calibration_loss": 1.6855154037475586,
+          "epoch": 4,
+          "strict_calibration_loss": 1.4139671325683594,
+          "train_loss": 1.3385278234879177,
+          "worst_domain_loss": 1.6855154037475586
+        },
+        {
+          "easy_calibration_loss": 1.6834548711776733,
+          "epoch": 5,
+          "strict_calibration_loss": 1.3798400163650513,
+          "train_loss": 1.3070454845825832,
+          "worst_domain_loss": 1.6834548711776733
+        },
+        {
+          "easy_calibration_loss": 1.704154372215271,
+          "epoch": 6,
+          "strict_calibration_loss": 1.3658843040466309,
+          "train_loss": 1.2830807169278462,
+          "worst_domain_loss": 1.704154372215271
+        },
+        {
+          "easy_calibration_loss": 1.7050726413726807,
+          "epoch": 7,
+          "strict_calibration_loss": 1.353835940361023,
+          "train_loss": 1.2713733191291492,
+          "worst_domain_loss": 1.7050726413726807
+        },
+        {
+          "easy_calibration_loss": 1.6790133714675903,
+          "epoch": 8,
+          "strict_calibration_loss": 1.353341817855835,
+          "train_loss": 1.2595242833097775,
+          "worst_domain_loss": 1.6790133714675903
+        },
+        {
+          "easy_calibration_loss": 1.728961706161499,
+          "epoch": 9,
+          "strict_calibration_loss": 1.3398158550262451,
+          "train_loss": 1.2469510262211163,
+          "worst_domain_loss": 1.728961706161499
+        },
+        {
+          "easy_calibration_loss": 1.6633222103118896,
+          "epoch": 10,
+          "strict_calibration_loss": 1.3523434400558472,
+          "train_loss": 1.2407922173539798,
+          "worst_domain_loss": 1.6633222103118896
+        },
+        {
+          "easy_calibration_loss": 1.6806766986846924,
+          "epoch": 11,
+          "strict_calibration_loss": 1.3331756591796875,
+          "train_loss": 1.2393666580319405,
+          "worst_domain_loss": 1.6806766986846924
+        },
+        {
+          "easy_calibration_loss": 1.6748464107513428,
+          "epoch": 12,
+          "strict_calibration_loss": 1.332815170288086,
+          "train_loss": 1.2320689956347148,
+          "worst_domain_loss": 1.6748464107513428
+        },
+        {
+          "easy_calibration_loss": 1.6841778755187988,
+          "epoch": 13,
+          "strict_calibration_loss": 1.3321233987808228,
+          "train_loss": 1.2277575855453808,
+          "worst_domain_loss": 1.6841778755187988
+        },
+        {
+          "easy_calibration_loss": 1.6814013719558716,
+          "epoch": 14,
+          "strict_calibration_loss": 1.3300853967666626,
+          "train_loss": 1.2253233691056569,
+          "worst_domain_loss": 1.6814013719558716
+        },
+        {
+          "easy_calibration_loss": 1.7137566804885864,
+          "epoch": 15,
+          "strict_calibration_loss": 1.326661229133606,
+          "train_loss": 1.2212197730938594,
+          "worst_domain_loss": 1.7137566804885864
+        },
+        {
+          "easy_calibration_loss": 1.7196221351623535,
+          "epoch": 16,
+          "strict_calibration_loss": 1.330413579940796,
+          "train_loss": 1.2202315603693326,
+          "worst_domain_loss": 1.7196221351623535
+        },
+        {
+          "easy_calibration_loss": 1.7076696157455444,
+          "epoch": 17,
+          "strict_calibration_loss": 1.3253073692321777,
+          "train_loss": 1.2180469433466594,
+          "worst_domain_loss": 1.7076696157455444
+        },
+        {
+          "easy_calibration_loss": 1.681279182434082,
+          "epoch": 18,
+          "strict_calibration_loss": 1.3276283740997314,
+          "train_loss": 1.2167854284246762,
+          "worst_domain_loss": 1.681279182434082
+        },
+        {
+          "easy_calibration_loss": 1.6976099014282227,
+          "epoch": 19,
+          "strict_calibration_loss": 1.324636459350586,
+          "train_loss": 1.2146949991583824,
+          "worst_domain_loss": 1.6976099014282227
+        },
+        {
+          "easy_calibration_loss": 1.7120743989944458,
+          "epoch": 20,
+          "strict_calibration_loss": 1.3222318887710571,
+          "train_loss": 1.2127776965498924,
+          "worst_domain_loss": 1.7120743989944458
+        },
+        {
+          "easy_calibration_loss": 1.7225396633148193,
+          "epoch": 21,
+          "strict_calibration_loss": 1.3212347030639648,
+          "train_loss": 1.2119820912679036,
+          "worst_domain_loss": 1.7225396633148193
+        },
+        {
+          "easy_calibration_loss": 1.7148354053497314,
+          "epoch": 22,
+          "strict_calibration_loss": 1.3214280605316162,
+          "train_loss": 1.2108973090847333,
+          "worst_domain_loss": 1.7148354053497314
+        },
+        {
+          "easy_calibration_loss": 1.732190489768982,
+          "epoch": 23,
+          "strict_calibration_loss": 1.3175619840621948,
+          "train_loss": 1.2099843919277191,
+          "worst_domain_loss": 1.732190489768982
+        },
+        {
+          "easy_calibration_loss": 1.7466624975204468,
+          "epoch": 24,
+          "strict_calibration_loss": 1.3180521726608276,
+          "train_loss": 1.2090819006164868,
+          "worst_domain_loss": 1.7466624975204468
+        },
+        {
+          "easy_calibration_loss": 1.7570796012878418,
+          "epoch": 25,
+          "strict_calibration_loss": 1.3219188451766968,
+          "train_loss": 1.207847294708093,
+          "worst_domain_loss": 1.7570796012878418
+        },
+        {
+          "easy_calibration_loss": 1.7440567016601562,
+          "epoch": 26,
+          "strict_calibration_loss": 1.3204680681228638,
+          "train_loss": 1.2076621030767758,
+          "worst_domain_loss": 1.7440567016601562
+        },
+        {
+          "easy_calibration_loss": 1.7388882637023926,
+          "epoch": 27,
+          "strict_calibration_loss": 1.3201913833618164,
+          "train_loss": 1.2070389439662297,
+          "worst_domain_loss": 1.7388882637023926
+        },
+        {
+          "easy_calibration_loss": 1.7335063219070435,
+          "epoch": 28,
+          "strict_calibration_loss": 1.3185924291610718,
+          "train_loss": 1.2067772820591927,
+          "worst_domain_loss": 1.7335063219070435
+        },
+        {
+          "easy_calibration_loss": 1.7578847408294678,
+          "epoch": 29,
+          "strict_calibration_loss": 1.3189239501953125,
+          "train_loss": 1.2061179826656978,
+          "worst_domain_loss": 1.7578847408294678
+        },
+        {
+          "easy_calibration_loss": 1.7666215896606445,
+          "epoch": 30,
+          "strict_calibration_loss": 1.3201944828033447,
+          "train_loss": 1.205421547094981,
+          "worst_domain_loss": 1.7666215896606445
+        }
+      ],
+      "l2sp": 0.01,
+      "seed": 20260720,
+      "stage": "M8_hardware_easy_v2_strict_replay_adaptation",
+      "strict_replay_weight": 0.4,
+      "temperature": 0.3136502504348755,
+      "trainable_parameter_count": 392819,
+      "trainable_parameter_names": [
+        "encoder.8.weight",
+        "encoder.8.bias",
+        "shared.0.weight",
+        "shared.0.bias",
+        "state_head.weight",
+        "state_head.bias",
+        "direction_head.weight",
+        "direction_head.bias"
+      ],
+      "updated_utc": "2026-07-21T08:02:06.361514+00:00"
+    },
+    {
+      "adaptation_mode": "tail",
+      "base_checkpoint": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+      "base_checkpoint_sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6",
+      "best_epoch": 17,
+      "checkpoint_sha256": "8af052cdcdb3858dded85bfd1a9b24b5b8cf07f8d34024869eb942c33b0b8b46",
+      "easy_weight": 0.6,
+      "encoder_and_shared_frozen": false,
+      "history": [
+        {
+          "easy_calibration_loss": 1.8690845966339111,
+          "epoch": 1,
+          "strict_calibration_loss": 1.583341121673584,
+          "train_loss": 2.488997300465902,
+          "worst_domain_loss": 1.8690845966339111
+        },
+        {
+          "easy_calibration_loss": 1.7217985391616821,
+          "epoch": 2,
+          "strict_calibration_loss": 1.4661743640899658,
+          "train_loss": 1.551202970246474,
+          "worst_domain_loss": 1.7217985391616821
+        },
+        {
+          "easy_calibration_loss": 1.6950769424438477,
+          "epoch": 3,
+          "strict_calibration_loss": 1.4146004915237427,
+          "train_loss": 1.4092888906598091,
+          "worst_domain_loss": 1.6950769424438477
+        },
+        {
+          "easy_calibration_loss": 1.6647546291351318,
+          "epoch": 4,
+          "strict_calibration_loss": 1.3895641565322876,
+          "train_loss": 1.3331712186336517,
+          "worst_domain_loss": 1.6647546291351318
+        },
+        {
+          "easy_calibration_loss": 1.6667914390563965,
+          "epoch": 5,
+          "strict_calibration_loss": 1.3548709154129028,
+          "train_loss": 1.306386296947797,
+          "worst_domain_loss": 1.6667914390563965
+        },
+        {
+          "easy_calibration_loss": 1.6295433044433594,
+          "epoch": 6,
+          "strict_calibration_loss": 1.3480138778686523,
+          "train_loss": 1.2806965683897336,
+          "worst_domain_loss": 1.6295433044433594
+        },
+        {
+          "easy_calibration_loss": 1.6025590896606445,
+          "epoch": 7,
+          "strict_calibration_loss": 1.3412590026855469,
+          "train_loss": 1.2625256702303886,
+          "worst_domain_loss": 1.6025590896606445
+        },
+        {
+          "easy_calibration_loss": 1.5825828313827515,
+          "epoch": 8,
+          "strict_calibration_loss": 1.3358780145645142,
+          "train_loss": 1.2507557173569996,
+          "worst_domain_loss": 1.5825828313827515
+        },
+        {
+          "easy_calibration_loss": 1.5806910991668701,
+          "epoch": 9,
+          "strict_calibration_loss": 1.32871675491333,
+          "train_loss": 1.2437127530574799,
+          "worst_domain_loss": 1.5806910991668701
+        },
+        {
+          "easy_calibration_loss": 1.605563998222351,
+          "epoch": 10,
+          "strict_calibration_loss": 1.3237298727035522,
+          "train_loss": 1.2353781163692474,
+          "worst_domain_loss": 1.605563998222351
+        },
+        {
+          "easy_calibration_loss": 1.5707592964172363,
+          "epoch": 11,
+          "strict_calibration_loss": 1.3248740434646606,
+          "train_loss": 1.2312992413838704,
+          "worst_domain_loss": 1.5707592964172363
+        },
+        {
+          "easy_calibration_loss": 1.58140230178833,
+          "epoch": 12,
+          "strict_calibration_loss": 1.3237029314041138,
+          "train_loss": 1.2263191565871239,
+          "worst_domain_loss": 1.58140230178833
+        },
+        {
+          "easy_calibration_loss": 1.589632511138916,
+          "epoch": 13,
+          "strict_calibration_loss": 1.3170254230499268,
+          "train_loss": 1.2239021981755893,
+          "worst_domain_loss": 1.589632511138916
+        },
+        {
+          "easy_calibration_loss": 1.5655103921890259,
+          "epoch": 14,
+          "strict_calibration_loss": 1.3242250680923462,
+          "train_loss": 1.2213142092029254,
+          "worst_domain_loss": 1.5655103921890259
+        },
+        {
+          "easy_calibration_loss": 1.5973008871078491,
+          "epoch": 15,
+          "strict_calibration_loss": 1.315862774848938,
+          "train_loss": 1.219081940750281,
+          "worst_domain_loss": 1.5973008871078491
+        },
+        {
+          "easy_calibration_loss": 1.5795247554779053,
+          "epoch": 16,
+          "strict_calibration_loss": 1.318091630935669,
+          "train_loss": 1.2165708094835281,
+          "worst_domain_loss": 1.5795247554779053
+        },
+        {
+          "easy_calibration_loss": 1.5534824132919312,
+          "epoch": 17,
+          "strict_calibration_loss": 1.316069483757019,
+          "train_loss": 1.215602179368337,
+          "worst_domain_loss": 1.5534824132919312
+        },
+        {
+          "easy_calibration_loss": 1.5868905782699585,
+          "epoch": 18,
+          "strict_calibration_loss": 1.310929298400879,
+          "train_loss": 1.21344505995512,
+          "worst_domain_loss": 1.5868905782699585
+        },
+        {
+          "easy_calibration_loss": 1.5969197750091553,
+          "epoch": 19,
+          "strict_calibration_loss": 1.3118598461151123,
+          "train_loss": 1.2124800210197766,
+          "worst_domain_loss": 1.5969197750091553
+        },
+        {
+          "easy_calibration_loss": 1.602445125579834,
+          "epoch": 20,
+          "strict_calibration_loss": 1.304889440536499,
+          "train_loss": 1.2109246030449867,
+          "worst_domain_loss": 1.602445125579834
+        },
+        {
+          "easy_calibration_loss": 1.6073987483978271,
+          "epoch": 21,
+          "strict_calibration_loss": 1.305150032043457,
+          "train_loss": 1.2095251306891441,
+          "worst_domain_loss": 1.6073987483978271
+        },
+        {
+          "easy_calibration_loss": 1.5885982513427734,
+          "epoch": 22,
+          "strict_calibration_loss": 1.309430718421936,
+          "train_loss": 1.2085007404287655,
+          "worst_domain_loss": 1.5885982513427734
+        },
+        {
+          "easy_calibration_loss": 1.5701403617858887,
+          "epoch": 23,
+          "strict_calibration_loss": 1.3120650053024292,
+          "train_loss": 1.2083632772167523,
+          "worst_domain_loss": 1.5701403617858887
+        },
+        {
+          "easy_calibration_loss": 1.5918958187103271,
+          "epoch": 24,
+          "strict_calibration_loss": 1.3031049966812134,
+          "train_loss": 1.2076469982663791,
+          "worst_domain_loss": 1.5918958187103271
+        },
+        {
+          "easy_calibration_loss": 1.597251057624817,
+          "epoch": 25,
+          "strict_calibration_loss": 1.3067680597305298,
+          "train_loss": 1.2068908388415973,
+          "worst_domain_loss": 1.597251057624817
+        },
+        {
+          "easy_calibration_loss": 1.6040120124816895,
+          "epoch": 26,
+          "strict_calibration_loss": 1.3056622743606567,
+          "train_loss": 1.2057329590121906,
+          "worst_domain_loss": 1.6040120124816895
+        },
+        {
+          "easy_calibration_loss": 1.5903791189193726,
+          "epoch": 27,
+          "strict_calibration_loss": 1.302581787109375,
+          "train_loss": 1.2054776350657146,
+          "worst_domain_loss": 1.5903791189193726
+        },
+        {
+          "easy_calibration_loss": 1.5855646133422852,
+          "epoch": 28,
+          "strict_calibration_loss": 1.3061577081680298,
+          "train_loss": 1.2048358842730522,
+          "worst_domain_loss": 1.5855646133422852
+        },
+        {
+          "easy_calibration_loss": 1.5997159481048584,
+          "epoch": 29,
+          "strict_calibration_loss": 1.3043559789657593,
+          "train_loss": 1.204676941037178,
+          "worst_domain_loss": 1.5997159481048584
+        },
+        {
+          "easy_calibration_loss": 1.608743667602539,
+          "epoch": 30,
+          "strict_calibration_loss": 1.302876591682434,
+          "train_loss": 1.2038033331433933,
+          "worst_domain_loss": 1.608743667602539
+        },
+        {
+          "easy_calibration_loss": 1.6263532638549805,
+          "epoch": 31,
+          "strict_calibration_loss": 1.3029178380966187,
+          "train_loss": 1.2035963063438733,
+          "worst_domain_loss": 1.6263532638549805
+        },
+        {
+          "easy_calibration_loss": 1.6036282777786255,
+          "epoch": 32,
+          "strict_calibration_loss": 1.3073588609695435,
+          "train_loss": 1.203144758939743,
+          "worst_domain_loss": 1.6036282777786255
+        },
+        {
+          "easy_calibration_loss": 1.62525475025177,
+          "epoch": 33,
+          "strict_calibration_loss": 1.3045293092727661,
+          "train_loss": 1.2028811102112134,
+          "worst_domain_loss": 1.62525475025177
+        },
+        {
+          "easy_calibration_loss": 1.6092629432678223,
+          "epoch": 34,
+          "strict_calibration_loss": 1.3010737895965576,
+          "train_loss": 1.2025746976335843,
+          "worst_domain_loss": 1.6092629432678223
+        },
+        {
+          "easy_calibration_loss": 1.6169594526290894,
+          "epoch": 35,
+          "strict_calibration_loss": 1.2983695268630981,
+          "train_loss": 1.2022311588128407,
+          "worst_domain_loss": 1.6169594526290894
+        },
+        {
+          "easy_calibration_loss": 1.6370140314102173,
+          "epoch": 36,
+          "strict_calibration_loss": 1.3019767999649048,
+          "train_loss": 1.2019587258497875,
+          "worst_domain_loss": 1.6370140314102173
+        },
+        {
+          "easy_calibration_loss": 1.6020749807357788,
+          "epoch": 37,
+          "strict_calibration_loss": 1.3064402341842651,
+          "train_loss": 1.2020147666335106,
+          "worst_domain_loss": 1.6020749807357788
+        }
+      ],
+      "l2sp": 0.01,
+      "seed": 20260721,
+      "stage": "M8_hardware_easy_v2_strict_replay_adaptation",
+      "strict_replay_weight": 0.4,
+      "temperature": 0.26661697030067444,
+      "trainable_parameter_count": 392819,
+      "trainable_parameter_names": [
+        "encoder.8.weight",
+        "encoder.8.bias",
+        "shared.0.weight",
+        "shared.0.bias",
+        "state_head.weight",
+        "state_head.bias",
+        "direction_head.weight",
+        "direction_head.bias"
+      ],
+      "updated_utc": "2026-07-21T08:02:15.670836+00:00"
+    },
+    {
+      "adaptation_mode": "tail",
+      "base_checkpoint": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+      "base_checkpoint_sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c",
+      "best_epoch": 10,
+      "checkpoint_sha256": "64cd4532866726d76ebc5685f55643f8d32bac1b9d6ecead7ccd3e5c37e008e1",
+      "easy_weight": 0.6,
+      "encoder_and_shared_frozen": false,
+      "history": [
+        {
+          "easy_calibration_loss": 1.8480528593063354,
+          "epoch": 1,
+          "strict_calibration_loss": 1.5421100854873657,
+          "train_loss": 2.1755348965525627,
+          "worst_domain_loss": 1.8480528593063354
+        },
+        {
+          "easy_calibration_loss": 1.7506145238876343,
+          "epoch": 2,
+          "strict_calibration_loss": 1.4671963453292847,
+          "train_loss": 1.5051235457261403,
+          "worst_domain_loss": 1.7506145238876343
+        },
+        {
+          "easy_calibration_loss": 1.7164050340652466,
+          "epoch": 3,
+          "strict_calibration_loss": 1.4162293672561646,
+          "train_loss": 1.3755164022246997,
+          "worst_domain_loss": 1.7164050340652466
+        },
+        {
+          "easy_calibration_loss": 1.6704171895980835,
+          "epoch": 4,
+          "strict_calibration_loss": 1.3949038982391357,
+          "train_loss": 1.3255372618635495,
+          "worst_domain_loss": 1.6704171895980835
+        },
+        {
+          "easy_calibration_loss": 1.6647971868515015,
+          "epoch": 5,
+          "strict_calibration_loss": 1.3775521516799927,
+          "train_loss": 1.2913442899783452,
+          "worst_domain_loss": 1.6647971868515015
+        },
+        {
+          "easy_calibration_loss": 1.707775592803955,
+          "epoch": 6,
+          "strict_calibration_loss": 1.36195707321167,
+          "train_loss": 1.2707871024807293,
+          "worst_domain_loss": 1.707775592803955
+        },
+        {
+          "easy_calibration_loss": 1.655792236328125,
+          "epoch": 7,
+          "strict_calibration_loss": 1.3549190759658813,
+          "train_loss": 1.2556850140293438,
+          "worst_domain_loss": 1.655792236328125
+        },
+        {
+          "easy_calibration_loss": 1.6504967212677002,
+          "epoch": 8,
+          "strict_calibration_loss": 1.3499565124511719,
+          "train_loss": 1.248140588402748,
+          "worst_domain_loss": 1.6504967212677002
+        },
+        {
+          "easy_calibration_loss": 1.6538594961166382,
+          "epoch": 9,
+          "strict_calibration_loss": 1.3446862697601318,
+          "train_loss": 1.2401393751303356,
+          "worst_domain_loss": 1.6538594961166382
+        },
+        {
+          "easy_calibration_loss": 1.6414515972137451,
+          "epoch": 10,
+          "strict_calibration_loss": 1.3440214395523071,
+          "train_loss": 1.232784164448579,
+          "worst_domain_loss": 1.6414515972137451
+        },
+        {
+          "easy_calibration_loss": 1.646929383277893,
+          "epoch": 11,
+          "strict_calibration_loss": 1.3430523872375488,
+          "train_loss": 1.2295119737585385,
+          "worst_domain_loss": 1.646929383277893
+        },
+        {
+          "easy_calibration_loss": 1.6536844968795776,
+          "epoch": 12,
+          "strict_calibration_loss": 1.341822624206543,
+          "train_loss": 1.2243720466891925,
+          "worst_domain_loss": 1.6536844968795776
+        },
+        {
+          "easy_calibration_loss": 1.652463674545288,
+          "epoch": 13,
+          "strict_calibration_loss": 1.3433393239974976,
+          "train_loss": 1.222824640572071,
+          "worst_domain_loss": 1.652463674545288
+        },
+        {
+          "easy_calibration_loss": 1.6548640727996826,
+          "epoch": 14,
+          "strict_calibration_loss": 1.3426703214645386,
+          "train_loss": 1.2198723554611206,
+          "worst_domain_loss": 1.6548640727996826
+        },
+        {
+          "easy_calibration_loss": 1.6552085876464844,
+          "epoch": 15,
+          "strict_calibration_loss": 1.343436598777771,
+          "train_loss": 1.2174469083547592,
+          "worst_domain_loss": 1.6552085876464844
+        },
+        {
+          "easy_calibration_loss": 1.6576898097991943,
+          "epoch": 16,
+          "strict_calibration_loss": 1.3375660181045532,
+          "train_loss": 1.2153425713380177,
+          "worst_domain_loss": 1.6576898097991943
+        },
+        {
+          "easy_calibration_loss": 1.6521341800689697,
+          "epoch": 17,
+          "strict_calibration_loss": 1.339707612991333,
+          "train_loss": 1.2142658109466236,
+          "worst_domain_loss": 1.6521341800689697
+        },
+        {
+          "easy_calibration_loss": 1.6587979793548584,
+          "epoch": 18,
+          "strict_calibration_loss": 1.3350580930709839,
+          "train_loss": 1.2127408981323242,
+          "worst_domain_loss": 1.6587979793548584
+        },
+        {
+          "easy_calibration_loss": 1.6651325225830078,
+          "epoch": 19,
+          "strict_calibration_loss": 1.3417116403579712,
+          "train_loss": 1.2110930507381756,
+          "worst_domain_loss": 1.6651325225830078
+        },
+        {
+          "easy_calibration_loss": 1.6675366163253784,
+          "epoch": 20,
+          "strict_calibration_loss": 1.3370622396469116,
+          "train_loss": 1.2098771731058757,
+          "worst_domain_loss": 1.6675366163253784
+        },
+        {
+          "easy_calibration_loss": 1.6724231243133545,
+          "epoch": 21,
+          "strict_calibration_loss": 1.3394538164138794,
+          "train_loss": 1.2094621707995732,
+          "worst_domain_loss": 1.6724231243133545
+        },
+        {
+          "easy_calibration_loss": 1.6657241582870483,
+          "epoch": 22,
+          "strict_calibration_loss": 1.3404089212417603,
+          "train_loss": 1.208710454404354,
+          "worst_domain_loss": 1.6657241582870483
+        },
+        {
+          "easy_calibration_loss": 1.6700773239135742,
+          "epoch": 23,
+          "strict_calibration_loss": 1.3377702236175537,
+          "train_loss": 1.2074605996410053,
+          "worst_domain_loss": 1.6700773239135742
+        },
+        {
+          "easy_calibration_loss": 1.670829176902771,
+          "epoch": 24,
+          "strict_calibration_loss": 1.3372479677200317,
+          "train_loss": 1.2068241387605667,
+          "worst_domain_loss": 1.670829176902771
+        },
+        {
+          "easy_calibration_loss": 1.681222915649414,
+          "epoch": 25,
+          "strict_calibration_loss": 1.3368465900421143,
+          "train_loss": 1.2065057133634884,
+          "worst_domain_loss": 1.681222915649414
+        },
+        {
+          "easy_calibration_loss": 1.682207465171814,
+          "epoch": 26,
+          "strict_calibration_loss": 1.3360601663589478,
+          "train_loss": 1.2057999670505524,
+          "worst_domain_loss": 1.682207465171814
+        },
+        {
+          "easy_calibration_loss": 1.6793186664581299,
+          "epoch": 27,
+          "strict_calibration_loss": 1.3360016345977783,
+          "train_loss": 1.205187203983466,
+          "worst_domain_loss": 1.6793186664581299
+        },
+        {
+          "easy_calibration_loss": 1.6886487007141113,
+          "epoch": 28,
+          "strict_calibration_loss": 1.3398246765136719,
+          "train_loss": 1.2047888959447544,
+          "worst_domain_loss": 1.6886487007141113
+        },
+        {
+          "easy_calibration_loss": 1.6772568225860596,
+          "epoch": 29,
+          "strict_calibration_loss": 1.3366162776947021,
+          "train_loss": 1.2045108700791995,
+          "worst_domain_loss": 1.6772568225860596
+        },
+        {
+          "easy_calibration_loss": 1.6829136610031128,
+          "epoch": 30,
+          "strict_calibration_loss": 1.339800477027893,
+          "train_loss": 1.2040137847264607,
+          "worst_domain_loss": 1.6829136610031128
+        }
+      ],
+      "l2sp": 0.01,
+      "seed": 20260722,
+      "stage": "M8_hardware_easy_v2_strict_replay_adaptation",
+      "strict_replay_weight": 0.4,
+      "temperature": 0.31941667199134827,
+      "trainable_parameter_count": 392819,
+      "trainable_parameter_names": [
+        "encoder.8.weight",
+        "encoder.8.bias",
+        "shared.0.weight",
+        "shared.0.bias",
+        "state_head.weight",
+        "state_head.bias",
+        "direction_head.weight",
+        "direction_head.bias"
+      ],
+      "updated_utc": "2026-07-21T08:02:24.412491+00:00"
+    }
+  ],
+  "split_manifest_sha256": "af783613f8a05f8cff7314db8fdb2558f99fe3a2965d758dbb330bc582f97c57",
+  "stage": "M8_hardware_easy_v2_strict_replay_adaptation",
+  "structured_transport_gate": {
+    "max_aps_set_size": 3,
+    "max_ensemble_top1_span_deg": 7.5,
+    "min_circular_concentration": 0.0,
+    "min_max_probability": 0.0
+  },
+  "test_samples_seen": 0,
+  "updated_utc": "2026-07-21T08:02:24.466922+00:00"
+}

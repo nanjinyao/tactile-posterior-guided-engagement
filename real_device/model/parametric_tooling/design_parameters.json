@@ -1,0 +1,226 @@
+{
+  "design_revision": "v1.5-integrated-flange-tools-yaw-datum",
+  "coordinate_system": {
+    "sensor_mating_plane_z_mm": 0.0,
+    "tool_axis": "-Z",
+    "socket_base_axis": "+Z",
+    "socket_selected_hex_flat_normal_deg": 0.0,
+    "integrated_peg_selected_hex_flat_normal_deg": 45.0,
+    "flange_reference_tangent_normal_deg": 45.0,
+    "positive_yaw_definition": "right-handed rotation about canonical +Z",
+    "view_note": "When viewed from the peg tip toward the flange (looking along +Z), positive right-handed yaw appears clockwise.",
+    "hex_equivalent_period_deg": 60.0
+  },
+  "tool_reference": {
+    "blue_sensor_plane_to_tip_mm": 42.0,
+    "blue_flange_thickness_mm": 8.0,
+    "blue_tool_face_to_tip_mm": 34.0,
+    "note": "The ATI measurement origin is above this plane and must be measured after the white flange is included."
+  },
+  "integrated_tool": {
+    "architecture": "one-piece blue flange, short rigid root, and size-specific hex peg",
+    "swap_method": "manually unbolt and replace the complete flange-tool",
+    "separate_receiver": false,
+    "separate_cartridge": false,
+    "separate_retaining_clip": false,
+    "root_flange_diameter_mm": 44.0,
+    "root_boss_diameter_mm": 36.0,
+    "root_first_taper_length_mm": 3.0,
+    "root_boss_length_mm": 7.0,
+    "load_cone_lower_diameter_mm": 16.2,
+    "load_cone_length_mm": 6.5,
+    "lower_collar_length_mm": 0.5,
+    "note": "The root is solid and self-supporting when the sensor-side flange face is placed on the build plate. All three tools keep the same Z=-42 mm tip datum."
+  },
+  "retired_quick_change_v1_3": {
+    "status": "retired_after_first_physical_print_2026-07-21",
+    "archive": "archive/v1_3_quick_change_2026-07-21",
+    "reason": "The split cartridge shoulders required support and printed poorly; manual whole-flange exchange is simpler and removes receiver, fit, and clip uncertainty.",
+    "legacy_quick_change_radial_clearances_mm": [0.05, 0.075, 0.1, 0.125, 0.15],
+    "legacy_receiver_parameters": {
+    "boss_outer_diameter_mm": 40.0,
+    "boss_length_below_blue_flange_mm": 10.0,
+    "root_gusset_outer_diameter_mm": 44.0,
+    "root_gusset_height_mm": 2.0,
+    "female_hex_working_af_mm": 16.2,
+    "female_hex_entry_af_mm": 16.7,
+    "female_hex_total_depth_mm": 8.3,
+    "female_hex_entry_depth_mm": 2.0,
+    "male_hex_working_af_mm": 16.0,
+    "male_hex_lead_af_mm": 15.5,
+    "male_hex_length_mm": 8.0,
+    "male_hex_lead_length_mm": 2.0,
+    "shoulder_diameter_mm": 36.0,
+    "shoulder_thickness_mm": 4.0,
+    "local_interference_ribs": {
+      "count": 3,
+      "protrusion_mm": 0.15,
+      "tangential_width_mm": 1.0,
+      "axial_length_mm": 1.8,
+      "end_ramp_mm": 0.2,
+      "effective_nominal_interference_per_rib_mm": 0.05,
+      "note": "Three short sacrificial FDM ribs remove play; they are not the positive retention feature."
+    },
+    "tool_free_retaining_clip": {
+      "groove_center_above_seat_mm": 4.2,
+      "groove_axial_height_mm": 3.4,
+      "groove_neck_diameter_mm": 13.0,
+      "clip_thickness_mm": 3.0,
+      "clip_prong_inner_gap_mm": 13.4,
+      "clip_prong_width_mm": 5.0,
+      "clip_tip_x_mm": -14.0,
+      "clip_bridge_start_x_mm": 12.0,
+      "clip_bridge_end_x_mm": 20.5,
+      "clip_handle_end_x_mm": 31.0,
+      "clip_handle_width_mm": 16.0,
+      "clip_tether_hole_diameter_mm": 4.0,
+      "receiver_channel_xy_clearance_per_side_mm": 0.2,
+      "receiver_channel_axial_clearance_per_side_mm": 0.25,
+      "detent_x_mm": -11.0,
+      "detent_bump_radius_mm": 0.35,
+      "detent_pocket_radius_mm": 0.7,
+      "detent_nominal_snap_mm": 0.15,
+      "recommended_material": "PETG or unfilled PA; print the clip flat and keep spare clips",
+      "note": "The U-clip is a positive pull-out stop. The rigid shoulder remains the only Z/tilt datum."
+    }
+    }
+  },
+  "peg": {
+    "flange_relative_yaw_deg": -15.0,
+    "yaw_alignment_reference": "Rotate the complete hex peg from the legacy +X-flat construction so that one selected flat normal is +45 deg in the pink-flange CAD frame, parallel to the B/C tangent datum on the central R36 outer cylindrical surface.",
+    "cad_flat_normal_tolerance_deg": 0.05,
+    "physical_flat_parallelism_acceptance_deg": 1.0,
+    "uniform_contact_length_mm": 13.0,
+    "reinforcement_transition_length_mm": 4.0,
+    "reinforcement_upper_af_mm": 14.0,
+    "root_collar_diameter_mm": 16.0,
+    "tip_geometry_profiles": {
+      "simulation_exact": {
+        "purpose": "strict source control; use bit_tip_scale and bit_tip_chamfer_m from each MuJoCo source JSON",
+        "source_controlled": true
+      },
+      "hardware_easy_v2": {
+        "purpose": "recommended physical FDM tip; a visible 45-degree chamfer paired with the hardware-easy-v2 socket funnel",
+        "source_controlled": false,
+        "tip_chamfer_radial_setback_mm": {
+          "m8": 0.60,
+          "m10": 0.80,
+          "m12": 1.00
+        },
+        "tip_chamfer_axial_length_mm": {
+          "m8": 0.60,
+          "m10": 0.80,
+          "m12": 1.00
+        },
+        "claim_boundary": "The chamfer expands the geometric guiding region but does not guarantee capture under friction, tilt, burrs, or multi-point contact. Hardware-specific simulation and terminal-gate retuning are required."
+      }
+    },
+    "recommended_hardware_tip_profile": "hardware_easy_v2"
+  },
+  "socket_base": {
+    "size_x_mm": 150.0,
+    "size_y_mm": 70.0,
+    "plate_thickness_mm": 18.0,
+    "plate_top_z_mm": -12.0,
+    "corner_radius_mm": 6.0,
+    "socket_centers_mm": {
+      "m8": [-45.0, 0.0],
+      "m10": [0.0, 0.0],
+      "m12": [45.0, 0.0]
+    },
+    "socket_top_z_mm": 0.0,
+    "support_neck_diameter_mm": {
+      "m8": 10.0,
+      "m10": 13.0,
+      "m12": 16.0
+    },
+    "center_through_hole_diameter_mm": 0.5,
+    "center_through_hole_final_body_cut": true,
+    "exterior_vertical_ribs": {
+      "enabled": true,
+      "smooth_guard_band_below_socket_top_mm": 2.0,
+      "radial_height_mm": 0.4,
+      "root_tangential_width_mm": 0.8,
+      "tip_tangential_width_mm": 0.4,
+      "root_overlap_mm": 0.1,
+      "end_ramp_mm": 0.5,
+      "bottom_margin_mm": 0.0,
+      "count": {
+        "m8": 18,
+        "m10": 24,
+        "m12": 30
+      },
+      "note": "Nut-like vertical ribs begin below a 2 mm smooth top band; the MuJoCo exterior side mesh is visual-only, while the physical top rim remains unchanged."
+    },
+    "mount_hole_diameter_mm": 6.6,
+    "mount_hole_centers_mm": [
+      [-62.0, -25.0],
+      [62.0, -25.0],
+      [-62.0, 25.0],
+      [62.0, 25.0]
+    ],
+    "datum_round_hole_diameter_mm": 4.0,
+    "datum_round_hole_center_mm": [-55.0, 27.5],
+    "datum_slot_width_mm": 4.0,
+    "datum_slot_length_mm": 8.0,
+    "datum_slot_center_mm": [55.0, 27.5],
+    "socket_geometry_profiles": {
+      "simulation_exact": {
+        "purpose": "research control; exactly reproduces the MuJoCo wall AF, 45-degree entry chamfer, and top AF",
+        "head_outer_diameter_scale": 1.0,
+        "support_neck_diameter_scale": 1.0,
+        "wall_af_expansion_per_side_mm": 0.0,
+        "entry_chamfer_width_mm": {
+          "m8": 0.15,
+          "m10": 0.18,
+          "m12": 0.22
+        },
+        "entry_chamfer_depth_mm": {
+          "m8": 0.15,
+          "m10": 0.18,
+          "m12": 0.22
+        }
+      },
+      "hardware_easy_v2": {
+        "purpose": "recommended hardware target after the first physical print; larger straight-wall clearance, a visibly larger 45-degree entry funnel, and a proportionally larger outer head",
+        "head_outer_diameter_scale": 1.15,
+        "support_neck_diameter_scale": 1.15,
+        "wall_af_expansion_per_side_mm": 0.15,
+        "entry_chamfer_width_mm": {
+          "m8": 0.80,
+          "m10": 1.00,
+          "m12": 1.20
+        },
+        "entry_chamfer_depth_mm": {
+          "m8": 0.80,
+          "m10": 1.00,
+          "m12": 1.20
+        },
+        "claim_boundary": "This is an intentional hardware engineering bias, not strict nominal sim-to-real geometry. It increases capture tolerance but also increases rotational free play before wall torque contact. All compared hardware methods must use the same fixture, and a hardware-specific MuJoCo profile and terminal-gate retuning are required for matched reruns."
+      }
+    },
+    "markings": {
+      "mode": "engraved",
+      "size_label_font_mm": 7.0,
+      "axis_label_font_mm": 6.5,
+      "depth_mm": 0.8,
+      "font": "DejaVu Sans",
+      "kind": "bold",
+      "size_label_y_mm": -21.0,
+      "arrow_y_mm": 24.0,
+      "arrow_shaft_length_mm": 30.0,
+      "arrow_shaft_width_mm": 2.4,
+      "arrow_head_length_mm": 10.0,
+      "arrow_head_width_mm": 10.0
+    },
+    "recommended_hardware_socket_profile": "hardware_easy_v2",
+    "fdm_trial_socket_compensation_per_side_mm": 0.1
+  },
+  "fit_coupons": {
+    "socket_total_af_offsets_mm": [-0.1, 0.0, 0.1, 0.2, 0.3]
+  },
+  "export": {
+    "stl_linear_tolerance_mm": 0.015,
+    "stl_angular_tolerance_rad": 0.08
+  }
+}

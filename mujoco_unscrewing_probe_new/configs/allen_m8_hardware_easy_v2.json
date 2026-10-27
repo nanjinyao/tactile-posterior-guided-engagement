@@ -1,0 +1,87 @@
+{
+  "bit_length_m": 0.035,
+  "bit_mass_kg": 0.5,
+  "bit_tip_chamfer_m": 0.0006,
+  "bit_tip_scale": 0.8,
+  "bounded_socket_shell": true,
+  "chamfer_depth_m": 0.0008,
+  "chamfer_width_m": 0.0008,
+  "claim_boundary": "parameterized fixed Allen socket-head engagement model; not threaded unscrewing",
+  "clearance_m": 0.0002499999999999998,
+  "collision_shell": {
+    "legacy_overlapping_wedges_used": false,
+    "mode": "72-sector circularly bounded ring shell",
+    "outer_radius_m": 0.007475
+  },
+  "contact_geometry_source": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+  "contact_geometry_source_sha256": "03878ec282b8e9284b8733062d9ecf9132834069a83cad573755b0120617b356",
+  "controlled_simulation_variables": {
+    "micro_chamfer_depth_m": 0.0008,
+    "micro_chamfer_width_m": 0.0008,
+    "single_side_clearance_m": 0.0002499999999999998
+  },
+  "derived": {
+    "bit_af_m": 0.006,
+    "r_cap_top_m": 0.0010499999999999997,
+    "r_cap_wall_m": 0.0002499999999999998,
+    "socket_top_af_m": 0.0081,
+    "socket_wall_af_m": 0.0065
+  },
+  "friction": [
+    0.75,
+    0.02,
+    0.001
+  ],
+  "frozen_source_config": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m8_source.json",
+  "frozen_source_config_sha256": "d203d504848819b59d62b034d73f83658c2cd50aa415b4c7f371d0ec59d7d7ce",
+  "frozen_source_model": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m8_source.xml",
+  "frozen_source_model_sha256": "b51a9648293a1aeae347b0b8fb52c8f5b382f833d3434f021319df9ff206ea46",
+  "geometry_profile": "hardware_easy_v2",
+  "hardware_aligned_profile_ready": false,
+  "hardware_alignment_scope": "top/socket contact-geometry-matched surrogate; FDM compliance, fixture sides, sensor origin, tool mass, COM, inertia, and calibrated wrench lever are not matched",
+  "head_top_segments": 72,
+  "key_af_m": 0.006,
+  "mechanical_clocking_contract": {
+    "flange_reference_tangent_normal_deg": 45.0,
+    "integrated_peg_selected_hex_flat_normal_deg": 45.0,
+    "integrated_peg_shape_rotation_from_legacy_deg": -15.0,
+    "mujoco_relative_yaw_zero_semantics": "The MuJoCo bit and socket remain aligned at relative yaw zero. Do not add the CAD -15 degree peg-to-flange clocking to the bit: the physical flange datum is taught against fixture +X instead.",
+    "socket_selected_hex_flat_normal_deg": 0.0
+  },
+  "name": "m8_hardware_easy_v2",
+  "nominal_standard_dimensions": {
+    "allen_key_across_flats_m": 0.006,
+    "screw_head_diameter_m": 0.01495,
+    "screw_head_height_m": 0.008,
+    "thread_d_m": 0.008
+  },
+  "paired_flat_normal_guidance_margin_m": 0.0016499999999999996,
+  "paired_guidance_margin_semantics": "one-dimensional flat-normal geometric allowance only; not a guaranteed capture radius",
+  "screw_head_diameter_m": 0.01495,
+  "screw_head_height_m": 0.008,
+  "size_name": "m8",
+  "socket_depth_m": 0.004,
+  "solimp": [
+    0.8,
+    0.95,
+    0.01
+  ],
+  "solref": [
+    0.01,
+    1.0
+  ],
+  "thread_d_m": 0.008,
+  "top_contact_thickness_m": 8e-05,
+  "units": "SI",
+  "visual_offset_default_m": 0.003,
+  "visual_offset_min_m": 0.0008,
+  "visual_offset_sweep_m": [
+    0.001,
+    0.003,
+    0.005
+  ],
+  "wall_thickness_m": 0.003,
+  "workpiece_margin_m": 0.006,
+  "wrench_reference_note": "legacy simulation surrogate retained because the Bota measurement origin is not yet measured; the known 42 mm blue-plane datum is not substituted as a sensor lever arm",
+  "wrench_reference_to_tip_m": null
+}

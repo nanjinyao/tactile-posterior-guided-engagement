@@ -1,0 +1,26 @@
+{
+  "adaptation": {
+    "all_checkpoint_weights_frozen": false,
+    "encoder_shared_frozen": true,
+    "model_selection_role": "validation",
+    "temperature_APS_role": "calibration",
+    "trainable_modules": [
+      "state_head",
+      "direction_head"
+    ],
+    "variant": "fine_tuned",
+    "weight_update_role": "train"
+  },
+  "input": {
+    "dimensionless_context_features": 16,
+    "normalization_source": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+    "phase_bins": 360,
+    "sequence_channels": [
+      "Fz_N",
+      "Tx_Nm",
+      "Ty_Nm",
+      "tip_z_m"
+    ]
+  },
+  "updated_utc": "2026-07-15T15:20:18.607768+00:00"
+}

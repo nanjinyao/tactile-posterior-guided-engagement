@@ -1,0 +1,145 @@
+{
+  "audited_clean_base": {
+    "captured_or_incomplete_direction_labels_used": 0,
+    "ensemble_interface_contract_sha256": "aa42dcc6f42e4615767f4d0fea3e914ecadb56a08dfc21333f4498a7e2d59654",
+    "failed_audit_development_sets_consumed": 0,
+    "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/m8_hardware_easy_v2_robust_direction_v2",
+    "untouched_promotion_samples_seen": 0
+  },
+  "checkpoints": [
+    {
+      "checkpoint": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_contact_continuity_clean_direction_v8/seeds/seed_20260720/circular_cnn_best.pt",
+      "checkpoint_sha256": "2d19c37b6b0ac788bf39ebac68cfedfb972333f9c0f817d5c3397be5782fdd75",
+      "metrics_sha256": "8a33e408010b04d81d1f207c90965dc4cfce5fb0721502e656b57753a3d50b83",
+      "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+    },
+    {
+      "checkpoint": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_contact_continuity_clean_direction_v8/seeds/seed_20260721/circular_cnn_best.pt",
+      "checkpoint_sha256": "5a57a1bfba96d96ab4f4b7c4286f461b92a3cedcdc2288b212782dcb38963b79",
+      "metrics_sha256": "33bc054a902a9190506ad3acc1a82799723282ceab2e8b390ab5fcc92b67ddf9",
+      "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+    },
+    {
+      "checkpoint": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_contact_continuity_clean_direction_v8/seeds/seed_20260722/circular_cnn_best.pt",
+      "checkpoint_sha256": "5539e1881e87b8075889b432cf626e9fc6ea59124dbb96cc220905302b193f87",
+      "metrics_sha256": "15d8d2e18f11c195c809d7351bfd20f21bc4b59f62e9e191a461813972ca8d70",
+      "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+    }
+  ],
+  "claim_boundary": "Lineage audit only. It neither measures fresh generalization nor authorizes simulation promotion, runtime-manifest changes, or real-hardware control.",
+  "contact_continuity_audit": {
+    "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/reports/hardware_easy_v2_multisize_contact_continuity_data_audit.json",
+    "sha256": "980bf7c0e1743b4d4c4e00c2792c5f8ecc3ffc2520bacaf64af892f0f162d605",
+    "status": "PASS"
+  },
+  "decision": "The candidate is lineage-clean for an independent final simulation audit. This is not a promotion decision.",
+  "geometry_equivalence_audit": {
+    "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/reports/hardware_easy_v2_clocking_clean_data_audit.json",
+    "sha256": "895f2e821b487c175370854de596210ade8e4a983d5ecf354820dff032782181",
+    "status": "PASS"
+  },
+  "leakage_checks": {
+    "captured_or_incomplete_direction_labels_used": 0,
+    "development_datasets_consumed": 0,
+    "final_audit_samples_seen_during_fitting": 0,
+    "group_intersections": 0
+  },
+  "model_artifacts": {
+    "adaptation_report.json": {
+      "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_contact_continuity_clean_direction_v8/adaptation_report.json",
+      "sha256": "8a2d41dc58d1ce48b6943e730424cdfddcb975899a3941a6f767324fcb8643e8"
+    },
+    "ensemble_interface_contract.json": {
+      "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_contact_continuity_clean_direction_v8/ensemble_interface_contract.json",
+      "sha256": "5d0448af00791de03c77a0b9534161dfe8a4c31922a28112cbfa2fd83717c4e4"
+    },
+    "split_manifest.json": {
+      "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_contact_continuity_clean_direction_v8/split_manifest.json",
+      "sha256": "67457bd5f1704181e1649e25cce0a5d59608787075dbd192b0ae2dbaadf1864f"
+    }
+  },
+  "model_root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_contact_continuity_clean_direction_v8",
+  "schema_version": 1,
+  "stage": "clocking_clean_multisize_model_lineage_audit",
+  "status": "PASS",
+  "training_data": {
+    "m10": {
+      "calibration_groups": 13,
+      "capture_or_incomplete_excluded": 157,
+      "contact_model_sha256": "83dd467bd124ce7aac3b8ae68cd13124ec1ce8a09a1e67adf963e6d1b3ba57d1",
+      "development_datasets_merged": 0,
+      "direction_hygiene": {
+        "direction_diagnostic_counts": {
+          "sustained_low_force_sensor_observable": 13
+        },
+        "direction_quarantine_reason_counts": {
+          "capture_during_scan_endpoint": 141,
+          "early_capture": 83,
+          "sustained_contact_loss_offline_ground_truth": 14,
+          "within_scan_sustained_downward_progress": 78
+        },
+        "direction_supervision_admitted": 611,
+        "direction_supervision_quarantined": 157,
+        "legacy_raw_revalidated_in_memory": true,
+        "source_npz_rewritten": false
+      },
+      "group_intersection": [],
+      "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m10",
+      "sampling_contract_sha256": "dcc98303c334b7962b81c2c99802c9b448112ae91f63ee10194b4cabe3fc6e3d",
+      "train_groups": 51,
+      "valid_full_fingerprints": 611
+    },
+    "m12": {
+      "calibration_groups": 13,
+      "capture_or_incomplete_excluded": 193,
+      "contact_model_sha256": "ffe7fe135c50d4e2c3a0b962a58772fc592037318595bd8edd871d466e5f3c4a",
+      "development_datasets_merged": 0,
+      "direction_hygiene": {
+        "direction_diagnostic_counts": {
+          "sustained_low_force_sensor_observable": 29
+        },
+        "direction_quarantine_reason_counts": {
+          "capture_during_scan_endpoint": 161,
+          "early_capture": 87,
+          "sustained_contact_loss_offline_ground_truth": 29,
+          "within_scan_sustained_downward_progress": 77
+        },
+        "direction_supervision_admitted": 575,
+        "direction_supervision_quarantined": 193,
+        "legacy_raw_revalidated_in_memory": true,
+        "source_npz_rewritten": false
+      },
+      "group_intersection": [],
+      "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m12",
+      "sampling_contract_sha256": "e64fd61e6d39e754ab97fbfe2411912c5ae475ba6ec19f94dd317d909deed7f9",
+      "train_groups": 51,
+      "valid_full_fingerprints": 575
+    },
+    "m8": {
+      "calibration_groups": 13,
+      "capture_or_incomplete_excluded": 93,
+      "contact_model_sha256": "a306e30a5961278e3b29e9f58ea86ac20d703a6640cd21e14b032a41fc73f638",
+      "development_datasets_merged": 0,
+      "direction_hygiene": {
+        "direction_diagnostic_counts": {
+          "sustained_low_force_sensor_observable": 1
+        },
+        "direction_quarantine_reason_counts": {
+          "capture_during_scan_endpoint": 90,
+          "early_capture": 71,
+          "sustained_contact_loss_offline_ground_truth": 1
+        },
+        "direction_supervision_admitted": 675,
+        "direction_supervision_quarantined": 93,
+        "legacy_raw_revalidated_in_memory": true,
+        "source_npz_rewritten": false
+      },
+      "group_intersection": [],
+      "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/m8_hardware_easy_v2_direction_dense_training",
+      "sampling_contract_sha256": "893239595a531a3cce0a5331c613b2b77ddf1235b58e36d80096543230726485",
+      "train_groups": 51,
+      "valid_full_fingerprints": 675
+    }
+  },
+  "updated_utc": "2026-07-24T06:13:07.735216+00:00"
+}

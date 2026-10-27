@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "campaign": "m12_run_local_conical_fingerprints_26pt_v2",
+  "created_local": "2026-07-27T23:37:41.095+08:00",
+  "status": "ABORTED_NO_BLIND_RETURN",
+  "authority": "REAL_DEVICE_RAW_SIGNAL_HIGHEST_AUTHORITY_PENDING_OFFLINE_QC",
+  "model_policy": "NO_RUNTIME_MODEL_NO_SIMULATION_LABELING_NO_ONLINE_WEIGHT_UPDATE",
+  "sampling_plan_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/m12_printed_cad_conical_sampling_v2.json",
+  "sampling_plan_sha256": "b08f08ae2982b9261fabef7f219e0533a7c2585217a5507488f3c8191a012089",
+  "fixture_frame_commissioning_sha256": "656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f",
+  "tooling_sha256": "03878ec282b8e9284b8733062d9ecf9132834069a83cad573755b0120617b356",
+  "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+  "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+  "installation_session_id": "PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED",
+  "run_session_id": "M12_conical_fingerprints_26pt_20260727_233724_277",
+  "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_233724_277",
+  "initial_air_pose_mm_rad": [
+    472.73333689991972,
+    1.678422994373912,
+    295.56928339066081,
+    3.1412907192803208,
+    -0.0009621000506815485,
+    3.133542909328944
+  ],
+  "campaign_safe_air_z_mm": 297.56928339066081,
+  "run_local_hole_center_world_xy_mm": [
+    472.73333689991972,
+    1.678422994373912
+  ],
+  "center_sample_excluded": true,
+  "sampling_coordinate_authority": "RUN_LOCAL_START_HOLE_CENTER_WORLD_XY_ALIGNED",
+  "nominal_m12_center_fixture_xy_mm": [
+    45,
+    0
+  ],
+  "run_local_m12_center_fixture_xyz_mm": [
+    0,
+    0,
+    0
+  ],
+  "execution_attempt_indices": [
+    1,
+    6,
+    5,
+    10,
+    14,
+    19,
+    22,
+    11,
+    16,
+    20,
+    12,
+    24,
+    13,
+    7,
+    25,
+    17,
+    2,
+    21,
+    8,
+    15,
+    3,
+    18,
+    9,
+    23,
+    26,
+    4
+  ],
+  "closed_route_distance_mm": 122.60438286811329,
+  "maximum_planned_radius_mm": 12.464839456657327,
+  "sampling_only_lateral_excursion_mm": 13.2,
+  "printed_cad_geometry_mm": {
+    "head_outer_diameter": 21.275,
+    "socket_mouth_af": 13,
+    "socket_deep_wall_af": 10.6,
+    "socket_chamfer_width": 1.2,
+    "socket_chamfer_depth": 1.2,
+    "center_through_hole_diameter": 0.5,
+    "peg_tip_face_af": 8,
+    "peg_shaft_af": 10,
+    "peg_chamfer_radial_setback": 1,
+    "peg_chamfer_axial_length": 1,
+    "peg_tip_face_flat_normal_fixture_deg": 0,
+    "peg_selected_flat_normal_in_flange_cad_deg": 45,
+    "socket_selected_flat_normal_fixture_deg": 0
+  },
+  "touchdown_contact_state_definition": {
+    "footprint": "actual printed upright M12 tip face AF8 regular hexagon",
+    "support_surface": "head OD disk minus the AF13 mouth",
+    "supported_search": "outer_overhang_fraction <= 1e-5",
+    "double_overhang": "outer_overhang_fraction > 1e-5 and mouth_overlap_fraction > 1e-5",
+    "outer_partial_support": "outer_overhang_fraction > 1e-5, mouth_overlap_fraction <= 1e-5, and head_top_support_fraction > 0",
+    "area_method": "deterministic convex polygon clipping; head circle uses a 720-edge inscribed polygon"
+  },
+  "cone_command_geometry": {
+    "tilt_deg": 15,
+    "phase_bins": 360,
+    "peg_shaft_af_mm": 10,
+    "peg_chamfer_axial_length_mm": 1,
+    "conservative_xy_projection_radius_bound_mm": 6.032321737,
+    "semantics": "conservative drawing bound only; quantitative diagnostics use conv(xy(Rz(-phi) Ry(15deg) Rz(phi) [AF8@z0, AF10@z1])) at every phase and are not touchdown-state labels",
+    "rotation_convention": "R(phi)=Rz(-phi)*Ry(15deg)*Rz(phi)",
+    "phase_grid": "360 uniform samples on [0,360deg), matching the recorded phase-bin contract",
+    "diagnostic_area_normalization": "mouth intersection area divided by that phase's projected printed-frustum convex-hull area",
+    "mouth_overlap_epsilon": 1E-6
+  },
+  "sampling_design": {
+    "attempt_count": 26,
+    "partition_counts": {
+      "clean_candidate": 16,
+      "holdout": 4,
+      "quarantine": 4,
+      "sentinel": 2
+    },
+    "clean_contact_state_counts": {
+      "supported_search": 6,
+      "double_overhang": 6,
+      "outer_partial_support": 4
+    },
+    "clean_cone_sweep_subtype_counts": {
+      "landing_supported_cone_transition": 6,
+      "landing_double_overhang": 6,
+      "landing_mouth_clear_cone_transition": 2,
+      "full_frustum_mouth_clear": 2
+    },
+    "sentinel_semantics": "exact repeats of one supported and one landing-mouth-clear outer-partial clean point",
+    "boundary_quarantine_semantics": "two supported/double and two double/outer near-boundary diagnostics"
+  },
+  "true_label_rule": "measured_touchdown_run_local_XY_to_operator_taught_M12_center; preregistered CAD local offsets define targets and labels",
+  "wrench_reference_boundary": "raw_Bota_is_preserved_and_each_point_has_30_fresh_air_samples_no_simulation_or_model_changes_motion_label_or_quality_status",
+  "cad_and_configuration_hashes": {
+    "fixture_sampling_plan_sha256": "b08f08ae2982b9261fabef7f219e0533a7c2585217a5507488f3c8191a012089",
+    "fixture_frame_record_sha256": "656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f",
+    "tooling_sha256": "03878ec282b8e9284b8733062d9ecf9132834069a83cad573755b0120617b356",
+    "pink_m12_step_sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe",
+    "printed_socket_step_sha256": "f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f",
+    "printed_cad_design_parameters_sha256": "89bff458e7415f04274c216d36c91dbe80c754216bd3de9b50aa6630c14eab43",
+    "printed_cad_manifest_sha256": "63b39c21e66310c9800b7c0bc88105a1bd8698d40054659cbff3f6f003e5c634"
+  },
+  "automatic_weight_update_permitted": false,
+  "offline_compensation_and_qc_required": true,
+  "attempt_count_planned": 26,
+  "attempts_completed": 1,
+  "attempts_quarantined": 1,
+  "returned_to_initial_air_pose": false,
+  "attempts": {
+    "attempt_index": 1,
+    "source_attempt_index": 1,
+    "execution_index": 1,
+    "sample_id": "M12-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+    "requested_partition": "clean_candidate",
+    "effective_partition": "quarantine",
+    "training_use_contract": "eligible_only_after_complete_trace_and_offline_qc",
+    "duplicate_of_sample_id": "",
+    "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+    "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+    "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_233724_277",
+    "contact_state": "supported_search",
+    "cone_sweep_subtype": "landing_supported_cone_transition",
+    "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+    "printed_cad_radius_rule": "midpoint of exact full-frustum and AF8 landing outer tangencies",
+    "nominal_touchdown_geometry": {
+      "outer_overhang_fraction": 0,
+      "mouth_overlap_fraction": 0.617151461,
+      "head_top_support_fraction": 0.382848539
+    },
+    "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+      "outer_overhang_fraction": [
+        0,
+        0
+      ],
+      "mouth_overlap_fraction": [
+        0.616730931,
+        0.617176765
+      ],
+      "head_top_support_fraction": [
+        0.382823235,
+        0.383269069
+      ]
+    },
+    "printed_frustum_cone_phase_diagnostics": {
+      "phase_bins": 360,
+      "maximum_mouth_overlap_fraction": 0.586345303,
+      "minimum_mouth_overlap_fraction": 0.524412544,
+      "mouth_overlap_phase_fraction": 1,
+      "outer_overhang_phase_fraction": 1,
+      "minimum_outer_clearance_mm": -0.616365915,
+      "minimum_projected_area_mm2": 83.651630374,
+      "maximum_projected_area_mm2": 83.651630374
+    },
+    "radius_mm": 5.669207501,
+    "angle_fixture_deg": 3.75,
+    "local_offset_fixture_mm": [
+      5.657069292,
+      0.370783911
+    ],
+    "nominal_fixture_xy_mm": [
+      50.657069292,
+      0.370783911
+    ],
+    "fixture_xy_mm": [
+      5.657069292,
+      0.370783911
+    ],
+    "fixture_point_mm": [
+      5.657069292,
+      0.370783911,
+      0
+    ],
+    "nominal_direction_fixture_deg": 183.75,
+    "nominal_direction_fixture_unit": [
+      -0.997858923,
+      -0.065403129
+    ],
+    "nominal_direction_world_xy": [
+      -0.99785892325260273,
+      -0.065403129016556455
+    ],
+    "measured_contact_fixture_xy_mm": [
+      null,
+      null
+    ],
+    "measured_sampling_error_mm": null,
+    "measured_label_direction_deviation_deg": null,
+    "measured_label_direction_warning": false,
+    "measured_label_gate_passed": false,
+    "measured_label_gate_reason": "NO_MEASURED_CONTACT_LABEL",
+    "true_direction_fixture_deg": null,
+    "true_direction_fixture_unit": [
+      null,
+      null
+    ],
+    "true_direction_world_xy": [
+      null,
+      null
+    ],
+    "target_world_xy_mm": [
+      478.39040619191974,
+      2.0492069053739121
+    ],
+    "run_local_hole_center_world_xy_mm": [
+      472.73333689991972,
+      1.678422994373912
+    ],
+    "status": "QUARANTINED_NEVER_TRAIN",
+    "quarantine_reason": "ABORT_AFTER_M12DEMO_TRACKINGERROR",
+    "offline_training_candidate": false,
+    "automatic_training_admission": false,
+    "conical_phase_pose_tracking_qualified_for_training": false,
+    "campaign_must_abort": true,
+    "touchdown_confirmed": false,
+    "touchdown_pose_mm_rad": [],
+    "touchdown_max_force_n": null,
+    "touchdown_max_torque_nm": null,
+    "touchdown_maximum_xy_error_mm": null,
+    "touchdown_landing_gate_passed": false,
+    "pre_touch_clear_max_force_n": 0.0846069298070134,
+    "pre_touch_clear_max_torque_nm": 0.00112018437347113,
+    "point_air_baseline_valid": true,
+    "point_air_baseline_reason": "PASS",
+    "point_air_baseline_force_std_n": [
+      0.025936993554079427,
+      0.025399069654764773,
+      0.015617424859628125
+    ],
+    "point_air_baseline_torque_std_nm": [
+      0.00059318532469587076,
+      0.00056458838188940929,
+      0.00013487318291355592
+    ],
+    "contact_settle_passed": false,
+    "contact_settle_reason": "NOT_RUN",
+    "contact_settle_normal_mean_n": null,
+    "contact_settle_normal_std_n": null,
+    "contact_settle_samples": 0,
+    "cone_completed": false,
+    "cone_run_kind": "M12_SAMPLE_01",
+    "cone_mode_transition_outcome": "NOT_RUN",
+    "cone_low_force_episodes": 0,
+    "cone_direction_fingerprint_valid": false,
+    "cone_routing_fingerprint_valid": false,
+    "cone_training_fingerprint_valid": false,
+    "weak_but_complete_fingerprint": false,
+    "fingerprint_signal_rms_lateral_force_n": null,
+    "fingerprint_signal_peak_lateral_force_n": null,
+    "capture_during_cone": false,
+    "cone_pre_directservo_measured_pose_mm_rad": [],
+    "cone_post_directservo_measured_pose_mm_rad": [],
+    "cone_maximum_command_gap_s": null,
+    "cone_maximum_tick_lateness_s": null,
+    "phase_coverage_fraction": 0,
+    "return_orientation_error_deg": null,
+    "post_stop_tip_error_mm": null,
+    "nominal_cad_distance_to_center_mm": 5.66920750044888,
+    "cad_distance_to_center_mm": null,
+    "post_retract_clear_max_force_n": null,
+    "post_retract_clear_max_torque_nm": null,
+    "safe_retract_completed": false,
+    "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_233724_277/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/attempt.mat",
+    "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_233724_277/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/attempt.json",
+    "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_233724_277/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/point_air_baseline_raw.csv",
+    "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_233724_277/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/contact_settle_raw.csv",
+    "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_233724_277/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/conical_trace_raw.csv",
+    "file_hashes": {
+      "attempt_mat_sha256": "10700257708acc5a1b4b0304f9ceec2cff56396496ab39ae8062ae3344f393ea",
+      "baseline_csv_sha256": "866a7ae527f4950316477fed9dc8377e9aa865d1516001a38a5904120153b4b9",
+      "contact_settle_csv_sha256": "8531fa3ab82e7173336b864ddf0a494b90f08567827a004e5a1300b0548a0971",
+      "cone_csv_sha256": "f85653627c0c6d35e10ea9c0710bf13040097e0fc3d6129d44447653e940e7fb"
+    },
+    "finished_local": "2026-07-27T23:38:02.864+08:00",
+    "error": "M12Demo:TrackingError: SAMPLE_01_TOUCHDOWN_027 endpoint error 0.1128 mm exceeds 0.0700 mm."
+  },
+  "error": "M12Demo:TrackingError: SAMPLE_01_TOUCHDOWN_027 endpoint error 0.1128 mm exceeds 0.0700 mm.",
+  "completed_local": "2026-07-27T23:38:02.945+08:00"
+}

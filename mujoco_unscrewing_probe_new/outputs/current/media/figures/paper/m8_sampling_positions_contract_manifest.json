@@ -1,0 +1,196 @@
+{
+  "updated_utc": "2026-07-16T04:53:46.513843+00:00",
+  "stage": "m8_sampling_positions_contract",
+  "generator": "src/plot_m8_sampling_positions_contract.py",
+  "point_definition": "commanded initial bit-center XY relative to the true socket center",
+  "status_filter": "records whose status is neither failed nor error",
+  "deduplication": {
+    "within_dataset": "x_m and y_m quantized to 1 nm; nuisance repeats are drawn once",
+    "across_datasets": "not removed from drawing; exact overlaps remain coincident",
+    "layer_unique_xy_entries": 696,
+    "union_unique_xy_positions": 651,
+    "cross_dataset_overlap_entries": 45
+  },
+  "counts": {
+    "physics_rollouts": 1674,
+    "layer_unique_xy_entries": 696,
+    "union_unique_xy_positions": 651,
+    "cross_dataset_overlap_entries": 45
+  },
+  "augmentation_contract": {
+    "synthetic_xy_points_plotted": 0,
+    "group_split_is_physical_rollout": false,
+    "c6_tensor_augmentation_is_physical_rollout": false,
+    "c6_tensor_augmentation_creates_new_xy": false,
+    "note": "These eight manifests inventory physically simulated dynamic conical scans. Grouped splitting and optional C6 signal rotation happen downstream and are not additional rollouts or spatial samples."
+  },
+  "reference_radii_mm": {
+    "full_support_center_radius": 3.036,
+    "declared_visual_95_radius": 4.895,
+    "screw_head_cad_radius": 6.5,
+    "boundary_note": "reference circles are not capture or success sets"
+  },
+  "datasets": [
+    {
+      "key": "p0a_m8_symmetry",
+      "short_label": "P0a",
+      "role_en": "symmetry diagnostic",
+      "role_cn": "对称性诊断",
+      "manifest": "outputs/current/datasets/p0a_m8_symmetry/manifest.json",
+      "manifest_sha256": "f9511cc2f7f69371e0312d6e0b7f21bac06165ff06676b63bc9db31b9c936432",
+      "physics_rollouts": 72,
+      "unique_xy_positions_within_dataset": 72,
+      "base_pose_groups": 12,
+      "symmetry_orbits_when_declared": 0,
+      "search_states": [
+        "double_overhang",
+        "outer_partial",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.6697441116742349,
+      "radius_max_mm": 7.764101615137755
+    },
+    {
+      "key": "p0b_m8_observability",
+      "short_label": "P0b",
+      "role_en": "foundation pool",
+      "role_cn": "基础数据池",
+      "manifest": "outputs/current/datasets/p0b_m8_observability/manifest.json",
+      "manifest_sha256": "436a575475e7a2d1bf6d1fcfa53e2a75fa8af97c55894f4e9bdddf4a7a66dd41",
+      "physics_rollouts": 360,
+      "unique_xy_positions_within_dataset": 120,
+      "base_pose_groups": 120,
+      "symmetry_orbits_when_declared": 0,
+      "search_states": [
+        "double_overhang",
+        "outer_partial",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.5179491924311224,
+      "radius_max_mm": 7.814101615137755
+    },
+    {
+      "key": "p0c_m8_collision_followup",
+      "short_label": "P0c",
+      "role_en": "hard-case diagnostic",
+      "role_cn": "困难接触诊断",
+      "manifest": "outputs/current/datasets/p0c_m8_collision_followup/manifest.json",
+      "manifest_sha256": "5c20f31e9e03df1a2f9ac2aaaa19d545c9c91ad4af62a88c0de86e8a5826e2ad",
+      "physics_rollouts": 90,
+      "unique_xy_positions_within_dataset": 18,
+      "base_pose_groups": 18,
+      "symmetry_orbits_when_declared": 0,
+      "search_states": [
+        "double_overhang",
+        "outer_partial",
+        "supported_search"
+      ],
+      "radius_min_mm": 2.170667345176505,
+      "radius_max_mm": 6.814101615137755
+    },
+    {
+      "key": "p0d_m8_sector_anchors",
+      "short_label": "P0d",
+      "role_en": "physical sector anchors",
+      "role_cn": "物理扇区锚点",
+      "manifest": "outputs/current/datasets/p0d_m8_sector_anchors/manifest.json",
+      "manifest_sha256": "c0d13b014462ae225569e56180b54e5344f538778df312597ab47e2861ca9e62",
+      "physics_rollouts": 324,
+      "unique_xy_positions_within_dataset": 162,
+      "base_pose_groups": 162,
+      "symmetry_orbits_when_declared": 54,
+      "search_states": [
+        "double_overhang",
+        "outer_partial",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.5179491924311224,
+      "radius_max_mm": 7.814101615137755
+    },
+    {
+      "key": "p1v2_m8_independent_direction_audit",
+      "short_label": "P1v2",
+      "role_en": "viewed design audit",
+      "role_cn": "已查看设计审计",
+      "manifest": "outputs/current/evaluations/p1v2_m8_independent_direction_audit/manifest.json",
+      "manifest_sha256": "f3d572241f4978de2bfcf8d7dad40805b0eff9acf5c034ecc1dd04abfe534fe0",
+      "physics_rollouts": 180,
+      "unique_xy_positions_within_dataset": 60,
+      "base_pose_groups": 60,
+      "symmetry_orbits_when_declared": 30,
+      "search_states": [
+        "double_overhang",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.3661542731880103,
+      "radius_max_mm": 4.55
+    },
+    {
+      "key": "p1v3_m8_targeted_direction_training",
+      "short_label": "P1v3",
+      "role_en": "targeted train/calibration",
+      "role_cn": "定向训练/校准",
+      "manifest": "outputs/current/datasets/p1v3_m8_targeted_direction_training/manifest.json",
+      "manifest_sha256": "d552b649f4a4bde88344d1d71706b73ab0da607356e32a1a693a8b216b4738aa",
+      "physics_rollouts": 288,
+      "unique_xy_positions_within_dataset": 144,
+      "base_pose_groups": 144,
+      "symmetry_orbits_when_declared": 48,
+      "search_states": [
+        "double_overhang",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.092923418550408,
+      "radius_max_mm": 4.7
+    },
+    {
+      "key": "p1v4_m8_untouched_direction_audit",
+      "short_label": "P1v4",
+      "role_en": "viewed interface audit",
+      "role_cn": "已查看接口审计",
+      "manifest": "outputs/current/evaluations/p1v4_m8_untouched_direction_audit/manifest.json",
+      "manifest_sha256": "03e432f6268c7a98855ea269de4163c29e4581a49188fd9f6760445701054404",
+      "physics_rollouts": 180,
+      "unique_xy_positions_within_dataset": 60,
+      "base_pose_groups": 60,
+      "symmetry_orbits_when_declared": 30,
+      "search_states": [
+        "double_overhang",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.22,
+      "radius_max_mm": 4.32
+    },
+    {
+      "key": "p1v5_m8_final_untouched_direction_audit",
+      "short_label": "P1v5",
+      "role_en": "final untouched test",
+      "role_cn": "最终未触碰测试",
+      "manifest": "outputs/current/evaluations/p1v5_m8_final_untouched_direction_audit/manifest.json",
+      "manifest_sha256": "a50f59eda86ac81d161a6d2dbb5c309640ccb8edb553aabb1e76cbeffa6f07a0",
+      "physics_rollouts": 180,
+      "unique_xy_positions_within_dataset": 60,
+      "base_pose_groups": 60,
+      "symmetry_orbits_when_declared": 30,
+      "search_states": [
+        "double_overhang",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.4,
+      "radius_max_mm": 4.58
+    }
+  ],
+  "outputs": {
+    "en": {
+      "path": "outputs/current/media/figures/paper/m8_sampling_positions_contract_en.png",
+      "sha256": "2252b5b2f1e2b05b5810566123680a6c49cdcf594eb4c21b15dec2965f43c991",
+      "language_contract": "English only"
+    },
+    "cn": {
+      "path": "outputs/current/media/figures/paper/m8_sampling_positions_contract_cn.png",
+      "sha256": "bb42dbe471655409300ad87420d03e2ed64343864ba79db10ec327cd8556baea",
+      "language_contract": "Chinese with standard technical abbreviations"
+    }
+  },
+  "claim_boundary": "This is an exact spatial inventory of eight frozen simulation manifests. It is not evidence of deployment probability, radial identifiability, real-robot coverage, chamfer capture, or task success. P1v5 remains forbidden for fitting, calibration, threshold selection, or interface changes."
+}

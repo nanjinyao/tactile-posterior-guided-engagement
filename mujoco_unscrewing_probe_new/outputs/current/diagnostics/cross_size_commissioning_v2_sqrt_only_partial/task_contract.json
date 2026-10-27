@@ -1,0 +1,287 @@
+{
+  "active_time_budget_s": 130.0,
+  "claim_boundary": "Targeted reuse of known failed development poses. Results diagnose commissioning mechanics only and cannot support an untouched or confirmatory full-loop claim.",
+  "commissioning_v2": {
+    "admittance": {
+      "damping": [
+        155.88457268119896,
+        155.88457268119896,
+        82.27241335952168,
+        2.7,
+        2.7,
+        1.875
+      ],
+      "dt_s": 0.002,
+      "hard_wrench": [
+        20.0,
+        20.0,
+        20.0,
+        0.06,
+        0.06,
+        0.06
+      ],
+      "max_acceleration": [
+        0.15000000000000002,
+        0.15000000000000002,
+        0.09,
+        2.25,
+        2.25,
+        1.6875
+      ],
+      "max_offset": [
+        0.002,
+        0.002,
+        0.003,
+        0.1,
+        0.1,
+        0.08
+      ],
+      "max_velocity": [
+        0.008660254037844387,
+        0.008660254037844387,
+        0.005196152422706633,
+        0.2625,
+        0.2625,
+        0.1875
+      ],
+      "stiffness": [
+        1650.0,
+        1650.0,
+        0.0,
+        10.125,
+        10.125,
+        5.625
+      ],
+      "virtual_mass": [
+        4.0,
+        4.0,
+        2.0,
+        0.08,
+        0.08,
+        0.05
+      ],
+      "wrench_filter_hz": 25.0
+    },
+    "bit_radius_m": 0.004618802153517006,
+    "bit_radius_scale": 1.3333333333333333,
+    "claim_boundary": "v2 geometry/dynamics-scaled commissioning start only; independent size validation required",
+    "commissioning_version": "v2_sqrt_time_separate_rotation_lever",
+    "funnel_guard": {
+      "cad_bottom_overshoot_margin_m": 0.00025,
+      "capture_force_release_s": 0.3464101615137754,
+      "deep_tilt_damping_nm_s_rad": 0.375,
+      "deep_tilt_stiffness_nm_rad": 1.6875,
+      "descent_speed_m_s": 0.00030310889132455357,
+      "enabled": true,
+      "force_floor_n": 0.2,
+      "injected_power_limit_w": 0.5,
+      "insertion_handoff_s": 1.1547005383792515,
+      "max_recoveries": 3,
+      "max_tilt_deg": 0.75,
+      "min_window_progress_m": 2e-05,
+      "moment_lever_m": 0.003,
+      "no_progress_energy_j": 0.0015,
+      "planar_damping_n_s_m": 86.60254037844388,
+      "planar_stiffness_n_m": 1125.0,
+      "power_dwell_s": 0.01,
+      "recovery_force_n": 0.2,
+      "recovery_retouch_s": 0.2309401076758503,
+      "recovery_retract_m": 0.00035,
+      "recovery_retract_s": 0.1732050807568877,
+      "recovery_unload_s": 0.11547005383792515,
+      "retry_on_terminal_rejection": true,
+      "shallow_tilt_damping_nm_s_rad": 0.2625,
+      "shallow_tilt_stiffness_nm_rad": 1.0125000000000002,
+      "tilt_dwell_s": 0.02,
+      "window_s": 0.15,
+      "yaw_damping_nm_s_rad": 0.1875,
+      "yaw_stiffness_nm_rad": 0.84375
+    },
+    "response_time_scale": 1.1547005383792515,
+    "size": "M10"
+  },
+  "created_utc": "2026-07-15T16:00:45.137852+00:00",
+  "execution_files": {
+    "cad_spec": {
+      "path": "configs/allen_m10_source.json",
+      "sha256": "1dd2801c151e0697e13b909ff3449f9e25f69034d3c7a443aee559b562c36504"
+    },
+    "commissioning": {
+      "path": "src/cross_size_commissioning.py",
+      "sha256": "f923a1c98fc4874244ccaaca8b28dfb2166cdc005868cbba802ab6a565359b04"
+    },
+    "mujoco_model": {
+      "path": "models/allen_m10_source.xml",
+      "sha256": "baa84b8df605b96459df63ada5ac9fe50c5a817f37fa3665252a59b96acbbfe9"
+    },
+    "rollout": {
+      "path": "src/render_m8_search_comparison.py",
+      "sha256": "cbd0a6a409bf9c0df0ed290512bb65340323ec77036c02a51af0899d8dd6cb83"
+    },
+    "runner": {
+      "path": "src/run_cross_size_commissioning_v2_targeted.py",
+      "sha256": "47442c0704a7236bcc5c6139d1824a9fbf25172f62fcbc10450c9cedef770433"
+    },
+    "s4_model_contract": {
+      "path": "outputs/current/models/cross_size_s4_state_direction_heads/m10/fine_tuned/ensemble_interface_contract.json",
+      "sha256": "2e1e1c70c2c6a9e31aea2276750ac256d8cd2c0c9dcf67c62e7003b4a9d1748b"
+    },
+    "s4_model_members": [
+      {
+        "path": "outputs/current/models/cross_size_s4_state_direction_heads/m10/fine_tuned/seeds/seed_20260720/circular_cnn_best.pt",
+        "sha256": "aa3dda6e31f1362bfd6618ac5d665d44753d00142ba0032152238849cc3eda59"
+      },
+      {
+        "path": "outputs/current/models/cross_size_s4_state_direction_heads/m10/fine_tuned/seeds/seed_20260720/normalization.npz",
+        "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+      },
+      {
+        "path": "outputs/current/models/cross_size_s4_state_direction_heads/m10/fine_tuned/seeds/seed_20260721/circular_cnn_best.pt",
+        "sha256": "844a6fc39c58b844b0cc31a9d0af1a1fa696214450133608135308a4a831ee66"
+      },
+      {
+        "path": "outputs/current/models/cross_size_s4_state_direction_heads/m10/fine_tuned/seeds/seed_20260721/normalization.npz",
+        "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+      },
+      {
+        "path": "outputs/current/models/cross_size_s4_state_direction_heads/m10/fine_tuned/seeds/seed_20260722/circular_cnn_best.pt",
+        "sha256": "43d67ac178e095186558457c3ee2132336d423e916e1b04c06866d50bff0496e"
+      },
+      {
+        "path": "outputs/current/models/cross_size_s4_state_direction_heads/m10/fine_tuned/seeds/seed_20260722/normalization.npz",
+        "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+      }
+    ],
+    "source_report": {
+      "path": "outputs/current/diagnostics/cross_size_s4_full_loop_development_v2/report.json",
+      "sha256": "0556aa3c5f44054c54e7048f384a77798f41164793ae13e1c65b4de57c80b2b3"
+    },
+    "source_trials": {
+      "m10_s3test_002": {
+        "path": "outputs/current/diagnostics/cross_size_s4_full_loop_development_v2/m10/trials/m10_s3test_002.json",
+        "sha256": "ef3ac2c086c165fa3b128e5124e7a9fe4cc83e80a833965e7b73586fb94df7aa"
+      },
+      "m10_s3test_004": {
+        "path": "outputs/current/diagnostics/cross_size_s4_full_loop_development_v2/m10/trials/m10_s3test_004.json",
+        "sha256": "cd841ab0dcea88c841ede844b5f6da80e787f03299f8def363931e0b238b1fed"
+      },
+      "m10_s3test_006": {
+        "path": "outputs/current/diagnostics/cross_size_s4_full_loop_development_v2/m10/trials/m10_s3test_006.json",
+        "sha256": "c23bf15dc8781d9675eb0b29635daa7c9961a9d0f08e0b96e864533dda5364ac"
+      },
+      "m10_s3test_007": {
+        "path": "outputs/current/diagnostics/cross_size_s4_full_loop_development_v2/m10/trials/m10_s3test_007.json",
+        "sha256": "9bf4d4bc32427c9a42aeca61a2c7994c0170d54f2b30e7f8fe593a8f43a76c22"
+      },
+      "m10_s3test_010": {
+        "path": "outputs/current/diagnostics/cross_size_s4_full_loop_development_v2/m10/trials/m10_s3test_010.json",
+        "sha256": "5eda081a8be09b2a9361bc79b0a8ea90007014bfbb47cf7db147675922b2f05a"
+      }
+    }
+  },
+  "experiment": "cross_size_commissioning_v2_targeted_development_diagnostic",
+  "fallback_budget_extension_s": 0.0,
+  "methods": [
+    "privileged_straight_to_center",
+    "s4_fine_tuned"
+  ],
+  "phase": "development",
+  "pose_ids": [
+    "m10_s3test_002",
+    "m10_s3test_004",
+    "m10_s3test_006",
+    "m10_s3test_007",
+    "m10_s3test_010"
+  ],
+  "raw_hard_wrench_thresholds": [
+    20.0,
+    20.0,
+    20.0,
+    0.06,
+    0.06,
+    0.06
+  ],
+  "raw_hard_wrench_thresholds_relaxed": false,
+  "selection_rule": "known M10 development poses where the source privileged straight-to-center arm failed strict CAD-bottom completion",
+  "size": "m10",
+  "source": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/diagnostics/cross_size_s4_full_loop_development_v2",
+  "source_controller_label": "commissioning_v1_full_s_time_and_descent",
+  "tasks": [
+    {
+      "angle_rad": 0.07927790064277579,
+      "baseline_phase_rad": 1.484699993199877,
+      "contact_timeconst_s": 0.06035006228834391,
+      "friction_slide": 0.838265858218074,
+      "pose_id": "m10_s3test_002",
+      "posterior_seed": 20260941002,
+      "radius_m": 0.005289825943429679,
+      "sensor_delay_s": 0.006378207532688976,
+      "sensor_noise_seed": 202609410002,
+      "size": "m10",
+      "target_down_force_n": 3.3573522167280316,
+      "x_m": 0.005273211408251475,
+      "y_m": 0.00041892714840194024
+    },
+    {
+      "angle_rad": 0.987888057114297,
+      "baseline_phase_rad": 4.949145582544631,
+      "contact_timeconst_s": 0.0537771525233984,
+      "friction_slide": 0.6010686367750169,
+      "pose_id": "m10_s3test_004",
+      "posterior_seed": 20260941004,
+      "radius_m": 0.003228078908858974,
+      "sensor_delay_s": 0.00555685767158866,
+      "sensor_noise_seed": 202609410004,
+      "size": "m10",
+      "target_down_force_n": 2.5616269381716847,
+      "x_m": 0.001776909834533669,
+      "y_m": 0.002695011109765166
+    },
+    {
+      "angle_rad": 2.750489463372069,
+      "baseline_phase_rad": 0.3157255052460145,
+      "contact_timeconst_s": 0.0472827001940459,
+      "friction_slide": 0.6763024944812059,
+      "pose_id": "m10_s3test_006",
+      "posterior_seed": 20260941006,
+      "radius_m": 0.004454705066840284,
+      "sensor_delay_s": 0.007695150807499886,
+      "sensor_noise_seed": 202609410006,
+      "size": "m10",
+      "target_down_force_n": 3.239115065895021,
+      "x_m": -0.004118326175468312,
+      "y_m": 0.0016981715887933832
+    },
+    {
+      "angle_rad": 5.360663619008359,
+      "baseline_phase_rad": 4.584356777569533,
+      "contact_timeconst_s": 0.06597017058171331,
+      "friction_slide": 0.7866709597408772,
+      "pose_id": "m10_s3test_007",
+      "posterior_seed": 20260941007,
+      "radius_m": 0.0028057884359227892,
+      "sensor_delay_s": 0.0038241406287997963,
+      "sensor_noise_seed": 202609410007,
+      "size": "m10",
+      "target_down_force_n": 2.8358240835368633,
+      "x_m": 0.001694168652432385,
+      "y_m": -0.0022365690966910656
+    },
+    {
+      "angle_rad": 1.7482249357857855,
+      "baseline_phase_rad": 2.128491326264445,
+      "contact_timeconst_s": 0.0638144542183727,
+      "friction_slide": 0.6367994446307421,
+      "pose_id": "m10_s3test_010",
+      "posterior_seed": 20260941010,
+      "radius_m": 0.005999372518034012,
+      "sensor_delay_s": 0.007434326404705644,
+      "sensor_noise_seed": 202609410010,
+      "size": "m10",
+      "target_down_force_n": 2.6743045784533024,
+      "x_m": -0.0010588840750441395,
+      "y_m": 0.00590518713723449
+    }
+  ],
+  "untouched_tasks_or_seeds_read": false
+}

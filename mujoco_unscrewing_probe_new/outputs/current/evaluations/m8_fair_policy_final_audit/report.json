@@ -1,0 +1,117 @@
+{
+  "claim_boundary": "Frozen M8 simulation benchmark inside the declared visual prior. Position and bounded contact nuisances are unseen Sobol samples. Proposed and Baseline B share an identical first fingerprint and frozen learner. Baseline-B reset travel is not simulated or timed, and capture evaluation still uses privileged MuJoCo contact labels; this is not hardware evidence.",
+  "design": {
+    "active_time_budget_s": 130.0,
+    "baseline_b_max_attempts": 3,
+    "baseline_b_retry_offset_mm": 0.5,
+    "capture_uses_privileged_mujoco_tags": true,
+    "contact_timeconst_range_s": [
+      0.04,
+      0.07
+    ],
+    "down_force_range_n": [
+      2.5,
+      3.5
+    ],
+    "friction_range": [
+      0.55,
+      0.95
+    ],
+    "poses": 36,
+    "posterior_residual_coverage": 0.99,
+    "proposed_global_outward_fallback": true,
+    "random_position_design": "area-uniform Sobol in 1.50 mm to visual 95% radius",
+    "reset_motion_time_excluded_from_baseline_b": true,
+    "same_probe_for_proposed_and_baseline_b_first_attempt": true,
+    "visual_95_radius_mm": 4.895303872079853
+  },
+  "direct_margin_diagnostic": {
+    "negative_margin_first_attempt_success_rate": 1.0,
+    "negative_margin_trials": 1,
+    "nonnegative_margin_first_attempt_success_rate": 0.9428571428571428
+  },
+  "methods": {
+    "baseline_a": {
+      "contact_path_median_mm": 82.84758823299842,
+      "first_attempt_successes": 31,
+      "hard_stops": 5,
+      "max_filtered_force_p90_n": 14.563516047792067,
+      "max_force_p90_n": 14.788335823192432,
+      "max_torque_p90_mnm": 65.21501061160137,
+      "success_rate": 0.8611111111111112,
+      "successes": 31,
+      "time_success_median_s": 44.31900000002959,
+      "trials": 36,
+      "wear_proxy_median_mj": 151.37116891468077
+    },
+    "baseline_b": {
+      "attempts_median": 1.0,
+      "contact_path_median_mm": 5.517660949756159,
+      "first_attempt_successes": 34,
+      "hard_stops": 0,
+      "max_filtered_force_p90_n": 4.065086430155626,
+      "max_force_p90_n": 7.18456319432882,
+      "max_torque_p90_mnm": 23.684627784853134,
+      "success_rate": 0.9444444444444444,
+      "successes": 34,
+      "time_success_median_s": 7.459499999998585,
+      "trials": 36,
+      "wear_proxy_median_mj": 13.50125387005892
+    },
+    "proposed_posterior": {
+      "contact_path_median_mm": 21.71544020839606,
+      "first_attempt_successes": 34,
+      "global_fallback_count": 1,
+      "hard_stops": 2,
+      "local_radius_median_mm": 2.474972658293533,
+      "max_filtered_force_p90_n": 4.955435880043911,
+      "max_force_p90_n": 9.735894439125689,
+      "max_torque_p90_mnm": 26.20056158023767,
+      "success_rate": 0.9444444444444444,
+      "successes": 34,
+      "time_success_median_s": 15.99550000000805,
+      "transport_median_mm": 2.124078623582763,
+      "trials": 36,
+      "wear_proxy_median_mj": 45.721275754742045
+    }
+  },
+  "paired_efficiency_proposed_vs_baseline_a": {
+    "both_success": 30,
+    "left_lower_contact_xy_path_mm_rate": 0.9666666666666667,
+    "left_lower_max_force_n_rate": 0.4,
+    "left_lower_time_to_inner_wall_s_rate": 0.8,
+    "left_lower_wear_proxy_mj_rate": 0.9333333333333333,
+    "left_minus_right_contact_xy_path_mm_median": -72.88776793054951,
+    "left_minus_right_max_force_n_median": 0.13886228113161803,
+    "left_minus_right_time_to_inner_wall_s_median": -27.774500000011752,
+    "left_minus_right_wear_proxy_mj_median": -102.02650659884276
+  },
+  "paired_efficiency_proposed_vs_baseline_b": {
+    "both_success": 32,
+    "left_lower_contact_xy_path_mm_rate": 0.0,
+    "left_lower_max_force_n_rate": 0.125,
+    "left_lower_time_to_inner_wall_s_rate": 0.0,
+    "left_lower_wear_proxy_mj_rate": 0.0,
+    "left_minus_right_contact_xy_path_mm_median": 16.155704398322804,
+    "left_minus_right_max_force_n_median": 1.5891189789621287,
+    "left_minus_right_time_to_inner_wall_s_median": 8.317000000008779,
+    "left_minus_right_wear_proxy_mj_median": 29.97750589912866
+  },
+  "paired_proposed_posterior_vs_baseline_a": {
+    "both_failed": 1,
+    "both_success": 30,
+    "left_only_success": 4,
+    "mcnemar_exact_two_sided_p": 0.375,
+    "right_only_success": 1
+  },
+  "paired_proposed_posterior_vs_baseline_b": {
+    "both_failed": 0,
+    "both_success": 32,
+    "left_only_success": 2,
+    "mcnemar_exact_two_sided_p": 1.0,
+    "right_only_success": 2
+  },
+  "probe_hash_match_rate": 1.0,
+  "stage": "M8_fair_policy_benchmark",
+  "updated_utc": "2026-07-11T14:35:34.886825+00:00"
+}

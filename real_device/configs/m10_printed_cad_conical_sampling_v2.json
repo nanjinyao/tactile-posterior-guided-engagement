@@ -1,0 +1,1707 @@
+{
+  "schema_version": 2,
+  "name": "m10_printed_cad_conical_sampling_v2",
+  "status": "PRINTED_CAD_DERIVED_REQUIRES_RUN_LOCAL_CENTER_AND_YAW_COMMISSIONING",
+  "claim_boundary": {
+    "purpose": "M10 real-device 26-point conical fingerprint acquisition",
+    "no_centre_attempt": true,
+    "cad_not_as_built_metrology": "STEP geometry is the printed design authority; every physical print still requires instance IDs, dimensional inspection, run-local centre teaching, and peg-to-fixture yaw confirmation",
+    "state_label_phase": "upright touchdown before the 15 degree cone",
+    "cone_transition_policy": "the cone may cross additional contact boundaries; the complete printed tip-to-shaft frustum is evaluated at 360 command phases and kept as separate per-point metadata",
+    "data_governance": "real raw Bota and measured touchdown dominate; clean remains pending offline QC; holdout, quarantine, and sentinel never train"
+  },
+  "coordinate_contract": {
+    "fixture_frame": {
+      "name": "F",
+      "nominal_m10_center_xy_mm": [
+        0.0,
+        0.0
+      ],
+      "angle_definition": "counter-clockwise from +X_F toward +Y_F",
+      "execution_rebase": "confirmed run-start TCP XY is the M10 centre; fixture XY is aligned with KUKA WORLD XY for this campaign"
+    },
+    "photo_top_view": {
+      "mapping": "u_photo_mm = -x_fixture_mm; v_photo_up_mm = -y_fixture_mm",
+      "display_axis_mapping": "u_right_mm = -x_fixture_mm; v_up_mm = -y_fixture_mm",
+      "plus_x_fixture_points": "left",
+      "plus_y_fixture_points": "down",
+      "plus_z_fixture_points": "toward viewer"
+    },
+    "yaw_contract": {
+      "printed_peg_selected_flat_normal_in_flange_cad_deg": 45.0,
+      "commissioned_peg_flat_normal_in_fixture_deg": 0.0,
+      "socket_flat_normal_in_fixture_deg": 0.0,
+      "acceptance_deg": 1.0,
+      "rule": "teach the printed flange +45 degree tangent datum parallel to +X_F, making the selected peg flat normal 0 degrees in F"
+    }
+  },
+  "source_files": {
+    "design_parameters": {
+      "path_from_real_device": "model/parametric_tooling/design_parameters.json",
+      "sha256": "89bff458e7415f04274c216d36c91dbe80c754216bd3de9b50aa6630c14eab43"
+    },
+    "generated_cad_manifest": {
+      "path_from_real_device": "model/parametric_tooling/generated/manifest.json",
+      "sha256": "63b39c21e66310c9800b7c0bc88105a1bd8698d40054659cbff3f6f003e5c634"
+    },
+    "printed_m10_integrated_peg_step": {
+      "path_from_real_device": "model/parametric_tooling/generated/integrated_flange_peg_m10.step",
+      "sha256": "17381968212daa2b7758dcf3795df32b3a4e687b42c482d3550111e03ae8daa2"
+    },
+    "printed_hardware_easy_v2_socket_step": {
+      "path_from_real_device": "model/parametric_tooling/generated/socket_base_hardware_easy_v2.step",
+      "sha256": "f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f"
+    }
+  },
+  "geometry_mm": {
+    "head_outer_diameter": 18.975,
+    "socket_mouth_af": 10.54,
+    "socket_deep_wall_af": 8.54,
+    "socket_chamfer_width": 1.0,
+    "socket_chamfer_depth": 1.0,
+    "center_through_hole_diameter": 0.5,
+    "peg_tip_face_af": 6.4,
+    "peg_shaft_af": 8.0,
+    "peg_chamfer_radial_setback": 0.8,
+    "peg_chamfer_axial_length": 0.8,
+    "peg_tip_face_flat_normal_fixture_deg": 0.0,
+    "peg_selected_flat_normal_in_flange_cad_deg": 45.0,
+    "socket_selected_flat_normal_fixture_deg": 0.0
+  },
+  "contact_state_definition": {
+    "footprint": "actual printed upright M10 tip face AF6.4 regular hexagon",
+    "support_surface": "head OD disk minus the AF10.54 mouth",
+    "supported_search": "outer_overhang_fraction <= 1e-5",
+    "double_overhang": "outer_overhang_fraction > 1e-5 and mouth_overlap_fraction > 1e-5",
+    "outer_partial_support": "outer_overhang_fraction > 1e-5, mouth_overlap_fraction <= 1e-5, and head_top_support_fraction > 0",
+    "area_method": "deterministic convex polygon clipping; head circle uses a 720-edge inscribed polygon"
+  },
+  "cone_command_geometry": {
+    "tilt_deg": 15.0,
+    "phase_bins": 360,
+    "peg_shaft_af_mm": 8.0,
+    "peg_chamfer_axial_length_mm": 0.8,
+    "conservative_xy_projection_radius_bound_mm": 4.82585739,
+    "semantics": "conservative drawing bound only; quantitative diagnostics use conv(xy(Rz(-phi) Ry(15deg) Rz(phi) [AF6.4@z0, AF8@z1])) at every phase and are not touchdown-state labels",
+    "rotation_convention": "R(phi)=Rz(-phi)*Ry(15deg)*Rz(phi)",
+    "phase_grid": "360 uniform samples on [0,360deg), matching the recorded phase-bin contract",
+    "diagnostic_area_normalization": "mouth intersection area divided by that phase's projected printed-frustum convex-hull area",
+    "mouth_overlap_epsilon": 1e-06
+  },
+  "sampling_design": {
+    "attempt_count": 26,
+    "partition_counts": {
+      "clean_candidate": 16,
+      "holdout": 4,
+      "quarantine": 4,
+      "sentinel": 2
+    },
+    "clean_contact_state_counts": {
+      "supported_search": 6,
+      "double_overhang": 6,
+      "outer_partial_support": 4
+    },
+    "clean_cone_sweep_subtype_counts": {
+      "landing_supported_cone_transition": 6,
+      "landing_double_overhang": 6,
+      "landing_mouth_clear_cone_transition": 2,
+      "full_frustum_mouth_clear": 2
+    },
+    "sentinel_semantics": "exact repeats of one supported and one landing-mouth-clear outer-partial clean point",
+    "boundary_quarantine_semantics": "two supported/double and two double/outer near-boundary diagnostics"
+  },
+  "fixture_centre_xy_mm": [
+    0.0,
+    0.0
+  ],
+  "attempt_count": 26,
+  "points": [
+    {
+      "attempt_index": 1,
+      "sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact full-frustum and tip-face landing outer tangencies",
+      "radius_mm": 5.533296312,
+      "angle_fixture_deg": 3.75,
+      "local_offset_fixture_mm": [
+        5.5214491,
+        0.361894894
+      ],
+      "fixture_xy_mm": [
+        5.5214491,
+        0.361894894
+      ],
+      "photo_uv_mm": [
+        -5.5214491,
+        -0.361894894
+      ],
+      "true_direction_to_centre_fixture_deg": 183.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.997858923,
+        -0.065403129
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.0,
+        "mouth_overlap_fraction": 0.439165047,
+        "head_top_support_fraction": 0.560834953
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.0,
+          0.0
+        ],
+        "mouth_overlap_fraction": [
+          0.438813902,
+          0.439561668
+        ],
+        "head_top_support_fraction": [
+          0.560438332,
+          0.561186098
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.452136239,
+        "minimum_mouth_overlap_fraction": 0.39401631,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -0.491749907,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 2,
+      "sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A063p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact full-frustum and tip-face landing outer tangencies",
+      "radius_mm": 5.533296312,
+      "angle_fixture_deg": 63.75,
+      "local_offset_fixture_mm": [
+        2.447314378,
+        4.962662633
+      ],
+      "fixture_xy_mm": [
+        2.447314378,
+        4.962662633
+      ],
+      "photo_uv_mm": [
+        -2.447314378,
+        -4.962662633
+      ],
+      "true_direction_to_centre_fixture_deg": 243.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.44228869,
+        -0.896872742
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.0,
+        "mouth_overlap_fraction": 0.439165047,
+        "head_top_support_fraction": 0.560834953
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.0,
+          0.0
+        ],
+        "mouth_overlap_fraction": [
+          0.438813902,
+          0.439561668
+        ],
+        "head_top_support_fraction": [
+          0.560438332,
+          0.561186098
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.452136239,
+        "minimum_mouth_overlap_fraction": 0.39401631,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -0.491749907,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 3,
+      "sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A123p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact full-frustum and tip-face landing outer tangencies",
+      "radius_mm": 5.533296312,
+      "angle_fixture_deg": 123.75,
+      "local_offset_fixture_mm": [
+        -3.074134721,
+        4.600767739
+      ],
+      "fixture_xy_mm": [
+        -3.074134721,
+        4.600767739
+      ],
+      "photo_uv_mm": [
+        3.074134721,
+        -4.600767739
+      ],
+      "true_direction_to_centre_fixture_deg": 303.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.555570233,
+        -0.831469612
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.0,
+        "mouth_overlap_fraction": 0.439165047,
+        "head_top_support_fraction": 0.560834953
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.0,
+          0.0
+        ],
+        "mouth_overlap_fraction": [
+          0.438813902,
+          0.439561668
+        ],
+        "head_top_support_fraction": [
+          0.560438332,
+          0.561186098
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.452136239,
+        "minimum_mouth_overlap_fraction": 0.39401631,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -0.491749907,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 4,
+      "sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A183p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact full-frustum and tip-face landing outer tangencies",
+      "radius_mm": 5.533296312,
+      "angle_fixture_deg": 183.75,
+      "local_offset_fixture_mm": [
+        -5.5214491,
+        -0.361894894
+      ],
+      "fixture_xy_mm": [
+        -5.5214491,
+        -0.361894894
+      ],
+      "photo_uv_mm": [
+        5.5214491,
+        0.361894894
+      ],
+      "true_direction_to_centre_fixture_deg": 3.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.997858923,
+        0.065403129
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.0,
+        "mouth_overlap_fraction": 0.439165047,
+        "head_top_support_fraction": 0.560834953
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.0,
+          0.0
+        ],
+        "mouth_overlap_fraction": [
+          0.438813902,
+          0.439561668
+        ],
+        "head_top_support_fraction": [
+          0.560438332,
+          0.561186098
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.452136239,
+        "minimum_mouth_overlap_fraction": 0.39401631,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -0.491749907,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 5,
+      "sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A243p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact full-frustum and tip-face landing outer tangencies",
+      "radius_mm": 5.533296312,
+      "angle_fixture_deg": 243.75,
+      "local_offset_fixture_mm": [
+        -2.447314378,
+        -4.962662633
+      ],
+      "fixture_xy_mm": [
+        -2.447314378,
+        -4.962662633
+      ],
+      "photo_uv_mm": [
+        2.447314378,
+        4.962662633
+      ],
+      "true_direction_to_centre_fixture_deg": 63.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.44228869,
+        0.896872742
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.0,
+        "mouth_overlap_fraction": 0.439165047,
+        "head_top_support_fraction": 0.560834953
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.0,
+          0.0
+        ],
+        "mouth_overlap_fraction": [
+          0.438813902,
+          0.439561668
+        ],
+        "head_top_support_fraction": [
+          0.560438332,
+          0.561186098
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.452136239,
+        "minimum_mouth_overlap_fraction": 0.39401631,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -0.491749907,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 6,
+      "sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A303p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact full-frustum and tip-face landing outer tangencies",
+      "radius_mm": 5.533296312,
+      "angle_fixture_deg": 303.75,
+      "local_offset_fixture_mm": [
+        3.074134721,
+        -4.600767739
+      ],
+      "fixture_xy_mm": [
+        3.074134721,
+        -4.600767739
+      ],
+      "photo_uv_mm": [
+        -3.074134721,
+        4.600767739
+      ],
+      "true_direction_to_centre_fixture_deg": 123.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.555570233,
+        0.831469612
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.0,
+        "mouth_overlap_fraction": 0.439165047,
+        "head_top_support_fraction": 0.560834953
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.0,
+          0.0
+        ],
+        "mouth_overlap_fraction": [
+          0.438813902,
+          0.439561668
+        ],
+        "head_top_support_fraction": [
+          0.560438332,
+          0.561186098
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.452136239,
+        "minimum_mouth_overlap_fraction": 0.39401631,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -0.491749907,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 7,
+      "sample_id": "M10-CLEAN_CANDIDATE-DOUBLE-A033p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact tip-face outer tangency and mouth-clear boundaries",
+      "radius_mm": 7.622793545,
+      "angle_fixture_deg": 33.75,
+      "local_offset_fixture_mm": [
+        6.338121194,
+        4.234997186
+      ],
+      "fixture_xy_mm": [
+        6.338121194,
+        4.234997186
+      ],
+      "photo_uv_mm": [
+        -6.338121194,
+        -4.234997186
+      ],
+      "true_direction_to_centre_fixture_deg": 213.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.831469612,
+        -0.555570233
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.196178152,
+        "mouth_overlap_fraction": 0.113347961,
+        "head_top_support_fraction": 0.690473887
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.195916749,
+          0.196377889
+        ],
+        "mouth_overlap_fraction": [
+          0.113265345,
+          0.113450402
+        ],
+        "head_top_support_fraction": [
+          0.690356767,
+          0.69063285
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.161764072,
+        "minimum_mouth_overlap_fraction": 0.12153459,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -2.81954118,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 8,
+      "sample_id": "M10-CLEAN_CANDIDATE-DOUBLE-A093p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact tip-face outer tangency and mouth-clear boundaries",
+      "radius_mm": 7.622793545,
+      "angle_fixture_deg": 93.75,
+      "local_offset_fixture_mm": [
+        -0.498554551,
+        7.606472559
+      ],
+      "fixture_xy_mm": [
+        -0.498554551,
+        7.606472559
+      ],
+      "photo_uv_mm": [
+        0.498554551,
+        -7.606472559
+      ],
+      "true_direction_to_centre_fixture_deg": 273.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.065403129,
+        -0.997858923
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.196178152,
+        "mouth_overlap_fraction": 0.113347961,
+        "head_top_support_fraction": 0.690473887
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.195916749,
+          0.196377889
+        ],
+        "mouth_overlap_fraction": [
+          0.113265345,
+          0.113450402
+        ],
+        "head_top_support_fraction": [
+          0.690356767,
+          0.69063285
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.161764072,
+        "minimum_mouth_overlap_fraction": 0.12153459,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -2.81954118,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 9,
+      "sample_id": "M10-CLEAN_CANDIDATE-DOUBLE-A153p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact tip-face outer tangency and mouth-clear boundaries",
+      "radius_mm": 7.622793545,
+      "angle_fixture_deg": 153.75,
+      "local_offset_fixture_mm": [
+        -6.836675745,
+        3.371475373
+      ],
+      "fixture_xy_mm": [
+        -6.836675745,
+        3.371475373
+      ],
+      "photo_uv_mm": [
+        6.836675745,
+        -3.371475373
+      ],
+      "true_direction_to_centre_fixture_deg": 333.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.896872742,
+        -0.44228869
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.196178152,
+        "mouth_overlap_fraction": 0.113347961,
+        "head_top_support_fraction": 0.690473887
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.195916749,
+          0.196377889
+        ],
+        "mouth_overlap_fraction": [
+          0.113265345,
+          0.113450402
+        ],
+        "head_top_support_fraction": [
+          0.690356767,
+          0.69063285
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.161764072,
+        "minimum_mouth_overlap_fraction": 0.12153459,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -2.81954118,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 10,
+      "sample_id": "M10-CLEAN_CANDIDATE-DOUBLE-A213p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact tip-face outer tangency and mouth-clear boundaries",
+      "radius_mm": 7.622793545,
+      "angle_fixture_deg": 213.75,
+      "local_offset_fixture_mm": [
+        -6.338121194,
+        -4.234997186
+      ],
+      "fixture_xy_mm": [
+        -6.338121194,
+        -4.234997186
+      ],
+      "photo_uv_mm": [
+        6.338121194,
+        4.234997186
+      ],
+      "true_direction_to_centre_fixture_deg": 33.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.831469612,
+        0.555570233
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.196178152,
+        "mouth_overlap_fraction": 0.113347961,
+        "head_top_support_fraction": 0.690473887
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.195916749,
+          0.196377889
+        ],
+        "mouth_overlap_fraction": [
+          0.113265345,
+          0.113450402
+        ],
+        "head_top_support_fraction": [
+          0.690356767,
+          0.69063285
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.161764072,
+        "minimum_mouth_overlap_fraction": 0.12153459,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -2.81954118,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 11,
+      "sample_id": "M10-CLEAN_CANDIDATE-DOUBLE-A273p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact tip-face outer tangency and mouth-clear boundaries",
+      "radius_mm": 7.622793545,
+      "angle_fixture_deg": 273.75,
+      "local_offset_fixture_mm": [
+        0.498554551,
+        -7.606472559
+      ],
+      "fixture_xy_mm": [
+        0.498554551,
+        -7.606472559
+      ],
+      "photo_uv_mm": [
+        -0.498554551,
+        7.606472559
+      ],
+      "true_direction_to_centre_fixture_deg": 93.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.065403129,
+        0.997858923
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.196178152,
+        "mouth_overlap_fraction": 0.113347961,
+        "head_top_support_fraction": 0.690473887
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.195916749,
+          0.196377889
+        ],
+        "mouth_overlap_fraction": [
+          0.113265345,
+          0.113450402
+        ],
+        "head_top_support_fraction": [
+          0.690356767,
+          0.69063285
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.161764072,
+        "minimum_mouth_overlap_fraction": 0.12153459,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -2.81954118,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 12,
+      "sample_id": "M10-CLEAN_CANDIDATE-DOUBLE-A333p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact tip-face outer tangency and mouth-clear boundaries",
+      "radius_mm": 7.622793545,
+      "angle_fixture_deg": 333.75,
+      "local_offset_fixture_mm": [
+        6.836675745,
+        -3.371475373
+      ],
+      "fixture_xy_mm": [
+        6.836675745,
+        -3.371475373
+      ],
+      "photo_uv_mm": [
+        -6.836675745,
+        3.371475373
+      ],
+      "true_direction_to_centre_fixture_deg": 153.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.896872742,
+        0.44228869
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.196178152,
+        "mouth_overlap_fraction": 0.113347961,
+        "head_top_support_fraction": 0.690473887
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.195916749,
+          0.196377889
+        ],
+        "mouth_overlap_fraction": [
+          0.113265345,
+          0.113450402
+        ],
+        "head_top_support_fraction": [
+          0.690356767,
+          0.69063285
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.161764072,
+        "minimum_mouth_overlap_fraction": 0.12153459,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -2.81954118,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 13,
+      "sample_id": "M10-CLEAN_CANDIDATE-OUTER-A018p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "landing_mouth_clear_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "tip-face landing mouth-clear boundary plus 0.60 mm",
+      "radius_mm": 9.544675148,
+      "angle_fixture_deg": 18.75,
+      "local_offset_fixture_mm": [
+        9.038140473,
+        3.068035276
+      ],
+      "fixture_xy_mm": [
+        9.038140473,
+        3.068035276
+      ],
+      "photo_uv_mm": [
+        -9.038140473,
+        -3.068035276
+      ],
+      "true_direction_to_centre_fixture_deg": 198.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.946930129,
+        -0.321439465
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.545733744,
+        "mouth_overlap_fraction": 0.0,
+        "head_top_support_fraction": 0.454266256
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.545316606,
+          0.546196472
+        ],
+        "mouth_overlap_fraction": [
+          0.0,
+          0.0
+        ],
+        "head_top_support_fraction": [
+          0.453803528,
+          0.454683394
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.014709184,
+        "minimum_mouth_overlap_fraction": 0.0,
+        "mouth_overlap_phase_fraction": 0.788888889,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -4.69534156,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 14,
+      "sample_id": "M10-CLEAN_CANDIDATE-OUTER-A198p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "landing_mouth_clear_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "tip-face landing mouth-clear boundary plus 0.60 mm",
+      "radius_mm": 9.544675148,
+      "angle_fixture_deg": 198.75,
+      "local_offset_fixture_mm": [
+        -9.038140473,
+        -3.068035276
+      ],
+      "fixture_xy_mm": [
+        -9.038140473,
+        -3.068035276
+      ],
+      "photo_uv_mm": [
+        9.038140473,
+        3.068035276
+      ],
+      "true_direction_to_centre_fixture_deg": 18.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.946930129,
+        0.321439465
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.545733744,
+        "mouth_overlap_fraction": 0.0,
+        "head_top_support_fraction": 0.454266256
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.545316606,
+          0.546196472
+        ],
+        "mouth_overlap_fraction": [
+          0.0,
+          0.0
+        ],
+        "head_top_support_fraction": [
+          0.453803528,
+          0.454683394
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.014709184,
+        "minimum_mouth_overlap_fraction": 0.0,
+        "mouth_overlap_phase_fraction": 0.788888889,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -4.69534156,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 15,
+      "sample_id": "M10-CLEAN_CANDIDATE-OUTER-A108p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "full_frustum_mouth_clear",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "complete 15deg printed-frustum mouth-clear boundary plus 0.35 mm",
+      "radius_mm": 9.920315833,
+      "angle_fixture_deg": 108.75,
+      "local_offset_fixture_mm": [
+        -3.188781017,
+        9.393845956
+      ],
+      "fixture_xy_mm": [
+        -3.188781017,
+        9.393845956
+      ],
+      "photo_uv_mm": [
+        3.188781017,
+        -9.393845956
+      ],
+      "true_direction_to_centre_fixture_deg": 288.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.321439465,
+        -0.946930129
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.620148561,
+        "mouth_overlap_fraction": 0.0,
+        "head_top_support_fraction": 0.379851439
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.619629487,
+          0.620619432
+        ],
+        "mouth_overlap_fraction": [
+          0.0,
+          0.0
+        ],
+        "head_top_support_fraction": [
+          0.379380568,
+          0.380370513
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.0,
+        "minimum_mouth_overlap_fraction": 0.0,
+        "mouth_overlap_phase_fraction": 0.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -4.970951004,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 16,
+      "sample_id": "M10-CLEAN_CANDIDATE-OUTER-A288p75",
+      "partition": "clean_candidate",
+      "training_use": "eligible_only_after_complete_trace_and_offline_qc",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "full_frustum_mouth_clear",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "complete 15deg printed-frustum mouth-clear boundary plus 0.35 mm",
+      "radius_mm": 9.920315833,
+      "angle_fixture_deg": 288.75,
+      "local_offset_fixture_mm": [
+        3.188781017,
+        -9.393845956
+      ],
+      "fixture_xy_mm": [
+        3.188781017,
+        -9.393845956
+      ],
+      "photo_uv_mm": [
+        -3.188781017,
+        9.393845956
+      ],
+      "true_direction_to_centre_fixture_deg": 108.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.321439465,
+        0.946930129
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.620148561,
+        "mouth_overlap_fraction": 0.0,
+        "head_top_support_fraction": 0.379851439
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.619629487,
+          0.620619432
+        ],
+        "mouth_overlap_fraction": [
+          0.0,
+          0.0
+        ],
+        "head_top_support_fraction": [
+          0.379380568,
+          0.380370513
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.0,
+        "minimum_mouth_overlap_fraction": 0.0,
+        "mouth_overlap_phase_fraction": 0.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -4.970951004,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 17,
+      "sample_id": "M10-HOLDOUT-SUPPORTED-A046p00",
+      "partition": "holdout",
+      "training_use": "never_train_reserved_for_final_real_alignment_audit",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact full-frustum and tip-face landing outer tangencies",
+      "radius_mm": 5.382819971,
+      "angle_fixture_deg": 46.0,
+      "local_offset_fixture_mm": [
+        3.739220949,
+        3.872076643
+      ],
+      "fixture_xy_mm": [
+        3.739220949,
+        3.872076643
+      ],
+      "photo_uv_mm": [
+        -3.739220949,
+        -3.872076643
+      ],
+      "true_direction_to_centre_fixture_deg": 226.0,
+      "true_direction_to_centre_fixture_unit": [
+        -0.69465837,
+        -0.7193398
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.0,
+        "mouth_overlap_fraction": 0.461863078,
+        "head_top_support_fraction": 0.538136922
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.0,
+          0.0
+        ],
+        "mouth_overlap_fraction": [
+          0.461044416,
+          0.462619207
+        ],
+        "head_top_support_fraction": [
+          0.537380793,
+          0.538955584
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.470478116,
+        "minimum_mouth_overlap_fraction": 0.408535984,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -0.498353838,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 18,
+      "sample_id": "M10-HOLDOUT-DOUBLE-A136p00",
+      "partition": "holdout",
+      "training_use": "never_train_reserved_for_final_real_alignment_audit",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact tip-face outer tangency and mouth-clear boundaries",
+      "radius_mm": 7.337802971,
+      "angle_fixture_deg": 136.0,
+      "local_offset_fixture_mm": [
+        -5.278373724,
+        5.097266254
+      ],
+      "fixture_xy_mm": [
+        -5.278373724,
+        5.097266254
+      ],
+      "photo_uv_mm": [
+        5.278373724,
+        -5.097266254
+      ],
+      "true_direction_to_centre_fixture_deg": 316.0,
+      "true_direction_to_centre_fixture_unit": [
+        0.7193398,
+        -0.69465837
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.143301967,
+        "mouth_overlap_fraction": 0.147160887,
+        "head_top_support_fraction": 0.709537146
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.143256925,
+          0.143360697
+        ],
+        "mouth_overlap_fraction": [
+          0.146371368,
+          0.147960808
+        ],
+        "head_top_support_fraction": [
+          0.708678495,
+          0.710371706
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.200627924,
+        "minimum_mouth_overlap_fraction": 0.152927126,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -2.465511187,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 19,
+      "sample_id": "M10-HOLDOUT-OUTER-A226p00",
+      "partition": "holdout",
+      "training_use": "never_train_reserved_for_final_real_alignment_audit",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "landing_mouth_clear_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "tip-face landing mouth-clear boundary plus 0.60 mm",
+      "radius_mm": 9.329284282,
+      "angle_fixture_deg": 226.0,
+      "local_offset_fixture_mm": [
+        -6.480665417,
+        -6.710925493
+      ],
+      "fixture_xy_mm": [
+        -6.480665417,
+        -6.710925493
+      ],
+      "photo_uv_mm": [
+        6.480665417,
+        6.710925493
+      ],
+      "true_direction_to_centre_fixture_deg": 46.0,
+      "true_direction_to_centre_fixture_unit": [
+        0.69465837,
+        0.7193398
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.507736266,
+        "mouth_overlap_fraction": 0.0,
+        "head_top_support_fraction": 0.492263734
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.507308197,
+          0.508203896
+        ],
+        "mouth_overlap_fraction": [
+          0.0,
+          0.0
+        ],
+        "head_top_support_fraction": [
+          0.491796104,
+          0.492691803
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.018398595,
+        "minimum_mouth_overlap_fraction": 0.0,
+        "mouth_overlap_phase_fraction": 0.780555556,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -4.424575929,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 20,
+      "sample_id": "M10-HOLDOUT-OUTER-A316p00",
+      "partition": "holdout",
+      "training_use": "never_train_reserved_for_final_real_alignment_audit",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "full_frustum_mouth_clear",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "complete 15deg printed-frustum mouth-clear boundary plus 0.35 mm",
+      "radius_mm": 10.114692526,
+      "angle_fixture_deg": 316.0,
+      "local_offset_fixture_mm": [
+        7.275900902,
+        -7.026255828
+      ],
+      "fixture_xy_mm": [
+        7.275900902,
+        -7.026255828
+      ],
+      "photo_uv_mm": [
+        -7.275900902,
+        7.026255828
+      ],
+      "true_direction_to_centre_fixture_deg": 136.0,
+      "true_direction_to_centre_fixture_unit": [
+        -0.7193398,
+        0.69465837
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.652546286,
+        "mouth_overlap_fraction": 0.0,
+        "head_top_support_fraction": 0.347453714
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.651972033,
+          0.653078407
+        ],
+        "mouth_overlap_fraction": [
+          0.0,
+          0.0
+        ],
+        "head_top_support_fraction": [
+          0.346921593,
+          0.348027967
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.0,
+        "minimum_mouth_overlap_fraction": 0.0,
+        "mouth_overlap_phase_fraction": 0.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -5.233940798,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 21,
+      "sample_id": "M10-QUARANTINE-BOUNDARY_SD-A075p00",
+      "partition": "quarantine",
+      "training_use": "forbidden_boundary_diagnostic_only",
+      "contact_state": "supported_double_boundary",
+      "cone_sweep_subtype": "landing_boundary_diagnostic",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "2 percent tip area beyond head OD boundary diagnostic",
+      "radius_mm": 6.431292519,
+      "angle_fixture_deg": 75.0,
+      "local_offset_fixture_mm": [
+        1.664540988,
+        6.21215154
+      ],
+      "fixture_xy_mm": [
+        1.664540988,
+        6.21215154
+      ],
+      "photo_uv_mm": [
+        -1.664540988,
+        -6.21215154
+      ],
+      "true_direction_to_centre_fixture_deg": 255.0,
+      "true_direction_to_centre_fixture_unit": [
+        -0.258819045,
+        -0.965925826
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.02,
+        "mouth_overlap_fraction": 0.279792894,
+        "head_top_support_fraction": 0.700207106
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.019851955,
+          0.020161847
+        ],
+        "mouth_overlap_fraction": [
+          0.279677549,
+          0.279899033
+        ],
+        "head_top_support_fraction": [
+          0.700160604,
+          0.700249011
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.317298251,
+        "minimum_mouth_overlap_fraction": 0.262267313,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -1.551761906,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 22,
+      "sample_id": "M10-QUARANTINE-BOUNDARY_SD-A255p00",
+      "partition": "quarantine",
+      "training_use": "forbidden_boundary_diagnostic_only",
+      "contact_state": "supported_double_boundary",
+      "cone_sweep_subtype": "landing_boundary_diagnostic",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "2 percent tip area beyond head OD boundary diagnostic",
+      "radius_mm": 6.431292519,
+      "angle_fixture_deg": 255.0,
+      "local_offset_fixture_mm": [
+        -1.664540988,
+        -6.21215154
+      ],
+      "fixture_xy_mm": [
+        -1.664540988,
+        -6.21215154
+      ],
+      "photo_uv_mm": [
+        1.664540988,
+        6.21215154
+      ],
+      "true_direction_to_centre_fixture_deg": 75.0,
+      "true_direction_to_centre_fixture_unit": [
+        0.258819045,
+        0.965925826
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.02,
+        "mouth_overlap_fraction": 0.279792894,
+        "head_top_support_fraction": 0.700207106
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.019851955,
+          0.020161847
+        ],
+        "mouth_overlap_fraction": [
+          0.279677549,
+          0.279899033
+        ],
+        "head_top_support_fraction": [
+          0.700160604,
+          0.700249011
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.317298251,
+        "minimum_mouth_overlap_fraction": 0.262267313,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -1.551761906,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 23,
+      "sample_id": "M10-QUARANTINE-BOUNDARY_DO-A165p00",
+      "partition": "quarantine",
+      "training_use": "forbidden_boundary_diagnostic_only",
+      "contact_state": "double_outer_boundary",
+      "cone_sweep_subtype": "landing_boundary_diagnostic",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "2 percent residual mouth overlap boundary diagnostic",
+      "radius_mm": 8.509473595,
+      "angle_fixture_deg": 165.0,
+      "local_offset_fixture_mm": [
+        -8.219520313,
+        2.20241383
+      ],
+      "fixture_xy_mm": [
+        -8.219520313,
+        2.20241383
+      ],
+      "photo_uv_mm": [
+        8.219520313,
+        -2.20241383
+      ],
+      "true_direction_to_centre_fixture_deg": 345.0,
+      "true_direction_to_centre_fixture_unit": [
+        0.965925826,
+        -0.258819045
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.354141154,
+        "mouth_overlap_fraction": 0.02,
+        "head_top_support_fraction": 0.625858846
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.353811642,
+          0.354451243
+        ],
+        "mouth_overlap_fraction": [
+          0.019642052,
+          0.020359047
+        ],
+        "head_top_support_fraction": [
+          0.62518971,
+          0.626546307
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.080194625,
+        "minimum_mouth_overlap_fraction": 0.04649639,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -3.621008244,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 24,
+      "sample_id": "M10-QUARANTINE-BOUNDARY_DO-A345p00",
+      "partition": "quarantine",
+      "training_use": "forbidden_boundary_diagnostic_only",
+      "contact_state": "double_outer_boundary",
+      "cone_sweep_subtype": "landing_boundary_diagnostic",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "2 percent residual mouth overlap boundary diagnostic",
+      "radius_mm": 8.509473595,
+      "angle_fixture_deg": 345.0,
+      "local_offset_fixture_mm": [
+        8.219520313,
+        -2.20241383
+      ],
+      "fixture_xy_mm": [
+        8.219520313,
+        -2.20241383
+      ],
+      "photo_uv_mm": [
+        -8.219520313,
+        2.20241383
+      ],
+      "true_direction_to_centre_fixture_deg": 165.0,
+      "true_direction_to_centre_fixture_unit": [
+        -0.965925826,
+        0.258819045
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.354141154,
+        "mouth_overlap_fraction": 0.02,
+        "head_top_support_fraction": 0.625858846
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.353811642,
+          0.354451243
+        ],
+        "mouth_overlap_fraction": [
+          0.019642052,
+          0.020359047
+        ],
+        "head_top_support_fraction": [
+          0.62518971,
+          0.626546307
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.080194625,
+        "minimum_mouth_overlap_fraction": 0.04649639,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -3.621008244,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": null
+    },
+    {
+      "attempt_index": 25,
+      "sample_id": "M10-SENTINEL-SUPPORTED-A003p75",
+      "partition": "sentinel",
+      "training_use": "repeatability_monitor_not_independent_training_data",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "midpoint of exact full-frustum and tip-face landing outer tangencies",
+      "radius_mm": 5.533296312,
+      "angle_fixture_deg": 3.75,
+      "local_offset_fixture_mm": [
+        5.5214491,
+        0.361894894
+      ],
+      "fixture_xy_mm": [
+        5.5214491,
+        0.361894894
+      ],
+      "photo_uv_mm": [
+        -5.5214491,
+        -0.361894894
+      ],
+      "true_direction_to_centre_fixture_deg": 183.75,
+      "true_direction_to_centre_fixture_unit": [
+        -0.997858923,
+        -0.065403129
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.0,
+        "mouth_overlap_fraction": 0.439165047,
+        "head_top_support_fraction": 0.560834953
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.0,
+          0.0
+        ],
+        "mouth_overlap_fraction": [
+          0.438813902,
+          0.439561668
+        ],
+        "head_top_support_fraction": [
+          0.560438332,
+          0.561186098
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.452136239,
+        "minimum_mouth_overlap_fraction": 0.39401631,
+        "mouth_overlap_phase_fraction": 1.0,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -0.491749907,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": "M10-CLEAN_CANDIDATE-SUPPORTED-A003p75"
+    },
+    {
+      "attempt_index": 26,
+      "sample_id": "M10-SENTINEL-OUTER-A198p75",
+      "partition": "sentinel",
+      "training_use": "repeatability_monitor_not_independent_training_data",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "landing_mouth_clear_cone_transition",
+      "state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "radius_rule": "tip-face landing mouth-clear boundary plus 0.60 mm",
+      "radius_mm": 9.544675148,
+      "angle_fixture_deg": 198.75,
+      "local_offset_fixture_mm": [
+        -9.038140473,
+        -3.068035276
+      ],
+      "fixture_xy_mm": [
+        -9.038140473,
+        -3.068035276
+      ],
+      "photo_uv_mm": [
+        9.038140473,
+        3.068035276
+      ],
+      "true_direction_to_centre_fixture_deg": 18.75,
+      "true_direction_to_centre_fixture_unit": [
+        0.946930129,
+        0.321439465
+      ],
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.545733744,
+        "mouth_overlap_fraction": 0.0,
+        "head_top_support_fraction": 0.454266256
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.545316606,
+          0.546196472
+        ],
+        "mouth_overlap_fraction": [
+          0.0,
+          0.0
+        ],
+        "head_top_support_fraction": [
+          0.453803528,
+          0.454683394
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.014709184,
+        "minimum_mouth_overlap_fraction": 0.0,
+        "mouth_overlap_phase_fraction": 0.788888889,
+        "outer_overhang_phase_fraction": 1.0,
+        "minimum_outer_clearance_mm": -4.69534156,
+        "minimum_projected_area_mm2": 53.537043439,
+        "maximum_projected_area_mm2": 53.537043439
+      },
+      "duplicate_of": "M10-CLEAN_CANDIDATE-OUTER-A198p75"
+    }
+  ],
+  "execution": {
+    "attempt_indices": [
+      4,
+      14,
+      10,
+      5,
+      6,
+      25,
+      24,
+      12,
+      20,
+      16,
+      11,
+      22,
+      19,
+      26,
+      23,
+      9,
+      18,
+      3,
+      15,
+      8,
+      21,
+      2,
+      17,
+      7,
+      13,
+      1
+    ],
+    "closed_route_distance_mm": 97.999005183,
+    "source_order_closed_route_distance_mm": 271.393699907,
+    "sentinel_duplicate_execution_separations": [
+      20,
+      12
+    ],
+    "route_solver": "deterministic multistart nearest-neighbour plus 2-opt, best constrained sentinel insertion, constrained 2-opt, and fixed-seed constrained annealing",
+    "start_and_finish": "run-local M10 centre at clear-air height"
+  },
+  "motion_contract": {
+    "maximum_planned_radius_mm": 10.114692526,
+    "measured_landing_tolerance_mm": 0.25,
+    "air_tracking_tolerance_mm": 0.2,
+    "additional_workspace_margin_mm": 0.25,
+    "required_sampling_only_lateral_excursion_mm": 10.9
+  },
+  "validation": {
+    "actual_printed_cad_hashes_verified": true,
+    "no_simulation_geometry_input": true,
+    "all_three_clean_contact_states_present": true,
+    "outer_partial_clean_count": 4,
+    "sentinel_minimum_execution_separation": 12,
+    "route_improvement_fraction": 0.638904642
+  }
+}

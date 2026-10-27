@@ -1,0 +1,253 @@
+{
+  "artifacts": {
+    "figure": {
+      "bytes": 351003,
+      "path": "outputs/current/active_comparison/m8_shortcut_residual_sobol_008/same_start_shortcut_residual_sobol_008.png",
+      "sha256": "d40883d9f91456b04bcd0086bd8b76d875b3a779ba6cfd10ca95d7d5c90609a2"
+    },
+    "frozen_verification": {
+      "bytes": 1100,
+      "path": "outputs/current/active_comparison/m8_shortcut_residual_sobol_008/frozen_result_verification.json",
+      "sha256": "ed5fc08ccb7ac84b7e07bcbd5ca32760eb5380ea0546e3538842f85a4412d49a"
+    },
+    "m8_mujoco_topview_base": {
+      "bytes": 97644,
+      "path": "outputs/current/active_comparison/m8_shortcut_residual_sobol_008/m8_mujoco_topview_base.png",
+      "sha256": "8d6addec64bb0b46b2b323d4bc9f617764788937474ea14aca523bdc256e9a99"
+    },
+    "outward_trace": {
+      "bytes": 41405021,
+      "path": "outputs/current/active_comparison/m8_shortcut_residual_sobol_008/outward_trace.csv",
+      "sha256": "e9cc748b399cfa230b99433e8c7b27e281113eb7189263f49cbf51b7280186c3"
+    },
+    "proposed_plus_trace": {
+      "bytes": 27225739,
+      "path": "outputs/current/active_comparison/m8_shortcut_residual_sobol_008/proposed_plus_trace.csv",
+      "sha256": "ec75ea0b8ef85f72a2b0066140f0144157000d274d1a51b5c1cce749cc3e8f6d"
+    },
+    "proposed_trace": {
+      "bytes": 28073498,
+      "path": "outputs/current/active_comparison/m8_shortcut_residual_sobol_008/proposed_trace.csv",
+      "sha256": "04f3fda90a488d69f4d83e909d4824e971ea946fdeeadd78b2b64af8f83df7aa"
+    },
+    "results": {
+      "bytes": 42510,
+      "path": "outputs/current/active_comparison/m8_shortcut_residual_sobol_008/results.json",
+      "sha256": "aefa778297bf7450d23505f9390b0407899fdc2f00ce8a02e5247cdfd630c13b"
+    }
+  },
+  "created_utc": "2026-07-15T13:25:30.060583+00:00",
+  "experiment": "M8_same_start_shortcut_then_residual_search_selected_mechanism",
+  "figure_contract": {
+    "capture_and_bottom_times_are_serialized_runresult_values": true,
+    "capture_then_all_methods_use_shared_funnel": true,
+    "commanded_entropy_endpoints_are_numbered_separately": true,
+    "paths_are_measured_tip_xy_from_replayed_mujoco_traces": true,
+    "pure_outward_is_faint_same_start_reference_only": true,
+    "selected_case_is_not_distribution_level_evidence": true,
+    "selected_case_is_not_isolated_causal_ablation": true
+  },
+  "m8_geometry_offline_overlay": {
+    "capture_regions_used_online": false,
+    "chamfer_capture_radius_mm": 0.25,
+    "direct_clearance_radius_mm": 0.1,
+    "mujoco_geometry_is_actual_allen_m8_source_model": true,
+    "source": "configs/allen_m8_source.json",
+    "source_sha256": "d203d504848819b59d62b034d73f83658c2cd50aa415b4c7f371d0ec59d7d7ce",
+    "true_center_used_online": false
+  },
+  "methods": {
+    "outward": {
+      "actual_xy_path_mm": 52.55023048918598,
+      "bottom_time_s": 26.124499999984465,
+      "capture_event_radius_mm": 0.09971114771919375,
+      "capture_event_xy_mm": [
+        -0.09962293859656943,
+        0.004193218914275134
+      ],
+      "capture_mode": "safe_downward_progress",
+      "capture_time_s": 24.507499999988234,
+      "funnel_recovery_count": 0,
+      "residual_measured_path_length_mm": 52.01162256043879,
+      "residual_segment_count": 1,
+      "runtime_method": "baseline",
+      "shortcut_measured_path_length_mm": 0.0,
+      "shortcut_segment_count": 0,
+      "strict_bottom_success": true,
+      "terminal_verification_mode": "cad_depth_low_wrench_dwell"
+    },
+    "proposed": {
+      "actual_xy_path_mm": 22.854954141346624,
+      "bottom_time_s": 17.488500000004592,
+      "capture_event_radius_mm": 0.09423405600813234,
+      "capture_event_xy_mm": [
+        -0.0939899842592253,
+        -0.006777917873093476
+      ],
+      "capture_mode": "safe_downward_progress",
+      "capture_time_s": 16.12450000000777,
+      "funnel_recovery_count": 0,
+      "residual_measured_path_length_mm": 19.46583643570611,
+      "residual_segment_count": 1,
+      "runtime_method": "learned",
+      "shortcut_measured_path_length_mm": 0.8750924018813615,
+      "shortcut_segment_count": 1,
+      "strict_bottom_success": true,
+      "terminal_verification_mode": "cad_depth_low_wrench_dwell"
+    },
+    "proposed_plus": {
+      "actual_xy_path_mm": 6.781307855190873,
+      "bottom_time_s": 16.208500000007575,
+      "capture_event_radius_mm": 0.19518281164755263,
+      "capture_event_xy_mm": [
+        -0.10024470130255318,
+        0.1674733704903735
+      ],
+      "capture_mode": "inner_wall_guided",
+      "capture_time_s": 11.944000000003106,
+      "funnel_recovery_count": 1,
+      "residual_measured_path_length_mm": 3.838008711017128,
+      "residual_segment_count": 1,
+      "runtime_method": "hybrid",
+      "shortcut_measured_path_length_mm": 0.3093510032299138,
+      "shortcut_segment_count": 1,
+      "strict_bottom_success": true,
+      "terminal_verification_mode": "cad_depth_low_wrench_dwell"
+    }
+  },
+  "pose_id": "sobol_008",
+  "proposed_plus_task_aware_ordering": {
+    "action_objective": "capture probability reward + weighted expected information gain - contact/motion cost",
+    "claim": "Task-aware action ordering seeks the capture set; it does not guarantee monotonic posterior-entropy contraction.",
+    "entropy_is_monotonic_decreasing": false,
+    "fifth_action_outcome": "capture_during_smooth_segment",
+    "post_shortcut_entropy_before_first_action_nats": 5.622571454321774,
+    "posterior_entropy_after_non_capture_actions_nats": [
+      4.908344233854252,
+      5.130629506641007,
+      5.359193183994287,
+      5.427062947969357
+    ],
+    "selected_action_count": 5,
+    "selected_actions_mm": [
+      [
+        0.4373040932627191,
+        -1.3918908584461986
+      ],
+      [
+        -0.5703230699281112,
+        -0.3842636952553684
+      ],
+      [
+        -0.5703230699281112,
+        -0.04838797419175829
+      ],
+      [
+        -1.2420745120553314,
+        1.9668663521899026
+      ],
+      [
+        -1.5779502331189414,
+        -2.063642300573419
+      ]
+    ],
+    "termination": "measured sensor capture cue stops the fifth smooth segment"
+  },
+  "same_rollout_contract": {
+    "entry_contract": "run_m8_five_method_retry3_audit._common_kwargs",
+    "frozen_result_verification": {
+      "all_exact_substantive_match": true,
+      "methods": {
+        "outward": {
+          "compared_field_count": 142,
+          "exact_substantive_match": true,
+          "excluded_display_only_fields": [
+            "frame_count",
+            "video_path"
+          ],
+          "frozen_field_count": 144,
+          "mismatches": [],
+          "missing_fields": [],
+          "new_replay_only_fields": [],
+          "replay_field_count": 144
+        },
+        "proposed": {
+          "compared_field_count": 142,
+          "exact_substantive_match": true,
+          "excluded_display_only_fields": [
+            "frame_count",
+            "video_path"
+          ],
+          "frozen_field_count": 144,
+          "mismatches": [],
+          "missing_fields": [],
+          "new_replay_only_fields": [],
+          "replay_field_count": 144
+        },
+        "proposed_plus": {
+          "compared_field_count": 142,
+          "exact_substantive_match": true,
+          "excluded_display_only_fields": [
+            "frame_count",
+            "video_path"
+          ],
+          "frozen_field_count": 144,
+          "mismatches": [],
+          "missing_fields": [],
+          "new_replay_only_fields": [],
+          "replay_field_count": 144
+        }
+      }
+    },
+    "hard_active_time_budget_s": 130.0,
+    "same_first_probe_fingerprint_for_proposed_and_proposed_plus": true,
+    "same_initial_pose_contact_nuisance_sensor_seed": true,
+    "same_terminal_verifier": true,
+    "shared_post_capture_funnel": {
+      "cad_bottom_overshoot_margin_m": 0.00025,
+      "deep_tilt_damping_nm_s_rad": 0.5,
+      "deep_tilt_stiffness_nm_rad": 3.0,
+      "enabled": true,
+      "force_floor_n": 0.2,
+      "injected_power_limit_w": 0.5,
+      "max_recoveries": 3,
+      "max_tilt_deg": 0.75,
+      "min_window_progress_m": 2e-05,
+      "moment_lever_m": 0.003,
+      "no_progress_energy_j": 0.0015,
+      "planar_damping_n_s_m": 100.0,
+      "planar_stiffness_n_m": 1500.0,
+      "power_dwell_s": 0.01,
+      "recovery_force_n": 0.2,
+      "recovery_retouch_s": 0.2,
+      "recovery_retract_m": 0.00035,
+      "recovery_retract_s": 0.15,
+      "recovery_unload_s": 0.1,
+      "retry_on_terminal_rejection": true,
+      "shallow_tilt_damping_nm_s_rad": 0.35,
+      "shallow_tilt_stiffness_nm_rad": 1.8,
+      "tilt_dwell_s": 0.02,
+      "window_s": 0.15,
+      "yaw_damping_nm_s_rad": 0.25,
+      "yaw_stiffness_nm_rad": 1.5
+    },
+    "zero_budget_extension": true
+  },
+  "source_frozen_trial": "outputs/current/evaluations/m8_five_method_retry3_r3_closed_loop/trials/sobol_008.json",
+  "source_frozen_trial_created_utc": "2026-07-15T13:12:31.418911+00:00",
+  "source_frozen_trial_sha256": "60b7b81264c9fe6606a08d1678c42c9332527880e89452605f347f0d68f63906",
+  "task": {
+    "angle_rad": 3.635431138459195,
+    "baseline_phase_rad": 3.1516419060100644,
+    "contact_timeconst_s": 0.06974972726777195,
+    "friction_slide": 0.6004086758941413,
+    "pose_id": "sobol_008",
+    "posterior_seed": 20260723008,
+    "radius_m": 0.002936421399277378,
+    "sensor_delay_s": 0.0076656314600000025,
+    "sensor_noise_seed": 202607230008,
+    "target_down_force_n": 3.3435806203633547,
+    "x_m": -0.002585577396309772,
+    "y_m": -0.0013918908584461987
+  }
+}

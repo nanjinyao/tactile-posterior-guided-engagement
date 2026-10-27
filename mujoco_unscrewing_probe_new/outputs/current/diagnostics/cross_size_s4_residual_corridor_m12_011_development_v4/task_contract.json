@@ -1,0 +1,52 @@
+{
+  "active_time_budget_s": 130.0,
+  "claim_boundary": "conditional posterior-direction sector coverage; no guarantee of direction correctness, tracking, sensor capture, or terminal success",
+  "confirmatory_use_forbidden": true,
+  "created_utc": "2026-07-15T16:30:10.583137+00:00",
+  "experiment": "cross_size_S4_residual_corridor_targeted_development",
+  "fallback_budget_extension_s": 0.0,
+  "method": "S4_fine_tuned_plus_P_plus_hybrid_residual_corridor",
+  "online_true_center_access": false,
+  "phase": "development",
+  "raw_hard_wrench_thresholds_relaxed": false,
+  "residual_coverage": {
+    "angular_half_width_deg": 12.0,
+    "corridor_path_speed_m_s": 0.0015,
+    "enabled": true,
+    "lane_spacing_capture_fraction": 1.0,
+    "maximum_reverse_probability": 0.35,
+    "measured_tip_outer_servo_enabled": true,
+    "minimum_direction_quality": 0.1,
+    "outer_servo_abort_dwell_s": 0.15,
+    "outer_servo_abort_tracking_error_m": 0.0012,
+    "outer_servo_gain": 1.5,
+    "outer_servo_max_correction_m": 0.001,
+    "outer_servo_max_correction_speed_m_s": 0.002,
+    "tracking_error_allowance_m": 0.00015,
+    "transition_overhead_s": 1.0
+  },
+  "schedule_rule": "shortcut+corridor+terminal and global-outward+terminal are alternative schedules, never cumulative prerequisites",
+  "source_sha256": {
+    "src/render_m8_search_comparison.py": "dc89b4ea38e063b1e9da163a057120b3dee7e7bb66161b91d992d23cb3527778",
+    "src/run_cross_size_s4_full_loop_evaluation.py": "a8974578c51550c53f993967f53d8325cd86cdc57f9d63afce52cf497a6212cb"
+  },
+  "task_source": "outputs/current/evaluations/cross_size_s3_full_loop_pilot_v3/task_contract.json",
+  "tasks": [
+    {
+      "angle_rad": 4.576571145106691,
+      "baseline_phase_rad": 0.7159979441426075,
+      "contact_timeconst_s": 0.045281259268522264,
+      "friction_slide": 0.628320474177599,
+      "pose_id": "m12_s3test_011",
+      "posterior_seed": 20260942011,
+      "radius_m": 0.007722886296357958,
+      "sensor_delay_s": 0.006576466901227832,
+      "sensor_noise_seed": 202609420011,
+      "size": "m12",
+      "target_down_force_n": 3.4977203579619527,
+      "x_m": -0.0010456839014157107,
+      "y_m": -0.007651765673672552
+    }
+  ],
+  "untouched_tasks_read_or_run": false
+}

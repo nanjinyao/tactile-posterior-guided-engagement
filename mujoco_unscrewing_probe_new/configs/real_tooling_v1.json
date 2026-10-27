@@ -1,0 +1,364 @@
+{
+  "schema_version": 2,
+  "name": "bota_sensone_gen_a_usb_binary_integrated_flange_tools_v1_5_yaw_datum_hardware_easy_v2_fixture",
+  "status": "cad_complete_new_yaw_clocked_tools_require_print_teach_and_low_load_requalification",
+  "cad_source": {
+    "design_parameters": "/home/ubuntu20/robot_ws/group_meeting/real_device/model/parametric_tooling/design_parameters.json",
+    "design_parameters_sha256": "89bff458e7415f04274c216d36c91dbe80c754216bd3de9b50aa6630c14eab43",
+    "generated_manifest": "/home/ubuntu20/robot_ws/group_meeting/real_device/model/parametric_tooling/generated/manifest.json"
+  },
+  "installed_force_torque_sensor": {
+    "manufacturer": "Bota Systems",
+    "sensor_family": "SensONE Gen A (BFT-SENS-CAT2-B4)",
+    "product_name": "BFT-SENS-CAT2-B4",
+    "serial_number": "SN001349",
+    "communication_interface_name": "Bota_Binary",
+    "host_device": "/dev/serial/by-id/usb-Bota_Systems_Bota_Systems_Force_Torque_Sensor_3885355D3532-if00",
+    "host_usb_identity": "0483:5740 / USB serial 3885355D3532",
+    "driver_config": "/home/ubuntu20/robot_ws/src/iiwa_lab_bringup/config/bota_usb_SN001349.json",
+    "driver_config_sha256": "62029c1874fd8c2eb0a1ed8aff0e1ca2ae708ef18e8904538cec85bf7c1c87ce",
+    "identity_evidence": "operator-confirmed body label, historical 2026-07-18 EtherCAT capture, and 2026-07-21 direct USB udev enumeration",
+    "measurement_range_variant": null,
+    "calibration_certificate": null,
+    "measurement_origin_frame_definition": {
+      "status": "official_mechanical_definition_confirmed",
+      "origin": "center of the SensONE Gen A tool-side mounting plane",
+      "z_axis": "Bota +Z* points from the robot-side mounting plane toward the tool-side mounting plane",
+      "robot_side_to_measurement_origin_translation_m_in_bota_star": [
+        0.0,
+        0.0,
+        0.038
+      ],
+      "mounting_plane_spacing_m": 0.038,
+      "side_center_hole_semantics": "IMU location; not the F/T wrench origin",
+      "datasheet_url": "https://shop.botasys.com/shop/sensone-gen-a-2322/document/571",
+      "datasheet_sha256": "883452b6c748ad54abf053fc3181736945067ca88c9ce52d98de7ecbdcb16871",
+      "step_url": "https://shop.botasys.com/shop/sensone-gen-a-2322/document/576",
+      "step_sha256": "633b238baa56b95020fb91f78ac68a1822597c490f837d49d67cbe3c79ad2382"
+    },
+    "qualification": "observation_logging_only"
+  },
+  "frame_convention": {
+    "pink_tool_cad_mating_plane": "z=0 in the delivered current pink one-piece tool CAD",
+    "blue_reference_connector": "physically distinct reference connector; it is not the pink CAD mating plane",
+    "tool_axis": "-Z",
+    "socket_axis": "+Z",
+    "positive_yaw_definition": "right-handed rotation about pink CAD +Z",
+    "hex_equivalent_period_deg": 60.0,
+    "socket_selected_hex_flat_normal_deg": 0.0,
+    "integrated_peg_shape_rotation_from_legacy_deg": -15.0,
+    "integrated_peg_selected_hex_flat_normal_deg": 45.0,
+    "flange_reference_tangent_normal_deg": 45.0,
+    "mechanical_alignment_instruction": "Teach the installed flange so its +45 deg B/C tangent-datum normal is parallel to fixture +X; the selected peg flat then becomes fixture +X modulo 60 deg while socket yaw remains zero.",
+    "runtime_frame_rule": "Mechanical peg clocking is not a sensor/robot/fixture yaw calibration. Transform wrench channels, probe phase, direction posterior, and XY commands through one measured canonical-to-world rotation before learned deployment."
+  },
+  "installed_stack_contract": {
+    "ordered_rigid_chain": [
+      "KUKA media flange",
+      "white/silver adapter flange",
+      "Bota SensONE Gen A robot-side mounting plane",
+      "Bota SensONE Gen A tool-side mounting plane / wrench origin",
+      "cement-gray adapter flange",
+      "current pink tool CAD mating plane",
+      "pink one-piece flange and peg tip"
+    ],
+    "known_axial_terms_m": {
+      "bota_robot_side_to_tool_side_wrench_plane": 0.038,
+      "pink_cad_mating_plane_to_tip": 0.042
+    },
+    "unresolved_subtransforms": [
+      "KUKA media flange to Bota robot-side plane, including the white/silver adapter",
+      "Bota tool-side wrench plane to pink CAD mating plane, including the cement-gray adapter"
+    ],
+    "provisional_whole_stack_observation": {
+      "KUKA_media_flange_to_pink_CAD_mating_plane_m": 0.05,
+      "uncertainty_m": 0.004,
+      "interpretation": "single end-to-end commissioning observation; it includes the white/silver adapter, Bota body, and cement-gray adapter and must not be reconstructed by adding their partial dimensions"
+    },
+    "pose_dependent_scene_observation": {
+      "cement_gray_adapter_bottom_to_table_m": 0.57,
+      "status": "operator approximate at the photographed pose",
+      "use": "scene-height trace only; not a rigid TCP term and not evidence of cement-gray adapter thickness"
+    },
+    "folded_start_scene_observation": {
+      "pose_semantics": "operator-defined default folded experiment start",
+      "observed_local": "2026-07-23T18:57:00+08:00",
+      "cement_gray_adapter_bottom_to_white_table_vertical_distance_m": 0.59,
+      "status": "operator approximate",
+      "use": "pose-bound scene-height trace only; not a rigid TCP term, not flange thickness, and not a WORLD-Z calibration"
+    }
+  },
+  "known_rigid_geometry": {
+    "pink_tool_cad_mating_plane_to_tip_translation_m": [
+      0.0,
+      0.0,
+      -0.042
+    ],
+    "blue_reference_connector_observed_thickness_m_interval": [
+      0.01,
+      0.011
+    ],
+    "blue_reference_connector_status": "operator ruler observation only; separate from the pink tool and excluded from the active pink TCP dimension equation",
+    "uniform_lower_contact_length_m": 0.013
+  },
+  "tool_architecture": {
+    "revision": "v1.5-integrated-flange-tools-yaw-datum",
+    "construction": "one-piece printed current pink flange, short rigid root, and size-specific hex peg",
+    "swap_method": "manually unbolt and replace the complete flange-tool",
+    "one_piece_print": true,
+    "separate_receiver": false,
+    "separate_cartridge": false,
+    "separate_retaining_clip": false,
+    "m4_hardware_required_for_tool_change": false,
+    "pose_datum": "the current pink-tool CAD mating face and mounting-hole pattern; no blue-part dimension defines this datum",
+    "claim_boundary": "The integrated load path removes quick-change fit and clip uncertainty, and the CAD now provides a visible peg-to-flange yaw datum. Printed stiffness, mass properties, mounting repeatability, the as-built peg/socket relative yaw, and the sensor-to-tip transform still require measurement."
+  },
+  "sensor_metrology_required": {
+    "T_sensor_measurement_origin_to_pink_tool_cad_mating_plane": null,
+    "sensor_measurement_origin_to_tip_translation_m": null,
+    "measurement_method": "hand-eye/frame calibration plus rigid tool touch-off",
+    "ready_for_hardware_wrench_transform": false
+  },
+  "tools": {
+    "m8": {
+      "peg_af_m": 0.006,
+      "peg_shape_rotation_from_legacy_deg": -15.0,
+      "selected_hex_flat_normal_in_pink_cad_deg": 45.0,
+      "cad_integrated_flange_tool_step_sha256": "22303873354eeb02d82c2492cb3a5d6b8ba73860b31a67804ca501347692f24b",
+      "selected_hardware_tip_profile": "hardware_easy_v2",
+      "tip_geometry_profiles": {
+        "simulation_exact": {
+          "tip_face_scale": 0.98,
+          "tip_face_af_m": 0.00588,
+          "tip_chamfer_radial_setback_m": 0.00006,
+          "tip_chamfer_axial_length_m": 0.00035
+        },
+        "hardware_easy_v2": {
+          "tip_face_scale": 0.8,
+          "tip_face_af_m": 0.0048,
+          "tip_chamfer_radial_setback_m": 0.0006,
+          "tip_chamfer_axial_length_m": 0.0006,
+          "chamfer_angle_deg": 45.0
+        }
+      },
+      "cad_integrated_flange_tool_solid_volume_m3": 5.305815960549994e-05,
+      "measured_complete_tool_mass_kg": null,
+      "measured_com_in_sensor_measurement_frame_m": null,
+      "measured_inertia_at_com_kg_m2": null
+    },
+    "m10": {
+      "peg_af_m": 0.008,
+      "peg_shape_rotation_from_legacy_deg": -15.0,
+      "selected_hex_flat_normal_in_pink_cad_deg": 45.0,
+      "cad_integrated_flange_tool_step_sha256": "17381968212daa2b7758dcf3795df32b3a4e687b42c482d3550111e03ae8daa2",
+      "selected_hardware_tip_profile": "hardware_easy_v2",
+      "tip_geometry_profiles": {
+        "simulation_exact": {
+          "tip_face_scale": 0.98,
+          "tip_face_af_m": 0.00784,
+          "tip_chamfer_radial_setback_m": 0.00008,
+          "tip_chamfer_axial_length_m": 0.00045
+        },
+        "hardware_easy_v2": {
+          "tip_face_scale": 0.8,
+          "tip_face_af_m": 0.0064,
+          "tip_chamfer_radial_setback_m": 0.0008,
+          "tip_chamfer_axial_length_m": 0.0008,
+          "chamfer_angle_deg": 45.0
+        }
+      },
+      "cad_integrated_flange_tool_solid_volume_m3": 5.343351124630981e-05,
+      "measured_complete_tool_mass_kg": null,
+      "measured_com_in_sensor_measurement_frame_m": null,
+      "measured_inertia_at_com_kg_m2": null
+    },
+    "m12": {
+      "peg_af_m": 0.01,
+      "peg_shape_rotation_from_legacy_deg": -15.0,
+      "selected_hex_flat_normal_in_pink_cad_deg": 45.0,
+      "cad_integrated_flange_tool_step_sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe",
+      "selected_hardware_tip_profile": "hardware_easy_v2",
+      "tip_geometry_profiles": {
+        "simulation_exact": {
+          "tip_face_scale": 0.98,
+          "tip_face_af_m": 0.0098,
+          "tip_chamfer_radial_setback_m": 0.0001,
+          "tip_chamfer_axial_length_m": 0.00055
+        },
+        "hardware_easy_v2": {
+          "tip_face_scale": 0.8,
+          "tip_face_af_m": 0.008,
+          "tip_chamfer_radial_setback_m": 0.001,
+          "tip_chamfer_axial_length_m": 0.001,
+          "chamfer_angle_deg": 45.0
+        }
+      },
+      "cad_integrated_flange_tool_solid_volume_m3": 5.390499401255806e-05,
+      "measured_complete_tool_mass_kg": null,
+      "measured_com_in_sensor_measurement_frame_m": null,
+      "measured_inertia_at_com_kg_m2": null
+    }
+  },
+  "fixture": {
+    "base_size_m": [
+      0.15,
+      0.07,
+      0.018
+    ],
+    "socket_top_z_m": 0.0,
+    "socket_poses": {
+      "m8": {
+        "translation_m": [-0.045, 0.0, 0.0],
+        "yaw_rad": 0.0
+      },
+      "m10": {
+        "translation_m": [0.0, 0.0, 0.0],
+        "yaw_rad": 0.0
+      },
+      "m12": {
+        "translation_m": [0.045, 0.0, 0.0],
+        "yaw_rad": 0.0
+      }
+    },
+    "center_through_hole_diameter_m": 0.0005,
+    "center_through_holes_open_through_final_body": true,
+    "selected_hardware_socket_profile": "hardware_easy_v2",
+    "socket_geometry_profiles": {
+      "simulation_exact": {
+        "claim_boundary": "strict research control copied from the frozen MuJoCo source geometry",
+        "m8": {
+          "wall_af_m": 0.0062,
+          "entry_chamfer_width_m": 0.00015,
+          "entry_chamfer_depth_m": 0.00015,
+          "mouth_af_m": 0.0065,
+          "head_outer_diameter_m": 0.013
+        },
+        "m10": {
+          "wall_af_m": 0.00824,
+          "entry_chamfer_width_m": 0.00018,
+          "entry_chamfer_depth_m": 0.00018,
+          "mouth_af_m": 0.0086,
+          "head_outer_diameter_m": 0.0165
+        },
+        "m12": {
+          "wall_af_m": 0.0103,
+          "entry_chamfer_width_m": 0.00022,
+          "entry_chamfer_depth_m": 0.00022,
+          "mouth_af_m": 0.01074,
+          "head_outer_diameter_m": 0.0185
+        }
+      },
+      "hardware_easy_v2": {
+        "claim_boundary": "intentional physical engineering bias; larger straight-wall clearance and entry funnel require a geometry-matched MuJoCo profile, yaw/contact-onset retuning, and terminal-gate retuning",
+        "m8": {
+          "wall_af_m": 0.0065,
+          "entry_chamfer_width_m": 0.0008,
+          "entry_chamfer_depth_m": 0.0008,
+          "mouth_af_m": 0.0081,
+          "head_outer_diameter_m": 0.01495
+        },
+        "m10": {
+          "wall_af_m": 0.00854,
+          "entry_chamfer_width_m": 0.001,
+          "entry_chamfer_depth_m": 0.001,
+          "mouth_af_m": 0.01054,
+          "head_outer_diameter_m": 0.018975
+        },
+        "m12": {
+          "wall_af_m": 0.0106,
+          "entry_chamfer_width_m": 0.0012,
+          "entry_chamfer_depth_m": 0.0012,
+          "mouth_af_m": 0.013,
+          "head_outer_diameter_m": 0.021275
+        }
+      }
+    },
+    "exterior_vertical_ribs": {
+      "smooth_guard_band_below_top_m": 0.002,
+      "radial_height_m": 0.0004,
+      "counts": {
+        "m8": 18,
+        "m10": 24,
+        "m12": 30
+      },
+      "current_mujoco_exterior_side_collision": false,
+      "claim_boundary": "The existing screw_head_side_visual is collision-disabled; enabling exterior-side collision requires a new validation run."
+    },
+    "base_to_robot_transform": null
+  },
+  "tool_clocking_commissioning": {
+    "status": "new_v1_5_prints_and_per_size_low_load_requalification_pending",
+    "flange_tangent_datum_to_fixture_x_yaw_rad": null,
+    "flange_tangent_datum_to_fixture_x_yaw_semantics": "Signed residual angle after teaching; target zero, not the fixture-to-robot world yaw.",
+    "cad_parallelism_tolerance_deg": 0.05,
+    "physical_parallelism_acceptance_deg": 1.0,
+    "pink_cad_plane_to_tip_nominal_mm": 42.0,
+    "pink_cad_plane_to_tip_acceptance_mm": 0.25,
+    "tip_axis_runout_acceptance_mm": 0.2,
+    "tip_axis_runout_definition": "Maximum radial eccentricity of the tip center from the fitted flange datum axis. If measured as peak-to-peak dial TIR, use half the TIR here.",
+    "tip_height_definition": "Perpendicular distance from the pink-CAD mating plane to the physical tip-face center.",
+    "dimensional_acceptance_basis": "Provisional conservative FDM commissioning limits. The 0.20 mm radial runout stays below the smallest 0.25 mm single-side deep-wall clearance; 42.00 +/- 0.25 mm is the validity band for the current fixed pink-CAD TCP term. Outside either limit, repair/reprint or update and requalify the measured TCP before motion.",
+    "existing_simulation_yaw_support_deg": [-2.0, 2.0],
+    "per_size": {
+      "m8": {
+        "expected_step_sha256": "22303873354eeb02d82c2492cb3a5d6b8ba73860b31a67804ca501347692f24b",
+        "as_built_selected_flat_to_flange_datum_error_deg": null,
+        "measured_peg_socket_relative_yaw_deg": null,
+        "measured_pink_cad_mating_plane_to_tip_mm": null,
+        "tip_axis_runout_mm": null,
+        "low_load_fingerprint_and_capture_requalified": false
+      },
+      "m10": {
+        "expected_step_sha256": "17381968212daa2b7758dcf3795df32b3a4e687b42c482d3550111e03ae8daa2",
+        "as_built_selected_flat_to_flange_datum_error_deg": null,
+        "measured_peg_socket_relative_yaw_deg": null,
+        "measured_pink_cad_mating_plane_to_tip_mm": null,
+        "tip_axis_runout_mm": null,
+        "low_load_fingerprint_and_capture_requalified": false
+      },
+      "m12": {
+        "expected_step_sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe",
+        "as_built_selected_flat_to_flange_datum_error_deg": null,
+        "measured_peg_socket_relative_yaw_deg": null,
+        "measured_pink_cad_mating_plane_to_tip_mm": null,
+        "tip_axis_runout_mm": null,
+        "low_load_fingerprint_and_capture_requalified": false
+      }
+    },
+    "simulation_interpretation": "Do not rotate the MuJoCo peg by -15 deg merely because the CAD peg was clocked. The existing simulated zero remains the intended peg/socket relative zero after flange-datum teaching. Re-sample and fine-tune only if measured relative yaw falls outside the trained support or runtime observations are not transformed to the training canonical frame.",
+    "historical_pose_and_release_policy": "Old work poses, releases, and data remain immutable evidence for v1.4. Their hashes are intentionally not updated and they are not authorization for a v1.5 tool."
+  },
+  "simulation_gate": {
+    "hardware_aligned_profile_ready": false,
+    "blocking_fields": [
+      "installed_force_torque_sensor.measurement_range_variant",
+      "installed_force_torque_sensor.calibration_certificate",
+      "sensor_metrology_required.T_sensor_measurement_origin_to_pink_tool_cad_mating_plane",
+      "sensor_metrology_required.sensor_measurement_origin_to_tip_translation_m",
+      "tools.*.measured_complete_tool_mass_kg",
+      "tools.*.measured_com_in_sensor_measurement_frame_m",
+      "tools.*.measured_inertia_at_com_kg_m2",
+      "fixture.base_to_robot_transform",
+      "tool_clocking_commissioning.flange_tangent_datum_to_fixture_x_yaw_rad",
+      "tool_clocking_commissioning.per_size.*.as_built_selected_flat_to_flange_datum_error_deg",
+      "tool_clocking_commissioning.per_size.*.measured_peg_socket_relative_yaw_deg",
+      "tool_clocking_commissioning.per_size.*.measured_pink_cad_mating_plane_to_tip_mm",
+      "tool_clocking_commissioning.per_size.*.tip_axis_runout_mm",
+      "tool_clocking_commissioning.per_size.*.low_load_fingerprint_and_capture_requalified"
+    ],
+    "must_revalidate_after_completion": [
+      "wrench moment-arm conversion",
+      "gravity compensation for each complete integrated flange-tool",
+      "20/60 mNm torque gates",
+      "terminal Fz/dwell verifier with the 0.5 mm center hole",
+      "hardware-easy-v2 socket and peg-tip capture/contact geometry",
+      "rotational free play, yaw wall-contact onset, and torque-observability thresholds",
+      "outer-boundary and global-fallback behavior if exterior-side collision is enabled",
+      "four-channel fingerprint calibration",
+      "cross-size entropy-grid thresholds",
+      "geometry-matched hardware-easy-v2 full-loop rerun"
+    ],
+    "yaw_retraining_decision": "If each measured peg/socket relative yaw is within [-2,+2] deg and runtime data are expressed in the training canonical frame, the CAD clocking change alone does not force retraining. Otherwise re-sample M8/M10/M12 around the measured relative yaw and run a fresh fine-tune/audit.",
+    "legacy_evidence_reuse": "forbidden_without_rerun"
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "aps_quantile_alpha_0p10": 0.8275126755800355,
+  "bundle": {
+    "artifact_count": 20,
+    "bundle_root": "/home/ubuntu20/robot_ws/group_meeting/real_device/model_runtime/bundles/real_multisize_direction_v1",
+    "deployment_authority": "CAPPED_SHORTCUT",
+    "promotion_status": "QUALIFIED",
+    "seed_count": 3,
+    "selected_architecture": "REAL_FOURIER_LINEAR_V1"
+  },
+  "c6_rows_final_fit": 288,
+  "c6_transform_id": "REAL_FRAME_C6_V2_RPOS_PHASE_NEG_CAD_V1P5",
+  "candidate_architectures": [
+    "REAL_FOURIER_LINEAR_V1",
+    "REAL_FROZEN_SIM_ADAPTER_V1",
+    "REAL_SIM_ADAPTER_TAIL_L2SP_V1"
+  ],
+  "candidate_exclusions": [
+    "REAL_TINY_CIRCULAR_CNN_V1"
+  ],
+  "claim_boundary": "Development CV evidence for high-level direction/state and a CAD-bounded capped shortcut. No capture, insertion, terminal, or Pure-Outward Spiral authority.",
+  "clean_origin_count": 48,
+  "common_source_sha256": "4e7d2c6597b9e0f6d121d2a83cf5e957f7491e4f18dc22e590698775ae41c6db",
+  "created_utc": "2026-07-28T15:21:44.533261+00:00",
+  "dataset_contract_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/offline_analysis/real_multisize_learning_v1/dataset/dataset_contract.json",
+  "dataset_contract_sha256": "e8c0f08d04b35c39475bc9e38afbd2d7dd3f6be821d912340b1bc0ebef6595d5",
+  "exporter_source_sha256": "fac80fe72bcf479f9fbe2743c47210e865e3276981a61dfb779ebc4cc0821221",
+  "final_seeds": [
+    20260728,
+    20260729,
+    20260730
+  ],
+  "fixed_final_epochs": 120,
+  "holdout_used": false,
+  "model_id": "real_multisize_direction_v1",
+  "quarantine_used": false,
+  "requirements_lock_sha256": "dd4585b8d8ccb2da20964da50b3a8b279a3a7e07ea44b498bcd7944187987eb6",
+  "sample_authority": "REAL_DEVICE_CLEAN_ONLY",
+  "schema_version": 1,
+  "selected_architecture": "REAL_FOURIER_LINEAR_V1",
+  "selection_key": [
+    16.0,
+    165.22849655151367,
+    3.0964074911891726,
+    -0.5184275184275184
+  ],
+  "selection_metrics": {
+    "direction": {
+      "catastrophic_gt90_count": 16,
+      "catastrophic_gt90_fraction": 0.3333333333333333,
+      "circular_soft_target_nll": 3.0964074911891726,
+      "count": 48,
+      "median_error_deg": 33.618614196777344,
+      "p90_error_deg": 165.22849655151367,
+      "within_15_fraction": 0.4791666666666667,
+      "within_30_fraction": 0.4791666666666667,
+      "within_7p5_fraction": 0.3958333333333333
+    },
+    "state": {
+      "accuracy": 0.5,
+      "class_f1": [
+        0.3783783783783784,
+        0.5405405405405406,
+        0.6363636363636364
+      ],
+      "confusion_matrix": [
+        [
+          7,
+          8,
+          3
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          4,
+          1,
+          7
+        ]
+      ],
+      "count": 48,
+      "macro_f1": 0.5184275184275184
+    }
+  },
+  "sentinel_used": false,
+  "simulation_assistance": "candidate compared but not selected",
+  "simulation_data_in_normalization": false,
+  "status": "PASS",
+  "trainer_source_sha256": "30160818385b339775583cd940b7649c57f329ad3f1704b783c87e3ee2a4c304",
+  "training_npz_sha256": "78e5a64f3d7f1ed42257cb29f30083a706d1b79c50082ea839b01f1b4b6f9686"
+}

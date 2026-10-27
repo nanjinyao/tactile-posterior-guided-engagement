@@ -1,0 +1,204 @@
+{
+  "claim_boundary": "Fresh simulation-only Sobol validation frozen after policy and gate design. It uses a synthetic visual prior and pre-hardware wrench nuisance, so it does not establish iiwa, real wear, M10/M12, or universal superiority claims.",
+  "design": {
+    "frozen_before_rollout": true,
+    "online_true_center_or_contact_tags": false,
+    "poses": 24,
+    "same_fingerprint_for_proposed_plus_and_proposed": true,
+    "source": "outputs/current/evaluations/m8_fresh_24_pabc_direction_gate",
+    "source_seed": 20260723
+  },
+  "fingerprint_match_rate": 1.0,
+  "methods": {
+    "baseline_a": {
+      "actual_path_all_trials_median_mm": 73.98397012878704,
+      "actual_path_median_mm": 70.71393645246124,
+      "contact_path_all_trials_median_mm": 73.88967715259038,
+      "contact_path_median_mm": 70.71393645246124,
+      "first_attempt_successes": 23,
+      "hard_stops": 0,
+      "max_filtered_force_p90_n": 4.832535686045973,
+      "max_force_p90_n": 8.251075304841752,
+      "max_torque_p90_mnm": 22.05940484478118,
+      "success_rate": 0.9583333333333334,
+      "successes": 23,
+      "time_success_median_s": 33.27949999997688,
+      "trials": 24,
+      "wear_proxy_all_trials_median_mj": 130.18417073835667,
+      "wear_proxy_median_mj": 124.80289837040215
+    },
+    "baseline_b": {
+      "actual_path_all_trials_median_mm": 6.238265069640456,
+      "actual_path_median_mm": 6.18078764172815,
+      "attempts_median": 1.0,
+      "contact_path_all_trials_median_mm": 6.238265069640456,
+      "contact_path_median_mm": 6.18078764172815,
+      "first_attempt_successes": 18,
+      "hard_stops": 0,
+      "max_filtered_force_p90_n": 4.394223671752323,
+      "max_force_p90_n": 7.357304315416327,
+      "max_torque_p90_mnm": 23.44058286767759,
+      "success_rate": 0.9166666666666666,
+      "successes": 22,
+      "time_success_median_s": 7.931749999998324,
+      "trials": 24,
+      "wear_proxy_all_trials_median_mj": 14.38497315955889,
+      "wear_proxy_median_mj": 14.255762703000993
+    },
+    "baseline_c_entropy": {
+      "actual_path_all_trials_median_mm": 6.899775027666592,
+      "actual_path_median_mm": 6.824556359626757,
+      "contact_path_all_trials_median_mm": 2.2344585140263975,
+      "contact_path_median_mm": 2.177601481155648,
+      "credible_radius_median_mm": 4.619187280235469,
+      "final_entropy_median_nats": 3.7680846733382243,
+      "first_attempt_successes": 23,
+      "hard_stops": 0,
+      "max_filtered_force_p90_n": 3.4421477409993138,
+      "max_force_p90_n": 8.02124558208549,
+      "max_torque_p90_mnm": 10.742887023577634,
+      "probe_count_median": 6.0,
+      "spiral_fallback_count": 0,
+      "success_rate": 0.9583333333333334,
+      "successes": 23,
+      "time_success_median_s": 12.144500000003351,
+      "trials": 24,
+      "wear_proxy_all_trials_median_mj": 0.6284325298968578,
+      "wear_proxy_median_mj": 0.6223191847313463
+    },
+    "proposed_plus_hybrid": {
+      "actual_path_all_trials_median_mm": 10.19137972318088,
+      "actual_path_median_mm": 10.583473117465351,
+      "contact_path_all_trials_median_mm": 8.663535255959443,
+      "contact_path_median_mm": 9.581232230782367,
+      "first_attempt_successes": 21,
+      "global_fallback_count": 8,
+      "hard_stops": 0,
+      "local_radius_median_mm": 5.923829769535182,
+      "local_spiral_count": 0,
+      "max_filtered_force_p90_n": 4.8103952363972535,
+      "max_force_p90_n": 8.308483686442806,
+      "max_torque_p90_mnm": 21.968595781838392,
+      "success_rate": 0.875,
+      "successes": 21,
+      "task_grid_contacts_median": 5.5,
+      "time_success_median_s": 18.349500000002585,
+      "transport_median_mm": 1.5807795808454692,
+      "trials": 24,
+      "wear_proxy_all_trials_median_mj": 11.641787494690277,
+      "wear_proxy_median_mj": 12.111375670692697
+    },
+    "proposed_posterior": {
+      "actual_path_all_trials_median_mm": 15.120459817501377,
+      "actual_path_median_mm": 14.685928284140234,
+      "contact_path_all_trials_median_mm": 15.043007651497668,
+      "contact_path_median_mm": 14.659919141061534,
+      "first_attempt_successes": 23,
+      "global_fallback_count": 2,
+      "hard_stops": 0,
+      "local_radius_median_mm": 2.285627940258858,
+      "max_filtered_force_p90_n": 5.131590064159271,
+      "max_force_p90_n": 8.632296352591803,
+      "max_torque_p90_mnm": 24.595094306092616,
+      "success_rate": 0.9583333333333334,
+      "successes": 23,
+      "time_success_median_s": 12.581000000003884,
+      "transport_median_mm": 1.5769868413358494,
+      "trials": 24,
+      "wear_proxy_all_trials_median_mj": 31.59473248672726,
+      "wear_proxy_median_mj": 29.636280952370694
+    }
+  },
+  "paired": {
+    "proposed_plus_hybrid_vs_baseline_a": {
+      "paired_efficiency": {
+        "both_success": 20,
+        "left_lower_actual_xy_path_mm_rate": 0.6,
+        "left_lower_contact_xy_path_mm_rate": 0.6,
+        "left_lower_max_force_n_rate": 0.85,
+        "left_lower_time_to_inner_wall_s_rate": 0.45,
+        "left_lower_wear_proxy_mj_rate": 0.6,
+        "left_minus_right_actual_xy_path_mm_median": -22.263057188091544,
+        "left_minus_right_contact_xy_path_mm_median": -22.50497030500226,
+        "left_minus_right_max_force_n_median": -0.20892556432576415,
+        "left_minus_right_time_to_inner_wall_s_median": 0.933249999997825,
+        "left_minus_right_wear_proxy_mj_median": -36.063102664885434
+      },
+      "paired_outcomes": {
+        "both_failed": 0,
+        "both_success": 20,
+        "left_only_success": 1,
+        "mcnemar_exact_two_sided_p": 0.625,
+        "right_only_success": 3
+      }
+    },
+    "proposed_plus_hybrid_vs_baseline_b": {
+      "paired_efficiency": {
+        "both_success": 19,
+        "left_lower_actual_xy_path_mm_rate": 0.2631578947368421,
+        "left_lower_contact_xy_path_mm_rate": 0.42105263157894735,
+        "left_lower_max_force_n_rate": 0.5789473684210527,
+        "left_lower_time_to_inner_wall_s_rate": 0.15789473684210525,
+        "left_lower_wear_proxy_mj_rate": 0.5263157894736842,
+        "left_minus_right_actual_xy_path_mm_median": 4.080937524679073,
+        "left_minus_right_contact_xy_path_mm_median": 0.7257184936952585,
+        "left_minus_right_max_force_n_median": -0.06881607779718557,
+        "left_minus_right_time_to_inner_wall_s_median": 4.77150000000518,
+        "left_minus_right_wear_proxy_mj_median": -2.4658155072340247
+      },
+      "paired_outcomes": {
+        "both_failed": 0,
+        "both_success": 19,
+        "left_only_success": 2,
+        "mcnemar_exact_two_sided_p": 1.0,
+        "right_only_success": 3
+      }
+    },
+    "proposed_plus_hybrid_vs_baseline_c_entropy": {
+      "paired_efficiency": {
+        "both_success": 20,
+        "left_lower_actual_xy_path_mm_rate": 0.15,
+        "left_lower_contact_xy_path_mm_rate": 0.05,
+        "left_lower_max_force_n_rate": 0.2,
+        "left_lower_time_to_inner_wall_s_rate": 0.15,
+        "left_lower_wear_proxy_mj_rate": 0.0,
+        "left_minus_right_actual_xy_path_mm_median": 4.429927936132863,
+        "left_minus_right_contact_xy_path_mm_median": 7.6475002149377715,
+        "left_minus_right_max_force_n_median": 1.3346729332494305,
+        "left_minus_right_time_to_inner_wall_s_median": 7.935250000006244,
+        "left_minus_right_wear_proxy_mj_median": 10.776124668735797
+      },
+      "paired_outcomes": {
+        "both_failed": 0,
+        "both_success": 20,
+        "left_only_success": 1,
+        "mcnemar_exact_two_sided_p": 0.625,
+        "right_only_success": 3
+      }
+    },
+    "proposed_plus_hybrid_vs_proposed_posterior": {
+      "paired_efficiency": {
+        "both_success": 21,
+        "left_lower_actual_xy_path_mm_rate": 0.5714285714285714,
+        "left_lower_contact_xy_path_mm_rate": 0.5714285714285714,
+        "left_lower_max_force_n_rate": 0.8571428571428571,
+        "left_lower_time_to_inner_wall_s_rate": 0.38095238095238093,
+        "left_lower_wear_proxy_mj_rate": 0.6190476190476191,
+        "left_minus_right_actual_xy_path_mm_median": -2.383742153725537,
+        "left_minus_right_contact_xy_path_mm_median": -2.3271054556063353,
+        "left_minus_right_max_force_n_median": -0.8210551141920659,
+        "left_minus_right_time_to_inner_wall_s_median": 2.412000000002948,
+        "left_minus_right_wear_proxy_mj_median": -7.149161519484217
+      },
+      "paired_outcomes": {
+        "both_failed": 1,
+        "both_success": 21,
+        "left_only_success": 0,
+        "mcnemar_exact_two_sided_p": 0.5,
+        "right_only_success": 2
+      }
+    }
+  },
+  "stage": "M8_task_aware_fresh_24_validation",
+  "updated_utc": "2026-07-12T08:24:27.603848+00:00"
+}

@@ -1,0 +1,210 @@
+{
+  "claim_boundary": "S4b train plus head-training-held-out validation diagnostics only; validation is the adapter-selection set, not a new test set. The M10 raw >90-degree posterior outlier remains but is abstained. No full-loop improvement or untouched pass is claimed.",
+  "data_access_contract": {
+    "calibration_examples_read": 0,
+    "calibration_labels_read": 0,
+    "example_roles_read": [
+      "train",
+      "validation"
+    ],
+    "full_loop_pose_labels_read": 0,
+    "full_loop_rollouts_read": 0,
+    "note": "Frozen base/FT seed metrics include their pre-existing temperatures; the adapter selector never opens an S4b calibration trial or uses its labels.",
+    "train_role_semantics": "development constraint and adapter selection",
+    "untouched_rollouts_read": 0,
+    "validation_role_semantics": "held out from FT gradient updates, but used for adapter selection; not an untouched test set"
+  },
+  "eligible_for_separately_frozen_full_loop_evaluation": true,
+  "full_loop_execution_authorized": false,
+  "model_roots": {
+    "base": "outputs/current/models/p1v3_m8_direction_models",
+    "fine_tuned_by_size": {
+      "m10": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned",
+      "m12": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned"
+    }
+  },
+  "probability_contract": {
+    "alpha_strictly_between_zero_and_one": true,
+    "aps_is_parent_union": true,
+    "base_anchor_contribution_nonzero": true,
+    "fine_tuned_contribution_nonzero": true,
+    "posterior_formula": "p_A = p_B + alpha (p_F - p_B)",
+    "same_fingerprint_required": true,
+    "shortcut_confidence_is_parent_lower_envelope": true,
+    "shortcut_span_is_parent_upper_envelope": true
+  },
+  "provenance": {
+    "adapter_source": {
+      "path": "src/cross_size_s4b_base_anchored_adapter.py",
+      "sha256": "26c7e32f0a5dd1a12b1df362a8071a98e9f4c70512c5a7e774dbb3519de0adb9"
+    },
+    "base_model_contract": {
+      "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+      "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+    },
+    "dataset_contracts": {
+      "m10": {
+        "manifest": "outputs/current/datasets/cross_size_s4b_adaptation/m10/dataset_manifest.json",
+        "manifest_sha256": "088b75e294d5bf3d935faafa2e2fa3ef178fd9821e6c1b43fc882ae5c416c8a6",
+        "path": "outputs/current/datasets/cross_size_s4b_adaptation/m10/dataset_contract.json",
+        "sha256": "1316a04c2f156c937803cd4ac7a73dc6ada4eabf79ba4206f578e7884be8b7ee"
+      },
+      "m12": {
+        "manifest": "outputs/current/datasets/cross_size_s4b_adaptation/m12/dataset_manifest.json",
+        "manifest_sha256": "7677d853fe70cd18a6102a3ca94451849f79475cad2a6aa026d622f8fe7f2c0b",
+        "path": "outputs/current/datasets/cross_size_s4b_adaptation/m12/dataset_contract.json",
+        "sha256": "a7c7728bb06309575a60c476ca9a81f24b50bc1330ee27e056fa247d971e1ea0"
+      }
+    },
+    "execution_files": {
+      "m10": {
+        "base": [
+          {
+            "checkpoint": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+            "checkpoint_sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92",
+            "metrics": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+            "metrics_sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0",
+            "normalization": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          },
+          {
+            "checkpoint": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+            "checkpoint_sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6",
+            "metrics": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+            "metrics_sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe",
+            "normalization": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          },
+          {
+            "checkpoint": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+            "checkpoint_sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c",
+            "metrics": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+            "metrics_sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71",
+            "normalization": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          }
+        ],
+        "fine_tuned": [
+          {
+            "checkpoint": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260720/circular_cnn_best.pt",
+            "checkpoint_sha256": "b72ca47301012d1659e19195b8aa4a63f274fe2228d0220eb3d3e333bfbabe41",
+            "metrics": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260720/metrics.json",
+            "metrics_sha256": "de9b2689f556ce2a85cfd96c4f22adeb069454f75cf9325faaa48ab33e184c36",
+            "normalization": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260720/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          },
+          {
+            "checkpoint": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260721/circular_cnn_best.pt",
+            "checkpoint_sha256": "5edead4ebd1239924eebd729991e72e843e55bba99c8f78aa42b60ad21256ec1",
+            "metrics": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260721/metrics.json",
+            "metrics_sha256": "a924d3781de394c3a027edf942d6969413fbc71ffde919096aedb8229c1e843e",
+            "normalization": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260721/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          },
+          {
+            "checkpoint": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260722/circular_cnn_best.pt",
+            "checkpoint_sha256": "9f41f9d2d3bd880e3b1bb76b1e06c84d18e939ff598743b7c86d1f8b7a53ecd4",
+            "metrics": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260722/metrics.json",
+            "metrics_sha256": "d020ec25c08b0311344d13ba0ff4a0e999920c42fc02c7d6a7faf21e79a1e05f",
+            "normalization": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/seeds/seed_20260722/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          }
+        ]
+      },
+      "m12": {
+        "base": [
+          {
+            "checkpoint": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+            "checkpoint_sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92",
+            "metrics": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+            "metrics_sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0",
+            "normalization": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          },
+          {
+            "checkpoint": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+            "checkpoint_sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6",
+            "metrics": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+            "metrics_sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe",
+            "normalization": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          },
+          {
+            "checkpoint": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+            "checkpoint_sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c",
+            "metrics": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+            "metrics_sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71",
+            "normalization": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          }
+        ],
+        "fine_tuned": [
+          {
+            "checkpoint": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260720/circular_cnn_best.pt",
+            "checkpoint_sha256": "5c2d2218ef7a60b74e609bfc33b03e02731b63f070b629028918846e5d7a610c",
+            "metrics": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260720/metrics.json",
+            "metrics_sha256": "17ce13da729d5723f9002772357b03a8a5e36727261927a07c55c627982239c2",
+            "normalization": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260720/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          },
+          {
+            "checkpoint": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260721/circular_cnn_best.pt",
+            "checkpoint_sha256": "c616cc0c40419086009e93d3eadb853a2cd86372e6d16b2a887fad84cad15f24",
+            "metrics": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260721/metrics.json",
+            "metrics_sha256": "c14926538572d278f8e1f1f433c88b83575a1b4ee19a8e30637eaf94338e84a8",
+            "normalization": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260721/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          },
+          {
+            "checkpoint": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260722/circular_cnn_best.pt",
+            "checkpoint_sha256": "76cfd6106b958ac7ed784a6979837a33c9c211408230cd93c71ee0142a8ae8d6",
+            "metrics": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260722/metrics.json",
+            "metrics_sha256": "f2046220bae9484d605dd9321a44200ee39d2d9b0d294fdaf1dabadc6fa6a2d3",
+            "normalization": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/seeds/seed_20260722/normalization.npz",
+            "normalization_sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+          }
+        ]
+      }
+    },
+    "fine_tuned_model_contracts": {
+      "m10": {
+        "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m10/fine_tuned/ensemble_interface_contract.json",
+        "sha256": "c3a54b7d624d4bf28326522e4c70a08b0291dcfb0d579bc052e673be624789ae"
+      },
+      "m12": {
+        "path": "outputs/current/models/cross_size_s4b_state_direction_heads/m12/fine_tuned/ensemble_interface_contract.json",
+        "sha256": "26d10cdd5888ce190676d33c0cfc3a495fdc56cab715babe77a98c5836579702"
+      }
+    }
+  },
+  "selected_parameters": {
+    "base_anchor_weight": 0.07999999999999996,
+    "maximum_base_fine_tuned_disagreement_deg": 90.0,
+    "minimum_fine_tuned_concentration": 0.6,
+    "residual_alpha": 0.92
+  },
+  "selection_readme": "outputs/current/models/cross_size_s4b_base_anchored_adapter/SELECTION.md",
+  "selection_readme_sha256": "ad8fa3a3279a521c47cc9b4ab44886a721262b52d8b3c44954cb00966acb77cb",
+  "selection_report": "outputs/current/models/cross_size_s4b_base_anchored_adapter/selection_report.json",
+  "selection_report_sha256": "b47a9013a11c83551b5f02baabb34e507ea7c5ba66c8cf376cc54c21be31581e",
+  "selection_rule": {
+    "candidate_order": "ascending residual alpha, then ascending FT concentration floor",
+    "geometric_constant": "base-FT circular means separated by more than 90 deg occupy opposite open half-planes, so directed transport abstains",
+    "hard_constraints_for_every_size_and_train_validation_role": [
+      "accepted control-direction error >90 deg count equals zero",
+      "raw control-direction >90 deg count no worse than frozen FT",
+      "state accuracy no worse than frozen FT",
+      "overall gate coverage >= 0.80",
+      "each observed state gate coverage >= 0.70"
+    ],
+    "objective": "first feasible candidate = strongest base anchoring and then maximum shortcut coverage"
+  },
+  "selector_may_launch_full_loop": false,
+  "sizes": [
+    "m10",
+    "m12"
+  ],
+  "stage": "cross_size_S4b_base_anchored_residual_adapter",
+  "status": "train_validation_selected_frozen",
+  "updated_utc": "2026-07-15T17:21:27.031100+00:00"
+}

@@ -1,0 +1,413 @@
+{
+  "claim_boundary": "Frozen simulation-only M8 complete-loop audit conditioned on the declared ambiguous top-contact annulus. Strict success requires sensor-only handoff, offline-validated capture, CAD-bottom terminal verification, no hard stop, and completion within the shared 130 s active budget. It does not establish hardware transfer, passivity, motor coupling, threaded unscrewing, extraction, or universal superiority. Oracle is an upper-bound diagnostic; direct_first is not a physically reset retry baseline.",
+  "design": {
+    "active_time_budget_s": 130.0,
+    "budget_is_hard_accumulated_simulated_active_controller_time": true,
+    "conditioned_on_ambiguous_top_contact": true,
+    "continue_to_cad_bottom": true,
+    "direct_retry_excluded_from_strict_table": true,
+    "direct_retry_reason": "historical retry restarts the simulator and excludes reset motion; direct_first is retained only as a mechanism diagnostic",
+    "measured_peak_scope": "active-controller steps only",
+    "offline_capture_scoring_uses_mujoco_geometry": true,
+    "online_true_center_or_contact_tags": false,
+    "poses": 24,
+    "proposed_plus_schedule_contract": {
+      "candidate_handling_contingency_s": 6.0,
+      "continuous_contact_path_required": true,
+      "local_spiral_fallback_enabled": false,
+      "post_terminal_event_inactive_display_hold_charged_to_budget": false,
+      "tracking_error_bound_mm": 0.25,
+      "type": "conditional nominal reserve, not a success guarantee"
+    },
+    "raw_physical_peak_scope": "all physics steps including inactive settle/hold",
+    "source_manifest": "outputs/current/evaluations/m8_fresh_24_pabc_direction_gate/manifest.json",
+    "source_seed": 20260723,
+    "strict_outcome_frozen_before_inactive_display_tail": true
+  },
+  "experiment": "M8_strict_24_pose_complete_closed_loop",
+  "fingerprint_match_rate": 1.0,
+  "methods": {
+    "direct_first": {
+      "actual_path_success_median_mm": 5.575558177911459,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 5.39149582925203,
+      "failure_categories": {
+        "cad_bottom_verified": 15,
+        "capture_without_bottom": 3,
+        "search_radius_exhausted": 6
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "fallback_skipped_reason_counts": {
+        "None": 24
+      },
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stop_reason_counts": {},
+      "hard_stops": 0,
+      "hybrid_budget_reserve_switch_count": 0,
+      "hybrid_guarded_motion_failure_reason_counts": {},
+      "max_force_p90_n": 8.35282883745061,
+      "max_raw_physical_force_all_steps_p90_n": 11.243567796621933,
+      "max_raw_physical_torque_all_steps_p90_mnm": 24.667205834967767,
+      "max_torque_p90_mnm": 24.501921971792157,
+      "offline_capture_scoring_snapshot_counts": {
+        "final_active_outcome": 6,
+        "pre_inactive_post_terminal_display": 18
+      },
+      "offline_capture_successes": 18,
+      "post_terminal_event_display_new_hard_stop_count": 0,
+      "preprobe_route_counts": {
+        "conditioned_ambiguous_top_contact_probe": 24
+      },
+      "role": "mechanism diagnostic; no physical retry/reset claim",
+      "sensor_handoff_count": 18,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.625,
+      "strict_bottom_successes": 15,
+      "terminal_mode_counts": {
+        "None": 9,
+        "cad_depth_low_wrench_dwell": 15
+      },
+      "time_to_bottom_success_median_s": 9.105999999999637,
+      "total_active_time_all_median_s": 9.004249999999512,
+      "trials": 24,
+      "wear_success_median_mj": 13.392474212624187
+    },
+    "entropy_grid": {
+      "actual_path_success_median_mm": 14.073718559873239,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 2.2503107052699374,
+      "failure_categories": {
+        "cad_bottom_verified": 22,
+        "capture_without_bottom": 1,
+        "search_radius_exhausted": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "fallback_skipped_reason_counts": {
+        "None": 24
+      },
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stop_reason_counts": {},
+      "hard_stops": 0,
+      "hybrid_budget_reserve_switch_count": 0,
+      "hybrid_guarded_motion_failure_reason_counts": {},
+      "max_force_p90_n": 8.80836829756368,
+      "max_raw_physical_force_all_steps_p90_n": 11.243567796621933,
+      "max_raw_physical_torque_all_steps_p90_mnm": 18.903759439704736,
+      "max_torque_p90_mnm": 18.51008215004594,
+      "offline_capture_scoring_snapshot_counts": {
+        "final_active_outcome": 1,
+        "pre_inactive_post_terminal_display": 23
+      },
+      "offline_capture_successes": 23,
+      "post_terminal_event_display_new_hard_stop_count": 0,
+      "preprobe_route_counts": {
+        "not_applicable_no_conical_probe": 24
+      },
+      "role": "strong transparent active-perception diagnostic",
+      "sensor_handoff_count": 23,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.9166666666666666,
+      "strict_bottom_successes": 22,
+      "terminal_mode_counts": {
+        "None": 2,
+        "cad_depth_low_wrench_dwell": 22
+      },
+      "time_to_bottom_success_median_s": 17.534000000004486,
+      "total_active_time_all_median_s": 19.86274999999906,
+      "trials": 24,
+      "wear_success_median_mj": 0.8511482300295954
+    },
+    "oracle": {
+      "actual_path_success_median_mm": 3.7212048572559078,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 3.525083544177842,
+      "failure_categories": {
+        "cad_bottom_verified": 22,
+        "capture_without_bottom": 2
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "fallback_skipped_reason_counts": {
+        "None": 24
+      },
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stop_reason_counts": {},
+      "hard_stops": 0,
+      "hybrid_budget_reserve_switch_count": 0,
+      "hybrid_guarded_motion_failure_reason_counts": {},
+      "max_force_p90_n": 8.225310803658207,
+      "max_raw_physical_force_all_steps_p90_n": 11.243567796621933,
+      "max_raw_physical_torque_all_steps_p90_mnm": 23.14247813112906,
+      "max_torque_p90_mnm": 23.02271512705543,
+      "offline_capture_scoring_snapshot_counts": {
+        "pre_inactive_post_terminal_display": 24
+      },
+      "offline_capture_successes": 24,
+      "post_terminal_event_display_new_hard_stop_count": 0,
+      "preprobe_route_counts": {
+        "not_applicable_no_conical_probe": 24
+      },
+      "role": "privileged upper-bound diagnostic",
+      "sensor_handoff_count": 24,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.9166666666666666,
+      "strict_bottom_successes": 22,
+      "terminal_mode_counts": {
+        "None": 2,
+        "cad_depth_low_wrench_dwell": 22
+      },
+      "time_to_bottom_success_median_s": 3.1630000000002236,
+      "total_active_time_all_median_s": 3.2097500000002395,
+      "trials": 24,
+      "wear_success_median_mj": 5.192619083309785
+    },
+    "outward": {
+      "actual_path_success_median_mm": 71.26827608376745,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 71.03531655224766,
+      "failure_categories": {
+        "cad_bottom_verified": 19,
+        "capture_without_bottom": 4,
+        "sensor_capture_false_positive": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "fallback_skipped_reason_counts": {
+        "None": 24
+      },
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stop_reason_counts": {},
+      "hard_stops": 0,
+      "hybrid_budget_reserve_switch_count": 0,
+      "hybrid_guarded_motion_failure_reason_counts": {},
+      "max_force_p90_n": 9.414097574419852,
+      "max_raw_physical_force_all_steps_p90_n": 11.439809654634416,
+      "max_raw_physical_torque_all_steps_p90_mnm": 25.382041867715497,
+      "max_torque_p90_mnm": 25.596526197732583,
+      "offline_capture_scoring_snapshot_counts": {
+        "pre_inactive_post_terminal_display": 24
+      },
+      "offline_capture_successes": 23,
+      "post_terminal_event_display_new_hard_stop_count": 0,
+      "preprobe_route_counts": {
+        "not_applicable_no_conical_probe": 24
+      },
+      "role": "geometry-only comparator",
+      "sensor_handoff_count": 24,
+      "sensor_handoff_false_positive_count": 1,
+      "strict_bottom_success_rate": 0.7916666666666666,
+      "strict_bottom_successes": 19,
+      "terminal_mode_counts": {
+        "None": 5,
+        "cad_depth_low_wrench_dwell": 19
+      },
+      "time_to_bottom_success_median_s": 34.62899999998332,
+      "total_active_time_all_median_s": 37.51674999999711,
+      "trials": 24,
+      "wear_success_median_mj": 120.38201115625294
+    },
+    "proposed": {
+      "actual_path_success_median_mm": 14.291154118587334,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 14.116493109419018,
+      "failure_categories": {
+        "cad_bottom_verified": 19,
+        "capture_without_bottom": 4,
+        "search_radius_exhausted": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "fallback_skipped_reason_counts": {
+        "None": 24
+      },
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 2,
+      "hard_stop_reason_counts": {},
+      "hard_stops": 0,
+      "hybrid_budget_reserve_switch_count": 0,
+      "hybrid_guarded_motion_failure_reason_counts": {},
+      "max_force_p90_n": 8.99791011998188,
+      "max_raw_physical_force_all_steps_p90_n": 11.252181454345,
+      "max_raw_physical_torque_all_steps_p90_mnm": 26.096994615541888,
+      "max_torque_p90_mnm": 26.433516108358443,
+      "offline_capture_scoring_snapshot_counts": {
+        "final_active_outcome": 1,
+        "pre_inactive_post_terminal_display": 23
+      },
+      "offline_capture_successes": 23,
+      "post_terminal_event_display_new_hard_stop_count": 0,
+      "preprobe_route_counts": {
+        "conditioned_ambiguous_top_contact_probe": 24
+      },
+      "role": "paper-facing complete method",
+      "sensor_handoff_count": 23,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.7916666666666666,
+      "strict_bottom_successes": 19,
+      "terminal_mode_counts": {
+        "None": 5,
+        "cad_depth_low_wrench_dwell": 19
+      },
+      "time_to_bottom_success_median_s": 13.80500000000538,
+      "total_active_time_all_median_s": 15.114000000006587,
+      "trials": 24,
+      "wear_success_median_mj": 27.93853280317863
+    },
+    "proposed_plus": {
+      "actual_path_success_median_mm": 6.756264141400859,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 5.740025198061967,
+      "failure_categories": {
+        "cad_bottom_verified": 19,
+        "capture_without_bottom": 3,
+        "hard_stop": 1,
+        "search_radius_exhausted": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "fallback_skipped_reason_counts": {
+        "None": 24
+      },
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 8,
+      "hard_stop_reason_counts": {
+        "raw_physical_wrench_limit:Tx,Ty": 1
+      },
+      "hard_stops": 1,
+      "hybrid_budget_reserve_switch_count": 7,
+      "hybrid_guarded_motion_failure_reason_counts": {},
+      "max_force_p90_n": 8.790006766674711,
+      "max_raw_physical_force_all_steps_p90_n": 11.439809654634416,
+      "max_raw_physical_torque_all_steps_p90_mnm": 26.996653976570354,
+      "max_torque_p90_mnm": 24.68384610773895,
+      "offline_capture_scoring_snapshot_counts": {
+        "final_active_outcome": 1,
+        "pre_inactive_post_terminal_display": 23
+      },
+      "offline_capture_successes": 23,
+      "post_terminal_event_display_new_hard_stop_count": 0,
+      "preprobe_route_counts": {
+        "conditioned_ambiguous_top_contact_probe": 24
+      },
+      "role": "adaptive research branch; no superiority claim",
+      "sensor_handoff_count": 23,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.7916666666666666,
+      "strict_bottom_successes": 19,
+      "terminal_mode_counts": {
+        "None": 5,
+        "cad_depth_low_wrench_dwell": 19
+      },
+      "time_to_bottom_success_median_s": 13.744500000005306,
+      "total_active_time_all_median_s": 16.018750000007714,
+      "trials": 24,
+      "wear_success_median_mj": 9.536334212048171
+    },
+    "random": {
+      "actual_path_success_median_mm": 20.970827906899615,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 20.783819146349003,
+      "failure_categories": {
+        "cad_bottom_verified": 10,
+        "capture_without_bottom": 2,
+        "hard_stop": 1,
+        "search_radius_exhausted": 11
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "fallback_skipped_reason_counts": {
+        "None": 24
+      },
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stop_reason_counts": {
+        "raw_physical_wrench_limit:Tx,Ty": 1
+      },
+      "hard_stops": 1,
+      "hybrid_budget_reserve_switch_count": 0,
+      "hybrid_guarded_motion_failure_reason_counts": {},
+      "max_force_p90_n": 9.30138559861671,
+      "max_raw_physical_force_all_steps_p90_n": 11.439809654634416,
+      "max_raw_physical_torque_all_steps_p90_mnm": 23.657938987133182,
+      "max_torque_p90_mnm": 23.608163277278425,
+      "offline_capture_scoring_snapshot_counts": {
+        "final_active_outcome": 11,
+        "pre_inactive_post_terminal_display": 13
+      },
+      "offline_capture_successes": 12,
+      "post_terminal_event_display_new_hard_stop_count": 0,
+      "preprobe_route_counts": {
+        "not_applicable_no_conical_probe": 24
+      },
+      "role": "weak-search lower diagnostic",
+      "sensor_handoff_count": 13,
+      "sensor_handoff_false_positive_count": 1,
+      "strict_bottom_success_rate": 0.4166666666666667,
+      "strict_bottom_successes": 10,
+      "terminal_mode_counts": {
+        "None": 14,
+        "cad_depth_low_wrench_dwell": 10
+      },
+      "time_to_bottom_success_median_s": 11.46450000000252,
+      "total_active_time_all_median_s": 63.70575000012216,
+      "trials": 24,
+      "wear_success_median_mj": 28.907582476049726
+    }
+  },
+  "paired": {
+    "proposed_vs_direct_first": {
+      "both_failed": 5,
+      "both_success": 15,
+      "common_success_left_minus_right_path_median_mm": 7.156557882670781,
+      "common_success_left_minus_right_time_median_s": 4.524000000005529,
+      "left_only_success": 4,
+      "mcnemar_exact_two_sided_p": 0.125,
+      "right_only_success": 0
+    },
+    "proposed_vs_entropy_grid": {
+      "both_failed": 1,
+      "both_success": 18,
+      "common_success_left_minus_right_path_median_mm": 1.3676554663809806,
+      "common_success_left_minus_right_time_median_s": -0.17300000000021143,
+      "left_only_success": 1,
+      "mcnemar_exact_two_sided_p": 0.375,
+      "right_only_success": 4
+    },
+    "proposed_vs_oracle": {
+      "both_failed": 2,
+      "both_success": 19,
+      "common_success_left_minus_right_path_median_mm": 9.927478392505122,
+      "common_success_left_minus_right_time_median_s": 10.580000000005084,
+      "left_only_success": 0,
+      "mcnemar_exact_two_sided_p": 0.25,
+      "right_only_success": 3
+    },
+    "proposed_vs_outward": {
+      "both_failed": 5,
+      "both_success": 19,
+      "common_success_left_minus_right_path_median_mm": -41.14168532224798,
+      "common_success_left_minus_right_time_median_s": -16.78800000008016,
+      "left_only_success": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "right_only_success": 0
+    },
+    "proposed_vs_proposed_plus": {
+      "both_failed": 4,
+      "both_success": 18,
+      "common_success_left_minus_right_path_median_mm": 0.07134551757512897,
+      "common_success_left_minus_right_time_median_s": -0.4030000000004925,
+      "left_only_success": 1,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "right_only_success": 1
+    },
+    "proposed_vs_random": {
+      "both_failed": 5,
+      "both_success": 10,
+      "common_success_left_minus_right_path_median_mm": -8.974405555349186,
+      "common_success_left_minus_right_time_median_s": 0.775749999999424,
+      "left_only_success": 9,
+      "mcnemar_exact_two_sided_p": 0.00390625,
+      "right_only_success": 0
+    }
+  },
+  "updated_utc": "2026-07-15T10:11:58.028055+00:00"
+}

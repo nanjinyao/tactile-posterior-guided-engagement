@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "record_kind": "operator_designated_common_work_pose_observation",
+  "semantic_name": "common_m8_m10_m12_socket_surface_center_hover_approx",
+  "status": "SEMANTIC_RECORDED_NUMERIC_KST_CAPTURE_PENDING",
+  "reported_local": "2026-07-21T22:10:00+08:00",
+  "operator_statement": "The current robot pose is also the approximate M8 and M10 top-surface center, and remains the approximate M12 top-surface center when the lift table is moved to its marked size-specific placement. It may be slightly above all three top surfaces.",
+  "robot": {
+    "model": "KUKA LBR iiwa 14 R820",
+    "ip": "192.168.1.147",
+    "command_owner_for_numeric_capture": "MATLAB_KST_MatlabToolboxServer"
+  },
+  "frames": {
+    "numeric_pose_frame": "KUKA base / SmartPAD WORLD",
+    "numeric_pose_entity": "KST media-flange identity",
+    "operator_aligned_entity": "installed physical peg tip",
+    "down_axis": "WORLD_-Z",
+    "T_flange_to_tip": null
+  },
+  "state": {
+    "flange_pose_mm_rad": null,
+    "joints_rad": null,
+    "sample_count": null,
+    "stationarity_duration_s": null
+  },
+  "fixture_handling": {
+    "supported_sizes": ["M8", "M10", "M12"],
+    "method": "operator_moves_lift_table_to_marked_size_specific_pose",
+    "lift_table_must_be_locked": true,
+    "same_robot_work_pose_reused": true,
+    "expected_tip_clearance": "approximately_zero_or_small_positive_clearance",
+    "engineering_bias_disclosed": true
+  },
+  "use_permissions": {
+    "replaces_folded_start_anchor": false,
+    "approved_as_recovery_target": false,
+    "approved_as_fixture_to_world_calibration": false,
+    "approved_as_bounded_demo_live_start_gate": false,
+    "promotion_condition": "stable zero-motion KST numeric capture and lifecycle end"
+  },
+  "numeric_capture_attempt_20260721_221130": {
+    "success": false,
+    "motion_commanded": false,
+    "reason": "MatlabToolboxServer port 30001 was not listening; no pose was inferred from the photograph or operator statement.",
+    "run_directory": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/H0_work_pose_capture_m12_socket_top_approx_20260721_221118_685"
+  },
+  "claim_boundary": "This is a semantic local work-pose observation and manual fixture-placement contract. It is not folded home, an autonomous approach target, a recovery target, a metric socket center, or a fixture-to-WORLD calibration."
+}

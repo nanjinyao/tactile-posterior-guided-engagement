@@ -1,0 +1,267 @@
+{
+  "analysis_design": {
+    "locked_rules": {
+      "clear_long": {
+        "aps_set_size": {
+          "operator": "<=",
+          "value": 3
+        },
+        "circular_concentration": {
+          "operator": ">=",
+          "value": 0.995
+        },
+        "ensemble_top1_span_deg": {
+          "operator": "<=",
+          "value": 7.5
+        },
+        "min_proposed_transport_mm": {
+          "operator": ">=",
+          "value": 2.7
+        }
+      },
+      "fuzzy_short": {
+        "aps_set_size": {
+          "operator": ">=",
+          "value": 5
+        },
+        "ensemble_top1_span_deg": {
+          "operator": ">=",
+          "value": 15.0
+        },
+        "max_proposed_transport_mm": {
+          "operator": "<=",
+          "value": 1.2
+        }
+      }
+    },
+    "no_probability_estimate": true,
+    "no_significance_test": true,
+    "preregistered": false,
+    "quality_signals_are_shared_across": [
+      "proposed",
+      "proposed_plus",
+      "direct_first"
+    ],
+    "strict_success_contract": {
+      "capture_alone_is_not_success": true,
+      "requires": [
+        "inner_wall_confirmed",
+        "offline_capture_validated",
+        "bottom_reached",
+        "result == cad_bottom_verified",
+        "terminal_verification_mode in {bottom_force_dwell, cad_depth_low_wrench_dwell}",
+        "hard_stop == false",
+        "total_active_time_s <= 130.0",
+        "fallback_budget_extension_s == 0.0"
+      ],
+      "source_function": "src.run_m8_strict_complete_loop_audit._strict_bottom_success"
+    },
+    "type": "post_hoc_descriptive_stratification"
+  },
+  "artifact": "M8_strict24_fingerprint_quality_post_hoc_stratification",
+  "claim_boundary": "Post-hoc descriptive stratification of one frozen strict-24 M8 simulation audit. The thresholds were not preregistered, the two observed count ratios are not probability estimates or significance tests, and the strata do not establish generalization, causality, hardware transfer, or a guaranteed relationship between fingerprint quality and direct-first success.",
+  "schema_version": 1,
+  "source": {
+    "manifest": {
+      "path": "outputs/current/evaluations/m8_strict_24_complete_loop/manifest.json",
+      "sha256": "09f3d2f2fa542486209ead98a2521fc081bafc8e28f3a407c8b96caccdcb7b99"
+    },
+    "pose_ids": [
+      "sobol_000",
+      "sobol_001",
+      "sobol_002",
+      "sobol_003",
+      "sobol_004",
+      "sobol_005",
+      "sobol_006",
+      "sobol_007",
+      "sobol_008",
+      "sobol_009",
+      "sobol_010",
+      "sobol_011",
+      "sobol_012",
+      "sobol_013",
+      "sobol_014",
+      "sobol_015",
+      "sobol_016",
+      "sobol_017",
+      "sobol_018",
+      "sobol_019",
+      "sobol_020",
+      "sobol_021",
+      "sobol_022",
+      "sobol_023"
+    ],
+    "report": {
+      "path": "outputs/current/evaluations/m8_strict_24_complete_loop/report.json",
+      "sha256": "e4ffde67d5ac3e0643a51850701850d50ca246ff9f85d9200c72e12a8e40c563"
+    },
+    "strict_audit_directory": "outputs/current/evaluations/m8_strict_24_complete_loop",
+    "trial_count": 24
+  },
+  "strata": {
+    "clear_long": {
+      "direct_first_strict_bottom_failure_count": 0,
+      "direct_first_strict_bottom_success_count": 5,
+      "member_count": 5,
+      "members": [
+        {
+          "aps_set_size": 3,
+          "circular_concentration": 0.9973996109426748,
+          "direct_first_offline_capture_validated": true,
+          "direct_first_result": "cad_bottom_verified",
+          "direct_first_strict_bottom_success": true,
+          "ensemble_top1_span_deg": 0.0,
+          "fingerprint_sha256": "53727e249ccc375afc833aba72d7e280ea7ea8bfe40a684bd0a8980c0684cbdf",
+          "pose_id": "sobol_000",
+          "proposed_plus_transport_mm": 2.8728229817604873,
+          "proposed_transport_mm": 2.8728229817604873
+        },
+        {
+          "aps_set_size": 3,
+          "circular_concentration": 0.9963147394284595,
+          "direct_first_offline_capture_validated": true,
+          "direct_first_result": "cad_bottom_verified",
+          "direct_first_strict_bottom_success": true,
+          "ensemble_top1_span_deg": 7.5,
+          "fingerprint_sha256": "eff962762b41e60db4aa7c3c2cbbcc1914c253c94a636a1eb5785630d92099d2",
+          "pose_id": "sobol_005",
+          "proposed_plus_transport_mm": 2.8325059684401794,
+          "proposed_transport_mm": 2.8325059684401794
+        },
+        {
+          "aps_set_size": 2,
+          "circular_concentration": 0.9974839923244271,
+          "direct_first_offline_capture_validated": true,
+          "direct_first_result": "cad_bottom_verified",
+          "direct_first_strict_bottom_success": true,
+          "ensemble_top1_span_deg": 7.5,
+          "fingerprint_sha256": "2bd4e15e87d57af576e6ac76ae09bce61f399481b2791a7b5be2465c35cad828",
+          "pose_id": "sobol_007",
+          "proposed_plus_transport_mm": 2.730061286412831,
+          "proposed_transport_mm": 2.730061286412831
+        },
+        {
+          "aps_set_size": 3,
+          "circular_concentration": 0.9981565775150709,
+          "direct_first_offline_capture_validated": true,
+          "direct_first_result": "cad_bottom_verified",
+          "direct_first_strict_bottom_success": true,
+          "ensemble_top1_span_deg": 0.0,
+          "fingerprint_sha256": "2086dac33e7c143cf417e5a05b182f2e2ef20c583bbd20f608e24e5e2b69982d",
+          "pose_id": "sobol_010",
+          "proposed_plus_transport_mm": 4.082930087972356,
+          "proposed_transport_mm": 2.8478141466233557
+        },
+        {
+          "aps_set_size": 3,
+          "circular_concentration": 0.9980939603762469,
+          "direct_first_offline_capture_validated": true,
+          "direct_first_result": "cad_bottom_verified",
+          "direct_first_strict_bottom_success": true,
+          "ensemble_top1_span_deg": 0.0,
+          "fingerprint_sha256": "8d7b8206ceb527ffdf8156ac03a0d303324a6057cc6ce8ffb5ddbe5b31061a4c",
+          "pose_id": "sobol_013",
+          "proposed_plus_transport_mm": 2.887805202878578,
+          "proposed_transport_mm": 2.887805202878578
+        }
+      ],
+      "observed_count_ratio": "5/5"
+    },
+    "fuzzy_short": {
+      "direct_first_strict_bottom_failure_count": 4,
+      "direct_first_strict_bottom_success_count": 2,
+      "member_count": 6,
+      "members": [
+        {
+          "aps_set_size": 10,
+          "circular_concentration": 0.5660962079857381,
+          "direct_first_offline_capture_validated": true,
+          "direct_first_result": "cad_bottom_verified",
+          "direct_first_strict_bottom_success": true,
+          "ensemble_top1_span_deg": 127.5,
+          "fingerprint_sha256": "ea8acae2251341bcf1efe1ae1c715050bcb38145a07bed4580f5b9ec55539280",
+          "pose_id": "sobol_002",
+          "proposed_plus_transport_mm": 0.0,
+          "proposed_transport_mm": 0.0
+        },
+        {
+          "aps_set_size": 5,
+          "circular_concentration": 0.9863891742513444,
+          "direct_first_offline_capture_validated": false,
+          "direct_first_result": "search_radius_exhausted",
+          "direct_first_strict_bottom_success": false,
+          "ensemble_top1_span_deg": 22.5,
+          "fingerprint_sha256": "1eacad5b5b8e90a328f47ca4b90fcf9a81baaabb6d8b4fb11b853d1324a05f37",
+          "pose_id": "sobol_008",
+          "proposed_plus_transport_mm": 0.26012253907789956,
+          "proposed_transport_mm": 1.1398996946355902
+        },
+        {
+          "aps_set_size": 7,
+          "circular_concentration": 0.7477713630948436,
+          "direct_first_offline_capture_validated": false,
+          "direct_first_result": "search_radius_exhausted",
+          "direct_first_strict_bottom_success": false,
+          "ensemble_top1_span_deg": 15.0,
+          "fingerprint_sha256": "90e23dea279d9936edff58ca5bf301e5b7f6cf0a29bda17d53a07bc1bac61229",
+          "pose_id": "sobol_009",
+          "proposed_plus_transport_mm": 0.0,
+          "proposed_transport_mm": 0.6740628661865818
+        },
+        {
+          "aps_set_size": 9,
+          "circular_concentration": 0.9544269407499574,
+          "direct_first_offline_capture_validated": true,
+          "direct_first_result": "cad_bottom_verified",
+          "direct_first_strict_bottom_success": true,
+          "ensemble_top1_span_deg": 22.5,
+          "fingerprint_sha256": "02fda933aa306ad164af03d91dec17b3fd6fc3cd416e77f26b196e1662227fcd",
+          "pose_id": "sobol_015",
+          "proposed_plus_transport_mm": 0.0,
+          "proposed_transport_mm": 1.1176899861594067
+        },
+        {
+          "aps_set_size": 8,
+          "circular_concentration": 0.8353028001789384,
+          "direct_first_offline_capture_validated": false,
+          "direct_first_result": "search_radius_exhausted",
+          "direct_first_strict_bottom_success": false,
+          "ensemble_top1_span_deg": 37.5,
+          "fingerprint_sha256": "1232c2e24de33cbbd272835edcf8108048706f6901dc413004e7f5f9afc45473",
+          "pose_id": "sobol_016",
+          "proposed_plus_transport_mm": 0.5424859387900729,
+          "proposed_transport_mm": 0.9032664222572051
+        },
+        {
+          "aps_set_size": 10,
+          "circular_concentration": 0.9082925421427175,
+          "direct_first_offline_capture_validated": false,
+          "direct_first_result": "search_radius_exhausted",
+          "direct_first_strict_bottom_success": false,
+          "ensemble_top1_span_deg": 60.0,
+          "fingerprint_sha256": "bfc6ae1dec0b80bdf515df1568c986ddf50008572fe2b117a25898fe803a3633",
+          "pose_id": "sobol_023",
+          "proposed_plus_transport_mm": 0.040493307052322444,
+          "proposed_transport_mm": 1.0004018877147591
+        }
+      ],
+      "observed_count_ratio": "2/6"
+    }
+  },
+  "unassigned_pose_ids": [
+    "sobol_001",
+    "sobol_003",
+    "sobol_004",
+    "sobol_006",
+    "sobol_011",
+    "sobol_012",
+    "sobol_014",
+    "sobol_017",
+    "sobol_018",
+    "sobol_019",
+    "sobol_020",
+    "sobol_021",
+    "sobol_022"
+  ]
+}

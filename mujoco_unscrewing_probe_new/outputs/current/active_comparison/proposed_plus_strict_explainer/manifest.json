@@ -1,0 +1,160 @@
+{
+  "action_lattice": {
+    "coverage_certificate": {
+      "action_node_count": 749,
+      "action_padding_m": 0.00024260669545633252,
+      "action_support_radius_m": 0.0051379105675361855,
+      "analytic_worst_case_gap_m": 0.0002375,
+      "boundary_sample_count": 8192,
+      "boundary_worst_gap_m": 0.00023609365612432852,
+      "certified": true,
+      "complete_required_lattice": true,
+      "dense_sample_count": 42689,
+      "dense_worst_gap_m": 0.00023750000000000003,
+      "effective_capture_radius_m": 0.00025,
+      "lattice_spacing_m": 0.0003358757210636101,
+      "observed_worst_gap_m": 0.00023750000000000003,
+      "required_lattice_node_count": 741,
+      "support_radius_m": 0.004895303872079853
+    },
+    "effective_padding_mm": 0.25,
+    "nodes_inside_visual_disk": 673,
+    "padded_action_node_count": 749,
+    "padding_only_nodes": 76,
+    "spacing_mm": 0.3358757210636101,
+    "visual_boundary_drawn": true,
+    "visual_disk_center_xy_mm": [
+      -2.585577396309772,
+      -1.3918908584461986
+    ],
+    "visual_support_radius_mm": 4.895303872079853
+  },
+  "artifacts": {
+    "planar_map": {
+      "bytes": 409060,
+      "path": "outputs/current/active_comparison/proposed_plus_strict_explainer/planar_map.png",
+      "sha256": "494141c4793fcc37d34fab579778e38ffe9cd3243ecfacdeb3c185a5b3ef1c8a"
+    },
+    "poster": {
+      "bytes": 231178,
+      "path": "outputs/current/active_comparison/proposed_plus_strict_explainer/poster.png",
+      "sha256": "8778b355ee1966b46ba00cfa64161aa37e6b94f04911df5f0c820bc6deb255dc"
+    },
+    "result": {
+      "bytes": 23322,
+      "path": "outputs/current/active_comparison/proposed_plus_strict_explainer/result.json",
+      "sha256": "d34c6a8cc8edd9ac7d9e5efaf783c4238e415618a772e179dc962d97a5ef146e"
+    },
+    "trace": {
+      "bytes": 27225739,
+      "path": "outputs/current/active_comparison/proposed_plus_strict_explainer/trace.csv",
+      "sha256": "ec75ea0b8ef85f72a2b0066140f0144157000d274d1a51b5c1cce749cc3e8f6d"
+    },
+    "video": {
+      "bytes": 1911697,
+      "path": "outputs/current/active_comparison/proposed_plus_strict_explainer/proposed_plus_strict_sobol_008.mp4",
+      "sha256": "2355b3586f8133c757193277a9ec93a0f7d2cfaa641282bd23343c355435f498"
+    }
+  },
+  "bottom": {
+    "depth_error_mm": 0.01169399025451219,
+    "reached": true,
+    "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+    "time_s": 16.208500000007575
+  },
+  "capture": {
+    "event_xy_mm": [
+      -0.10024470130255318,
+      0.1674733704903735
+    ],
+    "mode": "inner_wall_guided",
+    "offline_capture_validated": true,
+    "sensor_handoff": true,
+    "time_to_capture_s": 11.944000000003106
+  },
+  "claim_boundary": "This selected MuJoCo rollout explains the strict Proposed+ mechanism; it is not distribution-level evidence. The true center, capture disk, capture-eligible node labels, and offline capture validation are used only after execution for explanation/scoring. The run is conditioned on the declared ambiguous-top-contact task set and does not establish an upstream router, hardware transfer, passivity, threaded unscrewing, extraction, or universal superiority.",
+  "contract": {
+    "budget_is_accumulated_simulated_active_controller_time": true,
+    "conditioned_on_ambiguous_top_contact": true,
+    "continue_to_cad_bottom": true,
+    "hard_active_time_budget_s": 130.0,
+    "online_contact_tags_used": false,
+    "online_true_center_used": false,
+    "selected_mechanism_example_not_distribution_evidence": true,
+    "true_center_in_planar_map_is_offline_interpretation_only": true
+  },
+  "created_utc": "2026-07-15T10:15:31.299363+00:00",
+  "exit": {
+    "budget_exhaustion_stage": null,
+    "fallback_budget_extension_s": 0.0,
+    "funnel_abort_reason": null,
+    "hard_stop": false,
+    "hard_stop_reason": null,
+    "result": "cad_bottom_verified",
+    "strict_bottom_success": true,
+    "total_active_time_s": 16.208500000007575,
+    "within_hard_active_budget": true
+  },
+  "experiment": "M8_strict_Proposed_plus_selected_mechanism_explainer",
+  "method": {
+    "display_name": "proposed_plus",
+    "runtime_method": "hybrid",
+    "strict_parameter_source": "run_m8_strict_complete_loop_audit._run_one"
+  },
+  "pose_id": "sobol_008",
+  "source_strict_manifest": "outputs/current/evaluations/m8_strict_24_complete_loop/manifest.json",
+  "task": {
+    "angle_rad": 3.635431138459195,
+    "baseline_phase_rad": 3.1516419060100644,
+    "contact_timeconst_s": 0.06974972726777195,
+    "friction_slide": 0.6004086758941413,
+    "pose_id": "sobol_008",
+    "posterior_seed": 20260723008,
+    "radius_m": 0.002936421399277378,
+    "sensor_delay_s": 0.0076656314600000025,
+    "sensor_noise_seed": 202607230008,
+    "target_down_force_n": 3.3435806203633547,
+    "x_m": -0.002585577396309772,
+    "y_m": -0.0013918908584461987
+  },
+  "trajectory": {
+    "adaptive_stage_group": "hybrid_entropy_probe",
+    "capture_event_trace_record": {
+      "active_time_s": 11.944000000003106,
+      "clock_s": 12.744000000004084,
+      "nearest_trace_distance_mm": 0.0,
+      "row_index": 25487,
+      "stage": "hybrid task-aware posterior-grid node 5 | capture cue during force ramp",
+      "stage_group": "direct_capture_dwell"
+    },
+    "capture_event_xy_mm": [
+      -0.10024470130255318,
+      0.1674733704903735
+    ],
+    "commanded_adaptive_endpoints_mm": [
+      [
+        0.4373040932627191,
+        -1.3918908584461986
+      ],
+      [
+        -0.5703230699281112,
+        -0.3842636952553684
+      ],
+      [
+        -0.5703230699281112,
+        -0.04838797419175829
+      ],
+      [
+        -1.2420745120553314,
+        1.9668663521899026
+      ],
+      [
+        -1.5779502331189414,
+        -2.063642300573419
+      ]
+    ],
+    "effective_capture_radius_mm": 0.25,
+    "measured_trace_samples": 35017,
+    "source": "trace.csv measured tip_x_m/tip_y_m"
+  }
+}

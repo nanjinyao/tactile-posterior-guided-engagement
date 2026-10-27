@@ -1,0 +1,80 @@
+{
+  "claim_boundary": "This is a preregistered Jin-2021-style M8 proxy, not a faithful reproduction of Jin et al. The paper does not specify a hexagonal class set, raster normalization, CNN widths, optimizer, direct-slide length, reset rule, or finite-time terminal contract. Its published square/pentagon percentages are background only and are not numerically comparable to this M8 benchmark.",
+  "comparison": {
+    "changed_component_only": "fingerprint direction estimator",
+    "improved_estimator": "frozen P1v3 three-seed circular 1D CNN ensemble",
+    "shared_direct_ray": {
+      "active_time_budget_s": 130.0,
+      "controller": "run_m8_strict_complete_loop_audit._run_with_runtime(..., method='direct_first')",
+      "requirements": [
+        "byte-identical probe trace within each paired pose",
+        "same 4.895 mm maximum direct ray",
+        "same XY speed, force/admittance, noise, delay, yaw and insertion controller",
+        "same sensor-only capture handoff and strict CAD-bottom verifier",
+        "no retry, reset, or estimator-specific controller tuning"
+      ]
+    }
+  },
+  "created_utc": "2026-07-15T00:00:00Z",
+  "decision_rule": {
+    "direction_claim": "The improved estimator is more accurate only if the fresh paired direction audit has lower median angular error; p90, threshold rates, catastrophic errors, and paired uncertainty remain visible regardless of outcome.",
+    "task_claim": "The improved fingerprint direct line has a higher success rate only if fresh paired first-ray capture and/or strict CAD-bottom improve. Direction improvement alone is not task-success improvement.",
+    "no_post_result_tuning": "Proxy preprocessing, architecture, seeds, training split, ray controller, and test sets are frozen here before P1v6 or fresh strict outcomes are read. Any later change requires a new version and a new untouched test set."
+  },
+  "direction_test": {
+    "dataset": "P1v6 fresh paired direction audit",
+    "local_angles_deg": [
+      17.0,
+      53.0
+    ],
+    "metrics": [
+      "executed angular error median and p90",
+      "within 7.5 degree and within 15 degree rates",
+      "greater than 90 degree catastrophic-error rate",
+      "common 12-sector top-1 accuracy for both estimators",
+      "paired base-pose bootstrap interval for angular-error difference"
+    ],
+    "radial_offsets_m": [
+      0.00132,
+      0.00212,
+      0.00295,
+      0.00388,
+      0.00472
+    ],
+    "repeats_per_geometry": 3,
+    "sampling_seed": 20260732,
+    "sectors": 6,
+    "total_scans": 180,
+    "training_use": "forbidden_for_both"
+  },
+  "jin_style_proxy": {
+    "classes": "12 directional sectors at 30 degree spacing; aligned class omitted because the audit is conditioned on ambiguous off-center top contact",
+    "ensemble_seeds": [
+      20260710,
+      20260711,
+      20260712
+    ],
+    "input": "shared raw scan, using Xz/tip_z, Mx/Tx, My/Ty only",
+    "paper_fixed_elements": "2000 phase samples, 20-sample circular moving average, 200x200 polar binary image, 3x20x20 network input, two convolution layers, two max-pooling layers, one fully connected layer",
+    "proxy_choices_missing_from_paper": "per-scan min-max radius mapping, 2-pixel closed polyline, 10x10 max downsampling, conv widths 16/32, 3x3 kernels, Adam 1e-3, early stopping",
+    "training_data": "same grouped P0b/P0d/P1v3 development data and split seed 20260710 as the improved estimator; P1v5, P1v6, strict-24, and fresh strict-48 are forbidden"
+  },
+  "paired_task_test": {
+    "metrics": [
+      "first-ray capture",
+      "strict CAD-bottom success",
+      "sensor false handoff",
+      "hard stop",
+      "safe abort and failure category",
+      "active-time budget violation",
+      "paired exact McNemar table"
+    ],
+    "pose_count": 48,
+    "sampling_seed": 20260733,
+    "sensor_noise": true,
+    "training_use": "forbidden_for_both"
+  },
+  "reference": "Jin et al., Contact Pose Identification for Peg-in-Hole Assembly under Uncertainties, 2021",
+  "status": "locked_before_proxy_training_and_fresh_evaluation",
+  "version": "1.0.0"
+}

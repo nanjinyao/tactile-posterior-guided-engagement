@@ -1,0 +1,35 @@
+{
+  "adaptation_contract": {
+    "S3_full_loop_samples_seen": 0,
+    "all_checkpoint_weights_frozen": true,
+    "encoder_shared_frozen": true,
+    "future_S4_full_loop_samples_seen": 0,
+    "model_selection_role": "none",
+    "size": "m10",
+    "temperature_and_APS_role": "calibration",
+    "trainable_modules": [],
+    "variant": "cal_only",
+    "weight_update_role": "none"
+  },
+  "aps_quantile": 0.7901513426069257,
+  "checkpoints": [
+    "outputs/current/models/cross_size_s4_state_direction_heads/m10/cal_only/seeds/seed_20260720/circular_cnn_best.pt",
+    "outputs/current/models/cross_size_s4_state_direction_heads/m10/cal_only/seeds/seed_20260721/circular_cnn_best.pt",
+    "outputs/current/models/cross_size_s4_state_direction_heads/m10/cal_only/seeds/seed_20260722/circular_cnn_best.pt"
+  ],
+  "claim_boundary": "Simulation-only S4 observed-wrench head adaptation. Head metrics do not establish full-loop success.",
+  "combiner": "mean size-calibrated class probabilities",
+  "confidence_gate": 0.0,
+  "direction_bin_width_deg": 7.5,
+  "direction_bins": 48,
+  "direction_role": "allow bounded transport only when all calibrated set/concentration/disagreement gates pass",
+  "fallback": "guarded local outward spiral or re-probe",
+  "state_role": "size-adapted diagnostic soft CAD likelihood; never a terminal verifier",
+  "structured_transport_gate": {
+    "max_aps_set_size": 3,
+    "max_ensemble_top1_span_deg": 7.5,
+    "min_circular_concentration": 0.0,
+    "min_max_probability": 0.0
+  },
+  "updated_utc": "2026-07-15T15:24:24.589176+00:00"
+}

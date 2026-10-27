@@ -1,0 +1,289 @@
+{
+  "adaptation_contract": {
+    "adaptation_mode": "tail",
+    "aps_and_gate_policy": "single conservative gate selected on the worst of four calibration domains",
+    "base_model_contract_sha256": "1bffac241d4d1418e86c1e8c8a9ce568dfbeb46fd8a4fd315f5c4ce8e7a0281a",
+    "base_model_root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_robust_direction_v2",
+    "batchnorm_running_statistics_frozen": true,
+    "captured_or_incomplete_traces_used_for_direction_supervision": 0,
+    "dataset_contracts": {
+      "m10": {
+        "bit_radius_m": 0.004618802153517006,
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m10_hardware_easy_v2.xml",
+        "model_sha256": "83dd467bd124ce7aac3b8ae68cd13124ec1ce8a09a1e67adf963e6d1b3ba57d1",
+        "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m10",
+        "sampling_contract": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m10/sampling_contract.json",
+        "sampling_contract_sha256": "dcc98303c334b7962b81c2c99802c9b448112ae91f63ee10194b4cabe3fc6e3d",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m10_hardware_easy_v2.json",
+        "spec_sha256": "a5f07c9f5f25a7fec4702a4086b7b3113d0ac39d12f938556beb567e1595dd33"
+      },
+      "m12": {
+        "bit_radius_m": 0.005773502691896258,
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m12_hardware_easy_v2.xml",
+        "model_sha256": "ffe7fe135c50d4e2c3a0b962a58772fc592037318595bd8edd871d466e5f3c4a",
+        "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m12",
+        "sampling_contract": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/hardware_easy_v2_multisize_dense/m12/sampling_contract.json",
+        "sampling_contract_sha256": "e64fd61e6d39e754ab97fbfe2411912c5ae475ba6ec19f94dd317d909deed7f9",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m12_hardware_easy_v2.json",
+        "spec_sha256": "cc5a1008c469797d5dd9cc82f25c7db1bba27efa2847e2be463a39489c5f5176"
+      },
+      "m8": {
+        "bit_radius_m": 0.0034641016151377548,
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m8_hardware_easy_v2.xml",
+        "model_sha256": "a306e30a5961278e3b29e9f58ea86ac20d703a6640cd21e14b032a41fc73f638",
+        "root": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/m8_hardware_easy_v2_direction_dense_training",
+        "sampling_contract": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/datasets/m8_hardware_easy_v2_direction_dense_training/sampling_contract.json",
+        "sampling_contract_sha256": "893239595a531a3cce0a5331c613b2b77ddf1235b58e36d80096543230726485",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m8_hardware_easy_v2.json",
+        "spec_sha256": "2ef19040271a695f55c2479ad67e812d7eee8f2667d94fa25eda51d38cf113cb"
+      }
+    },
+    "domain_balancing": "one independent batch per domain per optimizer step",
+    "domain_weights": {
+      "m10_easy": 0.13333333333333333,
+      "m12_easy": 0.13333333333333333,
+      "m8_easy": 0.13333333333333333,
+      "m8_source": 0.6
+    },
+    "easy_development_datasets_consumed": {
+      "m10": [],
+      "m12": [],
+      "m8": [
+        {
+          "all_group_trial_counts": {
+            "m8easyjointfresh2_r00_l00": 18,
+            "m8easyjointfresh2_r00_l01": 18,
+            "m8easyjointfresh2_r01_l00": 18,
+            "m8easyjointfresh2_r01_l01": 18,
+            "m8easyjointfresh2_r02_l00": 18,
+            "m8easyjointfresh2_r02_l01": 18,
+            "m8easyjointfresh2_r03_l00": 18,
+            "m8easyjointfresh2_r03_l01": 18,
+            "m8easyjointfresh2_r04_l00": 18,
+            "m8easyjointfresh2_r04_l01": 18
+          },
+          "all_ok_trials": 180,
+          "bit_radius_m": 0.0034641016151377548,
+          "calibration_examples_after_capture_filter": 22,
+          "calibration_groups": [
+            "m8easyjointfresh2_r00_l00",
+            "m8easyjointfresh2_r02_l00"
+          ],
+          "capture_or_incomplete_excluded": 34,
+          "explicit_failed_audit_opt_in": true,
+          "geometry_profile": "hardware_easy_v2",
+          "group_intersection": [],
+          "group_unit": "symmetry_orbit_id without nuisance suffix; contains every nuisance repeat and all six C6 sectors",
+          "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m8_hardware_easy_v2.xml",
+          "model_sha256": "a306e30a5961278e3b29e9f58ea86ac20d703a6640cd21e14b032a41fc73f638",
+          "new_role": "development_after_failed_v2_evaluation",
+          "original_training_use": "forbidden",
+          "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/hardware_easy_v2_multisize_fresh2/m8_easy",
+          "sampling_contract_sha256": "4d247609be323c344cfbc3812345d3e652e8eabbcb341cdd61880ea80395c4cf",
+          "size": "m8",
+          "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m8_hardware_easy_v2.json",
+          "spec_sha256": "2ef19040271a695f55c2479ad67e812d7eee8f2667d94fa25eda51d38cf113cb",
+          "split_before_capture_filter": true,
+          "state_counts": {
+            "double_overhang": {
+              "calibration_orbits": 1,
+              "physical_orbits": 6,
+              "train_orbits": 5
+            },
+            "supported_search": {
+              "calibration_orbits": 1,
+              "physical_orbits": 4,
+              "train_orbits": 3
+            }
+          },
+          "train_examples_after_capture_filter": 124,
+          "train_groups": [
+            "m8easyjointfresh2_r00_l01",
+            "m8easyjointfresh2_r01_l00",
+            "m8easyjointfresh2_r01_l01",
+            "m8easyjointfresh2_r02_l01",
+            "m8easyjointfresh2_r03_l00",
+            "m8easyjointfresh2_r03_l01",
+            "m8easyjointfresh2_r04_l00",
+            "m8easyjointfresh2_r04_l01"
+          ],
+          "valid_full_fingerprints": 146
+        }
+      ]
+    },
+    "easy_split_before_capture_filter": true,
+    "encoder_and_shared_frozen": false,
+    "final_promotion_audit_samples_seen_during_fitting": 0,
+    "geometry_profile": "hardware_easy_v2",
+    "l2sp_anchored_to_m8_v5": true,
+    "m8_source_development_datasets_consumed": [
+      {
+        "all_group_trial_counts": {
+          "m8sourcejointfresh_r00_l00": 18,
+          "m8sourcejointfresh_r00_l01": 18,
+          "m8sourcejointfresh_r01_l00": 18,
+          "m8sourcejointfresh_r01_l01": 18,
+          "m8sourcejointfresh_r02_l00": 18,
+          "m8sourcejointfresh_r02_l01": 18,
+          "m8sourcejointfresh_r03_l00": 18,
+          "m8sourcejointfresh_r03_l01": 18,
+          "m8sourcejointfresh_r04_l00": 18,
+          "m8sourcejointfresh_r04_l01": 18
+        },
+        "all_ok_trials": 180,
+        "calibration_examples_after_capture_filter": 31,
+        "calibration_groups": [
+          "m8sourcejointfresh_r01_l00",
+          "m8sourcejointfresh_r03_l01"
+        ],
+        "capture_or_incomplete_excluded": 17,
+        "explicit_failed_audit_opt_in": true,
+        "geometry_profile": "frozen_source",
+        "group_intersection": [],
+        "group_unit": "symmetry_orbit_id without nuisance suffix; contains every nuisance repeat and all six C6 sectors",
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m8_source.xml",
+        "model_sha256": "b51a9648293a1aeae347b0b8fb52c8f5b382f833d3434f021319df9ff206ea46",
+        "new_role": "development_after_failed_v1_evaluation",
+        "original_training_use": "forbidden",
+        "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/hardware_easy_v2_multisize_fresh/m8_source",
+        "sampling_contract_sha256": "15d79c21f27a482bab304050520ec6055919b0f6c8c2a37dfa17f2e210dbb5f0",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m8_source.json",
+        "spec_sha256": "d203d504848819b59d62b034d73f83658c2cd50aa415b4c7f371d0ec59d7d7ce",
+        "split_before_capture_filter": true,
+        "state_counts": {
+          "double_overhang": {
+            "calibration_orbits": 1,
+            "physical_orbits": 6,
+            "train_orbits": 5
+          },
+          "supported_search": {
+            "calibration_orbits": 1,
+            "physical_orbits": 4,
+            "train_orbits": 3
+          }
+        },
+        "train_examples_after_capture_filter": 132,
+        "train_groups": [
+          "m8sourcejointfresh_r00_l00",
+          "m8sourcejointfresh_r00_l01",
+          "m8sourcejointfresh_r01_l01",
+          "m8sourcejointfresh_r02_l00",
+          "m8sourcejointfresh_r02_l01",
+          "m8sourcejointfresh_r03_l00",
+          "m8sourcejointfresh_r04_l00",
+          "m8sourcejointfresh_r04_l01"
+        ],
+        "valid_full_fingerprints": 163
+      },
+      {
+        "all_group_trial_counts": {
+          "m8sourcejointfresh2_r00_l00": 18,
+          "m8sourcejointfresh2_r00_l01": 18,
+          "m8sourcejointfresh2_r01_l00": 18,
+          "m8sourcejointfresh2_r01_l01": 18,
+          "m8sourcejointfresh2_r02_l00": 18,
+          "m8sourcejointfresh2_r02_l01": 18,
+          "m8sourcejointfresh2_r03_l00": 18,
+          "m8sourcejointfresh2_r03_l01": 18,
+          "m8sourcejointfresh2_r04_l00": 18,
+          "m8sourcejointfresh2_r04_l01": 18
+        },
+        "all_ok_trials": 180,
+        "calibration_examples_after_capture_filter": 31,
+        "calibration_groups": [
+          "m8sourcejointfresh2_r01_l01",
+          "m8sourcejointfresh2_r02_l01"
+        ],
+        "capture_or_incomplete_excluded": 13,
+        "explicit_failed_audit_opt_in": true,
+        "geometry_profile": "frozen_source",
+        "group_intersection": [],
+        "group_unit": "symmetry_orbit_id without nuisance suffix; contains every nuisance repeat and all six C6 sectors",
+        "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m8_source.xml",
+        "model_sha256": "b51a9648293a1aeae347b0b8fb52c8f5b382f833d3434f021319df9ff206ea46",
+        "new_role": "development_after_failed_v1_evaluation",
+        "original_training_use": "forbidden",
+        "path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/hardware_easy_v2_multisize_fresh2/m8_source",
+        "sampling_contract_sha256": "14e880d66f71161cf126beb87f6b8ea8175920f98d4db558e971e9cf1a6dad50",
+        "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m8_source.json",
+        "spec_sha256": "d203d504848819b59d62b034d73f83658c2cd50aa415b4c7f371d0ec59d7d7ce",
+        "split_before_capture_filter": true,
+        "state_counts": {
+          "double_overhang": {
+            "calibration_orbits": 1,
+            "physical_orbits": 6,
+            "train_orbits": 5
+          },
+          "supported_search": {
+            "calibration_orbits": 1,
+            "physical_orbits": 4,
+            "train_orbits": 3
+          }
+        },
+        "train_examples_after_capture_filter": 136,
+        "train_groups": [
+          "m8sourcejointfresh2_r00_l00",
+          "m8sourcejointfresh2_r00_l01",
+          "m8sourcejointfresh2_r01_l00",
+          "m8sourcejointfresh2_r02_l00",
+          "m8sourcejointfresh2_r03_l00",
+          "m8sourcejointfresh2_r03_l01",
+          "m8sourcejointfresh2_r04_l00",
+          "m8sourcejointfresh2_r04_l01"
+        ],
+        "valid_full_fingerprints": 167
+      }
+    ],
+    "max_aps_set_size_cap_inherited_from_base": 3,
+    "model_scope": "one shared M8/M10/M12 weight ensemble",
+    "per_seed_normalization_frozen_from_m8_v5": true,
+    "temperature_policy": "global equal-domain calibration for runtime compatibility",
+    "trainable_modules": [
+      "encoder.last_conv",
+      "shared",
+      "state_head",
+      "direction_head"
+    ]
+  },
+  "aps_quantile": 0.9377530217170715,
+  "checkpoints": [
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_candidate_v3_tail/seeds/seed_20260720/circular_cnn_best.pt",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_candidate_v3_tail/seeds/seed_20260721/circular_cnn_best.pt",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_candidate_v3_tail/seeds/seed_20260722/circular_cnn_best.pt"
+  ],
+  "claim_boundary": "Simulation-only shared M8/M10/M12 contact-geometry adaptation. It does not align the Bota measurement origin, common 42 mm hardware sensor-to-tip lever, printed mass/COM/inertia, FDM compliance/friction, or measured sensor noise, and it is not full-loop evidence.",
+  "combiner": "mean globally calibrated class probabilities",
+  "confidence_gate": 0.0,
+  "direction_bin_width_deg": 7.5,
+  "direction_bins": 48,
+  "direction_role": "allow bounded transport only when all calibrated set/concentration/disagreement gates pass",
+  "fallback": "guarded local outward spiral or re-probe",
+  "runtime_input_contract": {
+    "phase_bins": 360,
+    "phase_channels": [
+      "Fz_N",
+      "Tx_Nm",
+      "Ty_Nm",
+      "tip_z_m"
+    ],
+    "size_argument": "caller must pass key_af_m/sqrt(3) as bit_radius_m",
+    "size_bit_radius_m": {
+      "m10": 0.004618802153517006,
+      "m12": 0.005773502691896258,
+      "m8": 0.0034641016151377548
+    }
+  },
+  "state_role": "soft action-relevant radial likelihood only: combine calibrated support-state probabilities with approximate CAD using a nonzero likelihood floor; never use a hard state gate, direct distance command, capture trigger, or terminal verifier",
+  "structured_transport_gate": {
+    "max_aps_set_size": 3,
+    "max_ensemble_top1_span_deg": 180.0,
+    "min_circular_concentration": 0.0,
+    "min_max_probability": 0.0
+  },
+  "supported_sizes": [
+    "m8",
+    "m10",
+    "m12"
+  ],
+  "updated_utc": "2026-07-21T09:54:58.998834+00:00"
+}

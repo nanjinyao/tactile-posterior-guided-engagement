@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "experiment_name": "iiwa_empty_tool_air_motion_rehearsal_v1",
+  "profile_name": "axis_1mm",
+  "stage": "H0_5_AIR_MOTION",
+  "status": "preview_and_connect_check_ready_translation_motion_blocked_by_qualification",
+  "purpose": "Commission the MATLAB/KST Cartesian command path, WORLD-axis signs, bounded reversible motion, Bota observation logging, return-to-start verification, and MatlabToolboxServer exit before printed tooling is installed.",
+  "command_ownership": {
+    "online_robot_command_owner": "MATLAB_KST_MatlabToolboxServer",
+    "multiple_command_owners_forbidden": true
+  },
+  "hardware": {
+    "robot_model": "KUKA LBR iiwa 14 R820",
+    "robot_ip": "192.168.1.147",
+    "matlab_toolbox_server_port": 30001,
+    "force_torque_sensor": "Bota BFT-SENS-CAT2-B4",
+    "force_torque_serial": "SN001349",
+    "wrench_topic": "/bota_ft_sensor/wrench",
+    "wrench_frame": "bota_ft_frame"
+  },
+  "workspace_contracts": {
+    "folded_start_anchor": "../../test_real_device/kst_default_folded_start.json",
+    "proven_sensor_preflight": "../../test_real_device/kst_bota_guarded_world_z_50mm.m",
+    "recovery_entrypoint": "../../stop_matlabtoolboxserver.m",
+    "motion_qualification": "configs/air_motion_qualification.json"
+  },
+  "physical_scope": {
+    "printed_tool_required": false,
+    "observed_bota_and_mounting_stack_installed": true,
+    "fixture_contact_allowed": false,
+    "human_contact_allowed": false,
+    "force_feedback_controls_motion": false,
+    "bota_role": "observation_and_provenance_only",
+    "rotation_commanded": false,
+    "learning_enabled": false,
+    "operator_must_verify_cell_platform_and_cable_clearance": true
+  },
+  "frames": {
+    "motion_frame": "KUKA base / SmartPAD WORLD",
+    "down_axis": "WORLD_-Z",
+    "up_axis": "WORLD_+Z",
+    "tool_frame": "media flange identity"
+  },
+  "motion_qualification_scope": "bounded_translation_only_air_exception",
+  "motion": {
+    "linear_speed_mm_s": 5.0,
+    "hold_after_segment_s": 1.0,
+    "maximum_active_time_s": 45.0,
+    "maximum_segment_mm": 1.0,
+    "maximum_radius_from_live_start_mm": 1.5,
+    "maximum_downward_below_live_start_mm": 0.0,
+    "segment_translation_tolerance_mm": 0.6,
+    "maximum_orientation_drift_rad": 0.03,
+    "minimum_joint_margin_deg": 15.0,
+    "return_translation_tolerance_mm": 1.0,
+    "return_orientation_tolerance_rad": 0.03,
+    "sequence": [
+      {
+        "id": "SAFE_LIFT_Z",
+        "delta_world_mm": [0.0, 0.0, 1.0],
+        "intent": "First commissioning displacement: move away from the photographed platform in WORLD +Z."
+      },
+      {
+        "id": "RETURN_TO_FOLDED_Z",
+        "delta_world_mm": [0.0, 0.0, -1.0],
+        "intent": "Command the nominal WORLD -Z reverse and verify the measured return to the captured folded start without going below it."
+      }
+    ]
+  },
+  "promotion_ladder": [
+    "M1: independent WORLD +Z 1 mm and measured return (this config)",
+    "M2: independent WORLD +Z 2 mm and measured return after M1 evidence review",
+    "M3: independent lifted-plane WORLD +X 2 mm and reverse return",
+    "M4: independent lifted-plane WORLD +Y 2 mm and reverse return",
+    "M5: bounded 2 mm XY geometric shell with no contact semantics",
+    "H1 remains blocked until tooling, fixture, payload, transforms, and wrench limits are commissioned"
+  ],
+  "operator_gate": {
+    "required_connect_check_token": "SMARTPAD_RUNNING_CONNECT_READ_END_ONLY",
+    "required_execute_token": "CELL_CLEAR_PLATFORM_CLEAR_SMARTPAD_RUNNING",
+    "meaning": "The operator is at the cell, the platform and cable path are clear for the declared envelope, the emergency stop is reachable, and MatlabToolboxServer is Running in AUT."
+  },
+  "failure_policy": {
+    "blind_return_on_error": false,
+    "request_kst_end_on_normal_or_exceptional_exit": true,
+    "recovery_after_partial_motion": "Use /home/ubuntu20/robot_ws/stop_matlabtoolboxserver.m only after visually checking that its straight return path is clear.",
+    "smartpad_selected_requires_human_observation": true
+  },
+  "motion_qualification_gate": {
+    "complete_installed_payload_mass_and_com_required": true,
+    "matching_sunrise_load_data_deployment_required": true,
+    "explicit_cartesian_acceleration_deployment_required": true,
+    "zero_motion_connect_read_end_required_before_first_displacement": true
+  },
+  "claim_boundary": [
+    "Passing this rehearsal validates only a small empty-tool translation envelope and application lifecycle.",
+    "It does not arm contact, force control, conical tilt, yaw motion, insertion, search success, or unscrewing.",
+    "Bota samples remain raw sensor-frame observations without an absolute task-frame wrench accuracy claim."
+  ]
+}

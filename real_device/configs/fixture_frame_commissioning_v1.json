@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "status": "PENDING_POST_PRINT_MEASUREMENT",
+  "fixture_id": "hardware_easy_v2_three_socket_base",
+  "tooling_profile_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+  "tooling_profile_sha256": "03878ec282b8e9284b8733062d9ecf9132834069a83cad573755b0120617b356",
+  "m12_integrated_tool_step_path": "/home/njy/njy_ws/group_meeting/real_device/model/parametric_tooling/generated/integrated_flange_peg_m12.step",
+  "m12_integrated_tool_step_sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe",
+  "physical_instances": {
+    "physical_tool_instance_id": null,
+    "fixture_instance_id": null,
+    "tool_print_material": null,
+    "tool_print_infill_and_process_notes": null,
+    "fixture_print_material": null,
+    "fixture_print_infill_and_process_notes": null,
+    "installation_session_id": null,
+    "rule": "Assign new non-empty instance IDs after every reprint or geometry-changing rework. Sampling records are grouped by these IDs plus artifact hashes; old physical instances must never be silently pooled."
+  },
+  "fixture_frame_definition": {
+    "origin": "M10 socket CAD center projected onto the fixture top datum",
+    "x_axis": "unit vector from M10 socket center toward M12 socket center",
+    "z_axis": "fitted upward normal of the fixture top datum",
+    "y_axis": "z cross x, followed by orthonormalization",
+    "socket_centers_fixture_mm": {
+      "m8": [
+        -45.0,
+        0.0,
+        0.0
+      ],
+      "m10": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "m12": [
+        45.0,
+        0.0,
+        0.0
+      ]
+    },
+    "photo_mapping": "The current front photo is left-to-right M12/M10/M8, so image horizontal u equals -fixture x."
+  },
+  "measured_world_from_fixture": {
+    "rotation_matrix": null,
+    "rotation_matrix_convention": "3x3 active rotation mapping fixture-frame vectors into WORLD; columns are measured X_F, Y_F, Z_F axes expressed in WORLD",
+    "expected_world_from_upright_tcp_rotation_matrix": null,
+    "upright_tcp_rotation_acceptance_deg": 1.0,
+    "upright_tcp_matrix_rule": "Measured post-install upright TCP rotation, not a nominal matrix. The live captured KUKA ABC rotation must remain within the stated SO(3) distance, and registered +TCP-Z must oppose +Z_F.",
+        "yaw_deg": null,
+        "fixture_z_to_world_z_tilt_deg": null,
+        "translation_mm": null,
+        "m12_socket_center_fixture_mm": null,
+        "socket_center_standard_uncertainty_mm": null,
+        "socket_center_uncertainty_acceptance_mm": 0.25,
+        "fixture_top_datum_world_point_mm": null,
+    "fixture_top_datum_world_normal": null,
+    "fixture_top_plane_fit_rms_mm": null,
+    "fixture_top_plane_fit_rms_acceptance_mm": 0.25,
+    "m12_socket_top_to_bottom_depth_mm": null,
+    "m12_socket_depth_standard_uncertainty_mm": null,
+    "m12_socket_depth_uncertainty_acceptance_mm": 0.15,
+    "m12_socket_bottom_datum_world_point_mm": null,
+    "m12_socket_bottom_datum_crosscheck_acceptance_mm": 0.25,
+    "right_handed_axes_confirmed": false,
+        "m10_to_m12_center_distance_mm": null,
+    "rotation_orthonormality_frobenius_tolerance": 0.001,
+    "rotation_determinant_tolerance": 0.001,
+    "matrix_yaw_consistency_deg": 0.1,
+    "matrix_z_tilt_consistency_deg": 0.1,
+    "world_xy_alignment_target_deg": 0.0,
+    "world_xy_alignment_acceptance_deg": 2.0,
+    "fixture_z_alignment_acceptance_deg": 1.0,
+    "center_distance_acceptance_mm": 0.5
+  },
+  "mechanical_yaw_checks": {
+    "selected_peg_flat_normal_parallel_to_fixture_x": false,
+    "flange_tangent_datum_normal_parallel_to_fixture_x": false,
+    "peg_axis_parallel_to_fixture_z": false,
+    "long_fixture_side_is_not_the_hex_flat_normal_datum": true,
+    "vertical_peg_edge_is_not_used_as_a_yaw_datum": true
+  },
+  "evidence": {
+    "measurement_method": null,
+    "operator": null,
+    "measured_utc": null,
+    "evidence_path": null,
+    "evidence_sha256": null,
+    "notes": "Fill only from post-print/post-install metrology, including the physical M12 top-to-bottom depth and bottom datum. Do not copy nominal CAD values into measured fields."
+  },
+  "authorization": {
+    "m12_sampling_motion": false,
+    "m12_full_loop_motion": false,
+    "rule": "Sampling additionally requires the sampling script's own low-load gates. Full-loop motion also requires per-size tool clocking, tip height, runout and low-load requalification in real_tooling_v1.json."
+  },
+  "claim_boundary": "This file is a commissioning template, not evidence. Until measured fields and authorization are completed, software must fail closed before KST connection."
+}

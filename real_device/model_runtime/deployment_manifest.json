@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "model_id": "hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving",
+  "model_role": "M12 phase-boundary contact-state and circular center-direction posterior diagnostic",
+  "audit_decision": {
+    "global_status": "REJECTED_GLOBAL_AUDIT",
+    "diagnostic_scope": "M12_DEVELOPMENT_SHADOW_ONLY",
+    "reason": "fresh8 passes all hardware-easy-v2 domains but fails M8 source non-forgetting and transport safety",
+    "promotion_candidate_created": false
+  },
+  "supported_sizes": [
+    "m12"
+  ],
+  "bundle_architecture_sizes": [
+    "m8",
+    "m10",
+    "m12"
+  ],
+  "size_bit_radius_m": {
+    "m12": 0.005773502691896258
+  },
+  "hardware_authority": {
+    "default": "SHADOW_ONLY",
+    "allowed_values": [
+      "SHADOW_ONLY"
+    ],
+    "promotion_contract_path": null,
+    "promotion_contract_sha256": null,
+    "rule": "This rejected-global-audit bundle is diagnostic-only and has no hardware-control promotion lane."
+  },
+  "frame_adapter": {
+    "status": "PROVISIONAL_SHADOW_ONLY",
+    "phase": "captured upright TCP x/y conical phase",
+    "fz": "contact-positive provisional WORLD* Z",
+    "tx_ty": "provisional WORLD* torque rotated into captured upright TCP x/y",
+    "tip_z": "0.0003 m simulation datum plus real tip WORLD-Z displacement",
+    "measurement_origin": "Bota official tool mounting plane center",
+    "tip_moment_shift_applied": false
+  },
+  "runtime_artifacts": [
+    {
+      "path": "infer_conical_direction.py",
+      "sha256": "762fb4e89f3c3754ae22907440ba08a293c00fdab99e9a17c5f8d19d4be0f1a4"
+    },
+    {
+      "path": "requirements-lock.txt",
+      "sha256": "3d251bb556b9da1cbccff986bcb496bbe1ce5e412213a61776693190fc7f9859"
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "ensemble_interface_contract.json",
+      "sha256": "0fbb33d7dda8c6eeb3f133ccea8ed181a13855eb1d46414240150f2285087fea"
+    },
+    {
+      "path": "adaptation_report.json",
+      "sha256": "93323cdf7ba4f09c2837fa72c471cf6db16d13ec620ffcb3bebe959cef93ddd9"
+    },
+    {
+      "path": "split_manifest.json",
+      "sha256": "2e43ca375f9f9b1d80e3f5d040fad642a9d67a47332f009e3d4f81dd5519d875"
+    },
+    {
+      "path": "summary.md",
+      "sha256": "353c598814538d7a7ffcbdfa3de3d477f2f062db9c2be24375a9412d6dc5fca0"
+    },
+    {
+      "path": "seeds/seed_20260720/circular_cnn_best.pt",
+      "sha256": "b3a586966ef3b323b8b2e4bbbd3c123769389a60dbe96a9a721f5cf4e4715317"
+    },
+    {
+      "path": "seeds/seed_20260720/metrics.json",
+      "sha256": "aae32fc5090d8e037d2f3e575001e163eb0bcc25e0996a9fe72aa2d04bf9d729"
+    },
+    {
+      "path": "seeds/seed_20260720/normalization.npz",
+      "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+    },
+    {
+      "path": "seeds/seed_20260721/circular_cnn_best.pt",
+      "sha256": "a32598674056d2cde238725ded154592e33cf7a3c4317c3dbc29d57c292825c7"
+    },
+    {
+      "path": "seeds/seed_20260721/metrics.json",
+      "sha256": "d0eec6b3cd093eb390e7a747421e89c1a3b836e057e389afc44d3835dc3098b5"
+    },
+    {
+      "path": "seeds/seed_20260721/normalization.npz",
+      "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+    },
+    {
+      "path": "seeds/seed_20260722/circular_cnn_best.pt",
+      "sha256": "c16559ec6b2adbb0049a4fd0a8c3ea9167b29a40d1405970b42b4d64fb60e80b"
+    },
+    {
+      "path": "seeds/seed_20260722/metrics.json",
+      "sha256": "948286c9e1e61b2a379c6c6792179a46ed2254f52fbd0c89cbbc2693ffd15b59"
+    },
+    {
+      "path": "seeds/seed_20260722/normalization.npz",
+      "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+    }
+  ],
+  "evidence_artifacts": [
+    {
+      "role": "clean_data_audit",
+      "path": "../../mujoco_unscrewing_probe_new/outputs/current/reports/hardware_easy_v2_clocking_clean_data_audit.json",
+      "sha256": "895f2e821b487c175370854de596210ade8e4a983d5ecf354820dff032782181"
+    },
+    {
+      "role": "v7_lineage_audit",
+      "path": "../../mujoco_unscrewing_probe_new/outputs/current/reports/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving_lineage_audit.json",
+      "sha256": "fac4ede8705c5e07b44e97f0b255c1628185e5efb1a4d17671ee44e660e225c4"
+    },
+    {
+      "role": "fresh8_final_report",
+      "path": "../../mujoco_unscrewing_probe_new/outputs/current/evaluations/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving_fresh8_final/report.json",
+      "sha256": "f12764904cd30b953e9ba627058a1f442fe1471870f3cc56f801e1b94fa4355d"
+    },
+    {
+      "role": "fresh8_final_predictions",
+      "path": "../../mujoco_unscrewing_probe_new/outputs/current/evaluations/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving_fresh8_final/predictions.csv",
+      "sha256": "f6ca684237d8ad45a2d3ba5f771f17f16c7e2e4bbc00c06e5522482a1fd1a004"
+    },
+    {
+      "role": "fresh8_final_summary",
+      "path": "../../mujoco_unscrewing_probe_new/outputs/current/evaluations/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving_fresh8_final/summary.md",
+      "sha256": "cf83c541945e6d094ce0901477890a54686fc06926db857ed2056e8afb5d169f"
+    }
+  ],
+  "simulation_evidence": {
+    "audit": "outputs/current/evaluations/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving_fresh8_final",
+    "global_gate": "FAIL",
+    "m8_source_gate": "FAIL",
+    "m12_hardware_easy_v2_gate": "PASS",
+    "m12_valid_full_fingerprints": 167,
+    "m12_total_trials": 180,
+    "m12_median_angle_error_deg": 0.93,
+    "m12_p90_angle_error_deg": 3.29,
+    "m12_accepted_catastrophic_gt90_count": 0
+  },
+  "claim_boundary": "Clean-lineage v7 is rejected for global promotion and may be used only for M12 development shadow diagnostics. It has no hardware command authority and is not evidence for hardware success, capture, insertion, terminal verification, fine-tuning, or a complete task loop."
+}

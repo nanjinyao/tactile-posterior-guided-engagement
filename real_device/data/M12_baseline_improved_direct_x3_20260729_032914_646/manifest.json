@@ -1,0 +1,449 @@
+{
+  "schema_version": 2,
+  "created_local": "2026-07-29T03:29:14.681+08:00",
+  "experiment": "m12_contact_cone_force_following_insert_demo_v3",
+  "size": "M12",
+  "mode": "full_loop_baseline_improved_direct_x3_learned",
+  "robot_motion_possible": true,
+  "robot_command_owner": "MATLAB_KST_MatlabToolboxServer",
+  "execution_mode": "FULL_LOOP_BASELINE_IMPROVED_DIRECT_X3_LEARNED",
+  "source_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/execute_m12_contact_engagement_policy.m",
+  "source_sha256": "1135c47a289d4c8bde8a362089abe5fa609f4ca871134f460401aa4e97fb5011",
+  "live_start_policy": "fresh_stationary_task_local_manual_near_hole_start_no_fixed_pose",
+  "operator_start_contract": "tip starts with a reasonable air gap (at most 20 mm) above the near-hole top surface and retains some solid top-surface support; not fully over open bore",
+  "search_anchor_policy": "measured_touchdown_XY_after_bounded_lateral_drift_gate",
+  "touchdown_lateral_drift_warning_mm": 0.2,
+  "maximum_touchdown_lateral_drift_mm": 3,
+  "manual_start_xy_mm": [],
+  "search_anchor_xy_mm": [],
+  "search_anchor_source": "",
+  "touchdown_lateral_drift_mm": null,
+  "touchdown_cumulative_lateral_motion_mm": null,
+  "fixed_work_pose_loaded": false,
+  "prior_release_loaded": false,
+  "motion_frame": "KUKA base / SmartPAD WORLD",
+  "down_axis": "WORLD_-Z",
+  "tip_tcp_translation_mm": [
+    0,
+    0,
+    92
+  ],
+  "tip_tcp_status": "PROVISIONAL_OLD_KERNEL_COMPATIBILITY_92MM_AXIAL_TCP",
+  "tip_tcp_dimension_chain_mm": {
+    "media_flange_to_pink_cad_plane_ruler": 50,
+    "white_silver_adapter_separate_thickness": null,
+    "Bota_38mm_crosscheck_nonadditive": 38,
+    "cement_gray_adapter_separate_thickness": null,
+    "cement_gray_bottom_to_table_pose_observation_nonadditive": 570,
+    "blue_reference_connector_observation_excluded_from_equation": [
+      10,
+      11
+    ],
+    "pink_cad_plane_to_tip_including_pink_flange": 42,
+    "pink_flange_nonadditive_information_only": 8
+  },
+  "fixed_orientation_only": false,
+  "fingerprint_interpretation": "continuous_constant_15deg_tip_centered_clockwise_contact_nutation_no_lift",
+  "shortcut_rule": "three_maximum_4p2mm_fresh_learned_direction_rays_with_independent_reprobe_and_no_angle_fan",
+  "grid_rule": "none_direct_retry_no_fan_anchors_0_plus0p25_minus0p25mm_perpendicular",
+  "bayesian_model_status": "required_CAPPED_SHORTCUT_active_high_level_only",
+  "trained_model_active_inference_scheduled": true,
+  "trained_model_control_authority_default": true,
+  "trained_model_deployment_status": "required_phase_boundary_CPU_inference_CAPPED_SHORTCUT_high_level_only",
+  "trained_model_id": "real_multisize_direction_v1",
+  "trained_model_manifest_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/model_runtime/bundles/real_multisize_direction_v1/deployment_manifest.json",
+  "trained_model_default_authority": "CAPPED_SHORTCUT",
+  "terminal_rule": "PROVISIONAL_6MM_SIMULATION_AND_PROVEN_OLD_KERNEL_COMPATIBILITY depth 6.000 mm; success band 5.700..6.200 mm plus persistent independent bottom-force event",
+  "six_mm_depth_source": "MuJoCo_allen_m12_hardware_easy_v2_reference_only_not_physical_terminal_authority",
+  "blocking_endpoint_observation_only": true,
+  "maximum_unobserved_contact_motion_mm": 0.31048349392520047,
+  "maximum_unobserved_touchdown_insertion_motion_mm": 0.1,
+  "qualified_sensor_identity": "BFT-SENS-CAT2-B4_SN001349_T15_relative_only",
+  "bota_measurement_origin": {
+    "definition": "OFFICIAL_TOOL_MOUNTING_PLANE_CENTER",
+    "from_robot_mounting_plane_mm": [
+      0,
+      0,
+      38
+    ],
+    "official_z_axis": "ROBOT_MOUNTING_SIDE_TO_TOOL_MOUNTING_SIDE",
+    "world_transform_status": "PROVISIONAL_ROTATION_ONLY_AT_BOTA_MEASUREMENT_ORIGIN"
+  },
+  "wrench_header_stamp_semantics": "ROS_host_publish_time_not_sensor_acquisition_timestamp",
+  "visualization_render_policy": "DEFERRED_POST_CONE_BATCH_NO_DRAWNOW_IN_ROBOT_COMMAND_THREAD_DISPLAY_FILTER_NEVER_ENTERS_MODEL_OR_CONTROL",
+  "directservo_command_protocol": "KST_DcSeCar_fire_and_forget_sendEEfPositionf",
+  "directservo_measured_feedback": "PRE_AND_POST_ONLY_NO_IN_LOOP_SYNC_QUERY",
+  "engineering_biases": [
+    "manual_table_mark_and_task_local_near_hole_start",
+    "hardware_easy_v2_printed_chamfers",
+    "hash_qualified_full_3D_TCP_pivot_touch_off",
+    "hash_qualified_complete_payload_and_sensor_to_tip_transform",
+    "upright_start_world_rotated_force_baseline",
+    "three_point_five_newton_cone_and_four_newton_surface_following",
+    "event_trigger_persistence_and_deadband",
+    "weak_complete_fingerprints_still_issue_bounded_shortcuts",
+    "promoted_real_model_owns_cad_bounded_high_level_routing",
+    "frozen_directional_corridor_then_full_disk_residual_EIG"
+  ],
+  "workflow": [
+    "FRESH_TASK_LOCAL_START",
+    "SHORT_TOUCHDOWN_AND_MEASURED_XY_ANCHOR",
+    "UP_TO_THREE_INDEPENDENT_QUALIFIED_CONES_AND_DIRECT_RAYS",
+    "SOFT_ENVELOPE_DOWNWARD_PROGRESS_CHAMFER_CAPTURE",
+    "M12_0P1MM_SEGMENT_INSERT_TO_ACTIVE_TARGET_DEPTH",
+    "DEPTH_BAND_AND_PERSISTENT_BOTTOM_EVENT",
+    "REMAIN_AT_BOTTOM_AND_KST_END"
+  ],
+  "claim_boundary": "Experimental task execution with a provisional 92 mm axial TCP, manual stationary near-hole start and same-run local contact datum; this is not payload or fixture metrology certification.",
+  "policy_description": "Improved Direct x3: independent cone and fresh learned direction per attempt; no angle fan, with 0.25 mm shifted reset anchors.  This invocation was selected by the fixed paired M12 campaign; the private offset is consumed only by the pre-touchdown air transport and is never supplied to learned or CAD routing.",
+  "public_entrypoint": "run_m12_paired_full_loop_trial",
+  "public_entrypoint_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/run_m12_paired_full_loop_trial.m",
+  "public_entrypoint_sha256": "4c6a9f5dee4375c131310a38da851c73c004ef0809f1d46fbe35a467937e71f6",
+  "policy_uses_conical_fingerprint": true,
+  "policy_uses_learned_direction_for_motion": true,
+  "policy_residual_search": "NONE_DIRECT_RAYS_ONLY",
+  "policy_direct_attempts": 3,
+  "policy_active_time_budget_s": 480,
+  "learned_motion_authority_required": true,
+  "learned_motion_preflight_rule": "Every conical full-loop entrypoint requires a hash-bound CAPPED_SHORTCUT promotion contract before KST and active inference after each completed cone.  Failure stops; there is no hidden classical direction fallback.",
+  "direct_reset_capture_rule": "A physical downward-progress cue encountered during the low-force shifted reset immediately hands off to insertion for safety.  It is logged as RESET_CAPTURE, not credited as a completed direct ray, and must be reported separately as a method-fairness confound.",
+  "paired_trial_public_token": "08b88649-3ca0-4c95-9d69-88d059e7a3b9",
+  "paired_trial_firewall_contract": {
+    "schema": "M12_PAIRED_TRUTH_FIREWALL_V1",
+    "oracle_available_to_learned_or_cad_routing": false,
+    "offset_used_only_for_pre_touchdown_air_transport": true,
+    "control_origin": "FRESH_MEASURED_POST_AIR_START_THEN_MEASURED_TOUCHDOWN",
+    "learned_input_contains_offset_or_hole_center": false
+  },
+  "kst_state_recovery_policy": {
+    "post_motion_protocol_settle_s": 0.04,
+    "inter_state_query_settle_s": 0.03,
+    "read_only_recovery_attempts": 3,
+    "read_only_recovery_pause_s": 0.05,
+    "motion_reissue_permitted": false,
+    "recovery_requires_exact_pose_and_joint_vectors": true,
+    "recovery_requires_two_consistent_observations": true,
+    "known_server_race": "UNSYNCHRONIZED_SHARED_DACOMMAND_CLEAR_AFTER_REPLY"
+  },
+  "qualification_path": "/home/ubuntu20/robot_ws/test_real_device/bota_contact_qualification_SN001349_25N.json",
+  "qualification_sha256": "fa14bcb35fa50f273f5ac819157341fddd8747a39628e9d528b7271fa036e7be",
+  "tooling_path": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+  "tooling_sha256": "03878ec282b8e9284b8733062d9ecf9132834069a83cad573755b0120617b356",
+  "tool_metrology_commissioning_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/tool_metrology_commissioning_v1.json",
+  "tool_metrology_commissioning_sha256": "01ceb68237dab8e8fa884b14586a35e3cb0ea1d0257b21e2a50c78171937a242",
+  "fixture_frame_commissioning_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/fixture_frame_commissioning_v1.json",
+  "fixture_frame_commissioning_sha256": "656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f",
+  "world_from_fixture_yaw_deg": 0,
+  "world_from_fixture_rotation_matrix": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "world_from_fixture_translation_mm": [
+    0,
+    0,
+    0
+  ],
+  "expected_world_from_upright_tcp_rotation_matrix": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "physical_tool_instance_id": "PROVISIONAL_CURRENT_M12_PRINT_OPERATOR_INSTALLED",
+  "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+  "installation_session_id": "PROVISIONAL_CURRENT_M12_MOUNT_OPERATOR_INSTALLED",
+  "fixture_frame_evidence_path": "",
+  "fixture_frame_evidence_sha256": "",
+  "pink_m12_step_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/model/parametric_tooling/generated/integrated_flange_peg_m12.step",
+  "pink_m12_step_sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe",
+  "active_peg_size": "m12",
+  "active_peg_step_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/model/parametric_tooling/generated/integrated_flange_peg_m12.step",
+  "active_peg_step_sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe",
+  "simulation_m12_contract_path": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m12_hardware_easy_v2.json",
+  "simulation_m12_contract_sha256": "d8661d650c9ce39377099904ed32f1e279e150dcbd991e8888dfbe9c3996467e",
+  "active_simulation_contract_path": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m12_hardware_easy_v2.json",
+  "active_simulation_contract_sha256": "d8661d650c9ce39377099904ed32f1e279e150dcbd991e8888dfbe9c3996467e",
+  "sampling_legacy_m12_named_hash_fields_are_aliases": false,
+  "tooling_geometry_validated": true,
+  "tool_payload_metrology_complete": false,
+  "old_kernel_motion_compatibility_enabled": true,
+  "run_local_sampling_frame_enabled": false,
+  "commissioning_authority": "PROVEN_OLD_KERNEL_FIELD_ASSUMPTIONS_FOR_FULL_LOOP",
+  "commissioning_compatibility_rule": "Full-loop motion uses the field-proven predecessor commissioning level: 92 mm axial TCP, manual stationary near-hole start, WORLD-aligned fixture axes, fresh touchdown/capture local datum and 6 mm segmented insertion.  Missing physical IDs, payload/CoM/inertia, pivot and fixture metrology are disclosed but do not block this full-loop entry.  Sampling uses a separately disclosed operator-taught run-local centre and acquisition-only contract.",
+  "conical_phase_pose_tracking_qualification": {
+    "status": "PENDING_INDEPENDENT_MEASURED_POSE_TRACE",
+    "qualified_for_training_candidates": false,
+    "measured_pose_source": "",
+    "maximum_observed_phase_error_deg": [],
+    "maximum_observed_tip_xy_tracking_error_mm": [],
+    "maximum_timestamp_alignment_error_s": [],
+    "controller_deployment_session_id": "",
+    "evidence_path": "",
+    "evidence_sha256": "",
+    "rule": "Only an independently measured, timestamp-aligned cone pose trace can make a clean sample an offline training candidate.  Command-propagated DirectServo pose rows are diagnostics only."
+  },
+  "tip_tcp_translation_standard_uncertainty_mm": 4,
+  "sensor_measurement_origin_to_tip_translation_mm": [
+    null,
+    null,
+    null
+  ],
+  "sensor_to_tcp_rotation": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1
+    ]
+  ],
+  "measured_complete_tool_mass_kg": null,
+  "measured_com_in_sensor_measurement_frame_m": [
+    null,
+    null,
+    null
+  ],
+  "measured_inertia_at_com_kg_m2": [
+    [
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null
+    ],
+    [
+      null,
+      null,
+      null
+    ]
+  ],
+  "tooling_commissioning_gate": {
+    "geometry_commissioned": false,
+    "low_load_fingerprint_and_capture_requalified": false,
+    "full_loop_qualification_required": false,
+    "clocking_evidence_path": "",
+    "clocking_evidence_sha256": "",
+    "authority": "PROVISIONAL_OLD_KERNEL_COMPATIBILITY",
+    "measured_media_flange_to_tip_translation_mm": [
+      0,
+      0,
+      92
+    ],
+    "tcp_translation_standard_uncertainty_mm": 4,
+    "tcp_lateral_standard_uncertainty_mm": 4,
+    "tcp_pivot_fit_rms_residual_mm": null,
+    "tcp_pivot_fit_max_residual_mm": null,
+    "measured_tip_axis_radial_runout_mm": null,
+    "tcp_evidence_path": "",
+    "tcp_evidence_sha256": "",
+    "measured_complete_tool_mass_kg": null,
+    "measured_com_in_sensor_measurement_frame_m": [
+      null,
+      null,
+      null
+    ],
+    "measured_inertia_at_com_kg_m2": [
+      [
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null
+      ]
+    ],
+    "payload_evidence_path": "",
+    "payload_evidence_sha256": "",
+    "sensor_measurement_origin_to_tip_translation_mm": [
+      null,
+      null,
+      null
+    ],
+    "sensor_measurement_origin_to_tip_transform": [
+      [
+        1,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        1
+      ]
+    ],
+    "sensor_to_tcp_rotation": [
+      [
+        1,
+        0,
+        0
+      ],
+      [
+        0,
+        1,
+        0
+      ],
+      [
+        0,
+        0,
+        1
+      ]
+    ],
+    "sensor_metrology_evidence_path": "",
+    "sensor_metrology_evidence_sha256": "",
+    "tool_metrology_commissioning_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/tool_metrology_commissioning_v1.json",
+    "tool_metrology_commissioning_sha256": "01ceb68237dab8e8fa884b14586a35e3cb0ea1d0257b21e2a50c78171937a242",
+    "physical_tool_instance_id": "PROVISIONAL_CURRENT_M12_PRINT_OPERATOR_INSTALLED",
+    "installation_session_id": "PROVISIONAL_CURRENT_M12_MOUNT_OPERATOR_INSTALLED",
+    "combined_lateral_uncertainty_budget": {},
+    "offline_phase_gravity_and_torque_correction_required": true,
+    "rule": "Full-loop motion uses the field-proven predecessor commissioning level: 92 mm axial TCP, manual stationary near-hole start, WORLD-aligned fixture axes, fresh touchdown/capture local datum and 6 mm segmented insertion.  Missing physical IDs, payload/CoM/inertia, pivot and fixture metrology are disclosed but do not block this full-loop entry.  Sampling uses a separately disclosed operator-taught run-local centre and acquisition-only contract.",
+    "controller_load_handling": {
+      "status": "PROVISIONAL_OLD_KERNEL_COMPATIBILITY",
+      "sunrise_nonzero_load_data_applied": false,
+      "final_installed_load_directservo_tracking_qualified": false,
+      "full_loop_ready": false,
+      "controller_deployment_session_id": "NOT_REQUIRED_BY_OLD_KERNEL_COMPATIBILITY",
+      "sunrise_project_source_export_path": "",
+      "sunrise_project_source_sha256": "",
+      "controller_readback_age_s": null,
+      "controller_readback_maximum_age_s": null,
+      "evidence_path": "",
+      "evidence_sha256": "",
+      "rule": "The predecessor successfully used KST geometry-only tool registration plus same-run relative Bota baselines; strict Sunrise LoadData/readback attestation remains unqualified and is disclosed rather than treated as motion authority."
+    },
+    "tool_fixture_identity_and_lateral_uncertainty": {
+      "physical_identity_match": false,
+      "socket_center_standard_uncertainty_mm": null,
+      "tcp_lateral_standard_uncertainty_mm": 4,
+      "measured_tip_axis_radial_runout_mm": null,
+      "combination_rule": "PROVISIONAL_PREDECESSOR_COMPATIBILITY_NO_CLAIM",
+      "combined_lateral_uncertainty_mm": 4,
+      "minimum_clean_candidate_radius_mm": null,
+      "direction_bias_bound_deg": null,
+      "direction_bias_acceptance_deg": null,
+      "angle_limited_acceptance_mm": null,
+      "acceptance_mm": null,
+      "status": "PROVISIONAL_OLD_KERNEL_COMPATIBILITY"
+    }
+  },
+  "tool_fixture_identity_and_lateral_uncertainty_gate": {
+    "physical_identity_match": false,
+    "socket_center_standard_uncertainty_mm": null,
+    "tcp_lateral_standard_uncertainty_mm": 4,
+    "measured_tip_axis_radial_runout_mm": null,
+    "combination_rule": "PROVISIONAL_PREDECESSOR_COMPATIBILITY_NO_CLAIM",
+    "combined_lateral_uncertainty_mm": 4,
+    "minimum_clean_candidate_radius_mm": null,
+    "direction_bias_bound_deg": null,
+    "direction_bias_acceptance_deg": null,
+    "angle_limited_acceptance_mm": null,
+    "acceptance_mm": null,
+    "status": "PROVISIONAL_OLD_KERNEL_COMPATIBILITY"
+  },
+  "measured_m12_socket_top_to_bottom_depth_mm": 6,
+  "measured_m12_socket_depth_standard_uncertainty_mm": null,
+  "measured_m12_socket_bottom_datum_world_point_mm": [
+    0,
+    0,
+    -6
+  ],
+  "measured_m12_socket_top_datum_world_point_mm": [
+    0,
+    0,
+    0
+  ],
+  "learned_runtime_preflight": {
+    "status": "PASS_BEFORE_KST_NO_MOTION",
+    "python_executable": "/home/ubuntu20/robot_ws/group_meeting/real_device/model_runtime/.venv/bin/python",
+    "model_id": "real_multisize_direction_v1",
+    "manifest_sha256": "53aa52849642f1b36e124d8daa47eff3341e4a2fa1f5d833faf98a733454400d",
+    "trace_sha256": "e2de7a701031175ffdd0a656f96f2489d28b06cb8f033487227cb5717d4b5aaa",
+    "output_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_baseline_improved_direct_x3_20260729_032914_646/learned_runtime_preflight_output.json",
+    "elapsed_s": 1.098232,
+    "direction_task_deg": 191.25,
+    "top_direction_task_deg": 191.25,
+    "circular_mean_direction_task_deg": 188.49624257192895,
+    "aps_set_size": 19,
+    "sample_quality": 0.43340963965877377,
+    "deployment_authority": "CAPPED_SHORTCUT",
+    "hardware_control_allowed": true
+  },
+  "kst_client_provenance": {
+    "class_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/KST.m",
+    "get_eef_pos_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/getEEFPos.m",
+    "get_joints_pos_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/getJointsPos.m",
+    "numeric_vector_reader_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/kstReadNumericVectorReply.m",
+    "relative_motion_helper_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/movePTPLineEefRelBase.m",
+    "relative_target_helper_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/sendEEfPositions.m",
+    "idempotent_setup_recovery_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/kstExecuteIdempotentPremotionSetup.m",
+    "acknowledgment_reader_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/kstReadAcknowledgmentReply.m",
+    "line_reader_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/kstReadLine.m",
+    "line_writer_path": "/home/ubuntu20/robot_ws/reference/KST-Kuka-Sunrise-Toolbox-master/Matlab_client/kstWriteLine.m",
+    "get_eef_pos_sha256": "41e59e025074f7f67c9e8dab415dcc0a6c09fd1bc5856ee8f6ae1b1f8a748d85",
+    "get_joints_pos_sha256": "75e82197bde018d88bdfb191c076b45626b8b4925a9b3cb537a066271debbe40",
+    "numeric_vector_reader_sha256": "f48beb8e737510bb4c4f91c372b724eca6f7730e67bb13c16672b7ec50f86c3a",
+    "relative_motion_helper_sha256": "4a577f7a2b61f0ef723814da6510e8cec299e662994cd49baf9db5bbd660b68b",
+    "relative_target_helper_sha256": "6084a6cb43ed4b782d10a4ddcb82b8c9a8fbadae67e7476525c2cd389a9b993c",
+    "idempotent_setup_recovery_sha256": "92219a4309d688608d00bc3f3df856d2aedd13673fb9bd17a2c79336cd4fd5a8",
+    "acknowledgment_reader_sha256": "541b5afa16d311cc2b4748da110c020cbc8d67385248ca6dc123c1c00745a807",
+    "line_reader_sha256": "64a1bacf27645981fcfb079f6b6e5b52002f46abb486b98fbc2f788c36fdeb44",
+    "line_writer_sha256": "7cddd5039c77a24d572e1ce97ad67dd3989efa10b3ea5c4ab9b01ef46908ebb7",
+    "state_reader_path_validated": true
+  }
+}

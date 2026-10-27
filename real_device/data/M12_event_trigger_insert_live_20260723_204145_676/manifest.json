@@ -1,0 +1,95 @@
+{
+  "schema_version": 1,
+  "created_local": "2026-07-23T20:41:45.935+08:00",
+  "experiment": "m12_event_trigger_bayesian_insert_demo_v1",
+  "size": "M12",
+  "mode": "live_direct_f5",
+  "robot_motion_possible": true,
+  "robot_command_owner": "MATLAB_KST_MatlabToolboxServer",
+  "source_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/run_m12_event_trigger_insert_demo.m",
+  "source_sha256": "b7d5ff44816260c1768ee36980e9bf094efab4a211b28dd2810e165e3638a930",
+  "live_start_policy": "fresh_stationary_task_local_manual_near_hole_start_no_fixed_pose",
+  "operator_start_contract": "tip starts with a reasonable air gap (at most 20 mm) above the near-hole top surface and retains some solid top-surface support; not fully over open bore",
+  "fixed_work_pose_loaded": false,
+  "prior_release_loaded": false,
+  "motion_frame": "KUKA base / SmartPAD WORLD",
+  "down_axis": "WORLD_-Z",
+  "tip_tcp_translation_mm": [
+    0,
+    0,
+    92
+  ],
+  "tip_tcp_status": "PROVISIONAL_FULL_STACK_RULER_PLUS_PINK_DELIVERED_CAD",
+  "tip_tcp_dimension_chain_mm": {
+    "media_flange_to_pink_cad_plane_ruler": 50,
+    "white_silver_adapter_separate_thickness": null,
+    "Bota_38mm_crosscheck_nonadditive": 38,
+    "cement_gray_adapter_separate_thickness": null,
+    "cement_gray_bottom_to_table_pose_observation_nonadditive": 570,
+    "blue_reference_connector_observation_excluded_from_equation": [
+      10,
+      11
+    ],
+    "pink_cad_plane_to_tip_including_pink_flange": 42,
+    "pink_flange_nonadditive_information_only": 8
+  },
+  "fixed_orientation_only": false,
+  "fingerprint_interpretation": "continuous_constant_15deg_tip_centered_clockwise_nutation_with_phase_matched_air_reference",
+  "shortcut_rule": "transparent_phase_harmonic_low_reaction_direction_confidence_scaled_0p25_to_1mm",
+  "grid_rule": "finite_discrete_bayesian_expected_information_binary_open_blocked",
+  "bayesian_model_status": "transparent_engineering_routing_model_not_learned_not_safety",
+  "terminal_rule": "depth_5p7_to_6p2mm_and_5_fresh_samples_above_2p5N_then_remain_at_bottom_and_send_kst_end",
+  "six_mm_depth_source": "MuJoCo_allen_m12_hardware_easy_v2_socket_depth_not_physical_measurement",
+  "blocking_endpoint_observation_only": true,
+  "maximum_unobserved_contact_motion_mm": 0.1,
+  "qualified_sensor_identity": "BFT-SENS-CAT2-B4_SN001349_T15_relative_only",
+  "bota_measurement_origin": {
+    "definition": "OFFICIAL_TOOL_MOUNTING_PLANE_CENTER",
+    "from_robot_mounting_plane_mm": [
+      0,
+      0,
+      38
+    ],
+    "official_z_axis": "ROBOT_MOUNTING_SIDE_TO_TOOL_MOUNTING_SIDE",
+    "world_transform_status": "PROVISIONAL_ROTATION_ONLY_AT_BOTA_MEASUREMENT_ORIGIN"
+  },
+  "wrench_header_stamp_semantics": "ROS_host_publish_time_not_sensor_acquisition_timestamp",
+  "visualization_render_policy": "DEFERRED_NO_DRAWNOW_IN_ROBOT_COMMAND_THREAD",
+  "engineering_biases": [
+    "manual_table_mark_and_task_local_near_hole_start",
+    "hardware_easy_v2_printed_chamfers",
+    "full_upstream_stack_ruler_plus_pink_delivered_CAD_TCP",
+    "same_run_unloaded_phase_matched_cone",
+    "event_trigger_persistence_and_deadband",
+    "always_execute_bounded_shortcut_then_finite_entropy_grid"
+  ],
+  "workflow": [
+    "FRESH_TASK_LOCAL_START",
+    "SHORT_TOUCHDOWN",
+    "PHASE_MATCHED_UNLOADED_15_DEG_CONE",
+    "CONTINUOUS_TIP_CENTERED_15_DEG_CONTACT_CONE",
+    "CALCULATE_AND_EXECUTE_BOUNDED_SHORTCUT",
+    "FINITE_ENTROPY_GRID_ABOUT_SHORTCUT_ENDPOINT",
+    "LOW_WRENCH_UNLOAD_RETOUCH_CAPTURE",
+    "M12_0P1MM_SEGMENT_INSERT_TO_6MM",
+    "DEPTH_BAND_AND_PERSISTENT_BOTTOM_EVENT",
+    "REMAIN_AT_BOTTOM_AND_KST_END"
+  ],
+  "claim_boundary": [
+    "Provisional M12 geometric insertion candidate only.",
+    "True commanded 15-degree tip-pivot active sensing, but provisional TCP metrology and provisional rotation-only WORLD* wrench.",
+    "The existing Bota qualification covers fixed-orientation relative events; the cone is an experimental phase-matched commissioning lane.",
+    "Not certified force control, certified stop, or unscrewing.",
+    "Hard/stale/tracking/KST exception requests end without blind return."
+  ],
+  "qualification_path": "/home/ubuntu20/robot_ws/test_real_device/bota_contact_qualification_SN001349.json",
+  "qualification_sha256": "71614f287be5083897db1403a7efe2d896f1a5f0a3b0227b44c5948a0f2aaf86",
+  "tooling_path": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+  "tooling_sha256": "d1de78424854316154d1fe43c3505e41fad8b88f6e4937b2d935aa3b69610326",
+  "pink_m12_step_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/model/parametric_tooling/generated/integrated_flange_peg_m12.step",
+  "pink_m12_step_sha256": "83e508ab125a1611fe1af97d0e412b586e3fec403efdb18e30c8f95272a5c1c7",
+  "simulation_m12_contract_path": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m12_hardware_easy_v2.json",
+  "simulation_m12_contract_sha256": "cc5a1008c469797d5dd9cc82f25c7db1bba27efa2847e2be463a39489c5f5176",
+  "tooling_geometry_validated": true,
+  "tool_payload_metrology_complete": false
+}

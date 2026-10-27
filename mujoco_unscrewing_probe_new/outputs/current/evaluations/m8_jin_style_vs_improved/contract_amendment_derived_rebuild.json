@@ -1,0 +1,63 @@
+{
+  "amendment_id": "M8_JIN_VS_IMPROVED_POST_COMPLETION_DERIVED_REBUILD_V1",
+  "created_utc": "2026-07-15T12:10:00Z",
+  "original_contract": {
+    "path": "outputs/current/evaluations/m8_jin_style_vs_improved/task_contract.json",
+    "sha256": "f82b8f1c19b20aed8cd6284ab550abbb897c61d240b612e1a63a21100c49d7ac"
+  },
+  "original_clause": "A completed manifest is immutable. Resume reuses complete paired pose records and never overwrites a completed experiment.",
+  "correction": "The original completed-manifest immutability clause was overbroad. It remains binding for the raw task, estimators, source scans, and paired trial evidence, but not for purely derived presentation artifacts whose provenance can be reconstructed and hash-chained.",
+  "frozen_evidence": {
+    "improved_estimator_and_checkpoints_immutable": true,
+    "jin_style_proxy_and_checkpoints_immutable": true,
+    "p1v6_raw_direction_scans_immutable": true,
+    "p1v6_scan_count": 180,
+    "strict_paired_trial_records_immutable": true,
+    "strict_paired_trial_count": 48,
+    "strict_paired_trial_record_set_sha256": "4be92296c47ed0a4d7791fd852943c4106759536495f4fe949e90fea7d53077a",
+    "task_definition_and_task_contract_immutable": true
+  },
+  "permitted_post_completion_operations": {
+    "derived_artifacts": [
+      "report.json",
+      "summary.md",
+      "predictions.csv",
+      "paired_tasks.csv",
+      "paper figure",
+      "manifest.json"
+    ],
+    "requirements": [
+      "Verify the original task-contract SHA before rebuilding.",
+      "Verify all 48 frozen paired trial files and their record-set SHA before rebuilding.",
+      "Use the unchanged frozen estimators and unchanged 180 P1v6 direction scans.",
+      "Do not invoke the simulator or overwrite any frozen trial file.",
+      "Write derived outputs atomically and record the previous manifest SHA as a hash-chain link.",
+      "Record simulation_rerun=false and trial_files_overwritten=0 in the replacement manifest."
+    ]
+  },
+  "preregistration_timestamp_provenance": {
+    "declared_created_utc": "2026-07-15T00:00:00Z",
+    "declared_created_utc_interpretation": "Date-level placeholder, not an exact event timestamp. It is retained verbatim and was not retroactively edited.",
+    "first_jin_proxy_checkpoint": {
+      "observed_filesystem_mtime_ns": 1784115572899852546,
+      "observed_filesystem_mtime_utc": "2026-07-15T11:39:32.899853+00:00",
+      "path": "outputs/current/models/m8_jin_2021_style_direction_proxy/seeds/seed_20260710/polar_cnn_best.pt",
+      "sha256": "a40f6265b3731bd055ca0e509cc5eeb5ec07b590f42e1ad1701c9b3f8752dedc"
+    },
+    "observed_order": "The preregistration file mtime precedes the earliest Jin proxy checkpoint mtime by approximately 17.536 seconds: preregistration -> proxy training artifact.",
+    "preregistration_file": {
+      "observed_filesystem_mtime_ns": 1784115555363852193,
+      "observed_filesystem_mtime_utc": "2026-07-15T11:39:15.363852+00:00",
+      "path": "outputs/current/evaluations/m8_jin_style_vs_improved/preregistration.json",
+      "sha256": "8d791d71a61efce6537979497a879b4112e3d429a4a0a8046bcf528085c69278"
+    },
+    "timestamp_boundary": "Filesystem mtimes are observed local provenance metadata, not cryptographic proof of authorship time. They support the observed ordering and do not convert the placeholder created_utc into an exact timestamp."
+  },
+  "provenance_status": {
+    "post_completion_protocol_correction": true,
+    "preregistered": false,
+    "reason": "Added after an independent consistency audit identified that the literal manifest-immutability clause conflicted with the already authorized, evidence-preserving derived rebuild procedure."
+  },
+  "schema_version": 1,
+  "scope_boundary": "This amendment does not authorize model retraining, checkpoint replacement, scan regeneration, simulator reruns, task changes, trial edits, threshold tuning, or claim expansion."
+}

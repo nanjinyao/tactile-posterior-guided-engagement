@@ -1,0 +1,258 @@
+{
+  "schema_version": 2,
+  "experiment_name": "m12_contact_cone_clean_v7_development_shadow",
+  "status": "v7_rejected_global_audit_m12_development_shadow_only",
+  "claim_endpoint": "geometric_engagement_only",
+  "explicit_non_claims": [
+    "unscrewing_success",
+    "rotational_coupling",
+    "absolute_force_accuracy",
+    "cross_size_hardware_transfer",
+    "learned_policy_safety"
+  ],
+  "command_ownership": {
+    "online_robot_command_owner": "MATLAB_KST_MatlabToolboxServer",
+    "offline_training_owner": "Python_MuJoCo_PyTorch",
+    "deployment_artifact": "hash_bound_clean_v7_three_seed_PyTorch_CPU_M12_development_shadow",
+    "multiple_command_owners_forbidden": true
+  },
+  "hardware": {
+    "robot_model": "KUKA LBR iiwa 14 R820",
+    "robot_ip": "192.168.1.147",
+    "matlab_toolbox_server_port": 30001,
+    "force_torque_sensor": "Bota BFT-SENS-CAT2-B4",
+    "force_torque_serial": "SN001349",
+    "wrench_topic": "/bota_ft_sensor/wrench",
+    "wrench_frame": "bota_ft_frame"
+  },
+  "workspace_contracts": {
+    "tooling_profile": "../mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+    "contact_qualification": "../../test_real_device/bota_contact_qualification_SN001349.json",
+    "folded_start_anchor": "../../test_real_device/kst_default_folded_start.json",
+    "proven_sensor_preflight": "../../test_real_device/kst_bota_guarded_world_z_50mm.m",
+    "recovery_entrypoint": "../../stop_matlabtoolboxserver.m"
+  },
+  "frames": {
+    "motion_frame": "KUKA base / SmartPAD WORLD",
+    "down_axis": "WORLD_-Z",
+    "down_unit_vector": [0.0, 0.0, -1.0],
+    "display_only_sensor_axis_sign_map_to_world": [1.0, -1.0, -1.0],
+    "display_axis_map_is_not_a_calibrated_wrench_transform": true,
+    "fixture_to_world_transform": null,
+    "sensor_measurement_origin_to_tip_transform": null
+  },
+  "task_definition": {
+    "first_size": "M12",
+    "visual_prior_covariance_world_xy_m2": null,
+    "socket_center_world_xyz_m": null,
+    "socket_surface_world_z_m": null,
+    "socket_bottom_world_z_m": null,
+    "approach_pose_mm_rad": null,
+    "approach_joint_seed_rad": null,
+    "maximum_active_controller_time_s": 130.0,
+    "maximum_recoveries": 3
+  },
+  "classical_backbone": {
+    "responsibilities": [
+      "guarded_touchdown",
+      "bounded_probe_execution",
+      "trajectory_and_rate_limits",
+      "contact_compliance",
+      "residual_coverage_search",
+      "bounded_recovery",
+      "terminal_verification",
+      "return_and_application_exit"
+    ],
+    "outer_loop_target_rate_hz": 50.0,
+    "continuous_admittance_enabled": false,
+    "reason_continuous_admittance_disabled": "absolute wrench metrology and KST timing have not been commissioned",
+    "first_commissioning_motion_style": "small_blocking_segments_plus_fresh_sensor_dwell",
+    "simulation_initial_parameters_are_not_hardware_parameters": true
+  },
+  "learning_hinge": {
+    "shadow_inference_enabled_on_hardware": true,
+    "enabled_on_hardware": false,
+    "current_hardware_control_authority": false,
+    "allowed_outputs": [
+      "contact_state_distribution",
+      "circular_direction_posterior",
+      "prediction_set",
+      "abstain_or_transport_allowed",
+      "bounded_shortcut_fraction"
+    ],
+    "forbidden_outputs": [
+      "raw_robot_pose_command",
+      "force_command",
+      "stiffness_command",
+      "hard_guard_threshold",
+      "terminal_success"
+    ],
+    "runtime": "../model_runtime/infer_conical_direction.py",
+    "deployment_manifest": "../model_runtime/deployment_manifest.json",
+    "deployment_manifest_sha256": "1716bb00e1dfcd7b6863524d14d2e41cbbf7f572f49d7ce20a53369526e9acb9",
+    "runtime_sha256": "762fb4e89f3c3754ae22907440ba08a293c00fdab99e9a17c5f8d19d4be0f1a4",
+    "requirements_lock_sha256": "3d251bb556b9da1cbccff986bcb496bbe1ce5e412213a61776693190fc7f9859",
+    "model_id": "hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving",
+    "model_root": "../../mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving",
+    "input_contract_path": "../../mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving/ensemble_interface_contract.json",
+    "model_contract_sha256": "0fbb33d7dda8c6eeb3f133ccea8ed181a13855eb1d46414240150f2285087fea",
+    "global_simulation_audit": "REJECTED_GLOBAL_AUDIT",
+    "diagnostic_scope": "M12_DEVELOPMENT_SHADOW_ONLY",
+    "supported_hardware_runtime_sizes": [
+      "m12"
+    ],
+    "default_authority": "SHADOW_ONLY",
+    "allowed_authorities": [
+      "SHADOW_ONLY"
+    ],
+    "promotion_contract_path": null,
+    "promotion_contract_sha256": null,
+    "online_call_policy": "one_CPU_process_after_complete_cone_never_tick_rate",
+    "control_promotion_rule": "UNAVAILABLE_FOR_THIS_REJECTED_GLOBAL_AUDIT_BUNDLE",
+    "real_mismatch_diagnosis_order": [
+      "artifact_identity_and_hashes",
+      "phase_sign_units_channel_order_and_task_world_rotation",
+      "sensor_measurement_origin_baseline_gravity_TCP_and_actual_probe_kinematics",
+      "CAD_prior_and_training_support",
+      "only_then_labeled_real_shadow_calibration_or_fine_tuning"
+    ]
+  },
+  "guards": {
+    "relative_contact_event_n": 2.0,
+    "relative_contact_consecutive_fresh_samples": 3,
+    "relative_hard_force_delta_n": 20.0,
+    "relative_hard_torque_delta_nm": 0.75,
+    "hard_guard_action": "hold_and_end_no_blind_return",
+    "sensor_stale_action": "hold_and_end",
+    "absolute_task_frame_force_limits": null,
+    "absolute_task_frame_torque_limits": null,
+    "energy_progress_guard": "simulation_initial_not_hardware_commissioned"
+  },
+  "engineering_biases": [
+    {
+      "name": "hardware_easy_socket_mouth_and_chamfer",
+      "kind": "fixture_geometry",
+      "enabled": true,
+      "must_be_disclosed": true,
+      "requires_matched_hardware_specific_simulation": true
+    },
+    {
+      "name": "persistent_event_trigger_and_deadband",
+      "kind": "state_routing",
+      "enabled": true,
+      "must_be_disclosed": true,
+      "may_relax_task_routing_but_not_hard_guards": true
+    },
+    {
+      "name": "bounded_scripted_recovery",
+      "kind": "physical_funnel",
+      "enabled": true,
+      "maximum_attempts": 3,
+      "must_be_reported_per_trial": true
+    },
+    {
+      "name": "classical_residual_search_after_learning_abstention",
+      "kind": "coverage_fallback",
+      "enabled": true,
+      "must_share_the_same_total_time_budget": true
+    },
+    {
+      "name": "persistent_original_contact_anchor_posterior",
+      "kind": "belief_and_search_geometry",
+      "enabled": true,
+      "zero_distance_abstention_allowed": true,
+      "search_domain_must_not_translate_to_shortcut_endpoint": true,
+      "posterior_must_not_reset_after_shortcut": true
+    }
+  ],
+  "stage_ladder": [
+    {
+      "id": "H0_STATIC",
+      "motion": false,
+      "purpose": "validate contracts, identity, provenance and declared blockers"
+    },
+    {
+      "id": "H0_LIVE_SENSOR",
+      "motion": false,
+      "purpose": "reuse the proven Bota diagnostic, freshness, rate and stationary-baseline preflight"
+    },
+    {
+      "id": "H1_GUARDED_TOUCHDOWN",
+      "motion": true,
+      "purpose": "commission approach and baseline-relative contact routing before any conical probe"
+    },
+    {
+      "id": "H2_CONICAL_SHADOW",
+      "motion": true,
+      "purpose": "collect low-force phase traces while posterior is logged but cannot steer"
+    },
+    {
+      "id": "H3_CLASSICAL_SEARCH",
+      "motion": true,
+      "purpose": "close the task with classical outward search, capture handoff and terminal verifier"
+    },
+    {
+      "id": "H4_POSTERIOR_SHADOW",
+      "motion": true,
+      "purpose": "compare posterior suggestion with the executed classical action without control authority"
+    },
+    {
+      "id": "H5_CAPPED_POSTERIOR",
+      "motion": true,
+      "enabled_for_current_bundle": false,
+      "blocked_by": "REJECTED_GLOBAL_AUDIT",
+      "purpose": "future stage requiring a different globally qualified and separately real-trace-qualified bundle"
+    },
+    {
+      "id": "H6_FIRST_TURN_COUPLING",
+      "motion": true,
+      "purpose": "future motor-coupling verification; not part of the current engagement claim"
+    }
+  ],
+  "experiment_ladder": [
+    "fixed_classical_backbone",
+    "source_style_outward_search",
+    "direction_only_posterior_shadow",
+    "direction_only_capped_shortcut_plus_residual_search_BLOCKED_FOR_CURRENT_V7",
+    "oracle_direction_upper_bound_offline_only",
+    "small_head_or_residual_learning_only_if_the_frozen_gate_fails"
+  ],
+  "lifecycle": {
+    "normal_or_exceptional_exit_must_request_kst_end": true,
+    "smartpad_selected_requires_human_observation": true,
+    "ros_java_subscriber_unregister_required_for_rossmartservo_lane": true,
+    "recovery_is_not_success": true,
+    "protective_termination_is_not_success": true
+  },
+  "data_contract": {
+    "raw_wrench_immutable": true,
+    "raw_pose_and_joint_stream_immutable": true,
+    "derived_and_raw_data_separated": true,
+    "one_run_one_directory": true,
+    "required_files": [
+      "manifest.json",
+      "events.csv",
+      "raw_wrench.csv",
+      "conical_directservo_trace.csv",
+      "learned_conical_fingerprint_input.json",
+      "learned_conical_direction_shadow.json",
+      "robot_state.csv",
+      "commands.csv",
+      "transitions.csv",
+      "summary.json"
+    ],
+    "required_trial_fields": [
+      "stage",
+      "method",
+      "seed_or_start_id",
+      "engineering_biases",
+      "model_hash",
+      "config_hash",
+      "terminal_reason",
+      "recovery_count",
+      "peak_relative_wrench",
+      "active_time_s",
+      "path_length_mm"
+    ]
+  }
+}

@@ -1,0 +1,1961 @@
+{
+  "schema_version": 1,
+  "campaign": "m12_run_local_conical_fingerprints_26pt_v2",
+  "created_local": "2026-07-27T23:48:30.894+08:00",
+  "status": "ABORTED_NO_BLIND_RETURN",
+  "authority": "REAL_DEVICE_RAW_SIGNAL_HIGHEST_AUTHORITY_PENDING_OFFLINE_QC",
+  "model_policy": "NO_RUNTIME_MODEL_NO_SIMULATION_LABELING_NO_ONLINE_WEIGHT_UPDATE",
+  "sampling_plan_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/m12_printed_cad_conical_sampling_v2.json",
+  "sampling_plan_sha256": "b08f08ae2982b9261fabef7f219e0533a7c2585217a5507488f3c8191a012089",
+  "fixture_frame_commissioning_sha256": "656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f",
+  "tooling_sha256": "03878ec282b8e9284b8733062d9ecf9132834069a83cad573755b0120617b356",
+  "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+  "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+  "installation_session_id": "PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED",
+  "run_session_id": "M12_conical_fingerprints_26pt_20260727_234813_623",
+  "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+  "initial_air_pose_mm_rad": [
+    472.73438805935109,
+    1.499465689793118,
+    295.51725663183907,
+    3.1409146947918525,
+    -0.00081101789301174954,
+    3.1334131602197317
+  ],
+  "campaign_safe_air_z_mm": 297.51725663183907,
+  "run_local_hole_center_world_xy_mm": [
+    472.73438805935109,
+    1.499465689793118
+  ],
+  "center_sample_excluded": true,
+  "sampling_coordinate_authority": "RUN_LOCAL_START_HOLE_CENTER_WORLD_XY_ALIGNED",
+  "nominal_m12_center_fixture_xy_mm": [
+    45,
+    0
+  ],
+  "run_local_m12_center_fixture_xyz_mm": [
+    0,
+    0,
+    0
+  ],
+  "execution_attempt_indices": [
+    1,
+    6,
+    5,
+    10,
+    14,
+    19,
+    22,
+    11,
+    16,
+    20,
+    12,
+    24,
+    13,
+    7,
+    25,
+    17,
+    2,
+    21,
+    8,
+    15,
+    3,
+    18,
+    9,
+    23,
+    26,
+    4
+  ],
+  "closed_route_distance_mm": 122.60438286811329,
+  "maximum_planned_radius_mm": 12.464839456657327,
+  "sampling_only_lateral_excursion_mm": 13.2,
+  "printed_cad_geometry_mm": {
+    "head_outer_diameter": 21.275,
+    "socket_mouth_af": 13,
+    "socket_deep_wall_af": 10.6,
+    "socket_chamfer_width": 1.2,
+    "socket_chamfer_depth": 1.2,
+    "center_through_hole_diameter": 0.5,
+    "peg_tip_face_af": 8,
+    "peg_shaft_af": 10,
+    "peg_chamfer_radial_setback": 1,
+    "peg_chamfer_axial_length": 1,
+    "peg_tip_face_flat_normal_fixture_deg": 0,
+    "peg_selected_flat_normal_in_flange_cad_deg": 45,
+    "socket_selected_flat_normal_fixture_deg": 0
+  },
+  "touchdown_contact_state_definition": {
+    "footprint": "actual printed upright M12 tip face AF8 regular hexagon",
+    "support_surface": "head OD disk minus the AF13 mouth",
+    "supported_search": "outer_overhang_fraction <= 1e-5",
+    "double_overhang": "outer_overhang_fraction > 1e-5 and mouth_overlap_fraction > 1e-5",
+    "outer_partial_support": "outer_overhang_fraction > 1e-5, mouth_overlap_fraction <= 1e-5, and head_top_support_fraction > 0",
+    "area_method": "deterministic convex polygon clipping; head circle uses a 720-edge inscribed polygon"
+  },
+  "cone_command_geometry": {
+    "tilt_deg": 15,
+    "phase_bins": 360,
+    "peg_shaft_af_mm": 10,
+    "peg_chamfer_axial_length_mm": 1,
+    "conservative_xy_projection_radius_bound_mm": 6.032321737,
+    "semantics": "conservative drawing bound only; quantitative diagnostics use conv(xy(Rz(-phi) Ry(15deg) Rz(phi) [AF8@z0, AF10@z1])) at every phase and are not touchdown-state labels",
+    "rotation_convention": "R(phi)=Rz(-phi)*Ry(15deg)*Rz(phi)",
+    "phase_grid": "360 uniform samples on [0,360deg), matching the recorded phase-bin contract",
+    "diagnostic_area_normalization": "mouth intersection area divided by that phase's projected printed-frustum convex-hull area",
+    "mouth_overlap_epsilon": 1E-6
+  },
+  "sampling_design": {
+    "attempt_count": 26,
+    "partition_counts": {
+      "clean_candidate": 16,
+      "holdout": 4,
+      "quarantine": 4,
+      "sentinel": 2
+    },
+    "clean_contact_state_counts": {
+      "supported_search": 6,
+      "double_overhang": 6,
+      "outer_partial_support": 4
+    },
+    "clean_cone_sweep_subtype_counts": {
+      "landing_supported_cone_transition": 6,
+      "landing_double_overhang": 6,
+      "landing_mouth_clear_cone_transition": 2,
+      "full_frustum_mouth_clear": 2
+    },
+    "sentinel_semantics": "exact repeats of one supported and one landing-mouth-clear outer-partial clean point",
+    "boundary_quarantine_semantics": "two supported/double and two double/outer near-boundary diagnostics"
+  },
+  "true_label_rule": "measured_touchdown_run_local_XY_to_operator_taught_M12_center; preregistered CAD local offsets define targets and labels",
+  "wrench_reference_boundary": "raw_Bota_is_preserved_and_each_point_has_30_fresh_air_samples_no_simulation_or_model_changes_motion_label_or_quality_status",
+  "cad_and_configuration_hashes": {
+    "fixture_sampling_plan_sha256": "b08f08ae2982b9261fabef7f219e0533a7c2585217a5507488f3c8191a012089",
+    "fixture_frame_record_sha256": "656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f",
+    "tooling_sha256": "03878ec282b8e9284b8733062d9ecf9132834069a83cad573755b0120617b356",
+    "pink_m12_step_sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe",
+    "printed_socket_step_sha256": "f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f",
+    "printed_cad_design_parameters_sha256": "89bff458e7415f04274c216d36c91dbe80c754216bd3de9b50aa6630c14eab43",
+    "printed_cad_manifest_sha256": "63b39c21e66310c9800b7c0bc88105a1bd8698d40054659cbff3f6f003e5c634"
+  },
+  "automatic_weight_update_permitted": false,
+  "offline_compensation_and_qc_required": true,
+  "touchdown_tracking_policy": {
+    "immediate_acceptance_mm": 0.08,
+    "recheck_acceptance_mm": 0.15,
+    "recheck_count": 2,
+    "recheck_pause_s": 0.08,
+    "minimum_measured_down_progress_mm": 0.02,
+    "xy_landing_gate_mm": 0.25
+  },
+  "attempt_count_planned": 26,
+  "attempts_completed": 10,
+  "attempts_quarantined": 6,
+  "returned_to_initial_air_pose": false,
+  "attempts": [
+    {
+      "attempt_index": 1,
+      "source_attempt_index": 1,
+      "execution_index": 1,
+      "sample_id": "M12-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+      "requested_partition": "clean_candidate",
+      "effective_partition": "clean_candidate",
+      "training_use_contract": "eligible_only_after_complete_trace_and_offline_qc",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "midpoint of exact full-frustum and AF8 landing outer tangencies",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0,
+        "mouth_overlap_fraction": 0.617151461,
+        "head_top_support_fraction": 0.382848539
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0,
+          0
+        ],
+        "mouth_overlap_fraction": [
+          0.616730931,
+          0.617176765
+        ],
+        "head_top_support_fraction": [
+          0.382823235,
+          0.383269069
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.586345303,
+        "minimum_mouth_overlap_fraction": 0.524412544,
+        "mouth_overlap_phase_fraction": 1,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -0.616365915,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 5.669207501,
+      "angle_fixture_deg": 3.75,
+      "local_offset_fixture_mm": [
+        5.657069292,
+        0.370783911
+      ],
+      "nominal_fixture_xy_mm": [
+        50.657069292,
+        0.370783911
+      ],
+      "fixture_xy_mm": [
+        5.657069292,
+        0.370783911
+      ],
+      "fixture_point_mm": [
+        5.657069292,
+        0.370783911,
+        0
+      ],
+      "nominal_direction_fixture_deg": 183.75,
+      "nominal_direction_fixture_unit": [
+        -0.997858923,
+        -0.065403129
+      ],
+      "nominal_direction_world_xy": [
+        -0.99785892325260273,
+        -0.065403129016556455
+      ],
+      "measured_contact_fixture_xy_mm": [
+        5.6842420469577633,
+        0.40821654784037031
+      ],
+      "measured_sampling_error_mm": 0.046255387932831966,
+      "measured_label_direction_deviation_deg": 0.35767163894968235,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 184.10767163894968,
+      "true_direction_fixture_unit": [
+        -0.99743120081397507,
+        -0.071630996382793813
+      ],
+      "true_direction_world_xy": [
+        -0.99743120081397507,
+        -0.071630996382793813
+      ],
+      "target_world_xy_mm": [
+        478.39145735135111,
+        1.870249600793118
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "CLEAN_CANDIDATE_PENDING_OFFLINE_QC",
+      "quarantine_reason": "",
+      "offline_training_candidate": true,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        478.41863010630885,
+        1.9076822376334883,
+        294.45161887928055,
+        3.1407735322735268,
+        -0.00070021486711310083,
+        3.1333987146906797
+      ],
+      "touchdown_max_force_n": 2.6795196184264545,
+      "touchdown_max_torque_nm": 0.0073018347960807917,
+      "touchdown_maximum_xy_error_mm": 0.064198451060772238,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.0474146752310721,
+      "pre_touch_clear_max_torque_nm": 0.00096294347841429111,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.022371946432806246,
+        0.022354524096003386,
+        0.01360177731177941
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.00050623977560629784,
+        0.0005055836038875683,
+        0.0001434406830949367
+      ],
+      "contact_settle_passed": true,
+      "contact_settle_reason": "PASS",
+      "contact_settle_normal_mean_n": 3.1305577769079087,
+      "contact_settle_normal_std_n": 0.02761986350329193,
+      "contact_settle_samples": 36,
+      "cone_completed": true,
+      "cone_run_kind": "M12_SAMPLE_01",
+      "cone_mode_transition_outcome": "QUICK_RECONTACT_RESUMED_TAGGED",
+      "cone_low_force_episodes": 3,
+      "cone_direction_fingerprint_valid": true,
+      "cone_routing_fingerprint_valid": true,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": true,
+      "fingerprint_signal_rms_lateral_force_n": 4.3144867753534317,
+      "fingerprint_signal_peak_lateral_force_n": 5.502742434317839,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [
+        478.39813896325842,
+        1.9076557106133643,
+        294.43530829483478,
+        3.1407734842346047,
+        -0.00073808648751649592,
+        3.1333990105014338
+      ],
+      "cone_post_directservo_measured_pose_mm_rad": [
+        478.37498060732543,
+        1.9029429611244177,
+        294.37083253492364,
+        3.1407579510518779,
+        -0.00072323135646940506,
+        3.1333166591194175
+      ],
+      "cone_maximum_command_gap_s": 0.03036300000000125,
+      "cone_maximum_tick_lateness_s": 0.005838000000000676,
+      "phase_coverage_fraction": 0.99583333333333335,
+      "return_orientation_error_deg": 0.0048378351227341713,
+      "post_stop_tip_error_mm": 0.026941709012869859,
+      "nominal_cad_distance_to_center_mm": 5.66920750044888,
+      "cad_distance_to_center_mm": 5.6988813286761193,
+      "post_retract_clear_max_force_n": 0.058148047672305025,
+      "post_retract_clear_max_torque_nm": 0.00096278349539527725,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/01_M12-CLEAN_CANDIDATE-SUPPORTED-A003p75/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "93696fc8a6fccfad2aa0eb95923fdb6091fdbc0352443d0245ed981ff2128b57",
+        "baseline_csv_sha256": "00a140837d794d1e309bd9e3a997f3302e9cc7095ee1694e66dbc913efd3bc97",
+        "contact_settle_csv_sha256": "474d84c67799ae8e19fa26e1a02f199b762c43f486b003bc0f528844817fa8b9",
+        "cone_csv_sha256": "e63afa33c249b299156c4ecf6029b9572461172af7afaef1d3cfcf5c34e044da"
+      },
+      "finished_local": "2026-07-27T23:49:13.327+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 6,
+      "source_attempt_index": 6,
+      "execution_index": 2,
+      "sample_id": "M12-CLEAN_CANDIDATE-SUPPORTED-A303p75",
+      "requested_partition": "clean_candidate",
+      "effective_partition": "quarantine",
+      "training_use_contract": "eligible_only_after_complete_trace_and_offline_qc",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "midpoint of exact full-frustum and AF8 landing outer tangencies",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0,
+        "mouth_overlap_fraction": 0.617151461,
+        "head_top_support_fraction": 0.382848539
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0,
+          0
+        ],
+        "mouth_overlap_fraction": [
+          0.616730931,
+          0.617176765
+        ],
+        "head_top_support_fraction": [
+          0.382823235,
+          0.383269069
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.586345303,
+        "minimum_mouth_overlap_fraction": 0.524412544,
+        "mouth_overlap_phase_fraction": 1,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -0.616365915,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 5.669207501,
+      "angle_fixture_deg": 303.75,
+      "local_offset_fixture_mm": [
+        3.149642932,
+        -4.713773763
+      ],
+      "nominal_fixture_xy_mm": [
+        48.149642932,
+        -4.713773763
+      ],
+      "fixture_xy_mm": [
+        3.149642932,
+        -4.713773763
+      ],
+      "fixture_point_mm": [
+        3.149642932,
+        -4.713773763,
+        0
+      ],
+      "nominal_direction_fixture_deg": 123.75,
+      "nominal_direction_fixture_unit": [
+        -0.555570233,
+        0.831469612
+      ],
+      "nominal_direction_world_xy": [
+        -0.555570233145808,
+        0.83146961221821725
+      ],
+      "measured_contact_fixture_xy_mm": [
+        3.2221779645518041,
+        -4.7600683418714471
+      ],
+      "measured_sampling_error_mm": 0.086049514700403729,
+      "measured_label_direction_deviation_deg": 0.34479517089101819,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 124.09479517089102,
+      "true_direction_fixture_unit": [
+        -0.56056377008591851,
+        0.82811126043971983
+      ],
+      "true_direction_world_xy": [
+        -0.56056377008591851,
+        0.82811126043971983
+      ],
+      "target_world_xy_mm": [
+        475.8840309913511,
+        -3.2143080732068818
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "QUARANTINED_NEVER_TRAIN",
+      "quarantine_reason": "CONTACT_FORCE_NOT_STABLE_TIMEOUT",
+      "offline_training_candidate": false,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        475.95656602390289,
+        -3.2606026520783287,
+        294.43989602677846,
+        3.1407454563643142,
+        0.0012593357008848956,
+        3.1333378933610847
+      ],
+      "touchdown_max_force_n": 2.7479586328126393,
+      "touchdown_max_torque_nm": 0.016903793481554373,
+      "touchdown_maximum_xy_error_mm": 0.13396503389597889,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.059378378696597935,
+      "pre_touch_clear_max_torque_nm": 0.0010996157688050029,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.027116139343861728,
+        0.017142172367948016,
+        0.018947059162089903
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.00047536627494894416,
+        0.00062500973688983164,
+        0.00015449071679812191
+      ],
+      "contact_settle_passed": false,
+      "contact_settle_reason": "TIMEOUT",
+      "contact_settle_normal_mean_n": 4.3395310787033976,
+      "contact_settle_normal_std_n": 0.062786253888555327,
+      "contact_settle_samples": 0,
+      "cone_completed": false,
+      "cone_run_kind": "M12_SAMPLE_02",
+      "cone_mode_transition_outcome": "NOT_RUN",
+      "cone_low_force_episodes": 0,
+      "cone_direction_fingerprint_valid": false,
+      "cone_routing_fingerprint_valid": false,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": false,
+      "fingerprint_signal_rms_lateral_force_n": null,
+      "fingerprint_signal_peak_lateral_force_n": null,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [],
+      "cone_post_directservo_measured_pose_mm_rad": [],
+      "cone_maximum_command_gap_s": null,
+      "cone_maximum_tick_lateness_s": null,
+      "phase_coverage_fraction": 0,
+      "return_orientation_error_deg": null,
+      "post_stop_tip_error_mm": null,
+      "nominal_cad_distance_to_center_mm": 5.6692075008633029,
+      "cad_distance_to_center_mm": 5.7481024220633019,
+      "post_retract_clear_max_force_n": 0.063423134169617215,
+      "post_retract_clear_max_torque_nm": 0.0011759525760729876,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/02_M12-CLEAN_CANDIDATE-SUPPORTED-A303p75/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/02_M12-CLEAN_CANDIDATE-SUPPORTED-A303p75/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/02_M12-CLEAN_CANDIDATE-SUPPORTED-A303p75/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/02_M12-CLEAN_CANDIDATE-SUPPORTED-A303p75/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/02_M12-CLEAN_CANDIDATE-SUPPORTED-A303p75/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "3e90ef5d8545f5fb74ef7ea2abdea5e922b15179232b8d9e7dbc14fd2debc664",
+        "baseline_csv_sha256": "906740bf20f49563319965e4cc29d2b4167f0c9bb1a95470908de410ec1da1e1",
+        "contact_settle_csv_sha256": "e255ce73b8603e109f4ea02817a7e50b64e4d44826af6d6b93dda90cfd088d79",
+        "cone_csv_sha256": "f85653627c0c6d35e10ea9c0710bf13040097e0fc3d6129d44447653e940e7fb"
+      },
+      "finished_local": "2026-07-27T23:49:42.433+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 5,
+      "source_attempt_index": 5,
+      "execution_index": 3,
+      "sample_id": "M12-CLEAN_CANDIDATE-SUPPORTED-A243p75",
+      "requested_partition": "clean_candidate",
+      "effective_partition": "quarantine",
+      "training_use_contract": "eligible_only_after_complete_trace_and_offline_qc",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "supported_search",
+      "cone_sweep_subtype": "landing_supported_cone_transition",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "midpoint of exact full-frustum and AF8 landing outer tangencies",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0,
+        "mouth_overlap_fraction": 0.617151461,
+        "head_top_support_fraction": 0.382848539
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0,
+          0
+        ],
+        "mouth_overlap_fraction": [
+          0.616730931,
+          0.617176765
+        ],
+        "head_top_support_fraction": [
+          0.382823235,
+          0.383269069
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.586345303,
+        "minimum_mouth_overlap_fraction": 0.524412544,
+        "mouth_overlap_phase_fraction": 1,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -0.616365915,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 5.669207501,
+      "angle_fixture_deg": 243.75,
+      "local_offset_fixture_mm": [
+        -2.50742636,
+        -5.084557673
+      ],
+      "nominal_fixture_xy_mm": [
+        42.49257364,
+        -5.084557673
+      ],
+      "fixture_xy_mm": [
+        -2.50742636,
+        -5.084557673
+      ],
+      "fixture_point_mm": [
+        -2.50742636,
+        -5.084557673,
+        0
+      ],
+      "nominal_direction_fixture_deg": 63.75,
+      "nominal_direction_fixture_unit": [
+        0.44228869,
+        0.896872742
+      ],
+      "nominal_direction_world_xy": [
+        0.44228868985746922,
+        0.8968727417109762
+      ],
+      "measured_contact_fixture_xy_mm": [
+        -2.5362458157369474,
+        -5.1182458332319634
+      ],
+      "measured_sampling_error_mm": 0.044333431728073081,
+      "measured_label_direction_deviation_deg": 0.10980845238017878,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 63.640191547619814,
+      "true_direction_fixture_unit": [
+        0.44400675057991829,
+        0.89602344022880454
+      ],
+      "true_direction_world_xy": [
+        0.44400675057991829,
+        0.89602344022880454
+      ],
+      "target_world_xy_mm": [
+        470.22696169935108,
+        -3.5850919832068819
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "QUARANTINED_NEVER_TRAIN",
+      "quarantine_reason": "CONTACT_FORCE_NOT_STABLE_TIMEOUT",
+      "offline_training_candidate": false,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        470.19814224361414,
+        -3.6187801434388458,
+        294.4260616023073,
+        3.1409142308376357,
+        0.0028647945606004878,
+        3.13340035090937
+      ],
+      "touchdown_max_force_n": 4.0814944005370073,
+      "touchdown_max_torque_nm": 0.022552702104380398,
+      "touchdown_maximum_xy_error_mm": 0.055973059166625642,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.059451902952642181,
+      "pre_touch_clear_max_torque_nm": 0.0012117276035828815,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.016837666855676014,
+        0.02242444967194792,
+        0.017197649484902277
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.00050779177046884731,
+        0.00043753480418074278,
+        0.00016180675094695782
+      ],
+      "contact_settle_passed": false,
+      "contact_settle_reason": "TIMEOUT",
+      "contact_settle_normal_mean_n": 4.5326887459445278,
+      "contact_settle_normal_std_n": 0.0846194054165125,
+      "contact_settle_samples": 0,
+      "cone_completed": false,
+      "cone_run_kind": "M12_SAMPLE_03",
+      "cone_mode_transition_outcome": "NOT_RUN",
+      "cone_low_force_episodes": 0,
+      "cone_direction_fingerprint_valid": false,
+      "cone_routing_fingerprint_valid": false,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": false,
+      "fingerprint_signal_rms_lateral_force_n": null,
+      "fingerprint_signal_peak_lateral_force_n": null,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [],
+      "cone_post_directservo_measured_pose_mm_rad": [],
+      "cone_maximum_command_gap_s": null,
+      "cone_maximum_tick_lateness_s": null,
+      "phase_coverage_fraction": 0,
+      "return_orientation_error_deg": null,
+      "post_stop_tip_error_mm": null,
+      "nominal_cad_distance_to_center_mm": 5.6692075002495743,
+      "cad_distance_to_center_mm": 5.7121785027465251,
+      "post_retract_clear_max_force_n": 0.067394999271463016,
+      "post_retract_clear_max_torque_nm": 0.0011167031871193217,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/03_M12-CLEAN_CANDIDATE-SUPPORTED-A243p75/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/03_M12-CLEAN_CANDIDATE-SUPPORTED-A243p75/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/03_M12-CLEAN_CANDIDATE-SUPPORTED-A243p75/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/03_M12-CLEAN_CANDIDATE-SUPPORTED-A243p75/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/03_M12-CLEAN_CANDIDATE-SUPPORTED-A243p75/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "27e5c222b92739f92f2da11e793d2dd04781fb997cf8963c703a4cad67a98193",
+        "baseline_csv_sha256": "3dfd6d5d0d531632b6fbf8f9f238117f3f8a9d8f0724a39607079835666862dc",
+        "contact_settle_csv_sha256": "a05bf2c08f2b97d7d1bb1de93b2abdcb73e32e13f4ec8b0460046468aacbd696",
+        "cone_csv_sha256": "f85653627c0c6d35e10ea9c0710bf13040097e0fc3d6129d44447653e940e7fb"
+      },
+      "finished_local": "2026-07-27T23:50:10.510+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 10,
+      "source_attempt_index": 10,
+      "execution_index": 4,
+      "sample_id": "M12-CLEAN_CANDIDATE-DOUBLE-A213p75",
+      "requested_partition": "clean_candidate",
+      "effective_partition": "clean_candidate",
+      "training_use_contract": "eligible_only_after_complete_trace_and_offline_qc",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "midpoint of exact AF8 outer tangency and mouth-clear boundaries",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.281404433,
+        "mouth_overlap_fraction": 0.165812485,
+        "head_top_support_fraction": 0.552783082
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.281238235,
+          0.281531496
+        ],
+        "mouth_overlap_fraction": [
+          0.165633313,
+          0.166040749
+        ],
+        "head_top_support_fraction": [
+          0.552721016,
+          0.552835192
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.211379426,
+        "minimum_mouth_overlap_fraction": 0.165117533,
+        "mouth_overlap_phase_fraction": 1,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -4.086492433,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 8.868569925,
+      "angle_fixture_deg": 213.75,
+      "local_offset_fixture_mm": [
+        -7.373946397,
+        -4.92711346
+      ],
+      "nominal_fixture_xy_mm": [
+        37.626053603,
+        -4.92711346
+      ],
+      "fixture_xy_mm": [
+        -7.373946397,
+        -4.92711346
+      ],
+      "fixture_point_mm": [
+        -7.373946397,
+        -4.92711346,
+        0
+      ],
+      "nominal_direction_fixture_deg": 33.75,
+      "nominal_direction_fixture_unit": [
+        0.831469612,
+        0.555570233
+      ],
+      "nominal_direction_world_xy": [
+        0.83146961221821725,
+        0.555570233145808
+      ],
+      "measured_contact_fixture_xy_mm": [
+        -7.33827207234043,
+        -4.9240904939223009
+      ],
+      "measured_sampling_error_mm": 0.035802175406294934,
+      "measured_label_direction_deviation_deg": 0.11220311830655305,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 33.862203118306546,
+      "true_direction_fixture_unit": [
+        0.83038003777888991,
+        0.5571974451290399
+      ],
+      "true_direction_world_xy": [
+        0.83038003777888991,
+        0.5571974451290399
+      ],
+      "target_world_xy_mm": [
+        465.36044166235109,
+        -3.4276477702068822
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "CLEAN_CANDIDATE_PENDING_OFFLINE_QC",
+      "quarantine_reason": "",
+      "offline_training_candidate": true,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        465.39611598701066,
+        -3.4246248041291829,
+        294.50667737217663,
+        3.14104877320499,
+        0.0040480813805393529,
+        3.133447411429418
+      ],
+      "touchdown_max_force_n": 2.8034424781916072,
+      "touchdown_max_torque_nm": 0.019516298618427252,
+      "touchdown_maximum_xy_error_mm": 0.047875709639101191,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.0469191459423425,
+      "pre_touch_clear_max_torque_nm": 0.0015381871828613063,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.026540285303854352,
+        0.023319570370333886,
+        0.020726223638190891
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.00049724109713665185,
+        0.0006000407178868121,
+        9.4478486040354989E-5
+      ],
+      "contact_settle_passed": true,
+      "contact_settle_reason": "PASS",
+      "contact_settle_normal_mean_n": 3.9167540027546495,
+      "contact_settle_normal_std_n": 0.026993457446998388,
+      "contact_settle_samples": 32,
+      "cone_completed": true,
+      "cone_run_kind": "M12_SAMPLE_04",
+      "cone_mode_transition_outcome": "QUICK_RECONTACT_RESUMED_TAGGED",
+      "cone_low_force_episodes": 7,
+      "cone_direction_fingerprint_valid": true,
+      "cone_routing_fingerprint_valid": true,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": true,
+      "fingerprint_signal_rms_lateral_force_n": 4.5576104235036921,
+      "fingerprint_signal_peak_lateral_force_n": 5.8369177398176264,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [
+        465.35521233026617,
+        -3.4243010180378164,
+        294.47068837625255,
+        3.1410486636669277,
+        0.0039628715241164627,
+        3.1334470216043573
+      ],
+      "cone_post_directservo_measured_pose_mm_rad": [
+        465.337683361587,
+        -3.4437905716046036,
+        294.42795675859423,
+        3.1410210678882104,
+        0.0039691761180927843,
+        3.1333835348446235
+      ],
+      "cone_maximum_command_gap_s": 0.032803,
+      "cone_maximum_tick_lateness_s": 0.008198999999999998,
+      "phase_coverage_fraction": 0.99583333333333335,
+      "return_orientation_error_deg": 0.0039629295996399813,
+      "post_stop_tip_error_mm": 0.039532409480537059,
+      "nominal_cad_distance_to_center_mm": 8.8685699249395586,
+      "cad_distance_to_center_mm": 8.8372452834595165,
+      "post_retract_clear_max_force_n": 0.056468715430566606,
+      "post_retract_clear_max_torque_nm": 0.001033529699493144,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/04_M12-CLEAN_CANDIDATE-DOUBLE-A213p75/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/04_M12-CLEAN_CANDIDATE-DOUBLE-A213p75/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/04_M12-CLEAN_CANDIDATE-DOUBLE-A213p75/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/04_M12-CLEAN_CANDIDATE-DOUBLE-A213p75/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/04_M12-CLEAN_CANDIDATE-DOUBLE-A213p75/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "bcc18f391b70c504d9b689d4b0a136513c7cb9dd4adbc45a09b46a880a4dc229",
+        "baseline_csv_sha256": "cce81ac703eb95ceeb19e08f9af09bb91ff932aec73b4dec122d38c78804370d",
+        "contact_settle_csv_sha256": "7c68f1180dba33aab3ffc2b53781f35e07ae28e43a539aa59dc4ee3bd10e81aa",
+        "cone_csv_sha256": "43f03544d07959f31cc594cb5cb11af31672bc8ad7dc5a6e993df763e0e08e50"
+      },
+      "finished_local": "2026-07-27T23:50:50.262+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 14,
+      "source_attempt_index": 14,
+      "execution_index": 5,
+      "sample_id": "M12-CLEAN_CANDIDATE-OUTER-A198p75",
+      "requested_partition": "clean_candidate",
+      "effective_partition": "clean_candidate",
+      "training_use_contract": "eligible_only_after_complete_trace_and_offline_qc",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "landing_mouth_clear_cone_transition",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "AF8 landing mouth-clear boundary plus 0.60 mm",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.692688752,
+        "mouth_overlap_fraction": 0,
+        "head_top_support_fraction": 0.307311248
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.692316698,
+          0.693034577
+        ],
+        "mouth_overlap_fraction": [
+          0,
+          0
+        ],
+        "head_top_support_fraction": [
+          0.306965423,
+          0.307683302
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.020509408,
+        "minimum_mouth_overlap_fraction": 3.9936E-5,
+        "mouth_overlap_phase_fraction": 1,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -6.849056263,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 11.68843988,
+      "angle_fixture_deg": 198.75,
+      "local_offset_fixture_mm": [
+        -11.068135889,
+        -3.757125865
+      ],
+      "nominal_fixture_xy_mm": [
+        33.931864111,
+        -3.757125865
+      ],
+      "fixture_xy_mm": [
+        -11.068135889,
+        -3.757125865
+      ],
+      "fixture_point_mm": [
+        -11.068135889,
+        -3.757125865,
+        0
+      ],
+      "nominal_direction_fixture_deg": 18.75,
+      "nominal_direction_fixture_unit": [
+        0.946930129,
+        0.321439465
+      ],
+      "nominal_direction_world_xy": [
+        0.94693012953622624,
+        0.32143946518202426
+      ],
+      "measured_contact_fixture_xy_mm": [
+        -11.037268228738299,
+        -3.71386091378023
+      ],
+      "measured_sampling_error_mm": 0.053147610050518844,
+      "measured_label_direction_deviation_deg": 0.15275226866776848,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 18.597247731332217,
+      "true_direction_fixture_unit": [
+        0.94778373049337927,
+        0.31891378178443985
+      ],
+      "true_direction_world_xy": [
+        0.94778373049337927,
+        0.31891378178443985
+      ],
+      "target_world_xy_mm": [
+        461.66625217035107,
+        -2.2576601752068819
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "CLEAN_CANDIDATE_PENDING_OFFLINE_QC",
+      "quarantine_reason": "",
+      "offline_training_candidate": true,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        461.69711983061279,
+        -2.2143952239871121,
+        294.48319716602708,
+        3.1412296667699637,
+        0.0052867135075502589,
+        3.1331730240160325
+      ],
+      "touchdown_max_force_n": 2.583864999125395,
+      "touchdown_max_torque_nm": 0.00593828123155769,
+      "touchdown_maximum_xy_error_mm": 0.07258601280526486,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.054439568300461261,
+      "pre_touch_clear_max_torque_nm": 0.00089310330095945985,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.0330434068122836,
+        0.035395007570494866,
+        0.019159819067555147
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.0006272481777503064,
+        0.00066819267864689428,
+        0.00014229792882010728
+      ],
+      "contact_settle_passed": true,
+      "contact_settle_reason": "PASS",
+      "contact_settle_normal_mean_n": 3.5547700936360194,
+      "contact_settle_normal_std_n": 0.031291796804324784,
+      "contact_settle_samples": 35,
+      "cone_completed": true,
+      "cone_run_kind": "M12_SAMPLE_05",
+      "cone_mode_transition_outcome": "QUICK_RECONTACT_RESUMED_TAGGED",
+      "cone_low_force_episodes": 3,
+      "cone_direction_fingerprint_valid": true,
+      "cone_routing_fingerprint_valid": true,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": true,
+      "fingerprint_signal_rms_lateral_force_n": 4.2324559864068023,
+      "fingerprint_signal_peak_lateral_force_n": 5.1296656945476471,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [
+        461.66053329485362,
+        -2.2135045061600995,
+        294.45444229046819,
+        3.1412347177292195,
+        0.0052061132064241972,
+        3.1331682635945031
+      ],
+      "cone_post_directservo_measured_pose_mm_rad": [
+        461.65820488923174,
+        -2.2197712420081279,
+        294.40103574170416,
+        3.1410643368641664,
+        0.0052597193513589536,
+        3.1330901863896052
+      ],
+      "cone_maximum_command_gap_s": 0.026351000000000003,
+      "cone_maximum_tick_lateness_s": 0.0024459999999999968,
+      "phase_coverage_fraction": 0.99583333333333335,
+      "return_orientation_error_deg": 0.010691130544417117,
+      "post_stop_tip_error_mm": 0.036773812344023424,
+      "nominal_cad_distance_to_center_mm": 11.688439879762475,
+      "cad_distance_to_center_mm": 11.645344685324707,
+      "post_retract_clear_max_force_n": 0.0526663110773179,
+      "post_retract_clear_max_torque_nm": 0.0011571129425371777,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/05_M12-CLEAN_CANDIDATE-OUTER-A198p75/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/05_M12-CLEAN_CANDIDATE-OUTER-A198p75/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/05_M12-CLEAN_CANDIDATE-OUTER-A198p75/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/05_M12-CLEAN_CANDIDATE-OUTER-A198p75/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/05_M12-CLEAN_CANDIDATE-OUTER-A198p75/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "ed725a670045847d895a63568c13199b26a05a8002dce25fba157c86c6e50416",
+        "baseline_csv_sha256": "8c1953b2e080698151aa6b2dddb87e4758fdd72ede7cf4bd7fe5a19bacebe3a9",
+        "contact_settle_csv_sha256": "f35ec620250eb7f75cdd4b3055be6d48e3abc0114d93896063356556666436b8",
+        "cone_csv_sha256": "f582d58f00e16329a06faf630655b569e5a4fe71bfa055441537c19f03ee3288"
+      },
+      "finished_local": "2026-07-27T23:51:28.312+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 19,
+      "source_attempt_index": 19,
+      "execution_index": 6,
+      "sample_id": "M12-HOLDOUT-OUTER-A226p00",
+      "requested_partition": "holdout",
+      "effective_partition": "quarantine",
+      "training_use_contract": "never_train_reserved_for_final_real_alignment_audit",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "landing_mouth_clear_cone_transition",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "AF8 landing mouth-clear boundary plus 0.60 mm",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.657264657,
+        "mouth_overlap_fraction": 0,
+        "head_top_support_fraction": 0.342735343
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.656831773,
+          0.657663105
+        ],
+        "mouth_overlap_fraction": [
+          0,
+          0
+        ],
+        "head_top_support_fraction": [
+          0.342336895,
+          0.343168227
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.025920989,
+        "minimum_mouth_overlap_fraction": 0,
+        "mouth_overlap_phase_fraction": 0.958333333,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -6.513309207,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 11.421426523,
+      "angle_fixture_deg": 226,
+      "local_offset_fixture_mm": [
+        -7.933989537,
+        -8.215886675
+      ],
+      "nominal_fixture_xy_mm": [
+        37.066010463,
+        -8.215886675
+      ],
+      "fixture_xy_mm": [
+        -7.933989537,
+        -8.215886675
+      ],
+      "fixture_point_mm": [
+        -7.933989537,
+        -8.215886675,
+        0
+      ],
+      "nominal_direction_fixture_deg": 46,
+      "nominal_direction_fixture_unit": [
+        0.69465837,
+        0.7193398
+      ],
+      "nominal_direction_world_xy": [
+        0.69465837039071165,
+        0.71933980040459378
+      ],
+      "measured_contact_fixture_xy_mm": [
+        -7.9043752514561447,
+        -8.25421149642368
+      ],
+      "measured_sampling_error_mm": 0.048433437266315514,
+      "measured_label_direction_deviation_deg": 0.24026994355656939,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 46.240269943556576,
+      "true_direction_fixture_unit": [
+        0.69163571875728658,
+        0.72224651784490557
+      ],
+      "true_direction_world_xy": [
+        0.69163571875728658,
+        0.72224651784490557
+      ],
+      "target_world_xy_mm": [
+        464.80039852235109,
+        -6.7164209852068826
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "QUARANTINED_NEVER_TRAIN",
+      "quarantine_reason": "CONTACT_FORCE_NOT_STABLE_TIMEOUT",
+      "offline_training_candidate": false,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        464.83001280789495,
+        -6.754745806630563,
+        294.396433213093,
+        3.1409346669072971,
+        0.0060901298852004569,
+        3.1331287164268575
+      ],
+      "touchdown_max_force_n": 4.2754793392209907,
+      "touchdown_max_torque_nm": 0.014430866137070068,
+      "touchdown_maximum_xy_error_mm": 0.06288235004730923,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.054950209313324408,
+      "pre_touch_clear_max_torque_nm": 0.0016305217602132762,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.024172079264762468,
+        0.021329538719660028,
+        0.014569744465414815
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.00045806326948196071,
+        0.00054848042130255963,
+        0.00013720607812816565
+      ],
+      "contact_settle_passed": false,
+      "contact_settle_reason": "TIMEOUT",
+      "contact_settle_normal_mean_n": 4.4658024896735506,
+      "contact_settle_normal_std_n": 0.077418944325994776,
+      "contact_settle_samples": 0,
+      "cone_completed": false,
+      "cone_run_kind": "M12_SAMPLE_06",
+      "cone_mode_transition_outcome": "NOT_RUN",
+      "cone_low_force_episodes": 0,
+      "cone_direction_fingerprint_valid": false,
+      "cone_routing_fingerprint_valid": false,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": false,
+      "fingerprint_signal_rms_lateral_force_n": null,
+      "fingerprint_signal_peak_lateral_force_n": null,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [],
+      "cone_post_directservo_measured_pose_mm_rad": [],
+      "cone_maximum_command_gap_s": null,
+      "cone_maximum_tick_lateness_s": null,
+      "phase_coverage_fraction": 0,
+      "return_orientation_error_deg": null,
+      "post_stop_tip_error_mm": null,
+      "nominal_cad_distance_to_center_mm": 11.42142652341064,
+      "cad_distance_to_center_mm": 11.42852376921557,
+      "post_retract_clear_max_force_n": 0.052608496465752462,
+      "post_retract_clear_max_torque_nm": 0.0015850604567595255,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/06_M12-HOLDOUT-OUTER-A226p00/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/06_M12-HOLDOUT-OUTER-A226p00/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/06_M12-HOLDOUT-OUTER-A226p00/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/06_M12-HOLDOUT-OUTER-A226p00/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/06_M12-HOLDOUT-OUTER-A226p00/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "67cd2ac1797413cad31c9b0e932f70408092477f8cad0ab9f12f14546feea340",
+        "baseline_csv_sha256": "6b651c944eb46db9889ba3a96726d8438b1a6b61a9aad5e98dc0d0cdc2b6de39",
+        "contact_settle_csv_sha256": "04f53fad309e9a1b6781ba81afaa50939a750f927163716af07d5e9c6ccb7b6b",
+        "cone_csv_sha256": "f85653627c0c6d35e10ea9c0710bf13040097e0fc3d6129d44447653e940e7fb"
+      },
+      "finished_local": "2026-07-27T23:51:55.912+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 22,
+      "source_attempt_index": 22,
+      "execution_index": 7,
+      "sample_id": "M12-QUARANTINE-BOUNDARY_SD-A255p00",
+      "requested_partition": "quarantine",
+      "effective_partition": "quarantine",
+      "training_use_contract": "forbidden_boundary_diagnostic_only",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "supported_double_boundary",
+      "cone_sweep_subtype": "landing_boundary_diagnostic",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "2 percent tip area beyond head OD boundary diagnostic",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.02,
+        "mouth_overlap_fraction": 0.434685022,
+        "head_top_support_fraction": 0.545314978
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.019880489,
+          0.020143682
+        ],
+        "mouth_overlap_fraction": [
+          0.433959377,
+          0.435466564
+        ],
+        "head_top_support_fraction": [
+          0.544389753,
+          0.546160134
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.447687609,
+        "minimum_mouth_overlap_fraction": 0.386128851,
+        "mouth_overlap_phase_fraction": 1,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -1.940982723,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 6.811618194,
+      "angle_fixture_deg": 255,
+      "local_offset_fixture_mm": [
+        -1.762976517,
+        -6.579517933
+      ],
+      "nominal_fixture_xy_mm": [
+        43.237023483,
+        -6.579517933
+      ],
+      "fixture_xy_mm": [
+        -1.762976517,
+        -6.579517933
+      ],
+      "fixture_point_mm": [
+        -1.762976517,
+        -6.579517933,
+        0
+      ],
+      "nominal_direction_fixture_deg": 75,
+      "nominal_direction_fixture_unit": [
+        0.258819045,
+        0.965925826
+      ],
+      "nominal_direction_world_xy": [
+        0.25881904507913467,
+        0.96592582629533463
+      ],
+      "measured_contact_fixture_xy_mm": [
+        -1.7375989848864037,
+        -6.5867095578393116
+      ],
+      "measured_sampling_error_mm": 0.026376857356542015,
+      "measured_label_direction_deviation_deg": 0.22183210269093934,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 75.221832102690939,
+      "true_direction_fixture_unit": [
+        0.25507733901047341,
+        0.96692065399562965
+      ],
+      "true_direction_world_xy": [
+        0.25507733901047341,
+        0.96692065399562965
+      ],
+      "target_world_xy_mm": [
+        470.97141154235106,
+        -5.0800522432068824
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "PLANNED_QUARANTINE_DIAGNOSTIC_ONLY",
+      "quarantine_reason": "",
+      "offline_training_candidate": false,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        470.99678907446469,
+        -5.0872438680461931,
+        294.43400260273154,
+        3.1410742459015544,
+        0.0063860211342831128,
+        3.1330749759463821
+      ],
+      "touchdown_max_force_n": 2.78166188882131,
+      "touchdown_max_torque_nm": 0.018831630120748961,
+      "touchdown_maximum_xy_error_mm": 0.16500508759467769,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.058277033636727989,
+      "pre_touch_clear_max_torque_nm": 0.0010485876349039442,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.022827670442814529,
+        0.024351718215496993,
+        0.016287987822128168
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.0005724362250487746,
+        0.00056655402852462584,
+        0.00014084698384418849
+      ],
+      "contact_settle_passed": true,
+      "contact_settle_reason": "PASS",
+      "contact_settle_normal_mean_n": 3.1697301397754662,
+      "contact_settle_normal_std_n": 0.032476626955100875,
+      "contact_settle_samples": 35,
+      "cone_completed": true,
+      "cone_run_kind": "M12_SAMPLE_07",
+      "cone_mode_transition_outcome": "QUICK_RECONTACT_RESUMED_TAGGED",
+      "cone_low_force_episodes": 5,
+      "cone_direction_fingerprint_valid": true,
+      "cone_routing_fingerprint_valid": true,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": true,
+      "fingerprint_signal_rms_lateral_force_n": 4.3852926437123561,
+      "fingerprint_signal_peak_lateral_force_n": 6.5988751685507516,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [
+        470.98292549652371,
+        -5.0871370878526818,
+        294.41570040015642,
+        3.1410724959489542,
+        0.0063633564459701069,
+        3.1330748810294229
+      ],
+      "cone_post_directservo_measured_pose_mm_rad": [
+        470.94518169821134,
+        -5.07201572469025,
+        294.3690243570411,
+        3.1411024879852163,
+        0.006292296477252335,
+        3.1329892100046326
+      ],
+      "cone_maximum_command_gap_s": 0.041737,
+      "cone_maximum_tick_lateness_s": 0.017193,
+      "phase_coverage_fraction": 0.99583333333333335,
+      "return_orientation_error_deg": 0.0066531104519659363,
+      "post_stop_tip_error_mm": 0.045881011470142972,
+      "nominal_cad_distance_to_center_mm": 6.8116181946848755,
+      "cad_distance_to_center_mm": 6.8120476386773747,
+      "post_retract_clear_max_force_n": 0.0496374755119178,
+      "post_retract_clear_max_torque_nm": 0.0012708991057541607,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/07_M12-QUARANTINE-BOUNDARY_SD-A255p00/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/07_M12-QUARANTINE-BOUNDARY_SD-A255p00/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/07_M12-QUARANTINE-BOUNDARY_SD-A255p00/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/07_M12-QUARANTINE-BOUNDARY_SD-A255p00/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/07_M12-QUARANTINE-BOUNDARY_SD-A255p00/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "d1b172d0c7e95162ac1baa3d4155f5a2f23b608fe7f982bc0590971039719209",
+        "baseline_csv_sha256": "b5127628d7764c0b6e98a7d08b5ae4f9938bb475d3d34fcbd36d52c64e6f32a9",
+        "contact_settle_csv_sha256": "a9806cd2b888d9b32b1b130962a5f080953cdad0dccb31ba39dc19b941730371",
+        "cone_csv_sha256": "12397d3f02651b52a8887b2054974eea77e090e28203a451668e0166e479795a"
+      },
+      "finished_local": "2026-07-27T23:52:38.227+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 11,
+      "source_attempt_index": 11,
+      "execution_index": 8,
+      "sample_id": "M12-CLEAN_CANDIDATE-DOUBLE-A273p75",
+      "requested_partition": "clean_candidate",
+      "effective_partition": "clean_candidate",
+      "training_use_contract": "eligible_only_after_complete_trace_and_offline_qc",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "double_overhang",
+      "cone_sweep_subtype": "landing_double_overhang",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "midpoint of exact AF8 outer tangency and mouth-clear boundaries",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.281404433,
+        "mouth_overlap_fraction": 0.165812485,
+        "head_top_support_fraction": 0.552783082
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.281238235,
+          0.281531496
+        ],
+        "mouth_overlap_fraction": [
+          0.165633313,
+          0.166040749
+        ],
+        "head_top_support_fraction": [
+          0.552721016,
+          0.552835192
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0.211379426,
+        "minimum_mouth_overlap_fraction": 0.165117533,
+        "mouth_overlap_phase_fraction": 1,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -4.086492433,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 8.868569925,
+      "angle_fixture_deg": 273.75,
+      "local_offset_fixture_mm": [
+        0.580032225,
+        -8.849581636
+      ],
+      "nominal_fixture_xy_mm": [
+        45.580032225,
+        -8.849581636
+      ],
+      "fixture_xy_mm": [
+        0.580032225,
+        -8.849581636
+      ],
+      "fixture_point_mm": [
+        0.580032225,
+        -8.849581636,
+        0
+      ],
+      "nominal_direction_fixture_deg": 93.75,
+      "nominal_direction_fixture_unit": [
+        -0.065403129,
+        0.997858923
+      ],
+      "nominal_direction_world_xy": [
+        -0.065403129016556455,
+        0.99785892325260273
+      ],
+      "measured_contact_fixture_xy_mm": [
+        0.60850071052476551,
+        -8.8784843209016824
+      ],
+      "measured_sampling_error_mm": 0.040568705458743144,
+      "measured_label_direction_deviation_deg": 0.17072401002013748,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 93.920724010020137,
+      "true_direction_fixture_unit": [
+        -0.068376150815817632,
+        0.99765961229249545
+      ],
+      "true_direction_world_xy": [
+        -0.068376150815817632,
+        0.99765961229249545
+      ],
+      "target_world_xy_mm": [
+        473.31442028435112,
+        -7.3501159462068824
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "CLEAN_CANDIDATE_PENDING_OFFLINE_QC",
+      "quarantine_reason": "",
+      "offline_training_candidate": true,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        473.34288876987586,
+        -7.3790186311085639,
+        294.41657956305562,
+        3.1409115087803348,
+        0.0069832769815477477,
+        3.1329986163981456
+      ],
+      "touchdown_max_force_n": 2.0508977501757362,
+      "touchdown_max_torque_nm": 0.007646859873761255,
+      "touchdown_maximum_xy_error_mm": 0.12305127977666512,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.055202601984686787,
+      "pre_touch_clear_max_torque_nm": 0.00095975858670076242,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.020688984871624405,
+        0.020280234022213565,
+        0.015600319476211724
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.00044883033263237905,
+        0.0004481183049207506,
+        0.00014897945214435506
+      ],
+      "contact_settle_passed": true,
+      "contact_settle_reason": "PASS",
+      "contact_settle_normal_mean_n": 3.2367585537007257,
+      "contact_settle_normal_std_n": 0.024805627144333264,
+      "contact_settle_samples": 33,
+      "cone_completed": true,
+      "cone_run_kind": "M12_SAMPLE_08",
+      "cone_mode_transition_outcome": "QUICK_RECONTACT_RESUMED_TAGGED",
+      "cone_low_force_episodes": 6,
+      "cone_direction_fingerprint_valid": true,
+      "cone_routing_fingerprint_valid": true,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": true,
+      "fingerprint_signal_rms_lateral_force_n": 4.4144400044570835,
+      "fingerprint_signal_peak_lateral_force_n": 5.9824509131045041,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [
+        473.34443357924755,
+        -7.3796314844737161,
+        294.38064022530335,
+        3.1409087799110131,
+        0.0071191638389852237,
+        3.1330029720114823
+      ],
+      "cone_post_directservo_measured_pose_mm_rad": [
+        473.31506142426122,
+        -7.3928072601840213,
+        294.31616083335587,
+        3.1407994218422464,
+        0.0071141126078901433,
+        3.1329187007627355
+      ],
+      "cone_maximum_command_gap_s": 0.032064,
+      "cone_maximum_tick_lateness_s": 0.013293,
+      "phase_coverage_fraction": 0.99583333333333335,
+      "return_orientation_error_deg": 0.0078859960057416859,
+      "post_stop_tip_error_mm": 0.040518675633099153,
+      "nominal_cad_distance_to_center_mm": 8.8685699249804024,
+      "cad_distance_to_center_mm": 8.8993121616901476,
+      "post_retract_clear_max_force_n": 0.068083348538961141,
+      "post_retract_clear_max_torque_nm": 0.0017217815735311927,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/08_M12-CLEAN_CANDIDATE-DOUBLE-A273p75/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/08_M12-CLEAN_CANDIDATE-DOUBLE-A273p75/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/08_M12-CLEAN_CANDIDATE-DOUBLE-A273p75/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/08_M12-CLEAN_CANDIDATE-DOUBLE-A273p75/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/08_M12-CLEAN_CANDIDATE-DOUBLE-A273p75/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "69fd09f566cf4ac5e324befcdc4c5868dc10e43b0fbdced75010390b4206d61d",
+        "baseline_csv_sha256": "0d59e4bf38175d8b85d2031b9d77eacdf6c7179ef6d25f9a2741ea62d1caa259",
+        "contact_settle_csv_sha256": "c6335657bc5b05bc4625f12ab220e41c9389994c4ebcb1795e436078c7f1386f",
+        "cone_csv_sha256": "15795a21f5e1df9e21abdc0e615c68a84891246b0a022a671c1a6c7046971efa"
+      },
+      "finished_local": "2026-07-27T23:53:16.743+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 16,
+      "source_attempt_index": 16,
+      "execution_index": 9,
+      "sample_id": "M12-CLEAN_CANDIDATE-OUTER-A288p75",
+      "requested_partition": "clean_candidate",
+      "effective_partition": "quarantine",
+      "training_use_contract": "eligible_only_after_complete_trace_and_offline_qc",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "full_frustum_mouth_clear",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "complete 15deg printed-frustum mouth-clear boundary plus 0.35 mm",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.764026605,
+        "mouth_overlap_fraction": 0,
+        "head_top_support_fraction": 0.235973395
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.763955893,
+          0.764102908
+        ],
+        "mouth_overlap_fraction": [
+          0,
+          0
+        ],
+        "head_top_support_fraction": [
+          0.235897092,
+          0.236044107
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0,
+        "minimum_mouth_overlap_fraction": 0,
+        "mouth_overlap_phase_fraction": 0,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -7.259688121,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 12.223680564,
+      "angle_fixture_deg": 288.75,
+      "local_offset_fixture_mm": [
+        3.929173345,
+        -11.57497142
+      ],
+      "nominal_fixture_xy_mm": [
+        48.929173345,
+        -11.57497142
+      ],
+      "fixture_xy_mm": [
+        3.929173345,
+        -11.57497142
+      ],
+      "fixture_point_mm": [
+        3.929173345,
+        -11.57497142,
+        0
+      ],
+      "nominal_direction_fixture_deg": 108.75,
+      "nominal_direction_fixture_unit": [
+        -0.321439465,
+        0.946930129
+      ],
+      "nominal_direction_world_xy": [
+        -0.32143946518202426,
+        0.94693012953622624
+      ],
+      "measured_contact_fixture_xy_mm": [
+        3.9843154319488576,
+        -11.623886999720229
+      ],
+      "measured_sampling_error_mm": 0.073711489555180434,
+      "measured_label_direction_deviation_deg": 0.17015753229432562,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": true,
+      "measured_label_gate_reason": "PASS",
+      "true_direction_fixture_deg": 108.92015753229433,
+      "true_direction_fixture_unit": [
+        -0.32425024545654835,
+        0.94597134117338255
+      ],
+      "true_direction_world_xy": [
+        -0.32425024545654835,
+        0.94597134117338255
+      ],
+      "target_world_xy_mm": [
+        476.66356140435107,
+        -10.075505730206883
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "QUARANTINED_NEVER_TRAIN",
+      "quarantine_reason": "CONTACT_FORCE_NOT_STABLE_TIMEOUT",
+      "offline_training_candidate": false,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": false,
+      "touchdown_confirmed": true,
+      "touchdown_pose_mm_rad": [
+        476.71870349129995,
+        -10.124421309927111,
+        294.30439007287191,
+        3.14051717682385,
+        0.00880000322543184,
+        3.132975297681762
+      ],
+      "touchdown_max_force_n": 2.7448430588009689,
+      "touchdown_max_torque_nm": 0.0047586869555977206,
+      "touchdown_maximum_xy_error_mm": 0.075186439322606866,
+      "touchdown_landing_gate_passed": true,
+      "pre_touch_clear_max_force_n": 0.057829618942278796,
+      "pre_touch_clear_max_torque_nm": 0.0017906795477976745,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.025586796131501732,
+        0.025002715341196472,
+        0.017489039571557081
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.000550234631339972,
+        0.00057627689715488773,
+        0.0001055337996321136
+      ],
+      "contact_settle_passed": false,
+      "contact_settle_reason": "TIMEOUT",
+      "contact_settle_normal_mean_n": 4.2021041165950219,
+      "contact_settle_normal_std_n": 0.045988257066772127,
+      "contact_settle_samples": 0,
+      "cone_completed": false,
+      "cone_run_kind": "M12_SAMPLE_09",
+      "cone_mode_transition_outcome": "NOT_RUN",
+      "cone_low_force_episodes": 0,
+      "cone_direction_fingerprint_valid": false,
+      "cone_routing_fingerprint_valid": false,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": false,
+      "fingerprint_signal_rms_lateral_force_n": null,
+      "fingerprint_signal_peak_lateral_force_n": null,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [],
+      "cone_post_directservo_measured_pose_mm_rad": [],
+      "cone_maximum_command_gap_s": null,
+      "cone_maximum_tick_lateness_s": null,
+      "phase_coverage_fraction": 0,
+      "return_orientation_error_deg": null,
+      "post_stop_tip_error_mm": null,
+      "nominal_cad_distance_to_center_mm": 12.223680564742983,
+      "cad_distance_to_center_mm": 12.287779231558922,
+      "post_retract_clear_max_force_n": 0.05682918804249619,
+      "post_retract_clear_max_torque_nm": 0.0011321724240974146,
+      "safe_retract_completed": true,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/09_M12-CLEAN_CANDIDATE-OUTER-A288p75/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/09_M12-CLEAN_CANDIDATE-OUTER-A288p75/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/09_M12-CLEAN_CANDIDATE-OUTER-A288p75/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/09_M12-CLEAN_CANDIDATE-OUTER-A288p75/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/09_M12-CLEAN_CANDIDATE-OUTER-A288p75/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "02ac3944aefe6d9a22f99d0e4055312e8b156d8e3d8b183811b81619246c86db",
+        "baseline_csv_sha256": "a3626d3b63090fbcda4ac722ec2e4044ccd7e3f6bb2ae147c42718ae04804508",
+        "contact_settle_csv_sha256": "b7a4737359d6c29a9d456b8f6729bdb35845557125451a08e0edf6206203f852",
+        "cone_csv_sha256": "f85653627c0c6d35e10ea9c0710bf13040097e0fc3d6129d44447653e940e7fb"
+      },
+      "finished_local": "2026-07-27T23:53:45.822+08:00",
+      "error": ""
+    },
+    {
+      "attempt_index": 20,
+      "source_attempt_index": 20,
+      "execution_index": 10,
+      "sample_id": "M12-HOLDOUT-OUTER-A316p00",
+      "requested_partition": "holdout",
+      "effective_partition": "quarantine",
+      "training_use_contract": "never_train_reserved_for_final_real_alignment_audit",
+      "duplicate_of_sample_id": "",
+      "physical_tool_instance_id": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED",
+      "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+      "dataset_group_key": "PROVISIONAL_CURRENT_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260727_234813_623",
+      "contact_state": "outer_partial_support",
+      "cone_sweep_subtype": "full_frustum_mouth_clear",
+      "contact_state_definition_phase": "UPRIGHT_TOUCHDOWN_BEFORE_CONICAL_SCAN",
+      "printed_cad_radius_rule": "complete 15deg printed-frustum mouth-clear boundary plus 0.35 mm",
+      "nominal_touchdown_geometry": {
+        "outer_overhang_fraction": 0.794694018,
+        "mouth_overlap_fraction": 0,
+        "head_top_support_fraction": 0.205305982
+      },
+      "touchdown_geometry_over_plus_minus_1deg_peg_yaw": {
+        "outer_overhang_fraction": [
+          0.79443461,
+          0.794969539
+        ],
+        "mouth_overlap_fraction": [
+          0,
+          0
+        ],
+        "head_top_support_fraction": [
+          0.205030461,
+          0.20556539
+        ]
+      },
+      "printed_frustum_cone_phase_diagnostics": {
+        "phase_bins": 360,
+        "maximum_mouth_overlap_fraction": 0,
+        "minimum_mouth_overlap_fraction": 0,
+        "mouth_overlap_phase_fraction": 0,
+        "outer_overhang_phase_fraction": 1,
+        "minimum_outer_clearance_mm": -7.586220568,
+        "minimum_projected_area_mm2": 83.651630374,
+        "maximum_projected_area_mm2": 83.651630374
+      },
+      "radius_mm": 12.464839456,
+      "angle_fixture_deg": 316,
+      "local_offset_fixture_mm": [
+        8.966455126,
+        -8.658805065
+      ],
+      "nominal_fixture_xy_mm": [
+        53.966455126,
+        -8.658805065
+      ],
+      "fixture_xy_mm": [
+        8.966455126,
+        -8.658805065
+      ],
+      "fixture_point_mm": [
+        8.966455126,
+        -8.658805065,
+        0
+      ],
+      "nominal_direction_fixture_deg": 136,
+      "nominal_direction_fixture_unit": [
+        -0.7193398,
+        0.69465837
+      ],
+      "nominal_direction_world_xy": [
+        -0.71933980040459378,
+        0.69465837039071165
+      ],
+      "measured_contact_fixture_xy_mm": [
+        null,
+        null
+      ],
+      "measured_sampling_error_mm": null,
+      "measured_label_direction_deviation_deg": null,
+      "measured_label_direction_warning": false,
+      "measured_label_gate_passed": false,
+      "measured_label_gate_reason": "NO_MEASURED_CONTACT_LABEL",
+      "true_direction_fixture_deg": null,
+      "true_direction_fixture_unit": [
+        null,
+        null
+      ],
+      "true_direction_world_xy": [
+        null,
+        null
+      ],
+      "target_world_xy_mm": [
+        481.70084318535112,
+        -7.1593393752068817
+      ],
+      "run_local_hole_center_world_xy_mm": [
+        472.73438805935109,
+        1.499465689793118
+      ],
+      "status": "QUARANTINED_NEVER_TRAIN",
+      "quarantine_reason": "ABORT_AFTER_M12DEMO_COMMANDPROGRESS",
+      "offline_training_candidate": false,
+      "automatic_training_admission": false,
+      "conical_phase_pose_tracking_qualified_for_training": false,
+      "campaign_must_abort": true,
+      "touchdown_confirmed": false,
+      "touchdown_pose_mm_rad": [],
+      "touchdown_max_force_n": null,
+      "touchdown_max_torque_nm": null,
+      "touchdown_maximum_xy_error_mm": null,
+      "touchdown_landing_gate_passed": false,
+      "pre_touch_clear_max_force_n": 0.077289182846139712,
+      "pre_touch_clear_max_torque_nm": 0.0014752636410256387,
+      "point_air_baseline_valid": true,
+      "point_air_baseline_reason": "PASS",
+      "point_air_baseline_force_std_n": [
+        0.019566006602838165,
+        0.021911062728305987,
+        0.013003677275007321
+      ],
+      "point_air_baseline_torque_std_nm": [
+        0.00051705897269093066,
+        0.00045822560492062817,
+        9.7301514676970363E-5
+      ],
+      "contact_settle_passed": false,
+      "contact_settle_reason": "NOT_RUN",
+      "contact_settle_normal_mean_n": null,
+      "contact_settle_normal_std_n": null,
+      "contact_settle_samples": 0,
+      "cone_completed": false,
+      "cone_run_kind": "M12_SAMPLE_10",
+      "cone_mode_transition_outcome": "NOT_RUN",
+      "cone_low_force_episodes": 0,
+      "cone_direction_fingerprint_valid": false,
+      "cone_routing_fingerprint_valid": false,
+      "cone_training_fingerprint_valid": false,
+      "weak_but_complete_fingerprint": false,
+      "fingerprint_signal_rms_lateral_force_n": null,
+      "fingerprint_signal_peak_lateral_force_n": null,
+      "capture_during_cone": false,
+      "cone_pre_directservo_measured_pose_mm_rad": [],
+      "cone_post_directservo_measured_pose_mm_rad": [],
+      "cone_maximum_command_gap_s": null,
+      "cone_maximum_tick_lateness_s": null,
+      "phase_coverage_fraction": 0,
+      "return_orientation_error_deg": null,
+      "post_stop_tip_error_mm": null,
+      "nominal_cad_distance_to_center_mm": 12.464839456657327,
+      "cad_distance_to_center_mm": null,
+      "post_retract_clear_max_force_n": null,
+      "post_retract_clear_max_torque_nm": null,
+      "safe_retract_completed": false,
+      "mat_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/10_M12-HOLDOUT-OUTER-A316p00/attempt.mat",
+      "json_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/10_M12-HOLDOUT-OUTER-A316p00/attempt.json",
+      "baseline_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/10_M12-HOLDOUT-OUTER-A316p00/point_air_baseline_raw.csv",
+      "contact_settle_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/10_M12-HOLDOUT-OUTER-A316p00/contact_settle_raw.csv",
+      "cone_csv_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260727_234813_623/sampling_attempts/10_M12-HOLDOUT-OUTER-A316p00/conical_trace_raw.csv",
+      "file_hashes": {
+        "attempt_mat_sha256": "2c6fb3a8c175858f4c6d5ebc1d0c96b9ec5c8862c357383ae432f03b0ecd79e3",
+        "baseline_csv_sha256": "42b6f933a944d3235ee17b2eb525631c49128b48f56896f8ad560535532d7300",
+        "contact_settle_csv_sha256": "8531fa3ab82e7173336b864ddf0a494b90f08567827a004e5a1300b0548a0971",
+        "cone_csv_sha256": "f85653627c0c6d35e10ea9c0710bf13040097e0fc3d6129d44447653e940e7fb"
+      },
+      "finished_local": "2026-07-27T23:53:52.962+08:00",
+      "error": "M12Demo:CommandProgress: SAMPLE_10_TOUCHDOWN_003 progressed 0.0273/0.1099 mm; minimum 0.0275 mm because command distance exceeds tolerance + deadband."
+    }
+  ],
+  "error": "M12Demo:CommandProgress: SAMPLE_10_TOUCHDOWN_003 progressed 0.0273/0.1099 mm; minimum 0.0275 mm because command distance exceeds tolerance + deadband.",
+  "completed_local": "2026-07-27T23:53:53.112+08:00"
+}

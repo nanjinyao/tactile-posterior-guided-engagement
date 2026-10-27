@@ -1,0 +1,3942 @@
+{
+  "created_utc": "2026-07-15T18:52:13.453890+00:00",
+  "fairness": {
+    "learned_first_probe_hashes": [
+      "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba",
+      "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba",
+      "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba"
+    ],
+    "learned_first_probe_hashes_all_present": true,
+    "learned_first_probe_hashes_match": true,
+    "offline_scorer_available_to_non_oracle": false,
+    "raw_hard_wrench_thresholds_relaxed": false,
+    "run_id": "2cb77b51a0fe44d6b6d1ac63bb256527",
+    "same_active_time_budget_s": 130.0,
+    "same_offline_terminal_scorer": true,
+    "same_pose_contact_nuisance_and_sensor_seed": true,
+    "same_size_commissioned_admittance_and_R3_funnel": true,
+    "simulator_reset_count": 0,
+    "zero_budget_extension": true
+  },
+  "methods": {
+    "cal_only": {
+      "active_time_budget_s": 130.0,
+      "actual_xy_path_mm": 7.717097609970126,
+      "aps_direction_angles_deg": [
+        3.75,
+        356.25
+      ],
+      "aps_set_size": 2,
+      "baseline_depth_mm": -0.061489844822962963,
+      "bottom_depth_error_mm": 0.12937562665241067,
+      "bottom_reached": true,
+      "budget_exhaustion_stage": null,
+      "cad_radial_boundaries_mm": {
+        "full_outer_support": 3.631197846482994,
+        "inner_opening_overlap_limit": 8.918802153517007,
+        "transition_sigma": 0.45
+      },
+      "candidate_attempts": 1,
+      "capture_direction_consistency_gate_enabled": true,
+      "capture_direction_gate_active_at_outcome": true,
+      "capture_direction_gate_retired_active_time_s": null,
+      "capture_direction_gate_retired_for_global_fallback": false,
+      "capture_direction_gate_retirement_reason": null,
+      "capture_handoff_used": true,
+      "capture_mode": "safe_downward_progress",
+      "capture_reverse_projection_tolerance_mm": 0.30000000000000004,
+      "capture_yaw_assist_aborted": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "circular_concentration": 0.9950371141300317,
+      "conditioned_on_ambiguous_top_contact": true,
+      "contact_xy_path_mm": 6.546865241681074,
+      "control_direction_deg": 1.190606994710172,
+      "direct_attempt_records": null,
+      "direct_attempts_completed": 0,
+      "direct_max_attempts": 1,
+      "direct_successful_attempt": null,
+      "directed_shortcut_accepted": true,
+      "direction_confidence": 0.46693655848503113,
+      "direction_error_deg": 0.6240151450037956,
+      "direction_source": "three_seed_ensemble_plus_task_aware_grid",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "ensemble_top1_span_deg": 7.5,
+      "entropy_grid_config": {
+        "action_padding_m": null,
+        "action_spacing_m": 0.00040305086527633215,
+        "belief_spacing_m": 0.00025,
+        "credible_radius_stop_m": 0.00030000000000000003,
+        "likelihood_floor": 0.01,
+        "low_lever_threshold_m": 0.00025,
+        "max_probes": 64,
+        "min_information_gain_nats": 0.005,
+        "quadrature_points": 81,
+        "radial_lookup_points": 256,
+        "support_centroid_scale": 0.75,
+        "torque_direction_bins": 8
+      },
+      "entropy_grid_credible_radius_mm": 5.591658834200428,
+      "entropy_grid_final_nats": 6.038991308257632,
+      "entropy_grid_geometry_mm": {
+        "capture_radius": 0.30000000000000004,
+        "head_outer_radius": 8.25,
+        "probe_circumradius": 4.618802153517007,
+        "socket_top_apothem": 4.3
+      },
+      "entropy_grid_initial_nats": 6.06007816364963,
+      "entropy_grid_map_xy_mm": [
+        -1.9350617639919756,
+        -0.060477861897657706
+      ],
+      "entropy_grid_mean_xy_mm": [
+        -2.774081981497191,
+        -0.23422543674820057
+      ],
+      "entropy_grid_observations": [],
+      "entropy_grid_probe_count": 0,
+      "entropy_grid_used_spiral": false,
+      "event_xy_mm": [
+        -0.034485068561917624,
+        -0.11743412764198267
+      ],
+      "fallback_budget_extension_s": 0.0,
+      "fallback_physical_reset_used": false,
+      "fallback_skipped_reason": null,
+      "final_tilt_deg": 0.0018492018364478326,
+      "fingerprint_sha256": "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba",
+      "fingerprint_sha256_attempts": [
+        "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba"
+      ],
+      "first_shortcut_direction_quality": 0.9929066632882408,
+      "first_shortcut_distance_cap_mm": 2.0,
+      "first_shortcut_distance_mm": 2.0,
+      "first_shortcut_executed": true,
+      "first_shortcut_quantile": 0.24893599949323614,
+      "first_shortcut_reverse_probability": 0.0,
+      "first_shortcut_target_xy_mm": [
+        -3.6854935573591154,
+        -0.26892082852124627
+      ],
+      "frame_count": 0,
+      "funnel_abort_reason": null,
+      "funnel_guard_enabled": true,
+      "funnel_injected_energy_mj": 0.014573368356105005,
+      "funnel_min_health": -3.091009287799117,
+      "funnel_peak_injected_power_w": 0.00022040811628754183,
+      "funnel_recovery_count": 0,
+      "funnel_recovery_reasons": [],
+      "funnel_recovery_transition_records": [],
+      "funnel_recovery_xy_rebases_mm": [],
+      "funnel_tip_rcc_used": true,
+      "global_outward_fallback_started_active_time_s": null,
+      "global_outward_fallback_used": false,
+      "hard_stop": false,
+      "hard_stop_reason": null,
+      "hybrid_budget_switch_active_time_s": null,
+      "hybrid_budget_switch_reason": null,
+      "hybrid_entry_fallback_feasible": true,
+      "hybrid_fallback_nominal_reserve_s": null,
+      "hybrid_guarded_motion_failure_reason": null,
+      "hybrid_probe_config": {
+        "capture_miss_inside_likelihood": 0.2,
+        "capture_miss_outside_likelihood": 0.995,
+        "capture_probability_reward_nats": 1.5,
+        "continuous_contact_path": true,
+        "coverage_capture_probability_reward_nats": 2.25,
+        "coverage_information_gain_weight": 0.05,
+        "fallback_candidate_contingency_s": 6.0,
+        "fallback_return_position_error_bound_m": 0.00025,
+        "fallback_transition_overhead_s": 1.15,
+        "fixed_contact_cost_nats": 0.08,
+        "information_gain_weight": 0.35,
+        "local_spiral_fallback_enabled": false,
+        "maximum_consecutive_noncontracting_updates": 2,
+        "maximum_learned_prior_weight": 0.75,
+        "maximum_residual_radius_ratio": 1.1,
+        "minimum_coverage_utility_nats": 0.0,
+        "minimum_credible_radius_reduction_fraction": 0.05,
+        "minimum_learned_prior_weight": 0.15,
+        "minimum_likelihood_temperature": 0.2,
+        "minimum_net_utility_nats": 0.05,
+        "posterior_kernel_bandwidth_m": 0.00035,
+        "posterior_sample_count": 4096,
+        "predictive_probability_reference": 0.15,
+        "residual_spiral_trigger_m": 0.0012,
+        "safety_probe_ceiling": 64,
+        "terminal_execution_reserve_s": 12.0,
+        "travel_cost_nats_per_m": 20.0
+      },
+      "hybrid_probe_gate_records": [
+        {
+          "entry_fallback_feasible": true,
+          "entry_fallback_reserve_s": 119.49916727008701,
+          "executed": true,
+          "measured_path_samples": 2579,
+          "miss_update_path_source": "measured_tip_xy_polyline",
+          "no_capture_probability_mass_soft_excluded": 0.041955716003690226,
+          "outcome": "arrived_at_task_aware_grid_anchor",
+          "remaining_active_budget_s": 124.20050000000049,
+          "residual_corridor_axial_interval_mm": [
+            2.0,
+            6.0
+          ],
+          "residual_corridor_direction_quality": 0.9929066632882408,
+          "residual_corridor_duration_s": 42.97976115925245,
+          "residual_corridor_half_width_mm": 1.247470144906556,
+          "residual_corridor_lane_count": 11,
+          "residual_corridor_path_length_mm": 62.96964173887867,
+          "residual_corridor_path_speed_mm_s": 1.5,
+          "residual_corridor_reverse_probability": 0.0,
+          "residual_corridor_uses_true_center": false,
+          "residual_direction_eligible": true,
+          "residual_robust_capture_radius_mm": 0.15000000000000005,
+          "residual_schedule_feasible": true,
+          "residual_schedule_required_s": 61.7649273749343,
+          "residual_tracking_error_allowance_mm": 0.15,
+          "selected_primary_search_schedule": "posterior_residual_corridor",
+          "shortcut_duration_estimate_s": 1.2888888888888888,
+          "shortcut_endpoint_fallback_reserve_s": 120.24916727008701,
+          "stage": "posterior_shortcut_before_entropy_grid",
+          "transport_distance_mm": 1.9999999999999996
+        },
+        {
+          "credible_radius_reduction_fraction": -0.01931728508280845,
+          "entropy_reduction_nats": 0.021086855391997616,
+          "executed_probe_count": 0,
+          "frozen_spiral_radius_mm": 3.678915281859995,
+          "optional_commit_duration_estimate_s": 1.1834661742132613,
+          "post_commit_nominal_fallback_reserve_s": 121.03064464546178,
+          "post_entropy_commit": "not_applicable_primary_corridor_starts_at_first_shortcut",
+          "reason": "posterior_residual_corridor_selected_as_primary_schedule",
+          "remaining_active_budget_s": 122.91150000000121,
+          "stage": "post_probe_plan_selection",
+          "updated_plan_accepted": false,
+          "updated_spiral_radius_mm": 6.362125166940716
+        },
+        {
+          "active_time_end_s": 10.315000000001115,
+          "command_tracking_error_max_mm": 0.503573825526317,
+          "command_tracking_error_p99_mm": 0.5034665816940987,
+          "conditional_geometric_contract": "ideal capture tube covers centers whose predicted-direction coordinates lie inside the declared corridor; tracking, contact sensing and terminal verification remain fallible",
+          "corridor_axial_interval_mm": [
+            2.0,
+            6.0
+          ],
+          "corridor_half_width_mm": 1.247470144906556,
+          "corridor_lane_count": 11,
+          "corridor_lane_spacing_mm": 0.3000000000000001,
+          "corridor_path_length_mm": 62.96964173887867,
+          "corridor_path_speed_mm_s": 1.5,
+          "corridor_plus_terminal_required_s": 60.47603848604541,
+          "executed": true,
+          "hard_wrench_limits_relaxed": false,
+          "nominal_controller_restore": "completed",
+          "offline_min_measured_center_distance_mm": 0.4746692260677608,
+          "offline_min_nominal_center_distance_mm": 0.33599539671804857,
+          "offline_min_planned_nominal_center_distance_mm": 0.057210348960946705,
+          "offline_true_center_used_for_scoring_only": true,
+          "outcome": "sensor_capture_handoff",
+          "outer_servo_correction_max_mm": 0.30259466457605677,
+          "outer_servo_correction_p99_mm": 0.3025291063135832,
+          "outer_servo_enabled": true,
+          "planar_tracking_error_max_mm": 0.2009797777110548,
+          "planar_tracking_error_p50_mm": 0.18978784228738538,
+          "planar_tracking_error_p90_mm": 0.19869350670018318,
+          "planar_tracking_error_p99_mm": 0.20093607088706014,
+          "remaining_active_budget_s": 122.91150000000121,
+          "selected_primary_search_schedule": "posterior_residual_corridor",
+          "sensor_progress_candidates_during_corridor": 1,
+          "stage": "posterior_residual_corridor_coverage",
+          "uses_true_center_online": false
+        }
+      ],
+      "hybrid_residual_coverage_config": {
+        "angular_half_width_deg": 12.0,
+        "corridor_path_speed_m_s": 0.0015,
+        "enabled": true,
+        "lane_spacing_capture_fraction": 1.0,
+        "maximum_reverse_probability": 0.35,
+        "measured_tip_outer_servo_enabled": true,
+        "minimum_direction_quality": 0.1,
+        "outer_servo_abort_dwell_s": 0.15,
+        "outer_servo_abort_tracking_error_m": 0.0012,
+        "outer_servo_gain": 1.5,
+        "outer_servo_max_correction_m": 0.001,
+        "outer_servo_max_correction_speed_m_s": 0.002,
+        "tracking_error_allowance_m": 0.00015,
+        "transition_overhead_s": 1.0
+      },
+      "hybrid_spiral_fallback_reason": null,
+      "hybrid_terminal_execution_reserve_s": 17.49627732679296,
+      "initial_xy_mm": [
+        -5.685061763991976,
+        -0.3104778618976577
+      ],
+      "inner_wall_confirmed": true,
+      "insertion_command_bias_mm": [
+        0.0,
+        0.0
+      ],
+      "lateral_work_mj": 8.341443764687716,
+      "latest_plan_executed": false,
+      "latest_plan_update_index": 1,
+      "latest_planned_distance_mm": 0.0,
+      "latest_planned_target_xy_mm": [
+        -3.6854935573591154,
+        -0.26892082852124627
+      ],
+      "legacy_transport_gate": true,
+      "max_abs_tau_z_mnm": 3.371356949861262,
+      "max_filtered_force_n": 4.491119953962499,
+      "max_filtered_torque_mnm": 24.420495672412667,
+      "max_force_n": 7.7281119126282505,
+      "max_raw_physical_force_n": 10.298497594583694,
+      "max_raw_physical_torque_mnm": 28.202360782426922,
+      "max_tilt_deg": 15.417752218272167,
+      "max_torque_mnm": 28.490383437733765,
+      "method": "hybrid",
+      "min_tip_z_mm": -4.875739256575591,
+      "offline_capture_scoring_snapshot": "pre_inactive_post_terminal_display",
+      "offline_capture_tags": [],
+      "offline_capture_validated": true,
+      "online_capture_sensor_only": true,
+      "oracle_endpoint_settle_records": null,
+      "oracle_transport_center_tolerance_mm": null,
+      "oracle_transport_final_center_residual_mm": null,
+      "oracle_transport_recovery_outcome": null,
+      "oracle_transport_recovery_records": null,
+      "oracle_transport_soft_escape_recovery_count": 0,
+      "oracle_transport_soft_escape_recovery_enabled": false,
+      "orientation_work_mj": 7.804630211915124,
+      "post_capture_disturbance_persistent": false,
+      "post_capture_disturbance_reason": null,
+      "post_capture_disturbance_recovered": false,
+      "post_capture_lateral_disturbance_mm": 0.0,
+      "post_capture_tilt_axis_deg": 0.0,
+      "post_capture_tilt_disturbance_deg": 0.0,
+      "post_capture_tilt_duration_s": 0.0,
+      "post_release_requalification_records": [
+        {
+          "achieved_consecutive_samples": 100,
+          "active_time_end_s": 10.7115000000016,
+          "capture_release_entry_transition_event": "capture_release_entry",
+          "entry_transition_event": "post_release_requalification_entry",
+          "failure_action": null,
+          "offline_contact_tags_used": false,
+          "peak_measured_force_n": 0.1424112186842985,
+          "peak_measured_tau_xy_mnm": 0.44614569545122695,
+          "preexisting_terminal_reason": null,
+          "raw_hard_thresholds_changed": false,
+          "release_recovery_completed": false,
+          "requalified": true,
+          "required_consecutive_samples": 100,
+          "skipped_due_to_existing_terminal_outcome": false,
+          "soft_thresholds_changed": false,
+          "true_center_used": false
+        }
+      ],
+      "post_release_requalified": true,
+      "post_terminal_event_display_hard_stop_reason": null,
+      "post_terminal_event_display_new_hard_stop": false,
+      "posterior_model": "visual_x_soft_cad_x_conical_fingerprint_x_signed_ft_entropy_updates",
+      "posterior_radial_quantiles_mm": {
+        "q10": 2.0057227155155486,
+        "q50": 3.987751763126242,
+        "q95": 5.69601657304949
+      },
+      "predicted_direction_deg": 3.75,
+      "preprobe_route": "conditioned_ambiguous_top_contact_probe",
+      "random_search_path_budget_mm": null,
+      "random_search_seed": null,
+      "random_search_waypoints": null,
+      "result": "cad_bottom_verified",
+      "search_recovery_count": 0,
+      "sensor_progress_candidate_count": 1,
+      "simulator_reset_count": 0,
+      "spiral_max_radius_mm": 0.0,
+      "stage_max_filtered_force_n": {
+        "capture_force_release": 0.3920142265916964,
+        "capture_handoff": 2.89675921373647,
+        "hybrid_entropy_probe": 3.390750221425001,
+        "insertion_handoff": 0.11822542850734317,
+        "post_release_requalification": 0.1112846550017283,
+        "probe": 4.491119953962499,
+        "progress_dwell": 0.28510944523136184,
+        "residual_corridor": 4.138939176751105,
+        "residual_corridor_restore": 3.4316390615062446,
+        "upright_insertion": 0.10504495430551317
+      },
+      "stage_max_force_n": {
+        "capture_force_release": 0.3913521643219559,
+        "capture_handoff": 6.999088556191855,
+        "hybrid_entropy_probe": 6.334616854744783,
+        "insertion_handoff": 0.14699032771698936,
+        "post_release_requalification": 0.1424112186842985,
+        "probe": 5.219894294407241,
+        "progress_dwell": 2.684230996405645,
+        "residual_corridor": 4.837849241411135,
+        "residual_corridor_restore": 7.7281119126282505,
+        "upright_insertion": 0.11899944043273313
+      },
+      "stage_max_raw_physical_force_n": {
+        "capture_force_release": 0.028622945327700426,
+        "capture_handoff": 7.150053431402024,
+        "hybrid_entropy_probe": 6.468643507321505,
+        "insertion_handoff": 0.0,
+        "post_release_requalification": 0.0,
+        "probe": 5.242443196754537,
+        "progress_dwell": 2.7041079046635,
+        "residual_corridor": 5.059427355341953,
+        "residual_corridor_restore": 7.8584038195437715,
+        "settle": 10.298497594583694,
+        "terminal_hold": 0.0,
+        "upright_insertion": 0.0
+      },
+      "stage_max_raw_physical_torque_mnm": {
+        "capture_force_release": 0.18781369856538363,
+        "capture_handoff": 16.759279913069665,
+        "hybrid_entropy_probe": 7.130711782735341,
+        "insertion_handoff": 0.0,
+        "post_release_requalification": 0.0,
+        "probe": 20.320042376456264,
+        "progress_dwell": 5.796707485664663,
+        "residual_corridor": 28.202360782426922,
+        "residual_corridor_restore": 6.331476918339124,
+        "settle": 1.8792747798217593,
+        "terminal_hold": 0.0,
+        "upright_insertion": 0.0
+      },
+      "stage_max_torque_mnm": {
+        "capture_force_release": 2.528433100416294,
+        "capture_handoff": 16.827809345267177,
+        "hybrid_entropy_probe": 6.973354323351535,
+        "insertion_handoff": 0.7697713566563472,
+        "post_release_requalification": 0.5683401958922699,
+        "probe": 20.077214929768655,
+        "progress_dwell": 5.949652139668836,
+        "residual_corridor": 28.490383437733765,
+        "residual_corridor_restore": 6.073392305160846,
+        "upright_insertion": 0.6179724685505436
+      },
+      "stage_time_s": {
+        "capture_force_release": 0.3465,
+        "capture_handoff": 0.15,
+        "hybrid_entropy_probe": 1.289,
+        "insertion_handoff": 1.1545,
+        "post_release_requalification": 0.05,
+        "probe": 5.7995,
+        "progress_dwell": 0.05,
+        "residual_corridor": 2.2765,
+        "residual_corridor_restore": 0.75,
+        "upright_insertion": 0.103
+      },
+      "state_probabilities": {
+        "double_overhang": 0.87176913022995,
+        "outer_partial": 0.06890130788087845,
+        "supported_search": 0.05932958051562309
+      },
+      "terminal_attempt_diagnostics": [
+        {
+          "actual_center_eccentricity_mm": 0.12050400761991235,
+          "actual_tip_xy_mm": [
+            -0.08552091115776256,
+            -0.08489634625356958
+          ],
+          "actual_tip_z_mm": -4.87062437334759,
+          "attempt": 1,
+          "bottom_reached": true,
+          "depth_band_entries": 1,
+          "depth_band_exits": 0,
+          "depth_band_samples": 105,
+          "funnel_abort_reason": null,
+          "gate_failure_counts": {
+            "force_axial": 105,
+            "force_lateral": 0,
+            "force_torque": 0,
+            "low_axial": 0,
+            "low_lateral": 0,
+            "low_torque": 0,
+            "out_of_depth_band": 101
+          },
+          "hard_stop": false,
+          "hold_command_xy_mm": [
+            -0.07487371318489107,
+            -0.08994784026392291
+          ],
+          "last": {
+            "depth_error_mm": 0.12937562665241067,
+            "force_seated": false,
+            "in_depth_band": true,
+            "lateral_force_n": 0.04937565989281495,
+            "low_wrench": true,
+            "low_wrench_depth_span_mm": 0.019447530615376962,
+            "signed_axial_force_n": -0.010443869336810237,
+            "tip_z_mm": -4.87062437334759,
+            "torque_xy_mnm": 0.15909523003806167
+          },
+          "max_consecutive_depth_band_samples": 105,
+          "max_force_dwell_samples": 0,
+          "max_low_wrench_dwell_samples": 100,
+          "nominal_actual_xy_error_mm": 0.01178475355746374,
+          "nominal_command_z_mm": -4.850759681529391,
+          "required_dwell_samples": 100,
+          "target_down_force_n": 0.2,
+          "terminal_hold_command_z_mm": -4.850759681529391,
+          "updates": 206,
+          "verified_mode": "cad_depth_low_wrench_dwell"
+        }
+      ],
+      "terminal_attempts": 1,
+      "terminal_axial_position_hold_used": true,
+      "terminal_entry_rebase_records": [
+        {
+          "active_time_s": 11.917000000003073,
+          "atomic_terminal_entry_enforced": true,
+          "attempt": 1,
+          "axial_admittance_disabled_for_dwell": true,
+          "configured_bumpless_terminal_entry_rebase": true,
+          "exact_just_used_rpy_command_deg": [
+            -0.07373934638010192,
+            -0.11860402505044267,
+            0.010606857766793687
+          ],
+          "measured_tip_xy_mm": [
+            -0.07487371318489107,
+            -0.08994784026392291
+          ],
+          "measured_tip_z_mm": -4.850759681529391,
+          "orientation_reference_jump_deg": 0.001774621849159055,
+          "position_reference_jump_mm": 0.020723579933695398,
+          "post_rebase_measured_tip_error_mm": 0.00036749527461504974,
+          "previous_command_z_mm": -4.782092772328428,
+          "previous_hold_xy_mm": [
+            -0.06825816263507414,
+            -0.09237976254109538
+          ],
+          "raw_hard_thresholds_changed": false,
+          "released_lateral_command_error_mm": 0.00704838669763448,
+          "terminal_verifier_thresholds_changed": false,
+          "transition_event": "cad_terminal_set_entry"
+        }
+      ],
+      "terminal_outcome_hard_stop": false,
+      "terminal_rejection_count": 0,
+      "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+      "time_to_bottom_s": 11.969000000003136,
+      "time_to_inner_wall_s": 10.315000000001115,
+      "top_state": "double_overhang",
+      "total_active_time_s": 11.969000000003136,
+      "transition_telemetry_records": [
+        {
+          "active_time_s": 10.315000000001115,
+          "event": "capture_release_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.034460874508752376,
+            -0.11715715177356276,
+            -1.7562854179480545
+          ],
+          "held_reference_before_tip_mm": [
+            -0.021036031415252555,
+            -0.20685846477759773,
+            -1.803088057711288
+          ],
+          "measured_rpy_deg": [
+            0.06970659104771672,
+            0.17631942465060946,
+            -0.011463817199655285
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.034485068561917624,
+            -0.11743412764198267,
+            -1.7562854179480545
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -0.021036031415252555,
+            -0.20685846477759773,
+            0.3
+          ],
+          "orientation_reference_jump_deg": 0.1899446431184646,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.10206389692511234,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00027803054489665803,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.06970659104772162,
+            0.17631942465060163,
+            -0.01146381719966739
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 10.661500000001539,
+          "event": "post_release_requalification_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.08222598845669118,
+            -0.08910895400078249,
+            -1.7563063297829085
+          ],
+          "held_reference_before_tip_mm": [
+            -0.0795049456005017,
+            -0.08925006259751625,
+            -1.7562854179480545
+          ],
+          "measured_rpy_deg": [
+            0.07417746678720068,
+            0.10830944104192401,
+            -0.010442812233777675
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.08218639977011487,
+            -0.089171173481132,
+            -1.7563063297829085
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -0.034485068561917624,
+            -0.11743412764198267,
+            -1.7562854179480545
+          ],
+          "orientation_reference_jump_deg": 0.06816442658360458,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.0027247794711001724,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 7.374637509599813e-05,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.07417746678721046,
+            0.10830944104191872,
+            -0.010442812233786939
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 10.7115000000016,
+          "event": "insertion_handoff_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.08484156013955134,
+            -0.08447115348910544,
+            -1.756661876569298
+          ],
+          "held_reference_before_tip_mm": [
+            -0.09311020125493939,
+            -0.08157241272376735,
+            -1.7563063297829085
+          ],
+          "measured_rpy_deg": [
+            0.07416071829283875,
+            0.11928176912260653,
+            -0.010667468989503952
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.08481049533424675,
+            -0.08449066737318246,
+            -1.7563018765692981
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -0.08218639977011487,
+            -0.089171173481132,
+            -1.7563063297829085
+          ],
+          "orientation_reference_jump_deg": 0.010974640526231486,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.00876923813321492,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.000361864358289684,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.07416071829283791,
+            0.11928176912259757,
+            -0.010667468989495254
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 11.86600000000301,
+          "event": "insertion_descent_entry",
+          "exact_held_rpy_command_deg": [
+            -0.07416071829283791,
+            -0.11928176912259757,
+            0.010667468989495254
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.0683404909738295,
+            -0.09234105587105501,
+            -4.782621366667129
+          ],
+          "held_reference_before_tip_mm": [
+            -0.07090335792148114,
+            -0.09135111538688259,
+            -4.755941876569298
+          ],
+          "measured_rpy_deg": [
+            -0.004220695389965408,
+            -0.0049414401241227295,
+            0.00036932634425802514
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.06825816263507414,
+            -0.09237976254109538,
+            -4.7822613666671305
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            -0.0012943487098540096,
+            -0.0020818596087930352,
+            0.00018618245672108458
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            -0.07416071829283791,
+            -0.11928176912259757,
+            0.010667468989495254
+          ],
+          "nominal_tip_before_mm": [
+            -0.03445400375661304,
+            -0.1174536415260597,
+            -1.755941876569298
+          ],
+          "orientation_reference_jump_deg": 0.006509109157462702,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.026820579058511897,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.0003713167942169324,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.06994002290288177,
+            0.11434032899846312,
+            -0.010298142645238468
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 11.917000000003073,
+          "event": "cad_terminal_set_entry",
+          "exact_held_rpy_command_deg": [
+            -0.07373934638010192,
+            -0.11860402505044267,
+            0.010606857766793687
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.07494280464579108,
+            -0.08992177981697004,
+            -4.851119681529391
+          ],
+          "held_reference_before_tip_mm": [
+            -0.08117433574079759,
+            -0.08483970231970252,
+            -4.870219610162557
+          ],
+          "measured_rpy_deg": [
+            -0.0027476244293315566,
+            -0.0028342939082886603,
+            0.0003040964845071025
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.07487371318489107,
+            -0.08994784026392291,
+            -4.850759681529391
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            -0.0012869943826013404,
+            -0.002070030743248058,
+            0.0001851245913212827
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            -0.07373934638010192,
+            -0.11860402505044267,
+            0.010606857766793687
+          ],
+          "nominal_tip_before_mm": [
+            -0.06825816263507414,
+            -0.09237976254109538,
+            -4.782092772328428
+          ],
+          "orientation_reference_jump_deg": 0.001774621849159055,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.020723579933695398,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00036749527461504974,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.07099172195076954,
+            0.11576973114214999,
+            -0.010302761282274047
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        }
+      ],
+      "transport_allowed": false,
+      "transport_direction_quality": 0.9929066632882408,
+      "transport_distance_cap_mm": 2.0,
+      "transport_distance_mm": 0.0,
+      "transport_policy": "hybrid_posterior_residual_corridor_primary",
+      "transport_projected_quantiles_mm": {
+        "q10": 1.9944304895097311,
+        "q50": 3.977313853635225,
+        "q90": 5.410750567960817
+      },
+      "transport_quantile": 0.24893599949323614,
+      "transport_raw_distance_mm": 3.0630319698604356,
+      "transport_reverse_probability": 0.0,
+      "transport_target_xy_mm": [
+        -3.6854935573591154,
+        -0.26892082852124627
+      ],
+      "true_direction_deg": 3.125984854996201,
+      "video_path": null,
+      "wear_proxy_mj": 16.14607397660284
+    },
+    "privileged_straight_to_center": {
+      "active_time_budget_s": 130.0,
+      "actual_xy_path_mm": 6.004568074547966,
+      "aps_direction_angles_deg": null,
+      "aps_set_size": null,
+      "baseline_depth_mm": -0.058490154613437956,
+      "bottom_depth_error_mm": 0.013817558436148188,
+      "bottom_reached": true,
+      "budget_exhaustion_stage": null,
+      "cad_radial_boundaries_mm": null,
+      "candidate_attempts": 1,
+      "capture_direction_consistency_gate_enabled": false,
+      "capture_direction_gate_active_at_outcome": false,
+      "capture_direction_gate_retired_active_time_s": null,
+      "capture_direction_gate_retired_for_global_fallback": false,
+      "capture_direction_gate_retirement_reason": null,
+      "capture_handoff_used": false,
+      "capture_mode": "centered_free_insertion",
+      "capture_reverse_projection_tolerance_mm": null,
+      "capture_yaw_assist_aborted": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "circular_concentration": null,
+      "conditioned_on_ambiguous_top_contact": true,
+      "contact_xy_path_mm": 5.589199028821174,
+      "control_direction_deg": null,
+      "direct_attempt_records": null,
+      "direct_attempts_completed": 0,
+      "direct_max_attempts": 1,
+      "direct_successful_attempt": null,
+      "directed_shortcut_accepted": false,
+      "direction_confidence": null,
+      "direction_error_deg": 0.0,
+      "direction_source": "true_center_oracle",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "ensemble_top1_span_deg": null,
+      "entropy_grid_config": null,
+      "entropy_grid_credible_radius_mm": null,
+      "entropy_grid_final_nats": null,
+      "entropy_grid_geometry_mm": null,
+      "entropy_grid_initial_nats": null,
+      "entropy_grid_map_xy_mm": null,
+      "entropy_grid_mean_xy_mm": null,
+      "entropy_grid_observations": null,
+      "entropy_grid_probe_count": null,
+      "entropy_grid_used_spiral": null,
+      "event_xy_mm": [
+        0.09118147843304829,
+        0.0028867152463739653
+      ],
+      "fallback_budget_extension_s": 0.0,
+      "fallback_physical_reset_used": false,
+      "fallback_skipped_reason": null,
+      "final_tilt_deg": 0.014385102445984899,
+      "fingerprint_sha256": null,
+      "fingerprint_sha256_attempts": null,
+      "first_shortcut_direction_quality": null,
+      "first_shortcut_distance_cap_mm": null,
+      "first_shortcut_distance_mm": null,
+      "first_shortcut_executed": null,
+      "first_shortcut_quantile": null,
+      "first_shortcut_reverse_probability": null,
+      "first_shortcut_target_xy_mm": null,
+      "frame_count": 0,
+      "funnel_abort_reason": null,
+      "funnel_guard_enabled": true,
+      "funnel_injected_energy_mj": 0.0785349138258196,
+      "funnel_min_health": -2.573707945610041,
+      "funnel_peak_injected_power_w": 0.005303529204582618,
+      "funnel_recovery_count": 0,
+      "funnel_recovery_reasons": [],
+      "funnel_recovery_transition_records": [],
+      "funnel_recovery_xy_rebases_mm": [],
+      "funnel_tip_rcc_used": true,
+      "global_outward_fallback_started_active_time_s": null,
+      "global_outward_fallback_used": false,
+      "hard_stop": false,
+      "hard_stop_reason": null,
+      "hybrid_budget_switch_active_time_s": null,
+      "hybrid_budget_switch_reason": null,
+      "hybrid_entry_fallback_feasible": null,
+      "hybrid_fallback_nominal_reserve_s": null,
+      "hybrid_guarded_motion_failure_reason": null,
+      "hybrid_probe_config": null,
+      "hybrid_probe_gate_records": null,
+      "hybrid_residual_coverage_config": null,
+      "hybrid_spiral_fallback_reason": null,
+      "hybrid_terminal_execution_reserve_s": null,
+      "initial_xy_mm": [
+        -5.685061763991976,
+        -0.3104778618976577
+      ],
+      "inner_wall_confirmed": true,
+      "insertion_command_bias_mm": [
+        0.0,
+        0.0
+      ],
+      "lateral_work_mj": 13.062002166653278,
+      "latest_plan_executed": null,
+      "latest_plan_update_index": null,
+      "latest_planned_distance_mm": null,
+      "latest_planned_target_xy_mm": null,
+      "legacy_transport_gate": null,
+      "max_abs_tau_z_mnm": 2.6747235917804395,
+      "max_filtered_force_n": 4.5353747512934275,
+      "max_filtered_torque_mnm": 26.52119995629158,
+      "max_force_n": 6.552357237601457,
+      "max_raw_physical_force_n": 10.298497594583694,
+      "max_raw_physical_torque_mnm": 30.569740429908187,
+      "max_tilt_deg": 1.2034197355427898,
+      "max_torque_mnm": 30.69882537566945,
+      "method": "oracle",
+      "min_tip_z_mm": -5.133686820954257,
+      "offline_capture_scoring_snapshot": "pre_inactive_post_terminal_display",
+      "offline_capture_tags": [
+        "bottom"
+      ],
+      "offline_capture_validated": true,
+      "online_capture_sensor_only": true,
+      "oracle_endpoint_settle_records": [
+        {
+          "active_time_start_s": 2.5305000000000124,
+          "approach_initial_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "approach_steps": 200,
+          "approach_upright_nominal_rpy_deg": [
+            0.01201118907080781,
+            -0.24507987320598748,
+            0.0008215905289461685
+          ],
+          "dwell_rpy_command_deg": [
+            0.01201118907080781,
+            -0.24507987320598748,
+            0.0008215905289461685
+          ],
+          "dwell_samples": 100,
+          "entry_transition_event": "oracle_endpoint_settle_entry",
+          "final_center_residual_mm": 0.024911761588879214,
+          "initial_center_residual_mm": 0.08253762513388106,
+          "measured_start_xy_mm": [
+            -0.08243232303250334,
+            -0.0041679350050229675
+          ],
+          "oracle_only_true_center_destination": true,
+          "outcome": "center_tolerance_dwell_reached",
+          "raw_hard_thresholds_changed": false,
+          "rpy_command_changed_at_dwell_entry": false,
+          "smooth_remaining_center_command_mm": 0.08253762513388106,
+          "soft_thresholds_changed": false,
+          "upright_return_smoothed_during_approach": true
+        }
+      ],
+      "oracle_transport_center_tolerance_mm": 0.07500000000000001,
+      "oracle_transport_final_center_residual_mm": 0.024911761588879214,
+      "oracle_transport_recovery_outcome": "center_tolerance_reached_without_recovery",
+      "oracle_transport_recovery_records": [],
+      "oracle_transport_soft_escape_recovery_count": 0,
+      "oracle_transport_soft_escape_recovery_enabled": true,
+      "orientation_work_mj": 0.4055653521888092,
+      "post_capture_disturbance_persistent": false,
+      "post_capture_disturbance_reason": null,
+      "post_capture_disturbance_recovered": false,
+      "post_capture_lateral_disturbance_mm": 0.0,
+      "post_capture_tilt_axis_deg": 0.0,
+      "post_capture_tilt_disturbance_deg": 0.0,
+      "post_capture_tilt_duration_s": 0.0,
+      "post_release_requalification_records": [
+        {
+          "achieved_consecutive_samples": 100,
+          "active_time_end_s": 3.1265000000002114,
+          "capture_release_entry_transition_event": "capture_release_entry",
+          "entry_transition_event": "post_release_requalification_entry",
+          "failure_action": null,
+          "offline_contact_tags_used": false,
+          "peak_measured_force_n": 0.12884092256845817,
+          "peak_measured_tau_xy_mnm": 0.45764188041761594,
+          "preexisting_terminal_reason": null,
+          "raw_hard_thresholds_changed": false,
+          "release_recovery_completed": false,
+          "requalified": true,
+          "required_consecutive_samples": 100,
+          "skipped_due_to_existing_terminal_outcome": false,
+          "soft_thresholds_changed": false,
+          "true_center_used": false
+        }
+      ],
+      "post_release_requalified": true,
+      "post_terminal_event_display_hard_stop_reason": null,
+      "post_terminal_event_display_new_hard_stop": false,
+      "posterior_model": null,
+      "posterior_radial_quantiles_mm": null,
+      "predicted_direction_deg": 3.125984854996201,
+      "preprobe_route": "not_applicable_no_conical_probe",
+      "random_search_path_budget_mm": null,
+      "random_search_seed": null,
+      "random_search_waypoints": null,
+      "result": "cad_bottom_verified",
+      "search_recovery_count": 0,
+      "sensor_progress_candidate_count": 0,
+      "simulator_reset_count": 0,
+      "spiral_max_radius_mm": 0.0,
+      "stage_max_filtered_force_n": {
+        "capture_force_release": 0.11862652642593449,
+        "direct_capture_dwell": 0.09196616023917459,
+        "insertion_handoff": 0.3632965836205479,
+        "oracle_center_settle": 0.08767064729257873,
+        "oracle_center_settle_approach": 0.1044823480477578,
+        "post_release_requalification": 0.10890180431214182,
+        "transport": 4.5353747512934275,
+        "upright_insertion": 0.3778038879165738
+      },
+      "stage_max_force_n": {
+        "capture_force_release": 0.1464154489041115,
+        "direct_capture_dwell": 0.12349265548977378,
+        "insertion_handoff": 2.496253393483819,
+        "oracle_center_settle": 0.12664624945892702,
+        "oracle_center_settle_approach": 0.12954656908592332,
+        "post_release_requalification": 0.12884092256845817,
+        "transport": 6.552357237601457,
+        "upright_insertion": 0.3755556757151824
+      },
+      "stage_max_raw_physical_force_n": {
+        "capture_force_release": 0.0,
+        "direct_capture_dwell": 0.0,
+        "insertion_handoff": 2.545188002925512,
+        "oracle_center_settle": 0.0,
+        "oracle_center_settle_approach": 0.0,
+        "post_release_requalification": 0.0,
+        "settle": 10.298497594583694,
+        "terminal_hold": 1.2235369337419448,
+        "transport": 6.635028894248447,
+        "upright_insertion": 0.23195856039368362
+      },
+      "stage_max_raw_physical_torque_mnm": {
+        "capture_force_release": 0.0,
+        "direct_capture_dwell": 0.0,
+        "insertion_handoff": 5.047277442640048,
+        "oracle_center_settle": 0.0,
+        "oracle_center_settle_approach": 0.0,
+        "post_release_requalification": 0.0,
+        "settle": 1.8792747798217593,
+        "terminal_hold": 6.9251008192596775,
+        "transport": 30.569740429908187,
+        "upright_insertion": 0.6567374084928244
+      },
+      "stage_max_torque_mnm": {
+        "capture_force_release": 0.7621937911776279,
+        "direct_capture_dwell": 0.6430529084977886,
+        "insertion_handoff": 5.4409679102415165,
+        "oracle_center_settle": 0.5966531420152454,
+        "oracle_center_settle_approach": 0.6137141386798733,
+        "post_release_requalification": 0.6637591421255296,
+        "transport": 30.69882537566945,
+        "upright_insertion": 0.918606231770679
+      },
+      "stage_time_s": {
+        "capture_force_release": 0.3465,
+        "direct_capture_dwell": 0.0495,
+        "insertion_handoff": 1.1545,
+        "oracle_center_settle": 0.05,
+        "oracle_center_settle_approach": 0.1,
+        "post_release_requalification": 0.05,
+        "transport": 2.5305,
+        "upright_insertion": 0.0575
+      },
+      "state_probabilities": null,
+      "terminal_attempt_diagnostics": [
+        {
+          "actual_center_eccentricity_mm": 0.05871514305728041,
+          "actual_tip_xy_mm": [
+            0.053228743633272985,
+            0.02478243078191089
+          ],
+          "actual_tip_z_mm": -5.013817558436148,
+          "attempt": 1,
+          "bottom_reached": true,
+          "depth_band_entries": 1,
+          "depth_band_exits": 0,
+          "depth_band_samples": 115,
+          "funnel_abort_reason": null,
+          "gate_failure_counts": {
+            "force_axial": 115,
+            "force_lateral": 0,
+            "force_torque": 0,
+            "low_axial": 0,
+            "low_lateral": 0,
+            "low_torque": 0,
+            "out_of_depth_band": 0
+          },
+          "hard_stop": false,
+          "hold_command_xy_mm": [
+            0.056011697134382935,
+            0.02291841022671724
+          ],
+          "last": {
+            "depth_error_mm": 0.013817558436148188,
+            "force_seated": false,
+            "in_depth_band": true,
+            "lateral_force_n": 0.04681817799673929,
+            "low_wrench": true,
+            "low_wrench_depth_span_mm": 0.01986563488803217,
+            "signed_axial_force_n": 0.13618896143647685,
+            "tip_z_mm": -5.013817558436148,
+            "torque_xy_mnm": 0.3376547161712529
+          },
+          "max_consecutive_depth_band_samples": 115,
+          "max_force_dwell_samples": 0,
+          "max_low_wrench_dwell_samples": 100,
+          "nominal_actual_xy_error_mm": 0.00334953770235902,
+          "nominal_command_z_mm": -5.0445149530808395,
+          "required_dwell_samples": 100,
+          "target_down_force_n": 0.2,
+          "terminal_hold_command_z_mm": -5.0445149530808395,
+          "updates": 115,
+          "verified_mode": "cad_depth_low_wrench_dwell"
+        }
+      ],
+      "terminal_attempts": 1,
+      "terminal_axial_position_hold_used": true,
+      "terminal_entry_rebase_records": [
+        {
+          "active_time_s": 4.281500000000347,
+          "atomic_terminal_entry_enforced": true,
+          "attempt": 1,
+          "axial_admittance_disabled_for_dwell": true,
+          "configured_bumpless_terminal_entry_rebase": true,
+          "exact_just_used_rpy_command_deg": [
+            0.009241922480009455,
+            -0.060916167615288334,
+            0.0004680479743158758
+          ],
+          "measured_tip_xy_mm": [
+            0.056011697134382935,
+            0.02291841022671724
+          ],
+          "measured_tip_z_mm": -5.0445149530808395,
+          "orientation_reference_jump_deg": 2.2852417453365157e-05,
+          "position_reference_jump_mm": 0.0008553524331063826,
+          "post_rebase_measured_tip_error_mm": 0.00034243861437416073,
+          "previous_command_z_mm": -5.045378211663762,
+          "previous_hold_xy_mm": [
+            0.056012855329777095,
+            0.02290757301635633
+          ],
+          "raw_hard_thresholds_changed": false,
+          "released_lateral_command_error_mm": 1.0898924028440177e-05,
+          "terminal_verifier_thresholds_changed": false,
+          "transition_event": "cad_terminal_set_entry"
+        }
+      ],
+      "terminal_outcome_hard_stop": false,
+      "terminal_rejection_count": 0,
+      "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+      "time_to_bottom_s": 4.338500000000315,
+      "time_to_inner_wall_s": 2.730000000000079,
+      "top_state": null,
+      "total_active_time_s": 4.338500000000315,
+      "transition_telemetry_records": [
+        {
+          "active_time_s": 2.5305000000000124,
+          "event": "oracle_endpoint_settle_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.08243232303250334,
+            -0.0041679350050229675,
+            -1.4861942061397322
+          ],
+          "held_reference_before_tip_mm": [
+            0.0,
+            0.0,
+            -1.5477588180699877
+          ],
+          "measured_rpy_deg": [
+            -0.012011189070807811,
+            0.24507987320597785,
+            -0.0008215905289434187
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.08243232303250334,
+            -0.0041679350050229675,
+            -1.485834206139732
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            0.0,
+            0.0,
+            0.3
+          ],
+          "orientation_reference_jump_deg": 0.24537540203646094,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.10296922358095187,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00036000000000003043,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.01201118907080781,
+            0.24507987320598748,
+            -0.0008215905289461685
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 2.730000000000079,
+          "event": "capture_release_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            0.0911119858544318,
+            0.00292717135162598,
+            -2.383259515687408
+          ],
+          "held_reference_before_tip_mm": [
+            0.0,
+            0.0,
+            -2.3802401550094867
+          ],
+          "measured_rpy_deg": [
+            -0.005932356278565314,
+            0.017647384664113887,
+            -0.00036661069158398275
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            0.09118147843304829,
+            0.0028867152463739653,
+            -2.383259515687408
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            0.0,
+            0.0,
+            -1.485834206139732
+          ],
+          "orientation_reference_jump_deg": 0.2275141667218183,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.09120898441142374,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 8.041091303380974e-05,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.005932356278555463,
+            0.01764738466410227,
+            -0.00036661069158388864
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 3.0765000000001947,
+          "event": "post_release_requalification_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            0.0470482138366703,
+            0.028721207657420252,
+            -2.3832696326343514
+          ],
+          "held_reference_before_tip_mm": [
+            0.04850569335509917,
+            0.026856659682638128,
+            -2.383259515687408
+          ],
+          "measured_rpy_deg": [
+            -0.010314600076012533,
+            0.0691327828265493,
+            -0.000491308809517551
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            0.04705330663476124,
+            0.028641170433442935,
+            -2.3832696326343514
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            0.09118147843304829,
+            0.0028867152463739653,
+            -2.383259515687408
+          ],
+          "orientation_reference_jump_deg": 0.0516717121282574,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.0023666195405090402,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 8.019908861321553e-05,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.010314600076009242,
+            0.0691327828265382,
+            -0.0004913088095269924
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 3.1265000000002114,
+          "event": "insertion_handoff_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            0.042279455849113155,
+            0.03206397317510796,
+            -2.3836263142095633
+          ],
+          "held_reference_before_tip_mm": [
+            0.03806088992359244,
+            0.03755881267199362,
+            -2.3832696326343514
+          ],
+          "measured_rpy_deg": [
+            -0.009241927678904189,
+            0.06091620188264937,
+            -0.00046804823761908423
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            0.04236481189012058,
+            0.03199578402634776,
+            -2.383266314209563
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            0.04705330663476124,
+            0.028641170433442935,
+            -2.3832696326343514
+          ],
+          "orientation_reference_jump_deg": 0.008286336315467185,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.006936626075448682,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00037621192663859484,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.009241927678898452,
+            0.0609162018826601,
+            -0.0004680482376084395
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 4.281000000000347,
+          "event": "insertion_descent_entry",
+          "exact_held_rpy_command_deg": [
+            0.009241927678898452,
+            -0.0609162018826601,
+            0.0004680482376084395
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            0.0559448248001095,
+            0.022942173885790042,
+            -5.04503820532128
+          ],
+          "held_reference_before_tip_mm": [
+            0.05575094191216242,
+            0.024201306426152414,
+            -5.080140987322297
+          ],
+          "measured_rpy_deg": [
+            0.010377441838009371,
+            0.005169283821838185,
+            1.4071819216466214e-06
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            0.056012855329777095,
+            0.02290757301635633,
+            -5.045378233441266
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.00016130206722797524,
+            -0.0010631882906619872,
+            8.168982804424019e-06
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.009241927678898452,
+            -0.0609162018826601,
+            0.0004680482376084395
+          ],
+          "nominal_tip_before_mm": [
+            0.0912668344740557,
+            0.0028185260976137656,
+            -2.382906314209563
+          ],
+          "orientation_reference_jump_deg": 0.01159365327721512,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.03512589229527673,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.0003484888743040411,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.0011355141591158253,
+            0.06608548570450146,
+            -0.00046664105569161094
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 4.281500000000347,
+          "event": "cad_terminal_set_entry",
+          "exact_held_rpy_command_deg": [
+            0.009241922480009455,
+            -0.060916167615288334,
+            0.0004680479743158758
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            0.05594014764575759,
+            0.02296338886618873,
+            -5.04418310703629
+          ],
+          "held_reference_before_tip_mm": [
+            0.0559448248001095,
+            0.022942173885790042,
+            -5.0450381835437765
+          ],
+          "measured_rpy_deg": [
+            0.010390960514049538,
+            0.005187738459167945,
+            1.5735356470429019e-06
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            0.056011697134382935,
+            0.02291841022671724,
+            -5.0445149530808395
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.00016130197649024482,
+            -0.001063187692583524,
+            8.168978209101886e-06
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.009241922480009455,
+            -0.060916167615288334,
+            0.0004680479743158758
+          ],
+          "nominal_tip_before_mm": [
+            0.056012855329777095,
+            0.02290757301635633,
+            -5.045378211663762
+          ],
+          "orientation_reference_jump_deg": 2.2852417453365157e-05,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.0008553524331063826,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00034243861437416073,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.0011490380340283652,
+            0.06610390607446466,
+            -0.0004664744386706235
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        }
+      ],
+      "transport_allowed": true,
+      "transport_direction_quality": null,
+      "transport_distance_cap_mm": null,
+      "transport_distance_mm": 5.6935335041722634,
+      "transport_policy": null,
+      "transport_projected_quantiles_mm": null,
+      "transport_quantile": null,
+      "transport_raw_distance_mm": null,
+      "transport_reverse_probability": null,
+      "transport_target_xy_mm": [
+        0.0,
+        0.0
+      ],
+      "true_direction_deg": 3.125984854996201,
+      "video_path": null,
+      "wear_proxy_mj": 13.467567518842086
+    },
+    "pure_outward": {
+      "active_time_budget_s": 130.0,
+      "actual_xy_path_mm": 89.67809770674455,
+      "aps_direction_angles_deg": null,
+      "aps_set_size": null,
+      "baseline_depth_mm": -0.058490154613437956,
+      "bottom_depth_error_mm": null,
+      "bottom_reached": false,
+      "budget_exhaustion_stage": null,
+      "cad_radial_boundaries_mm": null,
+      "candidate_attempts": 0,
+      "capture_direction_consistency_gate_enabled": false,
+      "capture_direction_gate_active_at_outcome": false,
+      "capture_direction_gate_retired_active_time_s": null,
+      "capture_direction_gate_retired_for_global_fallback": false,
+      "capture_direction_gate_retirement_reason": null,
+      "capture_handoff_used": false,
+      "capture_mode": "inner_wall_guided",
+      "capture_reverse_projection_tolerance_mm": null,
+      "capture_yaw_assist_aborted": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "circular_concentration": null,
+      "conditioned_on_ambiguous_top_contact": true,
+      "contact_xy_path_mm": 89.67809770674455,
+      "control_direction_deg": null,
+      "direct_attempt_records": null,
+      "direct_attempts_completed": 0,
+      "direct_max_attempts": 1,
+      "direct_successful_attempt": null,
+      "directed_shortcut_accepted": false,
+      "direction_confidence": null,
+      "direction_error_deg": null,
+      "direction_source": "none",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "ensemble_top1_span_deg": null,
+      "entropy_grid_config": null,
+      "entropy_grid_credible_radius_mm": null,
+      "entropy_grid_final_nats": null,
+      "entropy_grid_geometry_mm": null,
+      "entropy_grid_initial_nats": null,
+      "entropy_grid_map_xy_mm": null,
+      "entropy_grid_mean_xy_mm": null,
+      "entropy_grid_observations": null,
+      "entropy_grid_probe_count": null,
+      "entropy_grid_used_spiral": null,
+      "event_xy_mm": [
+        -8.874721704173082,
+        1.657996783098005
+      ],
+      "fallback_budget_extension_s": 0.0,
+      "fallback_physical_reset_used": false,
+      "fallback_skipped_reason": null,
+      "final_tilt_deg": 0.63240164979901,
+      "fingerprint_sha256": null,
+      "fingerprint_sha256_attempts": null,
+      "first_shortcut_direction_quality": null,
+      "first_shortcut_distance_cap_mm": null,
+      "first_shortcut_distance_mm": null,
+      "first_shortcut_executed": null,
+      "first_shortcut_quantile": null,
+      "first_shortcut_reverse_probability": null,
+      "first_shortcut_target_xy_mm": null,
+      "frame_count": 0,
+      "funnel_abort_reason": "post_release_capture_requalification_failed",
+      "funnel_guard_enabled": true,
+      "funnel_injected_energy_mj": 0.008977497991716304,
+      "funnel_min_health": -7.587377667088857,
+      "funnel_peak_injected_power_w": 0.003693838635958765,
+      "funnel_recovery_count": 0,
+      "funnel_recovery_reasons": [],
+      "funnel_recovery_transition_records": [],
+      "funnel_recovery_xy_rebases_mm": [],
+      "funnel_tip_rcc_used": true,
+      "global_outward_fallback_started_active_time_s": null,
+      "global_outward_fallback_used": false,
+      "hard_stop": false,
+      "hard_stop_reason": null,
+      "hybrid_budget_switch_active_time_s": null,
+      "hybrid_budget_switch_reason": null,
+      "hybrid_entry_fallback_feasible": null,
+      "hybrid_fallback_nominal_reserve_s": null,
+      "hybrid_guarded_motion_failure_reason": null,
+      "hybrid_probe_config": null,
+      "hybrid_probe_gate_records": null,
+      "hybrid_residual_coverage_config": null,
+      "hybrid_spiral_fallback_reason": null,
+      "hybrid_terminal_execution_reserve_s": null,
+      "initial_xy_mm": [
+        -5.685061763991976,
+        -0.3104778618976577
+      ],
+      "inner_wall_confirmed": true,
+      "insertion_command_bias_mm": [
+        0.0,
+        0.0
+      ],
+      "lateral_work_mj": 175.75309265335184,
+      "latest_plan_executed": null,
+      "latest_plan_update_index": null,
+      "latest_planned_distance_mm": null,
+      "latest_planned_target_xy_mm": null,
+      "legacy_transport_gate": null,
+      "max_abs_tau_z_mnm": 4.632081189796375,
+      "max_filtered_force_n": 4.549771403831779,
+      "max_filtered_torque_mnm": 21.348386228250927,
+      "max_force_n": 5.69378782658273,
+      "max_raw_physical_force_n": 10.298497594583694,
+      "max_raw_physical_torque_mnm": 21.488427831198827,
+      "max_tilt_deg": 1.0380916203435555,
+      "max_torque_mnm": 21.555572052238478,
+      "method": "baseline",
+      "min_tip_z_mm": -0.3050971910532746,
+      "offline_capture_scoring_snapshot": "pre_inactive_post_terminal_display",
+      "offline_capture_tags": [
+        "chamfer",
+        "other"
+      ],
+      "offline_capture_validated": false,
+      "online_capture_sensor_only": true,
+      "oracle_endpoint_settle_records": null,
+      "oracle_transport_center_tolerance_mm": null,
+      "oracle_transport_final_center_residual_mm": null,
+      "oracle_transport_recovery_outcome": null,
+      "oracle_transport_recovery_records": null,
+      "oracle_transport_soft_escape_recovery_count": 0,
+      "oracle_transport_soft_escape_recovery_enabled": false,
+      "orientation_work_mj": 2.120152176745475,
+      "post_capture_disturbance_persistent": false,
+      "post_capture_disturbance_reason": null,
+      "post_capture_disturbance_recovered": false,
+      "post_capture_lateral_disturbance_mm": 0.0,
+      "post_capture_tilt_axis_deg": 0.0,
+      "post_capture_tilt_disturbance_deg": 0.0,
+      "post_capture_tilt_duration_s": 0.0,
+      "post_release_requalification_records": [
+        {
+          "achieved_consecutive_samples": 0,
+          "active_time_end_s": 42.913000000022876,
+          "capture_release_entry_transition_event": "capture_release_entry",
+          "entry_transition_event": "post_release_requalification_entry",
+          "failure_action": "post_release_capture_requalification_failed_safe_abort",
+          "offline_contact_tags_used": false,
+          "peak_measured_force_n": 1.0947918657965268,
+          "peak_measured_tau_xy_mnm": 1.9329079223975911,
+          "preexisting_terminal_reason": null,
+          "raw_hard_thresholds_changed": false,
+          "release_recovery_completed": false,
+          "requalified": false,
+          "required_consecutive_samples": 100,
+          "skipped_due_to_existing_terminal_outcome": false,
+          "soft_thresholds_changed": false,
+          "true_center_used": false
+        }
+      ],
+      "post_release_requalified": false,
+      "post_terminal_event_display_hard_stop_reason": null,
+      "post_terminal_event_display_new_hard_stop": false,
+      "posterior_model": null,
+      "posterior_radial_quantiles_mm": null,
+      "predicted_direction_deg": null,
+      "preprobe_route": "not_applicable_no_conical_probe",
+      "random_search_path_budget_mm": null,
+      "random_search_seed": null,
+      "random_search_waypoints": null,
+      "result": "funnel_safe_abort",
+      "search_recovery_count": 0,
+      "sensor_progress_candidate_count": 0,
+      "simulator_reset_count": 0,
+      "spiral_max_radius_mm": null,
+      "stage_max_filtered_force_n": {
+        "capture_force_release": 3.7789667642120173,
+        "post_release_requalification": 1.080162558499922,
+        "post_release_safe_abort_unload": 0.3804008262446678,
+        "spiral": 4.549771403831779
+      },
+      "stage_max_force_n": {
+        "capture_force_release": 3.8254159921859543,
+        "post_release_requalification": 1.0947918657965268,
+        "post_release_safe_abort_unload": 0.41739695196147625,
+        "spiral": 5.69378782658273
+      },
+      "stage_max_raw_physical_force_n": {
+        "capture_force_release": 1.153863821932658,
+        "post_release_requalification": 0.4272061846626147,
+        "post_release_safe_abort_unload": 0.1873722672335903,
+        "settle": 10.298497594583694,
+        "spiral": 5.787404865036751,
+        "terminal_hold": 0.18898518071033926
+      },
+      "stage_max_raw_physical_torque_mnm": {
+        "capture_force_release": 3.7692708545382976,
+        "post_release_requalification": 1.5659239695167821,
+        "post_release_safe_abort_unload": 1.0752263044788917,
+        "settle": 1.8792747798217593,
+        "spiral": 21.488427831198827,
+        "terminal_hold": 1.0319829736851625
+      },
+      "stage_max_torque_mnm": {
+        "capture_force_release": 11.650295727322225,
+        "post_release_requalification": 2.0176981940110394,
+        "post_release_safe_abort_unload": 1.024260680754657,
+        "spiral": 21.555572052238478
+      },
+      "stage_time_s": {
+        "capture_force_release": 0.3465,
+        "post_release_requalification": 0.25,
+        "post_release_safe_abort_unload": 0.1,
+        "spiral": 42.2165
+      },
+      "state_probabilities": null,
+      "terminal_attempt_diagnostics": [],
+      "terminal_attempts": 0,
+      "terminal_axial_position_hold_used": false,
+      "terminal_entry_rebase_records": [],
+      "terminal_outcome_hard_stop": false,
+      "terminal_rejection_count": 0,
+      "terminal_verification_mode": null,
+      "time_to_bottom_s": null,
+      "time_to_inner_wall_s": 42.21650000001955,
+      "top_state": null,
+      "total_active_time_s": 42.913000000022876,
+      "transition_telemetry_records": [
+        {
+          "active_time_s": 42.21650000001955,
+          "event": "capture_release_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -8.874121704173081,
+            1.6585967830980048,
+            -0.30508197817864097
+          ],
+          "held_reference_before_tip_mm": [
+            -9.100495906791709,
+            1.3681845364926926,
+            -0.8858380990931711
+          ],
+          "measured_rpy_deg": [
+            0.46331951177007186,
+            -0.4415415051885273,
+            0.09036382695778641
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -8.874721704173082,
+            1.657996783098005,
+            -0.30508197817864097
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -9.100495906791709,
+            1.3681845364926926,
+            0.3
+          ],
+          "orientation_reference_jump_deg": 0.6463663759923319,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.6876497833703263,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.0008485281374237243,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.46331951177006797,
+            -0.44154150518852714,
+            0.09036382695778389
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 42.563000000021205,
+          "event": "post_release_requalification_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -8.924057113423682,
+            1.6433578804898663,
+            -0.11439430108723184
+          ],
+          "held_reference_before_tip_mm": [
+            -8.921079564531802,
+            1.6668141990584264,
+            -0.30508197817864097
+          ],
+          "measured_rpy_deg": [
+            0.42986428277807187,
+            -0.48500537989612663,
+            0.08605392793226886
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -8.923964201849758,
+            1.6433354136582967,
+            -0.11439430108723184
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -8.874721704173082,
+            1.657996783098005,
+            -0.30508197817864097
+          ],
+          "orientation_reference_jump_deg": 0.055017597013273405,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.19214800252074138,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 9.558932518768625e-05,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.42986428277807404,
+            -0.4850053798961274,
+            0.08605392793225881
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 42.8130000000224,
+          "event": "post_release_requalification_safe_abort",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -8.937892736487967,
+            1.6495921832698202,
+            -0.04674704554310724
+          ],
+          "held_reference_before_tip_mm": [
+            -8.956604801801733,
+            1.6618702966857593,
+            -0.11439430108723184
+          ],
+          "measured_rpy_deg": [
+            0.3899240766371351,
+            -0.500874044653948,
+            0.08710313116392804
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -8.937818617298676,
+            1.649533035023675,
+            -0.04674704554310724
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -8.923964201849758,
+            1.6433354136582967,
+            -0.11439430108723184
+          ],
+          "orientation_reference_jump_deg": 0.042989945512867486,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.07125338335835978,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 9.482704911178544e-05,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.38992407663712497,
+            -0.5008740446539597,
+            0.08710313116392739
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        }
+      ],
+      "transport_allowed": null,
+      "transport_direction_quality": null,
+      "transport_distance_cap_mm": null,
+      "transport_distance_mm": null,
+      "transport_policy": null,
+      "transport_projected_quantiles_mm": null,
+      "transport_quantile": null,
+      "transport_raw_distance_mm": null,
+      "transport_reverse_probability": null,
+      "transport_target_xy_mm": null,
+      "true_direction_deg": 3.125984854996201,
+      "video_path": null,
+      "wear_proxy_mj": 177.87324483009732
+    },
+    "s4_fine_tuned": {
+      "active_time_budget_s": 130.0,
+      "actual_xy_path_mm": 16.261133861216987,
+      "adapter_last_telemetry": {
+        "adapted_direction_deg": 10.95635239080767,
+        "adapted_raw_concentration": 0.9970922757001679,
+        "aps_union_size": 3,
+        "base_concentration": 0.9977966630827114,
+        "base_direction_deg": 1.3272027348649538,
+        "base_fine_tuned_disagreement_deg": 10.462090957800683,
+        "conservative_concentration": 0.9970922757001679,
+        "conservative_span_deg": 10.462090957800683,
+        "fine_tuned_concentration": 0.9983589731506625,
+        "fine_tuned_direction_deg": 11.789293692665629,
+        "maximum_base_fine_tuned_disagreement_deg": 90.0,
+        "minimum_fine_tuned_concentration": 0.6,
+        "residual_alpha": 0.92,
+        "risk_gate_passed": true,
+        "risk_gate_reasons": [],
+        "state_total_variation": 1.311198332132335e-07
+      },
+      "aps_direction_angles_deg": [
+        11.25,
+        3.75,
+        356.25
+      ],
+      "aps_set_size": 3,
+      "baseline_depth_mm": -0.024681544727955806,
+      "bottom_depth_error_mm": 0.12943231947594708,
+      "bottom_reached": true,
+      "budget_exhaustion_stage": null,
+      "cad_radial_boundaries_mm": {
+        "full_outer_support": 3.631197846482994,
+        "inner_opening_overlap_limit": 8.918802153517007,
+        "transition_sigma": 0.45
+      },
+      "candidate_attempts": 1,
+      "capture_direction_consistency_gate_enabled": true,
+      "capture_direction_gate_active_at_outcome": true,
+      "capture_direction_gate_retired_active_time_s": null,
+      "capture_direction_gate_retired_for_global_fallback": false,
+      "capture_direction_gate_retirement_reason": null,
+      "capture_handoff_used": true,
+      "capture_mode": "safe_downward_progress",
+      "capture_reverse_projection_tolerance_mm": 0.30000000000000004,
+      "capture_yaw_assist_aborted": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "circular_concentration": 0.9970922757001679,
+      "conditioned_on_ambiguous_top_contact": true,
+      "contact_xy_path_mm": 15.400844749102554,
+      "control_direction_deg": 10.95635239080767,
+      "direct_attempt_records": null,
+      "direct_attempts_completed": 0,
+      "direct_max_attempts": 1,
+      "direct_successful_attempt": null,
+      "directed_shortcut_accepted": true,
+      "direction_confidence": 0.6458479762077332,
+      "direction_error_deg": 8.124015145003796,
+      "direction_source": "three_seed_ensemble_plus_task_aware_grid",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "ensemble_top1_span_deg": 10.462090957800683,
+      "entropy_grid_config": {
+        "action_padding_m": null,
+        "action_spacing_m": 0.00040305086527633215,
+        "belief_spacing_m": 0.00025,
+        "credible_radius_stop_m": 0.00030000000000000003,
+        "likelihood_floor": 0.01,
+        "low_lever_threshold_m": 0.00025,
+        "max_probes": 64,
+        "min_information_gain_nats": 0.005,
+        "quadrature_points": 81,
+        "radial_lookup_points": 256,
+        "support_centroid_scale": 0.75,
+        "torque_direction_bins": 8
+      },
+      "entropy_grid_credible_radius_mm": 5.732802748961867,
+      "entropy_grid_final_nats": 5.898376259187521,
+      "entropy_grid_geometry_mm": {
+        "capture_radius": 0.30000000000000004,
+        "head_outer_radius": 8.25,
+        "probe_circumradius": 4.618802153517007,
+        "socket_top_apothem": 4.3
+      },
+      "entropy_grid_initial_nats": 5.918396073911667,
+      "entropy_grid_map_xy_mm": [
+        -1.185061763991975,
+        0.6895221381023423
+      ],
+      "entropy_grid_mean_xy_mm": [
+        -2.6185276937083604,
+        0.2985456034853056
+      ],
+      "entropy_grid_observations": [],
+      "entropy_grid_probe_count": 0,
+      "entropy_grid_used_spiral": false,
+      "event_xy_mm": [
+        -0.006228670590176428,
+        0.1281106277816436
+      ],
+      "fallback_budget_extension_s": 0.0,
+      "fallback_physical_reset_used": false,
+      "fallback_skipped_reason": null,
+      "final_tilt_deg": 0.028375341845634432,
+      "fingerprint_sha256": "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba",
+      "fingerprint_sha256_attempts": [
+        "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba"
+      ],
+      "first_shortcut_direction_quality": 0.9929395294934379,
+      "first_shortcut_distance_cap_mm": 2.0,
+      "first_shortcut_distance_mm": 2.0,
+      "first_shortcut_executed": true,
+      "first_shortcut_quantile": 0.2489409294240157,
+      "first_shortcut_reverse_probability": 0.0,
+      "first_shortcut_target_xy_mm": [
+        -3.7215172523102393,
+        0.06964442190655694
+      ],
+      "frame_count": 0,
+      "funnel_abort_reason": null,
+      "funnel_guard_enabled": true,
+      "funnel_injected_energy_mj": 0.11313520224832148,
+      "funnel_min_health": -3.9070518285263844,
+      "funnel_peak_injected_power_w": 0.0030510277538095634,
+      "funnel_recovery_count": 0,
+      "funnel_recovery_reasons": [],
+      "funnel_recovery_transition_records": [],
+      "funnel_recovery_xy_rebases_mm": [],
+      "funnel_tip_rcc_used": true,
+      "global_outward_fallback_started_active_time_s": null,
+      "global_outward_fallback_used": false,
+      "hard_stop": false,
+      "hard_stop_reason": null,
+      "hybrid_budget_switch_active_time_s": null,
+      "hybrid_budget_switch_reason": null,
+      "hybrid_entry_fallback_feasible": true,
+      "hybrid_fallback_nominal_reserve_s": null,
+      "hybrid_guarded_motion_failure_reason": null,
+      "hybrid_probe_config": {
+        "capture_miss_inside_likelihood": 0.2,
+        "capture_miss_outside_likelihood": 0.995,
+        "capture_probability_reward_nats": 1.5,
+        "continuous_contact_path": true,
+        "coverage_capture_probability_reward_nats": 2.25,
+        "coverage_information_gain_weight": 0.05,
+        "fallback_candidate_contingency_s": 6.0,
+        "fallback_return_position_error_bound_m": 0.00025,
+        "fallback_transition_overhead_s": 1.15,
+        "fixed_contact_cost_nats": 0.08,
+        "information_gain_weight": 0.35,
+        "local_spiral_fallback_enabled": false,
+        "maximum_consecutive_noncontracting_updates": 2,
+        "maximum_learned_prior_weight": 0.75,
+        "maximum_residual_radius_ratio": 1.1,
+        "minimum_coverage_utility_nats": 0.0,
+        "minimum_credible_radius_reduction_fraction": 0.05,
+        "minimum_learned_prior_weight": 0.15,
+        "minimum_likelihood_temperature": 0.2,
+        "minimum_net_utility_nats": 0.05,
+        "posterior_kernel_bandwidth_m": 0.00035,
+        "posterior_sample_count": 4096,
+        "predictive_probability_reference": 0.15,
+        "residual_spiral_trigger_m": 0.0012,
+        "safety_probe_ceiling": 64,
+        "terminal_execution_reserve_s": 12.0,
+        "travel_cost_nats_per_m": 20.0
+      },
+      "hybrid_probe_gate_records": [
+        {
+          "entry_fallback_feasible": true,
+          "entry_fallback_reserve_s": 119.49916727008701,
+          "executed": true,
+          "measured_path_samples": 2579,
+          "miss_update_path_source": "measured_tip_xy_polyline",
+          "no_capture_probability_mass_soft_excluded": 0.015383808671100783,
+          "outcome": "arrived_at_task_aware_grid_anchor",
+          "remaining_active_budget_s": 124.20050000000049,
+          "residual_corridor_axial_interval_mm": [
+            2.0,
+            6.0
+          ],
+          "residual_corridor_direction_quality": 0.9929395294934379,
+          "residual_corridor_duration_s": 42.979761159252455,
+          "residual_corridor_half_width_mm": 1.247470144906556,
+          "residual_corridor_lane_count": 11,
+          "residual_corridor_path_length_mm": 62.969641738878686,
+          "residual_corridor_path_speed_mm_s": 1.5,
+          "residual_corridor_reverse_probability": 0.0,
+          "residual_corridor_uses_true_center": false,
+          "residual_direction_eligible": true,
+          "residual_robust_capture_radius_mm": 0.15000000000000005,
+          "residual_schedule_feasible": true,
+          "residual_schedule_required_s": 61.7649273749343,
+          "residual_tracking_error_allowance_mm": 0.15,
+          "selected_primary_search_schedule": "posterior_residual_corridor",
+          "shortcut_duration_estimate_s": 1.288888888888889,
+          "shortcut_endpoint_fallback_reserve_s": 120.24916727008701,
+          "stage": "posterior_shortcut_before_entropy_grid",
+          "transport_distance_mm": 2.0
+        },
+        {
+          "credible_radius_reduction_fraction": -0.005961335261787122,
+          "entropy_reduction_nats": 0.02001981472414638,
+          "executed_probe_count": 0,
+          "frozen_spiral_radius_mm": 3.6412282798053646,
+          "optional_commit_duration_estimate_s": 1.5604898775953089,
+          "post_commit_nominal_fallback_reserve_s": 121.40906603837432,
+          "post_entropy_commit": "not_applicable_primary_corridor_starts_at_first_shortcut",
+          "reason": "posterior_residual_corridor_selected_as_primary_schedule",
+          "remaining_active_budget_s": 122.91150000000121,
+          "stage": "post_probe_plan_selection",
+          "updated_plan_accepted": false,
+          "updated_spiral_radius_mm": 6.364038372309189
+        },
+        {
+          "active_time_end_s": 16.246500000007487,
+          "command_tracking_error_max_mm": 0.6634343415649697,
+          "command_tracking_error_p99_mm": 0.6444603851036331,
+          "conditional_geometric_contract": "ideal capture tube covers centers whose predicted-direction coordinates lie inside the declared corridor; tracking, contact sensing and terminal verification remain fallible",
+          "corridor_axial_interval_mm": [
+            2.0,
+            6.0
+          ],
+          "corridor_half_width_mm": 1.247470144906556,
+          "corridor_lane_count": 11,
+          "corridor_lane_spacing_mm": 0.3000000000000001,
+          "corridor_path_length_mm": 62.969641738878686,
+          "corridor_path_speed_mm_s": 1.5,
+          "corridor_plus_terminal_required_s": 60.47603848604541,
+          "executed": true,
+          "hard_wrench_limits_relaxed": false,
+          "nominal_controller_restore": "completed",
+          "offline_min_measured_center_distance_mm": 0.5891588944431272,
+          "offline_min_nominal_center_distance_mm": 0.5317902813699737,
+          "offline_min_planned_nominal_center_distance_mm": 0.027208692840476893,
+          "offline_true_center_used_for_scoring_only": true,
+          "outcome": "sensor_capture_handoff",
+          "outer_servo_correction_max_mm": 0.3983974044668229,
+          "outer_servo_correction_p99_mm": 0.3869851674071607,
+          "outer_servo_enabled": true,
+          "planar_tracking_error_max_mm": 0.2650370446993816,
+          "planar_tracking_error_p50_mm": 0.16847714120099763,
+          "planar_tracking_error_p90_mm": 0.20333846172091846,
+          "planar_tracking_error_p99_mm": 0.2574241532147893,
+          "remaining_active_budget_s": 122.91150000000121,
+          "selected_primary_search_schedule": "posterior_residual_corridor",
+          "sensor_progress_candidates_during_corridor": 1,
+          "stage": "posterior_residual_corridor_coverage",
+          "uses_true_center_online": false
+        }
+      ],
+      "hybrid_residual_coverage_config": {
+        "angular_half_width_deg": 12.0,
+        "corridor_path_speed_m_s": 0.0015,
+        "enabled": true,
+        "lane_spacing_capture_fraction": 1.0,
+        "maximum_reverse_probability": 0.35,
+        "measured_tip_outer_servo_enabled": true,
+        "minimum_direction_quality": 0.1,
+        "outer_servo_abort_dwell_s": 0.15,
+        "outer_servo_abort_tracking_error_m": 0.0012,
+        "outer_servo_gain": 1.5,
+        "outer_servo_max_correction_m": 0.001,
+        "outer_servo_max_correction_speed_m_s": 0.002,
+        "tracking_error_allowance_m": 0.00015,
+        "transition_overhead_s": 1.0
+      },
+      "hybrid_spiral_fallback_reason": null,
+      "hybrid_terminal_execution_reserve_s": 17.49627732679296,
+      "initial_xy_mm": [
+        -5.685061763991976,
+        -0.3104778618976577
+      ],
+      "inner_wall_confirmed": true,
+      "insertion_command_bias_mm": [
+        0.0,
+        0.0
+      ],
+      "lateral_work_mj": 24.12111515225625,
+      "latest_plan_executed": false,
+      "latest_plan_update_index": 1,
+      "latest_planned_distance_mm": 0.0,
+      "latest_planned_target_xy_mm": [
+        -3.7215172523102393,
+        0.06964442190655694
+      ],
+      "legacy_transport_gate": false,
+      "max_abs_tau_z_mnm": 5.975746013483658,
+      "max_filtered_force_n": 4.957737699699405,
+      "max_filtered_torque_mnm": 23.54325256432415,
+      "max_force_n": 6.054502241886249,
+      "max_raw_physical_force_n": 10.298497594583694,
+      "max_raw_physical_torque_mnm": 25.97812319625712,
+      "max_tilt_deg": 15.417752218272167,
+      "max_torque_mnm": 26.27420492699995,
+      "method": "hybrid",
+      "min_tip_z_mm": -4.875461017990707,
+      "offline_capture_scoring_snapshot": "pre_inactive_post_terminal_display",
+      "offline_capture_tags": [
+        "chamfer",
+        "wall"
+      ],
+      "offline_capture_validated": true,
+      "online_capture_sensor_only": true,
+      "oracle_endpoint_settle_records": null,
+      "oracle_transport_center_tolerance_mm": null,
+      "oracle_transport_final_center_residual_mm": null,
+      "oracle_transport_recovery_outcome": null,
+      "oracle_transport_recovery_records": null,
+      "oracle_transport_soft_escape_recovery_count": 0,
+      "oracle_transport_soft_escape_recovery_enabled": false,
+      "orientation_work_mj": 8.917743975266063,
+      "post_capture_disturbance_persistent": false,
+      "post_capture_disturbance_reason": null,
+      "post_capture_disturbance_recovered": false,
+      "post_capture_lateral_disturbance_mm": 0.0,
+      "post_capture_tilt_axis_deg": 0.0,
+      "post_capture_tilt_disturbance_deg": 0.0,
+      "post_capture_tilt_duration_s": 0.0,
+      "post_release_requalification_records": [
+        {
+          "achieved_consecutive_samples": 100,
+          "active_time_end_s": 16.643000000006563,
+          "capture_release_entry_transition_event": "capture_release_entry",
+          "entry_transition_event": "post_release_requalification_entry",
+          "failure_action": null,
+          "offline_contact_tags_used": false,
+          "peak_measured_force_n": 0.1368224343327793,
+          "peak_measured_tau_xy_mnm": 0.4740960533057745,
+          "preexisting_terminal_reason": null,
+          "raw_hard_thresholds_changed": false,
+          "release_recovery_completed": false,
+          "requalified": true,
+          "required_consecutive_samples": 100,
+          "skipped_due_to_existing_terminal_outcome": false,
+          "soft_thresholds_changed": false,
+          "true_center_used": false
+        }
+      ],
+      "post_release_requalified": true,
+      "post_terminal_event_display_hard_stop_reason": null,
+      "post_terminal_event_display_new_hard_stop": false,
+      "posterior_model": "visual_x_soft_cad_x_conical_fingerprint_x_signed_ft_entropy_updates",
+      "posterior_radial_quantiles_mm": {
+        "q10": 2.8490718743416488,
+        "q50": 4.296559434793376,
+        "q95": 5.781868510863734
+      },
+      "predicted_direction_deg": 11.25,
+      "preprobe_route": "conditioned_ambiguous_top_contact_probe",
+      "random_search_path_budget_mm": null,
+      "random_search_seed": null,
+      "random_search_waypoints": null,
+      "result": "cad_bottom_verified",
+      "search_recovery_count": 0,
+      "sensor_progress_candidate_count": 1,
+      "simulator_reset_count": 0,
+      "spiral_max_radius_mm": 0.0,
+      "stage_max_filtered_force_n": {
+        "capture_force_release": 1.030375372677857,
+        "capture_handoff": 3.574811395296364,
+        "hybrid_entropy_probe": 3.390750221425001,
+        "insertion_handoff": 0.12088584483759918,
+        "post_release_requalification": 0.10731649736294979,
+        "probe": 4.491119953962499,
+        "progress_dwell": 1.4628014443683601,
+        "residual_corridor": 4.957737699699405,
+        "residual_corridor_restore": 3.4722805063717885,
+        "upright_insertion": 0.15513015868992105
+      },
+      "stage_max_force_n": {
+        "capture_force_release": 1.0125381017832618,
+        "capture_handoff": 5.827305461791289,
+        "hybrid_entropy_probe": 5.778299793617455,
+        "insertion_handoff": 1.482434406290171,
+        "post_release_requalification": 0.1368224343327793,
+        "probe": 5.219894294407241,
+        "progress_dwell": 4.3811306589966,
+        "residual_corridor": 6.041947568827136,
+        "residual_corridor_restore": 6.054502241886249,
+        "upright_insertion": 1.0880900133743485
+      },
+      "stage_max_raw_physical_force_n": {
+        "capture_force_release": 0.1311138523174741,
+        "capture_handoff": 5.906980632558154,
+        "hybrid_entropy_probe": 5.918304180062086,
+        "insertion_handoff": 1.5410346434530113,
+        "post_release_requalification": 0.11094426088213524,
+        "probe": 5.242443196754537,
+        "progress_dwell": 4.4759534075822724,
+        "residual_corridor": 6.057091219679359,
+        "residual_corridor_restore": 6.198445453103812,
+        "settle": 10.298497594583694,
+        "terminal_hold": 1.7557552114700081,
+        "upright_insertion": 1.1714495497071329
+      },
+      "stage_max_raw_physical_torque_mnm": {
+        "capture_force_release": 0.8929562610355128,
+        "capture_handoff": 20.4259650760361,
+        "hybrid_entropy_probe": 5.920718645104887,
+        "insertion_handoff": 2.8143404949709745,
+        "post_release_requalification": 0.7640704812072373,
+        "probe": 20.320042376456264,
+        "progress_dwell": 10.59538464682324,
+        "residual_corridor": 25.97812319625712,
+        "residual_corridor_restore": 6.076148870549701,
+        "settle": 1.8792747798217593,
+        "terminal_hold": 9.872745562459963,
+        "upright_insertion": 1.3448288892656577
+      },
+      "stage_max_torque_mnm": {
+        "capture_force_release": 5.787556811878012,
+        "capture_handoff": 23.52648486896167,
+        "hybrid_entropy_probe": 6.040752417721193,
+        "insertion_handoff": 2.4973484267732506,
+        "post_release_requalification": 0.5920163479115241,
+        "probe": 20.077214929768655,
+        "progress_dwell": 10.573473770044188,
+        "residual_corridor": 26.27420492699995,
+        "residual_corridor_restore": 6.558058675074081,
+        "upright_insertion": 1.2440562008600204
+      },
+      "stage_time_s": {
+        "capture_force_release": 0.3465,
+        "capture_handoff": 0.15,
+        "hybrid_entropy_probe": 1.289,
+        "insertion_handoff": 1.1545,
+        "post_release_requalification": 0.05,
+        "probe": 5.7995,
+        "progress_dwell": 0.05,
+        "residual_corridor": 8.208,
+        "residual_corridor_restore": 0.75,
+        "upright_insertion": 0.334
+      },
+      "state_probabilities": {
+        "double_overhang": 0.9999999231092292,
+        "outer_partial": 1.9806057355387927e-08,
+        "supported_search": 5.708471345625106e-08
+      },
+      "terminal_attempt_diagnostics": [
+        {
+          "actual_center_eccentricity_mm": 0.12174034313530084,
+          "actual_tip_xy_mm": [
+            -0.07389377281201223,
+            0.0967492712443226
+          ],
+          "actual_tip_z_mm": -4.870567680524053,
+          "attempt": 1,
+          "bottom_reached": true,
+          "depth_band_entries": 1,
+          "depth_band_exits": 0,
+          "depth_band_samples": 105,
+          "funnel_abort_reason": null,
+          "gate_failure_counts": {
+            "force_axial": 105,
+            "force_lateral": 1,
+            "force_torque": 0,
+            "low_axial": 0,
+            "low_lateral": 1,
+            "low_torque": 0,
+            "out_of_depth_band": 563
+          },
+          "hard_stop": false,
+          "hold_command_xy_mm": [
+            -0.06981899095206733,
+            0.09785347198652818
+          ],
+          "last": {
+            "depth_error_mm": 0.12943231947594708,
+            "force_seated": false,
+            "in_depth_band": true,
+            "lateral_force_n": 0.08812294269579171,
+            "low_wrench": true,
+            "low_wrench_depth_span_mm": 0.019610518299413293,
+            "signed_axial_force_n": -0.07215320091589397,
+            "tip_z_mm": -4.870567680524053,
+            "torque_xy_mnm": 0.23605478857186124
+          },
+          "max_consecutive_depth_band_samples": 105,
+          "max_force_dwell_samples": 0,
+          "max_low_wrench_dwell_samples": 100,
+          "nominal_actual_xy_error_mm": 0.0042217421149595875,
+          "nominal_command_z_mm": -4.850271643676927,
+          "required_dwell_samples": 100,
+          "target_down_force_n": 0.2,
+          "terminal_hold_command_z_mm": -4.850271643676927,
+          "updates": 668,
+          "verified_mode": "cad_depth_low_wrench_dwell"
+        }
+      ],
+      "terminal_attempts": 1,
+      "terminal_axial_position_hold_used": true,
+      "terminal_entry_rebase_records": [
+        {
+          "active_time_s": 18.079500000003215,
+          "atomic_terminal_entry_enforced": true,
+          "attempt": 1,
+          "axial_admittance_disabled_for_dwell": true,
+          "configured_bumpless_terminal_entry_rebase": true,
+          "exact_just_used_rpy_command_deg": [
+            0.20564239080986493,
+            -0.1766680007762907,
+            -0.03655854143618255
+          ],
+          "measured_tip_xy_mm": [
+            -0.06981899095206733,
+            0.09785347198652818
+          ],
+          "measured_tip_z_mm": -4.850271643676927,
+          "orientation_reference_jump_deg": 0.012521336042111973,
+          "position_reference_jump_mm": 0.038462360639629004,
+          "post_rebase_measured_tip_error_mm": 0.00036857632347568587,
+          "previous_command_z_mm": -4.127397664535714,
+          "previous_hold_xy_mm": [
+            -0.036131341641613184,
+            0.11787815764482859
+          ],
+          "raw_hard_thresholds_changed": false,
+          "released_lateral_command_error_mm": 0.03918986797346839,
+          "terminal_verifier_thresholds_changed": false,
+          "transition_event": "cad_terminal_set_entry"
+        }
+      ],
+      "terminal_outcome_hard_stop": false,
+      "terminal_rejection_count": 0,
+      "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+      "time_to_bottom_s": 18.131500000003093,
+      "time_to_inner_wall_s": 16.246500000007487,
+      "top_state": "double_overhang",
+      "total_active_time_s": 18.131500000003093,
+      "transition_telemetry_records": [
+        {
+          "active_time_s": 16.246500000007487,
+          "event": "capture_release_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.006224324042099726,
+            0.1275106277816436,
+            -1.1031787419936747
+          ],
+          "held_reference_before_tip_mm": [
+            0.07573377701512485,
+            0.5358102687792209,
+            -1.3896134692566215
+          ],
+          "measured_rpy_deg": [
+            -0.18931700038798208,
+            0.272504004670957,
+            0.045692709243720896
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.006228670590176428,
+            0.1281106277816436,
+            -1.1031787419936747
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            0.07573377701512485,
+            0.5358102687792209,
+            0.3
+          ],
+          "orientation_reference_jump_deg": 0.33494355177498436,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.5054409759307762,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.0006000157435269245,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.18931700038798693,
+            0.27250400467094876,
+            0.0456927092437309
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 16.59300000000668,
+          "event": "post_release_requalification_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.04483222318223989,
+            0.12324740432154065,
+            -1.1038317699883573
+          ],
+          "held_reference_before_tip_mm": [
+            -0.0485607981673834,
+            0.13375684640890786,
+            -1.1031787419936747
+          ],
+          "measured_rpy_deg": [
+            -0.25106206568355227,
+            0.1957334760299613,
+            0.04236005429682786
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.04475773082143408,
+            0.12326757680365939,
+            -1.1038317699883573
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -0.006228670590176428,
+            0.1281106277816436,
+            -1.1031787419936747
+          ],
+          "orientation_reference_jump_deg": 0.09857623316583433,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.01117036659959747,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 7.71753902047372e-05,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.25106206568355377,
+            0.1957334760299661,
+            0.04236005429681737
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 16.643000000006563,
+          "event": "insertion_handoff_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.045203520546848945,
+            0.11971192812406065,
+            -1.1042711868892845
+          ],
+          "held_reference_before_tip_mm": [
+            -0.05886038388104901,
+            0.1280808978111717,
+            -1.1038317699883573
+          ],
+          "measured_rpy_deg": [
+            -0.24188784667722454,
+            0.20780658168898986,
+            0.04300215938374662
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.04511871537902346,
+            0.1196604504060157,
+            -1.1039111868892844
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -0.04475773082143408,
+            0.12326757680365939,
+            -1.1038317699883573
+          ],
+          "orientation_reference_jump_deg": 0.015176905928826874,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.016023191222900083,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00037341916386956657,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.2418878466772346,
+            0.20780658168898788,
+            0.04300215938373752
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 17.797500000003872,
+          "event": "insertion_descent_entry",
+          "exact_held_rpy_command_deg": [
+            0.2418878466772346,
+            -0.20780658168898788,
+            -0.04300215938373752
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.03618913722431539,
+            0.11792290556293174,
+            -4.12858075897774
+          ],
+          "held_reference_before_tip_mm": [
+            -0.04719967169200628,
+            0.14422169352652792,
+            -4.103551186889284
+          ],
+          "measured_rpy_deg": [
+            0.017232027277265888,
+            -0.009010491360628701,
+            -0.0015012701730296966
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.036131341641613184,
+            0.11787815764482859,
+            -4.12822075897774
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.004221739345076969,
+            -0.0036269090577873975,
+            -0.0007505292667135954
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.2418878466772346,
+            -0.20780658168898788,
+            -0.04300215938373752
+          ],
+          "nominal_tip_before_mm": [
+            -0.006143865422350941,
+            0.1280591500635986,
+            -1.1035511868892844
+          ],
+          "orientation_reference_jump_deg": 0.019503474838531897,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.03793860298626724,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00036734548527804717,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.2246558193999628,
+            0.19879609032834866,
+            0.04150088921069948
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 18.079500000003215,
+          "event": "cad_terminal_set_entry",
+          "exact_held_rpy_command_deg": [
+            0.20564239080986493,
+            -0.1766680007762907,
+            -0.03655854143618255
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.06986824161877846,
+            0.09779164255942706,
+            -4.850631643676927
+          ],
+          "held_reference_before_tip_mm": [
+            -0.08408034760801507,
+            0.1335106379222369,
+            -4.8493977070516685
+          ],
+          "measured_rpy_deg": [
+            -0.007194660937380618,
+            0.018140786028905696,
+            0.003845991051086441
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.06981899095206733,
+            0.09785347198652818,
+            -4.850271643676927
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0035891368013050715,
+            -0.0030834382964621708,
+            -0.0006380669177881618
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.20564239080986493,
+            -0.1766680007762907,
+            -0.03655854143618255
+          ],
+          "nominal_tip_before_mm": [
+            -0.036131341641613184,
+            0.11787815764482859,
+            -4.127397664535714
+          ],
+          "orientation_reference_jump_deg": 0.012521336042111973,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.038462360639629004,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00036857632347568587,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            -0.2128370517472519,
+            0.19480878680520203,
+            0.040404532487260815
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        }
+      ],
+      "transport_allowed": false,
+      "transport_direction_quality": 0.9929395294934379,
+      "transport_distance_cap_mm": 2.0,
+      "transport_distance_mm": 0.0,
+      "transport_policy": "hybrid_posterior_residual_corridor_primary",
+      "transport_projected_quantiles_mm": {
+        "q10": 2.847189664013565,
+        "q50": 4.296557165133942,
+        "q90": 5.465464791990581
+      },
+      "transport_quantile": 0.2489409294240157,
+      "transport_raw_distance_mm": 3.447670119963993,
+      "transport_reverse_probability": 0.0,
+      "transport_target_xy_mm": [
+        -3.7215172523102393,
+        0.06964442190655694
+      ],
+      "true_direction_deg": 3.125984854996201,
+      "video_path": null,
+      "wear_proxy_mj": 33.038859127522315
+    },
+    "zero_shot": {
+      "active_time_budget_s": 130.0,
+      "actual_xy_path_mm": 7.651544547507007,
+      "aps_direction_angles_deg": [
+        3.75,
+        356.25
+      ],
+      "aps_set_size": 2,
+      "baseline_depth_mm": -0.06346583066750913,
+      "bottom_depth_error_mm": 0.12559542477541108,
+      "bottom_reached": true,
+      "budget_exhaustion_stage": null,
+      "cad_radial_boundaries_mm": {
+        "full_outer_support": 3.631197846482994,
+        "inner_opening_overlap_limit": 8.918802153517007,
+        "transition_sigma": 0.45
+      },
+      "candidate_attempts": 1,
+      "capture_direction_consistency_gate_enabled": true,
+      "capture_direction_gate_active_at_outcome": true,
+      "capture_direction_gate_retired_active_time_s": null,
+      "capture_direction_gate_retired_for_global_fallback": false,
+      "capture_direction_gate_retirement_reason": null,
+      "capture_handoff_used": true,
+      "capture_mode": "safe_downward_progress",
+      "capture_reverse_projection_tolerance_mm": 0.30000000000000004,
+      "capture_yaw_assist_aborted": false,
+      "capture_yaw_assist_amplitude_deg": 0.5,
+      "capture_yaw_assist_enabled": false,
+      "capture_yaw_assist_frequency_hz": 1.5,
+      "capture_yaw_assist_ramp_time_s": 0.25,
+      "capture_yaw_assist_soft_tau_z_limit_mnm": 10.0,
+      "capture_yaw_assist_used": false,
+      "circular_concentration": 0.9977966630827114,
+      "conditioned_on_ambiguous_top_contact": true,
+      "contact_xy_path_mm": 6.544128107326817,
+      "control_direction_deg": 1.3272027348649538,
+      "direct_attempt_records": null,
+      "direct_attempts_completed": 0,
+      "direct_max_attempts": 1,
+      "direct_successful_attempt": null,
+      "directed_shortcut_accepted": true,
+      "direction_confidence": 0.6458479762077332,
+      "direction_error_deg": 0.6240151450037956,
+      "direction_source": "three_seed_ensemble_plus_task_aware_grid",
+      "display_fast_forward_after_s": null,
+      "display_fast_forward_speed": 1.0,
+      "display_fast_forward_start_frame": null,
+      "ensemble_top1_span_deg": 7.5,
+      "entropy_grid_config": {
+        "action_padding_m": null,
+        "action_spacing_m": 0.00040305086527633215,
+        "belief_spacing_m": 0.00025,
+        "credible_radius_stop_m": 0.00030000000000000003,
+        "likelihood_floor": 0.01,
+        "low_lever_threshold_m": 0.00025,
+        "max_probes": 64,
+        "min_information_gain_nats": 0.005,
+        "quadrature_points": 81,
+        "radial_lookup_points": 256,
+        "support_centroid_scale": 0.75,
+        "torque_direction_bins": 8
+      },
+      "entropy_grid_credible_radius_mm": 5.727915103682431,
+      "entropy_grid_final_nats": 5.8305452433572516,
+      "entropy_grid_geometry_mm": {
+        "capture_radius": 0.30000000000000004,
+        "head_outer_radius": 8.25,
+        "probe_circumradius": 4.618802153517007,
+        "socket_top_apothem": 4.3
+      },
+      "entropy_grid_initial_nats": 5.856384270978886,
+      "entropy_grid_map_xy_mm": [
+        -1.6850617639919754,
+        -0.060477861897657706
+      ],
+      "entropy_grid_mean_xy_mm": [
+        -2.569981680988105,
+        -0.23269447700077484
+      ],
+      "entropy_grid_observations": [],
+      "entropy_grid_probe_count": 0,
+      "entropy_grid_used_spiral": false,
+      "event_xy_mm": [
+        -0.07238530915260705,
+        -0.09493158653698373
+      ],
+      "fallback_budget_extension_s": 0.0,
+      "fallback_physical_reset_used": false,
+      "fallback_skipped_reason": null,
+      "final_tilt_deg": 0.0006515272843018742,
+      "fingerprint_sha256": "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba",
+      "fingerprint_sha256_attempts": [
+        "b8db9c8b63c526faf93484259ea365df2d85426d553743533dfaa4b259a23eba"
+      ],
+      "first_shortcut_direction_quality": 0.995660303834786,
+      "first_shortcut_distance_cap_mm": 2.0,
+      "first_shortcut_distance_mm": 2.0,
+      "first_shortcut_executed": true,
+      "first_shortcut_quantile": 0.2493490455752179,
+      "first_shortcut_reverse_probability": 0.0,
+      "first_shortcut_target_xy_mm": [
+        -3.6855983135626738,
+        -0.26415388973040504
+      ],
+      "frame_count": 0,
+      "funnel_abort_reason": null,
+      "funnel_guard_enabled": true,
+      "funnel_injected_energy_mj": 0.041271062178328044,
+      "funnel_min_health": -2.926681978886446,
+      "funnel_peak_injected_power_w": 0.0019873927078515666,
+      "funnel_recovery_count": 0,
+      "funnel_recovery_reasons": [],
+      "funnel_recovery_transition_records": [],
+      "funnel_recovery_xy_rebases_mm": [],
+      "funnel_tip_rcc_used": true,
+      "global_outward_fallback_started_active_time_s": null,
+      "global_outward_fallback_used": false,
+      "hard_stop": false,
+      "hard_stop_reason": null,
+      "hybrid_budget_switch_active_time_s": null,
+      "hybrid_budget_switch_reason": null,
+      "hybrid_entry_fallback_feasible": true,
+      "hybrid_fallback_nominal_reserve_s": null,
+      "hybrid_guarded_motion_failure_reason": null,
+      "hybrid_probe_config": {
+        "capture_miss_inside_likelihood": 0.2,
+        "capture_miss_outside_likelihood": 0.995,
+        "capture_probability_reward_nats": 1.5,
+        "continuous_contact_path": true,
+        "coverage_capture_probability_reward_nats": 2.25,
+        "coverage_information_gain_weight": 0.05,
+        "fallback_candidate_contingency_s": 6.0,
+        "fallback_return_position_error_bound_m": 0.00025,
+        "fallback_transition_overhead_s": 1.15,
+        "fixed_contact_cost_nats": 0.08,
+        "information_gain_weight": 0.35,
+        "local_spiral_fallback_enabled": false,
+        "maximum_consecutive_noncontracting_updates": 2,
+        "maximum_learned_prior_weight": 0.75,
+        "maximum_residual_radius_ratio": 1.1,
+        "minimum_coverage_utility_nats": 0.0,
+        "minimum_credible_radius_reduction_fraction": 0.05,
+        "minimum_learned_prior_weight": 0.15,
+        "minimum_likelihood_temperature": 0.2,
+        "minimum_net_utility_nats": 0.05,
+        "posterior_kernel_bandwidth_m": 0.00035,
+        "posterior_sample_count": 4096,
+        "predictive_probability_reference": 0.15,
+        "residual_spiral_trigger_m": 0.0012,
+        "safety_probe_ceiling": 64,
+        "terminal_execution_reserve_s": 12.0,
+        "travel_cost_nats_per_m": 20.0
+      },
+      "hybrid_probe_gate_records": [
+        {
+          "entry_fallback_feasible": true,
+          "entry_fallback_reserve_s": 119.49916727008701,
+          "executed": true,
+          "measured_path_samples": 2579,
+          "miss_update_path_source": "measured_tip_xy_polyline",
+          "no_capture_probability_mass_soft_excluded": 0.01910113797952079,
+          "outcome": "arrived_at_task_aware_grid_anchor",
+          "remaining_active_budget_s": 124.20050000000049,
+          "residual_corridor_axial_interval_mm": [
+            2.0,
+            6.0
+          ],
+          "residual_corridor_direction_quality": 0.995660303834786,
+          "residual_corridor_duration_s": 42.979761159252455,
+          "residual_corridor_half_width_mm": 1.247470144906556,
+          "residual_corridor_lane_count": 11,
+          "residual_corridor_path_length_mm": 62.969641738878686,
+          "residual_corridor_path_speed_mm_s": 1.5,
+          "residual_corridor_reverse_probability": 0.0,
+          "residual_corridor_uses_true_center": false,
+          "residual_direction_eligible": true,
+          "residual_robust_capture_radius_mm": 0.15000000000000005,
+          "residual_schedule_feasible": true,
+          "residual_schedule_required_s": 61.7649273749343,
+          "residual_tracking_error_allowance_mm": 0.15,
+          "selected_primary_search_schedule": "posterior_residual_corridor",
+          "shortcut_duration_estimate_s": 1.2888888888888892,
+          "shortcut_endpoint_fallback_reserve_s": 120.24916727008701,
+          "stage": "posterior_shortcut_before_entropy_grid",
+          "transport_distance_mm": 2.0000000000000004
+        },
+        {
+          "credible_radius_reduction_fraction": -0.01078396675383076,
+          "entropy_reduction_nats": 0.02583902762163426,
+          "executed_probe_count": 0,
+          "frozen_spiral_radius_mm": 3.6911796852637435,
+          "optional_commit_duration_estimate_s": 1.29372356435193,
+          "post_commit_nominal_fallback_reserve_s": 121.14152499696273,
+          "post_entropy_commit": "not_applicable_primary_corridor_starts_at_first_shortcut",
+          "reason": "posterior_residual_corridor_selected_as_primary_schedule",
+          "remaining_active_budget_s": 122.91150000000121,
+          "stage": "post_probe_plan_selection",
+          "updated_plan_accepted": false,
+          "updated_spiral_radius_mm": 6.331233174960316
+        },
+        {
+          "active_time_end_s": 10.28650000000108,
+          "command_tracking_error_max_mm": 0.5050100503055744,
+          "command_tracking_error_p99_mm": 0.5048546812286406,
+          "conditional_geometric_contract": "ideal capture tube covers centers whose predicted-direction coordinates lie inside the declared corridor; tracking, contact sensing and terminal verification remain fallible",
+          "corridor_axial_interval_mm": [
+            2.0,
+            6.0
+          ],
+          "corridor_half_width_mm": 1.247470144906556,
+          "corridor_lane_count": 11,
+          "corridor_lane_spacing_mm": 0.3000000000000001,
+          "corridor_path_length_mm": 62.969641738878686,
+          "corridor_path_speed_mm_s": 1.5,
+          "corridor_plus_terminal_required_s": 60.47603848604541,
+          "executed": true,
+          "hard_wrench_limits_relaxed": false,
+          "nominal_controller_restore": "completed",
+          "offline_min_measured_center_distance_mm": 0.4967478362699724,
+          "offline_min_nominal_center_distance_mm": 0.36541390468659,
+          "offline_min_planned_nominal_center_distance_mm": 0.07077678192754806,
+          "offline_true_center_used_for_scoring_only": true,
+          "outcome": "sensor_capture_handoff",
+          "outer_servo_correction_max_mm": 0.3034563881860576,
+          "outer_servo_correction_p99_mm": 0.3033657113294668,
+          "outer_servo_enabled": true,
+          "planar_tracking_error_max_mm": 0.20155425911918814,
+          "planar_tracking_error_p50_mm": 0.1896441797271362,
+          "planar_tracking_error_p90_mm": 0.19879914099570978,
+          "planar_tracking_error_p99_mm": 0.20149380936235733,
+          "remaining_active_budget_s": 122.91150000000121,
+          "selected_primary_search_schedule": "posterior_residual_corridor",
+          "sensor_progress_candidates_during_corridor": 1,
+          "stage": "posterior_residual_corridor_coverage",
+          "uses_true_center_online": false
+        }
+      ],
+      "hybrid_residual_coverage_config": {
+        "angular_half_width_deg": 12.0,
+        "corridor_path_speed_m_s": 0.0015,
+        "enabled": true,
+        "lane_spacing_capture_fraction": 1.0,
+        "maximum_reverse_probability": 0.35,
+        "measured_tip_outer_servo_enabled": true,
+        "minimum_direction_quality": 0.1,
+        "outer_servo_abort_dwell_s": 0.15,
+        "outer_servo_abort_tracking_error_m": 0.0012,
+        "outer_servo_gain": 1.5,
+        "outer_servo_max_correction_m": 0.001,
+        "outer_servo_max_correction_speed_m_s": 0.002,
+        "tracking_error_allowance_m": 0.00015,
+        "transition_overhead_s": 1.0
+      },
+      "hybrid_spiral_fallback_reason": null,
+      "hybrid_terminal_execution_reserve_s": 17.49627732679296,
+      "initial_xy_mm": [
+        -5.685061763991976,
+        -0.3104778618976577
+      ],
+      "inner_wall_confirmed": true,
+      "insertion_command_bias_mm": [
+        0.0,
+        0.0
+      ],
+      "lateral_work_mj": 8.248000279119216,
+      "latest_plan_executed": false,
+      "latest_plan_update_index": 1,
+      "latest_planned_distance_mm": 0.0,
+      "latest_planned_target_xy_mm": [
+        -3.6855983135626738,
+        -0.26415388973040504
+      ],
+      "legacy_transport_gate": true,
+      "max_abs_tau_z_mnm": 7.996417141099427,
+      "max_filtered_force_n": 4.491119953962499,
+      "max_filtered_torque_mnm": 23.965821160649107,
+      "max_force_n": 7.729140357597484,
+      "max_raw_physical_force_n": 10.298497594583694,
+      "max_raw_physical_torque_mnm": 28.404814916808945,
+      "max_tilt_deg": 15.417752218272167,
+      "max_torque_mnm": 28.514487415197205,
+      "method": "hybrid",
+      "min_tip_z_mm": -4.878195080179077,
+      "offline_capture_scoring_snapshot": "pre_inactive_post_terminal_display",
+      "offline_capture_tags": [
+        "chamfer",
+        "wall"
+      ],
+      "offline_capture_validated": true,
+      "online_capture_sensor_only": true,
+      "oracle_endpoint_settle_records": null,
+      "oracle_transport_center_tolerance_mm": null,
+      "oracle_transport_final_center_residual_mm": null,
+      "oracle_transport_recovery_outcome": null,
+      "oracle_transport_recovery_records": null,
+      "oracle_transport_soft_escape_recovery_count": 0,
+      "oracle_transport_soft_escape_recovery_enabled": false,
+      "orientation_work_mj": 7.8291954564616555,
+      "post_capture_disturbance_persistent": false,
+      "post_capture_disturbance_reason": null,
+      "post_capture_disturbance_recovered": false,
+      "post_capture_lateral_disturbance_mm": 0.0,
+      "post_capture_tilt_axis_deg": 0.0,
+      "post_capture_tilt_disturbance_deg": 0.0,
+      "post_capture_tilt_duration_s": 0.0,
+      "post_release_requalification_records": [
+        {
+          "achieved_consecutive_samples": 100,
+          "active_time_end_s": 10.683000000001565,
+          "capture_release_entry_transition_event": "capture_release_entry",
+          "entry_transition_event": "post_release_requalification_entry",
+          "failure_action": null,
+          "offline_contact_tags_used": false,
+          "peak_measured_force_n": 0.1424112186842985,
+          "peak_measured_tau_xy_mnm": 0.49261890672034453,
+          "preexisting_terminal_reason": null,
+          "raw_hard_thresholds_changed": false,
+          "release_recovery_completed": false,
+          "requalified": true,
+          "required_consecutive_samples": 100,
+          "skipped_due_to_existing_terminal_outcome": false,
+          "soft_thresholds_changed": false,
+          "true_center_used": false
+        }
+      ],
+      "post_release_requalified": true,
+      "post_terminal_event_display_hard_stop_reason": null,
+      "post_terminal_event_display_new_hard_stop": false,
+      "posterior_model": "visual_x_soft_cad_x_conical_fingerprint_x_signed_ft_entropy_updates",
+      "posterior_radial_quantiles_mm": {
+        "q10": 2.9026673225780573,
+        "q50": 4.316774666061925,
+        "q95": 5.69601657304949
+      },
+      "predicted_direction_deg": 3.75,
+      "preprobe_route": "conditioned_ambiguous_top_contact_probe",
+      "random_search_path_budget_mm": null,
+      "random_search_seed": null,
+      "random_search_waypoints": null,
+      "result": "cad_bottom_verified",
+      "search_recovery_count": 0,
+      "sensor_progress_candidate_count": 1,
+      "simulator_reset_count": 0,
+      "spiral_max_radius_mm": 0.0,
+      "stage_max_filtered_force_n": {
+        "capture_force_release": 0.13760732920701474,
+        "capture_handoff": 2.8458107106333155,
+        "hybrid_entropy_probe": 3.390750221425001,
+        "insertion_handoff": 0.11937075262198384,
+        "post_release_requalification": 0.13111978683086076,
+        "probe": 4.491119953962499,
+        "progress_dwell": 0.321422419569079,
+        "residual_corridor": 4.146724385481912,
+        "residual_corridor_restore": 3.4310755344314385,
+        "upright_insertion": 0.10602808884168868
+      },
+      "stage_max_force_n": {
+        "capture_force_release": 0.16490627772870284,
+        "capture_handoff": 6.818777823443639,
+        "hybrid_entropy_probe": 6.401824538752034,
+        "insertion_handoff": 1.101741505974898,
+        "post_release_requalification": 0.1424112186842985,
+        "probe": 5.219894294407241,
+        "progress_dwell": 2.728479125090233,
+        "residual_corridor": 5.604413740975679,
+        "residual_corridor_restore": 7.729140357597484,
+        "upright_insertion": 0.1416813314405732
+      },
+      "stage_max_raw_physical_force_n": {
+        "capture_force_release": 0.0972059569306613,
+        "capture_handoff": 6.912695312753053,
+        "hybrid_entropy_probe": 6.496173092095589,
+        "insertion_handoff": 1.1519269653477942,
+        "post_release_requalification": 0.04653657234109793,
+        "probe": 5.242443196754537,
+        "progress_dwell": 2.765461118280009,
+        "residual_corridor": 5.7041471313537375,
+        "residual_corridor_restore": 7.859410087846073,
+        "settle": 10.298497594583694,
+        "terminal_hold": 3.8644805040392756,
+        "upright_insertion": 0.14167643056485368
+      },
+      "stage_max_raw_physical_torque_mnm": {
+        "capture_force_release": 0.7198315277942855,
+        "capture_handoff": 12.721907703882156,
+        "hybrid_entropy_probe": 6.587456602201619,
+        "insertion_handoff": 2.079629310314662,
+        "post_release_requalification": 0.3226955034739752,
+        "probe": 20.320042376456264,
+        "progress_dwell": 6.056167967939616,
+        "residual_corridor": 28.404814916808945,
+        "residual_corridor_restore": 6.590004870564235,
+        "settle": 1.8792747798217593,
+        "terminal_hold": 22.85706407613158,
+        "upright_insertion": 0.8221955845848229
+      },
+      "stage_max_torque_mnm": {
+        "capture_force_release": 0.8349043254321638,
+        "capture_handoff": 12.965822197191441,
+        "hybrid_entropy_probe": 6.247997013468976,
+        "insertion_handoff": 1.8434500239250102,
+        "post_release_requalification": 0.5990296897831459,
+        "probe": 20.077214929768655,
+        "progress_dwell": 6.150428375764075,
+        "residual_corridor": 28.514487415197205,
+        "residual_corridor_restore": 6.330931124430328,
+        "upright_insertion": 0.6625841064874972
+      },
+      "stage_time_s": {
+        "capture_force_release": 0.3465,
+        "capture_handoff": 0.15,
+        "hybrid_entropy_probe": 1.289,
+        "insertion_handoff": 1.1545,
+        "post_release_requalification": 0.05,
+        "probe": 5.7995,
+        "progress_dwell": 0.05,
+        "residual_corridor": 2.248,
+        "residual_corridor_restore": 0.75,
+        "upright_insertion": 0.1275
+      },
+      "state_probabilities": {
+        "double_overhang": 1.0,
+        "outer_partial": 1.2784903691276384e-10,
+        "supported_search": 1.1241798290873017e-11
+      },
+      "terminal_attempt_diagnostics": [
+        {
+          "actual_center_eccentricity_mm": 0.13221557809642465,
+          "actual_tip_xy_mm": [
+            -0.12140186438009729,
+            -0.052369327057049594
+          ],
+          "actual_tip_z_mm": -4.874404575224589,
+          "attempt": 1,
+          "bottom_reached": true,
+          "depth_band_entries": 1,
+          "depth_band_exits": 0,
+          "depth_band_samples": 107,
+          "funnel_abort_reason": null,
+          "gate_failure_counts": {
+            "force_axial": 107,
+            "force_lateral": 0,
+            "force_torque": 0,
+            "low_axial": 0,
+            "low_lateral": 0,
+            "low_torque": 0,
+            "out_of_depth_band": 148
+          },
+          "hard_stop": false,
+          "hold_command_xy_mm": [
+            -0.11534179229445526,
+            -0.06088091726805938
+          ],
+          "last": {
+            "depth_error_mm": 0.12559542477541108,
+            "force_seated": false,
+            "in_depth_band": true,
+            "lateral_force_n": 0.05433532903189173,
+            "low_wrench": true,
+            "low_wrench_depth_span_mm": 0.019349171837119705,
+            "signed_axial_force_n": -0.035827853725929414,
+            "tip_z_mm": -4.874404575224589,
+            "torque_xy_mnm": 0.07361225895196184
+          },
+          "max_consecutive_depth_band_samples": 107,
+          "max_force_dwell_samples": 0,
+          "max_low_wrench_dwell_samples": 100,
+          "nominal_actual_xy_error_mm": 0.010448523417370282,
+          "nominal_command_z_mm": -4.8507508679470135,
+          "required_dwell_samples": 100,
+          "target_down_force_n": 0.2,
+          "terminal_hold_command_z_mm": -4.8507508679470135,
+          "updates": 255,
+          "verified_mode": "cad_depth_low_wrench_dwell"
+        }
+      ],
+      "terminal_attempts": 1,
+      "terminal_axial_position_hold_used": true,
+      "terminal_entry_rebase_records": [
+        {
+          "active_time_s": 11.912000000003067,
+          "atomic_terminal_entry_enforced": true,
+          "attempt": 1,
+          "axial_admittance_disabled_for_dwell": true,
+          "configured_bumpless_terminal_entry_rebase": true,
+          "exact_just_used_rpy_command_deg": [
+            -0.0841340458669022,
+            -0.08829201012080154,
+            0.010983219392194076
+          ],
+          "measured_tip_xy_mm": [
+            -0.11534179229445526,
+            -0.06088091726805938
+          ],
+          "measured_tip_z_mm": -4.8507508679470135,
+          "orientation_reference_jump_deg": 0.002733619609648482,
+          "position_reference_jump_mm": 0.01994753588657133,
+          "post_rebase_measured_tip_error_mm": 0.00037134336027273097,
+          "previous_command_z_mm": -4.730911579190838,
+          "previous_hold_xy_mm": [
+            -0.10403606775795189,
+            -0.06876839313509515
+          ],
+          "raw_hard_thresholds_changed": false,
+          "released_lateral_command_error_mm": 0.013785197961885284,
+          "terminal_verifier_thresholds_changed": false,
+          "transition_event": "cad_terminal_set_entry"
+        }
+      ],
+      "terminal_outcome_hard_stop": false,
+      "terminal_rejection_count": 0,
+      "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+      "time_to_bottom_s": 11.965000000003132,
+      "time_to_inner_wall_s": 10.28650000000108,
+      "top_state": "double_overhang",
+      "total_active_time_s": 11.965000000003132,
+      "transition_telemetry_records": [
+        {
+          "active_time_s": 10.28650000000108,
+          "event": "capture_release_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.0724345635751946,
+            -0.09490380186924094,
+            -1.7060210987958104
+          ],
+          "held_reference_before_tip_mm": [
+            -0.08619427149682123,
+            -0.19972927918992595,
+            -1.755994342502188
+          ],
+          "measured_rpy_deg": [
+            0.08017247124993863,
+            0.14446520296262377,
+            -0.012155307325618772
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.07238530915260705,
+            -0.09493158653698373,
+            -1.7060210987958104
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -0.08619427149682123,
+            -0.19972927918992595,
+            0.3
+          ],
+          "orientation_reference_jump_deg": 0.16566705016248387,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.11694030675577574,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 5.6550737448862066e-05,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.08017247124995126,
+            0.1444652029626317,
+            -0.012155307325621575
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 10.633000000001504,
+          "event": "post_release_requalification_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.11641178227620813,
+            -0.07060851115395606,
+            -1.7060551000891224
+          ],
+          "held_reference_before_tip_mm": [
+            -0.11509853435747863,
+            -0.07024466960812946,
+            -1.7060210987958104
+          ],
+          "measured_rpy_deg": [
+            0.08523446976628572,
+            0.07848233453616679,
+            -0.010915001239144387
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.1163257646588938,
+            -0.07067290697131741,
+            -1.7060551000891224
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -0.07238530915260705,
+            -0.09493158653698373,
+            -1.7060210987958104
+          ],
+          "orientation_reference_jump_deg": 0.0661883759730714,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.0013631422722752552,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00010745162531143897,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.08523446976627651,
+            0.0784823345361588,
+            -0.010915001239148285
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 10.683000000001565,
+          "event": "insertion_handoff_entry",
+          "exact_held_rpy_command_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.11908290936995351,
+            -0.06725417588834179,
+            -1.706417489713305
+          ],
+          "held_reference_before_tip_mm": [
+            -0.1289129500943906,
+            -0.06369596915635359,
+            -1.7060551000891224
+          ],
+          "measured_rpy_deg": [
+            0.08515203653370483,
+            0.08936031060877363,
+            -0.011116112262335102
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.11902874677955623,
+            -0.06729323601780893,
+            -1.706057489713305
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            0.0,
+            0.0,
+            0.0
+          ],
+          "nominal_tip_before_mm": [
+            -0.1163257646588938,
+            -0.07067290697131741,
+            -1.7060551000891224
+          ],
+          "orientation_reference_jump_deg": 0.010880147256264846,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.010460490525370838,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00036614106559160333,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.08515203653369358,
+            0.08936031060878015,
+            -0.011116112262343972
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 11.837500000002976,
+          "event": "insertion_descent_entry",
+          "exact_held_rpy_command_deg": [
+            -0.08515203653369358,
+            -0.08936031060878015,
+            0.011116112262343972
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.1040865425597696,
+            -0.06868552665934863,
+            -4.731606996476101
+          ],
+          "held_reference_before_tip_mm": [
+            -0.10861126068605796,
+            -0.07065305352104226,
+            -4.705697489713304
+          ],
+          "measured_rpy_deg": [
+            -0.004834572310054773,
+            -0.003502001694137563,
+            0.00038514659293465347
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.10403606775795189,
+            -0.06876839313509515,
+            -4.731246996476101
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            -0.0014861834022914522,
+            -0.001559631640728032,
+            0.000194012758999218
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            -0.08515203653369358,
+            -0.08936031060878015,
+            0.011116112262343972
+          ],
+          "nominal_tip_before_mm": [
+            -0.07233114656220976,
+            -0.09497064666645087,
+            -1.705697489713305
+          ],
+          "orientation_reference_jump_deg": 0.0059820935453256995,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.02637511662088375,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.0003728465614980184,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.08031746422363609,
+            0.08585830891463346,
+            -0.010730965669412635
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        },
+        {
+          "active_time_s": 11.912000000003067,
+          "event": "cad_terminal_set_entry",
+          "exact_held_rpy_command_deg": [
+            -0.0841340458669022,
+            -0.08829201012080154,
+            0.010983219392194076
+          ],
+          "exact_held_rpy_used_as_nominal": true,
+          "held_reference_after_tip_mm": [
+            -0.11540982797349185,
+            -0.060820361198198745,
+            -4.851110867947013
+          ],
+          "held_reference_before_tip_mm": [
+            -0.12135155382914795,
+            -0.052424842026658085,
+            -4.868202249975468
+          ],
+          "measured_rpy_deg": [
+            -0.001856151419665761,
+            -0.0005287570935874915,
+            0.0002762836326527065
+          ],
+          "measured_rpy_nominal_fallback": false,
+          "measured_tip_mm": [
+            -0.11534179229445526,
+            -0.06088091726805938,
+            -4.8507508679470135
+          ],
+          "nominal_rpy_after_rebase_rad": [
+            -0.00146841611340137,
+            -0.0015409862798121433,
+            0.00019169334086267703
+          ],
+          "nominal_rpy_passed_to_rebase_deg": [
+            -0.0841340458669022,
+            -0.08829201012080154,
+            0.010983219392194076
+          ],
+          "nominal_tip_before_mm": [
+            -0.10403606775795189,
+            -0.06876839313509515,
+            -4.730911579190838
+          ],
+          "orientation_reference_jump_deg": 0.002733619609648482,
+          "physics_steps_advanced": 0,
+          "position_reference_jump_mm": 0.01994753588657133,
+          "post_rebase_measured_rpy_error_deg": 0.0,
+          "post_rebase_measured_tip_error_mm": 0.00037134336027273097,
+          "raw_hard_thresholds_changed": false,
+          "requested_rotational_offset_deg": [
+            0.08227789444723203,
+            0.08776325302722508,
+            -0.010706935759534181
+          ],
+          "rotational_offset_limit_deg": [
+            5.729577951308233,
+            5.729577951308233,
+            4.583662361046586
+          ],
+          "soft_thresholds_changed": false
+        }
+      ],
+      "transport_allowed": false,
+      "transport_direction_quality": 0.995660303834786,
+      "transport_distance_cap_mm": 2.0,
+      "transport_distance_mm": 0.0,
+      "transport_policy": "hybrid_posterior_residual_corridor_primary",
+      "transport_projected_quantiles_mm": {
+        "q10": 2.9001360661257407,
+        "q50": 4.300508968185251,
+        "q90": 5.464999782552464
+      },
+      "transport_quantile": 0.2493490455752179,
+      "transport_raw_distance_mm": 3.46978773378169,
+      "transport_reverse_probability": 0.0,
+      "transport_target_xy_mm": [
+        -3.6855983135626738,
+        -0.26415388973040504
+      ],
+      "true_direction_deg": 3.125984854996201,
+      "video_path": null,
+      "wear_proxy_mj": 16.07719573558087
+    }
+  },
+  "phase": "development",
+  "run_id": "2cb77b51a0fe44d6b6d1ac63bb256527",
+  "scale_contract": {
+    "active_time_budget_s": 130.0,
+    "baseline_max_radius_m": 0.0057,
+    "bit_radius_m": 0.004618802153517006,
+    "capture_radius_m": 0.00030000000000000003,
+    "commissioning": {
+      "admittance": {
+        "damping": [
+          155.88457268119896,
+          155.88457268119896,
+          82.27241335952168,
+          2.7,
+          2.7,
+          1.875
+        ],
+        "dt_s": 0.002,
+        "hard_wrench": [
+          20.0,
+          20.0,
+          20.0,
+          0.06,
+          0.06,
+          0.06
+        ],
+        "max_acceleration": [
+          0.15000000000000002,
+          0.15000000000000002,
+          0.09,
+          2.25,
+          2.25,
+          1.6875
+        ],
+        "max_offset": [
+          0.002,
+          0.002,
+          0.003,
+          0.1,
+          0.1,
+          0.08
+        ],
+        "max_velocity": [
+          0.008660254037844387,
+          0.008660254037844387,
+          0.005196152422706633,
+          0.2625,
+          0.2625,
+          0.1875
+        ],
+        "stiffness": [
+          1650.0,
+          1650.0,
+          0.0,
+          10.125,
+          10.125,
+          5.625
+        ],
+        "virtual_mass": [
+          4.0,
+          4.0,
+          2.0,
+          0.08,
+          0.08,
+          0.05
+        ],
+        "wrench_filter_hz": 25.0
+      },
+      "bit_radius_m": 0.004618802153517006,
+      "bit_radius_scale": 1.3333333333333333,
+      "claim_boundary": "v2 geometry/dynamics-scaled commissioning start only; independent size validation required",
+      "commissioning_version": "v2_sqrt_time_separate_rotation_lever_bumpless_terminal_hold_oracle_soft_escape_resume",
+      "funnel_guard": {
+        "axial_position_hold_in_terminal_set": true,
+        "bumpless_terminal_entry_rebase": true,
+        "cad_bottom_overshoot_margin_m": 0.00025,
+        "capture_force_release_s": 0.3464101615137754,
+        "deep_tilt_damping_nm_s_rad": 0.375,
+        "deep_tilt_stiffness_nm_rad": 1.6875,
+        "descent_speed_m_s": 0.00030310889132455357,
+        "enabled": true,
+        "force_floor_n": 0.2,
+        "hold_terminal_set_on_retry": true,
+        "injected_power_limit_w": 0.5,
+        "insertion_handoff_s": 1.1547005383792515,
+        "max_recoveries": 3,
+        "max_tilt_deg": 0.75,
+        "min_window_progress_m": 2e-05,
+        "moment_lever_m": 0.003,
+        "no_progress_energy_j": 0.0015,
+        "planar_damping_n_s_m": 86.60254037844388,
+        "planar_stiffness_n_m": 1125.0,
+        "power_dwell_s": 0.01,
+        "recovery_force_n": 0.2,
+        "recovery_retouch_s": 0.2309401076758503,
+        "recovery_retract_m": 0.00035,
+        "recovery_retract_s": 0.1732050807568877,
+        "recovery_unload_s": 0.11547005383792515,
+        "retry_on_terminal_rejection": true,
+        "shallow_tilt_damping_nm_s_rad": 0.2625,
+        "shallow_tilt_stiffness_nm_rad": 1.0125000000000002,
+        "tilt_dwell_s": 0.02,
+        "window_s": 0.15,
+        "yaw_damping_nm_s_rad": 0.1875,
+        "yaw_stiffness_nm_rad": 0.84375
+      },
+      "oracle_center_tolerance_capture_fraction": 0.25,
+      "oracle_transport_soft_escape_recovery": true,
+      "response_time_scale": 1.1547005383792515,
+      "size": "M10"
+    },
+    "fallback_budget_extension_s": 0.0,
+    "max_transport_m": 0.002,
+    "model_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/models/allen_m10_source.xml",
+    "radius_min_m": 0.0012000000000000001,
+    "raw_hard_wrench_thresholds_unchanged_from_M8": true,
+    "size": "m10",
+    "spec_path": "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/configs/allen_m10_source.json",
+    "spiral_pitch_m": 0.00048000000000000007,
+    "visual_bound_m": 0.006,
+    "visual_sigma_m": 0.0024513289294340775,
+    "xy_speed_m_s": 0.00225
+  },
+  "task": {
+    "angle_rad": 3.1961513816769545,
+    "baseline_phase_rad": 3.1339974872091987,
+    "contact_timeconst_s": 0.057597063239663834,
+    "friction_slide": 0.910951828584075,
+    "pose_id": "m10_s3test_005",
+    "posterior_seed": 20260941005,
+    "radius_m": 0.005693533504172264,
+    "sensor_delay_s": 0.00295875165052712,
+    "sensor_noise_seed": 202609410005,
+    "size": "m10",
+    "target_down_force_n": 3.40248086117208,
+    "x_m": -0.0056850617639919755,
+    "y_m": -0.0003104778618976577
+  },
+  "task_contract_sha256": "4ce62d410bc802ebe45d840dafeffed9837694360321adfc3f833bcb4b5d5b7f",
+  "worker_completion_execution_bundle_sha256": "b10befd13b3ecc17f87fa22591135253a74e4c9532fa03286e0e4de3901308f3",
+  "worker_elapsed_s": 184.996849745512,
+  "worker_init_execution_bundle_sha256": "b10befd13b3ecc17f87fa22591135253a74e4c9532fa03286e0e4de3901308f3"
+}

@@ -1,0 +1,49 @@
+wall_time,event,detail
+2026-07-24 22:23:34.450,PAYLOAD_METROLOGY_DISCLOSED_INCOMPLETE,Complete-tool mass/CoM/inertia and matching LoadData are absent. The direct-contact 15 degree lane therefore uses an upright-start WORLD-rotated force baseline; torque/CoM compensation remains unqualified experimental commissioning.
+2026-07-24 22:23:34.452,CONICAL_QUALIFICATION_BOUNDARY,The stored SN001349 qualification covers fixed-orientation relative binary events.  It supplies identity/range/unit/hard-limit evidence only; it does not certify this orientation-changing cone.
+2026-07-24 22:23:34.454,KST_CLIENT_PATH_ADD_BEGIN_NO_MOTION,KST class is not loaded; adding the MATLAB client directory once.
+2026-07-24 22:23:34.512,KST_CLIENT_READY_NO_MOTION,KST class is available; no controller connection has been attempted.
+2026-07-24 22:23:34.514,ROOT_STATUS_BEGIN_NO_MOTION,Running bounded read-only PC/ROS/Bota status checks (timeout 30 s).
+2026-07-24 22:23:45.447,ROOT_STATUS_PASS_NO_MOTION,Root preparation status passed.
+2026-07-24 22:23:45.448,COMMAND_OWNER_CHECK_BEGIN_NO_MOTION,Checking ROS nodes and OS processes for a second command owner.
+2026-07-24 22:23:45.993,COMMAND_OWNER_CHECK_PASS_NO_MOTION,No responsive ROS/OS robot command owner conflict found.
+2026-07-24 22:23:46.002,MATLAB_ROS_RESTART_BEGIN_NO_MOTION,Restarting only this MATLAB ROS global node.
+2026-07-24 22:23:47.496,MATLAB_ROS_RESTART_PASS_NO_MOTION,MATLAB ROS global node is initialized; no robot command sent.
+2026-07-24 22:23:48.120,BOTA_DIAGNOSTIC_OK,wait 0.291 s; attempts 1; source receive
+2026-07-24 22:23:48.427,BOTA_WRENCH_RX_OK,frame bota_ft_frame; wait 0.239 s; attempts 1
+2026-07-24 22:23:48.488,CONNECTING_KST,192.168.1.147:30001; tip TCP [0 0 +92.0] mm; assembled uncertainty +/-4.0 mm
+2026-07-24 22:23:50.057,CONNECTED_KST_NO_MOTION_YET,Capturing fresh stationary task-local near-hole start.
+2026-07-24 22:23:52.551,TASK_LOCAL_MANUAL_START_CAPTURED,xyz [472.763 1.875 296.292] mm; translation span 0.000 mm; orientation span 0.000000 rad; joint span 0.000000 rad
+2026-07-24 22:23:54.979,START_UNLOADED_BASELINE_COMPLETE,sustained/average receive 66.6/62.7 Hz; p95/max gap 0.0250/0.0451 s; max force std 0.0232 N; max torque std 0.00054 Nm
+2026-07-24 22:23:54.980,DATA_DERIVED_CONTACT_POLICY,touchdown 2.00 N for 3 consecutive fresh samples; contact target 3.00 N; capture requires at least 0.25 mm total and 0.04 mm recent downward progress inside the 8.0 N soft envelope
+2026-07-24 22:23:54.981,DASHBOARD_INITIALIZING_NO_MOTION,Baseline is complete.  Creating the visualization before the first robot command; no blocking full-render drawnow is used.
+2026-07-24 22:23:56.777,DASHBOARD_READY_NO_MOTION,Visualization objects created; first robot command still pending.
+2026-07-24 22:24:08.206,TOUCHDOWN_EVENT_CONFIRMED,segment 11; surface candidate Z 295.369 mm; dFmax 4.736 N; confirmation-window median WORLD* Fz 4.619 N; provisional normal sign +1
+2026-07-24 22:24:08.209,FRESH_SURFACE_CONTACT,initial surface tip-TCP WORLD Z 295.369 mm; contact WORLD* Fz sign +1
+2026-07-24 22:24:08.785,DIRECTSERVO_CARTESIAN_STARTED,CONTACT_CONE; KST startup includes its internal 0.5 s settle
+2026-07-24 22:24:08.786,DIRECTSERVO_COMPATIBILITY_PATH,CONTACT_CONE uses DcSeCar_ sendEEfPositionf at 40.0 Hz; no synchronous KST state query occurs inside the command loop; measured state is checked immediately before start and after stop.
+2026-07-24 22:24:08.786,DIRECTSERVO_UI_WRITES_SUSPENDED,MATLAB graphics mutation is suspended only inside the DirectServo stream; wrench samples and conical trace remain recorded; and dashboard updates resume after the stream.
+2026-07-24 22:24:08.787,DIRECTSERVO_CLOCK_POLICY,isolated lateness > 0.120 s rebases the remaining schedule once; a single stall > 0.500 s or >8 consecutive late ticks stops
+2026-07-24 22:24:08.788,CONICAL_FORCE_FOLLOWING_POLICY,hex-edge support feedforward 1.035..1.195 mm at 15 deg; residual WORLD +Z/-Z limits +0.75/-0.40 mm and 1.25/0.40 mm/s; cone phase holds at 8.0 N and resumes <= 5.5 N for 3 fresh samples; 20 N / 0.75 Nm hard guards unchanged
+2026-07-24 22:24:23.225,DIRECTSERVO_CARTESIAN_STOPPED,CONTACT_CONE; KST stop includes its internal 1.0 s settle; max loop lateness 0.0032 s; maximum command gap 0.0277 s; clock resynchronizations 0; force-relief episodes/ticks 0/0; force-relief wall time 0.000 s; maximum residual +Z relief 0.105 mm
+2026-07-24 22:24:23.239,DIRECTSERVO_POST_STOP_FEEDBACK,CONTACT_CONE measured after stop; tip error 0.075 mm; orientation error 0.009 deg; minimum joint margin 14.67 deg
+2026-07-24 22:24:23.280,SHORTCUT_POLICY_DISCLOSURE,TRANSPARENT_NEGATED_TOOL_AXIS_FORCE_AND_COMMANDED_DOWNWARD_PROGRESS_PHASE_HEURISTIC_NOT_LEARNED.  The simulation PyTorch ensemble is not loaded by this MATLAB run; this bounded heuristic is followed by a finite sensor-updated entropy grid.
+2026-07-24 22:24:28.044,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,SHORTCUT_CONTACT_TRANSPORT_006 along 0.025014/0.080000 mm; endpoint error 0.068334 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:28.722,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,SHORTCUT_CONTACT_TRANSPORT_007 along 0.005605/0.060000 mm; endpoint error 0.065258 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:29.590,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,SHORTCUT_CONTACT_TRANSPORT; steps 8; depth 0.068 mm; normal 3.677 N; XY remainder 0.021 mm
+2026-07-24 22:24:29.594,SHORTCUT_ENDPOINT_NEGATIVE_CAPTURE_EVIDENCE,No downward-progress capture cue at the force-held shortcut endpoint; posterior updated and local origin marked tested.
+2026-07-24 22:24:39.356,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_013 along 0.018325/0.080000 mm; endpoint error 0.075422 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:41.257,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_016 along 0.003451/0.070857 mm; endpoint error 0.087763 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:42.009,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_017 along -0.000686/0.060000 mm; endpoint error 0.082036 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:43.204,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_019 along 0.027410/0.080000 mm; endpoint error 0.069845 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:43.934,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_020 along 0.000075/0.064696 mm; endpoint error 0.081720 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:45.115,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_022 along 0.017879/0.080000 mm; endpoint error 0.070406 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:45.682,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_023 along 0.018785/0.080000 mm; endpoint error 0.099776 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:46.269,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_024 along -0.002198/0.060000 mm; endpoint error 0.075847 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:47.622,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_026 along 0.026119/0.080000 mm; endpoint error 0.060585 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 22:24:48.472,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_01; steps 27; depth 0.017 mm; normal 3.268 N; XY remainder 0.074 mm
+2026-07-24 22:25:02.807,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_02; steps 19; depth 0.148 mm; normal 3.715 N; XY remainder 0.091 mm
+2026-07-24 22:25:09.401,SURFACE_Z_CORRECTION_QUANTIZED_DURING_XY,BAYES_GRID_03; clipped Z correction is below 0.060 mm and is suppressed while actionable XY transport continues.
+2026-07-24 22:25:15.491,EXCEPTION_NO_BLIND_RETURN,M12Demo:SurfaceZCorrectionQuantized: BAYES_GRID_03 reached the surface Z bound with a sub-resolution correction and normal force 0.000 N outside the bounded continuation band.
+2026-07-24 22:25:15.766,KST_END_REQUEST,Sending end through active KST object.
+2026-07-24 22:25:15.792,KST_END_WRITTEN,KST_OBJECT_NET_TURNOFFSERVER; SmartPAD Selected remains human-observed.

@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "record": "m10_fixed_demo_installation_v1",
+  "status": "OPERATOR_REPORTED_M10_INSTALLED_FIXED_DEMO_PILOT",
+  "size": "m10",
+  "physical_tool_instance_id": "PROVISIONAL_CURRENT_M10_PRINT_OPERATOR_INSTALLED",
+  "fixture_instance_id": "PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE",
+  "installation_session_id": "PROVISIONAL_CURRENT_M10_MOUNT_OPERATOR_INSTALLED",
+  "operator_report": {
+    "reported_local": "2026-07-30T04:09:49+08:00",
+    "statement": "The M10 peg is installed for the requested final fixed demo.",
+    "independently_verified_by_software": false
+  },
+  "active_tcp": {
+    "translation_mm": [
+      0.0,
+      0.0,
+      92.0
+    ],
+    "status": "PROVISIONAL_OLD_KERNEL_COMPATIBILITY_AXIAL_TCP",
+    "standard_uncertainty_mm": 4.0
+  },
+  "printed_cad": {
+    "m10_integrated_peg_step_sha256": "17381968212daa2b7758dcf3795df32b3a4e687b42c482d3550111e03ae8daa2",
+    "socket_base_hardware_easy_v2_step_sha256": "f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f",
+    "geometry_profile": "hardware_easy_v2",
+    "socket_depth_source": "allen_m10_hardware_easy_v2.json",
+    "socket_depth_mm": 5.0
+  },
+  "conical_phase_pose_tracking_qualification": {
+    "status": "PENDING_INDEPENDENT_MEASURED_POSE_TRACE",
+    "qualified_for_training_candidates": false,
+    "measured_pose_source": "",
+    "maximum_observed_phase_error_deg": null,
+    "maximum_observed_tip_xy_tracking_error_m": null,
+    "maximum_timestamp_alignment_error_s": null,
+    "phase_error_acceptance_deg": 1.0,
+    "tip_xy_tracking_error_acceptance_m": 0.0002,
+    "timestamp_alignment_error_acceptance_s": 0.01,
+    "operator": null,
+    "measured_utc": null,
+    "evidence_path": null,
+    "evidence_sha256": null,
+    "claim_boundary": "Command-propagated DirectServo pose is diagnostic only; independent hard state, force, torque, workspace, tracking and progress guards remain authoritative."
+  },
+  "authority": "M10_FIXED_DEMO_OPERATOR_REQUEST_PLUS_HASH_PINNED_PILOT_ONLY",
+  "not_authority_for": [
+    "general M10 full-loop promotion",
+    "unseen M10 positions",
+    "payload metrology",
+    "absolute wrench metrology",
+    "as-built fixture metrology",
+    "capture declaration",
+    "insertion completion",
+    "terminal success"
+  ]
+}

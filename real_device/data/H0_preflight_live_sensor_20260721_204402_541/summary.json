@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "experiment": "m8_contact_posterior_real_bridge_v1",
+  "stage": "H0",
+  "mode": "live_sensor",
+  "motion_commanded": false,
+  "kst_opened": false,
+  "success": true,
+  "ready_for_motion": false,
+  "claim_endpoint": "geometric_engagement_only",
+  "config_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/unscrewing_real_v1.json",
+  "config_sha256": "5e4521c32a706edfde0ff0b64680356567c7b215f7654a34f9e933429e96ce6f",
+  "run_directory": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/H0_preflight_live_sensor_20260721_204402_541",
+  "hardware_identity": "iiwa14R820 + BFT-SENS-CAT2-B4/SN001349",
+  "live_sensor_preflight_run": "/home/ubuntu20/robot_ws/test_real_device/data/kst_bota_guarded_z_down50_20260721_204402_756",
+  "stage_readiness": {
+    "H0_STATIC": true,
+    "H0_LIVE_SENSOR": true,
+    "H1_GUARDED_TOUCHDOWN": false,
+    "H2_CONICAL_SHADOW": false,
+    "H3_CLASSICAL_SEARCH": false,
+    "H4_POSTERIOR_SHADOW": false,
+    "H5_CAPPED_POSTERIOR": false,
+    "H6_FIRST_TURN_COUPLING": false,
+    "declared_blocker_count": 10
+  },
+  "motion_blockers": [
+    "SN001349 calibration certificate / calibration id",
+    "T_sensor_measurement_origin_to_blue_sensor_plane",
+    "sensor measurement origin to M8 tip transform",
+    "measured M8 tool mass / CoM / inertia",
+    "fixture-to-WORLD transform",
+    "recorded and reviewed M8 clearance approach pose",
+    "measured fixture geometry / visual prior / depth datum",
+    "absolute task-frame wrench metrology qualification",
+    "commissioned task-frame force and torque limits",
+    "portable frozen ONNX bundle and MATLAB parity vectors"
+  ],
+  "notes": [
+    "WORLD down is -Z.",
+    "The display sign map [X,-Y,-Z] is not a calibrated wrench transform.",
+    "The hardware-easy socket geometry is a declared engineering bias.",
+    "Learning remains disabled until the classical real loop and shadow gate close.",
+    "Normal and exceptional hardware paths must request KST end; SmartPAD Selected remains human-observed."
+  ],
+  "error": ""
+}

@@ -1,0 +1,243 @@
+{
+  "claim_boundary": "Frozen simulation-only M8 complete-loop audit conditioned on the declared ambiguous top-contact annulus. Strict success requires sensor-only handoff, offline-validated capture, CAD-bottom terminal verification, no hard stop, and completion within the shared 130 s active budget. It does not establish hardware transfer, passivity, motor coupling, threaded unscrewing, extraction, or universal superiority. Oracle is an upper-bound diagnostic; direct_first is not a physically reset retry baseline.",
+  "design": {
+    "active_time_budget_s": 130.0,
+    "budget_is_hard_wall_clock_of_active_controller": true,
+    "conditioned_on_ambiguous_top_contact": true,
+    "continue_to_cad_bottom": true,
+    "direct_retry_excluded_from_strict_table": true,
+    "direct_retry_reason": "historical retry restarts the simulator and excludes reset motion; direct_first is retained only as a mechanism diagnostic",
+    "offline_capture_scoring_uses_mujoco_geometry": true,
+    "online_true_center_or_contact_tags": false,
+    "poses": 2,
+    "source_manifest": "outputs/current/evaluations/m8_fresh_24_pabc_direction_gate/manifest.json",
+    "source_seed": 20260723
+  },
+  "experiment": "M8_strict_24_pose_complete_closed_loop",
+  "fingerprint_match_rate": 1.0,
+  "methods": {
+    "direct_first": {
+      "actual_path_success_median_mm": 5.575558177911459,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 5.39149582925203,
+      "failure_categories": {
+        "cad_bottom_verified": 1,
+        "search_radius_exhausted": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stops": 0,
+      "max_force_p90_n": 7.2887525250620175,
+      "max_torque_p90_mnm": 18.63055013836232,
+      "offline_capture_successes": 1,
+      "sensor_handoff_count": 1,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.5,
+      "strict_bottom_successes": 1,
+      "time_to_bottom_success_median_s": 8.857499999999334,
+      "total_active_time_all_median_s": 8.416499999998816,
+      "trials": 2,
+      "wear_success_median_mj": 11.711412880196795
+    },
+    "entropy_grid": {
+      "actual_path_success_median_mm": 4.6387146144224385,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 0.6600739165063956,
+      "failure_categories": {
+        "cad_bottom_verified": 1,
+        "search_radius_exhausted": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stops": 0,
+      "max_force_p90_n": 8.187959500778392,
+      "max_torque_p90_mnm": 6.747418804278609,
+      "offline_capture_successes": 1,
+      "sensor_handoff_count": 1,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.5,
+      "strict_bottom_successes": 1,
+      "time_to_bottom_success_median_s": 9.206999999999761,
+      "total_active_time_all_median_s": 18.517749999990126,
+      "trials": 2,
+      "wear_success_median_mj": 0.3411530679017428
+    },
+    "oracle": {
+      "actual_path_success_median_mm": 4.20444515254637,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 4.00930843755031,
+      "failure_categories": {
+        "cad_bottom_verified": 2
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stops": 0,
+      "max_force_p90_n": 7.882621273063338,
+      "max_torque_p90_mnm": 19.049994981281113,
+      "offline_capture_successes": 2,
+      "sensor_handoff_count": 2,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 1.0,
+      "strict_bottom_successes": 2,
+      "time_to_bottom_success_median_s": 4.022750000000053,
+      "total_active_time_all_median_s": 4.022750000000053,
+      "trials": 2,
+      "wear_success_median_mj": 6.779930666497185
+    },
+    "outward": {
+      "actual_path_success_median_mm": 65.45659092225631,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 65.2601675397212,
+      "failure_categories": {
+        "cad_bottom_verified": 1,
+        "capture_without_bottom": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stops": 0,
+      "max_force_p90_n": 6.755686408714702,
+      "max_torque_p90_mnm": 20.543446940634183,
+      "offline_capture_successes": 2,
+      "sensor_handoff_count": 2,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.5,
+      "strict_bottom_successes": 1,
+      "time_to_bottom_success_median_s": 32.040999999970964,
+      "total_active_time_all_median_s": 54.014500000075884,
+      "trials": 2,
+      "wear_success_median_mj": 114.73875455167244
+    },
+    "proposed": {
+      "actual_path_success_median_mm": 5.898166273271092,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 5.679588783656903,
+      "failure_categories": {
+        "cad_bottom_verified": 1,
+        "search_radius_exhausted": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 1,
+      "hard_stops": 0,
+      "max_force_p90_n": 10.775261718975173,
+      "max_torque_p90_mnm": 37.8013280037625,
+      "offline_capture_successes": 1,
+      "sensor_handoff_count": 1,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.5,
+      "strict_bottom_successes": 1,
+      "time_to_bottom_success_median_s": 9.342999999999927,
+      "total_active_time_all_median_s": 58.89425000016786,
+      "trials": 2,
+      "wear_success_median_mj": 12.620516093473046
+    },
+    "proposed_plus": {
+      "actual_path_success_median_mm": 5.837488831733004,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": 3.638132631134485,
+      "failure_categories": {
+        "cad_bottom_verified": 1,
+        "search_radius_exhausted": 1
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 1,
+      "hard_stops": 0,
+      "max_force_p90_n": 10.898285111008963,
+      "max_torque_p90_mnm": 38.08265578955964,
+      "offline_capture_successes": 1,
+      "sensor_handoff_count": 1,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.5,
+      "strict_bottom_successes": 1,
+      "time_to_bottom_success_median_s": 9.613000000000257,
+      "total_active_time_all_median_s": 58.55850000016577,
+      "trials": 2,
+      "wear_success_median_mj": 7.347691075665556
+    },
+    "random": {
+      "actual_path_success_median_mm": null,
+      "budget_contract_violations": 0,
+      "contact_path_success_median_mm": null,
+      "failure_categories": {
+        "search_radius_exhausted": 2
+      },
+      "fallback_budget_extension_nonzero": 0,
+      "funnel_safe_aborts": 0,
+      "global_outward_fallback_count": 0,
+      "hard_stops": 0,
+      "max_force_p90_n": 10.274173024408967,
+      "max_torque_p90_mnm": 21.91270069666126,
+      "offline_capture_successes": 0,
+      "sensor_handoff_count": 0,
+      "sensor_handoff_false_positive_count": 0,
+      "strict_bottom_success_rate": 0.0,
+      "strict_bottom_successes": 0,
+      "time_to_bottom_success_median_s": null,
+      "total_active_time_all_median_s": 75.67700000017932,
+      "trials": 2,
+      "wear_success_median_mj": null
+    }
+  },
+  "paired": {
+    "proposed_vs_direct_first": {
+      "both_failed": 1,
+      "both_success": 1,
+      "common_success_left_minus_right_path_median_mm": 0.32260809535963286,
+      "common_success_left_minus_right_time_median_s": 0.48550000000059335,
+      "left_only_success": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "right_only_success": 0
+    },
+    "proposed_vs_entropy_grid": {
+      "both_failed": 1,
+      "both_success": 1,
+      "common_success_left_minus_right_path_median_mm": 1.2594516588486533,
+      "common_success_left_minus_right_time_median_s": 0.1360000000001662,
+      "left_only_success": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "right_only_success": 0
+    },
+    "proposed_vs_oracle": {
+      "both_failed": 0,
+      "both_success": 1,
+      "common_success_left_minus_right_path_median_mm": 2.29525125189208,
+      "common_success_left_minus_right_time_median_s": 6.3279999999997525,
+      "left_only_success": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "right_only_success": 1
+    },
+    "proposed_vs_outward": {
+      "both_failed": 1,
+      "both_success": 1,
+      "common_success_left_minus_right_path_median_mm": -59.558424648985216,
+      "common_success_left_minus_right_time_median_s": -22.69799999997104,
+      "left_only_success": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "right_only_success": 0
+    },
+    "proposed_vs_proposed_plus": {
+      "both_failed": 1,
+      "both_success": 1,
+      "common_success_left_minus_right_path_median_mm": 0.06067744153808796,
+      "common_success_left_minus_right_time_median_s": -0.27000000000033,
+      "left_only_success": 0,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "right_only_success": 0
+    },
+    "proposed_vs_random": {
+      "both_failed": 1,
+      "both_success": 0,
+      "common_success_left_minus_right_path_median_mm": null,
+      "common_success_left_minus_right_time_median_s": null,
+      "left_only_success": 1,
+      "mcnemar_exact_two_sided_p": 1.0,
+      "right_only_success": 0
+    }
+  },
+  "updated_utc": "2026-07-15T09:18:32.082049+00:00"
+}

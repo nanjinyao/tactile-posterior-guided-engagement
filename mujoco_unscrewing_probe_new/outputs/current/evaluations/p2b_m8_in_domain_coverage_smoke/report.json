@@ -1,0 +1,89 @@
+{
+  "claim_boundary": "Nominal-dynamics M8 simulation inside a declared 4.90 mm visual acceptance set. Search failure means coverage exhausted or a safety stop; the derived time budget is only a program guard. Capture still uses privileged MuJoCo tags, and no nuisance or hardware result is included.",
+  "design": {
+    "baseline_coverage_path_mm": 169.6541494106597,
+    "baseline_coverage_radius_mm": 4.645303872079853,
+    "baseline_nominal_coverage_time_s": 75.40184418251543,
+    "deployment_acceptance_radius_mm": 4.895303872079853,
+    "effective_capture_radius_mm": 0.25,
+    "initial_poses": 1,
+    "methods": [
+      "learned",
+      "baseline",
+      "oracle"
+    ],
+    "physical_sectors_per_radius": 6,
+    "posterior_coverage": 0.99,
+    "program_guard_budget_s": 118.90276627377314,
+    "program_guard_factor": 1.5,
+    "radial_levels_mm": [
+      3.403719
+    ],
+    "spiral_pitch_mm_per_rev": 0.4,
+    "target_down_force_n": 3.0,
+    "visual_prior_sigma_mm": 2.0,
+    "xy_speed_mm_s": 2.25
+  },
+  "methods": {
+    "baseline": {
+      "all_trial_active_time_median_s": 40.61050000001188,
+      "contact_path_median_mm": 87.39118502283802,
+      "max_force_p90_n": 7.180845581217297,
+      "max_torque_p90_mnm": 19.23898186063657,
+      "success_rate": 1.0,
+      "success_time_median_s": 40.61050000001188,
+      "success_time_p90_s": 40.61050000001188,
+      "successes": 1,
+      "termination_counts": {
+        "centered_inserted_gate_confirmed": 1
+      },
+      "trials": 1,
+      "wear_proxy_median_mj": 147.8918122178282
+    },
+    "learned": {
+      "all_trial_active_time_median_s": 33.51049999997798,
+      "contact_path_median_mm": 60.78337322982836,
+      "direction_error_median_deg": 0.0,
+      "direction_error_p90_deg": 0.0,
+      "direction_within_7p5_rate": 1.0,
+      "max_force_p90_n": 7.202817542397931,
+      "max_torque_p90_mnm": 20.478144326838596,
+      "success_rate": 1.0,
+      "success_time_median_s": 33.51049999997798,
+      "success_time_p90_s": 33.51049999997798,
+      "successes": 1,
+      "termination_counts": {
+        "inner_wall_gate_confirmed": 1
+      },
+      "transport_allowed_rate": 1.0,
+      "trials": 1,
+      "wear_proxy_median_mj": 109.4759334711286
+    },
+    "oracle": {
+      "all_trial_active_time_median_s": 1.4744999999998931,
+      "contact_path_median_mm": 3.2652320834874593,
+      "max_force_p90_n": 6.45473338646249,
+      "max_torque_p90_mnm": 21.306214435879298,
+      "success_rate": 1.0,
+      "success_time_median_s": 1.4744999999998931,
+      "success_time_p90_s": 1.4744999999998931,
+      "successes": 1,
+      "termination_counts": {
+        "inner_wall_gate_confirmed": 1
+      },
+      "trials": 1,
+      "wear_proxy_median_mj": 5.854121711327695
+    }
+  },
+  "paired": {
+    "baseline_only_success": 0,
+    "both_failed": 0,
+    "both_learned_and_baseline_success": 1,
+    "complete_pose_triplets": 1,
+    "learned_faster_rate_on_both_success": 1.0,
+    "learned_minus_baseline_time_median_s_on_both_success": -7.100000000033901,
+    "learned_only_success": 0
+  },
+  "stage": "P2b_M8_in_domain_coverage",
+  "updated_utc": "2026-07-10T03:04:11.702940+00:00"
+}

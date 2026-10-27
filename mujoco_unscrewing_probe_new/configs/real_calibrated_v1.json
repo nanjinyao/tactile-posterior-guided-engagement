@@ -1,0 +1,1697 @@
+{
+  "authority": "REAL_DEVICE_FRESH_RUN_OBSERVATION_CALIBRATION; exact CAD retained; simulation remains secondary synthetic evidence",
+  "calibration_id": "real_calibrated_v1",
+  "channel_affine": {
+    "by_size": {
+      "M10": {
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm",
+          "cmd_z_relative_mm"
+        ],
+        "claim_boundary": "real-domain feature normalization; paired simulation/real physical gain is not identifiable from these campaigns",
+        "formula": "normalized = physical * multiply + add",
+        "physical_location": [
+          0.17308916678184427,
+          0.011830659292937064,
+          3.4672295268601485,
+          -0.0028371554116299403,
+          -0.0014790095369029543,
+          0.004444109168442716,
+          -0.10490519332801373
+        ],
+        "physical_robust_scale": [
+          4.79461891080331,
+          5.0952076506876045,
+          2.0728090346386367,
+          0.031830904975939066,
+          0.03371638196733495,
+          0.02719027144053837,
+          0.18407295197732856
+        ],
+        "real_to_normalized_add": [
+          -0.03610071415516196,
+          -0.002321918968570496,
+          -1.6727201922219566,
+          0.08913210019553455,
+          0.04386619947347393,
+          -0.16344482540975774,
+          0.5699109630236953
+        ],
+        "real_to_normalized_multiply": [
+          0.208567149674145,
+          0.19626285493291892,
+          0.4824371098779657,
+          31.41600908789425,
+          29.659172830845797,
+          36.77786013232238,
+          5.432628690189993
+        ]
+      },
+      "M12": {
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm",
+          "cmd_z_relative_mm"
+        ],
+        "claim_boundary": "real-domain feature normalization; paired simulation/real physical gain is not identifiable from these campaigns",
+        "formula": "normalized = physical * multiply + add",
+        "physical_location": [
+          0.055022370816305094,
+          -0.033124727194117895,
+          2.9739783827670863,
+          -0.0005191379367513864,
+          0.0005900918246998374,
+          0.002209692001933882,
+          -0.0312865375100971
+        ],
+        "physical_robust_scale": [
+          4.610978305184238,
+          4.797940060959292,
+          3.09991419774972,
+          0.022206950305356587,
+          0.02031629169926519,
+          0.027110570296974498,
+          0.13673835393323938
+        ],
+        "real_to_normalized_add": [
+          -0.01193290602873626,
+          0.006903947688645154,
+          -0.9593744191132604,
+          0.02337727286335954,
+          -0.02904525261965894,
+          -0.08150665875813319,
+          0.2288058661681149
+        ],
+        "real_to_normalized_multiply": [
+          0.21687371612130013,
+          0.2084227787956279,
+          0.32258957384237175,
+          45.03094689948434,
+          49.22158112329961,
+          36.88598170550468,
+          7.313237078224858
+        ]
+      },
+      "M8": {
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm",
+          "cmd_z_relative_mm"
+        ],
+        "claim_boundary": "real-domain feature normalization; paired simulation/real physical gain is not identifiable from these campaigns",
+        "formula": "normalized = physical * multiply + add",
+        "physical_location": [
+          0.03180025901782274,
+          -0.0004460450987894913,
+          3.547596558890457,
+          -0.0025361377946690514,
+          -0.0002696068515005401,
+          0.0047903985078010854,
+          0.00012054954430519498
+        ],
+        "physical_robust_scale": [
+          4.7282013883423275,
+          4.91048402885805,
+          1.4652696427150407,
+          0.03954969132542235,
+          0.041815741910662556,
+          0.027177592539300556,
+          0.06521633278587735
+        ],
+        "real_to_normalized_add": [
+          -0.006725656630495529,
+          9.083526107979638e-05,
+          -2.4211219938447726,
+          0.06412534989973069,
+          0.006447496545117936,
+          -0.1762627981442381,
+          -0.001848456347599172
+        ],
+        "real_to_normalized_multiply": [
+          0.2114969134913673,
+          0.20364591232212062,
+          0.6824682439657119,
+          25.2846474014629,
+          23.914438780889142,
+          36.79501775420083,
+          15.333582206826428
+        ]
+      }
+    },
+    "sequence_channels": [
+      "fx_world_star_n",
+      "fy_world_star_n",
+      "fz_world_star_n",
+      "tx_world_star_nm",
+      "ty_world_star_nm",
+      "tz_world_star_nm",
+      "cmd_z_relative_mm"
+    ]
+  },
+  "claim_boundary": "observation/frame/timing/load calibration plus deterministic replay; not paired MuJoCo system identification, capture calibration, or hardware control authorization",
+  "created_utc": "2026-07-28T14:32:40.709849+00:00",
+  "domain_randomization": {
+    "claim_boundary": "ranges are engineering domain randomization only; no friction, stiffness, damping, or contact-time parameter is presented as a fit from conical wrench traces",
+    "identified_from_real_runs": false,
+    "variables": {
+      "contact_time_constant_s": {
+        "distribution": "log_uniform",
+        "maximum": 0.08,
+        "minimum": 0.02
+      },
+      "friction_slide": {
+        "distribution": "uniform",
+        "maximum": 1.0,
+        "minimum": 0.4
+      },
+      "printed_polymer_damping_scale": {
+        "distribution": "log_uniform",
+        "maximum": 1.3,
+        "minimum": 0.7
+      },
+      "printed_polymer_stiffness_scale": {
+        "distribution": "log_uniform",
+        "maximum": 1.3,
+        "minimum": 0.7
+      }
+    }
+  },
+  "drift": {
+    "by_size": {
+      "M10": {
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm"
+        ],
+        "claim_boundary": "short-run engineering drift fitted only from clean per-point air baselines; holdout, quarantine, and sentinel do not estimate parameters",
+        "clean_baseline_count": 16,
+        "fit_elapsed_s": 648.0699191093445,
+        "fit_partition": "clean_candidate",
+        "observed_linear_slope_median_per_s": [
+          -3.806484974124058e-05,
+          -2.3790633930637484e-05,
+          0.00028424166153174276,
+          1.2892041970582307e-06,
+          2.0055294017845286e-06,
+          -7.236216922972373e-07
+        ],
+        "random_walk_std_per_sqrt_s": [
+          0.0012687592074174406,
+          0.00151269392193826,
+          0.0019530367514022564,
+          3.917246057431343e-05,
+          3.8045246771165926e-05,
+          8.467593742043546e-06
+        ]
+      },
+      "M12": {
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm"
+        ],
+        "claim_boundary": "short-run engineering drift fitted only from clean per-point air baselines; holdout, quarantine, and sentinel do not estimate parameters",
+        "clean_baseline_count": 16,
+        "fit_elapsed_s": 661.0799341201782,
+        "fit_partition": "clean_candidate",
+        "observed_linear_slope_median_per_s": [
+          -3.756400138175281e-05,
+          1.119780531206168e-05,
+          4.084231242227433e-05,
+          8.25525406402486e-08,
+          -1.2422493305196135e-07,
+          -9.87206937429539e-08
+        ],
+        "random_walk_std_per_sqrt_s": [
+          0.0022808043661859327,
+          0.0018221458146074395,
+          0.0019109182085634447,
+          3.822357917343045e-05,
+          4.423586973832283e-05,
+          6.862021989627707e-06
+        ]
+      },
+      "M8": {
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm"
+        ],
+        "claim_boundary": "short-run engineering drift fitted only from clean per-point air baselines; holdout, quarantine, and sentinel do not estimate parameters",
+        "clean_baseline_count": 16,
+        "fit_elapsed_s": 638.0924601554871,
+        "fit_partition": "clean_candidate",
+        "observed_linear_slope_median_per_s": [
+          -3.076250918062994e-05,
+          -1.7536488446149158e-05,
+          0.00011795417782145351,
+          3.270323672960902e-07,
+          7.797843056186826e-07,
+          -3.344840195995228e-07
+        ],
+        "random_walk_std_per_sqrt_s": [
+          0.002081505766459885,
+          0.0022265343219674905,
+          0.002722383327552876,
+          5.222847986453677e-05,
+          4.89990826501792e-05,
+          1.0458264186285299e-05
+        ]
+      }
+    }
+  },
+  "force": {
+    "by_size": {
+      "M10": {
+        "by_contact_state": {
+          "double_overhang": {
+            "sample_count": 6,
+            "scan_normal_force_n": {
+              "count": 2160,
+              "mean": 3.532510676668009,
+              "median": 3.7129058751138206,
+              "q01": -0.24558924985033695,
+              "q05": 0.5162973641126918,
+              "q95": 6.1276287713364015,
+              "q99": 6.961956192050412,
+              "std": 1.6997850173731215
+            },
+            "settle_normal_mean_n": {
+              "count": 6,
+              "mean": 4.665855170984248,
+              "median": 4.666159686584024,
+              "q01": 3.08177170480591,
+              "q05": 3.129466500799972,
+              "q95": 6.64998265351862,
+              "q99": 7.056112111872582,
+              "std": 1.4831758644785775
+            }
+          },
+          "outer_partial_support": {
+            "sample_count": 4,
+            "scan_normal_force_n": {
+              "count": 1440,
+              "mean": 2.7862653891562545,
+              "median": 2.86340163532908,
+              "q01": -0.9050928655819515,
+              "q05": -0.6567091903423837,
+              "q95": 6.289514340075271,
+              "q99": 7.55050975695314,
+              "std": 2.20560296998518
+            },
+            "settle_normal_mean_n": {
+              "count": 4,
+              "mean": 3.2164255889318225,
+              "median": 3.166826744645805,
+              "q01": 2.1427118047172216,
+              "q05": 2.1682101003992598,
+              "q95": 4.334079459464809,
+              "q99": 4.383385200404136,
+              "std": 1.140246565800251
+            }
+          },
+          "supported_search": {
+            "sample_count": 6,
+            "scan_normal_force_n": {
+              "count": 2160,
+              "mean": 3.3899849500458603,
+              "median": 3.5312853176502625,
+              "q01": -0.4044264134193962,
+              "q05": -0.06126663204322603,
+              "q95": 6.540264428818463,
+              "q99": 7.428060005843904,
+              "std": 1.9493344183001948
+            },
+            "settle_normal_mean_n": {
+              "count": 6,
+              "mean": 4.825471168963436,
+              "median": 5.274807297261107,
+              "q01": 3.0905305272934003,
+              "q05": 3.2947871338150554,
+              "q95": 5.777393180202677,
+              "q99": 5.878109070235157,
+              "std": 1.0668305819695871
+            }
+          }
+        },
+        "claim_boundary": "empirical load distribution for observation replay; it is not an identified contact stiffness or a new controller force target",
+        "contact_settle_normal_mean_n": {
+          "count": 16,
+          "mean": 4.363353774713337,
+          "median": 4.377943864161438,
+          "q01": 2.1682101003992598,
+          "q05": 2.2957015788094504,
+          "q95": 6.216877151172725,
+          "q99": 6.969491011403402,
+          "std": 1.3584871955890478
+        },
+        "contact_settle_normal_std_n": {
+          "count": 16,
+          "mean": 0.05964088989483751,
+          "median": 0.05691112254324002,
+          "q01": 0.025785988455891574,
+          "q05": 0.028763637892093737,
+          "q95": 0.09960776521211989,
+          "q99": 0.11886702774812741,
+          "std": 0.025757052432723176
+        },
+        "sampling_target_down_force_n": 3.5,
+        "scan_normal_force_n": {
+          "count": 5760,
+          "mean": 3.292502207306765,
+          "median": 3.4672295268601485,
+          "q01": -0.7062802341064717,
+          "q05": -0.22907303738731602,
+          "q95": 6.345569775610411,
+          "q99": 7.315716433548185,
+          "std": 1.9525627602071214
+        }
+      },
+      "M12": {
+        "by_contact_state": {
+          "double_overhang": {
+            "sample_count": 6,
+            "scan_normal_force_n": {
+              "count": 2160,
+              "mean": 3.470080200087526,
+              "median": 3.666830919985369,
+              "q01": -0.6573072932255761,
+              "q05": -0.236696605639618,
+              "q95": 6.940420469579711,
+              "q99": 8.244527903063133,
+              "std": 2.209559154742615
+            },
+            "settle_normal_mean_n": {
+              "count": 6,
+              "mean": 4.271038510171564,
+              "median": 4.40050878480502,
+              "q01": 3.5671235696198664,
+              "q05": 3.6137980009292177,
+              "q95": 4.795060559842615,
+              "q99": 4.838736443201693,
+              "std": 0.5086903110876172
+            }
+          },
+          "outer_partial_support": {
+            "sample_count": 4,
+            "scan_normal_force_n": {
+              "count": 1440,
+              "mean": 1.9562112356209993,
+              "median": 1.4397386954919897,
+              "q01": -0.9806232676000219,
+              "q05": -0.8963329619979555,
+              "q95": 6.323252221555052,
+              "q99": 7.462248204772385,
+              "std": 2.5205629234276143
+            },
+            "settle_normal_mean_n": {
+              "count": 4,
+              "mean": 4.375947551962816,
+              "median": 3.9205061235420255,
+              "q01": 3.290117504055829,
+              "q05": 3.3240956009794353,
+              "q95": 6.065417502735303,
+              "q99": 6.318007485300889,
+              "std": 1.4007554963476196
+            }
+          },
+          "supported_search": {
+            "sample_count": 6,
+            "scan_normal_force_n": {
+              "count": 2160,
+              "mean": 2.517505259349896,
+              "median": 2.7426963690140544,
+              "q01": -0.9467432343617711,
+              "q05": -0.8351287048513272,
+              "q95": 6.390053599223086,
+              "q99": 7.492363725778101,
+              "std": 2.4364050491276052
+            },
+            "settle_normal_mean_n": {
+              "count": 6,
+              "mean": 3.479566696818568,
+              "median": 3.377401135036241,
+              "q01": 2.2023956661766233,
+              "q05": 2.279395928136484,
+              "q95": 5.006890699002051,
+              "q99": 5.26388109833717,
+              "std": 1.119606369142458
+            }
+          }
+        },
+        "claim_boundary": "empirical load distribution for observation replay; it is not an identified contact stiffness or a new controller force target",
+        "contact_settle_normal_mean_n": {
+          "count": 16,
+          "mean": 4.000463840612003,
+          "median": 3.91600190991732,
+          "q01": 2.2408957971565537,
+          "q05": 2.4718965830361364,
+          "q95": 5.5913852688637835,
+          "q99": 6.223201038526585,
+          "std": 1.0353417516618606
+        },
+        "contact_settle_normal_std_n": {
+          "count": 16,
+          "mean": 0.05679647874883524,
+          "median": 0.05464426443401568,
+          "q01": 0.025438388490115926,
+          "q05": 0.026342504306587154,
+          "q95": 0.08547586853527825,
+          "q99": 0.10317401867533674,
+          "std": 0.020300942178639612
+        },
+        "sampling_target_down_force_n": 3.5,
+        "scan_normal_force_n": {
+          "count": 5760,
+          "mean": 2.734397356194283,
+          "median": 2.9739783827670863,
+          "q01": -0.9427395603750097,
+          "q05": -0.7670752462635065,
+          "q95": 6.580382103327149,
+          "q99": 7.839880337339746,
+          "std": 2.452590602970045
+        }
+      },
+      "M8": {
+        "by_contact_state": {
+          "double_overhang": {
+            "sample_count": 6,
+            "scan_normal_force_n": {
+              "count": 2160,
+              "mean": 3.54955253348067,
+              "median": 3.6180213150249805,
+              "q01": 0.10777062315904982,
+              "q05": 1.1792339149069717,
+              "q95": 5.695364674691325,
+              "q99": 6.365473195087453,
+              "std": 1.3782520453423288
+            },
+            "settle_normal_mean_n": {
+              "count": 6,
+              "mean": 4.032168985322131,
+              "median": 3.565783021302164,
+              "q01": 2.2444488018108046,
+              "q05": 2.3423439610845413,
+              "q95": 6.433633549649671,
+              "q99": 6.727731569779396,
+              "std": 1.7259481306759192
+            }
+          },
+          "outer_partial_support": {
+            "sample_count": 4,
+            "scan_normal_force_n": {
+              "count": 1440,
+              "mean": 3.4058642215057193,
+              "median": 3.479237633503905,
+              "q01": -0.10387021005633923,
+              "q05": 0.7261878946283177,
+              "q95": 5.991423509789778,
+              "q99": 6.857479392277239,
+              "std": 1.5859328828510597
+            },
+            "settle_normal_mean_n": {
+              "count": 4,
+              "mean": 4.0369480211942035,
+              "median": 4.12580803398233,
+              "q01": 3.038614015637671,
+              "q05": 3.149548241158677,
+              "q95": 4.799943783326354,
+              "q99": 4.868225202709059,
+              "std": 0.7875833011850694
+            }
+          },
+          "supported_search": {
+            "sample_count": 6,
+            "scan_normal_force_n": {
+              "count": 2160,
+              "mean": 3.5175434970074733,
+              "median": 3.525223860868177,
+              "q01": 0.02409393056801078,
+              "q05": 1.094397821193523,
+              "q95": 5.873343939130701,
+              "q99": 7.164603893333022,
+              "std": 1.4511027364036742
+            },
+            "settle_normal_mean_n": {
+              "count": 6,
+              "mean": 3.582378306121955,
+              "median": 3.631960107660567,
+              "q01": 2.2692507614554858,
+              "q05": 2.305415915780913,
+              "q95": 4.7780373381558565,
+              "q99": 4.788825247066461,
+              "std": 1.194718644452578
+            }
+          }
+        },
+        "claim_boundary": "empirical load distribution for observation replay; it is not an identified contact stiffness or a new controller force target",
+        "contact_settle_normal_mean_n": {
+          "count": 16,
+          "mean": 3.864692239590083,
+          "median": 3.8451787616444744,
+          "q01": 2.226010181124634,
+          "q05": 2.250150857653689,
+          "q95": 5.698388499325361,
+          "q99": 6.580682559714533,
+          "std": 1.2821153415711055
+        },
+        "contact_settle_normal_std_n": {
+          "count": 16,
+          "mean": 0.06928857145961609,
+          "median": 0.0576714630380189,
+          "q01": 0.040781805671191794,
+          "q05": 0.04158301602441882,
+          "q95": 0.12368447302247026,
+          "q99": 0.12722632933153477,
+          "std": 0.02821162355578049
+        },
+        "sampling_target_down_force_n": 3.5,
+        "scan_normal_force_n": {
+          "count": 5760,
+          "mean": 3.5016270668094833,
+          "median": 3.547596558890457,
+          "q01": -0.009885466775619241,
+          "q05": 0.9666763805692518,
+          "q95": 5.826912640373426,
+          "q99": 6.7869062023137685,
+          "std": 1.4605691543429475
+        }
+      }
+    }
+  },
+  "frame_phase_transform": {
+    "by_size": {
+      "M10": {
+        "conical_phase_sign": 1,
+        "fixture_to_world_xy_rotation": [
+          [
+            1.0,
+            -5.551115123125783e-17
+          ],
+          [
+            5.551115123125783e-17,
+            1.0000000000000002
+          ]
+        ],
+        "fixture_to_world_yaw_deg": 3.1805546814635168e-15,
+        "identifiability": "fixture/world transform is fitted from measured touchdown offsets; response phase is fitted separately from the direction-labelled first harmonic and is not a friction or stiffness estimate",
+        "inward_response_first_harmonic_amplitude": 0.06852248738982018,
+        "inward_response_first_harmonic_energy_fraction": 0.000196613067995032,
+        "inward_response_peak_relative_phase_deg": 282.54841404376793,
+        "orthogonal_fit_max_mm": 1.831026719408895e-15,
+        "orthogonal_fit_rms_mm": 1.2048125991558438e-15
+      },
+      "M12": {
+        "conical_phase_sign": 1,
+        "fixture_to_world_xy_rotation": [
+          [
+            1.0,
+            2.7755575615628914e-17
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "fixture_to_world_yaw_deg": 0.0,
+        "identifiability": "fixture/world transform is fitted from measured touchdown offsets; response phase is fitted separately from the direction-labelled first harmonic and is not a friction or stiffness estimate",
+        "inward_response_first_harmonic_amplitude": 0.04216452197393057,
+        "inward_response_first_harmonic_energy_fraction": 8.395243860833837e-05,
+        "inward_response_peak_relative_phase_deg": 292.96388541427586,
+        "orthogonal_fit_max_mm": 4.440892098500626e-16,
+        "orthogonal_fit_rms_mm": 1.7554167342883506e-16
+      },
+      "M8": {
+        "conical_phase_sign": 1,
+        "fixture_to_world_xy_rotation": [
+          [
+            1.0,
+            0.0
+          ],
+          [
+            1.3877787807814457e-17,
+            0.9999999999999999
+          ]
+        ],
+        "fixture_to_world_yaw_deg": 7.951386703658792e-16,
+        "identifiability": "fixture/world transform is fitted from measured touchdown offsets; response phase is fitted separately from the direction-labelled first harmonic and is not a friction or stiffness estimate",
+        "inward_response_first_harmonic_amplitude": 0.1238993282846665,
+        "inward_response_first_harmonic_energy_fraction": 0.0006896384285796967,
+        "inward_response_peak_relative_phase_deg": 270.23193975927484,
+        "orthogonal_fit_max_mm": 8.881784197001252e-16,
+        "orthogonal_fit_rms_mm": 6.280369834735101e-16
+      }
+    },
+    "online_coordinate_contract": "fixture XY to KUKA WORLD XY fitted from each fresh run; conical phase response is expressed relative to the true inward direction"
+  },
+  "generation": {
+    "generated_records": 234,
+    "generator": "deterministic_real_observation_replay",
+    "geometry_tasks": 78,
+    "partition_preservation": "source partition is immutable; only clean_candidate replay records are training-eligible",
+    "phase_bins": 360,
+    "seed_formula": "202607280000 + 10000*size_index + 10*execution_index + repeat",
+    "seeds_per_geometry_task": 3,
+    "sequence_channels": [
+      "fx_world_star_n",
+      "fy_world_star_n",
+      "fz_world_star_n",
+      "tx_world_star_nm",
+      "ty_world_star_nm",
+      "tz_world_star_nm",
+      "cmd_z_relative_mm"
+    ]
+  },
+  "hashes": {
+    "builder_sha256": "274fe87990b9801ab4f193e3d0e2a4900cf04c7cadf2e3a96616d5d5a1e8b53e",
+    "fitted_payload_sha256": "1312a3745f06911fa2e4b3eb175bced2242d5805d9ce9723760dc123c8bc4410",
+    "source_campaigns": {
+      "M10": {
+        "attempt_hash_checks": 104,
+        "campaign_sha256": "6215f1f2754ab08cf2bcb16b6288bac256b607f8d794a8f4142e3799e358ad2e",
+        "manifest_sha256": "7b0fc3b22e8fe0af6fd98da20a147df5e916c51b0fb4b1687a0128be45633001",
+        "partition_counts": {
+          "clean_candidate": 16,
+          "holdout": 4,
+          "quarantine": 4,
+          "sentinel": 2
+        },
+        "run_id": "M10_conical_fingerprints_26pt_20260728_152808_877",
+        "summary_sha256": "5c679fdeaff781fb689a21cda47a6da2280070f70077188cf3865b53f78123fa"
+      },
+      "M12": {
+        "attempt_hash_checks": 104,
+        "campaign_sha256": "fd9611132685b1d6819564853ba5868257b60d6a1ba84f68c642bab5a5d87660",
+        "manifest_sha256": "be578a1b4dc20d4769931c0e943df20345bdc7a4fdbdc4c2881ea760b7c9b190",
+        "partition_counts": {
+          "clean_candidate": 16,
+          "holdout": 4,
+          "quarantine": 4,
+          "sentinel": 2
+        },
+        "run_id": "M12_conical_fingerprints_26pt_20260728_175502_318",
+        "summary_sha256": "9b1790ebf26249f0770406dfca2b4ab241f889add4258b1e02d185078a28be4c"
+      },
+      "M8": {
+        "attempt_hash_checks": 104,
+        "campaign_sha256": "17a5038ed897e67fedf267a7b92b98d8207576a8a81293bff4626a5bafab3205",
+        "manifest_sha256": "91447eb37bb05a8204a8d2fe26571d1c23ec97f944e9733cc32d2f24a80d8467",
+        "partition_counts": {
+          "clean_candidate": 16,
+          "holdout": 4,
+          "quarantine": 4,
+          "sentinel": 2
+        },
+        "run_id": "M8_conical_fingerprints_26pt_20260728_161249_458",
+        "summary_sha256": "6495385a61c64578e50ebe8c268c6a95f5a8a20e2768f4e1bcd52f1667cc678e"
+      }
+    }
+  },
+  "noise_cov": {
+    "by_size": {
+      "M10": {
+        "air_residual_cov": [
+          [
+            0.00047400619955590204,
+            5.4845914419060484e-08,
+            -1.3693681516110446e-05,
+            7.755267157261965e-08,
+            -1.035397296488375e-05,
+            -2.9430124938558995e-07
+          ],
+          [
+            5.4845914419060484e-08,
+            0.0004999198259884992,
+            5.670601333945381e-05,
+            1.0811244398103477e-05,
+            1.4933995976064006e-07,
+            -3.77345511498546e-07
+          ],
+          [
+            -1.3693681516110446e-05,
+            5.670601333945381e-05,
+            0.00022815229600678215,
+            1.4732386592555902e-06,
+            1.6584280821330063e-07,
+            -8.926231255786515e-08
+          ],
+          [
+            7.755267157261965e-08,
+            1.0811244398103477e-05,
+            1.4732386592555902e-06,
+            2.6263102509049327e-07,
+            2.615120616127214e-09,
+            -7.802034623777678e-09
+          ],
+          [
+            -1.035397296488375e-05,
+            1.4933995976064006e-07,
+            1.6584280821330063e-07,
+            2.615120616127214e-09,
+            2.553220316432613e-07,
+            6.408398351414236e-09
+          ],
+          [
+            -2.9430124938558995e-07,
+            -3.77345511498546e-07,
+            -8.926231255786515e-08,
+            -7.802034623777678e-09,
+            6.408398351414236e-09,
+            1.6741641300316964e-08
+          ]
+        ],
+        "air_residual_std": [
+          0.021771683434128417,
+          0.022358886957728905,
+          0.015104711053402583,
+          0.0005124753897412961,
+          0.0005052940051527046,
+          0.00012938949455159395
+        ],
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm"
+        ],
+        "colored_rho_median": [
+          0.04057619109346096,
+          0.09991326990973806,
+          -0.03603763744414015,
+          0.07721172175599542,
+          0.07734732607337759,
+          -0.008839143899688378
+        ],
+        "raw_air_baseline_location_cov": [
+          [
+            0.00013746355613278,
+            4.105692727479252e-05,
+            -0.0006637567519837846,
+            -3.0336820803623883e-06,
+            -4.9233868754597475e-06,
+            1.4694673386332554e-06
+          ],
+          [
+            4.105692727479252e-05,
+            7.929120535680214e-05,
+            -0.0003092749989640234,
+            -2.7983481743296273e-07,
+            -2.1053384326109615e-06,
+            8.627903407046582e-07
+          ],
+          [
+            -0.0006637567519837846,
+            -0.0003092749989640234,
+            0.004413423198018792,
+            1.9806792321603912e-05,
+            3.0160470579794386e-05,
+            -1.0887710947978824e-05
+          ],
+          [
+            -3.0336820803623883e-06,
+            -2.7983481743296273e-07,
+            1.9806792321603912e-05,
+            1.1559314588491687e-07,
+            1.3726203617782938e-07,
+            -4.7631129133983516e-08
+          ],
+          [
+            -4.9233868754597475e-06,
+            -2.1053384326109615e-06,
+            3.0160470579794386e-05,
+            1.3726203617782938e-07,
+            2.188704094341911e-07,
+            -7.285956220622088e-08
+          ],
+          [
+            1.4694673386332554e-06,
+            8.627903407046582e-07,
+            -1.0887710947978824e-05,
+            -4.7631129133983516e-08,
+            -7.285956220622088e-08,
+            2.8935824604883365e-08
+          ]
+        ],
+        "raw_air_baseline_location_mean": [
+          -0.374723752125,
+          -1.17279316853125,
+          -15.694244355031248,
+          -0.039470765124999994,
+          0.08548644534375001,
+          0.023577153874999996
+        ],
+        "raw_air_baseline_note": "contains installed-tool gravity/payload and is provenance only; do not add it to baseline-relative simulated contact wrench",
+        "white_difference_cov": [
+          [
+            0.0004641399154526647,
+            3.068464118299292e-05,
+            -1.4636062212179707e-05,
+            9.391321209314578e-07,
+            -1.00330959534422e-05,
+            -2.781071343386603e-07
+          ],
+          [
+            3.068464118299292e-05,
+            0.00044844280952294614,
+            4.546463284850259e-05,
+            9.846126296314368e-06,
+            -6.376609944145486e-07,
+            -4.393318431685339e-07
+          ],
+          [
+            -1.4636062212179707e-05,
+            4.546463284850259e-05,
+            0.00022843176454571525,
+            1.2489149068121173e-06,
+            8.324114354418988e-08,
+            -2.273578702271111e-08
+          ],
+          [
+            9.391321209314578e-07,
+            9.846126296314368e-06,
+            1.2489149068121173e-06,
+            2.4242486877996096e-07,
+            -2.018579349943701e-08,
+            -1.0448750120732952e-08
+          ],
+          [
+            -1.00330959534422e-05,
+            -6.376609944145486e-07,
+            8.324114354418988e-08,
+            -2.018579349943701e-08,
+            2.427989021097629e-07,
+            6.1579721802207854e-09
+          ],
+          [
+            -2.781071343386603e-07,
+            -4.393318431685339e-07,
+            -2.273578702271111e-08,
+            -1.0448750120732952e-08,
+            6.1579721802207854e-09,
+            1.6189519010126805e-08
+          ]
+        ],
+        "white_difference_std": [
+          0.021543906689657395,
+          0.021176468296742634,
+          0.01511395926108428,
+          0.0004923665999841593,
+          0.0004927462857391854,
+          0.00012723804073517796
+        ]
+      },
+      "M12": {
+        "air_residual_cov": [
+          [
+            0.00048781596683154923,
+            8.909331530710954e-06,
+            9.440261199045731e-06,
+            4.36140269548843e-07,
+            -1.0652956983821773e-05,
+            -3.670228402067638e-07
+          ],
+          [
+            8.909331530710954e-06,
+            0.00045794477196378235,
+            5.297069108870678e-06,
+            9.984477300819978e-06,
+            2.6245858575777574e-08,
+            -1.1058135042651586e-07
+          ],
+          [
+            9.440261199045731e-06,
+            5.297069108870678e-06,
+            0.0002512997568110241,
+            -1.3302448925794145e-07,
+            -3.978300968634616e-07,
+            2.4329946302793582e-08
+          ],
+          [
+            4.36140269548843e-07,
+            9.984477300819978e-06,
+            -1.3302448925794145e-07,
+            2.5320836140580863e-07,
+            -5.692169455186748e-10,
+            -2.8824665542803933e-09
+          ],
+          [
+            -1.0652956983821773e-05,
+            2.6245858575777574e-08,
+            -3.978300968634616e-07,
+            -5.692169455186748e-10,
+            2.6204917255085094e-07,
+            8.647640941584686e-09
+          ],
+          [
+            -3.670228402067638e-07,
+            -1.1058135042651586e-07,
+            2.4329946302793582e-08,
+            -2.8824665542803933e-09,
+            8.647640941584686e-09,
+            1.731984639732354e-08
+          ]
+        ],
+        "air_residual_std": [
+          0.02208655624653942,
+          0.021399644201803503,
+          0.01585243693603681,
+          0.0005031981333488912,
+          0.0005119073866929945,
+          0.00013160488743706877
+        ],
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm"
+        ],
+        "colored_rho_median": [
+          0.07495047846147763,
+          -0.038135765208980724,
+          -0.026574379613720032,
+          -0.008322154394378774,
+          0.022331031651257674,
+          -0.0786303351454253
+        ],
+        "raw_air_baseline_location_cov": [
+          [
+            0.00013599334500826943,
+            -1.8969091193136563e-05,
+            -6.375960031053332e-05,
+            -3.768225251941581e-08,
+            -1.2498716938249919e-06,
+            -5.6691877659697575e-08
+          ],
+          [
+            -1.8969091193136563e-05,
+            5.983514881424439e-05,
+            3.325316994307879e-05,
+            1.1448169353318207e-06,
+            7.853001020930965e-08,
+            -3.583198389628384e-09
+          ],
+          [
+            -6.375960031053332e-05,
+            3.325316994307879e-05,
+            0.00014561304934177345,
+            3.326159803138445e-07,
+            -6.320370569208579e-07,
+            -2.241141978467536e-07
+          ],
+          [
+            -3.768225251941581e-08,
+            1.1448169353318207e-06,
+            3.326159803138445e-07,
+            3.173238465476212e-08,
+            5.297105642800289e-09,
+            1.0253058708229472e-09
+          ],
+          [
+            -1.2498716938249919e-06,
+            7.853001020930965e-08,
+            -6.320370569208579e-07,
+            5.297105642800289e-09,
+            4.284900656070011e-08,
+            5.993646302916726e-09
+          ],
+          [
+            -5.6691877659697575e-08,
+            -3.583198389628384e-09,
+            -2.241141978467536e-07,
+            1.0253058708229472e-09,
+            5.993646302916726e-09,
+            1.4265292084406866e-09
+          ]
+        ],
+        "raw_air_baseline_location_mean": [
+          -0.406973556625,
+          -1.31991357725,
+          -15.012572944156249,
+          -0.0382578699375,
+          0.089707782,
+          0.021224811406250002
+        ],
+        "raw_air_baseline_note": "contains installed-tool gravity/payload and is provenance only; do not add it to baseline-relative simulated contact wrench",
+        "white_difference_cov": [
+          [
+            0.0004898037328058891,
+            1.9238365670962505e-05,
+            6.123591088507344e-06,
+            7.885220387285442e-07,
+            -1.0683992979994727e-05,
+            -1.7624463096918683e-07
+          ],
+          [
+            1.9238365670962505e-05,
+            0.0004901251775970501,
+            1.0756881017649451e-05,
+            1.0445003165599772e-05,
+            -1.9969213856111016e-07,
+            -4.735810793188786e-08
+          ],
+          [
+            6.123591088507344e-06,
+            1.0756881017649451e-05,
+            0.00025833385657243665,
+            1.430162821411368e-07,
+            -3.787011116307332e-07,
+            5.663324764398889e-08
+          ],
+          [
+            7.885220387285442e-07,
+            1.0445003165599772e-05,
+            1.430162821411368e-07,
+            2.527055688184594e-07,
+            -1.051083551086008e-08,
+            -8.951212523768343e-10
+          ],
+          [
+            -1.0683992979994727e-05,
+            -1.9969213856111016e-07,
+            -3.787011116307332e-07,
+            -1.051083551086008e-08,
+            2.569890494534312e-07,
+            3.773687599767128e-09
+          ],
+          [
+            -1.7624463096918683e-07,
+            -4.735810793188786e-08,
+            5.663324764398889e-08,
+            -8.951212523768343e-10,
+            3.773687599767128e-09,
+            1.7886568795168423e-08
+          ]
+        ],
+        "white_difference_std": [
+          0.022131509953138975,
+          0.022138770914326988,
+          0.0160727675455236,
+          0.0005026982880600047,
+          0.0005069408737253596,
+          0.0001337406774140479
+        ]
+      },
+      "M8": {
+        "air_residual_cov": [
+          [
+            0.0004667817741558691,
+            -3.639647804138746e-06,
+            7.1319070655710696e-06,
+            -4.28975510224263e-08,
+            -1.0402970484974709e-05,
+            -3.400310522123929e-08
+          ],
+          [
+            -3.639647804138746e-06,
+            0.0004430897991587689,
+            7.985130824209719e-06,
+            9.784198968720868e-06,
+            4.844586624257543e-07,
+            -3.36404119302365e-07
+          ],
+          [
+            7.1319070655710696e-06,
+            7.985130824209719e-06,
+            0.00022259757318374406,
+            1.8264083847472308e-07,
+            -3.079593831862313e-07,
+            -9.821044643017817e-08
+          ],
+          [
+            -4.28975510224263e-08,
+            9.784198968720868e-06,
+            1.8264083847472308e-07,
+            2.4315006803015325e-07,
+            1.1436481184596547e-08,
+            -5.031422463085434e-09
+          ],
+          [
+            -1.0402970484974709e-05,
+            4.844586624257543e-07,
+            -3.079593831862313e-07,
+            1.1436481184596547e-08,
+            2.5881394424022187e-07,
+            6.387134690694455e-10
+          ],
+          [
+            -3.400310522123929e-08,
+            -3.36404119302365e-07,
+            -9.821044643017817e-08,
+            -5.031422463085434e-09,
+            6.387134690694455e-10,
+            1.67466115827899e-08
+          ]
+        ],
+        "air_residual_std": [
+          0.021605133051103138,
+          0.02104969831514858,
+          0.014919704192233305,
+          0.000493102492419328,
+          0.0005087375986107394,
+          0.00012940869979560847
+        ],
+        "channels": [
+          "fx_world_star_n",
+          "fy_world_star_n",
+          "fz_world_star_n",
+          "tx_world_star_nm",
+          "ty_world_star_nm",
+          "tz_world_star_nm"
+        ],
+        "colored_rho_median": [
+          -0.03370692375416508,
+          0.044133703355034797,
+          -0.02941137845097387,
+          0.04453708939737956,
+          -0.0156601500883329,
+          0.015743505915736103
+        ],
+        "raw_air_baseline_location_cov": [
+          [
+            0.00014713565990389084,
+            -1.576295911420034e-05,
+            -0.00020621032028832184,
+            -9.720472439067743e-07,
+            -3.4625422318899062e-06,
+            6.489742346937961e-07
+          ],
+          [
+            -1.576295911420034e-05,
+            9.8235300124006e-05,
+            -8.423179512102208e-05,
+            1.5846559380624175e-06,
+            6.225470631505284e-07,
+            -2.4085377460170446e-08
+          ],
+          [
+            -0.00020621032028832184,
+            -8.423179512102208e-05,
+            0.0007352790049160049,
+            1.4132061326968467e-06,
+            4.857292635555098e-06,
+            -1.9197147913583788e-06
+          ],
+          [
+            -9.720472439067743e-07,
+            1.5846559380624175e-06,
+            1.4132061326968467e-06,
+            4.840573296512445e-08,
+            3.0210695410089695e-08,
+            -7.828080227702257e-09
+          ],
+          [
+            -3.4625422318899062e-06,
+            6.225470631505284e-07,
+            4.857292635555098e-06,
+            3.0210695410089695e-08,
+            8.4905496981728e-08,
+            -1.5979004072587334e-08
+          ],
+          [
+            6.489742346937961e-07,
+            -2.4085377460170446e-08,
+            -1.9197147913583788e-06,
+            -7.828080227702257e-09,
+            -1.5979004072587334e-08,
+            6.117638293329165e-09
+          ]
+        ],
+        "raw_air_baseline_location_mean": [
+          -0.39659068649999996,
+          -1.2595339640937497,
+          -15.254579246031252,
+          -0.038273631343749996,
+          0.0884336110625,
+          0.0221852508125
+        ],
+        "raw_air_baseline_note": "contains installed-tool gravity/payload and is provenance only; do not add it to baseline-relative simulated contact wrench",
+        "white_difference_cov": [
+          [
+            0.00047049418992901713,
+            1.4646155578371568e-05,
+            1.2368882903443746e-05,
+            4.1823365298826925e-07,
+            -1.052053352575129e-05,
+            -1.5095033071325533e-07
+          ],
+          [
+            1.4646155578371568e-05,
+            0.00042113689453345465,
+            2.5281043349741234e-05,
+            9.391490625444137e-06,
+            1.221680038670002e-07,
+            -3.7536589191972106e-07
+          ],
+          [
+            1.2368882903443746e-05,
+            2.5281043349741234e-05,
+            0.0002250974616933997,
+            5.285107568831099e-07,
+            -4.5869424078382546e-07,
+            -6.276696046982212e-08
+          ],
+          [
+            4.1823365298826925e-07,
+            9.391490625444137e-06,
+            5.285107568831099e-07,
+            2.339989493696525e-07,
+            8.103180070600966e-10,
+            -6.278590191294763e-09
+          ],
+          [
+            -1.052053352575129e-05,
+            1.221680038670002e-07,
+            -4.5869424078382546e-07,
+            8.103180070600966e-10,
+            2.593245433041762e-07,
+            3.1501794767265937e-09
+          ],
+          [
+            -1.5095033071325533e-07,
+            -3.7536589191972106e-07,
+            -6.276696046982212e-08,
+            -6.278590191294763e-09,
+            3.1501794767265937e-09,
+            1.6378732411707165e-08
+          ]
+        ],
+        "white_difference_std": [
+          0.021690878034994726,
+          0.020521620173208903,
+          0.015003248371382772,
+          0.0004837343789412248,
+          0.0005092391808415535,
+          0.00012797942182908608
+        ]
+      }
+    },
+    "units": [
+      "N",
+      "N",
+      "N",
+      "N_m",
+      "N_m",
+      "N_m"
+    ]
+  },
+  "schema_version": 1,
+  "source_policy": {
+    "allowlisted_runs": {
+      "M10": "M10_conical_fingerprints_26pt_20260728_152808_877",
+      "M12": "M12_conical_fingerprints_26pt_20260728_175502_318",
+      "M8": "M8_conical_fingerprints_26pt_20260728_161249_458"
+    },
+    "excluded_from_fit": [
+      "holdout",
+      "quarantine",
+      "sentinel"
+    ],
+    "fit_partitions": [
+      "clean_candidate"
+    ],
+    "fit_samples": 48,
+    "known_rejected_run": "M8_conical_fingerprints_26pt_20260728_172108_490",
+    "partition_counts": {
+      "clean_candidate": 48,
+      "holdout": 12,
+      "quarantine": 12,
+      "sentinel": 6
+    },
+    "samples_total": 78,
+    "sentinel_role": "validation_only_never_fit"
+  },
+  "timing": {
+    "by_size": {
+      "M10": {
+        "directservo_tick_lateness_s": {
+          "count": 3840,
+          "mean": 3.403828125e-05,
+          "median": 5e-06,
+          "q01": 2e-06,
+          "q05": 3e-06,
+          "q95": 0.00013704999999999973,
+          "q99": 0.0004451300000000042,
+          "std": 0.00020353453438502533
+        },
+        "effective_source_rate_hz_from_median_dt": 40.00022888314562,
+        "maximum_command_gap_s": {
+          "count": 16,
+          "mean": 0.030822749999999954,
+          "median": 0.02886399999999993,
+          "q01": 0.026421450000000096,
+          "q05": 0.026783250000000508,
+          "q95": 0.04013549999999988,
+          "q99": 0.048843899999999954,
+          "std": 0.005979866458932543
+        },
+        "replay_phase_jitter_std_bins": 0.08740662703182414,
+        "scan_source_duration_s": {
+          "count": 16,
+          "mean": 5.9756138026714325,
+          "median": 5.97501015663147,
+          "q01": 5.96571261882782,
+          "q05": 5.968682646751404,
+          "q95": 5.981317579746246,
+          "q99": 5.98426343202591,
+          "std": 0.004446659386246185
+        },
+        "source_sample_dt_s": {
+          "count": 3824,
+          "mean": 0.02500256821201436,
+          "median": 0.02499985694885254,
+          "q01": 0.016204121112823506,
+          "q05": 0.02003002166748047,
+          "q95": 0.02996993064880371,
+          "q99": 0.03491767406463623,
+          "std": 0.0021853901545452812
+        },
+        "wrench_age_s": {
+          "count": 3840,
+          "mean": 0.005699859312760417,
+          "median": 0.00556612,
+          "q01": 0.002729177,
+          "q05": 0.003201008,
+          "q95": 0.009501719249999999,
+          "q99": 0.01073368121,
+          "std": 0.001944162264698436
+        }
+      },
+      "M12": {
+        "directservo_tick_lateness_s": {
+          "count": 3840,
+          "mean": 4.450989583333333e-05,
+          "median": 4e-06,
+          "q01": 2e-06,
+          "q05": 2e-06,
+          "q95": 0.00026909999999999944,
+          "q99": 0.0005792700000000009,
+          "std": 0.00015848868937086321
+        },
+        "effective_source_rate_hz_from_median_dt": 39.99984741269145,
+        "maximum_command_gap_s": {
+          "count": 16,
+          "mean": 0.030345000000000018,
+          "median": 0.029938000000000242,
+          "q01": 0.02712029999999999,
+          "q05": 0.027181499999999983,
+          "q95": 0.034846499999999996,
+          "q99": 0.03635489999999999,
+          "std": 0.002624589059897495
+        },
+        "replay_phase_jitter_std_bins": 0.0882300432550379,
+        "scan_source_duration_s": {
+          "count": 16,
+          "mean": 5.975956216454506,
+          "median": 5.975029945373535,
+          "q01": 5.970863997936249,
+          "q05": 5.973720014095306,
+          "q95": 5.984985053539276,
+          "q99": 5.984996926784516,
+          "std": 0.0037286344629014344
+        },
+        "source_sample_dt_s": {
+          "count": 3824,
+          "mean": 0.02500400090566739,
+          "median": 0.02500009536743164,
+          "q01": 0.01987004280090332,
+          "q05": 0.02003002166748047,
+          "q95": 0.02996993064880371,
+          "q99": 0.030155582427978514,
+          "std": 0.0022061040814560407
+        },
+        "wrench_age_s": {
+          "count": 3840,
+          "mean": 0.00549275893828125,
+          "median": 0.0052057505,
+          "q01": 0.00253194579,
+          "q05": 0.0029675956,
+          "q95": 0.009327006349999997,
+          "q99": 0.01095413712,
+          "std": 0.002028367899309319
+        }
+      },
+      "M8": {
+        "directservo_tick_lateness_s": {
+          "count": 3840,
+          "mean": 5.08375e-05,
+          "median": 4e-06,
+          "q01": 2e-06,
+          "q05": 2e-06,
+          "q95": 0.00017004999999999974,
+          "q99": 0.0014636600000000007,
+          "std": 0.00032154060824523596
+        },
+        "effective_source_rate_hz_from_median_dt": 39.99984741269145,
+        "maximum_command_gap_s": {
+          "count": 16,
+          "mean": 0.030170062499999928,
+          "median": 0.030032499999999906,
+          "q01": 0.026201849999999815,
+          "q05": 0.026525249999999723,
+          "q95": 0.03455774999999983,
+          "q99": 0.036292349999999814,
+          "std": 0.002813782494999721
+        },
+        "replay_phase_jitter_std_bins": 0.11057531917947216,
+        "scan_source_duration_s": {
+          "count": 16,
+          "mean": 5.97439244389534,
+          "median": 5.974994897842407,
+          "q01": 5.966625380516052,
+          "q05": 5.9724873304367065,
+          "q95": 5.9751198291778564,
+          "q99": 5.975191926956176,
+          "std": 0.0024629206416614297
+        },
+        "source_sample_dt_s": {
+          "count": 3824,
+          "mean": 0.024997457924248283,
+          "median": 0.02500009536743164,
+          "q01": 0.015029962062835694,
+          "q05": 0.019980192184448242,
+          "q95": 0.030009984970092773,
+          "q99": 0.034999847412109375,
+          "std": 0.0027641018886491796
+        },
+        "wrench_age_s": {
+          "count": 3840,
+          "mean": 0.0060848325518229164,
+          "median": 0.0057725905,
+          "q01": 0.00269262279,
+          "q05": 0.00309518535,
+          "q95": 0.0101712227,
+          "q99": 0.011229002270000005,
+          "std": 0.002184273086596232
+        }
+      }
+    }
+  },
+  "validation": {
+    "sentinel_repeatability": {
+      "by_size": {
+        "M10": {
+          "channels": [
+            "fx_world_star_n",
+            "fy_world_star_n",
+            "fz_world_star_n",
+            "tx_world_star_nm",
+            "ty_world_star_nm",
+            "tz_world_star_nm"
+          ],
+          "claim_boundary": "sentinel is validation-only repeatability evidence and estimates no calibration parameter; it is not an Allan-variance certificate",
+          "observed_delta_per_sqrt_s_rms": [
+            0.0005460240018168444,
+            0.00047147086490602645,
+            0.005998255746313403,
+            2.5052822990455353e-05,
+            3.566370147293458e-05,
+            1.8028527632612587e-05
+          ],
+          "observed_linear_slope_median_per_s": [
+            -2.5909007865696872e-05,
+            -2.409431401654976e-05,
+            0.00030652592522883656,
+            1.1507081380533262e-06,
+            1.803736751303869e-06,
+            -9.034439648018612e-07
+          ],
+          "pair_count": 2,
+          "sentinel_pairs": [
+            {
+              "baseline_delta": [
+                0.004538074499999989,
+                0.007828056499999736,
+                -0.13241100299999786,
+                -0.0007172800000000007,
+                -0.0005220884999999897,
+                0.00044269450000000016
+              ],
+              "elapsed_s": 502.89248538017273,
+              "sentinel_minus_source_time_s": -502.89248538017273,
+              "sentinel_sample_id": "M10-SENTINEL-SUPPORTED-A003p75",
+              "source_sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A003p75"
+            },
+            {
+              "baseline_delta": [
+                -0.012976869999999974,
+                -0.009892463499999948,
+                0.10605907499999923,
+                0.0002653675000000022,
+                0.0007791149999999969,
+                -0.0002809795000000004
+              ],
+              "elapsed_s": 303.2399115562439,
+              "sentinel_minus_source_time_s": 303.2399115562439,
+              "sentinel_sample_id": "M10-SENTINEL-OUTER-A198p75",
+              "source_sample_id": "M10-CLEAN_CANDIDATE-OUTER-A198p75"
+            }
+          ]
+        },
+        "M12": {
+          "channels": [
+            "fx_world_star_n",
+            "fy_world_star_n",
+            "fz_world_star_n",
+            "tx_world_star_nm",
+            "ty_world_star_nm",
+            "tz_world_star_nm"
+          ],
+          "claim_boundary": "sentinel is validation-only repeatability evidence and estimates no calibration parameter; it is not an Allan-variance certificate",
+          "observed_delta_per_sqrt_s_rms": [
+            0.0006522414375463112,
+            0.00027958862072300104,
+            0.0008841770064354415,
+            1.0525755146889986e-05,
+            1.2317350946933644e-05,
+            3.7155353056582864e-06
+          ],
+          "observed_linear_slope_median_per_s": [
+            -2.8340264977977368e-05,
+            -1.2688193034163016e-05,
+            3.8513311631365206e-05,
+            -5.020550673285524e-07,
+            -5.779087110789864e-07,
+            -9.727918911686435e-08
+          ],
+          "pair_count": 2,
+          "sentinel_pairs": [
+            {
+              "baseline_delta": [
+                -0.007520288499999972,
+                -0.003969431000000245,
+                0.010313988000000052,
+                -0.0002054260000000016,
+                -0.0002098534999999957,
+                1.2981500000001922e-05
+              ],
+              "elapsed_s": 377.84754061698914,
+              "sentinel_minus_source_time_s": 377.84754061698914,
+              "sentinel_sample_id": "M12-SENTINEL-SUPPORTED-A003p75",
+              "source_sample_id": "M12-CLEAN_CANDIDATE-SUPPORTED-A003p75"
+            },
+            {
+              "baseline_delta": [
+                -0.019064933000000006,
+                -0.0077089069999998205,
+                0.025779247500000935,
+                -0.00023868300000000342,
+                -0.00031125149999999824,
+                -0.00011866600000000338
+              ],
+              "elapsed_s": 518.3849430084229,
+              "sentinel_minus_source_time_s": 518.3849430084229,
+              "sentinel_sample_id": "M12-SENTINEL-OUTER-A198p75",
+              "source_sample_id": "M12-CLEAN_CANDIDATE-OUTER-A198p75"
+            }
+          ]
+        },
+        "M8": {
+          "channels": [
+            "fx_world_star_n",
+            "fy_world_star_n",
+            "fz_world_star_n",
+            "tx_world_star_nm",
+            "ty_world_star_nm",
+            "tz_world_star_nm"
+          ],
+          "claim_boundary": "sentinel is validation-only repeatability evidence and estimates no calibration parameter; it is not an Allan-variance certificate",
+          "observed_delta_per_sqrt_s_rms": [
+            0.0012628342407406741,
+            0.0007995599603406992,
+            0.0018885180727560894,
+            1.8419569653044483e-05,
+            3.148557449698871e-05,
+            8.314580101114724e-06
+          ],
+          "observed_linear_slope_median_per_s": [
+            -5.479856061081186e-05,
+            1.1612497634718382e-05,
+            9.99728356770032e-05,
+            8.734921374190985e-07,
+            1.2798725074974473e-06,
+            -4.2284557267177324e-07
+          ],
+          "pair_count": 2,
+          "sentinel_pairs": [
+            {
+              "baseline_delta": [
+                0.03102086500000001,
+                -0.016499220999999897,
+                -0.04022455200000152,
+                -0.0004428030000000055,
+                -0.0007761379999999957,
+                0.00019032000000000077
+              ],
+              "elapsed_s": 303.8274505138397,
+              "sentinel_minus_source_time_s": -303.8274505138397,
+              "sentinel_sample_id": "M8-SENTINEL-SUPPORTED-A003p75",
+              "source_sample_id": "M8-CLEAN_CANDIDATE-SUPPORTED-A003p75"
+            },
+            {
+              "baseline_delta": [
+                -0.0029695029999999845,
+                -0.012310624499999978,
+                0.02675771699999885,
+                0.00011469800000000335,
+                2.06350000001021e-06,
+                -8.685800000000216e-05
+              ],
+              "elapsed_s": 396.10007762908936,
+              "sentinel_minus_source_time_s": 396.10007762908936,
+              "sentinel_sample_id": "M8-SENTINEL-OUTER-A198p75",
+              "source_sample_id": "M8-CLEAN_CANDIDATE-OUTER-A198p75"
+            }
+          ]
+        }
+      },
+      "parameter_fit_effect": "NONE"
+    }
+  }
+}

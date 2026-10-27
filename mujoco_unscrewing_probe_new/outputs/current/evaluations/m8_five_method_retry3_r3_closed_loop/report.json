@@ -1,0 +1,214 @@
+{
+  "all_budget_extensions_zero": true,
+  "all_first_probe_hashes_match": true,
+  "all_simulator_reset_counts_zero": true,
+  "claim_boundary": "Fresh paired M8 MuJoCo evidence under one 130 s complete-loop contract. The Jin arm is an M8 paper-style engineering proxy, not a faithful reproduction. Three rays are a bounded same-rollout recovery policy, not three independent trials. The shared R3 funnel can improve some recoverable contacts but does not guarantee CAD-bottom completion. No hardware, passivity, motor-coupling, or unscrewing claim follows.",
+  "experiment": "M8_five_method_retry3_shared_R3_closed_loop",
+  "methods": {
+    "improved_direct_retry3": {
+      "budget_violations": 0,
+      "direct_any_ray_captures": 19,
+      "direct_attempts_median": 1.0,
+      "direct_first_ray_captures": 18,
+      "direct_successful_attempt_counts": {
+        "1": 18,
+        "3": 1,
+        "none": 5
+      },
+      "failure_categories": {
+        "cad_bottom_verified": 17,
+        "hard_stop": 3,
+        "search_radius_exhausted": 4
+      },
+      "first_probe_executed_direction_error_deg": {
+        "catastrophic_gt_90_deg": 1,
+        "count": 24,
+        "median": 4.746756968166636,
+        "p90": 31.45457119951053,
+        "source": "first direct_attempt_record.offline_control_error_deg; the direction actually consumed by control",
+        "within_15_deg": 0.7916666666666666
+      },
+      "funnel_safe_aborts": 0,
+      "hard_stops": 3,
+      "label": "Improved fingerprint + direct x3",
+      "median_all_max_force_n": 7.326463267484497,
+      "median_all_max_torque_mnm": 21.413761726198,
+      "median_success_bottom_time_s": 9.221499999999779,
+      "median_success_wear_mj": 13.670265843637756,
+      "median_success_xy_path_mm": 6.0657513924535715,
+      "offline_capture_successes": 19,
+      "post_capture_recoveries": 4,
+      "simulator_resets": 0,
+      "strict_bottom_rate": 0.7083333333333334,
+      "strict_bottom_successes": 17,
+      "terminal_rejections": 4,
+      "trials": 24
+    },
+    "jin_direct_retry3": {
+      "budget_violations": 0,
+      "direct_any_ray_captures": 19,
+      "direct_attempts_median": 1.0,
+      "direct_first_ray_captures": 16,
+      "direct_successful_attempt_counts": {
+        "1": 16,
+        "2": 1,
+        "3": 2,
+        "none": 5
+      },
+      "failure_categories": {
+        "cad_bottom_verified": 16,
+        "hard_stop": 3,
+        "search_radius_exhausted": 5
+      },
+      "first_probe_executed_direction_error_deg": {
+        "catastrophic_gt_90_deg": 1,
+        "count": 24,
+        "median": 7.409642189741135,
+        "p90": 13.787351824343204,
+        "source": "first direct_attempt_record.offline_control_error_deg; the direction actually consumed by control",
+        "within_15_deg": 0.9166666666666666
+      },
+      "funnel_safe_aborts": 0,
+      "hard_stops": 3,
+      "label": "Jin-style 3-channel + direct x3",
+      "median_all_max_force_n": 7.7013088294414835,
+      "median_all_max_torque_mnm": 20.680693229526483,
+      "median_success_bottom_time_s": 8.964749999999466,
+      "median_success_wear_mj": 13.215239514603674,
+      "median_success_xy_path_mm": 5.665949348313653,
+      "offline_capture_successes": 18,
+      "post_capture_recoveries": 3,
+      "simulator_resets": 0,
+      "strict_bottom_rate": 0.6666666666666666,
+      "strict_bottom_successes": 16,
+      "terminal_rejections": 3,
+      "trials": 24
+    },
+    "outward": {
+      "budget_violations": 0,
+      "direct_any_ray_captures": null,
+      "direct_attempts_median": null,
+      "direct_first_ray_captures": null,
+      "direct_successful_attempt_counts": null,
+      "failure_categories": {
+        "cad_bottom_verified": 19,
+        "funnel_safe_abort:terminal_dwell_rejected": 1,
+        "hard_stop": 4
+      },
+      "first_probe_executed_direction_error_deg": null,
+      "funnel_safe_aborts": 2,
+      "hard_stops": 4,
+      "label": "Pure Outward",
+      "median_all_max_force_n": 7.4546846188149996,
+      "median_all_max_torque_mnm": 20.286310404756634,
+      "median_success_bottom_time_s": 34.62899999998332,
+      "median_success_wear_mj": 120.38201115625294,
+      "median_success_xy_path_mm": 71.26827608376745,
+      "offline_capture_successes": 23,
+      "post_capture_recoveries": 11,
+      "simulator_resets": 0,
+      "strict_bottom_rate": 0.7916666666666666,
+      "strict_bottom_successes": 19,
+      "terminal_rejections": 12,
+      "trials": 24
+    },
+    "proposed": {
+      "budget_violations": 0,
+      "direct_any_ray_captures": null,
+      "direct_attempts_median": null,
+      "direct_first_ray_captures": null,
+      "direct_successful_attempt_counts": null,
+      "failure_categories": {
+        "cad_bottom_verified": 20,
+        "hard_stop": 3,
+        "search_radius_exhausted": 1
+      },
+      "first_probe_executed_direction_error_deg": null,
+      "funnel_safe_aborts": 0,
+      "hard_stops": 3,
+      "label": "Proposed",
+      "median_all_max_force_n": 7.330944922100375,
+      "median_all_max_torque_mnm": 19.91255890660203,
+      "median_success_bottom_time_s": 13.866000000005455,
+      "median_success_wear_mj": 28.484783649575313,
+      "median_success_xy_path_mm": 14.520080998438779,
+      "offline_capture_successes": 23,
+      "post_capture_recoveries": 5,
+      "simulator_resets": 0,
+      "strict_bottom_rate": 0.8333333333333334,
+      "strict_bottom_successes": 20,
+      "terminal_rejections": 5,
+      "trials": 24
+    },
+    "proposed_plus": {
+      "budget_violations": 0,
+      "direct_any_ray_captures": null,
+      "direct_attempts_median": null,
+      "direct_first_ray_captures": null,
+      "direct_successful_attempt_counts": null,
+      "failure_categories": {
+        "cad_bottom_verified": 19,
+        "hard_stop": 4,
+        "search_radius_exhausted": 1
+      },
+      "first_probe_executed_direction_error_deg": null,
+      "funnel_safe_aborts": 0,
+      "hard_stops": 4,
+      "label": "Proposed+",
+      "median_all_max_force_n": 7.692470517795183,
+      "median_all_max_torque_mnm": 21.28711027087543,
+      "median_success_bottom_time_s": 13.744500000005306,
+      "median_success_wear_mj": 9.536334212048171,
+      "median_success_xy_path_mm": 6.756264141400859,
+      "offline_capture_successes": 23,
+      "post_capture_recoveries": 12,
+      "simulator_resets": 0,
+      "strict_bottom_rate": 0.7916666666666666,
+      "strict_bottom_successes": 19,
+      "terminal_rejections": 5,
+      "trials": 24
+    }
+  },
+  "paired": {
+    "improved_vs_jin_any_ray_capture": {
+      "both_false": 2,
+      "both_true": 16,
+      "exact_mcnemar_p": 1.0,
+      "improved_only_true": 3,
+      "jin_only_true": 3,
+      "metric": "any_ray_capture"
+    },
+    "improved_vs_jin_direct_retry3": {
+      "both_failed": 4,
+      "both_success": 13,
+      "exact_mcnemar_p": 1.0,
+      "left_only_success": 4,
+      "right_only_success": 3
+    },
+    "improved_vs_jin_first_probe_within_15_deg": {
+      "both_false": 1,
+      "both_true": 18,
+      "exact_mcnemar_p": 0.375,
+      "improved_only_true": 1,
+      "jin_only_true": 4,
+      "metric": "first_probe_within_15_deg"
+    },
+    "improved_vs_jin_first_ray_capture": {
+      "both_false": 4,
+      "both_true": 14,
+      "exact_mcnemar_p": 0.6875,
+      "improved_only_true": 4,
+      "jin_only_true": 2,
+      "metric": "first_ray_capture"
+    },
+    "proposed_vs_proposed_plus": {
+      "both_failed": 4,
+      "both_success": 19,
+      "exact_mcnemar_p": 1.0,
+      "left_only_success": 1,
+      "right_only_success": 0
+    }
+  },
+  "task_contract_sha256": "a47f046b9c39e073596083609119df8362fa1c4f226ec41f055076d2c4199e05",
+  "updated_utc": "2026-07-15T13:21:44.889944+00:00"
+}

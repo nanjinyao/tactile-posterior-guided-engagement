@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "experiment_name": "common_center_bota_guarded_geometric_engagement_v1",
+  "status": "implemented_staged_execution_requires_numeric_work_pose",
+  "claim_endpoint": "provisional_shallow_geometric_engagement_candidate",
+  "hardware": {
+    "robot_model": "KUKA LBR iiwa 14 R820",
+    "robot_ip": "192.168.1.147",
+    "kst_port": 30001,
+    "sensor_product": "BFT-SENS-CAT2-B4",
+    "sensor_serial": "SN001349",
+    "wrench_topic": "/bota_ft_sensor/wrench",
+    "wrench_frame": "bota_ft_frame",
+    "diagnostics_topic": "/diagnostics",
+    "diagnostic_name": "Bota F/T Sensor",
+    "diagnostic_hardware_id": "BFT-SENS-CAT2-B4:SN001349"
+  },
+  "frames": {
+    "motion_frame": "KUKA base / SmartPAD WORLD",
+    "down_axis": "WORLD_-Z",
+    "up_axis": "WORLD_+Z",
+    "tool_frame": "KST media-flange identity",
+    "fixed_orientation_only": true,
+    "sensor_axis_transform_required_for_control": false,
+    "reason_sensor_axis_transform_not_required": "Only baseline-relative force and torque norms are used; no axis-resolved or absolute wrench claim is made."
+  },
+  "workspace_contracts": {
+    "common_work_pose_contract": "configs/common_work_pose_contract_v1.json",
+    "common_work_pose_latest": "configs/common_work_pose_latest.json",
+    "contact_qualification": "../../test_real_device/bota_contact_qualification_SN001349.json",
+    "tooling_profile": "../mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+    "full_demo_release_template": "configs/common_center_full_release_%s.json",
+    "recovery_entrypoint": "../../stop_matlabtoolboxserver.m"
+  },
+  "operator_fixture_contract": {
+    "selected_size_must_match_installed_peg": true,
+    "selected_size_must_match_lift_table_mark": true,
+    "lift_table_must_be_locked": true,
+    "common_robot_pose_is_reused_across_sizes": true,
+    "common_pose_is_expected_slightly_above_surface": true,
+    "fresh_surface_z_is_guarded_touch_estimated_each_run": true,
+    "fixture_mark_and_easy_chamfer_are_disclosed_engineering_biases": true
+  },
+  "operator_gate": {
+    "touchdown_tokens": {
+      "m8": "M8_TOOL_AND_M8_MARK_LOCKED_CELL_CLEAR_SMARTPAD_RUNNING_TOUCHDOWN",
+      "m10": "M10_TOOL_AND_M10_MARK_LOCKED_CELL_CLEAR_SMARTPAD_RUNNING_TOUCHDOWN",
+      "m12": "M12_TOOL_AND_M12_MARK_LOCKED_CELL_CLEAR_SMARTPAD_RUNNING_TOUCHDOWN"
+    },
+    "full_demo_tokens": {
+      "m8": "M8_TOOL_AND_M8_MARK_LOCKED_TOUCHDOWN_REVIEWED_CELL_CLEAR_SMARTPAD_RUNNING_FULL_DEMO",
+      "m10": "M10_TOOL_AND_M10_MARK_LOCKED_TOUCHDOWN_REVIEWED_CELL_CLEAR_SMARTPAD_RUNNING_FULL_DEMO",
+      "m12": "M12_TOOL_AND_M12_MARK_LOCKED_TOUCHDOWN_REVIEWED_CELL_CLEAR_SMARTPAD_RUNNING_FULL_DEMO"
+    },
+    "full_requires_separate_touchdown_release": true,
+    "solid_reference_minimum_radial_margin_mm": 0.50
+  },
+  "work_pose_gate": {
+    "maximum_translation_error_mm": 3.0,
+    "maximum_orientation_error_rad": 0.015,
+    "maximum_joint_error_rad": 0.04,
+    "stationarity_samples": 10,
+    "stationarity_period_s": 0.25,
+    "maximum_stationarity_translation_span_mm": 0.5,
+    "maximum_stationarity_orientation_span_rad": 0.005,
+    "maximum_stationarity_joint_span_rad": 0.01
+  },
+  "motion": {
+    "clearance_lift_mm": 3.0,
+    "free_space_segment_mm": 0.5,
+    "free_space_speed_mm_s": 5.0,
+    "touch_segment_mm": 0.25,
+    "touch_speed_mm_s": 2.0,
+    "insertion_segment_mm": 0.10,
+    "insertion_speed_mm_s": 0.75,
+    "maximum_reference_touch_descent_from_clearance_mm": 6.0,
+    "pre_surface_probe_clearance_mm": 0.25,
+    "terminal_depth_below_surface_mm": 1.0,
+    "capture_requalification_unload_mm": 0.10,
+    "capture_requalification_hold_s": 0.20,
+    "contact_release_minimum_up_mm": 0.30,
+    "contact_release_consecutive_clear_dwells": 2,
+    "free_space_tracking_error_mm": 0.35,
+    "touch_tracking_error_mm": 0.15,
+    "insertion_tracking_error_mm": 0.07,
+    "minimum_command_distance_mm": 0.02,
+    "minimum_command_progress_fraction": 0.35,
+    "progress_fraction_requires_command_above_tracking_tolerance": true,
+    "maximum_cross_track_error_mm": 0.20,
+    "maximum_lateral_excursion_from_start_mm": 12.0,
+    "maximum_up_excursion_from_start_mm": 5.0,
+    "maximum_down_excursion_from_start_mm": 4.0,
+    "maximum_orientation_drift_rad": 0.03,
+    "minimum_start_joint_margin_deg": 10.0,
+    "minimum_run_joint_margin_deg": 8.0,
+    "maximum_active_time_s": 180.0,
+    "normal_return_reserve_s": 30.0,
+    "maximum_grid_nodes": 25
+  },
+  "sensor": {
+    "baseline_samples": 150,
+    "minimum_matlab_receive_rate_hz": 40.0,
+    "maximum_force_axis_std_n": 0.10,
+    "maximum_torque_axis_std_nm": 0.01,
+    "maximum_wrench_age_s": 0.10,
+    "maximum_diagnostic_age_s": 1.50,
+    "matlab_ros_teardown_settle_s": 0.75,
+    "matlab_startup_diagnostic_timeout_s": 12.0,
+    "matlab_startup_wrench_timeout_s": 5.0,
+    "message_timeout_s": 0.50,
+    "relative_contact_event_n": 2.0,
+    "relative_contact_consecutive_fresh_samples": 3,
+    "relative_hard_force_delta_n": 20.0,
+    "relative_hard_torque_delta_nm": 0.75,
+    "insertion_soft_force_delta_n": 6.0,
+    "insertion_soft_torque_delta_nm": 0.25,
+    "insertion_soft_limits_status": "provisional_relative_commissioning_values_not_coupon_qualified",
+    "terminal_dwell_samples": 20
+  },
+  "sizes": {
+    "m8": {
+      "peg_af_mm": 6.0,
+      "tip_face_af_mm": 4.8,
+      "socket_wall_af_mm": 6.5,
+      "socket_mouth_af_mm": 8.1,
+      "head_outer_diameter_mm": 14.95,
+      "hardware_easy_capture_allowance_per_side_mm": 1.05,
+      "entry_chamfer_depth_mm": 0.8,
+      "solid_reference_offset_x_mm": 5.76,
+      "fingerprint_radius_mm": 1.30,
+      "maximum_shortcut_mm": 0.78,
+      "grid_pitch_mm": 0.35,
+      "grid_radius_mm": 1.40,
+      "capture_confirm_depth_below_surface_mm": 0.40
+    },
+    "m10": {
+      "peg_af_mm": 8.0,
+      "tip_face_af_mm": 6.4,
+      "socket_wall_af_mm": 8.54,
+      "socket_mouth_af_mm": 10.54,
+      "head_outer_diameter_mm": 18.975,
+      "hardware_easy_capture_allowance_per_side_mm": 1.27,
+      "entry_chamfer_depth_mm": 1.0,
+      "solid_reference_offset_x_mm": 7.38,
+      "fingerprint_radius_mm": 1.55,
+      "maximum_shortcut_mm": 0.95,
+      "grid_pitch_mm": 0.45,
+      "grid_radius_mm": 1.70,
+      "capture_confirm_depth_below_surface_mm": 0.50
+    },
+    "m12": {
+      "peg_af_mm": 10.0,
+      "tip_face_af_mm": 8.0,
+      "socket_wall_af_mm": 10.6,
+      "socket_mouth_af_mm": 13.0,
+      "head_outer_diameter_mm": 21.275,
+      "hardware_easy_capture_allowance_per_side_mm": 1.50,
+      "entry_chamfer_depth_mm": 1.2,
+      "solid_reference_offset_x_mm": 8.57,
+      "fingerprint_radius_mm": 1.85,
+      "maximum_shortcut_mm": 1.00,
+      "grid_pitch_mm": 0.55,
+      "grid_radius_mm": 2.00,
+      "capture_confirm_depth_below_surface_mm": 0.50
+    }
+  },
+  "algorithm": {
+    "fingerprint_nodes": 8,
+    "fingerprint_interpretation": "fixed-orientation lift-shift-retouch force-norm samples; not a 15-degree conical probe",
+    "shortcut_rule": "inverse-force circular resultant with confidence abstention",
+    "shortcut_minimum_confidence": 0.15,
+    "shortcut_always_capped_by_size_mm": true,
+    "grid_rule": "finite outward square grid ordered around the shortcut prediction; no revisits",
+    "capture_rule": "persistent low relative wrench while measured Z progresses below the freshly touched surface, followed by 0.10 mm unload and same-depth requalification",
+    "terminal_rule": "measured shallow depth plus bounded relative wrench dwell",
+    "terminal_verifier_status": "provisional_until_size_specific_coupon_depth_and_wrench_bands_are_frozen",
+    "learning_enabled": false,
+    "future_learning_role": "direction posterior or bounded shortcut only; never guards, raw pose, force, stiffness, or terminal success"
+  },
+  "blocking_kst_contract": {
+    "endpoint_observation_only": true,
+    "maximum_unobserved_touch_motion_mm": 0.25,
+    "maximum_unobserved_insertion_motion_mm": 0.10,
+    "physical_stop_distance_is_not_certified": true,
+    "smartpad_pause_or_second_client_cannot_preempt_current_blocking_segment": true
+  },
+  "failure_policy": {
+    "hard_guard_sensor_stale_tracking_or_kst_error": "no_further_motion_request_kst_end",
+    "ordinary_search_failure_with_healthy_feedback": "measured_vertical_retract_clearance_xy_return_live_start_then_end",
+    "blind_return_on_exception": false,
+    "smartpad_selected_requires_human_observation": true,
+    "result_success_requires_separate_smartpad_selected_confirmation": true
+  },
+  "claim_boundary": [
+    "The full mode demonstrates fixed-orientation baseline-relative contact routing and at most shallow geometric engagement.",
+    "It is not continuous force control, certified protective stopping, calibrated task-frame wrench control, rotational coupling, or unscrewing.",
+    "The manually marked lift-table positions and hardware-easy chamfers are disclosed task-simplifying engineering biases.",
+    "A learner may be added later only after this classical backbone closes the task reproducibly."
+  ]
+}

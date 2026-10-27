@@ -1,0 +1,114 @@
+{
+  "architecture_type": "REAL_FOURIER_LINEAR_V1",
+  "calibration": {
+    "aps_quantile": 0.8275126755800355,
+    "holdout_used": false,
+    "method": "clean-only leave-one-size-out APS",
+    "miscoverage_target": 0.1
+  },
+  "combiner": "mean seed probabilities",
+  "input": {
+    "channels": [
+      "fx_world_star_n",
+      "fy_world_star_n",
+      "fz_world_star_n",
+      "tx_world_star_nm",
+      "ty_world_star_nm",
+      "tz_world_star_nm",
+      "cmd_z_relative_mm"
+    ],
+    "context_order": [
+      "size_onehot_m8",
+      "size_onehot_m10",
+      "size_onehot_m12",
+      "target_down_force_over_3p5N",
+      "bit_radius_over_m12_radius"
+    ],
+    "context_shape": [
+      5
+    ],
+    "phase_bins": 360,
+    "shape": [
+      7,
+      360
+    ]
+  },
+  "model_id": "real_multisize_direction_v1",
+  "output": {
+    "direction_bin_offset_deg": 3.75,
+    "direction_bin_width_deg": 7.5,
+    "direction_classes": 48,
+    "returns": [
+      "state_probabilities",
+      "direction_probabilities",
+      "top_direction_deg",
+      "circular_mean_direction_deg",
+      "direction_world_xy",
+      "max_probability",
+      "circular_concentration",
+      "aps_direction_classes",
+      "aps_direction_angles_deg",
+      "aps_set_size",
+      "sample_quality"
+    ],
+    "state_names": [
+      "supported_search",
+      "double_overhang",
+      "outer_partial_support"
+    ]
+  },
+  "policy_boundary": {
+    "capture_insertion_or_terminal_authority": false,
+    "hardware_control_sizes": [
+      "m12"
+    ],
+    "pure_outward_spiral_consumer": false,
+    "role": "high-level contact-state and direction posterior plus CAD-bounded shortcut, residual target, and corridor proposal"
+  },
+  "quality": {
+    "formula": "clip(0.45*maximum_probability + 0.35*circular_concentration + 0.20*(1-(aps_set_size-1)/47),0,1)",
+    "semantics": "continuous diagnostic and shortcut-scale signal, never a validity veto",
+    "weak_complete_fingerprint_remains_actionable": true
+  },
+  "schema_version": 1,
+  "seeds": [
+    {
+      "metrics_path": "seeds/seed_20260728/metrics.json",
+      "metrics_sha256": "09471ae121e8acaffe9faa2c4bc51b4f0d8f1436fc50d73a94a1549cebbcca52",
+      "model_config_path": "seeds/seed_20260728/model_config.json",
+      "model_config_sha256": "86985dd6cb3c6cd2c73377e77adbfbec2e610d0c85ad6c5eae28a74184f979ce",
+      "model_path": "seeds/seed_20260728/model.pt",
+      "model_sha256": "50bdc31c318a393c0d5b0560ee262b3c8c35b9750e40928009cea485126c60c9",
+      "normalization_path": "seeds/seed_20260728/normalization.npz",
+      "normalization_sha256": "9c1b52e69473731e67ab3b35d436a3b65a0f44c29125c9b778677ffa5cdfdbcb",
+      "seed": 20260728
+    },
+    {
+      "metrics_path": "seeds/seed_20260729/metrics.json",
+      "metrics_sha256": "69667d4b8a29c8ee2b7a7897cf1c967ecb5ca85e0efb78e7a1b62968c0f7958e",
+      "model_config_path": "seeds/seed_20260729/model_config.json",
+      "model_config_sha256": "fe877462b21d1b8636933e0c82a153063ffadf289e532fea9398efb5f88a815f",
+      "model_path": "seeds/seed_20260729/model.pt",
+      "model_sha256": "689e1ea23cff9f49acfe7cf59bcce7c6b2935b57dd89dac084c83bc0a0d8ba47",
+      "normalization_path": "seeds/seed_20260729/normalization.npz",
+      "normalization_sha256": "9c1b52e69473731e67ab3b35d436a3b65a0f44c29125c9b778677ffa5cdfdbcb",
+      "seed": 20260729
+    },
+    {
+      "metrics_path": "seeds/seed_20260730/metrics.json",
+      "metrics_sha256": "dbd7258e5ffe407d81e7b0871c3161ad28a50269005c11e2325c5a5e501dbcef",
+      "model_config_path": "seeds/seed_20260730/model_config.json",
+      "model_config_sha256": "f75421846f8a073f0a0527c2610f7c321667c2409946d956523d5ee5ca827229",
+      "model_path": "seeds/seed_20260730/model.pt",
+      "model_sha256": "8b43eb31d62b57044999e66b9457beea03e92aff88e213f3f0feb876eb53c9d2",
+      "normalization_path": "seeds/seed_20260730/normalization.npz",
+      "normalization_sha256": "9c1b52e69473731e67ab3b35d436a3b65a0f44c29125c9b778677ffa5cdfdbcb",
+      "seed": 20260730
+    }
+  ],
+  "supported_sizes": [
+    "m8",
+    "m10",
+    "m12"
+  ]
+}

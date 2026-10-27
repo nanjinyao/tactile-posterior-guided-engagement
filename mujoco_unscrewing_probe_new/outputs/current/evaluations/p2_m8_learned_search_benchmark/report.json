@@ -1,0 +1,114 @@
+{
+  "claim_boundary": "Small held-out-pose nominal-dynamics M8 simulation pilot. Learned probe cost is included; oracle uses true center only as a lower bound. The capture/progress verifier still uses privileged MuJoCo contact tags, and the visual covariance is synthetic rather than measured.",
+  "design": {
+    "baseline_max_radius_mm": 8.0,
+    "common_active_budget_s": 30.0,
+    "held_out_spatial_groups": 6,
+    "initial_poses": 18,
+    "methods": [
+      "learned",
+      "baseline",
+      "oracle"
+    ],
+    "physical_sectors_per_group": 3,
+    "spiral_pitch_mm_per_rev": 0.4,
+    "target_down_force_n": 3.0,
+    "visual_prior_sigma_mm": 2.0,
+    "xy_speed_mm_s": 2.25
+  },
+  "methods": {
+    "baseline": {
+      "contact_path_median_mm": 56.08259278841158,
+      "max_force_p90_n": 16.639268201078377,
+      "max_torque_p90_mnm": 62.15656847503628,
+      "penalized_time_median_s": 30.0,
+      "penalized_time_p90_s": 30.0,
+      "success_rate": 0.3333333333333333,
+      "successes": 6,
+      "trials": 18,
+      "wear_proxy_median_mj": 91.25280565947625
+    },
+    "learned": {
+      "contact_path_median_mm": 30.506833928757324,
+      "direction_error_median_deg": 0.0,
+      "direction_error_p90_deg": 0.0,
+      "direction_within_7p5_rate": 1.0,
+      "max_force_p90_n": 13.004865221195642,
+      "max_torque_p90_mnm": 64.12858887904426,
+      "penalized_time_median_s": 30.0,
+      "penalized_time_p90_s": 30.0,
+      "success_rate": 0.3888888888888889,
+      "successes": 7,
+      "transport_allowed_rate": 1.0,
+      "trials": 18,
+      "wear_proxy_median_mj": 55.270233249559006
+    },
+    "oracle": {
+      "contact_path_median_mm": 4.708645580595167,
+      "max_force_p90_n": 11.988844228328844,
+      "max_torque_p90_mnm": 60.29336917395635,
+      "penalized_time_median_s": 2.086749999999987,
+      "penalized_time_p90_s": 3.072400000000193,
+      "success_rate": 1.0,
+      "successes": 18,
+      "trials": 18,
+      "wear_proxy_median_mj": 7.850838126305055
+    }
+  },
+  "paired": {
+    "complete_pose_triplets": 18,
+    "learned_faster_than_baseline_rate": 0.3333333333333333,
+    "learned_minus_baseline_penalized_time_median_s": 0.0,
+    "learned_minus_oracle_penalized_time_median_s": 26.925999999999807
+  },
+  "stage": "P2_M8_learned_search_pilot",
+  "strata": {
+    "inside_synthetic_visual_95": {
+      "methods": {
+        "baseline": {
+          "penalized_time_median_s": 17.10700000000548,
+          "success_rate": 0.6666666666666666,
+          "successes": 6,
+          "trials": 9
+        },
+        "learned": {
+          "penalized_time_median_s": 15.512000000007466,
+          "success_rate": 0.7777777777777778,
+          "successes": 7,
+          "trials": 9
+        },
+        "oracle": {
+          "penalized_time_median_s": 1.2094999999999223,
+          "success_rate": 1.0,
+          "successes": 9,
+          "trials": 9
+        }
+      },
+      "visual_95_radius_mm": 4.895303872079853
+    },
+    "outside_synthetic_visual_95": {
+      "methods": {
+        "baseline": {
+          "penalized_time_median_s": 30.0,
+          "success_rate": 0.0,
+          "successes": 0,
+          "trials": 9
+        },
+        "learned": {
+          "penalized_time_median_s": 30.0,
+          "success_rate": 0.0,
+          "successes": 0,
+          "trials": 9
+        },
+        "oracle": {
+          "penalized_time_median_s": 2.864500000000124,
+          "success_rate": 1.0,
+          "successes": 9,
+          "trials": 9
+        }
+      },
+      "visual_95_radius_mm": 4.895303872079853
+    }
+  },
+  "updated_utc": "2026-07-10T02:37:12.538554+00:00"
+}

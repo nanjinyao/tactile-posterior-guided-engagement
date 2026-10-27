@@ -1,0 +1,530 @@
+{
+  "artifacts": {
+    "keyframe": {
+      "bytes": 53786,
+      "path": "outputs/current/active_comparison/strict_four_methods/comparison_strict_four_methods_2x2_keyframe.png",
+      "sha256": "f1e2225de37cb256d9ad5bdcff5d968b347645af5eb44c65a229ef2d924225bc"
+    },
+    "poster": {
+      "bytes": 433866,
+      "path": "outputs/current/active_comparison/strict_four_methods/comparison_strict_four_methods_2x2_poster.png",
+      "sha256": "4d8b3270b04194d6b8c0985032b234e51393e4a6d510e0cf4214c1bba6f824ee"
+    },
+    "video": {
+      "bytes": 4713504,
+      "path": "outputs/current/active_comparison/strict_four_methods/comparison_strict_four_methods_2x2.mp4",
+      "sha256": "7405d2f8a4d948959cdb8157c68a303061d1cdbc46a74474c67535e61a9689c4"
+    }
+  },
+  "claim_boundary": "Selected same-start MuJoCo mechanism visualization from the frozen strict sobol_008 trial. It preserves Entropy-grid's faster finish in this case and is not a ranking, success-rate estimate, hardware claim, passivity proof, threaded-unscrewing result, or replacement for the paired 24-pose report.",
+  "composition": {
+    "active_frames_by_method": {
+      "entropy_grid": 131,
+      "outward": 412,
+      "proposed": 282,
+      "proposed_plus": 263
+    },
+    "fps": 15,
+    "policy": "physical-time synchronized at 1x; completed panels hold their final active frame; one shared summary tail is appended",
+    "poster_frame": 226,
+    "resolution": [
+      1280,
+      800
+    ],
+    "summary_frames": 30,
+    "synchronized_dynamic_frames": 412,
+    "total_frames": 442
+  },
+  "contract": {
+    "all_rendered_results_match_frozen_trial": true,
+    "conditioned_on_ambiguous_top_contact": true,
+    "distribution_claim_source": "outputs/current/evaluations/m8_strict_24_complete_loop/report.json",
+    "float_field_absolute_tolerance_s": 1e-09,
+    "online_true_center_or_contact_tags": false,
+    "proposed_plus_video_reused_after_hash_and_result_verification": true,
+    "regenerated_component_videos_deleted_after_composition": true,
+    "same_capture_handoff_and_terminal_verifier": true,
+    "same_frozen_initial_pose_contact_nuisance_and_sensor_seed": true,
+    "same_hard_accumulated_active_time_budget_s": 130.0,
+    "selected_mechanism_example_not_method_ranking": true
+  },
+  "created_utc": "2026-07-15T10:55:17.405196+00:00",
+  "experiment": "M8_strict_four_method_selected_mechanism_matrix",
+  "method_order": [
+    "proposed",
+    "proposed_plus",
+    "outward",
+    "entropy_grid"
+  ],
+  "methods": {
+    "entropy_grid": {
+      "component_video": {
+        "artifact_before_deletion": {
+          "bytes": 596314,
+          "path": "outputs/current/active_comparison/strict_four_methods/component_entropy_grid.mp4",
+          "sha256": "bb1e806fdf9c94a6daeeb31b9155e3b6aa3c057a7c5b65c5c47df4777dbf3989"
+        },
+        "deleted_after_composition": true,
+        "generation": "rerendered through run_m8_strict_complete_loop_audit._run_with_runtime",
+        "renderer_only_extra_argument": "output_path",
+        "retained_after_composition": false
+      },
+      "display_name": "ENTROPY-GRID | wide-prior active contacts",
+      "frozen_result": {
+        "bottom_reached": true,
+        "fallback_budget_extension_s": 0.0,
+        "fingerprint_sha256": null,
+        "hard_stop": false,
+        "hard_stop_reason": null,
+        "inner_wall_confirmed": true,
+        "offline_capture_validated": true,
+        "result": "cad_bottom_verified",
+        "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+        "time_to_bottom_s": 7.406499999998615,
+        "time_to_inner_wall_s": 5.3084999999997775,
+        "total_active_time_s": 7.406499999998615
+      },
+      "runtime_method": "entropy_grid",
+      "strict_role": "strong transparent active-perception diagnostic",
+      "verification": {
+        "all_fields_match": true,
+        "fields": {
+          "bottom_reached": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "fallback_budget_extension_s": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "match": true
+          },
+          "fingerprint_sha256": {
+            "actual": null,
+            "expected": null,
+            "match": true
+          },
+          "hard_stop": {
+            "actual": false,
+            "expected": false,
+            "match": true
+          },
+          "hard_stop_reason": {
+            "actual": null,
+            "expected": null,
+            "match": true
+          },
+          "inner_wall_confirmed": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "offline_capture_validated": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "result": {
+            "actual": "cad_bottom_verified",
+            "expected": "cad_bottom_verified",
+            "match": true
+          },
+          "terminal_verification_mode": {
+            "actual": "cad_depth_low_wrench_dwell",
+            "expected": "cad_depth_low_wrench_dwell",
+            "match": true
+          },
+          "time_to_bottom_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 7.406499999998615,
+            "delta": 0.0,
+            "expected": 7.406499999998615,
+            "match": true
+          },
+          "time_to_inner_wall_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 5.3084999999997775,
+            "delta": 0.0,
+            "expected": 5.3084999999997775,
+            "match": true
+          },
+          "total_active_time_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 7.406499999998615,
+            "delta": 0.0,
+            "expected": 7.406499999998615,
+            "match": true
+          }
+        },
+        "fingerprint_applicable": false,
+        "method": "entropy_grid",
+        "strict_bottom_success": {
+          "actual": true,
+          "expected": true,
+          "match": true
+        }
+      }
+    },
+    "outward": {
+      "component_video": {
+        "artifact_before_deletion": {
+          "bytes": 3436445,
+          "path": "outputs/current/active_comparison/strict_four_methods/component_outward.mp4",
+          "sha256": "89f02c80967f218e86ca51026c74c8e6f6e1a255c472d04446833f169266678a"
+        },
+        "deleted_after_composition": true,
+        "generation": "rerendered through run_m8_strict_complete_loop_audit._run_with_runtime",
+        "renderer_only_extra_argument": "output_path",
+        "retained_after_composition": false
+      },
+      "display_name": "OUTWARD | geometry-only Archimedean coverage",
+      "frozen_result": {
+        "bottom_reached": true,
+        "fallback_budget_extension_s": 0.0,
+        "fingerprint_sha256": null,
+        "hard_stop": false,
+        "hard_stop_reason": null,
+        "inner_wall_confirmed": true,
+        "offline_capture_validated": true,
+        "result": "cad_bottom_verified",
+        "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+        "time_to_bottom_s": 26.124499999984465,
+        "time_to_inner_wall_s": 24.507499999988234,
+        "total_active_time_s": 26.124499999984465
+      },
+      "runtime_method": "baseline",
+      "strict_role": "geometry-only comparator",
+      "verification": {
+        "all_fields_match": true,
+        "fields": {
+          "bottom_reached": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "fallback_budget_extension_s": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "match": true
+          },
+          "fingerprint_sha256": {
+            "actual": null,
+            "expected": null,
+            "match": true
+          },
+          "hard_stop": {
+            "actual": false,
+            "expected": false,
+            "match": true
+          },
+          "hard_stop_reason": {
+            "actual": null,
+            "expected": null,
+            "match": true
+          },
+          "inner_wall_confirmed": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "offline_capture_validated": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "result": {
+            "actual": "cad_bottom_verified",
+            "expected": "cad_bottom_verified",
+            "match": true
+          },
+          "terminal_verification_mode": {
+            "actual": "cad_depth_low_wrench_dwell",
+            "expected": "cad_depth_low_wrench_dwell",
+            "match": true
+          },
+          "time_to_bottom_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 26.124499999984465,
+            "delta": 0.0,
+            "expected": 26.124499999984465,
+            "match": true
+          },
+          "time_to_inner_wall_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 24.507499999988234,
+            "delta": 0.0,
+            "expected": 24.507499999988234,
+            "match": true
+          },
+          "total_active_time_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 26.124499999984465,
+            "delta": 0.0,
+            "expected": 26.124499999984465,
+            "match": true
+          }
+        },
+        "fingerprint_applicable": false,
+        "method": "outward",
+        "strict_bottom_success": {
+          "actual": true,
+          "expected": true,
+          "match": true
+        }
+      }
+    },
+    "proposed": {
+      "component_video": {
+        "artifact_before_deletion": {
+          "bytes": 2534410,
+          "path": "outputs/current/active_comparison/strict_four_methods/component_proposed.mp4",
+          "sha256": "7af950c6f187c18cc5ac53dc06cad7c966d9ddfae2f5cfb6213aee87b7c99cfb"
+        },
+        "deleted_after_composition": true,
+        "generation": "rerendered through run_m8_strict_complete_loop_audit._run_with_runtime",
+        "renderer_only_extra_argument": "output_path",
+        "retained_after_composition": false
+      },
+      "display_name": "PROPOSED | fingerprint -> posterior move -> outward",
+      "frozen_result": {
+        "bottom_reached": true,
+        "fallback_budget_extension_s": 0.0,
+        "fingerprint_sha256": "1eacad5b5b8e90a328f47ca4b90fcf9a81baaabb6d8b4fb11b853d1324a05f37",
+        "hard_stop": false,
+        "hard_stop_reason": null,
+        "inner_wall_confirmed": true,
+        "offline_capture_validated": true,
+        "result": "cad_bottom_verified",
+        "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+        "time_to_bottom_s": 17.488500000004592,
+        "time_to_inner_wall_s": 16.12450000000777,
+        "total_active_time_s": 17.488500000004592
+      },
+      "runtime_method": "learned",
+      "strict_role": "paper-facing complete method",
+      "verification": {
+        "all_fields_match": true,
+        "fields": {
+          "bottom_reached": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "fallback_budget_extension_s": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "match": true
+          },
+          "fingerprint_sha256": {
+            "actual": "1eacad5b5b8e90a328f47ca4b90fcf9a81baaabb6d8b4fb11b853d1324a05f37",
+            "expected": "1eacad5b5b8e90a328f47ca4b90fcf9a81baaabb6d8b4fb11b853d1324a05f37",
+            "match": true
+          },
+          "hard_stop": {
+            "actual": false,
+            "expected": false,
+            "match": true
+          },
+          "hard_stop_reason": {
+            "actual": null,
+            "expected": null,
+            "match": true
+          },
+          "inner_wall_confirmed": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "offline_capture_validated": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "result": {
+            "actual": "cad_bottom_verified",
+            "expected": "cad_bottom_verified",
+            "match": true
+          },
+          "terminal_verification_mode": {
+            "actual": "cad_depth_low_wrench_dwell",
+            "expected": "cad_depth_low_wrench_dwell",
+            "match": true
+          },
+          "time_to_bottom_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 17.488500000004592,
+            "delta": 0.0,
+            "expected": 17.488500000004592,
+            "match": true
+          },
+          "time_to_inner_wall_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 16.12450000000777,
+            "delta": 0.0,
+            "expected": 16.12450000000777,
+            "match": true
+          },
+          "total_active_time_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 17.488500000004592,
+            "delta": 0.0,
+            "expected": 17.488500000004592,
+            "match": true
+          }
+        },
+        "fingerprint_applicable": true,
+        "method": "proposed",
+        "strict_bottom_success": {
+          "actual": true,
+          "expected": true,
+          "match": true
+        }
+      }
+    },
+    "proposed_plus": {
+      "component_video": {
+        "generation": "reused verified strict explainer",
+        "manifest": {
+          "bytes": 5855,
+          "path": "outputs/current/active_comparison/proposed_plus_strict_explainer/manifest.json",
+          "sha256": "f97c6e6617718bf6b84142da55908081e9475922365be0a9eb8c39efbbb8bbeb"
+        },
+        "result": {
+          "bytes": 23322,
+          "path": "outputs/current/active_comparison/proposed_plus_strict_explainer/result.json",
+          "sha256": "d34c6a8cc8edd9ac7d9e5efaf783c4238e415618a772e179dc962d97a5ef146e"
+        },
+        "retained_after_composition": true,
+        "reused_verified_strict_explainer": true,
+        "video": {
+          "bytes": 1911697,
+          "path": "outputs/current/active_comparison/proposed_plus_strict_explainer/proposed_plus_strict_sobol_008.mp4",
+          "sha256": "2355b3586f8133c757193277a9ec93a0f7d2cfaa641282bd23343c355435f498"
+        }
+      },
+      "display_name": "PROPOSED+ | shortcut -> adaptive grid -> outward reserve",
+      "frozen_result": {
+        "bottom_reached": true,
+        "fallback_budget_extension_s": 0.0,
+        "fingerprint_sha256": "1eacad5b5b8e90a328f47ca4b90fcf9a81baaabb6d8b4fb11b853d1324a05f37",
+        "hard_stop": false,
+        "hard_stop_reason": null,
+        "inner_wall_confirmed": true,
+        "offline_capture_validated": true,
+        "result": "cad_bottom_verified",
+        "terminal_verification_mode": "cad_depth_low_wrench_dwell",
+        "time_to_bottom_s": 16.208500000007575,
+        "time_to_inner_wall_s": 11.944000000003106,
+        "total_active_time_s": 16.208500000007575
+      },
+      "runtime_method": "hybrid",
+      "strict_role": "adaptive research branch; no superiority claim",
+      "verification": {
+        "all_fields_match": true,
+        "fields": {
+          "bottom_reached": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "fallback_budget_extension_s": {
+            "actual": 0.0,
+            "expected": 0.0,
+            "match": true
+          },
+          "fingerprint_sha256": {
+            "actual": "1eacad5b5b8e90a328f47ca4b90fcf9a81baaabb6d8b4fb11b853d1324a05f37",
+            "expected": "1eacad5b5b8e90a328f47ca4b90fcf9a81baaabb6d8b4fb11b853d1324a05f37",
+            "match": true
+          },
+          "hard_stop": {
+            "actual": false,
+            "expected": false,
+            "match": true
+          },
+          "hard_stop_reason": {
+            "actual": null,
+            "expected": null,
+            "match": true
+          },
+          "inner_wall_confirmed": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "offline_capture_validated": {
+            "actual": true,
+            "expected": true,
+            "match": true
+          },
+          "result": {
+            "actual": "cad_bottom_verified",
+            "expected": "cad_bottom_verified",
+            "match": true
+          },
+          "terminal_verification_mode": {
+            "actual": "cad_depth_low_wrench_dwell",
+            "expected": "cad_depth_low_wrench_dwell",
+            "match": true
+          },
+          "time_to_bottom_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 16.208500000007575,
+            "delta": 0.0,
+            "expected": 16.208500000007575,
+            "match": true
+          },
+          "time_to_inner_wall_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 11.944000000003106,
+            "delta": 0.0,
+            "expected": 11.944000000003106,
+            "match": true
+          },
+          "total_active_time_s": {
+            "absolute_tolerance_s": 1e-09,
+            "actual": 16.208500000007575,
+            "delta": 0.0,
+            "expected": 16.208500000007575,
+            "match": true
+          }
+        },
+        "fingerprint_applicable": true,
+        "method": "proposed_plus",
+        "strict_bottom_success": {
+          "actual": true,
+          "expected": true,
+          "match": true
+        }
+      }
+    }
+  },
+  "pose_id": "sobol_008",
+  "source": {
+    "frozen_trial": {
+      "bytes": 73977,
+      "path": "outputs/current/evaluations/m8_strict_24_complete_loop/trials/sobol_008.json",
+      "sha256": "6289772c4a3736d73adbfaab5b2f25724d7c59681b88a20895c191be4e503b0f"
+    },
+    "strict_manifest": {
+      "bytes": 12451,
+      "path": "outputs/current/evaluations/m8_strict_24_complete_loop/manifest.json",
+      "sha256": "09f3d2f2fa542486209ead98a2521fc081bafc8e28f3a407c8b96caccdcb7b99"
+    },
+    "strict_parameter_source": "run_m8_strict_complete_loop_audit._run_with_runtime"
+  },
+  "task": {
+    "angle_rad": 3.635431138459195,
+    "baseline_phase_rad": 3.1516419060100644,
+    "contact_timeconst_s": 0.06974972726777195,
+    "friction_slide": 0.6004086758941413,
+    "pose_id": "sobol_008",
+    "posterior_seed": 20260723008,
+    "radius_m": 0.002936421399277378,
+    "sensor_delay_s": 0.0076656314600000025,
+    "sensor_noise_seed": 202607230008,
+    "target_down_force_n": 3.3435806203633547,
+    "x_m": -0.002585577396309772,
+    "y_m": -0.0013918908584461987
+  }
+}

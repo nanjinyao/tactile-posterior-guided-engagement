@@ -1,0 +1,110 @@
+{
+  "claim_boundary": "Frozen M8 simulation benchmark inside the declared visual prior. Position and bounded contact nuisances are unseen Sobol samples. Proposed and Baseline B share an identical first fingerprint and frozen learner. Baseline-B reset travel is not simulated or timed, and capture evaluation still uses privileged MuJoCo contact labels; this is not hardware evidence.",
+  "design": {
+    "baseline_b_max_attempts": 3,
+    "baseline_b_retry_offset_mm": 0.5,
+    "capture_uses_privileged_mujoco_tags": true,
+    "contact_timeconst_range_s": [
+      0.04,
+      0.07
+    ],
+    "down_force_range_n": [
+      2.5,
+      3.5
+    ],
+    "friction_range": [
+      0.55,
+      0.95
+    ],
+    "poses": 18,
+    "random_position_design": "area-uniform Sobol in 1.50 mm to visual 95% radius",
+    "reset_motion_time_excluded_from_baseline_b": true,
+    "same_probe_for_proposed_and_baseline_b_first_attempt": true,
+    "visual_95_radius_mm": 4.895303872079853
+  },
+  "direct_margin_diagnostic": {
+    "negative_margin_first_attempt_success_rate": 1.0,
+    "negative_margin_trials": 4,
+    "nonnegative_margin_first_attempt_success_rate": 0.8571428571428571
+  },
+  "distance_rule": {
+    "paired_1p5_only_success": 0,
+    "paired_posterior_only_success": 1
+  },
+  "methods": {
+    "baseline_a": {
+      "contact_path_median_mm": 31.593814112597585,
+      "first_attempt_successes": 18,
+      "hard_stops": 0,
+      "max_filtered_force_p90_n": 4.151215926299946,
+      "max_force_p90_n": 8.23425548363831,
+      "max_torque_p90_mnm": 21.08206734012173,
+      "success_rate": 1.0,
+      "successes": 18,
+      "time_success_median_s": 15.21150000000673,
+      "trials": 18,
+      "wear_proxy_median_mj": 49.16516652767455
+    },
+    "baseline_b": {
+      "attempts_median": 1.0,
+      "contact_path_median_mm": 5.560959552666541,
+      "first_attempt_successes": 16,
+      "hard_stops": 0,
+      "max_filtered_force_p90_n": 4.046575704860027,
+      "max_force_p90_n": 6.627513078541312,
+      "max_torque_p90_mnm": 22.833875337181272,
+      "success_rate": 0.9444444444444444,
+      "successes": 17,
+      "time_success_median_s": 7.564999999998527,
+      "trials": 18,
+      "wear_proxy_median_mj": 12.682323226073954
+    },
+    "proposed_1p5": {
+      "contact_path_median_mm": 38.653437963442286,
+      "first_attempt_successes": 16,
+      "hard_stops": 0,
+      "local_radius_median_mm": 2.8520875110470376,
+      "max_filtered_force_p90_n": 4.94187416262643,
+      "max_force_p90_n": 8.114403952019781,
+      "max_torque_p90_mnm": 21.962553539579694,
+      "success_rate": 0.8888888888888888,
+      "successes": 16,
+      "time_success_median_s": 20.615249999997303,
+      "transport_median_mm": 1.5,
+      "trials": 18,
+      "wear_proxy_median_mj": 66.63311081966773
+    },
+    "proposed_posterior": {
+      "contact_path_median_mm": 26.641647444571106,
+      "first_attempt_successes": 17,
+      "hard_stops": 0,
+      "local_radius_median_mm": 2.336336666130018,
+      "max_filtered_force_p90_n": 4.823265437815649,
+      "max_force_p90_n": 7.969893093208644,
+      "max_torque_p90_mnm": 20.42277016446744,
+      "success_rate": 0.9444444444444444,
+      "successes": 17,
+      "time_success_median_s": 16.06000000000792,
+      "transport_median_mm": 2.095780435898389,
+      "trials": 18,
+      "wear_proxy_median_mj": 42.3459287462049
+    }
+  },
+  "paired_proposed_posterior_vs_baseline_a": {
+    "both_failed": 0,
+    "both_success": 17,
+    "left_only_success": 0,
+    "mcnemar_exact_two_sided_p": 1.0,
+    "right_only_success": 1
+  },
+  "paired_proposed_posterior_vs_baseline_b": {
+    "both_failed": 1,
+    "both_success": 17,
+    "left_only_success": 0,
+    "mcnemar_exact_two_sided_p": 1.0,
+    "right_only_success": 0
+  },
+  "probe_hash_match_rate": 1.0,
+  "stage": "M8_fair_policy_benchmark",
+  "updated_utc": "2026-07-11T13:58:04.474781+00:00"
+}

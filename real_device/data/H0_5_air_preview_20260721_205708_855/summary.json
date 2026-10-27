@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "experiment": "iiwa_empty_tool_air_motion_rehearsal_v1",
+  "stage": "H0_5_AIR_MOTION",
+  "mode": "preview",
+  "success": true,
+  "commands_robot_motion": false,
+  "motion_commanded": false,
+  "robot_ip": "192.168.1.147",
+  "frame": "KUKA base / SmartPAD WORLD",
+  "printed_tooling_present": false,
+  "bota_and_mounting_stack_installed": true,
+  "contact_allowed": false,
+  "force_feedback_controls_motion": false,
+  "linear_speed_mm_s": 5,
+  "planned_sequence_ids": [
+    "SAFE_LIFT_Z",
+    "RETURN_TO_FOLDED_Z"
+  ],
+  "planned_cumulative_world_mm": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "config_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/air_motion_rehearsal_v1.json",
+  "config_sha256": "e879025ebccc64643a47b746ac381d9f69638b85d64b2d5cc5f2d8b1b9fa226f",
+  "qualification_status": "BLOCKED_PENDING_PAYLOAD_AND_ACCELERATION_CONFIGURATION",
+  "motion_blockers": [
+    "Measure the complete currently installed robot-side payload mass and flange-frame center of mass; inertia is also required before dynamic/contact stages.",
+    "Configure and deploy matching Sunrise LoadData instead of MASS=0 / CoM=[0,0,0], then record the deployed project/source hash.",
+    "Add and deploy an explicit reviewed Cartesian acceleration bound for KST relative WORLD lin() motion; record the applied default/jerk behavior.",
+    "Run a no-motion connect/read/end lifecycle check and verify SmartPAD Selected before the first displacement.",
+    "Operator must confirm the photographed platform, cable, and full declared 1.5 mm envelope are clear at execution time."
+  ],
+  "ready_for_motion": false,
+  "operator_gate_passed": false,
+  "sensor_preflight_run": "",
+  "kst_opened": false,
+  "start_pose_mm_rad": [],
+  "start_joints_rad": [],
+  "final_pose_mm_rad": [],
+  "final_joints_rad": [],
+  "completed_segments": 0,
+  "return_translation_error_mm": null,
+  "return_orientation_error_rad": null,
+  "kst_end_request_sent": false,
+  "kst_end_request_method": "",
+  "smartpad_selected_verified": false,
+  "exit_reason": "PREVIEW_COMPLETE_NO_KST_NO_MOTION",
+  "run_directory": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/H0_5_air_preview_20260721_205708_855",
+  "error": ""
+}

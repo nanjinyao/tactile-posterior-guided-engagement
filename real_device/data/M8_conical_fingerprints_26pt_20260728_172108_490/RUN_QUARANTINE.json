@@ -1,0 +1,43 @@
+{
+  "schema": "real_device_run_quarantine_v1",
+  "recorded_at": "2026-07-28T17:36:17+08:00",
+  "status": "QUARANTINED",
+  "reason_code": "PHYSICAL_TOOLING_PROGRAM_IDENTITY_MISMATCH",
+  "scope": "ENTIRE_RUN",
+  "run_name": "M8_conical_fingerprints_26pt_20260728_172108_490",
+  "acquisition_program_identity": {
+    "size": "M8",
+    "mode": "dataset_m8_conical_fingerprints_26pt",
+    "execution_mode": "DATASET_M8_CONICAL_FINGERPRINTS_26PT",
+    "public_entrypoint": "run_m8_sampling_conical_fingerprints_26pt"
+  },
+  "operator_confirmed_physical_setup": {
+    "peg_size": "M12",
+    "hole_size": "M12",
+    "confirmation_time": "2026-07-28T17:35:00+08:00",
+    "source": "operator correction after the completed run, supported by the attached fixture photograph"
+  },
+  "eligibility": {
+    "training": false,
+    "normalization": false,
+    "validation": false,
+    "holdout_evaluation": false,
+    "benchmark_reporting": false
+  },
+  "dataset_disposition": {
+    "effective_partition": "quarantine",
+    "data_quality_status": "QUARANTINED_NEVER_TRAIN",
+    "offline_training_candidate": false,
+    "automatic_training_admission": false,
+    "training_eligible": false
+  },
+  "permitted_use": "physical-program mismatch diagnosis only",
+  "prohibited_relabel": "Do not rename or relabel this run as M12: its commanded offsets, CAD plan, partitions, sample IDs, and direction-label contract were M8.",
+  "raw_data_policy": "Preserve all original run files unchanged.",
+  "original_evidence_sha256": {
+    "manifest.json": "4c3cd96067d1a868fad50bde9e41ece4dc40de488f67c67a7a335abeb33b0b76",
+    "summary.json": "d96f5cfb088edffb070e62545e261c34056804dc890af07d4c07755712b7c7d4",
+    "sampling_campaign.json": "a12f7b31da6c91ed0492c3b2c0de82d2035350efc603eccb5f2e6e3f2de8d1c0",
+    "sampling_attempts.csv": "da43e538b28e8c047364a22c91b447bd55164134a82d30a0a3d1652745db476d"
+  }
+}

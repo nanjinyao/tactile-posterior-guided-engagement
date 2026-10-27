@@ -1,0 +1,82 @@
+{
+  "claim_boundary": "Small simulation-only grouped baseline; P0b C6 augmentation is supplemented by physically rolled-out P0d sector anchors split by spatial orbit before nuisance expansion. P0c and P0a remain independent diagnostics. Not hardware validation, calibrated real posterior, or closed-loop gain.",
+  "control_gate": {
+    "distance_policy": "no learned distance output; choose a bounded mechanics-derived transport length",
+    "otherwise": "do not execute learned transport; use guarded local outward spiral or re-probe",
+    "short_move_allowed_if_max_direction_probability_gte": 0.547500729560852
+  },
+  "input": {
+    "dimensionless_context_features": 16,
+    "phase_bins": 360,
+    "sequence_channels": [
+      "Fz_N",
+      "Tx_Nm",
+      "Ty_Nm",
+      "tip_z_m"
+    ],
+    "sequence_preprocessing": "circular smooth window 7 then per-trial standardization"
+  },
+  "output": {
+    "aps_alpha": 0.1,
+    "aps_quantile": 0.9993425011634827,
+    "direction_bin_centers_deg": [
+      3.75,
+      11.25,
+      18.75,
+      26.25,
+      33.75,
+      41.25,
+      48.75,
+      56.25,
+      63.75,
+      71.25,
+      78.75,
+      86.25,
+      93.75,
+      101.25,
+      108.75,
+      116.25,
+      123.75,
+      131.25,
+      138.75,
+      146.25,
+      153.75,
+      161.25,
+      168.75,
+      176.25,
+      183.75,
+      191.25,
+      198.75,
+      206.25,
+      213.75,
+      221.25,
+      228.75,
+      236.25,
+      243.75,
+      251.25,
+      258.75,
+      266.25,
+      273.75,
+      281.25,
+      288.75,
+      296.25,
+      303.75,
+      311.25,
+      318.75,
+      326.25,
+      333.75,
+      341.25,
+      348.75,
+      356.25
+    ],
+    "direction_bin_width_deg": 7.5,
+    "direction_bins": 48,
+    "state_classes": [
+      "supported_search",
+      "double_overhang",
+      "outer_partial"
+    ],
+    "temperature": 0.8755235075950623
+  },
+  "updated_utc": "2026-07-10T01:54:11.754993+00:00"
+}

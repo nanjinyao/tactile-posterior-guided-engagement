@@ -1,0 +1,77 @@
+wall_time,event,detail
+2026-07-24 02:23:33.819,PAYLOAD_METROLOGY_DISCLOSED_INCOMPLETE,Complete-tool mass/CoM/inertia and matching LoadData are absent. The direct-contact 15 degree lane therefore uses an upright-start WORLD-rotated force baseline; torque/CoM compensation remains unqualified experimental commissioning.
+2026-07-24 02:23:33.828,CONICAL_QUALIFICATION_BOUNDARY,The stored SN001349 qualification covers fixed-orientation relative binary events.  It supplies identity/range/unit/hard-limit evidence only; it does not certify this orientation-changing cone.
+2026-07-24 02:23:33.835,KST_CLIENT_PATH_ADD_BEGIN_NO_MOTION,KST class is not loaded; adding the MATLAB client directory once.
+2026-07-24 02:23:33.927,KST_CLIENT_READY_NO_MOTION,KST class is available; no controller connection has been attempted.
+2026-07-24 02:23:33.930,ROOT_STATUS_BEGIN_NO_MOTION,Running bounded read-only PC/ROS/Bota status checks (timeout 30 s).
+2026-07-24 02:23:44.767,ROOT_STATUS_PASS_NO_MOTION,Root preparation status passed.
+2026-07-24 02:23:44.768,COMMAND_OWNER_CHECK_BEGIN_NO_MOTION,Checking ROS nodes and OS processes for a second command owner.
+2026-07-24 02:23:45.262,COMMAND_OWNER_CHECK_PASS_NO_MOTION,No responsive ROS/OS robot command owner conflict found.
+2026-07-24 02:23:45.285,MATLAB_ROS_RESTART_BEGIN_NO_MOTION,Restarting only this MATLAB ROS global node.
+2026-07-24 02:23:46.590,MATLAB_ROS_RESTART_PASS_NO_MOTION,MATLAB ROS global node is initialized; no robot command sent.
+2026-07-24 02:23:47.217,BOTA_DIAGNOSTIC_OK,wait 0.268 s; attempts 1; source receive
+2026-07-24 02:23:47.547,BOTA_WRENCH_RX_OK,frame bota_ft_frame; wait 0.262 s; attempts 1
+2026-07-24 02:23:47.619,CONNECTING_KST,192.168.1.147:30001; tip TCP [0 0 +92.0] mm; assembled uncertainty +/-4.0 mm
+2026-07-24 02:23:49.615,CONNECTED_KST_NO_MOTION_YET,Capturing fresh stationary task-local near-hole start.
+2026-07-24 02:23:52.089,TASK_LOCAL_MANUAL_START_CAPTURED,xyz [472.651 1.777 296.776] mm; translation span 0.000 mm; orientation span 0.000000 rad; joint span 0.000000 rad
+2026-07-24 02:23:54.461,START_UNLOADED_BASELINE_COMPLETE,sustained/average receive 66.7/64.8 Hz; p95/max gap 0.0250/0.0500 s; max force std 0.0216 N; max torque std 0.00052 Nm
+2026-07-24 02:23:54.462,DATA_DERIVED_CONTACT_POLICY,touchdown 2.00 N for 3 consecutive fresh samples; contact target 3.00 N; capture requires at least 0.25 mm total and 0.04 mm recent downward progress inside the 8.0 N soft envelope
+2026-07-24 02:23:54.463,DASHBOARD_INITIALIZING_NO_MOTION,Baseline is complete.  Creating the visualization before the first robot command; no blocking full-render drawnow is used.
+2026-07-24 02:23:56.266,DASHBOARD_READY_NO_MOTION,Visualization objects created; first robot command still pending.
+2026-07-24 02:24:02.437,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,TOUCHDOWN_004 along 0.028689/0.100000 mm; endpoint error 0.099561 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:24:09.374,TOUCHDOWN_EVENT_CONFIRMED,segment 14; surface candidate Z 295.612 mm; dFmax 2.664 N; confirmation-window median WORLD* Fz 2.565 N; provisional normal sign +1
+2026-07-24 02:24:09.375,FRESH_SURFACE_CONTACT,initial surface tip-TCP WORLD Z 295.612 mm; contact WORLD* Fz sign +1
+2026-07-24 02:24:10.043,DIRECTSERVO_CARTESIAN_STARTED,CONTACT_CONE; KST startup includes its internal 0.5 s settle
+2026-07-24 02:24:10.044,DIRECTSERVO_COMPATIBILITY_PATH,CONTACT_CONE uses DcSeCar_ sendEEfPositionf at 40.0 Hz; no synchronous KST state query occurs inside the command loop; measured state is checked immediately before start and after stop.
+2026-07-24 02:24:10.045,DIRECTSERVO_UI_WRITES_SUSPENDED,MATLAB graphics mutation is suspended only inside the DirectServo stream; wrench samples and conical trace remain recorded; and dashboard updates resume after the stream.
+2026-07-24 02:24:10.046,DIRECTSERVO_CLOCK_POLICY,isolated lateness > 0.120 s rebases the remaining schedule once; a single stall > 0.500 s or >8 consecutive late ticks stops
+2026-07-24 02:24:10.047,CONICAL_FORCE_FOLLOWING_POLICY,hex-edge support feedforward 1.035..1.195 mm at 15 deg; residual WORLD +Z/-Z limits +0.75/-0.40 mm and 1.25/0.40 mm/s; cone phase holds at 8.0 N and resumes <= 5.5 N for 3 fresh samples; 20 N / 0.75 Nm hard guards unchanged
+2026-07-24 02:24:24.488,DIRECTSERVO_CARTESIAN_STOPPED,CONTACT_CONE; KST stop includes its internal 1.0 s settle; max loop lateness 0.0106 s; maximum command gap 0.0307 s; clock resynchronizations 0; force-relief episodes/ticks 0/0; force-relief wall time 0.000 s; maximum residual +Z relief 0.006 mm
+2026-07-24 02:24:24.501,DIRECTSERVO_POST_STOP_FEEDBACK,CONTACT_CONE measured after stop; tip error 0.089 mm; orientation error 0.011 deg; minimum joint margin 14.66 deg
+2026-07-24 02:24:24.556,SHORTCUT_POLICY_DISCLOSURE,TRANSPARENT_NEGATED_TOOL_AXIS_FORCE_AND_COMMANDED_DOWNWARD_PROGRESS_PHASE_HEURISTIC_NOT_LEARNED.  The simulation PyTorch ensemble is not loaded by this MATLAB run; this bounded heuristic is followed by a finite sensor-updated entropy grid.
+2026-07-24 02:24:27.801,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,SHORTCUT_CONTACT_TRANSPORT; steps 4; depth 0.035 mm; normal 3.417 N; XY remainder 0.040 mm
+2026-07-24 02:24:27.804,SHORTCUT_ENDPOINT_NEGATIVE_CAPTURE_EVIDENCE,No downward-progress capture cue at the force-held shortcut endpoint; posterior updated and local origin marked tested.
+2026-07-24 02:24:37.745,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_014 along 0.006378/0.060000 mm; endpoint error 0.055291 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:24:38.380,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_015 along 0.002243/0.060000 mm; endpoint error 0.059007 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:24:38.891,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_01_016 along 0.001263/0.060000 mm; endpoint error 0.063916 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:24:39.163,SURFACE_Z_STAGNATION_BOUNDED_ACCEPTED,BAYES_GRID_01; 3 Z corrections made < 0.010 mm measured progress; XY remainder 0.073 mm and persistent normal 2.274 N remain inside the bounded handoff.
+2026-07-24 02:24:53.864,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_02; steps 20; depth 0.034 mm; normal 3.328 N; XY remainder 0.036 mm
+2026-07-24 02:25:06.622,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_03_017 along 0.005071/0.060000 mm; endpoint error 0.060994 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:25:06.884,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_03; steps 17; depth 0.060 mm; normal 3.373 N; XY remainder 0.082 mm
+2026-07-24 02:25:19.312,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_04_017 along 0.012430/0.060000 mm; endpoint error 0.047717 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:25:19.574,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_04; steps 17; depth 0.075 mm; normal 3.480 N; XY remainder 0.089 mm
+2026-07-24 02:25:31.942,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_05_017 along 0.016127/0.060000 mm; endpoint error 0.051478 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:25:32.262,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_05; steps 17; depth 0.018 mm; normal 3.166 N; XY remainder 0.075 mm
+2026-07-24 02:25:42.026,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_06_013 along 0.003711/0.060000 mm; endpoint error 0.067628 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:25:42.603,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_06_014 along 0.001071/0.060000 mm; endpoint error 0.066365 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:25:43.376,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_06; steps 15; depth 0.018 mm; normal 3.404 N; XY remainder 0.047 mm
+2026-07-24 02:25:56.098,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_07; steps 17; depth 0.028 mm; normal 2.334 N; XY remainder 0.044 mm
+2026-07-24 02:26:08.230,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_08; steps 16; depth 0.071 mm; normal 3.140 N; XY remainder 0.012 mm
+2026-07-24 02:26:14.994,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_09; steps 9; depth 0.056 mm; normal 3.114 N; XY remainder 0.046 mm
+2026-07-24 02:26:23.460,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_10_012 along 0.005222/0.060000 mm; endpoint error 0.060809 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:23.621,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_10; steps 12; depth 0.053 mm; normal 3.712 N; XY remainder 0.031 mm
+2026-07-24 02:26:33.397,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_11; steps 13; depth 0.002 mm; normal 2.756 N; XY remainder 0.097 mm
+2026-07-24 02:26:42.986,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_013 along 0.004922/0.060000 mm; endpoint error 0.073653 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:43.566,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_014 along 0.003676/0.060000 mm; endpoint error 0.062182 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:44.882,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_016 along 0.014665/0.080000 mm; endpoint error 0.082024 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:45.584,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_017 along 0.012379/0.080000 mm; endpoint error 0.077007 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:46.278,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_018 along 0.000561/0.067354 mm; endpoint error 0.069339 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:47.637,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_020 along 0.012048/0.080000 mm; endpoint error 0.071570 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:48.175,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_021 along 0.019715/0.080000 mm; endpoint error 0.081854 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:48.748,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_022 along -0.000688/0.060000 mm; endpoint error 0.070120 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:49.436,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_023 along -0.001507/0.060000 mm; endpoint error 0.070175 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:50.851,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_025 along 0.014743/0.080000 mm; endpoint error 0.072064 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:52.766,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_028 along 0.015634/0.080000 mm; endpoint error 0.094984 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:53.445,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_029 along 0.012874/0.080000 mm; endpoint error 0.079413 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:54.602,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_031 along 0.010761/0.080000 mm; endpoint error 0.073376 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:55.147,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_032 along 0.018917/0.080000 mm; endpoint error 0.069792 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:55.837,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_033 along 0.017489/0.074654 mm; endpoint error 0.071687 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:57.287,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_035 along 0.019948/0.080000 mm; endpoint error 0.097458 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:57.995,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_12_036 along 0.019785/0.080000 mm; endpoint error 0.069993 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:26:58.978,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_12; steps 37; depth 0.016 mm; normal 2.373 N; XY remainder 0.016 mm
+2026-07-24 02:27:09.290,SUB_TOLERANCE_PLUS_DEADBAND_PROGRESS_ACCEPTED,BAYES_GRID_13_014 along 0.018044/0.065170 mm; endpoint error 0.056058 <= 0.150000 mm; ratio gate threshold 0.170000 mm
+2026-07-24 02:27:09.574,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_13; steps 14; depth 0.075 mm; normal 3.217 N; XY remainder 0.100 mm
+2026-07-24 02:27:20.143,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_14; steps 14; depth 0.057 mm; normal 3.235 N; XY remainder 0.035 mm
+2026-07-24 02:27:28.464,SURFACE_FORCE_TRANSPORT_TARGET_REACHED,BAYES_GRID_15; steps 11; depth 0.020 mm; normal 3.191 N; XY remainder 0.029 mm
+2026-07-24 02:27:32.298,KST_END_REQUEST,Sending end through active KST object.
+2026-07-24 02:27:32.340,KST_END_WRITTEN,KST_OBJECT_NET_TURNOFFSERVER; SmartPAD Selected remains human-observed.

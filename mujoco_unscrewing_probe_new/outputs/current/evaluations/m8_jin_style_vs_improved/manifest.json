@@ -1,0 +1,186 @@
+{
+  "artifacts": {
+    "paired_tasks": {
+      "path": "outputs/current/evaluations/m8_jin_style_vs_improved/paired_tasks.csv",
+      "sha256": "4dfa5be2957c24b9321f9dfeb8f3ed3575ce64c86f3ac4e18d0485a6bd5f6130"
+    },
+    "paper_figure": {
+      "path": "outputs/current/media/figures/paper/m8_jin_style_vs_improved_fingerprint_direct.png",
+      "sha256": "f4b913371231fad997d30b2a07806bf992aa4598cf9133448ed5827618efb823"
+    },
+    "predictions": {
+      "path": "outputs/current/evaluations/m8_jin_style_vs_improved/predictions.csv",
+      "sha256": "ce0e7365153f248ce2212425eef534f9dc89a2cde02a4aaeff2c10877e397976"
+    },
+    "report": {
+      "path": "outputs/current/evaluations/m8_jin_style_vs_improved/report.json",
+      "sha256": "15548c7ad1603de70667c64992e2c222142b997d58a7a316ecb3199ae67f59e9"
+    },
+    "summary": {
+      "path": "outputs/current/evaluations/m8_jin_style_vs_improved/summary.md",
+      "sha256": "45172af238dada98b189e970028e02f68589a0008455ed66b7eb0139ef0630ea"
+    }
+  },
+  "claim_boundary": "Fresh paired MuJoCo M8 evidence only. The Jin-style arm is a frozen engineering proxy, not a faithful paper reproduction. Because the M8 geometry, labels, data distribution, and controller differ, these numbers cannot be compared directly with the paper's reported 97.4% square classification accuracy. No hardware or universal superiority claim is licensed.",
+  "completed_direction_trials": 180,
+  "completed_paired_task_poses": 48,
+  "derived_rebuild": {
+    "contract_amendment_sha256": "0b75f693b555377e464d26e4e592ffe51b5f291acd0ab1e2e13cb67b32538f29",
+    "frozen_trial_record_set_sha256": "4be92296c47ed0a4d7791fd852943c4106759536495f4fe949e90fea7d53077a",
+    "frozen_trials_read": 48,
+    "performed": true,
+    "previous_manifest_sha256": "ed36b93c7b37d8c459321ea0b387ca7616edec79bb5569137580eddbc7956077",
+    "reason": "Corrected the derived strict-48 operational direction summary to use the actually executed RunResult.control_direction_deg rather than the ensemble-top-class RunResult.direction_error_deg; rebuilt CSVs/report/summary/figure/manifest from unchanged frozen evidence.",
+    "rebuild_count": 9,
+    "rebuilt_utc": "2026-07-24T06:20:56.523323+00:00",
+    "simulation_rerun": false,
+    "trial_files_overwritten": 0
+  },
+  "experiment": "M8_Jin_2021_style_proxy_vs_improved_fingerprint",
+  "paired_trial_record_set_sha256": "4be92296c47ed0a4d7791fd852943c4106759536495f4fe949e90fea7d53077a",
+  "post_completion_contract_amendment": {
+    "amendment_id": "M8_JIN_VS_IMPROVED_POST_COMPLETION_DERIVED_REBUILD_V1",
+    "path": "outputs/current/evaluations/m8_jin_style_vs_improved/contract_amendment_derived_rebuild.json",
+    "post_completion_protocol_correction": true,
+    "preregistered": false,
+    "sha256": "0b75f693b555377e464d26e4e592ffe51b5f291acd0ab1e2e13cb67b32538f29"
+  },
+  "schema_version": 1,
+  "sources": {
+    "comparison_audit_source": {
+      "path": "src/run_m8_jin_style_vs_improved_audit.py",
+      "sha256": "de02be1618c417837d3c14c1b0b8cb69d71aa68e56df9b9e62563a2b8676ef92"
+    },
+    "direction_manifest": {
+      "path": "outputs/current/evaluations/p1v6_m8_jin_comparison_direction_audit/manifest.json",
+      "sha256": "57983efd6b8cc482b1ed9b54ef0ed9a45852daa8ec665aec77ab01f7bb41bc55"
+    },
+    "direction_sampling_contract": {
+      "path": "outputs/current/evaluations/p1v6_m8_jin_comparison_direction_audit/sampling_contract.json",
+      "sha256": "057527a698f235daab48680856e9073865d1c8d1e2642de474c22cb8c1c6ed11"
+    },
+    "improved_ensemble_checkpoints": [
+      {
+        "observed_filesystem_mtime_ns": 1783746263640417192,
+        "observed_filesystem_mtime_utc": "2026-07-11T05:04:23.640417+00:00",
+        "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/circular_cnn_best.pt",
+        "sha256": "725cc09bd1874f4ce88288a2704ed5189fe2a32ce177bcb3174a5db0967f3c92"
+      },
+      {
+        "observed_filesystem_mtime_ns": 1783746266056417241,
+        "observed_filesystem_mtime_utc": "2026-07-11T05:04:26.056417+00:00",
+        "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/circular_cnn_best.pt",
+        "sha256": "52f751e21f8159b2ccd553ba8e6321e024b7d2f161c4df2213743c8010f901f6"
+      },
+      {
+        "observed_filesystem_mtime_ns": 1783746265644417232,
+        "observed_filesystem_mtime_utc": "2026-07-11T05:04:25.644417+00:00",
+        "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/circular_cnn_best.pt",
+        "sha256": "9ba3ccab7da30575e3013ae03ecc5300e1c13ccb3117e5f9f04584d1e881a19c"
+      }
+    ],
+    "improved_ensemble_runtime_auxiliaries": [
+      {
+        "calibration_metrics": {
+          "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/metrics.json",
+          "sha256": "da09d69338c5717f0cd2e196c4eba20f143137b05af0d2ec271e5c1bd4848ec0"
+        },
+        "normalization": {
+          "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260720/normalization.npz",
+          "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+        }
+      },
+      {
+        "calibration_metrics": {
+          "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/metrics.json",
+          "sha256": "e3ce73e5ad50a38cf375cebe9505abf256b52041ca9b378287eba679f2813dbe"
+        },
+        "normalization": {
+          "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260721/normalization.npz",
+          "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+        }
+      },
+      {
+        "calibration_metrics": {
+          "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/metrics.json",
+          "sha256": "0845b63a9f54d2d04a5fa54b9a72310f28ed8cb9c3f67ee3fca2e3f308a0ef71"
+        },
+        "normalization": {
+          "path": "outputs/current/models/p1v3_m8_direction_models/seeds/seed_20260722/normalization.npz",
+          "sha256": "e520ad1e1b0539bbf9d6d46161a9cac86ca5310732f9bc750b44b9fdb924c31a"
+        }
+      }
+    ],
+    "improved_model_definition_source": {
+      "path": "src/train_m8_direction_models.py",
+      "sha256": "cbf8dcf7e42856f2a5f8989d6b0fbfb7ea60bbe045ab937eb04cd9f765209710"
+    },
+    "improved_runtime_contract": {
+      "path": "outputs/current/models/p1v3_m8_direction_models/ensemble_interface_contract.json",
+      "sha256": "0ddfdc78bce19ce9905a0714dc70d083e414050048ed77fd0447bcd152e3017a"
+    },
+    "improved_runtime_source": {
+      "path": "src/m8_direction_runtime.py",
+      "sha256": "ae7cb3f1cd59db104d431e3035f0420e9f6a887b3e56cda4157af8ff8405be3f"
+    },
+    "jin_proxy_checkpoints": [
+      {
+        "observed_filesystem_mtime_ns": 1784115572899852546,
+        "observed_filesystem_mtime_utc": "2026-07-15T11:39:32.899853+00:00",
+        "path": "outputs/current/models/m8_jin_2021_style_direction_proxy/seeds/seed_20260710/polar_cnn_best.pt",
+        "sha256": "a40f6265b3731bd055ca0e509cc5eeb5ec07b590f42e1ad1701c9b3f8752dedc"
+      },
+      {
+        "observed_filesystem_mtime_ns": 1784115573739852563,
+        "observed_filesystem_mtime_utc": "2026-07-15T11:39:33.739853+00:00",
+        "path": "outputs/current/models/m8_jin_2021_style_direction_proxy/seeds/seed_20260711/polar_cnn_best.pt",
+        "sha256": "2654724b1c169419975aeab471c87db2cd246e653ad7e4a500aae7ab40fd7294"
+      },
+      {
+        "observed_filesystem_mtime_ns": 1784115574387852576,
+        "observed_filesystem_mtime_utc": "2026-07-15T11:39:34.387853+00:00",
+        "path": "outputs/current/models/m8_jin_2021_style_direction_proxy/seeds/seed_20260712/polar_cnn_best.pt",
+        "sha256": "1c49ebd47c55c704b8fcd7cd3a02ade611dc069efe39e20208641eddae5ad7a2"
+      }
+    ],
+    "jin_proxy_runtime_contract": {
+      "path": "outputs/current/models/m8_jin_2021_style_direction_proxy/runtime_contract.json",
+      "sha256": "71b0d6c81f93d7c87a1259322774a34089337539a3a80590d77dcd81cf9c761d"
+    },
+    "jin_proxy_runtime_source": {
+      "path": "src/m8_jin_style_direction.py",
+      "sha256": "c0f37f8f0b54aca44d3016f61e6d6680c6792b9aa1ce0c8db0992d89c6776d28"
+    },
+    "jin_proxy_training_report": {
+      "path": "outputs/current/models/m8_jin_2021_style_direction_proxy/training_report.json",
+      "sha256": "b0fb0cccc50a637efcec60cc046ec1362e078e528af627d9aa11da630a7e695c"
+    },
+    "post_completion_contract_amendment": {
+      "path": "outputs/current/evaluations/m8_jin_style_vs_improved/contract_amendment_derived_rebuild.json",
+      "sha256": "0b75f693b555377e464d26e4e592ffe51b5f291acd0ab1e2e13cb67b32538f29"
+    },
+    "preregistration": {
+      "declared_created_utc": "2026-07-15T00:00:00Z",
+      "declared_created_utc_interpretation": "date-level placeholder, retained verbatim; not an exact event timestamp",
+      "observed_filesystem_mtime_ns": 1784115555363852193,
+      "observed_filesystem_mtime_utc": "2026-07-15T11:39:15.363852+00:00",
+      "path": "outputs/current/evaluations/m8_jin_style_vs_improved/preregistration.json",
+      "sha256": "8d791d71a61efce6537979497a879b4112e3d429a4a0a8046bcf528085c69278"
+    },
+    "preregistration_timing_observation": {
+      "boundary": "Filesystem mtimes support observed ordering but are not cryptographic proof of authorship time.",
+      "created_utc_is_date_level_placeholder": true,
+      "first_jin_checkpoint_path": "outputs/current/models/m8_jin_2021_style_direction_proxy/seeds/seed_20260710/polar_cnn_best.pt",
+      "observed_gap_s": 17.536000353,
+      "observed_order": "preregistration_file_mtime_before_first_jin_checkpoint_mtime"
+    },
+    "shared_phase_sequence_set_sha256": "65b73002a63cf426a0d47048923e86d73433207d800e43db574342064b3e5c4f",
+    "strict_complete_loop_audit_source": {
+      "path": "src/run_m8_strict_complete_loop_audit.py",
+      "sha256": "8574dd1e9c7c7400910513042ab1dc80e11957c015c4733c641d3cafaf4164c7"
+    }
+  },
+  "status": "complete",
+  "task_contract_sha256": "f82b8f1c19b20aed8cd6284ab550abbb897c61d240b612e1a63a21100c49d7ac",
+  "updated_utc": "2026-07-24T06:20:58.805202+00:00"
+}

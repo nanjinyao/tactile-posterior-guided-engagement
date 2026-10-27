@@ -1,0 +1,60 @@
+{
+  "active_time_budget_s": 130.0,
+  "claim_boundary": "conditional posterior-direction sector coverage; no guarantee of direction correctness, tracking, sensor capture, or terminal success",
+  "confirmatory_use_forbidden": true,
+  "created_utc": "2026-07-15T16:19:45.158548+00:00",
+  "experiment": "cross_size_S4_residual_corridor_targeted_development",
+  "fallback_budget_extension_s": 0.0,
+  "method": "S4_fine_tuned_plus_P_plus_hybrid_residual_corridor",
+  "online_true_center_access": false,
+  "phase": "development",
+  "raw_hard_wrench_thresholds_relaxed": false,
+  "residual_coverage": {
+    "angular_half_width_deg": 12.0,
+    "enabled": true,
+    "lane_spacing_capture_fraction": 1.0,
+    "maximum_reverse_probability": 0.35,
+    "minimum_direction_quality": 0.1,
+    "tracking_error_allowance_m": 0.00015,
+    "transition_overhead_s": 1.0
+  },
+  "schedule_rule": "shortcut+corridor+terminal and global-outward+terminal are alternative schedules, never cumulative prerequisites",
+  "source_sha256": {
+    "src/render_m8_search_comparison.py": "798f2bf39ce869ec2923e47c1838a95adf5c466b5e59ec060c5e29963cacaa33",
+    "src/run_cross_size_s4_full_loop_evaluation.py": "0a889d952c7c4bee6bca97003bac1c15bfbaa51018ee6a79e725bb6498e52ab5"
+  },
+  "task_source": "outputs/current/evaluations/cross_size_s3_full_loop_pilot_v3/task_contract.json",
+  "tasks": [
+    {
+      "angle_rad": 2.750489463372069,
+      "baseline_phase_rad": 0.3157255052460145,
+      "contact_timeconst_s": 0.0472827001940459,
+      "friction_slide": 0.6763024944812059,
+      "pose_id": "m10_s3test_006",
+      "posterior_seed": 20260941006,
+      "radius_m": 0.004454705066840284,
+      "sensor_delay_s": 0.007695150807499886,
+      "sensor_noise_seed": 202609410006,
+      "size": "m10",
+      "target_down_force_n": 3.239115065895021,
+      "x_m": -0.004118326175468312,
+      "y_m": 0.0016981715887933832
+    },
+    {
+      "angle_rad": 1.7482249357857855,
+      "baseline_phase_rad": 2.128491326264445,
+      "contact_timeconst_s": 0.0638144542183727,
+      "friction_slide": 0.6367994446307421,
+      "pose_id": "m10_s3test_010",
+      "posterior_seed": 20260941010,
+      "radius_m": 0.005999372518034012,
+      "sensor_delay_s": 0.007434326404705644,
+      "sensor_noise_seed": 202609410010,
+      "size": "m10",
+      "target_down_force_n": 2.6743045784533024,
+      "x_m": -0.0010588840750441395,
+      "y_m": 0.00590518713723449
+    }
+  ],
+  "untouched_tasks_read_or_run": false
+}

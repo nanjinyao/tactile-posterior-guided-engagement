@@ -1,0 +1,216 @@
+{
+  "claim_boundary": "Frozen M8 simulation benchmark inside the declared visual prior. Position and bounded contact nuisances are unseen Sobol samples. When enabled, the F/T bias/noise/coupling/delay model is a pre-hardware engineering prior rather than a measured sensor distribution. Proposed and Baseline B share an identical first fingerprint and frozen learner. Baseline-B reset travel is not simulated or timed. Online handoff is sensor-only; MuJoCo geometry is used only for offline success scoring. This is not hardware evidence. Baseline C uses a simulation-calibrated CAD/F-T likelihood that must be recalibrated on iiwa hardware.",
+  "design": {
+    "active_time_budget_s": 130.0,
+    "baseline_b_max_attempts": 3,
+    "baseline_b_retry_offset_mm": 0.5,
+    "baseline_c_spiral_fallback": false,
+    "contact_timeconst_range_s": [
+      0.04,
+      0.07
+    ],
+    "down_force_range_n": [
+      2.5,
+      3.5
+    ],
+    "entropy_grid_baseline": "Chen-inspired visual/CAD grid belief; each guarded low-force touchdown maximizes expected entropy reduction from a calibrated F/T edge-load cue; direct posterior-mean commit after the fixed probe budget; no conical learner and no spiral fallback",
+    "friction_range": [
+      0.55,
+      0.95
+    ],
+    "offline_success_scoring_uses_mujoco_geometry": true,
+    "online_capture_uses_privileged_mujoco_tags": false,
+    "pab_reused_from_frozen_audit": "outputs/current/evaluations/m8_four_method_sensor_only_audit",
+    "poses": 36,
+    "posterior_residual_coverage": 0.99,
+    "proposed_global_outward_fallback": true,
+    "random_position_design": "area-uniform Sobol in 1.50 mm to visual 95% radius",
+    "reset_motion_time_excluded_from_baseline_b": true,
+    "same_probe_for_proposed_and_baseline_b_first_attempt": true,
+    "sensor_delay_range_s": [
+      0.002,
+      0.007872282582500006
+    ],
+    "visual_95_radius_mm": 4.895303872079853,
+    "wrench_observation_model": {
+      "bias_std": [
+        0.06,
+        0.06,
+        0.08,
+        0.0003,
+        0.0003,
+        0.0002
+      ],
+      "claim_boundary": "pre-hardware engineering prior; replace ranges with measured bias, Allan/covariance, frame-calibration, and latency distributions",
+      "colored_rho": 0.92,
+      "cross_axis_std": 0.004,
+      "delay_s": 0.004,
+      "delay_steps": 8,
+      "drift_std_per_sqrt_s": [
+        0.004,
+        0.004,
+        0.006,
+        2.5e-05,
+        2.5e-05,
+        2e-05
+      ],
+      "gain_std": 0.006,
+      "sample_dt_s": 0.0005,
+      "seed": 20260721,
+      "white_std": [
+        0.02,
+        0.02,
+        0.03,
+        0.0001,
+        0.0001,
+        8e-05
+      ]
+    }
+  },
+  "direct_margin_diagnostic": {
+    "negative_margin_first_attempt_success_rate": 0.15384615384615385,
+    "negative_margin_trials": 13,
+    "nonnegative_margin_first_attempt_success_rate": 1.0
+  },
+  "methods": {
+    "baseline_a": {
+      "actual_path_all_trials_median_mm": 74.9604779835074,
+      "actual_path_median_mm": 77.10884539425602,
+      "contact_path_all_trials_median_mm": 74.84486548680451,
+      "contact_path_median_mm": 77.06643736951656,
+      "first_attempt_successes": 30,
+      "hard_stops": 1,
+      "max_filtered_force_p90_n": 5.168875069000865,
+      "max_force_p90_n": 9.435646316376598,
+      "max_torque_p90_mnm": 23.030979784840525,
+      "success_rate": 0.8333333333333334,
+      "successes": 30,
+      "time_success_median_s": 36.064499999990176,
+      "trials": 36,
+      "wear_proxy_all_trials_median_mj": 129.95128181365217,
+      "wear_proxy_median_mj": 135.71084395328882
+    },
+    "baseline_b": {
+      "actual_path_all_trials_median_mm": 6.0174493709240355,
+      "actual_path_median_mm": 5.3555264480312275,
+      "attempts_median": 1.0,
+      "contact_path_all_trials_median_mm": 6.0174493709240355,
+      "contact_path_median_mm": 5.3555264480312275,
+      "first_attempt_successes": 25,
+      "hard_stops": 0,
+      "max_filtered_force_p90_n": 4.389754495496216,
+      "max_force_p90_n": 7.535082496237532,
+      "max_torque_p90_mnm": 21.341118791140964,
+      "success_rate": 0.7777777777777778,
+      "successes": 28,
+      "time_success_median_s": 7.490999999998568,
+      "trials": 36,
+      "wear_proxy_all_trials_median_mj": 14.19014796379292,
+      "wear_proxy_median_mj": 13.272141378823923
+    },
+    "baseline_c_entropy": {
+      "actual_path_all_trials_median_mm": 14.008268800504457,
+      "actual_path_median_mm": 5.350084776111201,
+      "contact_path_all_trials_median_mm": 2.388143679452342,
+      "contact_path_median_mm": 1.3595432034508836,
+      "credible_radius_median_mm": 3.1764918531258624,
+      "final_entropy_median_nats": 4.1337254618297425,
+      "first_attempt_successes": 22,
+      "hard_stops": 0,
+      "max_filtered_force_p90_n": 3.431342487184071,
+      "max_force_p90_n": 8.696042515146175,
+      "max_torque_p90_mnm": 18.29960523201334,
+      "probe_count_median": 7.5,
+      "spiral_fallback_count": 0,
+      "success_rate": 0.6111111111111112,
+      "successes": 22,
+      "time_success_median_s": 11.140250000002123,
+      "trials": 36,
+      "wear_proxy_all_trials_median_mj": 1.1148756703970724,
+      "wear_proxy_median_mj": 0.54173491364039
+    },
+    "proposed_posterior": {
+      "actual_path_all_trials_median_mm": 17.8308800769325,
+      "actual_path_median_mm": 14.711716431244959,
+      "contact_path_all_trials_median_mm": 17.716921946077505,
+      "contact_path_median_mm": 14.613996904225036,
+      "first_attempt_successes": 34,
+      "global_fallback_count": 4,
+      "hard_stops": 0,
+      "local_radius_median_mm": 2.4002043187066757,
+      "max_filtered_force_p90_n": 4.882654749163711,
+      "max_force_p90_n": 9.484798395131488,
+      "max_torque_p90_mnm": 22.33144487558447,
+      "success_rate": 0.9444444444444444,
+      "successes": 34,
+      "time_success_median_s": 12.47100000000375,
+      "transport_median_mm": 1.2410424912817932,
+      "trials": 36,
+      "wear_proxy_all_trials_median_mj": 34.012902063593955,
+      "wear_proxy_median_mj": 29.874472244341554
+    }
+  },
+  "paired_efficiency_proposed_vs_baseline_a": {
+    "both_success": 29,
+    "left_lower_actual_xy_path_mm_rate": 0.8620689655172413,
+    "left_lower_contact_xy_path_mm_rate": 0.8620689655172413,
+    "left_lower_max_force_n_rate": 0.6551724137931034,
+    "left_lower_time_to_inner_wall_s_rate": 0.8275862068965517,
+    "left_lower_wear_proxy_mj_rate": 0.8620689655172413,
+    "left_minus_right_actual_xy_path_mm_median": -36.34853485038159,
+    "left_minus_right_contact_xy_path_mm_median": -36.283410489590494,
+    "left_minus_right_max_force_n_median": -0.22367800307537067,
+    "left_minus_right_time_to_inner_wall_s_median": -11.260500000053767,
+    "left_minus_right_wear_proxy_mj_median": -55.23882644909205
+  },
+  "paired_efficiency_proposed_vs_baseline_b": {
+    "both_success": 27,
+    "left_lower_actual_xy_path_mm_rate": 0.0,
+    "left_lower_contact_xy_path_mm_rate": 0.0,
+    "left_lower_max_force_n_rate": 0.25925925925925924,
+    "left_lower_time_to_inner_wall_s_rate": 0.037037037037037035,
+    "left_lower_wear_proxy_mj_rate": 0.0,
+    "left_minus_right_actual_xy_path_mm_median": 7.717789584823509,
+    "left_minus_right_contact_xy_path_mm_median": 7.682811416082619,
+    "left_minus_right_max_force_n_median": 0.730073378010494,
+    "left_minus_right_time_to_inner_wall_s_median": 4.47700000000527,
+    "left_minus_right_wear_proxy_mj_median": 12.020516257717944
+  },
+  "paired_efficiency_proposed_vs_baseline_c_entropy": {
+    "both_success": 21,
+    "left_lower_actual_xy_path_mm_rate": 0.14285714285714285,
+    "left_lower_contact_xy_path_mm_rate": 0.0,
+    "left_lower_max_force_n_rate": 0.3333333333333333,
+    "left_lower_time_to_inner_wall_s_rate": 0.2857142857142857,
+    "left_lower_wear_proxy_mj_rate": 0.0,
+    "left_minus_right_actual_xy_path_mm_median": 5.57003913309985,
+    "left_minus_right_contact_xy_path_mm_median": 12.175262643482796,
+    "left_minus_right_max_force_n_median": 1.3696428111842351,
+    "left_minus_right_time_to_inner_wall_s_median": 3.2005000000039114,
+    "left_minus_right_wear_proxy_mj_median": 24.132297795264048
+  },
+  "paired_proposed_posterior_vs_baseline_a": {
+    "both_failed": 1,
+    "both_success": 29,
+    "left_only_success": 5,
+    "mcnemar_exact_two_sided_p": 0.21875,
+    "right_only_success": 1
+  },
+  "paired_proposed_posterior_vs_baseline_b": {
+    "both_failed": 1,
+    "both_success": 27,
+    "left_only_success": 7,
+    "mcnemar_exact_two_sided_p": 0.0703125,
+    "right_only_success": 1
+  },
+  "paired_proposed_posterior_vs_baseline_c_entropy": {
+    "both_failed": 1,
+    "both_success": 21,
+    "left_only_success": 13,
+    "mcnemar_exact_two_sided_p": 0.0018310546875,
+    "right_only_success": 1
+  },
+  "probe_hash_match_rate": 1.0,
+  "stage": "M8_fair_policy_benchmark",
+  "updated_utc": "2026-07-11T23:04:26.836230+00:00"
+}

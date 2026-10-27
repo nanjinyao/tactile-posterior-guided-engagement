@@ -1,0 +1,195 @@
+{
+  "updated_utc": "2026-07-11T05:25:30.218707+00:00",
+  "stage": "M8_all_conical_sampling_positions",
+  "model": "models/allen_m8_source.xml",
+  "total_dynamic_rollouts": 1674,
+  "total_unique_xy_positions": 651,
+  "position_definition": "commanded initial bit-center XY relative to true socket center",
+  "duplicate_rule": "nuisance repeats at the same XY are drawn once and retained in rollout counts",
+  "scope": "complete 15 deg conical direction-fingerprint scans only",
+  "excluded_from_direction_map": [
+    "rim/chamfer force-ramp",
+    "inner-wall descent",
+    "inserted terminal traces"
+  ],
+  "cad_boundaries_mm": {
+    "full_support_center_radius": 3.036,
+    "declared_visual_95_radius": 4.895,
+    "screw_head_radius": 6.5
+  },
+  "claim_boundary": "The map is an exact spatial inventory of existing simulation manifests. It does not imply uniform deployment probability, real-robot coverage, or radial identifiability. P1v5 remains forbidden for fitting, calibration, threshold selection, or interface changes.",
+  "datasets": [
+    {
+      "key": "p0a_m8_symmetry",
+      "label": "P0a symmetry",
+      "role": "geometry diagnostic",
+      "color": [
+        45,
+        212,
+        191
+      ],
+      "marker": "circle",
+      "marker_radius": 3,
+      "manifest_path": "outputs/current/datasets/p0a_m8_symmetry/manifest.json",
+      "rollouts": 72,
+      "unique_xy_positions": 72,
+      "states": [
+        "double_overhang",
+        "outer_partial",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.6697441116742349,
+      "radius_max_mm": 7.764101615137755
+    },
+    {
+      "key": "p0b_m8_observability",
+      "label": "P0b observability",
+      "role": "grouped foundation pool",
+      "color": [
+        56,
+        189,
+        248
+      ],
+      "marker": "circle",
+      "marker_radius": 4,
+      "manifest_path": "outputs/current/datasets/p0b_m8_observability/manifest.json",
+      "rollouts": 360,
+      "unique_xy_positions": 120,
+      "states": [
+        "double_overhang",
+        "outer_partial",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.5179491924311224,
+      "radius_max_mm": 7.814101615137755
+    },
+    {
+      "key": "p0c_m8_collision_followup",
+      "label": "P0c hard cases",
+      "role": "development follow-up",
+      "color": [
+        34,
+        211,
+        238
+      ],
+      "marker": "diamond",
+      "marker_radius": 6,
+      "manifest_path": "outputs/current/datasets/p0c_m8_collision_followup/manifest.json",
+      "rollouts": 90,
+      "unique_xy_positions": 18,
+      "states": [
+        "double_overhang",
+        "outer_partial",
+        "supported_search"
+      ],
+      "radius_min_mm": 2.170667345176505,
+      "radius_max_mm": 6.814101615137755
+    },
+    {
+      "key": "p0d_m8_sector_anchors",
+      "label": "P0d sector anchors",
+      "role": "physical direction anchors",
+      "color": [
+        74,
+        222,
+        128
+      ],
+      "marker": "square",
+      "marker_radius": 4,
+      "manifest_path": "outputs/current/datasets/p0d_m8_sector_anchors/manifest.json",
+      "rollouts": 324,
+      "unique_xy_positions": 162,
+      "states": [
+        "double_overhang",
+        "outer_partial",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.5179491924311224,
+      "radius_max_mm": 7.814101615137755
+    },
+    {
+      "key": "p1v2_m8_independent_direction_audit",
+      "label": "P1v2 design audit",
+      "role": "viewed failure audit",
+      "color": [
+        251,
+        146,
+        60
+      ],
+      "marker": "square",
+      "marker_radius": 6,
+      "manifest_path": "outputs/current/evaluations/p1v2_m8_independent_direction_audit/manifest.json",
+      "rollouts": 180,
+      "unique_xy_positions": 60,
+      "states": [
+        "double_overhang",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.3661542731880103,
+      "radius_max_mm": 4.55
+    },
+    {
+      "key": "p1v3_m8_targeted_direction_training",
+      "label": "P1v3 targeted",
+      "role": "train / calibration",
+      "color": [
+        244,
+        114,
+        182
+      ],
+      "marker": "triangle",
+      "marker_radius": 6,
+      "manifest_path": "outputs/current/datasets/p1v3_m8_targeted_direction_training/manifest.json",
+      "rollouts": 288,
+      "unique_xy_positions": 144,
+      "states": [
+        "double_overhang",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.092923418550408,
+      "radius_max_mm": 4.7
+    },
+    {
+      "key": "p1v4_m8_untouched_direction_audit",
+      "label": "P1v4 interface audit",
+      "role": "development only",
+      "color": [
+        167,
+        139,
+        250
+      ],
+      "marker": "cross",
+      "marker_radius": 7,
+      "manifest_path": "outputs/current/evaluations/p1v4_m8_untouched_direction_audit/manifest.json",
+      "rollouts": 180,
+      "unique_xy_positions": 60,
+      "states": [
+        "double_overhang",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.22,
+      "radius_max_mm": 4.32
+    },
+    {
+      "key": "p1v5_m8_final_untouched_direction_audit",
+      "label": "P1v5 final untouched",
+      "role": "final test; no reuse",
+      "color": [
+        250,
+        204,
+        21
+      ],
+      "marker": "star",
+      "marker_radius": 8,
+      "manifest_path": "outputs/current/evaluations/p1v5_m8_final_untouched_direction_audit/manifest.json",
+      "rollouts": 180,
+      "unique_xy_positions": 60,
+      "states": [
+        "double_overhang",
+        "supported_search"
+      ],
+      "radius_min_mm": 1.4,
+      "radius_max_mm": 4.58
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+{
+  "adaptation_contract": {
+    "batchnorm_running_statistics_frozen": true,
+    "captured_or_incomplete_traces_used_for_direction_supervision": 0,
+    "domain_weights": {
+      "hardware_easy_v2": 0.6,
+      "strict": 0.4
+    },
+    "encoder_shared_batchnorm_frozen": false,
+    "geometry_profile": "hardware_easy_v2",
+    "max_aps_set_size_cap_inherited_from_base": 3,
+    "previously_untouched_development_datasets_consumed": [
+      "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_hardware_easy_v2_fresh_strict_untouched",
+      "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_hardware_easy_v2_fresh2_strict_untouched",
+      "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_hardware_easy_v2_fresh_easy_untouched",
+      "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/evaluations/m8_hardware_easy_v2_fresh2_easy_untouched"
+    ],
+    "strict_replay": true,
+    "trainable_modules": [
+      "encoder.last_conv",
+      "shared",
+      "state_head",
+      "direction_head"
+    ],
+    "untouched_strict_or_easy_samples_seen": 0
+  },
+  "aps_quantile": 0.9786980152130127,
+  "checkpoints": [
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/m8_hardware_easy_v2_robust_direction_v4/seeds/seed_20260720/circular_cnn_best.pt",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/m8_hardware_easy_v2_robust_direction_v4/seeds/seed_20260721/circular_cnn_best.pt",
+    "/home/njy/njy_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/m8_hardware_easy_v2_robust_direction_v4/seeds/seed_20260722/circular_cnn_best.pt"
+  ],
+  "claim_boundary": "Simulation-only hardware-easy-v2 contact-geometry adaptation with frozen strict replay. It is not real-hardware fine-tuning, calibrated Bota sensing, FDM compliance, or full-loop evidence.",
+  "combiner": "mean calibrated class probabilities",
+  "confidence_gate": 0.0,
+  "direction_bin_width_deg": 7.5,
+  "direction_bins": 48,
+  "direction_role": "allow bounded transport only when all calibrated set/concentration/disagreement gates pass",
+  "fallback": "guarded local outward spiral or re-probe",
+  "state_role": "soft action-relevant radial likelihood only: combine calibrated support-state probabilities with approximate CAD using a nonzero likelihood floor; never use a hard state gate, direct distance command, capture trigger, or terminal verifier",
+  "structured_transport_gate": {
+    "max_aps_set_size": 3,
+    "max_ensemble_top1_span_deg": 7.5,
+    "min_circular_concentration": 0.0,
+    "min_max_probability": 0.0
+  },
+  "updated_utc": "2026-07-21T08:02:24.465833+00:00"
+}

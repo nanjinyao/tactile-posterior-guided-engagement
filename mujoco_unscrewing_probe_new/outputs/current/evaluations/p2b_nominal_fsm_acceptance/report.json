@@ -1,0 +1,76 @@
+{
+  "claim_boundary": "Development-set nominal M8 FSM regression after a trace-driven safety fix. It is not an independent test; capture still ends on privileged MuJoCo-tag gates.",
+  "design": {
+    "cad_full_support_radius_mm": 3.0358983848622447,
+    "fsm_change": "sensor-depth commit latches below-rim progress and forbids planar-search resume",
+    "initial_poses": 18,
+    "methods": [
+      "learned",
+      "baseline"
+    ],
+    "physical_sectors_per_radius": 6,
+    "radial_levels_mm": [
+      1.517949,
+      2.170667,
+      2.823385
+    ]
+  },
+  "methods": {
+    "baseline": {
+      "contact_path_median_mm": 35.18670649153242,
+      "hard_stops": 0,
+      "max_force_p90_n": 7.918512767155391,
+      "max_torque_p90_mnm": 21.754288378265603,
+      "success_time_median_s": 17.10700000000548,
+      "successes": 18,
+      "termination_counts": {
+        "centered_inserted_gate_confirmed": 6,
+        "inner_wall_gate_confirmed": 12
+      },
+      "trials": 18,
+      "work_proxy_median_mj": 60.866787383004315
+    },
+    "learned": {
+      "contact_path_median_mm": 12.181290325002912,
+      "hard_stops": 0,
+      "max_force_p90_n": 8.873695192563801,
+      "max_torque_p90_mnm": 24.501335303398392,
+      "success_time_median_s": 12.926500000004307,
+      "successes": 18,
+      "termination_counts": {
+        "centered_inserted_gate_confirmed": 3,
+        "inner_wall_gate_confirmed": 15
+      },
+      "trials": 18,
+      "work_proxy_median_mj": 28.033946161571365
+    }
+  },
+  "paired": {
+    "baseline_max_force_n_median": 7.083034596460848,
+    "baseline_max_torque_mnm_median": 20.511637210276646,
+    "baseline_only_success": 0,
+    "baseline_path_mm_median": 35.18670649153242,
+    "baseline_time_s_median": 17.10700000000548,
+    "baseline_work_mj_median": 60.866787383004315,
+    "both_success": 18,
+    "complete_pairs": 18,
+    "learned_lower_max_force_n_rate": 0.2222222222222222,
+    "learned_lower_max_torque_mnm_rate": 0.3333333333333333,
+    "learned_lower_path_mm_rate": 1.0,
+    "learned_lower_time_s_rate": 0.5555555555555556,
+    "learned_lower_work_mj_rate": 0.9444444444444444,
+    "learned_max_force_n_median": 7.500500716753522,
+    "learned_max_torque_mnm_median": 21.12788960607032,
+    "learned_minus_baseline_max_force_n_median": 0.777234946280978,
+    "learned_minus_baseline_max_torque_mnm_median": 0.9487198025374504,
+    "learned_minus_baseline_path_mm_median": -15.250739958815467,
+    "learned_minus_baseline_time_s_median": -1.966249999998455,
+    "learned_minus_baseline_work_mj_median": -20.81291275456236,
+    "learned_only_success": 0,
+    "learned_path_mm_median": 12.181290325002912,
+    "learned_time_s_median": 12.926500000004307,
+    "learned_work_mj_median": 28.033946161571365
+  },
+  "stage": "P2b_nominal_FSM_acceptance",
+  "updated_utc": "2026-07-10T03:56:05.593359+00:00"
+}

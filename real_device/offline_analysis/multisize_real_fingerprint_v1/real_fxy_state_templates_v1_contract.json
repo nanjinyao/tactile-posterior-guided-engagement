@@ -1,0 +1,125 @@
+{
+  "created_utc": "2026-07-28T10:42:29.269185+00:00",
+  "hardware_control_allowed": false,
+  "holdout_used_for_fit_or_normalization": false,
+  "input_contract": {
+    "channels": [
+      "Fx_WORLD_star_N",
+      "Fy_WORLD_star_N"
+    ],
+    "frame": "WORLD_star_relative_to_fresh_per_point_air_baseline",
+    "normalization": "per-channel per-scan mean removal and standard-deviation scaling after circular direction alignment",
+    "phase_bins": 360,
+    "phase_source": "recorded conical command phase",
+    "template_axes": [
+      "lateral_x",
+      "lateral_y"
+    ],
+    "wrench_origin": "Bota measurement origin, no tip shift"
+  },
+  "model_id": "real_fxy_state_templates_v1",
+  "model_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/offline_analysis/multisize_real_fingerprint_v1/real_fxy_state_templates_v1.npz",
+  "model_role": "EXPLORATORY_DIRECTION_OBSERVABILITY_UPPER_BOUND_ONLY",
+  "model_sha256": "a423f10733fa4de971882bede7cad1592a8b8d15ff2f786053c995be4890bbc8",
+  "output_contract": {
+    "posterior_status": "uncalibrated multimodal score, not a probability",
+    "score": "circular correlation curve over 360 candidate directions",
+    "sizes": [
+      "M12",
+      "M10",
+      "M8"
+    ],
+    "state_order": [
+      "supported_search",
+      "double_overhang",
+      "outer_partial_support"
+    ]
+  },
+  "quarantine_used_for_fit_or_normalization": false,
+  "run_contracts": {
+    "M10": {
+      "active_peg_step_sha256": "17381968212daa2b7758dcf3795df32b3a4e687b42c482d3550111e03ae8daa2",
+      "fixture_frame_commissioning_sha256": "d38f4e332f2db51943e8e5fece10e73ac9b5601778388d6fd9c80b73472e6254",
+      "printed_socket_step_sha256": "f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f",
+      "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877",
+      "sampling_campaign_sha256": "6215f1f2754ab08cf2bcb16b6288bac256b607f8d794a8f4142e3799e358ad2e",
+      "sampling_plan_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/m10_printed_cad_conical_sampling_v2.json",
+      "sampling_plan_sha256": "9b09f0d9cd7ff5db454bae986e7c2e74e724d19549ca1a927952cbcd55ef3859"
+    },
+    "M12": {
+      "active_peg_step_sha256": "362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe",
+      "fixture_frame_commissioning_sha256": "656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f",
+      "printed_socket_step_sha256": "f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f",
+      "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260728_175502_318",
+      "sampling_campaign_sha256": "fd9611132685b1d6819564853ba5868257b60d6a1ba84f68c642bab5a5d87660",
+      "sampling_plan_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/m12_printed_cad_conical_sampling_v2.json",
+      "sampling_plan_sha256": "2577ccc8bc95bfd0b5c93ece19903c6bc3b54d20ba1dba3638a9e90740b762ac"
+    },
+    "M8": {
+      "active_peg_step_sha256": "22303873354eeb02d82c2492cb3a5d6b8ba73860b31a67804ca501347692f24b",
+      "fixture_frame_commissioning_sha256": "fcc019a6e98b70ad7851ad8a2f4b058d392339c3c3e7a902e0d091641e6cfb09",
+      "printed_socket_step_sha256": "f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f",
+      "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M8_conical_fingerprints_26pt_20260728_161249_458",
+      "sampling_campaign_sha256": "17a5038ed897e67fedf267a7b92b98d8207576a8a81293bff4626a5bafab3205",
+      "sampling_plan_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/m8_printed_cad_conical_sampling_v2.json",
+      "sampling_plan_sha256": "3b57052e1c8611b82eee428f7e0ff420df15f20ff609aae19166e3fb2ff732e3"
+    }
+  },
+  "schema_version": 1,
+  "sentinel_used_for_fit_or_normalization": false,
+  "source_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/tools/analyze_multisize_real_fingerprints.py",
+  "source_sha256": "1268af25124a4ee42505a241b20f79fada0bad79b8b9aadb83e628119e700e05",
+  "state_conditioning_boundary": "uses registered true CAD contact state and is therefore an observability upper bound, not deployable inference",
+  "training_partition": "clean_candidate_only",
+  "training_sample_count": 48,
+  "training_sample_ids": [
+    "M10-CLEAN_CANDIDATE-DOUBLE-A033p75",
+    "M10-CLEAN_CANDIDATE-DOUBLE-A093p75",
+    "M10-CLEAN_CANDIDATE-DOUBLE-A153p75",
+    "M10-CLEAN_CANDIDATE-DOUBLE-A213p75",
+    "M10-CLEAN_CANDIDATE-DOUBLE-A273p75",
+    "M10-CLEAN_CANDIDATE-DOUBLE-A333p75",
+    "M10-CLEAN_CANDIDATE-OUTER-A018p75",
+    "M10-CLEAN_CANDIDATE-OUTER-A108p75",
+    "M10-CLEAN_CANDIDATE-OUTER-A198p75",
+    "M10-CLEAN_CANDIDATE-OUTER-A288p75",
+    "M10-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+    "M10-CLEAN_CANDIDATE-SUPPORTED-A063p75",
+    "M10-CLEAN_CANDIDATE-SUPPORTED-A123p75",
+    "M10-CLEAN_CANDIDATE-SUPPORTED-A183p75",
+    "M10-CLEAN_CANDIDATE-SUPPORTED-A243p75",
+    "M10-CLEAN_CANDIDATE-SUPPORTED-A303p75",
+    "M12-CLEAN_CANDIDATE-DOUBLE-A033p75",
+    "M12-CLEAN_CANDIDATE-DOUBLE-A093p75",
+    "M12-CLEAN_CANDIDATE-DOUBLE-A153p75",
+    "M12-CLEAN_CANDIDATE-DOUBLE-A213p75",
+    "M12-CLEAN_CANDIDATE-DOUBLE-A273p75",
+    "M12-CLEAN_CANDIDATE-DOUBLE-A333p75",
+    "M12-CLEAN_CANDIDATE-OUTER-A018p75",
+    "M12-CLEAN_CANDIDATE-OUTER-A108p75",
+    "M12-CLEAN_CANDIDATE-OUTER-A198p75",
+    "M12-CLEAN_CANDIDATE-OUTER-A288p75",
+    "M12-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+    "M12-CLEAN_CANDIDATE-SUPPORTED-A063p75",
+    "M12-CLEAN_CANDIDATE-SUPPORTED-A123p75",
+    "M12-CLEAN_CANDIDATE-SUPPORTED-A183p75",
+    "M12-CLEAN_CANDIDATE-SUPPORTED-A243p75",
+    "M12-CLEAN_CANDIDATE-SUPPORTED-A303p75",
+    "M8-CLEAN_CANDIDATE-DOUBLE-A033p75",
+    "M8-CLEAN_CANDIDATE-DOUBLE-A093p75",
+    "M8-CLEAN_CANDIDATE-DOUBLE-A153p75",
+    "M8-CLEAN_CANDIDATE-DOUBLE-A213p75",
+    "M8-CLEAN_CANDIDATE-DOUBLE-A273p75",
+    "M8-CLEAN_CANDIDATE-DOUBLE-A333p75",
+    "M8-CLEAN_CANDIDATE-OUTER-A018p75",
+    "M8-CLEAN_CANDIDATE-OUTER-A108p75",
+    "M8-CLEAN_CANDIDATE-OUTER-A198p75",
+    "M8-CLEAN_CANDIDATE-OUTER-A288p75",
+    "M8-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+    "M8-CLEAN_CANDIDATE-SUPPORTED-A063p75",
+    "M8-CLEAN_CANDIDATE-SUPPORTED-A123p75",
+    "M8-CLEAN_CANDIDATE-SUPPORTED-A183p75",
+    "M8-CLEAN_CANDIDATE-SUPPORTED-A243p75",
+    "M8-CLEAN_CANDIDATE-SUPPORTED-A303p75"
+  ]
+}

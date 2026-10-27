@@ -1,0 +1,288 @@
+{
+  "authority": "REAL_DEVICE_RAW_SIGNAL_HIGHEST_AUTHORITY",
+  "builder": {
+    "common_contract_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/offline_learning/common.py",
+    "common_contract_sha256": "4e7d2c6597b9e0f6d121d2a83cf5e957f7491e4f18dc22e590698775ae41c6db",
+    "path": "/home/ubuntu20/robot_ws/group_meeting/real_device/offline_learning/build_real_multisize_dataset.py",
+    "sha256": "3dca64976e05e2d59bbabb3e044c43e7f66f2dd623dce09c61de736e0450d7e1",
+    "validation_analyzer_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/tools/analyze_multisize_real_fingerprints.py",
+    "validation_analyzer_sha256": "1268af25124a4ee42505a241b20f79fada0bad79b8b9aadb83e628119e700e05"
+  },
+  "c6_augmentation": {
+    "derivation": "fixture direction is CCW +X_F to +Y_F while the recorded cone tilt direction is -phase under R(phi)=Rz(-phi)*Ry(15deg)*Rz(phi)",
+    "rotation_semantics": "rotate Fx/Fy and Tx/Ty by +k*60 degrees; roll phase by -k*60 bins; add k*60 degrees to direction label",
+    "training_fold_only": true,
+    "transform_id": "REAL_FRAME_C6_V2_RPOS_PHASE_NEG_CAD_V1P5",
+    "validation_augmentation": false
+  },
+  "cad_clocking_contract": {
+    "cone_rotation_convention": "R(phi)=Rz(-phi)*Ry(15deg)*Rz(phi)",
+    "design_parameters_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/model/parametric_tooling/design_parameters.json",
+    "design_parameters_sha256": "89bff458e7415f04274c216d36c91dbe80c754216bd3de9b50aa6630c14eab43",
+    "design_revision": "v1.5-integrated-flange-tools-yaw-datum",
+    "generated_manifest_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/model/parametric_tooling/generated/manifest.json",
+    "generated_manifest_sha256": "63b39c21e66310c9800b7c0bc88105a1bd8698d40054659cbff3f6f003e5c634",
+    "measurement_status": "OPERATOR_TAUGHT_FIXTURE_ALIGNMENT_NOT_AS_BUILT_YAW_METROLOGY",
+    "operator_taught_peg_flat_normal_in_fixture_deg": 0.0,
+    "printed_peg_flat_normal_in_flange_cad_deg": 45.0,
+    "runtime_rule": "the CAD -15 degree shape correction is absorbed by the taught flange datum and must not be applied a second time",
+    "shape_rotation_from_legacy_deg": -15.0,
+    "socket_flat_normal_in_fixture_deg": 0.0
+  },
+  "campaign_allowlist": {
+    "M10": {
+      "dataset_group_key": "PROVISIONAL_CURRENT_M10_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_M10_MOUNT_OPERATOR_INSTALLED__d38f4e332f2db51943e8e5fece10e73ac9b5601778388d6fd9c80b73472e6254__17381968212daa2b7758dcf3795df32b3a4e687b42c482d3550111e03ae8daa2__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M10_conical_fingerprints_26pt_20260728_152808_877",
+      "run_directory": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877",
+      "run_session_id": "M10_conical_fingerprints_26pt_20260728_152808_877",
+      "sampling_campaign_sha256": "6215f1f2754ab08cf2bcb16b6288bac256b607f8d794a8f4142e3799e358ad2e",
+      "sampling_plan_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/m10_printed_cad_conical_sampling_v2.json",
+      "sampling_plan_sha256": "9b09f0d9cd7ff5db454bae986e7c2e74e724d19549ca1a927952cbcd55ef3859",
+      "target_normal_force_n": 3.5
+    },
+    "M12": {
+      "dataset_group_key": "PROVISIONAL_CURRENT_M12_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_M12_MOUNT_OPERATOR_INSTALLED__656ca0e217e6a48d39ee482f1d3e4d01109545a72b93398d7a7a123c2b310a7f__362018e71e4bb80ea07640d6fb7bc0ddbe6178c25046f0283741e5a49e52a4fe__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M12_conical_fingerprints_26pt_20260728_175502_318",
+      "run_directory": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260728_175502_318",
+      "run_session_id": "M12_conical_fingerprints_26pt_20260728_175502_318",
+      "sampling_campaign_sha256": "fd9611132685b1d6819564853ba5868257b60d6a1ba84f68c642bab5a5d87660",
+      "sampling_plan_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/m12_printed_cad_conical_sampling_v2.json",
+      "sampling_plan_sha256": "2577ccc8bc95bfd0b5c93ece19903c6bc3b54d20ba1dba3638a9e90740b762ac",
+      "target_normal_force_n": 3.5
+    },
+    "M8": {
+      "dataset_group_key": "PROVISIONAL_CURRENT_M8_PRINT_OPERATOR_INSTALLED__PROVISIONAL_CURRENT_THREE_SOCKET_FIXTURE__PROVISIONAL_CURRENT_M8_MOUNT_OPERATOR_INSTALLED__fcc019a6e98b70ad7851ad8a2f4b058d392339c3c3e7a902e0d091641e6cfb09__22303873354eeb02d82c2492cb3a5d6b8ba73860b31a67804ca501347692f24b__f3b26582f409547e63296f7b8afb6f30d52d64f4f97f0dd5f74b4d1ffafab93f__M8_conical_fingerprints_26pt_20260728_161249_458",
+      "run_directory": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M8_conical_fingerprints_26pt_20260728_161249_458",
+      "run_session_id": "M8_conical_fingerprints_26pt_20260728_161249_458",
+      "sampling_campaign_sha256": "17a5038ed897e67fedf267a7b92b98d8207576a8a81293bff4626a5bafab3205",
+      "sampling_plan_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/m8_printed_cad_conical_sampling_v2.json",
+      "sampling_plan_sha256": "3b57052e1c8611b82eee428f7e0ff420df15f20ff609aae19166e3fb2ff732e3",
+      "target_normal_force_n": 3.5
+    }
+  },
+  "campaign_quality": {
+    "M10": {
+      "attempts": 26,
+      "automatic_training_admission_count": 0,
+      "baseline_rows_max": 30,
+      "baseline_rows_min": 30,
+      "contact_settle_passed_count": 26,
+      "direction_fingerprint_valid_count": 26,
+      "hash_checks": 104,
+      "hash_mismatches": 0,
+      "maximum_command_gap_s": 0.05102099999999998,
+      "maximum_cyclic_phase_gap_deg": 1.5000000228994932,
+      "maximum_label_deviation_deg": 1.083453108625406,
+      "maximum_sampling_error_mm": 0.14019659182816677,
+      "maximum_source_interval_s": 0.040019989013671875,
+      "maximum_wrench_age_s": 0.012398958,
+      "minimum_phase_coverage_fraction": 0.9958333333333333,
+      "offline_training_candidate_count": 16,
+      "partition_counts": {
+        "clean_candidate": 16,
+        "holdout": 4,
+        "quarantine": 4,
+        "sentinel": 2
+      },
+      "phase_bins_after_resample": 360,
+      "point_air_baseline_valid_count": 26,
+      "preferred_stable_load_count": 5,
+      "resume_generation": 0,
+      "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877",
+      "run_session_id": "M10_conical_fingerprints_26pt_20260728_152808_877",
+      "scan_rows_per_attempt": 240,
+      "size": "M10",
+      "status": "COMPLETE_RETURNED_TO_INITIAL_AIR_POSE_KST_END_SENT",
+      "training_fingerprint_valid_count": 0,
+      "training_flag_interpretation": "false because DirectServo intentionally performed no in-loop KST pose query; it is not evidence that the fresh Bota phase trace is invalid"
+    },
+    "M12": {
+      "attempts": 26,
+      "automatic_training_admission_count": 0,
+      "baseline_rows_max": 30,
+      "baseline_rows_min": 30,
+      "contact_settle_passed_count": 26,
+      "direction_fingerprint_valid_count": 26,
+      "hash_checks": 104,
+      "hash_mismatches": 0,
+      "maximum_command_gap_s": 0.04326600000000003,
+      "maximum_cyclic_phase_gap_deg": 1.5000000228994932,
+      "maximum_label_deviation_deg": 0.8546204851700168,
+      "maximum_sampling_error_mm": 0.1315574916021664,
+      "maximum_source_interval_s": 0.05007004737854004,
+      "maximum_wrench_age_s": 0.013121605,
+      "minimum_phase_coverage_fraction": 0.9958333333333333,
+      "offline_training_candidate_count": 16,
+      "partition_counts": {
+        "clean_candidate": 16,
+        "holdout": 4,
+        "quarantine": 4,
+        "sentinel": 2
+      },
+      "phase_bins_after_resample": 360,
+      "point_air_baseline_valid_count": 26,
+      "preferred_stable_load_count": 10,
+      "resume_generation": 0,
+      "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260728_175502_318",
+      "run_session_id": "M12_conical_fingerprints_26pt_20260728_175502_318",
+      "scan_rows_per_attempt": 240,
+      "size": "M12",
+      "status": "COMPLETE_RETURNED_TO_INITIAL_AIR_POSE_KST_END_SENT",
+      "training_fingerprint_valid_count": 0,
+      "training_flag_interpretation": "false because DirectServo intentionally performed no in-loop KST pose query; it is not evidence that the fresh Bota phase trace is invalid"
+    },
+    "M8": {
+      "attempts": 26,
+      "automatic_training_admission_count": 0,
+      "baseline_rows_max": 30,
+      "baseline_rows_min": 30,
+      "contact_settle_passed_count": 26,
+      "direction_fingerprint_valid_count": 26,
+      "hash_checks": 104,
+      "hash_mismatches": 0,
+      "maximum_command_gap_s": 0.037961000000000134,
+      "maximum_cyclic_phase_gap_deg": 1.5000000228994932,
+      "maximum_label_deviation_deg": 1.058027160696554,
+      "maximum_sampling_error_mm": 0.10524108439188007,
+      "maximum_source_interval_s": 0.04016995429992676,
+      "maximum_wrench_age_s": 0.012312174,
+      "minimum_phase_coverage_fraction": 0.9958333333333333,
+      "offline_training_candidate_count": 16,
+      "partition_counts": {
+        "clean_candidate": 16,
+        "holdout": 4,
+        "quarantine": 4,
+        "sentinel": 2
+      },
+      "phase_bins_after_resample": 360,
+      "point_air_baseline_valid_count": 26,
+      "preferred_stable_load_count": 4,
+      "resume_generation": 0,
+      "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M8_conical_fingerprints_26pt_20260728_161249_458",
+      "run_session_id": "M8_conical_fingerprints_26pt_20260728_161249_458",
+      "scan_rows_per_attempt": 240,
+      "size": "M8",
+      "status": "COMPLETE_RETURNED_TO_INITIAL_AIR_POSE_KST_END_SENT",
+      "training_fingerprint_valid_count": 0,
+      "training_flag_interpretation": "false because DirectServo intentionally performed no in-loop KST pose query; it is not evidence that the fresh Bota phase trace is invalid"
+    }
+  },
+  "context": {
+    "order": [
+      "size_onehot_m8",
+      "size_onehot_m10",
+      "size_onehot_m12",
+      "target_down_force_over_3p5N",
+      "bit_radius_over_m12_radius"
+    ],
+    "shape": [
+      5
+    ]
+  },
+  "created_utc": "2026-07-28T15:21:16.634018+00:00",
+  "dataset_id": "real_multisize_conical_fingerprints_v1",
+  "grouping": {
+    "augmentation_counted_as_independent_samples": false,
+    "cross_validation": "leave_one_size_out",
+    "origin_group_is_indivisible": true
+  },
+  "holdout_status": "CONSUMED_ONCE_BY_PRIOR_V1_ANALYSIS_DIAGNOSTIC_ONLY_NOT_MODEL_SELECTION",
+  "input": {
+    "channels": [
+      "fx_world_star_n",
+      "fy_world_star_n",
+      "fz_world_star_n",
+      "tx_world_star_nm",
+      "ty_world_star_nm",
+      "tz_world_star_nm",
+      "cmd_z_relative_mm"
+    ],
+    "command_z_semantics": "relative to phase-bin-zero command z",
+    "phase_grid": "360 uniform bins on [0,2pi)",
+    "shape": [
+      7,
+      360
+    ]
+  },
+  "known_rejected_run": {
+    "admitted": false,
+    "path": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M8_conical_fingerprints_26pt_20260728_172108_490",
+    "required_flags": [
+      "DO_NOT_TRAIN.flag",
+      "RUN_QUARANTINE.json"
+    ]
+  },
+  "outputs": {
+    "direction_bin_centres_deg": [
+      3.75,
+      11.25,
+      18.75,
+      26.25,
+      33.75,
+      41.25,
+      48.75,
+      56.25,
+      63.75,
+      71.25,
+      78.75,
+      86.25,
+      93.75,
+      101.25,
+      108.75,
+      116.25,
+      123.75,
+      131.25,
+      138.75,
+      146.25,
+      153.75,
+      161.25,
+      168.75,
+      176.25,
+      183.75,
+      191.25,
+      198.75,
+      206.25,
+      213.75,
+      221.25,
+      228.75,
+      236.25,
+      243.75,
+      251.25,
+      258.75,
+      266.25,
+      273.75,
+      281.25,
+      288.75,
+      296.25,
+      303.75,
+      311.25,
+      318.75,
+      326.25,
+      333.75,
+      341.25,
+      348.75,
+      356.25
+    ],
+    "direction_classes": 48,
+    "state_names": [
+      "supported_search",
+      "double_overhang",
+      "outer_partial_support"
+    ]
+  },
+  "partition_counts": {
+    "clean_candidate": 48,
+    "holdout": 12,
+    "quarantine": 12,
+    "sentinel": 6
+  },
+  "prohibitions": [
+    "no online model update",
+    "no holdout use for candidate selection",
+    "no quarantine or sentinel training",
+    "no simulation data in normalization",
+    "no glob-discovered campaigns"
+  ],
+  "sample_count": 78,
+  "schema_version": 1,
+  "training_partition": "clean_candidate",
+  "training_sample_count": 48
+}

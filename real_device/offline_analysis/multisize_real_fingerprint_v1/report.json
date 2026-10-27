@@ -1,0 +1,752 @@
+{
+  "analysis_id": "multisize_real_fingerprint_v1",
+  "authority": "REAL_DEVICE_RAW_SIGNAL_HIGHEST_AUTHORITY; simulation is a feature prior only",
+  "cad_shortcut": {
+    "by_size": {
+      "M10": {
+        "feasible_center_hex_af_mm": 4.139999999999999,
+        "holdout_top1_ray_hit_fraction": 0.5,
+        "holdout_top2_any_ray_hit_fraction": 0.75,
+        "oracle_entry_distance_mm": {
+          "maximum": 8.018249540578745,
+          "median": 5.322682311096739,
+          "minimum": 3.2837044148090007
+        },
+        "peg_socket_flat_normal_yaw_error_deg": 0.0
+      },
+      "M12": {
+        "feasible_center_hex_af_mm": 5.0,
+        "holdout_top1_ray_hit_fraction": 0.5,
+        "holdout_top2_any_ray_hit_fraction": 0.75,
+        "oracle_entry_distance_mm": {
+          "maximum": 9.843263792179439,
+          "median": 6.044240658167114,
+          "minimum": 3.0005510421574257
+        },
+        "peg_socket_flat_normal_yaw_error_deg": 0.0
+      },
+      "M8": {
+        "feasible_center_hex_af_mm": 3.3,
+        "holdout_top1_ray_hit_fraction": 0.5,
+        "holdout_top2_any_ray_hit_fraction": 0.75,
+        "oracle_entry_distance_mm": {
+          "maximum": 6.023840337130921,
+          "median": 4.07721338066975,
+          "minimum": 2.6446242371049933
+        },
+        "peg_socket_flat_normal_yaw_error_deg": 0.0
+      }
+    },
+    "geometry": "same-yaw regular-hex Minkowski erosion: H(AF_mouth) minus H(AF_tip)",
+    "meaning": "first ray entry is a mouth-containment geometry distance; it is not a calibrated chamfer-capture distance",
+    "oracle_offset_boundary": "measured run-local offsets and true direction are used only for post-hoc scoring; deployment requires a visual/direction/CAD center posterior"
+  },
+  "claim_boundary": "This report demonstrates data integrity and partial real-domain direction observability. It does not certify a real direction posterior, chamfer capture distance, insertion success, or online hardware authority.",
+  "created_utc": "2026-07-28T10:42:32.203134+00:00",
+  "direction_observability": {
+    "c6_alignment": {
+      "M10": {
+        "channels": [
+          "Fz",
+          "Tx",
+          "Ty"
+        ],
+        "common_mode_estimator": "leave-one-clean-sample-out median",
+        "common_mode_removed_direction_aligned_mean_pairwise_correlation": 0.21814603518722875,
+        "common_mode_removed_unaligned_mean_pairwise_correlation": -0.06562622810235831,
+        "interpretation": "increase after direction alignment is evidence for a direction-dependent residual only when it also exceeds the within-state shuffled-label null; magnitude is not classifier accuracy or cross-size transfer",
+        "within_state_direction_permutation_null": {
+          "mean": 0.02622621915077847,
+          "one_sided_p_value": 0.0038910505836575876,
+          "p95": 0.09358144845296204,
+          "permutations": 256
+        }
+      },
+      "M12": {
+        "channels": [
+          "Fz",
+          "Tx",
+          "Ty"
+        ],
+        "common_mode_estimator": "leave-one-clean-sample-out median",
+        "common_mode_removed_direction_aligned_mean_pairwise_correlation": 0.38698824720137875,
+        "common_mode_removed_unaligned_mean_pairwise_correlation": -0.06131940533982901,
+        "interpretation": "increase after direction alignment is evidence for a direction-dependent residual only when it also exceeds the within-state shuffled-label null; magnitude is not classifier accuracy or cross-size transfer",
+        "within_state_direction_permutation_null": {
+          "mean": 0.03201516152029675,
+          "one_sided_p_value": 0.0038910505836575876,
+          "p95": 0.12791383015785823,
+          "permutations": 256
+        }
+      },
+      "M8": {
+        "channels": [
+          "Fz",
+          "Tx",
+          "Ty"
+        ],
+        "common_mode_estimator": "leave-one-clean-sample-out median",
+        "common_mode_removed_direction_aligned_mean_pairwise_correlation": 0.06272838157534823,
+        "common_mode_removed_unaligned_mean_pairwise_correlation": -0.017390900728842137,
+        "interpretation": "increase after direction alignment is evidence for a direction-dependent residual only when it also exceeds the within-state shuffled-label null; magnitude is not classifier accuracy or cross-size transfer",
+        "within_state_direction_permutation_null": {
+          "mean": 0.02754420419873719,
+          "one_sided_p_value": 0.038910505836575876,
+          "p95": 0.05867875258429766,
+          "permutations": 256
+        }
+      }
+    },
+    "real_fxy_template_holdout": {
+      "best_of_top2": {
+        "catastrophic_gt90_count": 0,
+        "catastrophic_gt90_fraction": 0.0,
+        "count": 12,
+        "median_error_deg": 15.088397532441121,
+        "p90_error_deg": 20.99884850896316,
+        "within_15_fraction": 0.5,
+        "within_30_fraction": 1.0,
+        "within_7p5_fraction": 0.3333333333333333
+      },
+      "best_of_top2_interpretation": "oracle posterior-support coverage only; there is no online oracle that selects the better of the two modes",
+      "by_size": {
+        "M10": {
+          "best_of_top2": {
+            "catastrophic_gt90_count": 0,
+            "catastrophic_gt90_fraction": 0.0,
+            "count": 4,
+            "median_error_deg": 10.571185038241325,
+            "p90_error_deg": 16.777473777325287,
+            "within_15_fraction": 0.5,
+            "within_30_fraction": 1.0,
+            "within_7p5_fraction": 0.5
+          },
+          "top1": {
+            "catastrophic_gt90_count": 1,
+            "catastrophic_gt90_fraction": 0.25,
+            "count": 4,
+            "median_error_deg": 20.571185038241325,
+            "p90_error_deg": 123.66523724561952,
+            "within_15_fraction": 0.25,
+            "within_30_fraction": 0.75,
+            "within_7p5_fraction": 0.25
+          }
+        },
+        "M12": {
+          "best_of_top2": {
+            "catastrophic_gt90_count": 0,
+            "catastrophic_gt90_fraction": 0.0,
+            "count": 4,
+            "median_error_deg": 17.097285347699184,
+            "p90_error_deg": 24.065078858380012,
+            "within_15_fraction": 0.5,
+            "within_30_fraction": 1.0,
+            "within_7p5_fraction": 0.25
+          },
+          "top1": {
+            "catastrophic_gt90_count": 0,
+            "catastrophic_gt90_fraction": 0.0,
+            "count": 4,
+            "median_error_deg": 23.833407495341703,
+            "p90_error_deg": 39.23496563882502,
+            "within_15_fraction": 0.25,
+            "within_30_fraction": 0.75,
+            "within_7p5_fraction": 0.0
+          }
+        },
+        "M8": {
+          "best_of_top2": {
+            "catastrophic_gt90_count": 0,
+            "catastrophic_gt90_fraction": 0.0,
+            "count": 4,
+            "median_error_deg": 14.233987503636087,
+            "p90_error_deg": 20.753912873109662,
+            "within_15_fraction": 0.5,
+            "within_30_fraction": 1.0,
+            "within_7p5_fraction": 0.25
+          },
+          "top1": {
+            "catastrophic_gt90_count": 0,
+            "catastrophic_gt90_fraction": 0.0,
+            "count": 4,
+            "median_error_deg": 19.052089940593632,
+            "p90_error_deg": 20.753912873109662,
+            "within_15_fraction": 0.25,
+            "within_30_fraction": 1.0,
+            "within_7p5_fraction": 0.0
+          }
+        }
+      },
+      "evaluation_partition": "holdout_only",
+      "role": "clean-trained state-conditioned circular-template observability upper bound from the first development holdout reveal; not a hardware promotion or final locked audit",
+      "state_input_boundary": "true CAD contact state is used only to isolate direction observability; deployable fusion must marginalize calibrated state likelihood",
+      "top1": {
+        "catastrophic_gt90_count": 1,
+        "catastrophic_gt90_fraction": 0.08333333333333333,
+        "count": 12,
+        "median_error_deg": 19.557927154080673,
+        "p90_error_deg": 42.31707044130517,
+        "within_15_fraction": 0.25,
+        "within_30_fraction": 0.8333333333333334,
+        "within_7p5_fraction": 0.08333333333333333
+      },
+      "training_channels": [
+        "Fx_WORLD_star_N",
+        "Fy_WORLD_star_N"
+      ],
+      "training_partition": "clean_candidate_only"
+    },
+    "simulation_fourier_ridge_holdout": {
+      "alpha_selection": {
+        "candidates": [
+          {
+            "alpha": 0.001,
+            "median_error_deg": 98.78367009396646,
+            "p90_error_deg": 158.23579509543356
+          },
+          {
+            "alpha": 0.0031622776601683794,
+            "median_error_deg": 98.77467010445326,
+            "p90_error_deg": 158.13269260177282
+          },
+          {
+            "alpha": 0.01,
+            "median_error_deg": 98.74764559206807,
+            "p90_error_deg": 157.81134951109237
+          },
+          {
+            "alpha": 0.03162277660168379,
+            "median_error_deg": 98.67648918897726,
+            "p90_error_deg": 156.8403047066571
+          },
+          {
+            "alpha": 0.1,
+            "median_error_deg": 96.9802101231432,
+            "p90_error_deg": 154.86826799136182
+          },
+          {
+            "alpha": 0.31622776601683794,
+            "median_error_deg": 99.57946052634694,
+            "p90_error_deg": 154.25490134636797
+          },
+          {
+            "alpha": 1.0,
+            "median_error_deg": 110.47400991145932,
+            "p90_error_deg": 155.12406161385886
+          },
+          {
+            "alpha": 3.1622776601683795,
+            "median_error_deg": 94.27261721609284,
+            "p90_error_deg": 162.82998848807162
+          },
+          {
+            "alpha": 10.0,
+            "median_error_deg": 102.72802044398165,
+            "p90_error_deg": 165.62326855233934
+          },
+          {
+            "alpha": 31.622776601683793,
+            "median_error_deg": 101.7039464348695,
+            "p90_error_deg": 166.18335971502557
+          },
+          {
+            "alpha": 100.0,
+            "median_error_deg": 83.5316262943272,
+            "p90_error_deg": 168.48849044783464
+          },
+          {
+            "alpha": 316.22776601683796,
+            "median_error_deg": 91.19802267501674,
+            "p90_error_deg": 155.5985349552549
+          },
+          {
+            "alpha": 1000.0,
+            "median_error_deg": 91.56173599673537,
+            "p90_error_deg": 156.88474594382564
+          }
+        ],
+        "selected": {
+          "alpha": 100.0,
+          "median_error_deg": 83.5316262943272,
+          "p90_error_deg": 168.48849044783464
+        },
+        "selection_policy": "clean-only leave-one-size-out; holdout never participates"
+      },
+      "catastrophic_gt90_count": 6,
+      "catastrophic_gt90_fraction": 0.5,
+      "channels": [
+        "Fz",
+        "Tx",
+        "Ty",
+        "command_z_proxy"
+      ],
+      "count": 12,
+      "median_error_deg": 90.6147281878676,
+      "p90_error_deg": 124.11760666572842,
+      "role": "simulation-inspired 48-D Fourier ridge trained on real clean samples; selected by clean-only leave-one-size-out. This is not the frozen simulation CNN or its full 64-D input contract",
+      "within_15_fraction": 0.08333333333333333,
+      "within_30_fraction": 0.16666666666666666,
+      "within_7p5_fraction": 0.08333333333333333
+    },
+    "simulation_zero_shot": {
+      "campaign_target_force_contract_sha256": "c83849b6c5e27d99b4205c29f6791f9dd0e90e5746bcc87add7524c2a9f01392",
+      "claim_boundary": "These holdout points have now been revealed for v1 development. No result here is a final locked audit or motion authorization.",
+      "clean_only_frame_diagnostic": {
+        "global_transform": {
+          "clean_metrics": {
+            "catastrophic_gt90_count": 20,
+            "catastrophic_gt90_fraction": 0.4166666666666667,
+            "count": 48,
+            "median_error_deg": 52.500282940357266,
+            "p90_error_deg": 153.36153614363369,
+            "within_15_fraction": 0.041666666666666664,
+            "within_30_fraction": 0.1875,
+            "within_7p5_fraction": 0.020833333333333332
+          },
+          "clean_selection_objective": 83.172590169084,
+          "offset_deg": 168.25,
+          "sign": -1
+        },
+        "interpretation": "if holdout remains poor, a single coordinate sign/offset is insufficient to explain simulation-to-real mismatch",
+        "per_size_transforms": {
+          "M10": {
+            "clean_metrics": {
+              "catastrophic_gt90_count": 6,
+              "catastrophic_gt90_fraction": 0.375,
+              "count": 16,
+              "median_error_deg": 43.59432884649459,
+              "p90_error_deg": 131.80087472957928,
+              "within_15_fraction": 0.0625,
+              "within_30_fraction": 0.1875,
+              "within_7p5_fraction": 0.0625
+            },
+            "clean_selection_objective": 69.95450379241045,
+            "offset_deg": 103.75,
+            "sign": -1
+          },
+          "M12": {
+            "clean_metrics": {
+              "catastrophic_gt90_count": 5,
+              "catastrophic_gt90_fraction": 0.3125,
+              "count": 16,
+              "median_error_deg": 43.490685042451474,
+              "p90_error_deg": 116.34301236005771,
+              "within_15_fraction": 0.0,
+              "within_30_fraction": 0.25,
+              "within_7p5_fraction": 0.0
+            },
+            "clean_selection_objective": 66.75928751446301,
+            "offset_deg": 171.75,
+            "sign": -1
+          },
+          "M8": {
+            "clean_metrics": {
+              "catastrophic_gt90_count": 6,
+              "catastrophic_gt90_fraction": 0.375,
+              "count": 16,
+              "median_error_deg": 49.158122556073195,
+              "p90_error_deg": 162.41941316611766,
+              "within_15_fraction": 0.125,
+              "within_30_fraction": 0.3125,
+              "within_7p5_fraction": 0.0625
+            },
+            "clean_selection_objective": 81.64200518929673,
+            "offset_deg": 289.75,
+            "sign": -1
+          }
+        },
+        "selection_partition": "clean_candidate_only"
+      },
+      "counts": {
+        "all": 78,
+        "clean": 48,
+        "holdout": 12,
+        "nonboundary_clean_holdout_sentinel": 66
+      },
+      "created_utc": "2026-07-28T10:40:46.831939+00:00",
+      "deployment_audit_status": "REJECTED_GLOBAL_AUDIT",
+      "deployment_manifest_sha256": "1716bb00e1dfcd7b6863524d14d2e41cbbf7f572f49d7ce20a53369526e9acb9",
+      "development_rereveal_override_used": true,
+      "evaluation_signature_sha256": "b41be28d4a81fcac9757fb3fe2bc24d4d11c709053dd838c78d9127225c58320",
+      "evaluation_source_sha256": "79bcba9596850f6f769e3d23d1be87f0e2148417ac787baf9d9a2f84a8f130d3",
+      "hardware_control_allowed": false,
+      "inference_runtime_sha256": "762fb4e89f3c3754ae22907440ba08a293c00fdab99e9a17c5f8d19d4be0f1a4",
+      "metrics": {
+        "by_size_nonboundary": {
+          "M10": {
+            "raw_runtime_mean": {
+              "catastrophic_gt90_count": 10,
+              "catastrophic_gt90_fraction": 0.45454545454545453,
+              "count": 22,
+              "median_error_deg": 80.48699111826673,
+              "p90_error_deg": 158.77632729839925,
+              "within_15_fraction": 0.045454545454545456,
+              "within_30_fraction": 0.22727272727272727,
+              "within_7p5_fraction": 0.045454545454545456
+            },
+            "simulation_transport_gate_pass_fraction": 0.0,
+            "state_accuracy": 0.3181818181818182
+          },
+          "M12": {
+            "raw_runtime_mean": {
+              "catastrophic_gt90_count": 13,
+              "catastrophic_gt90_fraction": 0.5909090909090909,
+              "count": 22,
+              "median_error_deg": 117.86268533470876,
+              "p90_error_deg": 156.7063949524319,
+              "within_15_fraction": 0.09090909090909091,
+              "within_30_fraction": 0.18181818181818182,
+              "within_7p5_fraction": 0.045454545454545456
+            },
+            "simulation_transport_gate_pass_fraction": 0.045454545454545456,
+            "state_accuracy": 0.45454545454545453
+          },
+          "M8": {
+            "raw_runtime_mean": {
+              "catastrophic_gt90_count": 12,
+              "catastrophic_gt90_fraction": 0.5454545454545454,
+              "count": 22,
+              "median_error_deg": 98.16357494437236,
+              "p90_error_deg": 153.75605281712532,
+              "within_15_fraction": 0.045454545454545456,
+              "within_30_fraction": 0.13636363636363635,
+              "within_7p5_fraction": 0.0
+            },
+            "simulation_transport_gate_pass_fraction": 0.0,
+            "state_accuracy": 0.3181818181818182
+          }
+        },
+        "holdout_after_global_clean_sign_offset": {
+          "catastrophic_gt90_count": 6,
+          "catastrophic_gt90_fraction": 0.5,
+          "count": 12,
+          "median_error_deg": 82.93494512479913,
+          "p90_error_deg": 126.73375110447273,
+          "within_15_fraction": 0.0,
+          "within_30_fraction": 0.0,
+          "within_7p5_fraction": 0.0
+        },
+        "holdout_after_per_size_clean_sign_offset": {
+          "catastrophic_gt90_count": 4,
+          "catastrophic_gt90_fraction": 0.3333333333333333,
+          "count": 12,
+          "median_error_deg": 75.78223596316627,
+          "p90_error_deg": 142.49789148549394,
+          "within_15_fraction": 0.0,
+          "within_30_fraction": 0.08333333333333333,
+          "within_7p5_fraction": 0.0
+        },
+        "holdout_raw_runtime_mean": {
+          "catastrophic_gt90_count": 5,
+          "catastrophic_gt90_fraction": 0.4166666666666667,
+          "count": 12,
+          "median_error_deg": 69.04821472252885,
+          "p90_error_deg": 147.50292763064925,
+          "within_15_fraction": 0.08333333333333333,
+          "within_30_fraction": 0.3333333333333333,
+          "within_7p5_fraction": 0.0
+        },
+        "holdout_raw_top_class": {
+          "catastrophic_gt90_count": 6,
+          "catastrophic_gt90_fraction": 0.5,
+          "count": 12,
+          "median_error_deg": 101.14582241618625,
+          "p90_error_deg": 146.28155378651124,
+          "within_15_fraction": 0.16666666666666666,
+          "within_30_fraction": 0.16666666666666666,
+          "within_7p5_fraction": 0.0
+        },
+        "nonboundary_raw_runtime_mean": {
+          "catastrophic_gt90_count": 35,
+          "catastrophic_gt90_fraction": 0.5303030303030303,
+          "count": 66,
+          "median_error_deg": 99.76381571128866,
+          "p90_error_deg": 157.70148053376343,
+          "within_15_fraction": 0.06060606060606061,
+          "within_30_fraction": 0.18181818181818182,
+          "within_7p5_fraction": 0.030303030303030304
+        },
+        "nonboundary_state_accuracy": 0.36363636363636365,
+        "target_force_sensitivity_3p0_n": {
+          "holdout_raw_runtime_mean": {
+            "catastrophic_gt90_count": 7,
+            "catastrophic_gt90_fraction": 0.5833333333333334,
+            "count": 12,
+            "median_error_deg": 113.46685711196221,
+            "p90_error_deg": 142.2279338494494,
+            "within_15_fraction": 0.16666666666666666,
+            "within_30_fraction": 0.25,
+            "within_7p5_fraction": 0.0
+          },
+          "interpretation": "3.0 N is the old runtime default; 3.5 N is the real campaign contract and the primary result",
+          "nonboundary_raw_runtime_mean": {
+            "catastrophic_gt90_count": 34,
+            "catastrophic_gt90_fraction": 0.5151515151515151,
+            "count": 66,
+            "median_error_deg": 93.07907446340772,
+            "p90_error_deg": 161.05481365787358,
+            "within_15_fraction": 0.09090909090909091,
+            "within_30_fraction": 0.21212121212121213,
+            "within_7p5_fraction": 0.030303030303030304
+          }
+        }
+      },
+      "model_contract_sha256": "0fbb33d7dda8c6eeb3f133ccea8ed181a13855eb1d46414240150f2285087fea",
+      "model_id": "hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving",
+      "model_root": "/home/ubuntu20/robot_ws/group_meeting/mujoco_unscrewing_probe_new/outputs/current/models/hardware_easy_v2_multisize_clocking_clean_direction_v7_source_preserving",
+      "preprocessing": {
+        "bit_radius_source": "frozen ensemble interface contract",
+        "channels": [
+          "Fz",
+          "Tx",
+          "Ty",
+          "tip_z"
+        ],
+        "frame_adapter": "existing provisional real-trace runtime adapter",
+        "implementation": "/home/ubuntu20/robot_ws/group_meeting/real_device/model_runtime/infer_conical_direction.py",
+        "phase_bins": 360,
+        "primary_target_down_force_n_by_size": {
+          "M10": 3.5,
+          "M12": 3.5,
+          "M8": 3.5
+        },
+        "sensitivity_target_down_force_n": 3.0,
+        "tip_z_boundary": "actual_z is command-propagated when feedback_observed=0; this is not in-loop measured KST tip position"
+      },
+      "previous_zero_shot_report_sha256": "87d070d4b56ff471b7de3bcd926f920319abda980d8dd4acec05365e4cdcd556",
+      "qc_authority_analysis_id": "multisize_real_fingerprint_v1",
+      "qc_authority_status_at_replay": "PASS",
+      "real_input_contract_sha256": "cd482c89f6064d0997e53258652a8ec0669d612cc17a820100fd13380e999030",
+      "robot_motion": false,
+      "role": "offline frozen simulation-to-real zero-shot diagnostic; no robot connection and no hardware authority",
+      "run_allowlist": {
+        "M10": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877",
+        "M12": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260728_175502_318",
+        "M8": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M8_conical_fingerprints_26pt_20260728_161249_458"
+      },
+      "schema_version": 1,
+      "status": "COMPLETE",
+      "verdict": "the frozen simulation CNN does not transfer zero-shot to these real Bota fingerprints; use it only as a frozen teacher or initialization for a small real-domain adapter"
+    },
+    "verdict": "real direction information is present but is not yet uniquely decoded across all sizes; preserve a multimodal posterior"
+  },
+  "known_rejected_run": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M8_conical_fingerprints_26pt_20260728_172108_490",
+  "next_model": "frozen simulation encoder plus small real common-mode/frame/phase adapter and calibrated state/direction heads",
+  "promotion_decision": "NOT_READY_FOR_DIRECT_SINGLE_RAY_HARDWARE_CONTROL",
+  "quality_control": {
+    "clean_training_count": 48,
+    "holdout_evaluation_count": 12,
+    "holdout_status_after_analysis": "REVEALED_ONCE_V1_DO_NOT_RETUNE_ON_THESE_RESULTS",
+    "quarantine_diagnostic_count": 12,
+    "runs": {
+      "M10": {
+        "attempts": 26,
+        "automatic_training_admission_count": 0,
+        "baseline_rows_max": 30,
+        "baseline_rows_min": 30,
+        "contact_settle_passed_count": 26,
+        "direction_fingerprint_valid_count": 26,
+        "hash_checks": 104,
+        "hash_mismatches": 0,
+        "maximum_command_gap_s": 0.05102099999999998,
+        "maximum_cyclic_phase_gap_deg": 1.5000000228994932,
+        "maximum_label_deviation_deg": 1.083453108625406,
+        "maximum_sampling_error_mm": 0.14019659182816677,
+        "maximum_source_interval_s": 0.040019989013671875,
+        "maximum_wrench_age_s": 0.012398958,
+        "minimum_phase_coverage_fraction": 0.9958333333333333,
+        "offline_training_candidate_count": 16,
+        "partition_counts": {
+          "clean_candidate": 16,
+          "holdout": 4,
+          "quarantine": 4,
+          "sentinel": 2
+        },
+        "phase_bins_after_resample": 360,
+        "point_air_baseline_valid_count": 26,
+        "preferred_stable_load_count": 5,
+        "resume_generation": 0,
+        "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877",
+        "run_session_id": "M10_conical_fingerprints_26pt_20260728_152808_877",
+        "scan_rows_per_attempt": 240,
+        "size": "M10",
+        "status": "COMPLETE_RETURNED_TO_INITIAL_AIR_POSE_KST_END_SENT",
+        "training_fingerprint_valid_count": 0,
+        "training_flag_interpretation": "false because DirectServo intentionally performed no in-loop KST pose query; it is not evidence that the fresh Bota phase trace is invalid"
+      },
+      "M12": {
+        "attempts": 26,
+        "automatic_training_admission_count": 0,
+        "baseline_rows_max": 30,
+        "baseline_rows_min": 30,
+        "contact_settle_passed_count": 26,
+        "direction_fingerprint_valid_count": 26,
+        "hash_checks": 104,
+        "hash_mismatches": 0,
+        "maximum_command_gap_s": 0.04326600000000003,
+        "maximum_cyclic_phase_gap_deg": 1.5000000228994932,
+        "maximum_label_deviation_deg": 0.8546204851700168,
+        "maximum_sampling_error_mm": 0.1315574916021664,
+        "maximum_source_interval_s": 0.05007004737854004,
+        "maximum_wrench_age_s": 0.013121605,
+        "minimum_phase_coverage_fraction": 0.9958333333333333,
+        "offline_training_candidate_count": 16,
+        "partition_counts": {
+          "clean_candidate": 16,
+          "holdout": 4,
+          "quarantine": 4,
+          "sentinel": 2
+        },
+        "phase_bins_after_resample": 360,
+        "point_air_baseline_valid_count": 26,
+        "preferred_stable_load_count": 10,
+        "resume_generation": 0,
+        "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260728_175502_318",
+        "run_session_id": "M12_conical_fingerprints_26pt_20260728_175502_318",
+        "scan_rows_per_attempt": 240,
+        "size": "M12",
+        "status": "COMPLETE_RETURNED_TO_INITIAL_AIR_POSE_KST_END_SENT",
+        "training_fingerprint_valid_count": 0,
+        "training_flag_interpretation": "false because DirectServo intentionally performed no in-loop KST pose query; it is not evidence that the fresh Bota phase trace is invalid"
+      },
+      "M8": {
+        "attempts": 26,
+        "automatic_training_admission_count": 0,
+        "baseline_rows_max": 30,
+        "baseline_rows_min": 30,
+        "contact_settle_passed_count": 26,
+        "direction_fingerprint_valid_count": 26,
+        "hash_checks": 104,
+        "hash_mismatches": 0,
+        "maximum_command_gap_s": 0.037961000000000134,
+        "maximum_cyclic_phase_gap_deg": 1.5000000228994932,
+        "maximum_label_deviation_deg": 1.058027160696554,
+        "maximum_sampling_error_mm": 0.10524108439188007,
+        "maximum_source_interval_s": 0.04016995429992676,
+        "maximum_wrench_age_s": 0.012312174,
+        "minimum_phase_coverage_fraction": 0.9958333333333333,
+        "offline_training_candidate_count": 16,
+        "partition_counts": {
+          "clean_candidate": 16,
+          "holdout": 4,
+          "quarantine": 4,
+          "sentinel": 2
+        },
+        "phase_bins_after_resample": 360,
+        "point_air_baseline_valid_count": 26,
+        "preferred_stable_load_count": 4,
+        "resume_generation": 0,
+        "run_dir": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M8_conical_fingerprints_26pt_20260728_161249_458",
+        "run_session_id": "M8_conical_fingerprints_26pt_20260728_161249_458",
+        "scan_rows_per_attempt": 240,
+        "size": "M8",
+        "status": "COMPLETE_RETURNED_TO_INITIAL_AIR_POSE_KST_END_SENT",
+        "training_fingerprint_valid_count": 0,
+        "training_flag_interpretation": "false because DirectServo intentionally performed no in-loop KST pose query; it is not evidence that the fresh Bota phase trace is invalid"
+      }
+    },
+    "scope": "ACQUISITION_AND_FILE_INTEGRITY_PASS_FOR_EXPLORATORY_OBSERVABILITY_ONLY",
+    "sentinel_repeatability": {
+      "M10": [
+        {
+          "mean_correlation": 0.8807401609565204,
+          "per_channel_correlation": [
+            0.9924096504915024,
+            0.995345123160397,
+            0.7131406050879879,
+            0.8261618944318576,
+            0.7800788706560076,
+            0.9773048219113699
+          ],
+          "reference_sample_id": "M10-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+          "sentinel_sample_id": "M10-SENTINEL-SUPPORTED-A003p75"
+        },
+        {
+          "mean_correlation": 0.9201299253189005,
+          "per_channel_correlation": [
+            0.9927794328961597,
+            0.9942638150364436,
+            0.8238900795815634,
+            0.860345908035083,
+            0.8665690208649376,
+            0.9829312954992155
+          ],
+          "reference_sample_id": "M10-CLEAN_CANDIDATE-OUTER-A198p75",
+          "sentinel_sample_id": "M10-SENTINEL-OUTER-A198p75"
+        }
+      ],
+      "M12": [
+        {
+          "mean_correlation": 0.9114761285135544,
+          "per_channel_correlation": [
+            0.9916343033228909,
+            0.9959586287907486,
+            0.8601980559259724,
+            0.8776914635424333,
+            0.7641655063853477,
+            0.9792088131139336
+          ],
+          "reference_sample_id": "M12-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+          "sentinel_sample_id": "M12-SENTINEL-SUPPORTED-A003p75"
+        },
+        {
+          "mean_correlation": 0.9165440003859506,
+          "per_channel_correlation": [
+            0.9970150284949231,
+            0.9958215362283768,
+            0.8994660603109158,
+            0.8392536256397117,
+            0.7766928322514224,
+            0.9910149193903537
+          ],
+          "reference_sample_id": "M12-CLEAN_CANDIDATE-OUTER-A198p75",
+          "sentinel_sample_id": "M12-SENTINEL-OUTER-A198p75"
+        }
+      ],
+      "M8": [
+        {
+          "mean_correlation": 0.8485088183100026,
+          "per_channel_correlation": [
+            0.9904111869076542,
+            0.9913226595235495,
+            0.5243830751449702,
+            0.8151200913576048,
+            0.8048487623782278,
+            0.9649671345480092
+          ],
+          "reference_sample_id": "M8-CLEAN_CANDIDATE-SUPPORTED-A003p75",
+          "sentinel_sample_id": "M8-SENTINEL-SUPPORTED-A003p75"
+        },
+        {
+          "mean_correlation": 0.7947750276361569,
+          "per_channel_correlation": [
+            0.9917438396980987,
+            0.9924315520506031,
+            0.24333628677341443,
+            0.8242371463160013,
+            0.7500826170649711,
+            0.9668187239138532
+          ],
+          "reference_sample_id": "M8-CLEAN_CANDIDATE-OUTER-A198p75",
+          "sentinel_sample_id": "M8-SENTINEL-OUTER-A198p75"
+        }
+      ]
+    },
+    "sentinel_repeatability_count": 6,
+    "status": "PASS",
+    "total_attempts": 78,
+    "total_hash_checks": 312,
+    "training_admission": {
+      "permitted_now": "exploratory command-phase observability fit on 48 clean candidates only",
+      "reason": "all 78 traces have fresh complete Bota command-phase fingerprints, but all cone_training_fingerprint_valid and conical_phase_pose_tracking_qualified_for_training flags are false because there was no in-loop measured KST pose",
+      "status": "NOT_POSE_QUALIFIED_FOR_SUPERVISED_MODEL_PROMOTION"
+    }
+  },
+  "robot_motion": false,
+  "run_allowlist": {
+    "M10": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M10_conical_fingerprints_26pt_20260728_152808_877",
+    "M12": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M12_conical_fingerprints_26pt_20260728_175502_318",
+    "M8": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/M8_conical_fingerprints_26pt_20260728_161249_458"
+  },
+  "schema_version": 1
+}

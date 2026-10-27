@@ -1,0 +1,81 @@
+{
+  "authorization": {
+    "capped_shortcut_hardware_control": true,
+    "capture_control": false,
+    "hardware_control_sizes": [
+      "m12"
+    ],
+    "insertion_control": false,
+    "terminal_verification": false
+  },
+  "created_utc": "2026-07-28T15:21:44.543203+00:00",
+  "ensemble_interface_contract": "ensemble_interface_contract.json",
+  "ensemble_interface_contract_sha256": "c9658bcb0a78e5c01d65c4023fc5995f4e33b92da455048fa56dbf5016d40048",
+  "evidence": "real clean-only leave-one-size-out cross-validation; original consumed holdout excluded from selection and calibration",
+  "known_limitations": [
+    "leave-one-size-out direction transfer remains multimodal; this is development capped control, not production accuracy",
+    "M10 and M8 are inference-capable training domains but do not yet have full-loop hardware control authority",
+    "the v1.5 CAD clocking is nominal/operator-taught rather than independently measured as-built yaw metrology"
+  ],
+  "model_id": "real_multisize_direction_v1",
+  "policy_control_scope": {
+    "allowed": [
+      "state posterior",
+      "direction posterior",
+      "CAD-bounded capped shortcut",
+      "residual target selection",
+      "CAD-bounded corridor selection"
+    ],
+    "forbidden": [
+      "pure-outward-spiral consumption",
+      "capture declaration",
+      "insertion completion",
+      "terminal success",
+      "online weight update"
+    ]
+  },
+  "qualification": "DEVELOPMENT_CV_CONTROL",
+  "schema_version": 1,
+  "selected_architecture": "REAL_FOURIER_LINEAR_V1",
+  "selected_clean_loso_metrics": {
+    "direction": {
+      "catastrophic_gt90_count": 16,
+      "catastrophic_gt90_fraction": 0.3333333333333333,
+      "circular_soft_target_nll": 3.0964074911891726,
+      "count": 48,
+      "median_error_deg": 33.618614196777344,
+      "p90_error_deg": 165.22849655151367,
+      "within_15_fraction": 0.4791666666666667,
+      "within_30_fraction": 0.4791666666666667,
+      "within_7p5_fraction": 0.3958333333333333
+    },
+    "state": {
+      "accuracy": 0.5,
+      "class_f1": [
+        0.3783783783783784,
+        0.5405405405405406,
+        0.6363636363636364
+      ],
+      "confusion_matrix": [
+        [
+          7,
+          8,
+          3
+        ],
+        [
+          8,
+          10,
+          0
+        ],
+        [
+          4,
+          1,
+          7
+        ]
+      ],
+      "count": 48,
+      "macro_f1": 0.5184275184275184
+    }
+  },
+  "status": "QUALIFIED"
+}

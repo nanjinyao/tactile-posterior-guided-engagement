@@ -1,0 +1,124 @@
+{
+  "schema_version": 1,
+  "record_kind": "operator_designated_work_pose_observation",
+  "semantic_name": "common_m8_m10_m12_socket_surface_center_hover_approx",
+  "status": "UNVERIFIED_APPROXIMATE_POINT_OBSERVATION_CAPTURED",
+  "captured_local": "2026-07-21T23:23:16.334+08:00",
+  "operator_report": {
+    "reported_local": "2026-07-21T21:55:06+08:00",
+    "photo_watermark_local": "2026-07-21T21:49:00+08:00",
+    "statement": "This robot pose is the common approximate M8/M10/M12 socket top-surface center/hover. The operator repositions the lift table to the corresponding table mark; the tip may start slightly above each surface.",
+    "operator_reported_table_fixture_calibrated": true
+  },
+  "robot": {
+    "model": "KUKA LBR iiwa 14 R820",
+    "ip": "192.168.1.147",
+    "command_owner_for_capture": "MATLAB_KST_MatlabToolboxServer"
+  },
+  "frames": {
+    "numeric_pose_frame": "KUKA base / SmartPAD WORLD",
+    "numeric_pose_entity": "KST media-flange identity",
+    "operator_aligned_entity": "physical installed printed peg tip",
+    "T_flange_to_tip": []
+  },
+  "state": {
+    "flange_pose_mm_rad": [
+      472.78277760325756,
+      0.76668006386726828,
+      562.9786248134734,
+      3.141389795082028,
+      -0.00095320327439118828,
+      3.1331746129363034
+    ],
+    "joints_rad": [
+      -0.000643187328773241,
+      0.19556089497729251,
+      2.5400551094129055E-5,
+      -1.5843057301000436,
+      0.0085981924006726454,
+      1.362690201416543,
+      -0.0021919147198499089
+    ],
+    "sample_count": 10,
+    "stationarity_duration_s": 2.363252,
+    "max_translation_span_mm": 0.00010258720182793602,
+    "max_orientation_span_rad": 1.8738222040681762E-7,
+    "max_joint_span_rad": 1.9163715192505038E-7
+  },
+  "fixture_feature": {
+    "fixture_id": [],
+    "fixture_revision": [],
+    "size": "M8_M10_M12_OPERATOR_REPOSITIONED",
+    "supported_sizes": [
+      "M8",
+      "M10",
+      "M12"
+    ],
+    "feature": "common_socket_top_surface_center_or_slight_hover",
+    "alignment_quality": "operator_reported_approximate",
+    "contact_state": "UNKNOWN",
+    "tip_to_surface_clearance_mm": [],
+    "cad_centers_in_fixture_m": {
+      "M8": [
+        -0.045,
+        0,
+        0
+      ],
+      "M10": [
+        0,
+        0,
+        0
+      ],
+      "M12": [
+        0.045,
+        0,
+        0
+      ]
+    },
+    "cad_source_path": "/home/ubuntu20/robot_ws/group_meeting/model/parametric_tooling/design_parameters.json",
+    "cad_source_sha256": "594a752fefc2b6cedd05334cf89a739ed1e28165b5a31f1be3f0858a2053021f"
+  },
+  "table_fixture_validity": {
+    "operator_reported_table_calibrated": true,
+    "calibration_record_path": [],
+    "platform_height_or_pose": "OPERATOR_SELECTS_MATCHING_TABLE_MARK",
+    "height_lock_or_brakes": "UNVERIFIED",
+    "fixture_mount_state": "UNVERIFIED",
+    "invalidated_by": [
+      "table_or_lift_height_change",
+      "table_pose_change",
+      "fixture_remount",
+      "tool_or_sensor_stack_change"
+    ]
+  },
+  "derived_calibration": {
+    "T_world_from_fixture": [],
+    "socket_center_world_xyz_m": [],
+    "socket_axis_world": [],
+    "socket_surface_world_z_m": [],
+    "socket_bottom_world_z_m": []
+  },
+  "use_permissions": {
+    "replaces_folded_start_anchor": false,
+    "approved_as_recovery_target": false,
+    "approved_as_motion_target": false,
+    "approved_as_approach_pose": false,
+    "approved_as_fixture_to_world_calibration": false,
+    "approved_as_bounded_demo_live_start_gate": true
+  },
+  "lifecycle": {
+    "kst_end_request_sent": true,
+    "kst_end_request_method": "KST_OBJECT_NET_TURNOFFSERVER",
+    "smartpad_selected_verified": false
+  },
+  "provenance": {
+    "semantic_record_path": "/home/ubuntu20/robot_ws/group_meeting/real_device/configs/common_work_pose_contract_v1.json",
+    "source_run_directory": "/home/ubuntu20/robot_ws/group_meeting/real_device/data/H0_work_pose_capture_common_m8_m10_m12_approx_20260721_232301_477",
+    "capture_method": "manual_alignment_then_fresh_stationary_KST_read_no_motion",
+    "tooling_profile_path": "/home/ubuntu20/robot_ws/mujoco_unscrewing_probe_new/configs/real_tooling_v1.json",
+    "tooling_profile_sha256": "ae67b732dd2291d61f18acd317780c7c210b3440a4689a707a90c74d3ebb2db1",
+    "folded_anchor_path": "/home/ubuntu20/test_real_device/kst_default_folded_start.json",
+    "folded_anchor_sha256": "032a6456b7878f59256bb4d4f2b1f7dd3bc65c509ffe0498c067fd409eb2376b",
+    "note": "This observation does not replace the folded start and does not supply a verified flange-to-tip or fixture transform."
+  }
+}
