@@ -1,16 +1,16 @@
 # Tactile Posterior-Guided Hex-Socket Engagement
 
-**An illustrated research record: from a physical problem to an uncertainty-aware controller, with an honest account of AI assistance and learning.**
+**An illustrated research and learning record: tactile inference, uncertainty-aware planning, and physical validation.**
 
 A robot can see where a screw is approximately, yet still miss its hexagonal socket by a few millimetres. This project investigates whether a gentle contact probe can tell the robot which way to search, while preserving uncertainty about how far to move. The resulting system combines tactile inference, a bounded initial movement, local search, compliant control, and independent engagement verification.
 
-This private repository supplements a research progress report. It preserves code, data, CAD, experiment records, and presentation materials. The demonstrated task is **geometric socket engagement**; rotation, thread release, and screw extraction remain outside the evaluated endpoint. The manuscript is a working draft, and no project-wide open-source license has been assigned.
+This repository supplements a research progress report. It preserves code, data, CAD, experiment records, and presentation materials. The demonstrated task is **geometric socket engagement**; rotation, thread release, and screw extraction are subsequent stages for future work. The manuscript is a working draft. No project-wide open-source license has been assigned.
 
 ![Robot, force/torque sensor, tool, socket fixture, and coordinate frames](overleaf_unscrewing/figures/fig1_hardware_coordinate_frames.png)
 
 *The physical setup makes the central difficulty concrete: a small alignment error at the tool tip can change the contact state, even when the robot is already close to the target.*
 
-**AI-assistance disclosure.** This README and its companion workbook were prepared with Codex assistance from project code, design decisions, and recorded results. Earlier records explicitly mention ChatGPT roadmap discussions and Claude-assisted formalization reviews. They do not provide a complete prompt history or reliable per-person/per-model authorship attribution. Historical facts, interpretations, and proposed improvements are therefore distinguished below. A written explanation is not evidence that the author has independently mastered every concept in it.
+**AI-assisted workflow.** ChatGPT, Claude, and Codex supported research discussion, formalization review, implementation, debugging, and documentation at different stages. This README and its companion workbook were prepared with Codex assistance using project code, design records, and experimental evidence. The author remains responsible for reviewing assisted outputs and the resulting research claims. The narrative distinguishes completed work from proposed experiments and learning activities; the [workbook](docs/AI_ASSISTED_RESEARCH.md#what-the-records-establish) records the available provenance.
 
 ## Reading guide
 
@@ -21,7 +21,7 @@ This private repository supplements a research progress report. It preserves cod
 - [4. Use simulation to test mechanisms](#4-use-simulation-to-test-mechanisms)
 - [5. Turn CAD into a physical experiment](#5-turn-cad-into-a-physical-experiment)
 - [6. Connect models, software, and hardware](#6-connect-models-software-and-hardware)
-- [7. Learn from failures](#7-learn-from-failures)
+- [7. Lessons from iteration](#7-lessons-from-iteration)
 - [8. Make the contribution and learning explicit](#8-make-the-contribution-and-learning-explicit)
 - [If I repeated this project](#if-i-repeated-this-project)
 - [Repository, data, and reproduction](#repository-data-and-reproduction)
@@ -279,9 +279,9 @@ The hardware records include three groups of 26 conical acquisitions, named M12 
 
 **What I would improve.** Establish sensor bias/gravity compensation, moment reference points, installed frames, timestamps, and command ownership before judging model quality. Validate a saved cone in the exact deployment environment. Use a small, fixed set of hardware starts and change one component at a time. Save the controller revision, model/configuration hashes, environment information, and geometry identifier before every run.
 
-## 7. Learn from failures
+## 7. Lessons from iteration
 
-The most useful AI-assisted debugging is a loop: state competing explanations, find a discriminating measurement, make one change, and check whether the predicted effect occurs. Repeatedly asking for a patch can produce progress in code while leaving the physical cause unexplained.
+The most useful AI-assisted debugging is a loop: state competing explanations, find a discriminating measurement, make one change, and check whether the predicted effect occurs. The examples below show how implementation and experimental choices became more precise through that process.
 
 | Recorded problem | What the evidence changed | Lesson and a better next experiment |
 |---|---|---|
@@ -294,7 +294,7 @@ The most useful AI-assisted debugging is a loop: state competing explanations, f
 | Offline replay exposed inconsistent model direction | Recorded force differed from training context; gravity/CoM and moment-origin effects remained plausible nuisance causes | Measure the sensing chain and use same-pose air/contact checks before tuning thresholds |
 | A printed quick-change part and some generated meshes failed | CAD appearance had hidden print-support, fit, and topology problems | Use coupons, physical inspection, and independent mesh checks before freezing the tooling |
 
-The hardware examples are documented in [M12 three-run debugging](real_device/docs/M12_20260727_THREE_RUN_DEBUG.md). Simulation comparison changes and reasoning constraints are recorded in [design decisions](mujoco_unscrewing_probe_new/DESIGN_DECISIONS.md) and [project rules and lessons](mujoco_unscrewing_probe_new/PROJECT_RULES_AND_LESSONS.md). A recorded corrective action does not imply that all later runs or all sizes were validated.
+The hardware examples are documented in [M12 three-run debugging](real_device/docs/M12_20260727_THREE_RUN_DEBUG.md). Simulation comparison changes and reasoning constraints are recorded in [design decisions](mujoco_unscrewing_probe_new/DESIGN_DECISIONS.md) and [project rules and lessons](mujoco_unscrewing_probe_new/PROJECT_RULES_AND_LESSONS.md). Each record identifies the conditions and scope of the corresponding check.
 
 For every failure, I would now preserve a short **prediction → observation → explanation → discriminating test → result** note. AI can suggest alternatives and inspect logs. The researcher should select the test, predict its outcome before running it, and explain why the result changes the conclusion.
 
@@ -302,33 +302,32 @@ For every failure, I would now preserve a short **prediction → observation →
 
 ### What this project contributes at the system level
 
-The concrete work is a connected research system: an informative contact probe; a direction-to-centre inference interface that retains radial ambiguity; a bounded shortcut with residual search; independent engagement checks; paired simulation evidence; and printed tooling plus hardware deployment records. The repository also preserves counterexamples and negative findings that limit the claims.
+The concrete work is a connected research system: an informative contact probe; a direction-to-centre inference interface that retains radial ambiguity; a bounded shortcut with residual search; independent engagement checks; paired simulation evidence; and printed tooling plus hardware deployment records. Counterexamples and negative findings help explain when each component is useful and where further research is needed.
 
-These are demonstrable project outputs. A broader claim of scientific novelty requires a careful comparison with prior work. Neither the presence of many files nor the use of a sophisticated model establishes novelty by itself.
+The central contribution is the connection between partial tactile information and a bounded physical action, evaluated within a shared control and verification framework. The literature comparison and experiments define the scope of that contribution.
 
-### What should count as my own contribution?
+### Author's role, research decisions, and engineering work
 
-The most defensible personal contribution is the intellectual and experimental responsibility I can demonstrate: why this question matters, which assumptions I accepted, why I chose a particular experiment, what I measured, what failed, and how the evidence changed my view. The repository alone cannot allocate each historical idea or code block between the author and assistants. I should therefore describe specific decisions and artifacts rather than claim an unsupported percentage of original work.
+My contribution centers on developing and evaluating the connection between the physical task, tactile inference, planning, and hardware execution. This involved problem framing, experimental choices, implementation and integration, physical tooling, and interpretation of results. AI assistance supported parts of this work, as described above. The clearest way to present my role is through the technical decisions and artifacts that make the system inspectable.
 
-| Area of ownership | Evidence that would make the contribution clear |
-|---|---|
-| Problem selection | A dated problem note with alternatives considered and a falsifiable question |
-| Theoretical reasoning | An independently worked derivation, assumptions, and a counterexample |
-| Method design | A decision record explaining why this interface or action rule was chosen |
-| Engineering | Measurements, interface contracts, CAD revisions, and a diagnosed failure |
-| Experimental design | Frozen splits, matched baselines, declared metrics, and a plan for failures |
-| Interpretation | A claim linked to an artifact, with uncertainty and contrary evidence retained |
-| AI collaboration | The suggestion received, my checks, changes or rejection, and resulting evidence |
+| Area | Work represented in this project | Research judgment and responsibility |
+|---|---|---|
+| Problem framing | Engagement isolated from the broader unscrewing task | Choose a measurable endpoint and identify the direction-distance ambiguity |
+| Method development | Tactile posterior, bounded shortcut, and residual search | Connect uncertain information to limited motion while retaining physical verification |
+| Simulation and evaluation | Paired M8 trials, representation comparisons, recovery studies, and cross-size checks | Match information and budgets, inspect trajectories, and interpret both positive and negative results |
+| Mechanical implementation | Parametric tools, fixture geometry, fit variants, and mesh checks | Relate CAD choices to printability, alignment, and contact behavior |
+| Hardware integration | Probe acquisition, runtime inference, controller interfaces, and recorded trials | Trace signals through the installed system and diagnose deployment issues |
+| Research communication | Code, data, figures, design records, and reproduction instructions | Make claims traceable and distinguish demonstrated behavior from future extensions |
 
-AI assistance can accelerate implementation and broaden the options considered. My contribution increases when I can independently test, reject, improve, and explain those options. Merely retyping generated code or withholding useful tools would not create stronger research ownership.
+The next step is to strengthen these contributions through independently worked derivations, focused mechanism experiments, and a decision log that records predictions before results are observed. This makes personal research judgment visible alongside the implemented system.
 
-### What still needs deeper understanding?
+### Priorities for deeper understanding and further research
 
-**Theory.** I need a clearer account of observability: which contact features identify direction, which might identify distance, and which are confounded by geometry or gravity? I also need to distinguish a classifier posterior from a calibrated centre belief, heuristic action bounds from guarantees, and useful compliance from a justified stability argument.
+**Theory.** Develop an observability analysis of the probe: which contact features identify direction or distance, and how do geometry and gravity affect them? Connect classifier calibration to centre-belief coverage, analyze the conditions behind action bounds, and study the sampled compliant controller with explicit assumptions.
 
-**Engineering.** I need stronger metrology and interface discipline: consistent wrench reference points, installed coordinate frames, timing, commanded-versus-measured state, reproducible deployment, and geometry versioning. Debugging should reduce uncertainty about a physical mechanism rather than just produce a successful retry.
+**Engineering.** Extend the measurement and deployment workflow with installed-frame calibration, explicit wrench reference points, timing checks, and geometry versioning. A successful repeat run should be accompanied by a clear explanation of the physical cause and the effect of the change.
 
-**Evidence and communication.** I need fairer comparisons from the start, cleaner separation of exploratory and held-out results, explicit treatment of failures and budgets, and source-to-figure traceability. I should be able to present a failed hypothesis clearly, without making a more complex method sound more effective than the data supports.
+**Evidence and communication.** Freeze comparison contracts and held-out evaluations early, report failures and budgets consistently, and maintain source-to-figure traceability. Use focused ablations to establish which component produces an improvement and preserve negative results that guide the next design choice.
 
 ## If I repeated this project
 
@@ -385,7 +384,7 @@ I would revisit these exercises later without an assistant or the earlier soluti
 
 ### Download the data and models
 
-Code, documentation, figures, and smaller artifacts are tracked in Git. Larger/binary scientific artifacts are stored in six private Release archives: datasets, diagnostics, evaluations, hardware, models, and videos. The [manifest](docs/SNAPSHOT_MANIFEST.json) records their paths, sizes, and SHA-256 hashes. Repository access is required for both cloning and Release downloads.
+Code, documentation, figures, and smaller artifacts are tracked in Git. Larger/binary scientific artifacts are stored in six Release archives: datasets, diagnostics, evaluations, hardware, models, and videos. The [manifest](docs/SNAPSHOT_MANIFEST.json) records their paths, sizes, and SHA-256 hashes. Both the repository and Release downloads are publicly accessible.
 
 With GitHub CLI authenticated and Python 3.10+ available:
 
@@ -393,6 +392,15 @@ With GitHub CLI authenticated and Python 3.10+ available:
 gh repo clone nanjinyao/tactile-posterior-guided-engagement
 cd tactile-posterior-guided-engagement
 python tools/restore_artifacts.py --all
+python tools/restore_artifacts.py --verify
+```
+
+For access without a GitHub account, clone with ordinary Git and download the six ZIP archives from the [Release page](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/tag/research-snapshot-2026-10-27) into a local directory such as `../release-assets`:
+
+```bash
+git clone https://github.com/nanjinyao/tactile-posterior-guided-engagement.git
+cd tactile-posterior-guided-engagement
+python tools/restore_artifacts.py --all --local-assets ../release-assets
 python tools/restore_artifacts.py --verify
 ```
 

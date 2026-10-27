@@ -1,16 +1,16 @@
-# Private GitHub research snapshot — 2026-10-27
+# GitHub research snapshot — 2026-10-27
 
-Repository: `nanjinyao/tactile-posterior-guided-engagement` (private).
+Repository: `nanjinyao/tactile-posterior-guided-engagement` (public).
 Supplementary release: `research-snapshot-2026-10-27`.
 
 ## Scope and provenance
 
-This is a curated snapshot of the active project, authorized by the author for
-private GitHub storage. It includes simulation source/configs/models/tests and
+This is a curated snapshot of the active project, initially uploaded privately
+and subsequently authorized by the author for public access. It includes simulation source/configs/models/tests and
 all retained files under `outputs/current`, hardware source/configs/CAD/data/
 learning/runtime/tests, the current manuscript and figures, and two selected
 presentation decks. Scientific artifacts are copied without content changes.
-NPZ samples, PT checkpoints, MP4s and files >=40 MiB are distributed as private
+NPZ samples, PT checkpoints, MP4s and files >=40 MiB are distributed as
 Release ZIPs; other selected files are committed directly. Every selected
 research file has a size and SHA-256 entry in `SNAPSHOT_MANIFEST.json`.
 
@@ -22,10 +22,11 @@ experimental slide decks. These remain in the original local workspace.
 The original manuscript repository and its history remain intact locally;
 the GitHub repository contains its current file snapshot, not a gitlink.
 
-No project-wide license, public redistribution clearance, final publication
-metadata, or new hardware qualification is inferred from this private upload.
-IEEE template notices remain in the supplied class file. Private installation
-addresses and original provenance paths may remain in scientific records.
+Public access makes the snapshot and Release assets available for inspection.
+No project-wide license has been added; existing third-party notices remain in
+place. Final publication metadata and new hardware qualification are not implied.
+Installation-specific settings and original provenance paths remain in scientific
+records; configure the hardware interfaces for the installation where they are used.
 
 ## Documentation and validation
 
@@ -56,10 +57,21 @@ CAD, hardware integration, and learning plan. The workbook supplies suggested
 prompts, a proposed read-only hardware interface, independent exercises, and
 a contribution ledger. Existing scientific files retain their original languages.
 Historical attribution is distinguished from new prompt/workflow suggestions.
-Background correspondence supplied for context is not part of this upload.
 The current main-branch manifest is updated for these documentation files.
 The original Release tag remains fixed at the initial upload commit and its
 initial manifest; the six scientific archives and their hashes are unchanged.
+
+## Public access and research narrative
+
+The README presents the author's role through concrete project decisions,
+implementation, experiments, and engineering artifacts. AI assistance is disclosed
+once near the beginning and explained through the research workflow. Proposed
+derivations, measurements, and experiments are identified as next steps.
+The technical results, comparison limits, and scientific archives are unchanged.
+
+The public download instructions include both authenticated GitHub CLI use and
+ordinary Git plus manually downloaded Release archives. The latter requires no
+GitHub account. See the validation record for the scope of pre-publication checks.
 
 ## Rebuild packaging
 

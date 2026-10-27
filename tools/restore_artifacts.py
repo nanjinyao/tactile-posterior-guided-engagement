@@ -1,4 +1,4 @@
-"""Restore private GitHub Release artifacts and verify the snapshot (Python 3.10+)."""
+"""Restore GitHub Release artifacts and verify the snapshot (Python 3.10+)."""
 from __future__ import annotations
 
 import argparse
@@ -56,7 +56,7 @@ def restore(archive: dict, records: list[dict], local_assets: Path | None, manif
     else:
         source = cache / archive["asset"]
         if not source.is_file() or digest(source) != archive["sha256"]:
-            # gh uses the existing private-repository credentials without printing tokens.
+            # gh uses its existing authentication without printing credentials.
             subprocess.run(["gh", "release", "download", manifest["release_tag"], "--repo", manifest["repository"],
                             "--pattern", archive["asset"], "--dir", str(cache), "--clobber"], check=True)
     if source.stat().st_size != archive["bytes"] or digest(source) != archive["sha256"]:

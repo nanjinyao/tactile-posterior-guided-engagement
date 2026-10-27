@@ -1,6 +1,6 @@
 # AI-Assisted Research Workbook
 
-This companion to the [illustrated README](../README.md) makes the proposed learning process operational. It contains evidence boundaries, reusable prompts, interface examples, and exercises for repeating the project with stronger personal understanding. The prompts and templates below are new suggestions. They are not verbatim historical conversations or evidence that the suggested exercises have already been completed.
+This companion to the [illustrated README](../README.md) turns the learning plan into practical steps. It contains reusable prompts, interface examples, and exercises for developing independent research judgment. Historical collaboration is summarized first; the subsequent prompts and exercises are proposed tools for future work.
 
 ## What the records establish
 
@@ -14,11 +14,11 @@ Three different roles need to remain clear:
 
 The [design decisions](../mujoco_unscrewing_probe_new/DESIGN_DECISIONS.md), entry `2026-07-09 23:23`, explicitly record a ChatGPT roadmap and the subsequent narrowing to an M8-first implementation. The local source-workspace `project_trace.md`, entry `2026-06-24 03:26:28 +08:00`, records selective use of Claude formalization suggestions: force-cone notation, separation of frame/clocking variables, a joint Bayesian transition, planning terminology, and predictive observation distributions for information gain. That local trace was not included in the uploaded snapshot; this paragraph provides a provenance summary rather than a link to an unavailable file. It concerns early reading-material revisions and does not establish that all those ideas were implemented.
 
-[Project rules and lessons](../mujoco_unscrewing_probe_new/PROJECT_RULES_AND_LESSONS.md) and the design records document corrections involving true-centre leakage, diagnostic versus verification signals, fair baselines, and trajectory interpretation. They do not identify who first discovered every issue.
+[Project rules and lessons](../mujoco_unscrewing_probe_new/PROJECT_RULES_AND_LESSONS.md) and the design records document refinements to information access, diagnostic versus verification signals, comparison conditions, and trajectory interpretation.
 
 The 2026-10-27 packaging, README, reflection documents, restore tooling, and validation were prepared in a Codex-assisted session. The English narrative is an AI-assisted synthesis of existing evidence. No robot was connected, and no new training or full physical benchmark was performed during this documentation work. The [validation record](VALIDATION_20261027.md) lists checks actually completed.
 
-There is no complete prompt archive, reliable per-file AI attribution, or measured time-saving estimate. Claims such as "the assistant invented the method," "all code was independently written," or "AI saved a particular percentage of time" would exceed the evidence.
+The collaboration account uses the records available rather than estimating numerical shares of authorship or time savings. Its focus is the researcher's decisions, checks, and interpretation of evidence.
 
 ## A small context packet for every task
 
@@ -265,7 +265,7 @@ Artifact paths, configuration, geometry version, and source revision:
 What I can now explain independently:
 ```
 
-For an older decision whose authorship cannot be reconstructed, say so. The purpose is to document reasoning and accountability, not to invent a retrospective division of labor or assign a numerical originality score.
+For earlier work, record the available provenance. For new work, keep the reasoning and checks alongside the resulting artifact so that the contribution is straightforward to explain.
 
 ## Make learning visible over time
 
@@ -279,4 +279,4 @@ Use a separate page for each core concept. Include an intuitive explanation, a d
 | Diagnose | Find why it fails under a changed condition | A counterexample and discriminating test |
 | Transfer | Apply it to a new geometry or sensing condition | A new prediction and measured result |
 
-These are proposed checks, not claims that the author has completed them. The aim is to make AI assistance produce deeper judgment: I form an explanation, ask for criticism, test it, and then reconstruct the explanation independently.
+This proposed sequence builds deeper judgment: I form an explanation, ask for criticism, test it, and then reconstruct the explanation independently. Completed exercises can be added to the research record with their predictions and results.

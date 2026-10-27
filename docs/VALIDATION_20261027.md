@@ -85,9 +85,37 @@ Completed documentation checks:
 - Claims were cross-checked against the manuscript, design decisions, tooling
   notes, runtime contract, and M12 debugging record. Proposed prompts, exercises,
   and the read-only assistant adapter are explicitly labelled as future work.
-- Background correspondence was used only for context and was not copied into
-  the repository or quoted in the research narrative.
+- The selected upload contains project materials only.
 
 This follow-up changes documentation and its manifest entries only. Existing
 simulation/controller tests were not repeated, and no hardware was accessed.
 The initial Release tag and scientific archives remain fixed.
+
+## Public-access preparation and narrative refinement
+
+The README and workbook connect project contributions to concrete decisions,
+engineering work, experimental evidence, and next-stage learning objectives.
+AI assistance, experimental results, negative findings, and technical scope
+remain explicit. Download instructions cover public access to the snapshot.
+
+Completed checks before changing repository visibility:
+
+- All 69 Markdown links across the README and workbook passed the applicable
+  local path/heading checks. Both documents rendered through GitHub's Markdown
+  API; the README retains seven images and four Mermaid blocks.
+- Thirteen PDFs, 407 presentation XML/relationship entries, and 22 historical
+  documentation versions across four commits were checked for the selected
+  private-information patterns, with no matches.
+- The payload scan processed all 22,250 manifest-selected files and 96,739
+  archive members. It checked text, metadata, array headers, and applicable raw
+  file content against credential and private-correspondence signatures, with
+  no matches. Numeric array/tensor payloads were skipped as numeric data; no
+  pickle or model artifact was executed to inspect its metadata.
+- The restore tool changed only its docstring and a comment. Its executable
+  abstract syntax tree is unchanged, so controller and simulation tests were
+  not rerun for this documentation update.
+- Public download instructions include a local-archive restoration route
+  requiring neither a GitHub account nor GitHub CLI authentication.
+
+These are scoped publication-preparation checks. Experimental records and
+Release ZIP contents retain their existing hashes and evidence boundaries.
