@@ -12,8 +12,28 @@ This repository supplements a research progress report. It preserves code, data,
 
 **AI-assisted workflow.** ChatGPT, Claude, and Codex supported research discussion, formalization review, implementation, debugging, and documentation at different stages. This README and its companion workbook were prepared with Codex assistance using project code, design records, and experimental evidence. The author remains responsible for reviewing assisted outputs and the resulting research claims. The narrative distinguishes completed work from proposed experiments and learning activities; the [workbook](docs/AI_ASSISTED_RESEARCH.md#what-the-records-establish) records the available provenance.
 
+## Experiments in motion
+
+These recordings show how the idea moves from a simulated search to a physical tool and printed socket fixture. The animations are accelerated viewing previews; the linked MP4s preserve the full source timeline at its original playback rate.
+
+### Simulation: from tactile information to search
+
+[![Four methods in the same M8 simulation case, with a clear tactile cue; 2x source-video playback](docs/media/simulation-clear-cue.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-clear-cue.mp4)
+
+**M8, Sobol 000 — clear tactile cue.** Watch how posterior-guided methods use a shortcut before residual search, alongside outward search and a direct-cue comparator. This is a selected same-start mechanism example. The [24-case evaluation](#4-use-simulation-to-test-mechanisms) provides the aggregate comparison. **Preview: 2x source-video playback.** [Download full MP4](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-clear-cue.mp4).
+
+### Real robot: M12 shortcut and spiral search
+
+[![Physical M12 shortcut and spiral-search recording with printed tooling; 8x source-video playback](docs/media/hardware-m12-shortcut-spiral.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-shortcut-spiral.mp4)
+
+**M12 hardware trial.** The recording shows the physical probe, printed tool and fixture, and subsequent fine motion at the socket. The experimental presentation identifies this clip as a successful shortcut-and-spiral trial. **Preview: 8x source-video playback.** [Download full MP4](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-shortcut-spiral.mp4).
+
+**[Open the full media gallery](docs/MEDIA_GALLERY.md)** for the muted-cue simulation, conical probing, and M10/M12 grid-search recordings. The gallery includes sources, playback details, and checksums. Hardware clips illustrate selected feasibility trials; the task endpoint is socket engagement, and the [hardware records](#6-connect-models-software-and-hardware) provide the quantitative context.
+
 ## Reading guide
 
+- [Experiments in motion](#experiments-in-motion)
+- [Full video gallery](docs/MEDIA_GALLERY.md)
 - [The research idea in plain language](#the-research-idea-in-plain-language)
 - [1. Find a question worth answering](#1-find-a-question-worth-answering)
 - [2. Turn reading into a literature review](#2-turn-reading-into-a-literature-review)
@@ -378,6 +398,7 @@ I would revisit these exercises later without an assistant or the earlier soluti
 | Simulation and planning | [Simulation workspace](mujoco_unscrewing_probe_new), [posterior planner](mujoco_unscrewing_probe_new/src/posterior_search_plan.py), [comparison executor](mujoco_unscrewing_probe_new/src/render_m8_search_comparison.py) |
 | Hardware and inference | [Real-device workspace](real_device), [runtime contract](real_device/model_runtime/README.md) |
 | CAD and print files | [Parametric tooling](real_device/model/parametric_tooling/README.md) |
+| Experiment videos | [Animated gallery](docs/MEDIA_GALLERY.md), [full MP4 downloads](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/tag/media-gallery-2026-10-28) |
 | Research reflection | [AI-assisted research workbook](docs/AI_ASSISTED_RESEARCH.md) |
 | Presentation materials | [Compact 39-slide deck](outputs/Learning_Based_Tactile_Posterior_Guided_Search_Compact_39_Slides.pptx), [group-review deck](outputs/Learning_Based_Tactile_Posterior_Guided_Search_Group_Review.pptx) |
 | Snapshot scope and checks | [Snapshot notes](docs/GITHUB_SNAPSHOT.md), [upload validation](docs/VALIDATION_20261027.md), [historical audit](PUBLICATION_AUDIT.md) |
