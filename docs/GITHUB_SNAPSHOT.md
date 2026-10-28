@@ -8,8 +8,10 @@ Supplementary release: `research-snapshot-2026-10-27`.
 This is a curated snapshot of the active project, initially uploaded privately
 and subsequently authorized by the author for public access. It includes simulation source/configs/models/tests and
 all retained files under `outputs/current`, hardware source/configs/CAD/data/
-learning/runtime/tests, the current manuscript and figures, and two selected
-presentation decks. Scientific artifacts are copied without content changes.
+learning/runtime/tests, the current manuscript and figures, and, in the initial snapshot, two selected
+presentation decks. On 28 October 2026, the two decks were removed from the current
+branch at the author's request; all distinct project presentation videos are now
+available directly in the README. The current manifest excludes the removed decks. Scientific artifacts are copied without content changes.
 NPZ samples, PT checkpoints, MP4s and files >=40 MiB are distributed as
 Release ZIPs; other selected files are committed directly. Every selected
 research file has a size and SHA-256 entry in `SNAPSHOT_MANIFEST.json`.

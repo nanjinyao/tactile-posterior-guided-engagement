@@ -4,7 +4,7 @@
 
 A robot can see where a screw is approximately, yet still miss its hexagonal socket by a few millimetres. This project investigates whether a gentle contact probe can tell the robot which way to search, while preserving uncertainty about how far to move. The resulting system combines tactile inference, a bounded initial movement, local search, compliant control, and independent engagement verification.
 
-This repository supplements a research progress report. It preserves code, data, CAD, experiment records, and presentation materials. The demonstrated task is **geometric socket engagement**; rotation, thread release, and screw extraction are subsequent stages for future work. The manuscript is a working draft. No project-wide open-source license has been assigned.
+This repository supplements a research progress report. It preserves code, data, CAD, experiment records, and demonstration videos. The demonstrated task is **geometric socket engagement**; rotation, thread release, and screw extraction are subsequent stages for future work. The manuscript is a working draft. No project-wide open-source license has been assigned.
 
 ![Robot, force/torque sensor, tool, socket fixture, and coordinate frames](overleaf_unscrewing/figures/fig1_hardware_coordinate_frames.png)
 
@@ -14,21 +14,113 @@ This repository supplements a research progress report. It preserves code, data,
 
 ## Experiments in motion
 
-These recordings show how the idea moves from a simulated search to a physical tool and printed socket fixture. The animations are accelerated viewing previews; the linked MP4s preserve the full source timeline at its original playback rate.
+All **16 distinct videos** embedded in the reviewed project presentations are available below: **6 simulation recordings and 10 hardware recordings**. Each has an inline animation and a full MP4 download. Repeated copies across presentations are included once; the [coverage map](docs/MEDIA_GALLERY.md#presentation-coverage) links every embedded source to its recording.
 
-### Simulation: from tactile information to search
+GIF banners show speed relative to the source video. The full MP4s preserve the source timeline and source playback rate, with audio removed. Some original clips are already accelerated; video duration is not a controller-measured task time. The [paired simulation benchmark](#4-use-simulation-to-test-mechanisms) and [hardware records](#6-connect-models-software-and-hardware) provide the quantitative context. These recordings concern socket engagement.
 
-[![Four methods in the same M8 simulation case, with a clear tactile cue; 2x source-video playback](docs/media/simulation-clear-cue.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-clear-cue.mp4)
+[Simulation recordings](#simulation-recordings) · [Hardware recordings](#hardware-recordings) · [All MP4 downloads](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/tag/media-gallery-2026-10-28) · [Research reading guide](#reading-guide)
 
-**M8, Sobol 000 — clear tactile cue.** Watch how posterior-guided methods use a shortcut before residual search, alongside outward search and a direct-cue comparator. This is a selected same-start mechanism example. The [24-case evaluation](#4-use-simulation-to-test-mechanisms) provides the aggregate comparison. **Preview: 2x source-video playback.** [Download full MP4](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-clear-cue.mp4).
+### Simulation recordings
 
-### Real robot: M12 shortcut and spiral search
+#### 1. Four-channel and three-channel direct cues
 
-[![Physical M12 shortcut and spiral-search recording with printed tooling; 8x source-video playback](docs/media/hardware-m12-shortcut-spiral.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-shortcut-spiral.mp4)
+[![Four-channel and three-channel direct cues](docs/media/simulation-channel-comparison.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-channel-comparison.mp4)
 
-**M12 hardware trial.** The recording shows the physical probe, printed tool and fixture, and subsequent fine motion at the socket. The experimental presentation identifies this clip as a successful shortcut-and-spiral trial. **Preview: 8x source-video playback.** [Download full MP4](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-shortcut-spiral.mp4).
+M8 Sobol 005: a side-by-side representation comparison with physical retries. The three-channel comparator is a paper-inspired proxy. **Preview: 2x source playback.** [Full MP4 (34.20 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-channel-comparison.mp4).
 
-**[Open the full media gallery](docs/MEDIA_GALLERY.md)** for the muted-cue simulation, conical probing, and M10/M12 grid-search recordings. The gallery includes sources, playback details, and checksums. Hardware clips illustrate selected feasibility trials; the task endpoint is socket engagement, and the [hardware records](#6-connect-models-software-and-hardware) provide the quantitative context.
+#### 2. Muted tactile cue
+
+[![Muted tactile cue](docs/media/simulation-muted-cue.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-muted-cue.mp4)
+
+M8 Sobol 016: uncertain tactile evidence leads to a shorter shortcut; the direct-cue arm misses all three rays in this selected case. **Preview: 2x source playback.** [Full MP4 (43.73 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-muted-cue.mp4).
+
+#### 3. Clear tactile cue
+
+[![Clear tactile cue](docs/media/simulation-clear-cue.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-clear-cue.mp4)
+
+M8 Sobol 000: concentrated directional evidence supports a longer shortcut. Four methods begin from the same selected start. **Preview: 2x source playback.** [Full MP4 (35.40 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-clear-cue.mp4).
+
+#### 4. Grid search: information and capture value
+
+[![Grid search: information and capture value](docs/media/simulation-grid-information.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-grid-information.mp4)
+
+Top-view replay of the measured tip path, belief updates, and selected actions. The CAD capture sets are offline explanatory overlays. **Preview: 1x source playback.** [Full MP4 (10.00 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-grid-information.mp4).
+
+#### 5. Post-capture tilt and protective response
+
+[![Post-capture tilt and protective response](docs/media/simulation-recovery-a.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-recovery-a.mp4)
+
+Side-by-side simulation of insertion without the safety supervisor and with tip-RCC plus supervision. The clip includes the protected termination behavior. **Preview: 1x source playback.** [Full MP4 (19.27 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-recovery-a.mp4).
+
+#### 6. Post-capture funnel guard
+
+[![Post-capture funnel guard](docs/media/simulation-recovery-b.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-recovery-b.mp4)
+
+Side-by-side simulation of unprotected insertion and the funnel guard, including force monitoring and contact unloading. **Preview: 1x source playback.** [Full MP4 (8.87 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/simulation-recovery-b.mp4).
+
+### Hardware recordings
+
+#### 7. Conical tactile acquisition
+
+[![Conical tactile acquisition](docs/media/hardware-conical-probe.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-conical-probe.mp4)
+
+The printed tool and fixture during tactile probing. The 78 completed scans reported elsewhere describe acquisition records, rather than 78 engagement successes in this clip. **Preview: 8x source playback.** [Full MP4 (172.90 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-conical-probe.mp4).
+
+#### 8. Conical probing: short demonstration
+
+[![Conical probing: short demonstration](docs/media/hardware-probe-short.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-probe-short.mp4)
+
+The additional short probing clip embedded in the earlier group-meeting presentation. **Preview: 1x source playback.** [Full MP4 (15.50 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-probe-short.mp4).
+
+#### 9. M12 grid search
+
+[![M12 grid search](docs/media/hardware-m12-grid.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-grid.mp4)
+
+The source presentation labels this recording “M12 Entropy Grid (Successful)”. **Preview: 8x source playback.** [Full MP4 (136.00 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-grid.mp4).
+
+#### 10. M12 shortcut and spiral search
+
+[![M12 shortcut and spiral search](docs/media/hardware-m12-shortcut-spiral.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-shortcut-spiral.mp4)
+
+The source presentation labels this recording “M12 Shortcut Spiral (Successful)”. **Preview: 8x source playback.** [Full MP4 (198.52 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-shortcut-spiral.mp4).
+
+#### 11. M12 direct shortcut
+
+[![M12 direct shortcut](docs/media/hardware-m12-direct.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-direct.mp4)
+
+The source presentation labels this recording “M12 Direct Shortcut (Successful)”. **Preview: 8x source playback.** [Full MP4 (113.92 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-direct.mp4).
+
+#### 12. M12 pure helix: timeout
+
+[![M12 pure helix: timeout](docs/media/hardware-m12-helix-timeout.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-helix-timeout.mp4)
+
+The source presentation labels this recording “M12 Pure Helix (Failed Timeout)”. It preserves an unsuccessful attempt for comparison and diagnosis. **Preview: 12x source playback.** [Full MP4 (411.58 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-helix-timeout.mp4).
+
+#### 13. M12 pure helix: no time limit
+
+[![M12 pure helix: no time limit](docs/media/hardware-m12-helix-no-time-limit.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-helix-no-time-limit.mp4)
+
+The source presentation labels this recording as successful without a time limit and marks it as accelerated. Its source playback is retained; it is not a matched-budget timing comparison with the timeout trial. **Preview: 12x source playback.** [Full MP4 (380.43 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-helix-no-time-limit.mp4).
+
+#### 14. M12 grid: residual replanning
+
+[![M12 grid: residual replanning](docs/media/hardware-m12-grid-replanning.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-grid-replanning.mp4)
+
+The source presentation describes a shortcut miss followed by residual replanning (PGS-G). **Preview: 8x source playback.** [Full MP4 (210.96 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-grid-replanning.mp4).
+
+#### 15. M12 direct cue: re-probing
+
+[![M12 direct cue: re-probing](docs/media/hardware-m12-direct-reprobe.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-direct-reprobe.mp4)
+
+The source presentation describes a first-ray miss followed by re-probing and capture (Direct-4C). **Preview: 8x source playback.** [Full MP4 (193.70 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m12-direct-reprobe.mp4).
+
+#### 16. M10 grid search
+
+[![M10 grid search](docs/media/hardware-m10-grid.gif)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m10-grid.mp4)
+
+The source presentation labels this recording “M10 Entropy Grid (Successful)”; the tool operates at the middle socket of the fixture. **Preview: 8x source playback.** [Full MP4 (155.12 s)](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/download/media-gallery-2026-10-28/hardware-m10-grid.mp4).
+
+The hardware method and outcome descriptions follow the source slide captions. Video frames alone do not measure force, insertion depth, or dwell criteria. See the [media provenance notes](docs/MEDIA_GALLERY.md#presentation-coverage) and experimental records for interpretation.
 
 ## Reading guide
 
@@ -400,7 +492,6 @@ I would revisit these exercises later without an assistant or the earlier soluti
 | CAD and print files | [Parametric tooling](real_device/model/parametric_tooling/README.md) |
 | Experiment videos | [Animated gallery](docs/MEDIA_GALLERY.md), [full MP4 downloads](https://github.com/nanjinyao/tactile-posterior-guided-engagement/releases/tag/media-gallery-2026-10-28) |
 | Research reflection | [AI-assisted research workbook](docs/AI_ASSISTED_RESEARCH.md) |
-| Presentation materials | [Compact 39-slide deck](outputs/Learning_Based_Tactile_Posterior_Guided_Search_Compact_39_Slides.pptx), [group-review deck](outputs/Learning_Based_Tactile_Posterior_Guided_Search_Group_Review.pptx) |
 | Snapshot scope and checks | [Snapshot notes](docs/GITHUB_SNAPSHOT.md), [upload validation](docs/VALIDATION_20261027.md), [historical audit](PUBLICATION_AUDIT.md) |
 
 ### Download the data and models
